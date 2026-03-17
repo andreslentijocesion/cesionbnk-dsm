@@ -1,0 +1,31 @@
+/**
+ * CESIONBNK Design System — Entry Point
+ *
+ * Barrel import that loads all CSS layers in the correct order:
+ *   1. Font @imports (MUST be first per CSS spec)
+ *   2. Tailwind CSS engine
+ *   3. Shared configuration (@theme inline, @layer base, utilities)
+ *   4. Tenant token files (CESIONBNK only)
+ *   5. Custom animations & micro-interactions
+ *
+ * @version 2.0.0 — Single tenant (CESIONBNK)
+ */
+
+/* 1. Font @imports — MUST precede all other statements (CSS spec) */
+/* Gotham (CESIONBNK) */
+@import url('https://cdn.jsdelivr.net/npm/gotham-fonts@1.0.1/css/gotham.css');
+
+/* 2. Tailwind CSS engine */
+@import "tailwindcss";
+
+/* 3. Shared Tailwind v4 configuration */
+@import "./config.css";
+
+/* 4. CESIONBNK tokens (single tenant) */
+@import "./themes/cesionbnk.css";
+
+/* 5. Custom animations & micro-interactions */
+@import "./animations.css";
+
+/* 6. Content detection — scan project root for Tailwind classes */
+@source "../";

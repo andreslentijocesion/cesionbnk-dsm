@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist",
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "."
+  },
+  "include": [
+    "lib/**/*",
+    "components/ui/**/*",
+    "components/advanced/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.stories.*",
+    "**/*.test.*"
+  ]
+}

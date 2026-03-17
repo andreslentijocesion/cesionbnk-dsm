@@ -1,0 +1,206 @@
+/* 
+ * Custom styles for driver.js Product Tour
+ * Integrates with CESIONBNK design system tokens
+ */
+
+/* Popover container */
+.driver-popover-custom {
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  padding: 1rem;
+  max-width: 360px;
+  font-family: var(--font-sans);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .driver-popover-custom {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.2);
+  }
+}
+
+/* Popover title */
+.driver-popover-title {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+  line-height: 1.4;
+}
+
+/* Popover description */
+.driver-popover-description {
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+}
+
+/* Progress bar container */
+.driver-popover-progress-text {
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-sans);
+}
+
+/* Button container */
+.driver-popover-footer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Next button (primary action) */
+.driver-popover-next-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-sans);
+}
+
+.driver-popover-next-btn:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, black);
+  transform: translateY(-1px);
+}
+
+.driver-popover-next-btn:active {
+  transform: translateY(0);
+}
+
+/* Previous button */
+.driver-popover-prev-btn {
+  background-color: transparent;
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-sans);
+}
+
+.driver-popover-prev-btn:hover {
+  background-color: color-mix(in srgb, var(--muted) 50%, transparent);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+
+/* Close button */
+.driver-popover-close-btn {
+  color: var(--muted-foreground);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.driver-popover-close-btn:hover {
+  color: var(--foreground);
+  background-color: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+
+/* Overlay (dark background) */
+.driver-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Highlighted element */
+.driver-highlighted-element {
+  position: relative;
+  z-index: 9999;
+  border-radius: 0.375rem;
+}
+
+/* Arrow pointing to element */
+.driver-popover-arrow {
+  border-color: var(--background);
+}
+
+.driver-popover-arrow-side-top {
+  border-top-color: var(--background);
+}
+
+.driver-popover-arrow-side-bottom {
+  border-bottom-color: var(--background);
+}
+
+.driver-popover-arrow-side-left {
+  border-left-color: var(--background);
+}
+
+.driver-popover-arrow-side-right {
+  border-right-color: var(--background);
+}
+
+/* Accessibility: Focus styles */
+.driver-popover-next-btn:focus,
+.driver-popover-prev-btn:focus,
+.driver-popover-close-btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Animation for popover appearance */
+.driver-popover {
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .driver-popover-custom {
+    max-width: calc(100vw - 2rem);
+    margin: 1rem;
+  }
+
+  .driver-popover-footer {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .driver-popover-next-btn,
+  .driver-popover-prev-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

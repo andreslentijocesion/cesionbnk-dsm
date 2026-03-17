@@ -1,0 +1,216 @@
+/**
+ * TENANT: CESIONBNK (default)
+ *
+ * Default tenant — uses :root / .dark selectors (base cascade).
+ * Single tenant: no [data-theme] attribute needed.
+ *
+ * Primary: #374151 (Gray)  |  Secondary: #796eff (Purple)  |  Radius: 0.625rem  |  Font: Gotham
+ *
+ * @version 1.1.0 — Now actively loaded via globals.css (no longer documentation-only)
+ */
+
+/* ── Light Mode (default) ── */
+:root {
+  /* [TOKENS:LIGHT:START] */
+  /* Brand */
+  --primary: #374151;
+  --primary-foreground: #ffffff;
+  --secondary: #796eff;
+  --secondary-foreground: #ffffff;
+
+  /* Surfaces */
+  --background: #ffffff;
+  --foreground: #222222;
+  --card: #ffffff;
+  --card-foreground: #222222;
+  --popover: #ffffff;
+  --popover-foreground: #222222;
+
+  /* Neutral */
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --accent: #f4f4f5;
+  --accent-foreground: #222222;
+
+  /* Semantic */
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #22c55e;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #ffffff;
+  --info: #3b82f6;
+  --info-foreground: #ffffff;
+
+  /* Semantic subtle (soft backgrounds) */
+  --success-subtle: #f0fdf4;
+  --destructive-subtle: #fef2f2;
+  --warning-subtle: #fef3c7;
+  --info-subtle: #eff6ff;
+  --secondary-subtle: #ede9fe;
+  --success-on-subtle: #15803d;
+  --destructive-on-subtle: #b91c1c;
+  --warning-on-subtle: #b45309;
+  --info-on-subtle: #1d4ed8;
+  --secondary-on-subtle: #7c3aed;
+
+  /* UI */
+  --switch-background: #cbced4;
+  --input-background: #ffffff;
+
+  /* Forms */
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #374151;
+
+  /* Radius */
+  --radius: 0.625rem;
+  --button-radius: var(--radius);
+/* [TOKENS:LIGHT:END] */
+
+  /* Charts */
+  --chart-1:                    oklch(0.646 0.222 41.116);
+  --chart-2:                    oklch(0.6 0.118 184.704);
+  --chart-3:                    oklch(0.398 0.07 227.392);
+  --chart-4:                    oklch(0.828 0.189 84.429);
+  --chart-5:                    oklch(0.769 0.188 70.08);
+
+  /* Sidebar */
+  --sidebar:                    oklch(0.985 0 0);
+  --sidebar-foreground:         #222222;
+  --sidebar-primary:            #222222;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent:             oklch(0.97 0 0);
+  --sidebar-accent-foreground:  #222222;
+  --sidebar-border:             oklch(0.922 0 0);
+  --sidebar-ring:               oklch(0.708 0 0);
+
+  /* KPI Colors */
+  --kpi-yellow:                 #eab308;
+  --kpi-yellow-dark:            #ca8a04;
+  --kpi-yellow-bg:              #fef9c3;
+  --kpi-orange:                 #f97316;
+  --kpi-orange-dark:            #ea580c;
+  --kpi-orange-bg:              #ffedd5;
+  --kpi-blue:                   #3b82f6;
+  --kpi-blue-dark:              #2563eb;
+  --kpi-blue-bg:                #dbeafe;
+  --kpi-lime:                   #84cc16;
+  --kpi-lime-dark:              #65a30d;
+  --kpi-lime-bg:                #f7fee7;
+
+  /* Shadows */
+  --shadow-elevation-1:         0 1px 2px 0 rgba(34, 34, 34, 0.05);
+  --shadow-elevation-2:         0 4px 6px -1px rgba(34, 34, 34, 0.1), 0 2px 4px -2px rgba(34, 34, 34, 0.1);
+  --shadow-elevation-3:         0 10px 15px -3px rgba(34, 34, 34, 0.1), 0 4px 6px -4px rgba(34, 34, 34, 0.1);
+  --shadow-elevation-4:         0 20px 25px -5px rgba(34, 34, 34, 0.1), 0 8px 10px -6px rgba(34, 34, 34, 0.1);
+
+  /* Gradient (Login / Módulos background) */
+  --gradient-from:              #E5E7EB;
+  --gradient-to:                #323D4E;
+
+  /* Typography */
+  --letter-spacing-base:        0.025em;
+  --font-sans:                  'Gotham', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Dark Mode ── */
+.dark {
+  /* [TOKENS:DARK:START] */
+  /* Brand */
+  --primary: #d1d5db;
+  --primary-foreground: #09090b;
+  --secondary: #796eff;
+  --secondary-foreground: #09090b;
+
+  /* Surfaces */
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #09090b;
+  --card-foreground: #fafafa;
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
+
+  /* Neutral */
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #fafafa;
+
+  /* Semantic */
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --success: #22c55e;
+  --success-foreground: #052e16;
+  --warning: #f59e0b;
+  --warning-foreground: #1c1917;
+  --info: #3b82f6;
+  --info-foreground: #172554;
+
+  /* Semantic subtle (soft backgrounds) */
+  --success-subtle: #052e16;
+  --destructive-subtle: #450a0a;
+  --warning-subtle: #451a03;
+  --info-subtle: #172554;
+  --secondary-subtle: #2e1065;
+  --success-on-subtle: #4ade80;
+  --destructive-on-subtle: #f87171;
+  --warning-on-subtle: #fbbf24;
+  --info-on-subtle: #93c5fd;
+  --secondary-on-subtle: #c4b5fd;
+
+  /* UI */
+  --switch-background: #475569;
+  --input-background: #334155;
+
+  /* Forms */
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #d1d5db;
+/* [TOKENS:DARK:END] */
+
+  /* KPI Colors (dark) */
+  --kpi-yellow:                 #facc15;
+  --kpi-yellow-dark:            #eab308;
+  --kpi-yellow-bg:              #422006;
+  --kpi-orange:                 #fb923c;
+  --kpi-orange-dark:            #f97316;
+  --kpi-orange-bg:              #431407;
+  --kpi-blue:                   #60a5fa;
+  --kpi-blue-dark:              #3b82f6;
+  --kpi-blue-bg:                #172554;
+  --kpi-lime:                   #a3e635;
+  --kpi-lime-dark:              #84cc16;
+  --kpi-lime-bg:                #1a2e05;
+
+  /* Charts */
+  --chart-1:                    oklch(0.488 0.243 264.376);
+  --chart-2:                    oklch(0.696 0.17 162.48);
+  --chart-3:                    oklch(0.769 0.188 70.08);
+  --chart-4:                    oklch(0.627 0.265 303.9);
+  --chart-5:                    oklch(0.645 0.246 16.439);
+
+  /* Sidebar */
+  --sidebar:                    #1e293b;
+  --sidebar-foreground:         #f8fafc;
+  --sidebar-primary:            #4F46E5;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:             #334155;
+  --sidebar-accent-foreground:  #f8fafc;
+  --sidebar-border:             #334155;
+  --sidebar-ring:               #4F46E5;
+
+  /* Shadows */
+  --shadow-elevation-1:         0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-elevation-2:         0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-elevation-3:         0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-elevation-4:         0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+
+  /* Gradient (Login / Módulos background) */
+  --gradient-from:              #1e2533;
+  --gradient-to:                #0d1117;
+
+  /* Typography */
+  --letter-spacing-base:        0.025em;
+  --font-sans:                  'Gotham', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}

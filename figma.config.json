@@ -1,0 +1,9 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "include": ["components/ui/**/*.figma.tsx"],
+    "importPaths": {
+      "components/ui/*": "@andreslentijocesion/cesionbnk-dsm"
+    }
+  }
+}

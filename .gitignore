@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Coverage
+coverage/
+
+# Vite cache
+.vite/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.DS_Store
+.claude/settings.local.json
+
+# Logs
+*.log
+npm-debug.log*
+
+*storybook.log
+storybook-static/
+chromatic.log
+chromatic-diagnostics.json
+build-storybook.log
+debug-storybook.log
+
+# Plugin build artifacts only (source files ARE tracked)
+plugin/**/node_modules/
+plugin/**/dist/
+plugin/**/.env
+.claude/

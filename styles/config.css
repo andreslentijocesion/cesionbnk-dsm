@@ -1,0 +1,281 @@
+/**
+ * CESIONBNK Design System — Shared Tailwind v4 Configuration
+ *
+ * Maps CSS custom properties -> Tailwind utility classes.
+ * This file is TENANT-AGNOSTIC: it only bridges var(--token) to Tailwind.
+ * Actual token values live in /styles/themes/*.css
+ *
+ * @version 1.0.0
+ */
+
+/* ============================================================
+   Dark mode: class-based (.dark on <html>)
+   ThemeProvider adds/removes .dark on document.documentElement.
+   ============================================================ */
+@variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+   @theme inline: Map CSS vars -> Tailwind v4 utility classes
+   Generates: bg-primary, text-foreground, border-border, etc.
+   ============================================================ */
+@theme inline {
+  /* -- Semantic colors -- */
+  --color-background:                  var(--background);
+  --color-foreground:                  var(--foreground);
+  --color-card:                        var(--card);
+  --color-card-foreground:             var(--card-foreground);
+  --color-popover:                     var(--popover);
+  --color-popover-foreground:          var(--popover-foreground);
+  --color-primary:                     var(--primary);
+  --color-primary-foreground:          var(--primary-foreground);
+  --color-secondary:                   var(--secondary);
+  --color-secondary-foreground:        var(--secondary-foreground);
+  --color-muted:                       var(--muted);
+  --color-muted-foreground:            var(--muted-foreground);
+  --color-accent:                      var(--accent);
+  --color-accent-foreground:           var(--accent-foreground);
+  --color-destructive:                 var(--destructive);
+  --color-destructive-foreground:      var(--destructive-foreground);
+  --color-destructive-subtle:          var(--destructive-subtle);
+  --color-destructive-on-subtle:       var(--destructive-on-subtle);
+  --color-success:                     var(--success);
+  --color-success-foreground:          var(--success-foreground);
+  --color-success-subtle:              var(--success-subtle);
+  --color-success-on-subtle:           var(--success-on-subtle);
+  --color-warning:                     var(--warning);
+  --color-warning-foreground:          var(--warning-foreground);
+  --color-warning-subtle:              var(--warning-subtle);
+  --color-warning-on-subtle:           var(--warning-on-subtle);
+  --color-info:                        var(--info);
+  --color-info-foreground:             var(--info-foreground);
+  --color-info-subtle:                 var(--info-subtle);
+  --color-info-on-subtle:              var(--info-on-subtle);
+  --color-secondary-subtle:            var(--secondary-subtle);
+  --color-secondary-on-subtle:         var(--secondary-on-subtle);
+  --color-border:                      var(--border);
+  --color-input:                       var(--input);
+  --color-input-background:            var(--input-background);
+  --color-switch-background:           var(--switch-background);
+  --color-ring:                        var(--ring);
+
+  /* -- Chart colors -- */
+  --color-chart-1:                     var(--chart-1);
+  --color-chart-2:                     var(--chart-2);
+  --color-chart-3:                     var(--chart-3);
+  --color-chart-4:                     var(--chart-4);
+  --color-chart-5:                     var(--chart-5);
+
+  /* -- Sidebar colors -- */
+  --color-sidebar:                     var(--sidebar);
+  --color-sidebar-foreground:          var(--sidebar-foreground);
+  --color-sidebar-primary:             var(--sidebar-primary);
+  --color-sidebar-primary-foreground:  var(--sidebar-primary-foreground);
+  --color-sidebar-accent:              var(--sidebar-accent);
+  --color-sidebar-accent-foreground:   var(--sidebar-accent-foreground);
+  --color-sidebar-border:              var(--sidebar-border);
+  --color-sidebar-ring:                var(--sidebar-ring);
+
+  /* -- KPI colors (tenant-aware via CSS vars) -- */
+  --color-kpi-yellow:                  var(--kpi-yellow);
+  --color-kpi-yellow-dark:             var(--kpi-yellow-dark);
+  --color-kpi-yellow-bg:               var(--kpi-yellow-bg);
+  --color-kpi-orange:                  var(--kpi-orange);
+  --color-kpi-orange-dark:             var(--kpi-orange-dark);
+  --color-kpi-orange-bg:               var(--kpi-orange-bg);
+  --color-kpi-blue:                    var(--kpi-blue);
+  --color-kpi-blue-dark:               var(--kpi-blue-dark);
+  --color-kpi-blue-bg:                 var(--kpi-blue-bg);
+  --color-kpi-lime:                    var(--kpi-lime);
+  --color-kpi-lime-dark:               var(--kpi-lime-dark);
+  --color-kpi-lime-bg:                 var(--kpi-lime-bg);
+
+  /* -- Border Radius -- */
+  --radius-sm:  calc(var(--radius) - 4px);
+  --radius-md:  calc(var(--radius) - 2px);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) + 4px);
+
+  /* -- Font -- */
+  --font-sans:  var(--font-sans);
+
+  /* -- Animations (standard -- shadcn/ui accordion) -- */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up:   accordion-up 0.2s ease-out;
+}
+
+/* ============================================================
+   @theme: Keyframes for Tailwind v4 (standard shadcn/ui)
+   ============================================================ */
+@theme {
+  --keyframes-accordion-down: {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  };
+  --keyframes-accordion-up: {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  };
+}
+
+/* ============================================================
+   BASE STYLES (CESIONBNK)
+   ============================================================ */
+@layer base {
+  /* Global border color */
+  *,
+  *::before,
+  *::after {
+    border-color: var(--border);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    letter-spacing: var(--letter-spacing-base);
+  }
+
+  /* Letter-spacing for all typographic elements */
+  p, span, label, a, button, input, textarea, select,
+  h1, h2, h3, h4, h5, h6,
+  div, td, th, li {
+    letter-spacing: var(--letter-spacing-base);
+  }
+
+  /* Base typography overrides */
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      @apply text-2xl font-medium;
+      line-height: 1.5;
+    }
+
+    h2 {
+      @apply text-xl font-medium;
+      line-height: 1.5;
+    }
+
+    h3 {
+      @apply text-lg font-medium;
+      line-height: 1.5;
+    }
+
+    h4 {
+      @apply text-base font-medium;
+      line-height: 1.5;
+    }
+
+    label, button {
+      @apply text-base font-medium;
+      line-height: 1.5;
+    }
+
+    input {
+      @apply text-base font-normal;
+      line-height: 1.5;
+    }
+  }
+
+  /* Force outline style for badges inside tables */
+  table [data-slot="badge"] {
+    @apply border shadow-none;
+  }
+
+}
+
+/* ============================================================
+   STANDARD UTILITIES (CESIONBNK)
+   ============================================================ */
+@layer utilities {
+  /* Scrollbar hiding */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Progress Bar - Dynamic width using CSS variable */
+  [data-progress] {
+    width: var(--progress-width, 0%);
+  }
+
+  /* Bar Chart - Dynamic height using CSS variable */
+  [data-bar-height] {
+    height: var(--bar-height, 0%);
+  }
+
+  /* Heatmap - Dynamic colors */
+  [data-heat-bg] {
+    background-color: var(--heat-bg);
+  }
+  [data-heat-color] {
+    color: var(--heat-color);
+  }
+
+  /* Funnel Chart - Dynamic width */
+  [data-funnel-width] {
+    width: var(--funnel-width, 100%);
+    height: var(--funnel-height, 60px);
+    background-color: var(--funnel-color, var(--primary));
+    margin-left: var(--funnel-offset, 0%);
+    min-width: 150px;
+  }
+
+  /* Gauge Chart - Dynamic font size */
+  [data-gauge-size] {
+    font-size: var(--gauge-font-size);
+  }
+
+  /* Shadow Elevation Utilities
+     box-shadow references CSS vars -> respects dark mode automatically
+     Usage: className="shadow-elevation-2 hover:shadow-elevation-3" */
+  .shadow-elevation-1 { box-shadow: var(--shadow-elevation-1); }
+  .shadow-elevation-2 { box-shadow: var(--shadow-elevation-2); }
+  .shadow-elevation-3 { box-shadow: var(--shadow-elevation-3); }
+  .shadow-elevation-4 { box-shadow: var(--shadow-elevation-4); }
+
+  /* Focus States */
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  .focus-ring-inset {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset;
+  }
+
+  /* Smooth Scrolling */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ============================================================
+   DESIGN SYSTEM OVERRIDES — unlayered (highest cascade priority)
+   These rules win over all @layer utilities from Tailwind.
+   ============================================================ */
+
+/* Table header rows always white (overrides bg-muted/40 on individual rows) */
+thead[data-slot="table-header"] tr {
+  background-color: var(--card) !important;
+}
+
+/* Input-like controls always white background */
+[data-slot="input"],
+[data-slot="textarea"],
+[data-slot="select-trigger"] {
+  background-color: var(--input-background) !important;
+}
