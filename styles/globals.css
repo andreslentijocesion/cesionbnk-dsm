@@ -27,5 +27,8 @@
 /* 5. Custom animations & micro-interactions */
 @import "./animations.css";
 
-/* 6. Content detection — scan project root for Tailwind classes */
+/* 6. Print / PDF styles */
+@import "./print.css";
+
+/* 7. Content detection — scan project root for Tailwind classes */
 @source "../";

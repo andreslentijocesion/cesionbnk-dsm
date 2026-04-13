@@ -3,7 +3,6 @@
  * Supports horizontal and vertical orientation, with completed/current/pending/error states.
  * @layer atoms
  */
-import * as React from "react";
 import { Check, X } from "lucide-react";
 import { cn } from "./utils";
 

@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Copy, Check } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Badge } from "../ui/badge";
 import { cn } from "../../lib/utils";
 
 export interface DetailField {
@@ -38,7 +37,7 @@ function CopyButton({ text }: { text: string }) {
       className="ml-1.5 text-muted-foreground hover:text-foreground transition-colors opacity-0 group-hover:opacity-100"
       title="Copiar"
     >
-      {copied ? <Check size={12} className="text-green-600" /> : <Copy size={12} />}
+      {copied ? <Check size={12} className="text-success-on-subtle" /> : <Copy size={12} />}
     </button>
   );
 }

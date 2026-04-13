@@ -1,4 +1,3 @@
-import React from "react";
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import {
   SidebarProvider, Sidebar, SidebarContent, SidebarHeader, SidebarFooter,
@@ -7,9 +6,9 @@ import {
   SidebarRail, SidebarInset, SidebarTrigger,
 } from "../components/ui/sidebar";
 import {
-  BookOpen, Bot, ChevronRight, ChevronsUpDown, Command, Inbox, Calendar, Search,
-  PanelLeft, GalleryVerticalEnd, AudioWaveform, Send, Sparkles, Settings2,
-  Terminal, Trash2, Frame, PieChart, Map, LifeBuoy,
+  BookOpen, Bot, ChevronRight, ChevronsUpDown, Inbox, Calendar, Search,
+  PanelLeft, GalleryVerticalEnd, AudioWaveform, Sparkles, Settings2,
+  Terminal, Frame, PieChart, Map, LifeBuoy,
 } from "lucide-react";
 import { Badge } from "../components/ui/badge";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/collapsible";
@@ -149,7 +148,7 @@ export function SidebarShowcasePage() {
                   </SidebarMenuItem></SidebarMenu></SidebarHeader>
                   <SidebarContent>
                     <SidebarGroup><SidebarMenu>
-                      <SidebarMenuItem><SidebarMenuButton><Inbox /><span>Inbox</span><Badge className="ml-auto">12</Badge></SidebarMenuButton></SidebarMenuItem>
+                      <SidebarMenuItem><SidebarMenuButton><Inbox /><span>Inbox</span><Badge variant="outline" className="ml-auto text-xs">12</Badge></SidebarMenuButton></SidebarMenuItem>
                       <SidebarMenuItem><SidebarMenuButton><Calendar /><span>Calendar</span></SidebarMenuButton></SidebarMenuItem>
                       <SidebarMenuItem><SidebarMenuButton><Search /><span>Search</span></SidebarMenuButton></SidebarMenuItem>
                     </SidebarMenu></SidebarGroup>

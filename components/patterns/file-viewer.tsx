@@ -45,9 +45,9 @@ const typeIcons: Record<FileType, React.ElementType> = {
 };
 
 const typeColors: Record<FileType, string> = {
-  pdf:         "text-red-500",
-  image:       "text-blue-500",
-  spreadsheet: "text-emerald-500",
+  pdf:         "text-destructive",
+  image:       "text-info",
+  spreadsheet: "text-success",
   other:       "text-muted-foreground",
 };
 

@@ -1,5 +1,4 @@
 import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Badge } from "../components/ui/badge";
 import {
   TreeTable,
   type Operation,

@@ -1,16 +1,18 @@
 /* eslint-disable */
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
-import { Badge } from "../ui/badge";
+import { Card, CardContent } from "../ui/card";
+
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { ProgressWithRange } from "../ui/progress-with-range";
 import { Checkbox } from "../ui/checkbox";
 import {
   AlertTriangle, Clock, CheckCircle2, Send, Phone,
-  Bell, BellOff, ArrowRight, RefreshCw, Filter,
+  Bell, BellOff, ArrowRight, RefreshCw,
 } from "lucide-react";
 import { cn } from "../ui/utils";
+import { Badge } from "../ui/badge";
+import { toast } from "sonner";
 import { FactoringOperationDetail, FactoringRecord } from "./factoring-operation-detail";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -82,35 +84,36 @@ const mockAlerts: Alert[] = [
 
 const urgencyConfig: Record<Urgency, {
   label: string; icon: React.ReactNode;
-  cardBorder: string; headerBg: string; badgeColor: string;
+  cardBorder: string; headerBg: string;
+  badgeVariant: React.ComponentProps<typeof Badge>["variant"];
 }> = {
   vencido: {
     label: "Vencido",
     icon: <AlertTriangle className="h-4 w-4 text-destructive" />,
     cardBorder: "border-destructive/40",
     headerBg: "bg-destructive/5",
-    badgeColor: "bg-destructive/15 text-destructive",
+    badgeVariant: "destructive-soft",
   },
   critico: {
     label: "Crítico (≤ 7d)",
     icon: <Clock className="h-4 w-4 text-warning" />,
     cardBorder: "border-warning/40",
     headerBg: "bg-warning/5",
-    badgeColor: "bg-warning/15 text-warning",
+    badgeVariant: "warning-soft",
   },
   proximo: {
     label: "Próximo (8–30d)",
     icon: <Bell className="h-4 w-4 text-primary" />,
     cardBorder: "border-primary/30",
     headerBg: "bg-primary/5",
-    badgeColor: "bg-primary/10 text-primary",
+    badgeVariant: "primary-soft",
   },
   vigilar: {
     label: "Vigilar (31–60d)",
     icon: <Bell className="h-4 w-4 text-muted-foreground" />,
     cardBorder: "border-border",
     headerBg: "bg-muted/40",
-    badgeColor: "bg-muted text-muted-foreground",
+    badgeVariant: "neutral-soft",
   },
 };
 
@@ -118,13 +121,14 @@ const URGENCY_ORDER: Urgency[] = ["vencido", "critico", "proximo", "vigilar"];
 
 // ─── Alert Card ───────────────────────────────────────────────────────────────
 
-function AlertCard({ alert, selected, onToggle, onMarkCollected, onMute, onDetail }: {
+function AlertCard({ alert, selected, onToggle, onMarkCollected, onMute, onDetail, onSendReminder }: {
   alert: Alert;
   selected: boolean;
   onToggle: () => void;
   onMarkCollected: (id: string) => void;
   onMute: (id: string) => void;
   onDetail: (alert: Alert) => void;
+  onSendReminder: (id: string) => void;
 }) {
   const cfg = urgencyConfig[alert.urgency];
   const valorPendiente = alert.valorNominal * (1 - alert.cobradoPct / 100);
@@ -141,9 +145,9 @@ function AlertCard({ alert, selected, onToggle, onMarkCollected, onMute, onDetai
           <Checkbox checked={selected} onCheckedChange={onToggle} />
           {cfg.icon}
           <span className="text-xs font-semibold text-foreground">{alert.operacionId}</span>
-          <span className={cn("text-[10px] font-semibold px-1.5 py-0.5 rounded-full", cfg.badgeColor)}>
+          <Badge variant={cfg.badgeVariant} className="rounded-full text-2xs font-semibold px-1.5 py-0.5">
             {alert.diasRestantes < 0 ? `${Math.abs(alert.diasRestantes)}d vencido` : `${alert.diasRestantes}d restantes`}
-          </span>
+          </Badge>
           {alert.muted && <BellOff className="h-3 w-3 text-muted-foreground" />}
         </div>
         <div className="flex items-center gap-1">
@@ -196,7 +200,7 @@ function AlertCard({ alert, selected, onToggle, onMarkCollected, onMute, onDetai
 
           {/* Actions */}
           <div className="space-y-1.5">
-            <Button size="sm" variant="outline" className="w-full h-7 text-xs justify-start">
+            <Button size="sm" variant="outline" className="w-full h-7 text-xs justify-start" onClick={() => onSendReminder(alert.id)}>
               <Send className="h-3 w-3 mr-1.5" />
               {alert.recordatoriosEnviados === 0 ? "Enviar 1er recordatorio" : `Recordatorio #${alert.recordatoriosEnviados + 1}`}
             </Button>
@@ -221,7 +225,7 @@ function AlertCard({ alert, selected, onToggle, onMarkCollected, onMute, onDetai
         </div>
 
         {alert.ultimoContacto && (
-          <p className="text-[10px] text-muted-foreground mt-2">
+          <p className="text-xs text-muted-foreground mt-2">
             Último contacto: {alert.ultimoContacto} · {alert.recordatoriosEnviados} recordatorio{alert.recordatoriosEnviados !== 1 ? "s" : ""} enviado{alert.recordatoriosEnviados !== 1 ? "s" : ""}
           </p>
         )}
@@ -251,16 +255,37 @@ export function FactoringMaturityAlerts() {
     return acc;
   }, {} as Record<Urgency, Alert[]>);
 
-  const toggleMute = (id: string) =>
+  const toggleMute = (id: string) => {
+    const alert = alerts.find((a) => a.id === id);
     setAlerts((prev) => prev.map((a) => a.id === id ? { ...a, muted: !a.muted } : a));
+    toast.info(alert?.muted ? "Alertas reactivadas" : "Alerta silenciada");
+  };
 
   const markCollected = (id: string) => {
     setCollected((prev) => new Set([...prev, id]));
     setSelected((prev) => { const next = new Set(prev); next.delete(id); return next; });
   };
 
+  const handleMarkCollected = (id: string) => {
+    markCollected(id);
+    toast.success("Operación marcada como cobrada");
+  };
+
   const markAllSelected = () => {
+    const count = selected.size;
     selected.forEach((id) => markCollected(id));
+    toast.success(`${count} operación${count !== 1 ? "es" : ""} marcada${count !== 1 ? "s" : ""} como cobrada${count !== 1 ? "s" : ""}`);
+  };
+
+  const handleSendReminder = (id: string) => {
+    setAlerts((prev) => prev.map((a) => a.id === id ? { ...a, recordatoriosEnviados: a.recordatoriosEnviados + 1 } : a));
+    toast.success("Recordatorio enviado al deudor");
+  };
+
+  const handleBulkSendReminder = () => {
+    const count = selected.size;
+    setAlerts((prev) => prev.map((a) => selected.has(a.id) ? { ...a, recordatoriosEnviados: a.recordatoriosEnviados + 1 } : a));
+    toast.success(`Recordatorio enviado a ${count} deudor${count !== 1 ? "es" : ""}`);
   };
 
   const openDetail = (alert: Alert) => {
@@ -293,7 +318,7 @@ export function FactoringMaturityAlerts() {
             <CardContent className="p-3 flex items-center gap-3">
               <div className={cn("h-8 w-8 rounded-lg flex items-center justify-center flex-shrink-0", k.bg)}>{k.icon}</div>
               <div>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-wide">{k.label}</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide">{k.label}</p>
                 <p className={cn("text-lg font-bold tabular-nums", k.color)}>{k.value}</p>
               </div>
             </CardContent>
@@ -330,7 +355,7 @@ export function FactoringMaturityAlerts() {
               <Button size="sm" className="h-8 text-xs" onClick={markAllSelected}>
                 <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" /> Marcar cobradas ({selected.size})
               </Button>
-              <Button size="sm" variant="outline" className="h-8 text-xs">
+              <Button size="sm" variant="outline" className="h-8 text-xs" onClick={handleBulkSendReminder}>
                 <Send className="h-3.5 w-3.5 mr-1.5" /> Enviar recordatorio ({selected.size})
               </Button>
             </>
@@ -362,7 +387,7 @@ export function FactoringMaturityAlerts() {
               <div className="flex items-center gap-2">
                 {cfg.icon}
                 <h4 className="text-sm font-semibold text-foreground">{cfg.label}</h4>
-                <span className={cn("text-[10px] font-bold px-1.5 py-0.5 rounded-full", cfg.badgeColor)}>{group.length}</span>
+                <Badge variant={cfg.badgeVariant} className="rounded-full text-2xs font-bold px-1.5 py-0.5">{group.length}</Badge>
                 <Separator className="flex-1" />
               </div>
               <div className="space-y-2">
@@ -372,9 +397,10 @@ export function FactoringMaturityAlerts() {
                     alert={alert}
                     selected={selected.has(alert.id)}
                     onToggle={() => setSelected((prev) => { const next = new Set(prev); next.has(alert.id) ? next.delete(alert.id) : next.add(alert.id); return next; })}
-                    onMarkCollected={markCollected}
+                    onMarkCollected={handleMarkCollected}
                     onMute={toggleMute}
                     onDetail={openDetail}
+                    onSendReminder={handleSendReminder}
                   />
                 ))}
               </div>

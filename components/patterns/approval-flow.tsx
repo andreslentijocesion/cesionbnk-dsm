@@ -39,18 +39,18 @@ const approverMeta: Record<ApproverStatus, {
   dotClass: string;
   iconClass: string;
   label: string;
-  badgeVariant: "default" | "secondary" | "destructive" | "outline";
+  badgeVariant: "outline";
 }> = {
-  approved: { icon: CheckCircle2, dotClass: "border-primary bg-primary",         iconClass: "text-primary-foreground", label: "Aprobó",    badgeVariant: "default" },
-  rejected: { icon: XCircle,      dotClass: "border-destructive bg-destructive",  iconClass: "text-destructive-foreground", label: "Rechazó",  badgeVariant: "destructive" },
-  pending:  { icon: Clock,        dotClass: "border-border bg-background",        iconClass: "text-muted-foreground",   label: "Pendiente", badgeVariant: "secondary" },
+  approved: { icon: CheckCircle2, dotClass: "border-primary bg-primary",         iconClass: "text-primary-foreground", label: "Aprobó",    badgeVariant: "outline" },
+  rejected: { icon: XCircle,      dotClass: "border-destructive bg-destructive",  iconClass: "text-destructive-foreground", label: "Rechazó",  badgeVariant: "outline" },
+  pending:  { icon: Clock,        dotClass: "border-border bg-background",        iconClass: "text-muted-foreground",   label: "Pendiente", badgeVariant: "outline" },
   skipped:  { icon: AlertCircle,  dotClass: "border-border bg-muted",             iconClass: "text-muted-foreground",   label: "Omitido",   badgeVariant: "outline" },
 };
 
 const flowStatusMeta: Record<ApprovalFlowProps["status"], { label: string; color: string; bg: string }> = {
-  pending:   { label: "Pendiente de aprobación", color: "text-amber-600 dark:text-amber-400",  bg: "bg-amber-50 dark:bg-amber-950/40" },
-  in_review: { label: "En revisión",             color: "text-blue-600 dark:text-blue-400",   bg: "bg-blue-50 dark:bg-blue-950/40" },
-  approved:  { label: "Aprobada",                color: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-50 dark:bg-emerald-950/40" },
+  pending:   { label: "Pendiente de aprobación", color: "text-warning-on-subtle",   bg: "bg-warning-subtle" },
+  in_review: { label: "En revisión",             color: "text-info-on-subtle",      bg: "bg-info-subtle" },
+  approved:  { label: "Aprobada",                color: "text-success-on-subtle",   bg: "bg-success-subtle" },
   rejected:  { label: "Rechazada",               color: "text-destructive",                   bg: "bg-destructive/10" },
 };
 
@@ -67,7 +67,7 @@ export function ApprovalFlow({ title, status, approvers, onApprove, onReject, cl
           <p className={cn("text-sm font-semibold", flowMeta.color)}>{flowMeta.label}</p>
         </div>
         <Badge
-          variant={status === "approved" ? "default" : status === "rejected" ? "destructive" : "secondary"}
+          variant="outline"
           className="text-xs"
         >
           {approvers.filter((a) => a.status === "approved").length}/{approvers.length} aprobaciones

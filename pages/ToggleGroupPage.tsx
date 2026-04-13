@@ -11,10 +11,8 @@ import {
   AlignJustify,
   List,
   ListOrdered,
-  Grid,
   LayoutGrid,
   Table,
-  MonitorSmartphone,
   Monitor,
   Smartphone,
   Tablet

@@ -21,10 +21,10 @@ import { ComponentShowcase } from "../components/ui/component-showcase";
 
 export function HomePageContent() {
   const stats = [
-    { label: "Total Components", value: "115",  icon: Package,     color: "text-primary"  },
+    { label: "Total Components", value: "130",  icon: Package,     color: "text-primary"  },
     { label: "DSM Migration",     value: "100%", icon: Sparkles,    color: "text-green-500" },
-    { label: "Showcase Pages",    value: "93",   icon: CheckCircle2,color: "text-success"   },
-    { label: "WCAG AA",           value: "98%",  icon: Accessibility,color: "text-warning"  },
+    { label: "Showcase Pages",    value: "128",  icon: CheckCircle2,color: "text-success"   },
+    { label: "WCAG AA",           value: "100%", icon: Accessibility,color: "text-success"  },
   ];
 
   const features = [
@@ -37,13 +37,13 @@ export function HomePageContent() {
     {
       icon: Accessibility,
       title: "WCAG 2.1 AA Compliant",
-      description: "98% compliance with optimized contrast ratios. All interactive components support keyboard navigation and screen readers.",
+      description: "100% Lighthouse score — WCAG 2.1 AA compliant. All interactive components support keyboard navigation and screen readers.",
       badge: "Verified",
     },
     {
       icon: Layers,
       title: "Atomic Design",
-      description: "4-layer architecture: Core UI (65) · Advanced (19) · Patterns (16) · Widgets (15). Each layer builds on the previous.",
+      description: "3-layer architecture: Core UI (74) · Patterns (38) · Advanced (18). Each layer builds on the previous.",
       badge: "Implemented",
     },
     {
@@ -78,10 +78,9 @@ export function HomePageContent() {
 
   const progress = {
     shadcn:        100, // 48/48 official shadcn/ui
-    patterns:      100, // 20/20 patterns
-    widgets:       100, // 15/15 widgets
-    advanced:      100, // 19/19 advanced
-    accessibility:  98, // WCAG AA
+    patterns:      100, // 38/38 patterns
+    advanced:      100, // 18/18 advanced
+    accessibility: 100, // WCAG AA — Lighthouse 100/100
   };
 
   return (
@@ -91,8 +90,8 @@ export function HomePageContent() {
         <div className="relative z-10">
           <div className="flex items-center gap-4 mb-4">
             <Logo size="lg" variant="light" />
-            <Badge variant="default" className="text-xs px-3 py-1">v0.3.1</Badge>
-            <Badge className="text-xs px-3 py-1 bg-green-500 hover:bg-green-600 gap-1">
+            <Badge variant="default" className="text-xs px-3 py-1">v0.4.0</Badge>
+            <Badge variant="success-soft" className="gap-1">
               <Sparkles className="h-3 w-3" />
               DSM 100%
             </Badge>
@@ -105,15 +104,15 @@ export function HomePageContent() {
           <div className="flex flex-wrap gap-3">
             <Badge variant="outline" className="gap-2">
               <Activity className="h-3 w-3" />
-              Last updated: February 2026
+              Last updated: April 2026
             </Badge>
             <Badge variant="outline" className="gap-2">
               <Users className="h-3 w-3" />
-              Atomic Design · 4 Layers
+              Atomic Design · 3 Layers
             </Badge>
             <Badge variant="outline" className="gap-2">
               <TrendingUp className="h-3 w-3" />
-              115 Components · 93 Pages
+              130 Components · 128 Pages
             </Badge>
           </div>
         </div>
@@ -126,7 +125,7 @@ export function HomePageContent() {
         {stats.map((stat, index) => (
           <Card key={index} className="shadow-elevation-1 hover:shadow-elevation-2 transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm">{stat.label}</CardTitle>
+              <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
               <stat.icon className={`h-4 w-4 ${stat.color}`} />
             </CardHeader>
             <CardContent>
@@ -151,40 +150,32 @@ export function HomePageContent() {
               <span className="text-muted-foreground">Official shadcn/ui Components</span>
               <span className="font-semibold">{progress.shadcn}%</span>
             </div>
-            <Progress value={progress.shadcn} className="h-2" />
+            <Progress value={progress.shadcn} className="h-2" aria-label="shadcn/ui components" />
             <p className="text-xs text-muted-foreground">48/48 components implemented</p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-muted-foreground">Composite Patterns</span>
+              <span className="text-muted-foreground">Patterns (38 components)</span>
               <span className="font-semibold">{progress.patterns}%</span>
             </div>
-            <Progress value={progress.patterns} className="h-2" />
-            <p className="text-xs text-muted-foreground">20/20 patterns complete</p>
+            <Progress value={progress.patterns} className="h-2" aria-label="Pattern components" />
+            <p className="text-xs text-muted-foreground">38/38 patterns complete — ApprovalFlow, AuditLog, DataTableAdvanced, etc.</p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-muted-foreground">Widgets</span>
-              <span className="font-semibold">{progress.widgets}%</span>
-            </div>
-            <Progress value={progress.widgets} className="h-2" />
-            <p className="text-xs text-muted-foreground">15/15 widgets implemented</p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-muted-foreground">Advanced Components</span>
+              <span className="text-muted-foreground">Advanced Components (18 components)</span>
               <span className="font-semibold">{progress.advanced}%</span>
             </div>
-            <Progress value={progress.advanced} className="h-2" />
-            <p className="text-xs text-muted-foreground">19/19 advanced components implemented</p>
+            <Progress value={progress.advanced} className="h-2" aria-label="Advanced components" />
+            <p className="text-xs text-muted-foreground">18/18 advanced components — Charts, MasterDataGrid, FormBuilder, etc.</p>
           </div>
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-muted-foreground">WCAG 2.1 AA Accessibility</span>
+              <span className="text-muted-foreground">WCAG 2.1 AA — Lighthouse 100/100</span>
               <span className="font-semibold">{progress.accessibility}%</span>
             </div>
-            <Progress value={progress.accessibility} className="h-2" />
-            <p className="text-xs text-muted-foreground">Optimized contrast ratios — 18/18 criteria met</p>
+            <Progress value={progress.accessibility} className="h-2" aria-label="WCAG 2.1 AA accessibility" />
+            <p className="text-xs text-muted-foreground">Lighthouse 100/100 — todos los criterios AA verificados</p>
           </div>
         </CardContent>
       </Card>
@@ -203,7 +194,7 @@ export function HomePageContent() {
                   <div className="p-2 rounded-lg bg-muted">
                     <feature.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <Badge variant="secondary" className="text-xs">{feature.badge}</Badge>
+                  <Badge variant="neutral-soft-outline">{feature.badge}</Badge>
                 </div>
                 <CardTitle className="text-lg">{feature.title}</CardTitle>
               </CardHeader>
@@ -273,10 +264,10 @@ export function HomePage() {
   return (
     <ComponentShowcase
       title="CESIONBNK Design System"
-      description="115 components · 93 showcase pages · UI Primitives, Advanced, Patterns, and Widgets."
+      description="130 components · 128 showcase pages · Core UI, Patterns, and Advanced layers."
       category="Home"
       preview={<HomePageContent />}
-      code={`// DSM Home — navigate using the sidebar to explore all 115 components across 93 pages`}
+      code={`// DSM Home — navigate using the sidebar to explore all 130 components across 128 pages`}
       props={[]}
       examples={[]}
     />

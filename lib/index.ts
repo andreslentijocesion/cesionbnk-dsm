@@ -80,6 +80,7 @@ export {
 } from '../components/ui/context-menu';
 
 // ── Data Display ───────────────────────────────────────────────────────────
+export { AspectRatio } from '../components/ui/aspect-ratio';
 export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
 export {
   Table, TableBody, TableCaption, TableCell, TableFooter,
@@ -170,3 +171,17 @@ export type { HeatmapCell } from '../components/advanced/heatmap';
 export { Heatmap } from '../components/advanced/heatmap';
 export { InfiniteScroll } from '../components/advanced/infinite-scroll';
 export { RichTextEditor } from '../components/advanced/rich-text-editor';
+
+// ── Charts ──────────────────────────────────────────────────────────────────
+export type { ChartConfig } from '../components/ui/chart';
+export {
+  ChartContainer, ChartTooltip, ChartTooltipContent,
+  ChartLegend, ChartLegendContent, ChartStyle,
+} from '../components/ui/chart';
+
+// ── Skeleton Variants ───────────────────────────────────────────────────────
+export {
+  SkeletonTable, SkeletonCard, SkeletonCardGrid,
+  SkeletonForm, SkeletonList, SkeletonDashboard,
+  SkeletonKpiCard, SkeletonKpiCardGroup, SkeletonProfile,
+} from '../components/ui/skeleton-variants';

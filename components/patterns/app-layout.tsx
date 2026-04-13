@@ -239,7 +239,7 @@ export function LayoutSidebarCollapsibleGroup({
         onClick={() => setOpen((prev) => !prev)}
         className={cn(
           "flex w-full items-center gap-3 rounded-[var(--radius)] px-3 py-2",
-          "text-sm text-foreground/70 hover:bg-accent hover:text-foreground",
+          "text-sm text-foreground/80 hover:bg-accent hover:text-foreground",
           "transition-colors duration-150 outline-none",
           "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         )}
@@ -248,7 +248,7 @@ export function LayoutSidebarCollapsibleGroup({
         {Icon && <Icon className="h-4 w-4 shrink-0" />}
         <span className="flex-1 truncate text-left">{label}</span>
         {count != null && (
-          <span className="text-[10px] text-muted-foreground/60 tabular-nums">{count}</span>
+          <span className="text-2xs text-muted-foreground tabular-nums" aria-hidden="true">{count}</span>
         )}
         <ChevronDown
           className={cn(

@@ -1,10 +1,17 @@
-import React, { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { useState } from "react";
+import { Card } from "../components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Star, Check, Loader2, ArrowRight, TrendingUp, MousePointer, Sparkles } from "lucide-react";
+import { Heart, Star, Check, Loader2, ArrowRight, TrendingUp, MousePointer } from "lucide-react";
 import { AnimationSystemContent } from "./AnimationSystemPage";
 import { Button } from "../components/ui/button";
 import { ComponentShowcase } from "../components/ui/component-showcase";
+
+// Animation props constants
+const hoverScaleProps = { whileHover: { scale: 1.05 }, whileTap: { scale: 0.95 } };
+const hoverRotateProps = { whileHover: { rotate: 5 }, whileTap: { rotate: -5 } };
+const hoverLiftProps = { whileHover: { y: -5 } };
+const hoverShadowProps = { whileHover: { boxShadow: "var(--shadow-elevation-3)" } };
+const dragProps = { drag: true, dragConstraints: { left: 0, right: 0, top: 0, bottom: 0 }, dragElastic: 0.2 };
 
 function AnimationPlayground() {
   const [isLiked, setIsLiked] = useState(false);
@@ -69,10 +76,10 @@ function AnimationPlayground() {
       <div className="space-y-3">
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Hover Effects</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="p-6 rounded-lg bg-muted border border-border cursor-pointer text-center"><p className="text-sm font-medium">Scale</p></motion.div>
-          <motion.div whileHover={{ rotate: 5 }} whileTap={{ rotate: -5 }} className="p-6 rounded-lg bg-muted border border-border cursor-pointer text-center"><p className="text-sm font-medium">Rotate</p></motion.div>
-          <motion.div whileHover={{ y: -5 }} className="p-6 rounded-lg bg-accent border border-border cursor-pointer text-center"><p className="text-sm font-medium">Lift</p></motion.div>
-          <motion.div whileHover={{ boxShadow: "0 10px 30px rgba(132, 204, 22, 0.3)" }} className="p-6 rounded-lg bg-muted border border-border cursor-pointer text-center"><p className="text-sm font-medium">Shadow</p></motion.div>
+          <motion.div {...hoverScaleProps} className="p-6 rounded-lg bg-muted border border-border cursor-pointer text-center"><p className="text-sm font-medium">Scale</p></motion.div>
+          <motion.div {...hoverRotateProps} className="p-6 rounded-lg bg-muted border border-border cursor-pointer text-center"><p className="text-sm font-medium">Rotate</p></motion.div>
+          <motion.div {...hoverLiftProps} className="p-6 rounded-lg bg-accent border border-border cursor-pointer text-center"><p className="text-sm font-medium">Lift</p></motion.div>
+          <motion.div {...hoverShadowProps} className="p-6 rounded-lg bg-muted border border-border cursor-pointer text-center"><p className="text-sm font-medium">Shadow</p></motion.div>
         </div>
       </div>
 
@@ -93,7 +100,7 @@ function AnimationPlayground() {
       <div className="space-y-3">
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Draggable</h3>
         <div className="flex gap-4 flex-wrap">
-          <motion.div drag dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }} dragElastic={0.2} className="p-6 rounded-lg bg-muted border-border cursor-grab active:cursor-grabbing text-center">
+          <motion.div {...dragProps} className="p-6 rounded-lg bg-muted border-border cursor-grab active:cursor-grabbing text-center">
             <MousePointer className="h-6 w-6 mx-auto mb-2 text-primary" /><p className="text-xs font-medium">Drag me!</p>
           </motion.div>
         </div>

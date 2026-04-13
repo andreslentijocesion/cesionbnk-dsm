@@ -84,18 +84,18 @@ const MONTHLY_DATA = [
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 const STATUS_META: Record<ReportStatus, { label: string; color: string; bg: string; icon: React.ReactNode }> = {
-  cobrada: { label: "Cobrada", color: "text-green-700", bg: "bg-green-100 dark:bg-green-900/30",  icon: <CheckCircle2 className="h-3.5 w-3.5 text-green-600" /> },
-  vigente: { label: "Vigente", color: "text-blue-700",  bg: "bg-blue-100 dark:bg-blue-900/30",    icon: <Clock className="h-3.5 w-3.5 text-blue-600" /> },
-  vencida: { label: "Vencida", color: "text-amber-700", bg: "bg-amber-100 dark:bg-amber-900/30",  icon: <AlertTriangle className="h-3.5 w-3.5 text-amber-600" /> },
-  en_mora: { label: "En Mora", color: "text-red-700",   bg: "bg-red-100 dark:bg-red-900/30",      icon: <XCircle className="h-3.5 w-3.5 text-red-600" /> },
+  cobrada: { label: "Cobrada", color: "text-success-on-subtle",     bg: "bg-success-subtle",     icon: <CheckCircle2 className="h-3.5 w-3.5 text-success-on-subtle" /> },
+  vigente: { label: "Vigente", color: "text-info-on-subtle",        bg: "bg-info-subtle",         icon: <Clock className="h-3.5 w-3.5 text-info-on-subtle" /> },
+  vencida: { label: "Vencida", color: "text-warning-on-subtle",     bg: "bg-warning-subtle",      icon: <AlertTriangle className="h-3.5 w-3.5 text-warning-on-subtle" /> },
+  en_mora: { label: "En Mora", color: "text-destructive-on-subtle", bg: "bg-destructive-subtle",  icon: <XCircle className="h-3.5 w-3.5 text-destructive-on-subtle" /> },
 };
 
 function StatusBadge({ status }: { status: ReportStatus }) {
   const m = STATUS_META[status];
   return (
-    <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${m.bg} ${m.color}`}>
+    <Badge variant="outline" className="text-xs gap-1">
       {m.icon}{m.label}
-    </span>
+    </Badge>
   );
 }
 
@@ -109,7 +109,7 @@ function KpiCard({ label, value, sub, trend, icon }: { label: string; value: str
             <p className="text-xl font-bold text-foreground">{value}</p>
             {sub && <p className="text-xs text-muted-foreground">{sub}</p>}
             {trend !== undefined && (
-              <div className={`flex items-center gap-1 text-xs font-medium ${trend >= 0 ? "text-green-600" : "text-red-500"}`}>
+              <div className={`flex items-center gap-1 text-xs font-medium ${trend >= 0 ? "text-success-on-subtle" : "text-destructive"}`}>
                 {trend >= 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
                 {trend >= 0 ? "+" : ""}{trend}% vs período anterior
               </div>
@@ -174,7 +174,7 @@ export function FactoringPortfolioReport() {
     >
       <div className="flex items-center gap-1">
         {children}
-        {sortCol === col && <span className="text-[10px] text-primary">{sortDir === "asc" ? "↑" : "↓"}</span>}
+        {sortCol === col && <span className="text-xs text-primary">{sortDir === "asc" ? "↑" : "↓"}</span>}
       </div>
     </TableHead>
   );
@@ -214,7 +214,6 @@ export function FactoringPortfolioReport() {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem className="gap-2"><FileText className="h-4 w-4" /> Exportar Excel (.xlsx)</DropdownMenuItem>
               <DropdownMenuItem className="gap-2"><FileText className="h-4 w-4" /> Exportar CSV</DropdownMenuItem>
               <DropdownMenuItem className="gap-2"><Printer className="h-4 w-4" /> Imprimir reporte</DropdownMenuItem>
             </DropdownMenuContent>
@@ -307,7 +306,6 @@ export function FactoringPortfolioReport() {
               const count = MOCK_RECORDS.filter(r => r.status === s).length;
               const pct = Math.round((count / MOCK_RECORDS.length) * 100);
               const val = MOCK_RECORDS.filter(r => r.status === s).reduce((a, r) => a + r.nominal, 0);
-              const meta = STATUS_META[s];
               return (
                 <div key={s} className="space-y-2">
                   <div className="flex items-center justify-between">
@@ -333,7 +331,7 @@ export function FactoringPortfolioReport() {
             <CardTitle className="text-sm font-semibold flex items-center gap-2">
               <Filter className="h-4 w-4 text-muted-foreground" />
               Detalle de Operaciones
-              <Badge variant="secondary" className="text-xs font-normal ml-1">{filtered.length} registros</Badge>
+              <Badge variant="outline" className="text-xs font-normal ml-1">{filtered.length} registros</Badge>
             </CardTitle>
             <div className="flex items-center gap-2">
               <Select value={statusFilter} onValueChange={setStatusFilter}>
@@ -376,22 +374,22 @@ export function FactoringPortfolioReport() {
             <TableBody>
               {paginated.map(r => (
                 <TableRow key={r.id} className="text-xs hover:bg-muted/40">
-                  <TableCell className="font-mono text-[11px] text-primary font-medium">{r.folio}</TableCell>
+                  <TableCell className="font-mono text-xs text-primary font-medium">{r.folio}</TableCell>
                   <TableCell className="max-w-[140px] truncate font-medium">{r.cedente}</TableCell>
                   <TableCell className="max-w-[140px] truncate text-muted-foreground">{r.deudor}</TableCell>
                   <TableCell>
-                    <span className="rounded-full bg-muted px-2 py-0.5 text-[10px]">{r.sector}</span>
+                    <Badge variant="outline" className="text-xs">{r.sector}</Badge>
                   </TableCell>
                   <TableCell className="text-muted-foreground">{r.fechaDesembolso}</TableCell>
                   <TableCell className="text-muted-foreground">{r.fechaVencimiento}</TableCell>
                   <TableCell className="font-medium">{COP.format(r.nominal)}</TableCell>
                   <TableCell className="text-right">{r.tasa.toFixed(1)}% MV</TableCell>
-                  <TableCell className="text-right text-green-700 font-medium">{COP.format(r.descuento)}</TableCell>
+                  <TableCell className="text-right text-success-on-subtle font-medium">{COP.format(r.descuento)}</TableCell>
                   <TableCell>
                     <div className="flex items-center gap-1">
                       <StatusBadge status={r.status} />
                       {r.diasMora && (
-                        <span className="text-[10px] text-red-600 font-medium">+{r.diasMora}d</span>
+                        <span className="text-xs text-destructive-on-subtle font-medium">+{r.diasMora}d</span>
                       )}
                     </div>
                   </TableCell>
@@ -403,7 +401,7 @@ export function FactoringPortfolioReport() {
         <div className="flex items-center justify-between px-4 py-3 border-t border-border">
           <span className="text-xs text-muted-foreground">
             {filtered.length} operaciones · Total nominal: <strong className="text-foreground">{COP.format(summary.total)}</strong>
-            {" · "}Ingresos: <strong className="text-green-700">{COP.format(summary.descuento)}</strong>
+            {" · "}Ingresos: <strong className="text-success-on-subtle">{COP.format(summary.descuento)}</strong>
             {" · "}página {safePage} de {totalPages}
           </span>
           <div className="flex items-center gap-1">

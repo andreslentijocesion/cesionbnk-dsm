@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Tabs, TabsContent } from "../ui/tabs";
 import { Button } from "../ui/button";
 import { Progress } from "../ui/progress";
 import { Label } from "../ui/label";
@@ -173,7 +173,7 @@ export function MultiStepWizard() {
           {/* Step 3: Documents */}
           <TabsContent value="documents" className="space-y-4 mt-0">
             <div className="space-y-4">
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Please attach the following documents:
               </p>
               <div className="space-y-3">
@@ -254,14 +254,14 @@ export function MultiStepWizard() {
                       <span className="text-muted-foreground">
                         Documents:
                       </span>
-                      <Badge variant="secondary">3 files</Badge>
+                      <Badge variant="outline" className="text-xs">3 files</Badge>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-lg bg-muted p-4">
-                <p className="text-sm text-muted-foreground">
+                <p className="text-base text-muted-foreground">
                   By submitting this application, I confirm that all information
                   provided is accurate and I authorize the necessary
                   verifications.

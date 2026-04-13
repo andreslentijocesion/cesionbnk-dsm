@@ -14,7 +14,7 @@ import {
   LayoutGrid,
   Layers,
   Sparkles,
-  Palette,
+  Landmark,
   Home,
   Search,
   X,
@@ -23,6 +23,10 @@ import {
   Zap,
   Clapperboard,
   ImageIcon,
+  LayoutDashboard,
+  ScanEye,
+  History,
+  BookOpen,
   type LucideIcon,
 } from "lucide-react";
 import {
@@ -48,6 +52,7 @@ const SECTION_ICONS: Record<SectionId, LucideIcon> = {
   "data-display": Grid3x3,
   feedback:       MessageSquare,
   layout:         LayoutGrid,
+  factoring:      Landmark,
   patterns:       Layers,
   advanced:       Sparkles,
 };
@@ -56,12 +61,16 @@ const SECTION_ICONS: Record<SectionId, LucideIcon> = {
 const COMPONENT_SECTIONS: SectionId[] = [
   "actions", "forms", "navigation", "data-display", "feedback", "layout",
 ];
-const PATTERN_SECTIONS: SectionId[] = ["patterns", "advanced"];
+const PATTERN_SECTIONS: SectionId[] = ["factoring", "patterns", "advanced"];
 
 // ── Special standalone pages (not in registry nav items) ────────────────────
 const DESIGN_SYSTEM_PAGES: { id: PageId; label: string; icon: LucideIcon }[] = [
-  { id: "brand-layout",  label: "Brand Layout",  icon: Paintbrush },
-  { id: "design-tokens", label: "Design Tokens", icon: Scale },
+  { id: "dsm-dashboard",         label: "DSM Dashboard",       icon: LayoutDashboard },
+  { id: "dsm-visual-audit",      label: "Visual Audit",        icon: ScanEye },
+  { id: "component-guidelines",  label: "Usage Guidelines",    icon: BookOpen },
+  { id: "changelog",             label: "Changelog",           icon: History },
+  { id: "brand-layout",          label: "Brand Layout",        icon: Paintbrush },
+  { id: "design-tokens",         label: "Design Tokens",       icon: Scale },
 ];
 
 const RESOURCE_PAGES: { id: PageId; label: string; icon: LucideIcon }[] = [
@@ -189,15 +198,6 @@ export function DSMSidebarNav({ activePage, onPageChange }: DSMSidebarNavProps) 
         </LayoutSidebarGroup>
       ) : (
         <>
-          {/* DSM Dashboard */}
-          <LayoutSidebarItem
-            icon={Sparkles}
-            label="DSM Dashboard"
-            active={activePage === "dsm-dashboard"}
-            onClick={() => navigate("dsm-dashboard")}
-            collapsed={sidebarCollapsed}
-          />
-
           {/* Components */}
           <LayoutSidebarGroup label={sidebarCollapsed ? undefined : "Components"}>
             {renderSectionGroup(COMPONENT_SECTIONS)}
@@ -209,7 +209,7 @@ export function DSMSidebarNav({ activePage, onPageChange }: DSMSidebarNavProps) 
           </LayoutSidebarGroup>
 
           {/* Design System */}
-          <LayoutSidebarGroup label={sidebarCollapsed ? undefined : "Design System"}>
+          <LayoutSidebarGroup label={sidebarCollapsed ? undefined : "DSM & Resources"}>
             {DESIGN_SYSTEM_PAGES.map((page) => (
               <LayoutSidebarItem
                 key={String(page.id)}

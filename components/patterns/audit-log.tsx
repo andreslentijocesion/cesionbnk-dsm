@@ -49,15 +49,15 @@ interface AuditLogProps {
   className?: string;
 }
 
-const actionMeta: Record<AuditAction, { label: string; variant: "default" | "secondary" | "destructive" | "outline" }> = {
-  create:  { label: "Creó",     variant: "default" },
-  update:  { label: "Modificó", variant: "secondary" },
-  delete:  { label: "Eliminó",  variant: "destructive" },
-  approve: { label: "Aprobó",   variant: "default" },
-  reject:  { label: "Rechazó",  variant: "destructive" },
+const actionMeta: Record<AuditAction, { label: string; variant: "outline" }> = {
+  create:  { label: "Creó",     variant: "outline" },
+  update:  { label: "Modificó", variant: "outline" },
+  delete:  { label: "Eliminó",  variant: "outline" },
+  approve: { label: "Aprobó",   variant: "outline" },
+  reject:  { label: "Rechazó",  variant: "outline" },
   login:   { label: "Ingresó",  variant: "outline" },
   logout:  { label: "Salió",    variant: "outline" },
-  export:  { label: "Exportó",  variant: "secondary" },
+  export:  { label: "Exportó",  variant: "outline" },
   view:    { label: "Consultó", variant: "outline" },
 };
 
@@ -202,6 +202,7 @@ export function AuditLog({ entries, className }: AuditLogProps) {
           <div className="flex items-center gap-1">
             <Button
               variant="outline" size="icon" className="h-8 w-8"
+              aria-label="Página anterior"
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={safePage === 1}
             >
@@ -209,6 +210,7 @@ export function AuditLog({ entries, className }: AuditLogProps) {
             </Button>
             <Button
               variant="outline" size="icon" className="h-8 w-8"
+              aria-label="Página siguiente"
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={safePage === totalPages}
             >

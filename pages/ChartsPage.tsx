@@ -24,6 +24,14 @@ import {
   Legend,
 } from "recharts";
 
+// ── Tooltip Style ──
+const tooltipStyle = {
+  backgroundColor: "var(--card)",
+  border: "1px solid var(--border)",
+  borderRadius: "var(--radius)",
+  color: "var(--foreground)",
+};
+
 // ── Mock Data ──
 const lineData = [
   { month: "Ene", ingresos: 45000, gastos: 28000 },
@@ -146,12 +154,7 @@ export function ChartsPage() {
                     <XAxis dataKey="month" stroke="var(--muted-foreground)" fontSize={12} />
                     <YAxis stroke="var(--muted-foreground)" fontSize={12} />
                     <Tooltip
-                      contentStyle={{
-                        backgroundColor: "var(--card)",
-                        border: "1px solid var(--border)",
-                        borderRadius: "8px",
-                        color: "var(--foreground)",
-                      }}
+                      contentStyle={tooltipStyle}
                     />
                     <Legend />
                     <Line type="monotone" dataKey="ingresos" stroke="var(--primary)" strokeWidth={2} dot={{ r: 4 }} />
@@ -175,12 +178,7 @@ export function ChartsPage() {
                     <XAxis dataKey="name" stroke="var(--muted-foreground)" fontSize={12} />
                     <YAxis stroke="var(--muted-foreground)" fontSize={12} />
                     <Tooltip
-                      contentStyle={{
-                        backgroundColor: "var(--card)",
-                        border: "1px solid var(--border)",
-                        borderRadius: "8px",
-                        color: "var(--foreground)",
-                      }}
+                      contentStyle={tooltipStyle}
                     />
                     <Bar dataKey="value" fill="var(--primary)" radius={[4, 4, 0, 0]} />
                   </RechartsBarChart>
@@ -202,12 +200,7 @@ export function ChartsPage() {
                     <XAxis dataKey="date" stroke="var(--muted-foreground)" fontSize={12} />
                     <YAxis stroke="var(--muted-foreground)" fontSize={12} />
                     <Tooltip
-                      contentStyle={{
-                        backgroundColor: "var(--card)",
-                        border: "1px solid var(--border)",
-                        borderRadius: "8px",
-                        color: "var(--foreground)",
-                      }}
+                      contentStyle={tooltipStyle}
                     />
                     <Area type="monotone" dataKey="sessions" stackId="1" stroke="var(--primary)" fill="color-mix(in srgb, var(--primary) 20%, transparent)" />
                     <Area type="monotone" dataKey="users" stackId="2" stroke="var(--secondary)" fill="color-mix(in srgb, var(--secondary) 20%, transparent)" />
@@ -232,12 +225,7 @@ export function ChartsPage() {
                       ))}
                     </Pie>
                     <Tooltip
-                      contentStyle={{
-                        backgroundColor: "var(--card)",
-                        border: "1px solid var(--border)",
-                        borderRadius: "8px",
-                        color: "var(--foreground)",
-                      }}
+                      contentStyle={tooltipStyle}
                     />
                   </PieChart>
                 </SafeChartContainer>

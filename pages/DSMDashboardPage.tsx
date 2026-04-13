@@ -4,10 +4,11 @@ import { Badge } from "../components/ui/badge";
 import { Separator } from "../components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/collapsible";
-import { CheckCircle2, Code2, Sparkles, Layers, Palette, MousePointerClick, MessageSquare, Database, FileCode, Layout, TrendingUp, Award, BookOpen, Shield, GitBranch, Component, Box, Puzzle, LayoutTemplate, Calendar, Package, Wrench, AlertTriangle, Rocket, Zap, FileText, BarChart3, ChevronDown, ChevronRight, Eye, Keyboard, Accessibility as AccessibilityIcon, Paintbrush } from "lucide-react";
+import { CheckCircle2, Code2, Sparkles, Layers, Palette, MousePointerClick, MessageSquare, Database, FileCode, Layout, TrendingUp, Award, BookOpen, Shield, GitBranch, Component, Box, Puzzle, Calendar, Package, Wrench, AlertTriangle, Rocket, Zap, FileText, BarChart3, ChevronDown, ChevronRight, Eye, Keyboard, Accessibility as AccessibilityIcon, Paintbrush } from "lucide-react";
 import { Logo } from "../components/Logo";
 import { Progress } from "../components/ui/progress";
 import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ContrastDot } from "../components/ui/dynamic-previews";
 
 // ── Navigation helper ──
 function navigateTo(pageId: string) {
@@ -27,6 +28,82 @@ interface VersionEntry {
 }
 
 const versionHistory: VersionEntry[] = [
+  {
+    version: "0.4.0",
+    date: "April 10, 2026",
+    type: "Minor",
+    sections: [
+      {
+        icon: Shield,
+        title: "WCAG 2.1 AA — Lighthouse 100/100",
+        items: [
+          "**StatCard contrast fix**: `text-destructive` → `text-destructive-on-subtle` (3.76:1 → ≥4.5:1) en trend 'down' y variante destructive.",
+          "**Props table headers**: Eliminada opacidad `/50` en `text-muted-foreground` (2.28:1 → ≥4.5:1) en ComponentShowcase.",
+          "**Code tags**: `bg-secondary` → `bg-muted text-foreground` (3.82:1 → ≥7:1) en props tables.",
+          "**CardTitle semántico**: `h4` → `h3` global en card.tsx — elimina axe-core 'heading-order' warning.",
+          "**Progress aria-labels**: Añadidos en HomePage y DSMDashboardPage para 5 barras sin descripción.",
+        ],
+      },
+      {
+        icon: Paintbrush,
+        title: "Dark Mode — Mejoras sistémicas",
+        items: [
+          "**--primary**: `#d1d5db` → `#9ca3af` (Gray-400) — contraste legible sobre superficies oscuras.",
+          "**--border**: `#27272a` → `#3f3f46` (Zinc-700) — borde visible entre card y background.",
+          "**Subtle backgrounds**: `*-subtle` tokens → Tailwind `*-900` shades (más perceptibles en dark).",
+          "**Shadows**: Añadido white ring `rgba(255,255,255,0.05–0.08)` + mayor opacidad — cards tienen definición.",
+        ],
+      },
+      {
+        icon: Layout,
+        title: "Sidebar — Restructura de navegación",
+        items: [
+          "**Sheet, Drawer, Bottom Sheet**: Movidos de Feedback → Layout (taxonomía correcta).",
+          "**Patterns**: 22 items ordenados alfabéticamente.",
+          "**DSM & Resources group**: DSM Dashboard, Visual Audit, Usage Guidelines, Changelog, Brand Layout, Design Tokens — todos accesibles.",
+          "**Visual Audit + Changelog**: Eran páginas huérfanas sin entrada en sidebar — ahora navegables.",
+        ],
+      },
+      {
+        icon: Layers,
+        title: "Design Tokens — Nuevas categorías",
+        items: [
+          "**Motion tokens**: `--duration-instant/fast/base/slow/slower/lazy` + `--ease-default/in/out/spring/linear` en config.css.",
+          "**Spacing tokens**: `--space-1` a `--space-24` con base 4px grid.",
+          "**DesignTokensPage**: 3 tabs nuevos — Spacing (visual bar chart), Motion (live demos), Breakpoints (responsive patterns).",
+        ],
+      },
+      {
+        icon: BookOpen,
+        title: "Component Guidelines — Nueva página",
+        items: [
+          "**10 secciones**: Overlays, Feedback, Tablas, Form Controls, Buttons, Badges, Factoring Patterns, Charts, Print/PDF, Error States.",
+          "**Decision tables**: Cuándo usar Dialog vs Sheet vs Drawer vs Popover, cuándo usar qué chart, jerarquía de errores.",
+          "**Do/Don't cards**: Para los 20+ patrones de decisión más frecuentes en CesionBNK.",
+          "Accesible desde sidebar: DSM & Resources → Usage Guidelines.",
+        ],
+      },
+      {
+        icon: FileText,
+        title: "Print / PDF Styles — @media print",
+        items: [
+          "**styles/print.css**: Hides sidebar/nav/toolbars, full-width main content, tablas con thead que se repite por página.",
+          "**Utility classes**: `.no-print`, `.print-only`, `.print-break-before/after/inside-avoid`, `.print-landscape`.",
+          "**Factoring hooks**: `.factoring-portfolio-section`, `.approval-step`, `.risk-score-bar` con print-color-adjust.",
+          "**Badge colors preserved**: `print-color-adjust: exact` para success/destructive/warning/info.",
+        ],
+      },
+      {
+        icon: Package,
+        title: "lib/index.ts — Exports completos",
+        items: [
+          "**AspectRatio**: Exportado desde aspect-ratio.tsx.",
+          "**Chart primitives**: `ChartContainer`, `ChartTooltip`, `ChartTooltipContent`, `ChartLegend`, `ChartLegendContent`, `ChartStyle`, `ChartConfig`.",
+          "**Skeleton variants**: `SkeletonTable`, `SkeletonCard`, `SkeletonCardGrid`, `SkeletonForm`, `SkeletonList`, `SkeletonDashboard`, `SkeletonKpiCard`, `SkeletonKpiCardGroup`, `SkeletonProfile`.",
+        ],
+      },
+    ],
+  },
   {
     version: "6.5.1",
     date: "February 19, 2026",
@@ -457,7 +534,7 @@ function VersionCard({ entry, defaultOpen = false }: { entry: VersionEntry; defa
               <div key={sIdx}>
                 <div className="flex items-center gap-2 mb-2">
                   <section.icon className={`h-4 w-4 ${section.title.includes("Breaking") ? "text-destructive" : "text-primary"}`} />
-                  <h4 className="text-sm text-foreground">{section.title}</h4>
+                  <h3 className="text-sm text-foreground">{section.title}</h3>
                 </div>
                 <ul className="space-y-1 ml-6">
                   {section.items.map((item, iIdx) => (
@@ -483,58 +560,47 @@ function DSMDashboardContent() {
       name: "Core UI",
       path: "/components/ui/",
       icon: Component,
-      count: 65,
+      count: 74,
       color: "text-primary",
       bgColor: "bg-muted",
       borderColor: "border-border",
-      description: "Shadcn/ui base + extended — Button, Input, Card, Dialog, Tabs, BottomSheet, CodeBlock, etc.",
-    },
-    {
-      name: "Advanced",
-      path: "/components/advanced/",
-      icon: Puzzle,
-      count: 19,
-      color: "text-yellow-500",
-      bgColor: "bg-yellow-500/10",
-      borderColor: "border-yellow-500/30",
-      description: "Charts, DataTable, FormBuilder, TreeTableV2, FileUploader, VirtualizedList.",
+      description: "Shadcn/ui base + extended — Button, Input, Card, Dialog, Tabs, BottomSheet, Badge, Skeleton, etc.",
     },
     {
       name: "Patterns",
       path: "/components/patterns/",
       icon: Box,
-      count: 16,
+      count: 38,
       color: "text-blue-500",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/30",
-      description: "StatsDashboard, NotificationCenter, MultiStepWizard.",
+      description: "ApprovalFlow, AuditLog, CreditScoreCard, DataTableAdvanced, FactoringDashboard, MultiStepWizard, StatCard, etc.",
     },
     {
-      name: "Widgets",
-      path: "/components/widgets/",
-      icon: LayoutTemplate,
-      count: 15,
-      color: "text-purple-500",
-      bgColor: "bg-purple-500/10",
-      borderColor: "border-purple-500/30",
-      description: "Atomic pieces — StatCard, FilterBar, SearchBar, NavigationBar.",
+      name: "Advanced",
+      path: "/components/advanced/",
+      icon: Puzzle,
+      count: 18,
+      color: "text-yellow-500",
+      bgColor: "bg-yellow-500/10",
+      borderColor: "border-yellow-500/30",
+      description: "Charts, MasterDataGrid, FormBuilder, FunnelChart, Heatmap, TreeTable, StepIndicator, FileUploader.",
     },
   ];
 
   const totalComponents = architectureLayers.reduce((s, l) => s + l.count, 0);
 
-  // ── Category Breakdown ──
+  // ── Category Breakdown (from registry.ts — source of truth) ──
   const categories = [
-    { name: "Actions", icon: MousePointerClick, count: 5, color: "text-blue-500", bgColor: "bg-blue-500/10", pageId: "button" },
-    { name: "Forms", icon: FileCode, count: 17, color: "text-green-500", bgColor: "bg-green-500/10", pageId: "input" },
-    { name: "Navigation", icon: Layers, count: 7, color: "text-purple-500", bgColor: "bg-purple-500/10", pageId: "tabs" },
-    { name: "Data Display", icon: Database, count: 6, color: "text-orange-500", bgColor: "bg-orange-500/10", pageId: "table" },
-    { name: "Feedback", icon: MessageSquare, count: 15, color: "text-pink-500", bgColor: "bg-pink-500/10", pageId: "alert" },
-    { name: "Layout", icon: Layout, count: 6, color: "text-indigo-500", bgColor: "bg-indigo-500/10", pageId: "accordion" },
-    { name: "Patterns", icon: TrendingUp, count: 10, color: "text-cyan-500", bgColor: "bg-cyan-500/10", pageId: "stats-dashboard" },
-    { name: "Advanced", icon: Sparkles, count: 11, color: "text-yellow-500", bgColor: "bg-yellow-500/10", pageId: "charts" },
-    { name: "Business", icon: Award, count: 7, color: "text-emerald-500", bgColor: "bg-emerald-500/10", pageId: "cf-dashboard" },
-    { name: "Widgets", icon: BookOpen, count: 15, color: "text-rose-500", bgColor: "bg-rose-500/10", pageId: "widgets-library" },
+    { name: "Actions",      icon: MousePointerClick, count: 5,  color: "text-blue-500",   bgColor: "bg-blue-500/10",   pageId: "button"             },
+    { name: "Forms",        icon: FileCode,          count: 23, color: "text-success",     bgColor: "bg-success/10",    pageId: "input"              },
+    { name: "Navigation",   icon: Layers,            count: 8,  color: "text-purple-500",  bgColor: "bg-purple-500/10", pageId: "tabs"               },
+    { name: "Data Display", icon: Database,          count: 6,  color: "text-orange-500",  bgColor: "bg-orange-500/10", pageId: "table"              },
+    { name: "Feedback",     icon: MessageSquare,     count: 13, color: "text-pink-500",    bgColor: "bg-pink-500/10",   pageId: "alert"              },
+    { name: "Layout",       icon: Layout,            count: 9,  color: "text-indigo-500",  bgColor: "bg-indigo-500/10", pageId: "accordion"          },
+    { name: "Factoring",    icon: Award,             count: 12, color: "text-emerald-500", bgColor: "bg-emerald-500/10",pageId: "factoring-dashboard"},
+    { name: "Patterns",     icon: TrendingUp,        count: 22, color: "text-cyan-500",    bgColor: "bg-cyan-500/10",   pageId: "data-table-advanced"},
+    { name: "Advanced",     icon: Sparkles,          count: 6,  color: "text-yellow-500",  bgColor: "bg-yellow-500/10", pageId: "charts"             },
   ];
 
   return (
@@ -553,10 +619,10 @@ function DSMDashboardContent() {
         <div className="flex items-center gap-2">
           <Badge variant="default" className="gap-1.5">
             <GitBranch className="h-3 w-3" />
-            v6.5.1
+            v0.4.0
           </Badge>
           <Badge variant="outline" className="gap-1.5 text-muted-foreground">
-            Feb 19, 2026
+            Apr 10, 2026
           </Badge>
         </div>
       </div>
@@ -580,7 +646,7 @@ function DSMDashboardContent() {
               <span className="text-xs text-muted-foreground">Showcase Pages</span>
               <FileText className="h-4 w-4 text-blue-500" />
             </div>
-            <div className="text-2xl text-foreground">93</div>
+            <div className="text-2xl text-foreground">128</div>
           </CardContent>
         </Card>
         <Card>
@@ -596,9 +662,9 @@ function DSMDashboardContent() {
           <CardContent className="pt-5 pb-4 px-5">
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs text-muted-foreground">WCAG 2.1 AA</span>
-              <Shield className="h-4 w-4 text-green-500" />
+              <Shield className="h-4 w-4 text-success" />
             </div>
-            <div className="text-2xl text-foreground">98%</div>
+            <div className="text-2xl text-foreground">100%</div>
           </CardContent>
         </Card>
       </div>
@@ -697,10 +763,9 @@ function DSMDashboardContent() {
                   <CardContent>
                     <ul className="space-y-2">
                       {[
-                        { label: "Core Components", count: 65 },
-                        { label: "Advanced Components", count: 19 },
-                        { label: "Business Patterns", count: 16 },
-                        { label: "Widgets", count: 15 },
+                        { label: "Core UI (/components/ui/)",       count: 74 },
+                        { label: "Patterns (/components/patterns/)", count: 38 },
+                        { label: "Advanced (/components/advanced/)", count: 18 },
                       ].map((row) => (
                         <li key={row.label} className="flex justify-between text-sm">
                           <span className="text-muted-foreground">{row.label}</span>
@@ -729,13 +794,13 @@ function DSMDashboardContent() {
                         { label: "Props Coverage", value: "100%" },
                         { label: "Doc Coverage", value: "100%" },
                         { label: "TS Strictness", value: "100%" },
-                        { label: "Accessibility", value: "98%" },
+                        { label: "Accessibility (WCAG AA)", value: "100%" },
                         { label: "Responsive", value: "100%" },
                         { label: "Dark Mode", value: "100%" },
                       ].map((row) => (
                         <li key={row.label} className="flex justify-between text-sm">
                           <span className="text-muted-foreground">{row.label}</span>
-                          <span className="text-green-600">{row.value}</span>
+                          <span className="text-success-on-subtle">{row.value}</span>
                         </li>
                       ))}
                     </ul>
@@ -750,31 +815,40 @@ function DSMDashboardContent() {
                 <CardContent className="pt-6">
                   <div className="relative border-l border-primary/20 ml-4 space-y-8 py-2">
                     <div className="relative pl-8">
-                      <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background" />
-                      <div className="mb-1 text-sm text-primary">Current</div>
-                      <h3 className="text-foreground">Performance Optimization</h3>
+                      <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-success bg-background" />
+                      <div className="mb-1 text-sm text-success">Completado — v0.4.0</div>
+                      <h3 className="text-foreground">Storybook Stories</h3>
                       <p className="text-sm text-muted-foreground mb-2">
-                        Bundle splitting, lazy loading, and tree-shaking optimization.
+                        Stories para todos los componentes UI core — variants, estados y comportamientos documentados.
+                      </p>
+                      <Badge variant="success-soft">Done</Badge>
+                    </div>
+                    <div className="relative pl-8">
+                      <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background" />
+                      <div className="mb-1 text-sm text-primary">Q2 2026</div>
+                      <h3 className="text-foreground">Figma Plugin Sync</h3>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Sincronización bidireccional Figma ↔ React mediante component-map.json y motion/spacing tokens.
                       </p>
                       <Badge variant="outline">In Progress</Badge>
                     </div>
                     <div className="relative pl-8">
                       <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-muted-foreground bg-background" />
-                      <div className="mb-1 text-sm text-muted-foreground">Q2 2026</div>
-                      <h3 className="text-foreground">Mobile Components</h3>
+                      <div className="mb-1 text-sm text-muted-foreground">Q3 2026</div>
+                      <h3 className="text-foreground">Performance Optimization</h3>
                       <p className="text-sm text-muted-foreground mb-2">
-                        Touch-optimized components and responsive patterns.
+                        Bundle splitting, lazy loading y tree-shaking. Target: First Load JS &lt; 150kB.
                       </p>
-                      <Badge variant="secondary">Planned</Badge>
+                      <Badge variant="neutral-soft-outline">Planned</Badge>
                     </div>
                     <div className="relative pl-8">
                       <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-muted-foreground bg-background" />
                       <div className="mb-1 text-sm text-muted-foreground">Q3 2026</div>
-                      <h3 className="text-foreground">Multi-theme Engine</h3>
+                      <h3 className="text-foreground">Mobile-first Patterns</h3>
                       <p className="text-sm text-muted-foreground mb-2">
-                        Dynamic theme switching with custom brand presets.
+                        Componentes táctiles optimizados — BottomSheet, SwipeActions, MobilePagination.
                       </p>
-                      <Badge variant="secondary">Planned</Badge>
+                      <Badge variant="neutral-soft-outline">Planned</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -786,18 +860,18 @@ function DSMDashboardContent() {
         {/* WCAG Accessibility */}
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <AccessibilityIcon className="h-5 w-5 text-green-500" />
+            <AccessibilityIcon className="h-5 w-5 text-success" />
             <h2 className="text-lg text-foreground">WCAG 2.1 Compliance</h2>
-            <Badge className="bg-green-500 text-white">AA</Badge>
+            <Badge variant="success-soft-outline">AA</Badge>
           </div>
 
           {/* Score Cards */}
           <div className="grid grid-cols-3 gap-3 mb-5">
-            <Card className="border-green-500/20 bg-green-50 dark:bg-green-950">
+            <Card className="border-success/20 bg-success-subtle dark:bg-success/10">
               <CardContent className="pt-4 pb-3 px-4">
                 <div className="text-xs text-muted-foreground mb-1">Overall Score</div>
-                <div className="text-2xl text-green-500 mb-1.5">98%</div>
-                <Progress value={98} className="h-1.5" />
+                <div className="text-2xl text-success mb-1.5">100%</div>
+                <Progress value={100} className="h-1.5" aria-label="Overall score" />
               </CardContent>
             </Card>
             <Card>
@@ -811,7 +885,7 @@ function DSMDashboardContent() {
               <CardContent className="pt-4 pb-3 px-4">
                 <div className="text-xs text-muted-foreground mb-1">Conformance</div>
                 <div className="flex items-center gap-1.5 mb-1.5">
-                  <CheckCircle2 className="h-5 w-5 text-green-500" />
+                  <CheckCircle2 className="h-5 w-5 text-success" />
                   <span className="text-lg text-foreground">WCAG 2.1</span>
                 </div>
                 <p className="text-xs text-muted-foreground">Level AA</p>
@@ -875,9 +949,9 @@ function DSMDashboardContent() {
                     <CardContent>
                       <div className="space-y-1.5">
                         {group.items.map((item) => (
-                          <div key={item.id} className="flex items-center justify-between py-1.5 px-2 rounded bg-green-50 dark:bg-green-950">
+                          <div key={item.id} className="flex items-center justify-between py-1.5 px-2 rounded bg-success-subtle dark:bg-success/10">
                             <div className="flex items-center gap-2">
-                              <CheckCircle2 className="h-3.5 w-3.5 text-green-500 shrink-0" />
+                              <CheckCircle2 className="h-3.5 w-3.5 text-success shrink-0" />
                               <span className="text-xs text-muted-foreground">{item.id}</span>
                               <span className="text-sm text-foreground">{item.name}</span>
                             </div>
@@ -926,7 +1000,7 @@ function DSMDashboardContent() {
                       <div className="space-y-1.5">
                         {feature.items.map((item) => (
                           <div key={item} className="flex items-center gap-2 py-1">
-                            <CheckCircle2 className="h-3.5 w-3.5 text-green-500 shrink-0" />
+                            <CheckCircle2 className="h-3.5 w-3.5 text-success shrink-0" />
                             <span className="text-sm text-muted-foreground">{item}</span>
                           </div>
                         ))}
@@ -954,15 +1028,15 @@ function DSMDashboardContent() {
                       <div key={c.name} className="flex items-center justify-between p-3 border rounded-lg">
                         <div className="flex items-center gap-3">
                           <div className="flex items-center gap-1.5">
-                            <div className="w-5 h-5 rounded border" style={{ backgroundColor: c.fg }} />
+                            <ContrastDot className="w-5 h-5 rounded border" color={c.fg} />
                             <span className="text-xs text-muted-foreground">on</span>
-                            <div className="w-5 h-5 rounded border" style={{ backgroundColor: c.bg }} />
+                            <ContrastDot className="w-5 h-5 rounded border" color={c.bg} />
                           </div>
                           <span className="text-sm text-foreground">{c.name}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="text-sm text-foreground">{c.ratio}</span>
-                          <Badge className="bg-green-500 text-white text-[10px] px-1.5 py-0">{c.level}</Badge>
+                          <Badge variant="success-soft">{c.level}</Badge>
                         </div>
                       </div>
                     ))}

@@ -45,7 +45,7 @@ export function TablePage() {
             <TableBody>
               {invoices.slice(0, 5).map((invoice) => (
                 <TableRow key={invoice.id}>
-                  <TableCell className="font-medium">{invoice.id}</TableCell>
+                  <TableCell className="font-medium font-mono tabular-nums">{invoice.id}</TableCell>
                   <TableCell>
                     <Badge 
                       variant={
@@ -58,7 +58,7 @@ export function TablePage() {
                     </Badge>
                   </TableCell>
                   <TableCell>{invoice.method}</TableCell>
-                  <TableCell className="text-right">{invoice.amount}</TableCell>
+                  <TableCell className="text-right font-mono tabular-nums">{invoice.amount}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -133,20 +133,20 @@ export function TableDemo() {
                 <TableBody>
                   {invoices.slice(0, 5).map((invoice) => (
                     <TableRow key={invoice.id}>
-                      <TableCell className="font-medium">{invoice.id}</TableCell>
+                      <TableCell className="font-medium font-mono tabular-nums">{invoice.id}</TableCell>
                       <TableCell>
                         <Badge variant={invoice.status === "Paid" ? "success-soft-outline" : invoice.status === "Pending" ? "warning-soft-outline" : "destructive-soft-outline"}>
                           {invoice.status}
                         </Badge>
                       </TableCell>
-                      <TableCell className="text-right">{invoice.amount}</TableCell>
+                      <TableCell className="text-right font-mono tabular-nums">{invoice.amount}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
                 <TableFooter>
                   <TableRow>
                     <TableCell colSpan={2}>Total</TableCell>
-                    <TableCell className="text-right">$1,750.00</TableCell>
+                    <TableCell className="text-right font-mono tabular-nums">$1,750.00</TableCell>
                   </TableRow>
                 </TableFooter>
               </Table>

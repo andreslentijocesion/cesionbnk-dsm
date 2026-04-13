@@ -66,7 +66,7 @@ function SettingsPanelDemo() {
         <div className="mt-1 rounded-lg border bg-muted p-4 space-y-3">
           <div className="flex items-center justify-between text-sm">
             <span className="text-muted-foreground">Auto-approve threshold</span>
-            <Badge variant="secondary">COP 5,000,000</Badge>
+            <Badge variant="neutral-soft-outline">COP 5,000,000</Badge>
           </div>
           <div className="flex items-center justify-between text-sm">
             <span className="text-muted-foreground">Risk tolerance</span>
@@ -118,7 +118,7 @@ function MultiSectionDemo() {
               <span className="flex items-center gap-2">
                 <Icon className="h-4 w-4 text-muted-foreground" />
                 {label}
-                <Badge variant="secondary" className="ml-1">{count}</Badge>
+                <Badge variant="neutral" className="ml-1">{count}</Badge>
               </span>
               <Plus
                 className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${

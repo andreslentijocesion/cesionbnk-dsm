@@ -4,13 +4,11 @@
  * @layer patterns
  */
 import { useState } from "react";
-import { Send, Lock, Globe, MoreHorizontal, Reply, Trash2 } from "lucide-react";
+import { Send, Lock, Globe, Reply, Trash2 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { Textarea } from "../ui/textarea";
-import {
-  DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+
 import { cn } from "../ui/utils";
 
 export type CommentVisibility = "internal" | "public";
@@ -43,7 +41,7 @@ export interface CommentThreadProps {
 function Avatar({ initials, className }: { initials: string; className?: string }) {
   return (
     <div className={cn(
-      "flex-shrink-0 h-7 w-7 rounded-full bg-primary/10 flex items-center justify-center text-[10px] font-bold text-primary",
+      "flex-shrink-0 h-7 w-7 rounded-full bg-primary/10 flex items-center justify-center text-2xs font-bold text-primary",
       className
     )}>
       {initials}
@@ -198,26 +196,26 @@ function CommentItem({
 
   return (
     <div className="flex gap-2.5 group">
-      <Avatar initials={comment.initials} className={isReply ? "h-6 w-6 text-[9px]" : undefined} />
+      <Avatar initials={comment.initials} className={isReply ? "h-6 w-6 text-2xs" : undefined} />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap mb-1">
           <span className="text-xs font-semibold text-foreground">{comment.author}</span>
           {comment.visibility === "internal" && (
-            <Badge variant="secondary" className="text-[10px] py-0 h-4 gap-0.5">
+            <Badge variant="outline" className="text-xs">
               <Lock className="h-2.5 w-2.5" /> Interno
             </Badge>
           )}
           {comment.replyToAuthor && (
-            <span className="text-[10px] text-muted-foreground">→ {comment.replyToAuthor}</span>
+            <span className="text-xs text-muted-foreground">→ {comment.replyToAuthor}</span>
           )}
-          <span className="text-[10px] text-muted-foreground ml-auto">{comment.timestamp}</span>
+          <span className="text-xs text-muted-foreground ml-auto">{comment.timestamp}</span>
         </div>
         <p className="text-sm text-foreground leading-relaxed whitespace-pre-wrap">{comment.content}</p>
         <div className="flex items-center gap-2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
           {onReply && !isReply && (
             <button
               onClick={onReply}
-              className="flex items-center gap-1 text-[11px] text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               <Reply className="h-3 w-3" /> Responder
             </button>
@@ -225,7 +223,7 @@ function CommentItem({
           {isOwn && onDelete && (
             <button
               onClick={() => onDelete(comment.id)}
-              className="flex items-center gap-1 text-[11px] text-muted-foreground hover:text-destructive transition-colors"
+              className="flex items-center gap-1 text-xs text-muted-foreground hover:text-destructive transition-colors"
             >
               <Trash2 className="h-3 w-3" /> Eliminar
             </button>

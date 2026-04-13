@@ -20,17 +20,17 @@
 
   /* Surfaces */
   --background: #ffffff;
-  --foreground: #222222;
+  --foreground: #3f3f46;
   --card: #ffffff;
-  --card-foreground: #222222;
+  --card-foreground: #3f3f46;
   --popover: #ffffff;
-  --popover-foreground: #222222;
+  --popover-foreground: #3f3f46;
 
   /* Neutral */
   --muted: #f4f4f5;
   --muted-foreground: #52525b;
   --accent: #f4f4f5;
-  --accent-foreground: #222222;
+  --accent-foreground: #3f3f46;
 
   /* Semantic */
   --destructive: #ef4444;
@@ -39,6 +39,8 @@
   --success-foreground: #ffffff;
   --warning: #f59e0b;
   --warning-foreground: #ffffff;
+  --caution: #f97316;
+  --caution-foreground: #ffffff;
   --info: #3b82f6;
   --info-foreground: #ffffff;
 
@@ -46,11 +48,13 @@
   --success-subtle: #f0fdf4;
   --destructive-subtle: #fef2f2;
   --warning-subtle: #fef3c7;
+  --caution-subtle: #fff7ed;
   --info-subtle: #eff6ff;
   --secondary-subtle: #ede9fe;
   --success-on-subtle: #15803d;
   --destructive-on-subtle: #b91c1c;
   --warning-on-subtle: #b45309;
+  --caution-on-subtle: #c2410c;
   --info-on-subtle: #1d4ed8;
   --secondary-on-subtle: #7c3aed;
 
@@ -77,11 +81,11 @@
 
   /* Sidebar */
   --sidebar:                    oklch(0.985 0 0);
-  --sidebar-foreground:         #222222;
-  --sidebar-primary:            #222222;
+  --sidebar-foreground:         #3f3f46;
+  --sidebar-primary:            #3f3f46;
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent:             oklch(0.97 0 0);
-  --sidebar-accent-foreground:  #222222;
+  --sidebar-accent-foreground:  #3f3f46;
   --sidebar-border:             oklch(0.922 0 0);
   --sidebar-ring:               oklch(0.708 0 0);
 
@@ -100,10 +104,10 @@
   --kpi-lime-bg:                #f7fee7;
 
   /* Shadows */
-  --shadow-elevation-1:         0 1px 2px 0 rgba(34, 34, 34, 0.05);
-  --shadow-elevation-2:         0 4px 6px -1px rgba(34, 34, 34, 0.1), 0 2px 4px -2px rgba(34, 34, 34, 0.1);
-  --shadow-elevation-3:         0 10px 15px -3px rgba(34, 34, 34, 0.1), 0 4px 6px -4px rgba(34, 34, 34, 0.1);
-  --shadow-elevation-4:         0 20px 25px -5px rgba(34, 34, 34, 0.1), 0 8px 10px -6px rgba(34, 34, 34, 0.1);
+  --shadow-elevation-1:         0 1px 2px 0 rgba(63, 63, 70, 0.05);
+  --shadow-elevation-2:         0 4px 6px -1px rgba(63, 63, 70, 0.1), 0 2px 4px -2px rgba(63, 63, 70, 0.1);
+  --shadow-elevation-3:         0 10px 15px -3px rgba(63, 63, 70, 0.1), 0 4px 6px -4px rgba(63, 63, 70, 0.1);
+  --shadow-elevation-4:         0 20px 25px -5px rgba(63, 63, 70, 0.1), 0 8px 10px -6px rgba(63, 63, 70, 0.1);
 
   /* Gradient (Login / Módulos background) */
   --gradient-from:              #E5E7EB;
@@ -117,18 +121,18 @@
 /* ── Dark Mode ── */
 .dark {
   /* [TOKENS:DARK:START] */
-  /* Brand */
-  --primary: #d1d5db;
+  /* Brand — Gray-400 mantiene identidad slate/zinc pero visible en dark */
+  --primary: #9ca3af;
   --primary-foreground: #09090b;
   --secondary: #796eff;
-  --secondary-foreground: #09090b;
+  --secondary-foreground: #ffffff;
 
   /* Surfaces */
   --background: #09090b;
   --foreground: #fafafa;
-  --card: #09090b;
+  --card: #18181b;
   --card-foreground: #fafafa;
-  --popover: #18181b;
+  --popover: #27272a;
   --popover-foreground: #fafafa;
 
   /* Neutral */
@@ -144,27 +148,31 @@
   --success-foreground: #052e16;
   --warning: #f59e0b;
   --warning-foreground: #1c1917;
+  --caution: #f97316;
+  --caution-foreground: #1c1917;
   --info: #3b82f6;
   --info-foreground: #172554;
 
-  /* Semantic subtle (soft backgrounds) */
-  --success-subtle: #052e16;
-  --destructive-subtle: #450a0a;
-  --warning-subtle: #451a03;
-  --info-subtle: #172554;
-  --secondary-subtle: #2e1065;
+  /* Semantic subtle — perceptibles en dark (Tailwind *-900) */
+  --success-subtle: #14532d;
+  --destructive-subtle: #7f1d1d;
+  --warning-subtle: #78350f;
+  --caution-subtle: #7c2d12;
+  --info-subtle: #1e3a8a;
+  --secondary-subtle: #3b0764;
   --success-on-subtle: #4ade80;
   --destructive-on-subtle: #f87171;
   --warning-on-subtle: #fbbf24;
+  --caution-on-subtle: #fb923c;
   --info-on-subtle: #93c5fd;
   --secondary-on-subtle: #c4b5fd;
 
   /* UI */
-  --switch-background: #475569;
-  --input-background: #334155;
+  --switch-background: #52525b;
+  --input-background: #27272a;
 
-  /* Forms */
-  --border: #27272a;
+  /* Forms — border diferenciado de muted para que cards y inputs sean visibles */
+  --border: #3f3f46;
   --input: #27272a;
   --ring: #d1d5db;
 /* [TOKENS:DARK:END] */
@@ -191,20 +199,20 @@
   --chart-5:                    oklch(0.645 0.246 16.439);
 
   /* Sidebar */
-  --sidebar:                    #1e293b;
-  --sidebar-foreground:         #f8fafc;
-  --sidebar-primary:            #4F46E5;
+  --sidebar:                    #18181b;
+  --sidebar-foreground:         #fafafa;
+  --sidebar-primary:            #796eff;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent:             #334155;
-  --sidebar-accent-foreground:  #f8fafc;
-  --sidebar-border:             #334155;
-  --sidebar-ring:               #4F46E5;
+  --sidebar-accent:             #27272a;
+  --sidebar-accent-foreground:  #fafafa;
+  --sidebar-border:             #27272a;
+  --sidebar-ring:               #796eff;
 
-  /* Shadows */
-  --shadow-elevation-1:         0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --shadow-elevation-2:         0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-  --shadow-elevation-3:         0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-  --shadow-elevation-4:         0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  /* Shadows — anillo blanco sutil + sombra oscura profunda (negro puro invisible en dark) */
+  --shadow-elevation-1:         0 0 0 1px rgba(255,255,255,0.05), 0 1px 3px rgba(0,0,0,0.6);
+  --shadow-elevation-2:         0 0 0 1px rgba(255,255,255,0.06), 0 4px 8px -1px rgba(0,0,0,0.7), 0 2px 4px -2px rgba(0,0,0,0.5);
+  --shadow-elevation-3:         0 0 0 1px rgba(255,255,255,0.07), 0 10px 20px -3px rgba(0,0,0,0.75), 0 4px 8px -4px rgba(0,0,0,0.6);
+  --shadow-elevation-4:         0 0 0 1px rgba(255,255,255,0.08), 0 20px 30px -5px rgba(0,0,0,0.85), 0 8px 12px -6px rgba(0,0,0,0.7);
 
   /* Gradient (Login / Módulos background) */
   --gradient-from:              #1e2533;

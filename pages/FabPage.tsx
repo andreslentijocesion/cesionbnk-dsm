@@ -1,6 +1,6 @@
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { FloatingActionButton } from "../components/ui/floating-action-button";
-import { Plus, MessageSquare, Upload } from "lucide-react";
+import { MessageSquare, Upload } from "lucide-react";
 
 const code = `import { FloatingActionButton } from "@/components/ui/floating-action-button";
 

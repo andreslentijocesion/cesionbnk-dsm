@@ -62,7 +62,7 @@ function NumInput({
     <div className="space-y-2">
       <div className="flex items-center justify-between">
         <label className="text-xs font-medium text-foreground">{label}</label>
-        {hint && <span className="text-[10px] text-muted-foreground">{hint}</span>}
+        {hint && <span className="text-xs text-muted-foreground">{hint}</span>}
       </div>
       <div className="relative">
         {prefix && (
@@ -95,7 +95,7 @@ function NumInput({
         min={min} max={max} step={step}
         className="w-full"
       />
-      <div className="flex justify-between text-[10px] text-muted-foreground">
+      <div className="flex justify-between text-xs text-muted-foreground">
         <span>{prefix}{min.toLocaleString("es-CO")}{suffix}</span>
         <span>{prefix}{max.toLocaleString("es-CO")}{suffix}</span>
       </div>
@@ -108,7 +108,7 @@ function ResultRow({ label, value, highlight, sublabel }: { label: string; value
     <div className="flex items-center justify-between py-2.5">
       <div>
         <span className="text-sm text-foreground">{label}</span>
-        {sublabel && <p className="text-[10px] text-muted-foreground">{sublabel}</p>}
+        {sublabel && <p className="text-xs text-muted-foreground">{sublabel}</p>}
       </div>
       <span className={`text-sm font-semibold ${highlight ?? "text-foreground"}`}>{value}</span>
     </div>
@@ -175,7 +175,7 @@ export function FactoringCalculator() {
         {/* Inputs */}
         <Card>
           <CardHeader className="pb-4">
-            <CardTitle className="text-sm font-semibold">Parámetros de la Operación</CardTitle>
+            <CardTitle>Parámetros de la Operación</CardTitle>
             <CardDescription className="text-xs">Ajusta los sliders o escribe directamente</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -230,7 +230,7 @@ export function FactoringCalculator() {
           {/* Donut */}
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-semibold">Distribución del Capital</CardTitle>
+              <CardTitle>Distribución del Capital</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-4">
@@ -267,7 +267,7 @@ export function FactoringCalculator() {
           {/* Breakdown */}
           <Card>
             <CardHeader className="pb-0">
-              <CardTitle className="text-sm font-semibold">Resumen Financiero</CardTitle>
+              <CardTitle>Resumen Financiero</CardTitle>
             </CardHeader>
             <CardContent className="pb-3">
               <div className="divide-y divide-border/50">
@@ -278,13 +278,13 @@ export function FactoringCalculator() {
                 <ResultRow
                   label="Descuento financiero"
                   value={`− ${COP.format(result.descuento)}`}
-                  highlight="text-red-600"
+                  highlight="text-destructive-on-subtle"
                   sublabel={`${((result.descuento / nominal) * 100).toFixed(2)}% s/nominal`}
                 />
                 <ResultRow
                   label="Comisión de administración"
                   value={`− ${COP.format(result.comision)}`}
-                  highlight="text-amber-600"
+                  highlight="text-warning-on-subtle"
                   sublabel={`${comisionPct.toFixed(1)}% cargo único`}
                 />
                 <ResultRow
@@ -294,9 +294,9 @@ export function FactoringCalculator() {
                 <div className="flex items-center justify-between py-3 bg-primary/5 -mx-4 px-4 mt-1 rounded-md">
                   <div>
                     <span className="text-sm font-bold text-foreground">Neto para el cedente</span>
-                    <p className="text-[10px] text-muted-foreground">Lo que recibe efectivamente</p>
+                    <p className="text-xs text-muted-foreground">Lo que recibe efectivamente</p>
                   </div>
-                  <span className="text-lg font-bold text-green-600">{COP.format(result.neto)}</span>
+                  <span className="text-lg font-bold text-success-on-subtle">{COP.format(result.neto)}</span>
                 </div>
               </div>
 
@@ -306,19 +306,19 @@ export function FactoringCalculator() {
                 <div className="rounded-lg bg-muted/50 p-3 text-center">
                   <div className="flex items-center justify-center gap-1 mb-1">
                     <Percent className="h-3 w-3 text-muted-foreground" />
-                    <span className="text-[10px] text-muted-foreground">TEA equivalente</span>
+                    <span className="text-xs text-muted-foreground">TEA equivalente</span>
                     <Info className="h-3 w-3 text-muted-foreground" />
                   </div>
                   <span className="text-xl font-bold text-foreground">{result.tea.toFixed(2)}%</span>
-                  <p className="text-[10px] text-muted-foreground">Tasa efectiva anual</p>
+                  <p className="text-xs text-muted-foreground">Tasa efectiva anual</p>
                 </div>
                 <div className="rounded-lg bg-muted/50 p-3 text-center">
                   <div className="flex items-center justify-center gap-1 mb-1">
                     <DollarSign className="h-3 w-3 text-muted-foreground" />
-                    <span className="text-[10px] text-muted-foreground">Rentabilidad neta</span>
+                    <span className="text-xs text-muted-foreground">Rentabilidad neta</span>
                   </div>
-                  <span className="text-xl font-bold text-green-600">{result.rentabilidad.toFixed(2)}%</span>
-                  <p className="text-[10px] text-muted-foreground">Descuento / Desembolso</p>
+                  <span className="text-xl font-bold text-success-on-subtle">{result.rentabilidad.toFixed(2)}%</span>
+                  <p className="text-xs text-muted-foreground">Descuento / Desembolso</p>
                 </div>
               </div>
             </CardContent>
@@ -331,7 +331,7 @@ export function FactoringCalculator() {
         <Card>
           <CardHeader className="pb-3">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-sm font-semibold flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2">
                 <TrendingDown className="h-4 w-4 text-primary" />
                 Comparación de Escenarios
               </CardTitle>
@@ -365,19 +365,19 @@ export function FactoringCalculator() {
                   });
                   const isBest = best.id === s.id && scenarios.length > 1;
                   return (
-                    <TableRow key={s.id} className={isBest ? "bg-green-50/50 dark:bg-green-900/10" : ""}>
+                    <TableRow key={s.id} className={isBest ? "bg-success-subtle/50" : ""}>
                       <TableCell className="text-xs font-medium">
                         {s.label}
-                        {isBest && <Badge className="ml-2 text-[10px] py-0 px-1.5 bg-green-100 text-green-700 border-0">Mejor</Badge>}
+                        {isBest && <Badge variant="success-soft-outline" className="ml-2">Mejor</Badge>}
                       </TableCell>
                       <TableCell className="text-xs text-right">{COP.format(s.nominal)}</TableCell>
                       <TableCell className="text-xs text-right">{s.tasaMV.toFixed(1)}%</TableCell>
                       <TableCell className="text-xs text-right">{s.plazo}d</TableCell>
-                      <TableCell className="text-xs text-right text-red-600">{COP.format(r.descuento)}</TableCell>
-                      <TableCell className="text-xs text-right font-semibold text-green-600">{COP.format(r.neto)}</TableCell>
+                      <TableCell className="text-xs text-right text-destructive-on-subtle">{COP.format(r.descuento)}</TableCell>
+                      <TableCell className="text-xs text-right font-semibold text-success-on-subtle">{COP.format(r.neto)}</TableCell>
                       <TableCell className="text-xs text-right">{r.tea.toFixed(1)}%</TableCell>
                       <TableCell className="text-center">
-                        <Button variant="ghost" size="icon" className="h-6 w-6 text-muted-foreground hover:text-red-500" onClick={() => removeScenario(s.id)}>
+                        <Button variant="ghost" size="icon" className="h-6 w-6 text-muted-foreground hover:text-destructive" aria-label="Eliminar escenario" onClick={() => removeScenario(s.id)}>
                           <Trash2 className="h-3.5 w-3.5" />
                         </Button>
                       </TableCell>

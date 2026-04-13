@@ -144,12 +144,12 @@ export function SignaturePanel({
             )}
           </div>
           {allSigned && (
-            <Badge variant="outline" className="bg-success/10 text-success border-success/20 text-xs">
+            <Badge variant="success-soft-outline">
               Completado
             </Badge>
           )}
           {hasRejected && (
-            <Badge variant="outline" className="bg-destructive/10 text-destructive border-destructive/20 text-xs">
+            <Badge variant="destructive-soft-outline">
               Rechazado
             </Badge>
           )}
@@ -167,7 +167,7 @@ export function SignaturePanel({
         )}
 
         {sequential && (
-          <p className="text-[10px] text-muted-foreground mt-1.5 flex items-center gap-1">
+          <p className="text-xs text-muted-foreground mt-1.5 flex items-center gap-1">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary/60" />
             Firma secuencial — cada firmante debe completar en orden
           </p>
@@ -197,19 +197,19 @@ export function SignaturePanel({
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
                     <p className="text-sm font-medium text-foreground leading-tight">{sig.name}</p>
-                    <Badge variant="outline" className={cn("text-[10px] px-1.5 py-0 h-4", cfg.badgeClass)}>
+                    <Badge variant="outline" className={cn("text-xs px-1.5 py-0 h-4", cfg.badgeClass)}>
                       {cfg.badge}
                     </Badge>
                   </div>
                   <p className="text-xs text-muted-foreground leading-tight">{sig.role} · {sig.email}</p>
                   {sig.signedAt && (
-                    <p className="text-[10px] text-success mt-0.5">Firmado: {sig.signedAt}</p>
+                    <p className="text-xs text-success mt-0.5">Firmado: {sig.signedAt}</p>
                   )}
                   {sig.rejectedReason && (
-                    <p className="text-[10px] text-destructive mt-0.5">{sig.rejectedReason}</p>
+                    <p className="text-xs text-destructive mt-0.5">{sig.rejectedReason}</p>
                   )}
                   {isBlocked && (
-                    <p className="text-[10px] text-muted-foreground mt-0.5">Esperando firma anterior</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">Esperando firma anterior</p>
                   )}
                 </div>
 

@@ -24,7 +24,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+
+    /* Test globals (vitest) */
+    "types": ["vitest/globals"]
   },
   "include": [
     "**/*.ts",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, User, Building2, CreditCard, FileCheck, AlertCircle, CheckCircle2, ChevronRight, Lock, ArrowLeft } from "lucide-react";
 import { cn } from "../lib/utils";

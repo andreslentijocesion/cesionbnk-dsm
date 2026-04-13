@@ -69,7 +69,7 @@ export function ConditionalForm() {
             {isBusinessUser && (
               <div className="space-y-6 p-4 border rounded-lg bg-accent">
                 <div className="flex items-center gap-2 mb-4">
-                  <Badge variant="secondary">Business Information</Badge>
+                  <Badge variant="outline" className="text-xs">Business Information</Badge>
                   <AlertCircle className="h-4 w-4 text-muted-foreground" />
                 </div>
                 <div className="space-y-2">

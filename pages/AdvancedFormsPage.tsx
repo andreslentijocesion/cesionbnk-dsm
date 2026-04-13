@@ -61,7 +61,7 @@ function AdvancedFormsDemo() {
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <h1 className="font-bold">Advanced Forms</h1>
-          <Badge className="bg-blue-500 hover:bg-blue-600 text-white">
+          <Badge variant="info">
             MEDIUM PRIORITY
           </Badge>
         </div>
@@ -78,7 +78,7 @@ function AdvancedFormsDemo() {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h2 className="font-bold">Step Indicator</h2>
-            <Badge variant="secondary">Progress Tracking</Badge>
+            <Badge variant="outline">Progress Tracking</Badge>
           </div>
           <p className="text-muted-foreground">
             Reusable progress indicators for wizards and multi-step processes.
@@ -214,7 +214,7 @@ function AdvancedFormsDemo() {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h2 className="font-bold">Form Builder</h2>
-            <Badge variant="secondary">Drag & Drop</Badge>
+            <Badge variant="outline">Drag & Drop</Badge>
           </div>
           <p className="text-muted-foreground">
             Visual form builder with drag & drop. Drag fields from the palette,
@@ -246,7 +246,7 @@ function AdvancedFormsDemo() {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h2 className="font-bold">Conditional Logic Form</h2>
-            <Badge variant="secondary">Smart Forms</Badge>
+            <Badge variant="outline">Smart Forms</Badge>
           </div>
           <p className="text-muted-foreground">
             Smart form with conditional logic. Fields appear or disappear
@@ -277,7 +277,7 @@ function AdvancedFormsDemo() {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h2 className="font-bold">Multi-Column Form</h2>
-            <Badge variant="secondary">Responsive Layout</Badge>
+            <Badge variant="outline">Responsive Layout</Badge>
           </div>
           <p className="text-muted-foreground">
             Form with multi-column design that adapts to screen size.

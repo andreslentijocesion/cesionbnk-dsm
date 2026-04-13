@@ -63,7 +63,7 @@ export function CardDemo() {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle>New Operation</CardTitle>
-                  <Badge>Active</Badge>
+                  <Badge variant="success-soft-outline">Active</Badge>
                 </div>
                 <CardDescription>Operation details</CardDescription>
               </CardHeader>
@@ -81,7 +81,7 @@ export function CardWithBadge() {
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle>New Operation</CardTitle>
-          <Badge>Active</Badge>
+          <Badge variant="success-soft-outline">Active</Badge>
         </div>
         <CardDescription>Operation details</CardDescription>
       </CardHeader>

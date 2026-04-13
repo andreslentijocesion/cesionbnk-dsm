@@ -71,6 +71,10 @@ const badgeVariants = cva(
         "secondary-soft-outline":
           "border-secondary/30 bg-secondary-subtle text-secondary-on-subtle [a&]:hover:bg-secondary/20 dark:border-secondary/50 dark:bg-secondary/25 dark:text-secondary/80 dark:[a&]:hover:bg-secondary/35",
 
+        /* ── Primary soft (action / upcoming / neutral-brand states) ── */
+        "primary-soft":
+          "border-transparent bg-primary/10 text-primary [a&]:hover:bg-primary/15 dark:bg-primary/15 dark:text-primary/80 dark:[a&]:hover:bg-primary/25",
+
         /* ── Purple (secondary brand alias — special / premium states) ── */
         "purple-soft-outline":
           "border-secondary/40 bg-secondary-subtle text-secondary-on-subtle [a&]:hover:bg-secondary/20 dark:border-secondary/40 dark:bg-secondary/15 dark:text-secondary/80 dark:[a&]:hover:bg-secondary/25",

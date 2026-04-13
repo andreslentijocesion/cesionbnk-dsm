@@ -1,0 +1,12 @@
+{
+  "name": "Componentes CESIONBNK",
+  "id": "cesionbnk-componentes",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "ui": {},
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  }
+}

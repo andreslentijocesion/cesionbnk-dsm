@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
 import { Badge } from "./badge";
 import { Separator } from "./separator";
@@ -76,7 +75,7 @@ function PropsTable({
           <tr className="border-b border-border bg-muted">
             {["Prop", "Type", "Default", "Description"].map((h) => (
               <th key={h} className="px-4 py-2 text-left">
-                <span className="text-[10px] uppercase tracking-widest text-muted-foreground/50">
+                <span className="text-xs uppercase tracking-widest text-muted-foreground">
                   {h}
                 </span>
               </th>
@@ -90,7 +89,7 @@ function PropsTable({
               className="border-t border-border/25 hover:bg-muted transition-colors"
             >
               <td className="px-4 py-3 align-top whitespace-nowrap">
-                <code className="text-xs bg-secondary border border-border/50 px-1.5 py-0.5 rounded text-secondary-foreground">
+                <code className="text-xs bg-muted border border-border px-1.5 py-0.5 rounded text-foreground">
                   {p.name}
                   {p.required && (
                     <span className="text-destructive ml-1">*</span>

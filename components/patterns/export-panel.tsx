@@ -4,9 +4,8 @@
  * @layer patterns
  */
 import { useState } from "react";
-import { Download, FileText, FileSpreadsheet, FileDown } from "lucide-react";
+import { Download, FileText, FileDown } from "lucide-react";
 import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -17,7 +16,7 @@ import {
 import { Label } from "../ui/label";
 import { cn } from "../../lib/utils";
 
-export type ExportFormat = "xlsx" | "csv" | "pdf";
+export type ExportFormat = "csv" | "pdf";
 
 export interface ExportColumn {
   id: string;
@@ -42,15 +41,14 @@ export interface ExportPanelProps {
 }
 
 const formatMeta: Record<ExportFormat, { label: string; icon: React.ElementType; color: string }> = {
-  xlsx: { label: "Excel",     icon: FileSpreadsheet, color: "text-emerald-600" },
-  csv:  { label: "CSV",       icon: FileDown,        color: "text-blue-600" },
-  pdf:  { label: "PDF",       icon: FileText,        color: "text-red-500" },
+  csv:  { label: "CSV",       icon: FileDown,        color: "text-info-on-subtle" },
+  pdf:  { label: "PDF",       icon: FileText,        color: "text-destructive" },
 };
 
 export function ExportPanel({
   title = "Exportar datos",
   columns = [],
-  formats = ["xlsx", "csv", "pdf"],
+  formats = ["csv", "pdf"],
   onExport,
   open: controlledOpen,
   onOpenChange,
@@ -58,7 +56,7 @@ export function ExportPanel({
   showTrigger = true,
 }: ExportPanelProps) {
   const [internalOpen, setInternalOpen] = useState(false);
-  const [format, setFormat] = useState<ExportFormat>("xlsx");
+  const [format, setFormat] = useState<ExportFormat>("csv");
   const [selectedCols, setSelectedCols] = useState<string[]>(
     columns.filter((c) => c.defaultSelected !== false).map((c) => c.id)
   );

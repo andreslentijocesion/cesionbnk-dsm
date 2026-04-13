@@ -32,7 +32,7 @@ export function GridSystemPreview({
             {columns} columns · Gutter {gutter} · Margin {margin}
           </p>
         </div>
-        <Badge>{columns} cols</Badge>
+        <Badge variant="neutral">{columns} cols</Badge>
       </div>
 
       {/* Visual Grid Representation */}

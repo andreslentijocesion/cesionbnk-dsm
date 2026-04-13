@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeVariants, getTransition } from "../lib/animation-config";
 import { cn } from "../lib/utils";

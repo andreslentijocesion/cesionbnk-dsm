@@ -7,7 +7,6 @@
  * Part of the modular system without inline styles
  */
 
-import { Badge } from "../ui/badge";
 import { cn } from "../ui/utils";
 
 interface SpacingPreviewProps {

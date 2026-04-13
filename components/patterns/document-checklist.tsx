@@ -35,14 +35,14 @@ export interface DocumentChecklistProps {
 
 const statusConfig: Record<
   DocumentStatus,
-  { label: string; icon: React.ElementType; color: string; badgeVariant: "default" | "secondary" | "destructive" | "outline" }
+  { label: string; icon: React.ElementType; color: string; badgeVariant: "outline" }
 > = {
-  pending:   { label: "Pendiente",   icon: Clock,          color: "text-muted-foreground", badgeVariant: "outline"      },
-  uploaded:  { label: "Cargado",     icon: FileText,        color: "text-blue-600",          badgeVariant: "secondary"    },
-  reviewing: { label: "En revisión", icon: RotateCcw,       color: "text-yellow-600",        badgeVariant: "secondary"    },
-  approved:  { label: "Aprobado",    icon: CheckCircle2,    color: "text-green-600",          badgeVariant: "default"      },
-  rejected:  { label: "Rechazado",   icon: XCircle,         color: "text-destructive",        badgeVariant: "destructive"  },
-  expired:   { label: "Vencido",     icon: AlertTriangle,   color: "text-orange-500",         badgeVariant: "destructive"  },
+  pending:   { label: "Pendiente",   icon: Clock,          color: "text-muted-foreground", badgeVariant: "outline" },
+  uploaded:  { label: "Cargado",     icon: FileText,        color: "text-info-on-subtle",      badgeVariant: "outline" },
+  reviewing: { label: "En revisión", icon: RotateCcw,       color: "text-warning-on-subtle",   badgeVariant: "outline" },
+  approved:  { label: "Aprobado",    icon: CheckCircle2,    color: "text-success-on-subtle",   badgeVariant: "outline" },
+  rejected:  { label: "Rechazado",   icon: XCircle,         color: "text-destructive",        badgeVariant: "outline" },
+  expired:   { label: "Vencido",     icon: AlertTriangle,   color: "text-caution-on-subtle",  badgeVariant: "outline" },
 };
 
 function DocumentRow({
@@ -62,9 +62,9 @@ function DocumentRow({
   return (
     <div className={cn(
       "flex items-start gap-3 p-3 rounded-lg border transition-colors",
-      doc.status === "approved" && "bg-green-50/50 border-green-200 dark:bg-green-950/20 dark:border-green-900",
-      doc.status === "rejected" && "bg-red-50/50 border-red-200 dark:bg-red-950/20 dark:border-red-900",
-      doc.status === "expired"  && "bg-orange-50/50 border-orange-200 dark:bg-orange-950/20 dark:border-orange-900",
+      doc.status === "approved" && "bg-success-subtle/50 border-success/20",
+      doc.status === "rejected" && "bg-destructive-subtle/50 border-destructive/20",
+      doc.status === "expired"  && "bg-caution-subtle/50 border-caution/20",
       doc.status === "pending"  && "border-dashed",
       !["approved","rejected","expired"].includes(doc.status) && "border-border",
     )}>
@@ -93,7 +93,7 @@ function DocumentRow({
         {doc.expiresAt && (
           <p className={cn(
             "text-xs",
-            doc.status === "expired" ? "text-orange-500 font-medium" : "text-muted-foreground",
+            doc.status === "expired" ? "text-caution-on-subtle font-medium" : "text-muted-foreground",
           )}>
             Vence: {doc.expiresAt}
           </p>
@@ -109,6 +109,7 @@ function DocumentRow({
             variant="ghost"
             size="icon"
             className="h-7 w-7"
+            aria-label="Ver documento"
             onClick={() => onView(doc.id)}
           >
             <Eye size={14} />

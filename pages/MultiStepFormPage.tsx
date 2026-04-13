@@ -12,7 +12,6 @@ import { Checkbox } from "../components/ui/checkbox";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../components/ui/dialog";
 import { Upload, FileText, Pencil, Trash2, Plus, CheckCircle2, AlertCircle, Search, Building2, FileCheck, Users, Lock, Loader2, Info, Eye, HelpCircle, Wallet, ShieldAlert } from "lucide-react";
 import { StepIndicator, Step } from "../components/advanced/step-indicator";
-import { Textarea } from "../components/ui/textarea";
 import { Switch } from "../components/ui/switch";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip";
 
@@ -84,7 +83,7 @@ interface FormData {
 function MultiStepFormDemo() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [dataExtracted, setDataExtracted] = useState(false);
+  const [, setDataExtracted] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [transactionId, setTransactionId] = useState("");
   
@@ -683,7 +682,7 @@ function DocumentoUpload({
               {index}. {documento.nombre} {documento.requerido && <span className="text-destructive">*</span>}
             </span>
             {documento.uploaded && (
-              <Badge variant="default" className="bg-green-600 hover:bg-green-700 text-white text-xs">
+              <Badge variant="success">
                 Uploaded
               </Badge>
             )}
@@ -926,7 +925,7 @@ function DatoExtraido({
             <Tooltip>
               <TooltipTrigger asChild>
                 <span>
-                  <Badge variant="outline" className="text-[10px] h-4 px-1 border-green-200 bg-green-50 text-green-700 dark:bg-green-950 dark:border-green-800 dark:text-green-300 cursor-default">
+                  <Badge variant="success-soft-outline" className="cursor-default">
                     Auto
                   </Badge>
                 </span>
@@ -1518,29 +1517,6 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
           </div>
         </div>
       </TooltipProvider>
-    </div>
-  );
-}
-
-// Checkbox item component (visual only)
-function CheckboxItem({
-  label,
-  checked,
-  defaultChecked,
-  required,
-}: {
-  label: string;
-  checked: boolean;
-  defaultChecked?: boolean;
-  required?: boolean;
-}) {
-  return (
-    <div className="flex items-center space-x-2">
-      <Checkbox checked={checked || defaultChecked} disabled />
-      <label className="text-sm leading-none">
-        {checked || defaultChecked ? "☑" : "□"} {label}
-        {required && <span className="text-destructive ml-1">*</span>}
-      </label>
     </div>
   );
 }

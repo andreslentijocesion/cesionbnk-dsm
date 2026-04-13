@@ -6,7 +6,6 @@
  */
 import * as React from "react";
 import { X, Info, AlertTriangle, CheckCircle2, AlertCircle } from "lucide-react";
-import { Button } from "./button";
 import { cn } from "./utils";
 
 export type BannerVariant = "info" | "warning" | "success" | "error";

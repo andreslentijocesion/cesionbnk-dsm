@@ -1,9 +1,8 @@
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../components/ui/hover-card";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
 import { Button } from "../components/ui/button";
 import { CalendarDays, MapPin, Mail, ExternalLink } from "lucide-react";
-import { Badge } from "../components/ui/badge";
 import { Separator } from "../components/ui/separator";
 
 export function HoverCardPage() {

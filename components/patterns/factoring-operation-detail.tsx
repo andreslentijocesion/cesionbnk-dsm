@@ -7,8 +7,7 @@ import { Separator } from "../ui/separator";
 import { Progress } from "../ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import {
-  CheckCircle2, Clock, DollarSign, FileText, AlertTriangle,
-  Building2, User, Calendar, Percent, Download, ExternalLink,
+  CheckCircle2, Clock, DollarSign, FileText, Download, ExternalLink,
   Send, XCircle, RotateCcw, Stamp,
 } from "lucide-react";
 import { cn } from "../ui/utils";
@@ -194,15 +193,15 @@ export function FactoringOperationDetail({ record, open, onClose }: Props) {
           </div>
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-lg bg-muted px-3 py-2 text-center">
-              <p className="text-[10px] text-muted-foreground uppercase tracking-wide">Nominal</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wide">Nominal</p>
               <p className="text-sm font-bold tabular-nums">{new Intl.NumberFormat("es-CO", { notation: "compact", maximumFractionDigits: 1 }).format(record.valorNominal)}</p>
             </div>
             <div className="rounded-lg bg-muted px-3 py-2 text-center">
-              <p className="text-[10px] text-muted-foreground uppercase tracking-wide">Tasa MV</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wide">Tasa MV</p>
               <p className="text-sm font-bold">{record.tasaDescuento > 0 ? `${record.tasaDescuento}%` : "—"}</p>
             </div>
             <div className="rounded-lg bg-muted px-3 py-2 text-center">
-              <p className="text-[10px] text-muted-foreground uppercase tracking-wide">Plazo</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wide">Plazo</p>
               <p className="text-sm font-bold">{plazoEstimado}d</p>
             </div>
           </div>
@@ -237,7 +236,7 @@ export function FactoringOperationDetail({ record, open, onClose }: Props) {
             {/* ── Resumen ── */}
             <TabsContent value="resumen" className="m-0 flex-1 overflow-auto px-5 py-4 space-y-5">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2">Cedente</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Cedente</p>
                 <InfoRow label="Empresa" value={record.cedente} />
                 <InfoRow label="Contacto" value="Juan Pérez" />
                 <InfoRow label="Correo" value="juan@empresa.com" />
@@ -246,7 +245,7 @@ export function FactoringOperationDetail({ record, open, onClose }: Props) {
               </div>
               <Separator />
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2">Deudor</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Deudor</p>
                 <InfoRow label="Empresa" value={record.deudor} />
                 <InfoRow label="NIT" value="900.123.456-1" />
                 <InfoRow label="Sector" value="Energía" />
@@ -254,7 +253,7 @@ export function FactoringOperationDetail({ record, open, onClose }: Props) {
               </div>
               <Separator />
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground mb-2">Condiciones financieras</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2">Condiciones financieras</p>
                 <InfoRow label="Valor nominal"       value={COP(record.valorNominal)}       mono />
                 <InfoRow label="Descuento aplicado"  value={descuento > 0 ? `- ${COP(descuento)}` : "—"} mono />
                 <InfoRow label="Valor desembolsado"  value={record.valorDesembolsado > 0 ? COP(record.valorDesembolsado) : "Pendiente"} mono />
@@ -296,7 +295,7 @@ export function FactoringOperationDetail({ record, open, onClose }: Props) {
                         {ev.done && <CheckCircle2 className="h-3 w-3 text-success flex-shrink-0" />}
                       </div>
                       <p className="text-xs text-muted-foreground mt-0.5">{ev.desc}</p>
-                      <p className="text-[10px] text-muted-foreground/60 mt-1">{ev.date}</p>
+                      <p className="text-xs text-muted-foreground/60 mt-1">{ev.date}</p>
                     </div>
                   </div>
                 ))}
@@ -311,8 +310,8 @@ export function FactoringOperationDetail({ record, open, onClose }: Props) {
                     <FileText className="h-4 w-4 text-primary" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium text-foreground truncate">{doc.name}</p>
-                    <p className="text-[10px] text-muted-foreground">{doc.size} · {doc.date}</p>
+                    <p className="text-sm font-medium text-foreground truncate">{doc.name}</p>
+                    <p className="text-xs text-muted-foreground">{doc.size} · {doc.date}</p>
                   </div>
                   <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     <Button variant="ghost" size="icon" className="h-7 w-7">

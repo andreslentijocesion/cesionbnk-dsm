@@ -136,11 +136,18 @@ export function DataTableAdvanced() {
                 </TableRow>
             </TableHeader>
             <TableBody>
+                {paginatedInvoices.length === 0 && (
+                  <TableRow>
+                    <TableCell colSpan={7} className="py-12 text-center text-sm text-muted-foreground">
+                      No invoices match the current filters.
+                    </TableCell>
+                  </TableRow>
+                )}
                 {paginatedInvoices.map((invoice) => (
                 <TableRow key={invoice.id}>
-                    <TableCell className="font-medium">{invoice.id}</TableCell>
+                    <TableCell className="font-medium font-mono tabular-nums">{invoice.id}</TableCell>
                     <TableCell>{invoice.client}</TableCell>
-                    <TableCell>
+                    <TableCell className="font-mono tabular-nums">
                     ${invoice.amount.toLocaleString("en-US")}
                     </TableCell>
                     <TableCell>{invoice.date}</TableCell>
@@ -153,7 +160,7 @@ export function DataTableAdvanced() {
                     <TableCell className="text-right">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon">
+                        <Button variant="ghost" size="icon" aria-label="Acciones de fila">
                             <MoreHorizontal className="h-4 w-4" />
                         </Button>
                         </DropdownMenuTrigger>

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
+
 import { Checkbox } from "../ui/checkbox";
 import { Progress } from "../ui/progress";
 import { Input } from "../ui/input";
@@ -11,12 +11,13 @@ import {
 } from "../ui/table";
 import {
   CheckCircle2, XCircle, Search, Clock, DollarSign,
-  AlertTriangle, FileText, Filter, ChevronDown, ChevronUp, Eye,
+  AlertTriangle, FileText, ChevronDown, ChevronUp, Eye,
   ChevronLeft, ChevronRight,
 } from "lucide-react";
 
 const PAGE_SIZE = 10;
 import { cn } from "../ui/utils";
+import { toast } from "sonner";
 import { FactoringOperationDetail, FactoringRecord } from "./factoring-operation-detail";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -128,7 +129,7 @@ function QueueKpis({ data }: { data: QueueRecord[] }) {
               {k.icon}
             </div>
             <div>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-wide">{k.label}</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wide">{k.label}</p>
               <p className="text-sm font-bold tabular-nums">{k.value}</p>
             </div>
           </CardContent>
@@ -177,6 +178,15 @@ export function FactoringApprovalQueue() {
     ids.forEach((id) => (next[id] = decision));
     setDecisions(next);
     setSelected(new Set());
+    if (ids.length === 1) {
+      decision === "approved"
+        ? toast.success("Operación aprobada")
+        : toast.error("Operación rechazada");
+    } else {
+      decision === "approved"
+        ? toast.success(`${ids.length} operaciones aprobadas`)
+        : toast.error(`${ids.length} operaciones rechazadas`);
+    }
   };
 
   const openDetail = (r: QueueRecord) => {
@@ -204,7 +214,7 @@ export function FactoringApprovalQueue() {
         <CardHeader className="px-4 pt-4 pb-3 border-b border-border">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <CardTitle className="text-sm font-semibold">Cola de aprobación</CardTitle>
+              <CardTitle>Cola de aprobación</CardTitle>
               <CardDescription className="text-xs">
                 {rows.length} operaciones pendientes · {processed > 0 && `${processed} procesadas en esta sesión`}
               </CardDescription>
@@ -214,6 +224,7 @@ export function FactoringApprovalQueue() {
                 <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
                 <Input
                   placeholder="Buscar..."
+                  aria-label="Buscar operaciones"
                   className="pl-8 h-9 w-48 text-sm"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
@@ -290,8 +301,8 @@ export function FactoringApprovalQueue() {
                       </TableCell>
                       <TableCell className="font-mono text-xs text-muted-foreground">{r.id}</TableCell>
                       <TableCell>
-                        <div className="text-xs font-medium leading-tight">{r.cedente}</div>
-                        <div className="text-[10px] text-muted-foreground">{r.nitCedente}</div>
+                        <div className="text-sm font-medium leading-tight">{r.cedente}</div>
+                        <div className="text-xs text-muted-foreground">{r.nitCedente}</div>
                       </TableCell>
                       <TableCell className="text-xs text-muted-foreground whitespace-nowrap">{r.deudor}</TableCell>
                       <TableCell className="text-right font-mono text-xs tabular-nums">{COP(r.valorNominal)}</TableCell>
@@ -311,24 +322,24 @@ export function FactoringApprovalQueue() {
                         <div className="flex items-center justify-end gap-1">
                           <Button
                             variant="ghost" size="icon" className="h-7 w-7"
+                            aria-label="Ver detalle de operación"
                             onClick={() => openDetail(r)}
-                            title="Ver detalle"
                           >
                             <Eye className="h-3.5 w-3.5" />
                           </Button>
                           <Button
                             size="icon" className="h-7 w-7 bg-success/10 hover:bg-success/20 text-success border-0"
                             variant="outline"
+                            aria-label="Aprobar operación"
                             onClick={() => decide([r.id], "approved")}
-                            title="Aprobar"
                           >
                             <CheckCircle2 className="h-3.5 w-3.5" />
                           </Button>
                           <Button
                             size="icon" className="h-7 w-7 bg-destructive/10 hover:bg-destructive/20 text-destructive border-0"
                             variant="outline"
+                            aria-label="Rechazar operación"
                             onClick={() => decide([r.id], "rejected")}
-                            title="Rechazar"
                           >
                             <XCircle className="h-3.5 w-3.5" />
                           </Button>
@@ -355,6 +366,7 @@ export function FactoringApprovalQueue() {
             )}
             <Button
               variant="outline" size="icon" className="h-8 w-8"
+              aria-label="Página anterior"
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={safePage === 1}
             >
@@ -362,6 +374,7 @@ export function FactoringApprovalQueue() {
             </Button>
             <Button
               variant="outline" size="icon" className="h-8 w-8"
+              aria-label="Página siguiente"
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={safePage === totalPages}
             >

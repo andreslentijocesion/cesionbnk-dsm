@@ -9,7 +9,7 @@ import { Label } from "../ui/label";
 import { Badge } from "../ui/badge";
 import {
   GripVertical, Trash2, Type, Mail, Phone, Calendar, CheckSquare, List,
-  FileText, Plus, Columns, Hash, Lock, Link, Upload, Sliders, Circle,
+  FileText, Plus, Hash, Lock, Link, Upload, Sliders, Circle,
   Clock, Search, Star, CalendarClock, X,
 } from "lucide-react";
 import { cn } from "../ui/utils";
@@ -86,7 +86,7 @@ function FormFieldItem({ field, index, moveField, deleteField, updateField }: {
       <div className="flex-1 space-y-3">
         <div className="flex items-center gap-2 flex-wrap">
           <Label className="font-medium">{field.label}</Label>
-          {field.required && <Badge variant="secondary" className="text-xs">Required</Badge>}
+          {field.required && <Badge variant="outline" className="text-xs">Required</Badge>}
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-xs text-muted-foreground">Width:</span>

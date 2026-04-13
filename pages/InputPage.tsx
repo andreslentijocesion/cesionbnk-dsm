@@ -1,7 +1,7 @@
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
-import { Mail, Lock, Search, User, CreditCard } from "lucide-react";
+import { Mail, Search, User, CreditCard } from "lucide-react";
 
 export function InputPage() {
   return (

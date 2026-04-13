@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
@@ -13,8 +12,8 @@ import {
 } from "recharts";
 import {
   Building2, Phone, Mail, MapPin, Calendar, FileText, Download,
-  TrendingUp, TrendingDown, CheckCircle2, AlertTriangle, Clock,
-  ExternalLink, Shield, Star, Edit, MoreHorizontal,
+  TrendingUp,
+  ExternalLink, Shield, Star, Edit,
 } from "lucide-react";
 import { cn } from "../ui/utils";
 
@@ -101,7 +100,7 @@ function ScoreMeter({ score }: { score: number }) {
       <div className={cn("text-3xl font-bold tabular-nums", color)}>{score}</div>
       <div className="flex-1 space-y-1">
         <Progress value={score} className="h-2 bg-muted" indicatorClassName={barColor} />
-        <p className="text-[10px] text-muted-foreground">{score >= 80 ? "Riesgo bajo" : score >= 65 ? "Riesgo medio" : "Riesgo alto"} · Escala 0–100</p>
+        <p className="text-xs text-muted-foreground">{score >= 80 ? "Riesgo bajo" : score >= 65 ? "Riesgo medio" : "Riesgo alto"} · Escala 0–100</p>
       </div>
     </div>
   );
@@ -112,7 +111,7 @@ function InfoRow({ label, value, icon }: { label: string; value: string; icon?: 
     <div className="flex items-start gap-2.5 py-2 border-b border-border/40 last:border-0">
       {icon && <span className="text-muted-foreground mt-0.5 flex-shrink-0">{icon}</span>}
       <div className="flex-1 min-w-0">
-        <p className="text-[10px] text-muted-foreground uppercase tracking-wide">{label}</p>
+        <p className="text-xs text-muted-foreground uppercase tracking-wide">{label}</p>
         <p className="text-sm text-foreground font-medium truncate">{value}</p>
       </div>
     </div>
@@ -170,9 +169,9 @@ export function FactoringCedentProfile() {
               { label: "Tasa prom. MV",      value: `${cedent.tasaDescuentoPromedio}%`, sub: "Tasa pactada promedio", color: "text-secondary" },
             ].map((s) => (
               <div key={s.label} className="rounded-lg bg-muted/50 px-3 py-2.5">
-                <p className="text-[10px] text-muted-foreground uppercase tracking-wide">{s.label}</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide">{s.label}</p>
                 <p className={cn("text-xl font-bold tabular-nums mt-0.5", s.color)}>{s.value}</p>
-                <p className="text-[10px] text-muted-foreground">{s.sub}</p>
+                <p className="text-xs text-muted-foreground">{s.sub}</p>
               </div>
             ))}
           </div>
@@ -194,7 +193,7 @@ export function FactoringCedentProfile() {
             {/* Evolución mensual */}
             <Card className="lg:col-span-2 border shadow-sm">
               <CardHeader className="pb-2 px-4 pt-4">
-                <CardTitle className="text-sm">Volumen mensual (COP millones)</CardTitle>
+                <CardTitle>Volumen mensual (COP millones)</CardTitle>
                 <CardDescription className="text-xs">Desembolsado vs cobrado — últimos 7 meses</CardDescription>
               </CardHeader>
               <CardContent className="px-2 pb-3">
@@ -215,7 +214,7 @@ export function FactoringCedentProfile() {
             <div className="space-y-4">
               <Card className="border shadow-sm">
                 <CardHeader className="pb-2 px-4 pt-4">
-                  <CardTitle className="text-sm">Score crediticio</CardTitle>
+                  <CardTitle>Score crediticio</CardTitle>
                 </CardHeader>
                 <CardContent className="px-4 pb-3 space-y-3">
                   <ScoreMeter score={cedent.scoreCredito} />
@@ -234,7 +233,7 @@ export function FactoringCedentProfile() {
 
               <Card className="border shadow-sm">
                 <CardHeader className="pb-1 px-4 pt-3">
-                  <CardTitle className="text-sm">Contacto</CardTitle>
+                  <CardTitle>Contacto</CardTitle>
                 </CardHeader>
                 <CardContent className="px-4 pb-3">
                   <InfoRow label="Responsable" value={cedent.contacto} icon={<Building2 className="h-3.5 w-3.5" />} />
@@ -253,7 +252,7 @@ export function FactoringCedentProfile() {
             <CardHeader className="px-4 pt-4 pb-3 border-b border-border">
               <div className="flex items-center justify-between">
                 <div>
-                  <CardTitle className="text-sm">Historial de operaciones</CardTitle>
+                  <CardTitle>Historial de operaciones</CardTitle>
                   <CardDescription className="text-xs">{operaciones.length} operaciones registradas</CardDescription>
                 </div>
                 <Button variant="outline" size="sm" className="h-8 text-xs">
@@ -319,7 +318,7 @@ export function FactoringCedentProfile() {
             <CardHeader className="px-4 pt-4 pb-3 border-b border-border">
               <div className="flex items-center justify-between">
                 <div>
-                  <CardTitle className="text-sm">Documentos legales</CardTitle>
+                  <CardTitle>Documentos legales</CardTitle>
                   <CardDescription className="text-xs">{documentos.filter(d => d.vigente).length} vigentes · {documentos.filter(d => !d.vigente).length} por renovar</CardDescription>
                 </div>
                 <Button variant="outline" size="sm" className="h-8 text-xs border-dashed">
@@ -334,12 +333,12 @@ export function FactoringCedentProfile() {
                     <FileText className={cn("h-4 w-4", doc.vigente ? "text-primary" : "text-destructive")} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs font-medium text-foreground">{doc.nombre}</p>
-                    <p className="text-[10px] text-muted-foreground">{doc.tipo} · Cargado {doc.fecha}</p>
+                    <p className="text-sm font-medium text-foreground">{doc.nombre}</p>
+                    <p className="text-xs text-muted-foreground">{doc.tipo} · Cargado {doc.fecha}</p>
                   </div>
                   {doc.vigente
-                    ? <Badge variant="success-soft-outline" className="text-[10px]">Vigente</Badge>
-                    : <Badge variant="destructive-soft-outline" className="text-[10px]">Por renovar</Badge>}
+                    ? <Badge variant="success-soft-outline" className="text-xs">Vigente</Badge>
+                    : <Badge variant="destructive-soft-outline" className="text-xs">Por renovar</Badge>}
                   <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     <Button variant="ghost" size="icon" className="h-7 w-7"><Download className="h-3.5 w-3.5" /></Button>
                     <Button variant="ghost" size="icon" className="h-7 w-7"><ExternalLink className="h-3.5 w-3.5" /></Button>
@@ -355,7 +354,7 @@ export function FactoringCedentProfile() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <Card className="border shadow-sm">
               <CardHeader className="px-4 pt-4 pb-3">
-                <CardTitle className="text-sm">Límite de crédito</CardTitle>
+                <CardTitle>Límite de crédito</CardTitle>
                 <CardDescription className="text-xs">Cupo aprobado y utilización actual</CardDescription>
               </CardHeader>
               <CardContent className="px-4 pb-4 space-y-4">
@@ -390,7 +389,7 @@ export function FactoringCedentProfile() {
 
             <Card className="border shadow-sm">
               <CardHeader className="px-4 pt-4 pb-3">
-                <CardTitle className="text-sm">Condiciones comerciales</CardTitle>
+                <CardTitle>Condiciones comerciales</CardTitle>
               </CardHeader>
               <CardContent className="px-4 pb-4 space-y-3">
                 {[

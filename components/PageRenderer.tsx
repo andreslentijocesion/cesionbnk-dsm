@@ -137,6 +137,7 @@ import {
   IconGalleryPage,
 } from "../pages";
 import { DSMVisualAuditPage } from "../pages/DSMVisualAuditPage";
+import { ComponentGuidelinesPage } from "../pages/ComponentGuidelinesPage";
 
 // ── Route maps ─────────────────────────────────────────────────────────────────
 
@@ -275,8 +276,9 @@ const SPECIAL_ROUTES: Record<SpecialPageId, () => ReactElement> = {
   "help-system-demo": () => <HelpSystemDemoPage />,
   animations:         () => <AnimationsPage />,
   "icon-gallery":     () => <IconGalleryPage />,
-  "dsm-visual-audit": () => <DSMVisualAuditPage />,
-  changelog:          () => <DSMDashboardPage />, // legacy alias
+  "dsm-visual-audit":     () => <DSMVisualAuditPage />,
+  "component-guidelines": () => <ComponentGuidelinesPage />,
+  changelog:              () => <DSMDashboardPage />, // legacy alias
 };
 
 /** Merged route map — TypeScript ensures all PageIds are covered */

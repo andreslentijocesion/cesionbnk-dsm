@@ -1,6 +1,6 @@
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "../components/ui/command";
-import { Calendar, Mail, Settings, User, Calculator, CreditCard, Smile } from "lucide-react";
+import { Calendar, Settings, User, Calculator, CreditCard, Smile } from "lucide-react";
 
 export function CommandPage() {
   return (

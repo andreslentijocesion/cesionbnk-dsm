@@ -3,7 +3,7 @@
  * Treemap + bar chart breakdown by sector / cedente / deudor.
  * Includes risk heat coloring and exposure limits.
  */
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as ReTooltip,
   ResponsiveContainer, Cell,
@@ -19,8 +19,8 @@ import {
 import { TreemapChart, type TreemapData } from "../advanced/treemap-chart";
 import {
   PieChart as PieIcon, BarChart2, Grid3x3,
-  AlertTriangle, TrendingUp, RefreshCw, Info,
-  Building2, Users, Store,
+  AlertTriangle, RefreshCw, Info,
+  Building2, Store,
 } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -78,19 +78,24 @@ const DEUDOR_DATA: ConcentrationRow[] = [
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-const RIESGO_META = {
-  bajo:    { label: "Bajo",    color: "text-success-on-subtle", bg: "bg-success-subtle dark:bg-success/20",       barColor: "var(--success)",              treemapColor: "var(--success-subtle)" },
-  medio:   { label: "Medio",   color: "text-warning-on-subtle", bg: "bg-warning-subtle dark:bg-warning/20",       barColor: "var(--warning)",              treemapColor: "var(--warning-subtle)" },
-  alto:    { label: "Alto",    color: "text-destructive-on-subtle", bg: "bg-destructive-subtle dark:bg-destructive/20", barColor: "var(--destructive)",      treemapColor: "var(--destructive-subtle)" },
-  critico: { label: "Crítico", color: "text-destructive-on-subtle", bg: "bg-destructive/15 dark:bg-destructive/30",    barColor: "var(--destructive-on-subtle)", treemapColor: "var(--destructive-on-subtle)" },
+const RIESGO_META: Record<ConcentrationRow["riesgo"], {
+  label: string;
+  badgeVariant: React.ComponentProps<typeof Badge>["variant"];
+  barColor: string;
+  treemapColor: string;
+}> = {
+  bajo:    { label: "Bajo",    badgeVariant: "success-soft",            barColor: "var(--success)",              treemapColor: "var(--success-subtle)" },
+  medio:   { label: "Medio",   badgeVariant: "warning-soft",            barColor: "var(--warning)",              treemapColor: "var(--warning-subtle)" },
+  alto:    { label: "Alto",    badgeVariant: "destructive-soft",        barColor: "var(--destructive)",          treemapColor: "var(--destructive-subtle)" },
+  critico: { label: "Crítico", badgeVariant: "destructive-soft-outline", barColor: "var(--destructive-on-subtle)", treemapColor: "var(--destructive-on-subtle)" },
 };
 
 function RiskBadge({ riesgo }: { riesgo: ConcentrationRow["riesgo"] }) {
   const m = RIESGO_META[riesgo];
   return (
-    <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ${m.bg} ${m.color}`}>
+    <Badge variant={m.badgeVariant} className="rounded-full text-2xs">
       {m.label}
-    </span>
+    </Badge>
   );
 }
 
@@ -108,13 +113,13 @@ function ConcentrationAlert({ data }: { data: ConcentrationRow[] }) {
   const overLimit = data.filter(r => r.pctPortafolio > r.limite);
   if (overLimit.length === 0) return null;
   return (
-    <div className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 dark:bg-amber-900/20 dark:border-amber-800 p-3 text-sm">
-      <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5 flex-shrink-0" />
+    <div className="flex items-start gap-3 rounded-lg border border-warning/30 bg-warning-subtle p-3 text-sm">
+      <AlertTriangle className="h-4 w-4 text-warning-on-subtle mt-0.5 flex-shrink-0" />
       <div>
-        <span className="font-medium text-amber-800 dark:text-amber-300">
+        <span className="font-medium text-warning-on-subtle">
           {overLimit.length} concentración{overLimit.length > 1 ? "es" : ""} exceden el límite de política:
         </span>{" "}
-        <span className="text-amber-700 dark:text-amber-400">
+        <span className="text-warning-on-subtle/80">
           {overLimit.map(r => `${r.name} (${r.pctPortafolio.toFixed(1)}% vs límite ${r.limite}%)`).join(", ")}
         </span>
       </div>
@@ -139,7 +144,7 @@ export function FactoringSectorConcentration() {
   }, [data]);
 
   const hhiLabel = hhi < 1500 ? "Baja (diversificado)" : hhi < 2500 ? "Moderada" : "Alta (concentrado)";
-  const hhiColor = hhi < 1500 ? "text-green-600" : hhi < 2500 ? "text-amber-600" : "text-red-600";
+  const hhiColor = hhi < 1500 ? "text-success-on-subtle" : hhi < 2500 ? "text-warning-on-subtle" : "text-destructive-on-subtle";
 
   const VIEW_OPTIONS: { id: ViewMode; label: string; icon: React.ReactNode }[] = [
     { id: "sector",   label: "Por Sector",   icon: <Grid3x3 className="h-3.5 w-3.5" /> },
@@ -187,30 +192,30 @@ export function FactoringSectorConcentration() {
           <CardContent className="pt-4 pb-3">
             <p className="text-xs text-muted-foreground">Cartera total</p>
             <p className="text-base font-bold text-foreground mt-0.5">{COP.format(TOTAL_PORTFOLIO)}</p>
-            <p className="text-[10px] text-muted-foreground">{data.length} grupos</p>
+            <p className="text-xs text-muted-foreground">{data.length} grupos</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-4 pb-3">
             <p className="text-xs text-muted-foreground">Mayor concentración</p>
             <p className="text-base font-bold text-foreground mt-0.5">{data[0].pctPortafolio.toFixed(1)}%</p>
-            <p className="text-[10px] text-muted-foreground truncate">{data[0].name}</p>
+            <p className="text-xs text-muted-foreground truncate">{data[0].name}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-4 pb-3">
             <p className="text-xs text-muted-foreground">Índice HHI</p>
             <p className={`text-base font-bold mt-0.5 ${hhiColor}`}>{Math.round(hhi)}</p>
-            <p className="text-[10px] text-muted-foreground">{hhiLabel}</p>
+            <p className="text-xs text-muted-foreground">{hhiLabel}</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-4 pb-3">
             <p className="text-xs text-muted-foreground">Exceden límite</p>
-            <p className={`text-base font-bold mt-0.5 ${alertData.length > 0 ? "text-red-600" : "text-green-600"}`}>
+            <p className={`text-base font-bold mt-0.5 ${alertData.length > 0 ? "text-destructive-on-subtle" : "text-success-on-subtle"}`}>
               {alertData.length}
             </p>
-            <p className="text-[10px] text-muted-foreground">de {data.length} grupos</p>
+            <p className="text-xs text-muted-foreground">de {data.length} grupos</p>
           </CardContent>
         </Card>
       </div>
@@ -310,18 +315,18 @@ export function FactoringSectorConcentration() {
                 const uso = Math.min((r.pctPortafolio / r.limite) * 100, 100);
                 const overLimit = r.pctPortafolio > r.limite;
                 return (
-                  <TableRow key={i} className={overLimit ? "bg-red-50/30 dark:bg-red-900/10" : ""}>
-                    <TableCell className="text-xs font-medium text-foreground">{r.name}</TableCell>
+                  <TableRow key={i} className={overLimit ? "bg-destructive-subtle/30" : ""}>
+                    <TableCell className="text-sm font-medium text-foreground">{r.name}</TableCell>
                     {view !== "sector" && (
                       <TableCell className="text-xs">
-                        <span className="rounded-full bg-muted px-2 py-0.5 text-[10px]">{r.sector}</span>
+                        <Badge variant="neutral-soft" className="rounded-full">{r.sector}</Badge>
                       </TableCell>
                     )}
                     <TableCell className="text-xs text-right font-medium">{COP.format(r.nominal)}</TableCell>
                     <TableCell className="text-xs text-right text-muted-foreground">{r.operaciones}</TableCell>
-                    <TableCell className={`text-xs text-right font-semibold ${overLimit ? "text-red-600" : "text-foreground"}`}>
+                    <TableCell className={`text-xs text-right font-semibold ${overLimit ? "text-destructive-on-subtle" : "text-foreground"}`}>
                       {r.pctPortafolio.toFixed(1)}%
-                      {overLimit && <span className="ml-1 text-[10px] text-red-500">▲</span>}
+                      {overLimit && <span className="ml-1 text-xs text-destructive">▲</span>}
                     </TableCell>
                     <TableCell className="text-xs text-right text-muted-foreground">{r.limite}%</TableCell>
                     <TableCell className="text-xs">
@@ -329,9 +334,9 @@ export function FactoringSectorConcentration() {
                         <Progress
                           value={uso}
                           className="h-1.5 flex-1"
-                          indicatorClassName={overLimit ? "bg-red-500" : uso > 80 ? "bg-amber-500" : "bg-green-500"}
+                          indicatorClassName={overLimit ? "bg-destructive" : uso > 80 ? "bg-warning" : "bg-success"}
                         />
-                        <span className={`text-[10px] font-medium w-8 text-right ${overLimit ? "text-red-600" : "text-muted-foreground"}`}>
+                        <span className={`text-xs font-medium w-8 text-right ${overLimit ? "text-destructive-on-subtle" : "text-muted-foreground"}`}>
                           {uso.toFixed(0)}%
                         </span>
                       </div>

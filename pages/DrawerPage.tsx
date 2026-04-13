@@ -2,7 +2,7 @@ import { ComponentShowcase } from "../components/ui/component-showcase";
 import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "../components/ui/drawer";
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
-import { Menu, Bell, User } from "lucide-react";
+import { Menu, User } from "lucide-react";
 import { Separator } from "../components/ui/separator";
 
 export function DrawerPage() {
@@ -30,7 +30,7 @@ export function DrawerPage() {
             <div className="px-4 py-6 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-medium">Notifications</span>
-                <Badge>Enabled</Badge>
+                <Badge variant="success-soft-outline">Enabled</Badge>
               </div>
               <Separator />
               <div className="flex items-center justify-between">

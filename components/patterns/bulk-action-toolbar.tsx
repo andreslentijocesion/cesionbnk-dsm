@@ -56,7 +56,7 @@ export function BulkActionToolbar({
     >
       {/* Count */}
       <div className="flex items-center gap-2 pr-3 border-r border-border">
-        <Badge variant="default" className="text-xs font-bold tabular-nums">
+        <Badge variant="outline" className="text-xs font-bold tabular-nums">
           {count}
         </Badge>
         <span className="text-sm text-muted-foreground whitespace-nowrap">

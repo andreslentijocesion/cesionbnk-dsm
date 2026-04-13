@@ -1,8 +1,6 @@
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
-  ChevronsLeftIcon,
-  ChevronsRightIcon,
   MoreHorizontalIcon,
 } from "lucide-react";
 

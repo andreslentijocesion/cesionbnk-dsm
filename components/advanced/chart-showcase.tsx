@@ -58,7 +58,7 @@ export function ChartShowcase() {
                 <CardTitle>Line Chart Example</CardTitle>
                 <CardDescription>Simple line chart visualization</CardDescription>
               </div>
-              <Badge>Line</Badge>
+              <Badge variant="outline" className="text-xs">Line</Badge>
             </div>
           </CardHeader>
           <CardContent>
@@ -84,7 +84,7 @@ export function ChartShowcase() {
                 <CardTitle>Bar Chart Example</CardTitle>
                 <CardDescription>Simple bar chart visualization</CardDescription>
               </div>
-              <Badge>Bar</Badge>
+              <Badge variant="outline" className="text-xs">Bar</Badge>
             </div>
           </CardHeader>
           <CardContent>
@@ -110,7 +110,7 @@ export function ChartShowcase() {
                 <CardTitle>Pie Chart Example</CardTitle>
                 <CardDescription>Simple pie chart visualization</CardDescription>
               </div>
-              <Badge>Pie</Badge>
+              <Badge variant="outline" className="text-xs">Pie</Badge>
             </div>
           </CardHeader>
           <CardContent>

@@ -19,7 +19,7 @@ const meta: Meta<typeof ExportPanel> = {
   args: {
     title: 'Exportar Portafolio',
     columns: portfolioColumns,
-    formats: ['xlsx', 'csv', 'pdf'],
+    formats: ['csv', 'pdf'],
     showTrigger: true,
     triggerLabel: 'Exportar portafolio',
   },
@@ -30,10 +30,10 @@ type Story = StoryObj<typeof ExportPanel>;
 
 export const Default: Story = {};
 
-export const SoloExcel: Story = {
+export const SoloCSV: Story = {
   args: {
     title: 'Exportar Cedentes',
-    formats: ['xlsx', 'csv'],
+    formats: ['csv'],
     columns: [
       { id: 'razon',   label: 'Razón Social', defaultSelected: true },
       { id: 'rut',     label: 'RUT',          defaultSelected: true },

@@ -19,9 +19,9 @@ export function InputFileDemo() {
 }`;
 
 export function InputFilePage() {
-  const [files1, setFiles1] = useState<File[]>([]);
-  const [files2, setFiles2] = useState<File[]>([]);
-  const [files3, setFiles3] = useState<File[]>([]);
+  const [_files1, setFiles1] = useState<File[]>([]);
+  const [_files2, setFiles2] = useState<File[]>([]);
+  const [_files3, setFiles3] = useState<File[]>([]);
 
   return (
     <ComponentShowcase

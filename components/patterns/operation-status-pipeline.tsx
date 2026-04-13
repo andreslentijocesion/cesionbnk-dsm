@@ -89,10 +89,10 @@ export function OperationStatusPipeline({
                   <div className="text-center">
                     <p className={cn("text-xs leading-tight", styles.label)}>{stage.label}</p>
                     {stage.date && (
-                      <p className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{stage.date}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5 leading-tight">{stage.date}</p>
                     )}
                     {stage.actor && (
-                      <p className="text-[10px] text-muted-foreground leading-tight">{stage.actor}</p>
+                      <p className="text-xs text-muted-foreground leading-tight">{stage.actor}</p>
                     )}
                   </div>
                 </div>
@@ -156,7 +156,7 @@ export function OperationStatusPipeline({
                 <p className="text-xs text-muted-foreground mt-0.5">{stage.description}</p>
               )}
               {(stage.date || stage.actor) && (
-                <p className="text-[11px] text-muted-foreground mt-1">
+                <p className="text-xs text-muted-foreground mt-1">
                   {[stage.date, stage.actor].filter(Boolean).join(" · ")}
                 </p>
               )}

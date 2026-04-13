@@ -38,11 +38,11 @@ interface FactoringRecord {
   fechaInicio: string;
   fechaVencimiento: string;
   diasRestantes: number;
-  cobradoPct: number;
+  _cobradoPct: number;
   status: FactoringStatus;
 }
 
-type SortKey = "cedente" | "valorNominal" | "fechaVencimiento" | "diasRestantes" | "cobradoPct";
+type SortKey = "cedente" | "valorNominal" | "fechaVencimiento" | "diasRestantes" | "_cobradoPct";
 type SortDir = "asc" | "desc";
 
 // ─── Mock Data ────────────────────────────────────────────────────────────────
@@ -52,49 +52,49 @@ const mockData: FactoringRecord[] = [
     id: "FCT-2025-001", cedente: "Construcciones Andina S.A.", deudor: "Banco de Bogotá S.A.",
     valorNominal: 185_000_000, valorDesembolsado: 175_750_000, tasaDescuento: 1.8,
     fechaInicio: "2025-01-15", fechaVencimiento: "2025-03-15", diasRestantes: 8,
-    cobradoPct: 82, status: "en-cobro",
+    _cobradoPct: 82, status: "en-cobro",
   },
   {
     id: "FCT-2025-002", cedente: "Textiles del Valle Ltda.", deudor: "Almacenes Éxito S.A.",
     valorNominal: 92_500_000, valorDesembolsado: 87_875_000, tasaDescuento: 2.1,
     fechaInicio: "2025-01-20", fechaVencimiento: "2025-04-20", diasRestantes: 44,
-    cobradoPct: 45, status: "desembolsado",
+    _cobradoPct: 45, status: "desembolsado",
   },
   {
     id: "FCT-2025-003", cedente: "Industrias Cóndor S.A.S.", deudor: "Avianca S.A.",
     valorNominal: 340_000_000, valorDesembolsado: 323_000_000, tasaDescuento: 1.5,
     fechaInicio: "2024-12-01", fechaVencimiento: "2025-03-01", diasRestantes: -6,
-    cobradoPct: 100, status: "cobrado",
+    _cobradoPct: 100, status: "cobrado",
   },
   {
     id: "FCT-2025-004", cedente: "Agropecuaria Los Llanos S.A.", deudor: "Grupo Nutresa S.A.",
     valorNominal: 78_000_000, valorDesembolsado: 74_100_000, tasaDescuento: 2.4,
     fechaInicio: "2025-01-08", fechaVencimiento: "2025-02-28", diasRestantes: -8,
-    cobradoPct: 0, status: "vencido",
+    _cobradoPct: 0, status: "vencido",
   },
   {
     id: "FCT-2025-005", cedente: "Servicios TI Colombia S.A.S.", deudor: "Ecopetrol S.A.",
     valorNominal: 520_000_000, valorDesembolsado: 494_000_000, tasaDescuento: 1.6,
     fechaInicio: "2025-02-01", fechaVencimiento: "2025-05-01", diasRestantes: 55,
-    cobradoPct: 20, status: "desembolsado",
+    _cobradoPct: 20, status: "desembolsado",
   },
   {
     id: "FCT-2025-006", cedente: "Distribuidora Norte S.A.", deudor: "Terpel S.A.",
     valorNominal: 145_000_000, valorDesembolsado: 0, tasaDescuento: 2.0,
     fechaInicio: "2025-03-01", fechaVencimiento: "2025-06-01", diasRestantes: 86,
-    cobradoPct: 0, status: "aprobado",
+    _cobradoPct: 0, status: "aprobado",
   },
   {
     id: "FCT-2025-007", cedente: "Muebles Roble S.A.S.", deudor: "Ikea Colombia S.A.",
     valorNominal: 55_000_000, valorDesembolsado: 52_250_000, tasaDescuento: 2.8,
     fechaInicio: "2025-01-10", fechaVencimiento: "2025-03-10", diasRestantes: 3,
-    cobradoPct: 95, status: "en-cobro",
+    _cobradoPct: 95, status: "en-cobro",
   },
   {
     id: "FCT-2025-008", cedente: "Pharma Colombia Ltda.", deudor: "Compensar EPS",
     valorNominal: 210_000_000, valorDesembolsado: 0, tasaDescuento: 0,
     fechaInicio: "2025-02-15", fechaVencimiento: "2025-05-15", diasRestantes: 69,
-    cobradoPct: 0, status: "rechazado",
+    _cobradoPct: 0, status: "rechazado",
   },
 ];
 
@@ -126,7 +126,7 @@ const progressColor = (pct: number, status: FactoringStatus) => {
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 function InlineProgress({ record }: { record: FactoringRecord }) {
-  const { fechaInicio, fechaVencimiento, cobradoPct, status } = record;
+  const { fechaInicio, fechaVencimiento, status } = record;
   const start = new Date(fechaInicio);
   const end = new Date(fechaVencimiento);
   const totalDays = Math.max(1, Math.round((end.getTime() - start.getTime()) / 86_400_000));
@@ -259,17 +259,17 @@ function KpiStrip({ data }: { data: FactoringRecord[] }) {
             <span className="text-xs text-muted-foreground">{k.label}</span>
             {k.icon}
           </div>
-          <div className="font-semibold text-sm text-foreground tabular-nums leading-tight">
+          <div className="font-semibold text-sm text-foreground font-mono tabular-nums leading-tight">
             {k.value}
           </div>
           <div className="flex items-center gap-1">
             {k.change > 0
               ? <TrendingUp className="h-3 w-3 text-success" />
               : <TrendingDown className="h-3 w-3 text-destructive" />}
-            <span className={cn("text-[11px] font-medium", k.change > 0 ? "text-success" : "text-destructive")}>
+            <span className={cn("text-xs font-medium font-mono tabular-nums", k.change > 0 ? "text-success" : "text-destructive")}>
               {k.change > 0 ? "+" : ""}{k.change}%
             </span>
-            <span className="text-[11px] text-muted-foreground">vs mes anterior</span>
+            <span className="text-xs text-muted-foreground">vs mes anterior</span>
           </div>
           <div className="h-8 -mx-1">
             <Sparkline data={k.spark} color={k.color} height={32} showTrend={false} />
@@ -399,7 +399,7 @@ export function FactoringPortfolioTable() {
               <TableHead className="text-xs whitespace-nowrap">Deudor</TableHead>
               <SortableHead col="valorNominal" label="Valor nominal" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="text-right text-xs" />
               <TableHead className="text-xs whitespace-nowrap">Tasa</TableHead>
-              <SortableHead col="cobradoPct" label="Emisión / Vencimiento" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="min-w-[160px] text-xs" />
+              <SortableHead col="_cobradoPct" label="Emisión / Vencimiento" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="min-w-[160px] text-xs" />
               <SortableHead col="diasRestantes" label="Días" sortKey={sortKey} sortDir={sortDir} onSort={handleSort} className="text-xs" />
               <TableHead className="text-xs">Estado</TableHead>
               <TableHead className="text-right text-xs w-10">
@@ -416,7 +416,7 @@ export function FactoringPortfolioTable() {
               </TableRow>
             ) : (
               rows.map((r) => (
-                <TableRow key={r.id} className="hover:bg-muted/30 transition-colors cursor-pointer" onClick={() => setSelectedRecord(r as DetailRecord)}>
+                <TableRow key={r.id} className="hover:bg-muted/30 transition-colors cursor-pointer" onClick={() => setSelectedRecord(r as unknown as DetailRecord)}>
                   <TableCell className="font-mono text-xs text-muted-foreground">{r.id}</TableCell>
                   <TableCell>
                     <div className="text-sm font-medium leading-tight">{r.cedente}</div>
@@ -425,7 +425,7 @@ export function FactoringPortfolioTable() {
                   <TableCell className="text-right font-mono text-sm tabular-nums">
                     {COP(r.valorNominal)}
                   </TableCell>
-                  <TableCell className="text-sm tabular-nums text-muted-foreground">
+                  <TableCell className="text-sm font-mono tabular-nums text-muted-foreground">
                     {r.tasaDescuento > 0 ? `${r.tasaDescuento}% MV` : "—"}
                   </TableCell>
                   <TableCell>

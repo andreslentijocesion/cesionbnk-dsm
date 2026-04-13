@@ -46,7 +46,7 @@ function Calendar({
           /* ── Grid ── */
           month_grid: "w-full border-collapse",
           weekdays: "flex",
-          weekday: "text-muted-foreground rounded-md w-8 font-normal text-[0.7rem] text-center",
+          weekday: "text-muted-foreground rounded-md w-8 font-normal text-2xs text-center",
           week: "flex w-full mt-2",
           day: cn(
             "relative p-0 text-center text-sm focus-within:relative focus-within:z-20",
@@ -82,7 +82,7 @@ function Calendar({
             weekday.toLocaleDateString("es-CO", { weekday: "short" }).replace(".", "").slice(0, 2),
         }}
         components={{
-          Chevron: ({ orientation, ...chevronProps }) => {
+          Chevron: ({ orientation }) => {
             if (orientation === "left") {
               return <ChevronLeftIcon className="size-4" />;
             }

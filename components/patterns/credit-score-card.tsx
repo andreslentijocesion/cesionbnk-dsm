@@ -5,7 +5,6 @@
  */
 import { TrendingUp, TrendingDown, Minus, ShieldCheck, ShieldAlert, ShieldX, AlertCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Badge } from "../ui/badge";
 import { cn } from "../../lib/utils";
 
 export type RiskLevel = "bajo" | "medio" | "alto" | "critico";
@@ -46,10 +45,10 @@ const riskConfig: Record<RiskLevel, {
   icon: React.ElementType;
   badgeVariant: "default" | "secondary" | "destructive" | "outline";
 }> = {
-  bajo:    { label: "Bajo",    color: "text-emerald-600 dark:text-emerald-400", bg: "bg-emerald-50 dark:bg-emerald-950", bar: "var(--success)",     icon: ShieldCheck,  badgeVariant: "default" },
-  medio:   { label: "Medio",   color: "text-amber-600 dark:text-amber-400",    bg: "bg-amber-50 dark:bg-amber-950",    bar: "var(--warning)",     icon: ShieldAlert,  badgeVariant: "outline" },
-  alto:    { label: "Alto",    color: "text-orange-600 dark:text-orange-400",  bg: "bg-orange-50 dark:bg-orange-950",  bar: "var(--kpi-orange)",  icon: ShieldAlert,  badgeVariant: "outline" },
-  critico: { label: "Crítico", color: "text-destructive",                      bg: "bg-destructive/10",                bar: "var(--destructive)", icon: ShieldX,      badgeVariant: "destructive" },
+  bajo:    { label: "Bajo",    color: "text-success-on-subtle",   bg: "bg-success-subtle",   bar: "var(--success)",     icon: ShieldCheck,  badgeVariant: "outline" },
+  medio:   { label: "Medio",   color: "text-warning-on-subtle",   bg: "bg-warning-subtle",   bar: "var(--warning)",     icon: ShieldAlert,  badgeVariant: "outline" },
+  alto:    { label: "Alto",    color: "text-caution-on-subtle",   bg: "bg-caution-subtle",   bar: "var(--caution)",     icon: ShieldAlert,  badgeVariant: "outline" },
+  critico: { label: "Crítico", color: "text-destructive",                      bg: "bg-destructive/10",                bar: "var(--destructive)", icon: ShieldX,      badgeVariant: "outline" },
 };
 
 function ScoreArc({ score }: { score: number }) {
@@ -60,8 +59,7 @@ function ScoreArc({ score }: { score: number }) {
   const cy = 70;
   const startAngle = Math.PI;
   const endAngle = 2 * Math.PI;
-  const arcLength = Math.PI * r;
-  const filled = pct * arcLength;
+
 
   const color =
     score >= 700 ? "var(--success)" :
@@ -110,7 +108,7 @@ const trendIcon = (t?: "up" | "down" | "neutral") =>
   t === "up" ? TrendingUp : t === "down" ? TrendingDown : Minus;
 
 const trendColor = (t?: "up" | "down" | "neutral") =>
-  t === "up" ? "text-emerald-600 dark:text-emerald-400" :
+  t === "up" ? "text-success-on-subtle" :
   t === "down" ? "text-destructive" : "text-muted-foreground";
 
 export function CreditScoreCard({

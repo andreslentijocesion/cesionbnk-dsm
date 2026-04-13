@@ -2,11 +2,8 @@ import { ComponentShowcase } from "../components/ui/component-showcase";
 import { Skeleton } from "../components/ui/skeleton";
 import { 
   SkeletonTable, 
-  SkeletonCard, 
   SkeletonCardGrid, 
-  SkeletonForm, 
-  SkeletonList, 
-  SkeletonDashboard,
+  SkeletonForm,
   SkeletonKpiCardGroup,
   SkeletonProfile
 } from "../components/ui/skeleton-variants";

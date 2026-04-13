@@ -32,12 +32,12 @@ interface AgingReportProps {
   className?: string;
 }
 
-const riskMeta: Record<AgingBucket["risk"], { bar: string; badge: string; variant: "default" | "secondary" | "destructive" | "outline" }> = {
-  ok:       { bar: "var(--primary)",     badge: "Al día",  variant: "default" },
-  low:      { bar: "var(--info)",        badge: "Bajo",    variant: "secondary" },
+const riskMeta: Record<AgingBucket["risk"], { bar: string; badge: string; variant: "outline" }> = {
+  ok:       { bar: "var(--primary)",     badge: "Al día",  variant: "outline" },
+  low:      { bar: "var(--info)",        badge: "Bajo",    variant: "outline" },
   medium:   { bar: "var(--warning)",     badge: "Medio",   variant: "outline" },
   high:     { bar: "var(--kpi-orange)",  badge: "Alto",    variant: "outline" },
-  critical: { bar: "var(--destructive)", badge: "Crítico", variant: "destructive" },
+  critical: { bar: "var(--destructive)", badge: "Crítico", variant: "outline" },
 };
 
 const fmt = (n: number) =>
@@ -138,9 +138,9 @@ export function AgingReport({ buckets, unit = "M CLP", className }: AgingReportP
                   return (
                     <TableRow key={b.label}>
                       <TableCell className="font-medium text-foreground">{b.label}</TableCell>
-                      <TableCell className="text-right text-muted-foreground">{b.count}</TableCell>
-                      <TableCell className="text-right font-medium text-foreground">{fmt(b.amount)}</TableCell>
-                      <TableCell className="text-right text-muted-foreground">{pct}%</TableCell>
+                      <TableCell className="text-right text-muted-foreground font-mono tabular-nums">{b.count}</TableCell>
+                      <TableCell className="text-right font-medium text-foreground font-mono tabular-nums">{fmt(b.amount)}</TableCell>
+                      <TableCell className="text-right text-muted-foreground font-mono tabular-nums">{pct}%</TableCell>
                       <TableCell className="text-right">
                         <Badge variant={meta.variant} className="text-xs">{meta.badge}</Badge>
                       </TableCell>
@@ -149,8 +149,8 @@ export function AgingReport({ buckets, unit = "M CLP", className }: AgingReportP
                 })}
                 <TableRow className="font-semibold bg-muted/20">
                   <TableCell className="text-foreground">Total</TableCell>
-                  <TableCell className="text-right text-foreground">{totalCount}</TableCell>
-                  <TableCell className="text-right text-foreground">{fmt(total)}</TableCell>
+                  <TableCell className="text-right text-foreground font-mono tabular-nums">{totalCount}</TableCell>
+                  <TableCell className="text-right text-foreground font-mono tabular-nums">{fmt(total)}</TableCell>
                   <TableCell className="text-right text-foreground">100%</TableCell>
                   <TableCell />
                 </TableRow>

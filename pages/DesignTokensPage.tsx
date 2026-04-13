@@ -11,7 +11,7 @@
  * @version 3.0.0 — Single tenant (CESIONBNK): reads live computed values via getComputedStyle
  */
 import { useTheme } from "../components/providers/ThemeProvider";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { Copy, Check, Sun, Moon, Palette, Monitor } from "lucide-react";
 import { Badge } from "../components/ui/badge";
@@ -19,6 +19,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
 import { Separator } from "../components/ui/separator";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
+import { CssVarBox, FontFamilyText, HexButton, RadiusBox, ShadowBox } from "../components/ui/dynamic-previews";
 import { copyToClipboard } from "../lib/utils";
 
 // ─────────────────────────────────────────────
@@ -332,11 +333,10 @@ function ColorSwatch({ token, liveValues }: { token: ColorToken; liveValues: Rec
     <div className="flex flex-col gap-2 min-w-0">
       {/* Swatch */}
       <div
-        className="h-14 w-full rounded-[10px] border border-border/50 relative overflow-hidden flex items-center justify-center"
-        style={{ backgroundColor: `var(${token.cssVar})` }}
+        className={`h-14 w-full rounded-[10px] border border-border/50 relative overflow-hidden flex items-center justify-center ${token.twBg || ""}`}
       >
         {token.fgVar && (
-          <span className="text-xs select-none opacity-70" style={{ color: `var(${token.fgVar})` }}>
+          <span className={`text-xs select-none opacity-70 ${token.twText || ""}`}>
             Aa
           </span>
         )}
@@ -381,8 +381,7 @@ function TenantBanner() {
       <Palette className="h-4 w-4 text-primary shrink-0" />
       <div className="flex items-center gap-2 flex-wrap">
         <span
-          className="h-3.5 w-3.5 rounded-full shrink-0 border border-border"
-          style={{ backgroundColor: info.primary }}
+          className="h-3.5 w-3.5 rounded-full shrink-0 border border-border bg-primary"
         />
         <span className="text-sm font-medium">{info.name}</span>
         <Badge variant="outline" className="text-[10px]">{FONT_INFO.name}</Badge>
@@ -434,7 +433,7 @@ function ColorsTab() {
             const liveBg = toHex(liveValues[t.bgVar] || "");
             return (
               <div key={t.name} className="space-y-2">
-                <div className="h-14 rounded-[10px] border border-border/50" style={{ backgroundColor: `var(${t.cssVar})` }} />
+                <CssVarBox cssVar={t.cssVar} className="h-14 rounded-[10px] border border-border/50" />
                 <p className="text-xs font-medium">{t.name}</p>
                 <button
                   onClick={() => copy(t.cssVar)}
@@ -451,7 +450,7 @@ function ColorsTab() {
                     dark: {liveDark || "—"}
                   </span>
                 </div>
-                <div className="h-6 rounded-md" style={{ backgroundColor: `var(${t.bgVar})` }} />
+                <CssVarBox cssVar={t.bgVar} className="h-6 rounded-md" />
                 <p className="text-[10px] text-muted-foreground font-mono">{t.bgVar} → {liveBg || "—"}</p>
               </div>
             );
@@ -472,19 +471,17 @@ function ColorsTab() {
               <p className="text-xs font-medium w-16 shrink-0 text-right text-muted-foreground">{scale.name}</p>
               <div className="flex flex-1 gap-0.5">
                 {scale.shades.map((shade) => (
-                  <button
+                  <HexButton
                     key={shade.step}
                     onClick={() => copy(shade.hex)}
+                    hex={shade.hex}
                     className="group relative flex-1 h-10 rounded-sm transition-transform hover:scale-110 hover:z-10 hover:shadow-md"
-                    style={{ backgroundColor: shade.hex }}
                     title={`${scale.name}-${shade.step}: ${shade.hex}`}
                   >
-                    <span className="absolute inset-0 flex items-center justify-center text-[8px] font-mono opacity-0 group-hover:opacity-100 transition-opacity"
-                      style={{ color: shade.step >= 500 ? "#fff" : "#000" }}
-                    >
+                    <span className={`absolute inset-0 flex items-center justify-center text-[8px] font-mono opacity-0 group-hover:opacity-100 transition-opacity ${shade.step >= 500 ? "text-white" : "text-black"}`}>
                       {shade.step}
                     </span>
-                  </button>
+                  </HexButton>
                 ))}
               </div>
             </div>
@@ -507,7 +504,6 @@ function ColorsTab() {
 
 function TypographyTab() {
   const { copy } = useCopy();
-  const { colorMode } = useTheme();
   const fontInfo = FONT_INFO;
   const tenantName = "CESIONBNK";
 
@@ -515,8 +511,6 @@ function TypographyTab() {
   const liveTypo = useLiveTokens(["--font-sans", "--letter-spacing-base", "--radius"]);
   const liveFontSans = liveTypo["--font-sans"] || fontInfo.name;
   const liveLetterSpacing = liveTypo["--letter-spacing-base"] || "0.025em";
-  const liveRadius = liveTypo["--radius"] || "0.625rem";
-
   const weights = [
     { label: "Light", weight: "300", class: "font-light" },
     { label: "Regular", weight: "400", class: "font-normal" },
@@ -533,18 +527,18 @@ function TypographyTab() {
           <CardContent className="p-6 space-y-4">
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div>
-                <p style={{ fontFamily: liveFontSans }} className="text-5xl font-medium tracking-tight">
+                <FontFamilyText fontFamily={liveFontSans} className="text-5xl font-medium tracking-tight">
                   {fontInfo.name}
-                </p>
-                <p style={{ fontFamily: liveFontSans }} className="text-lg text-muted-foreground mt-1">
+                </FontFamilyText>
+                <FontFamilyText fontFamily={liveFontSans} className="text-lg text-muted-foreground mt-1">
                   The quick brown fox jumps over the lazy dog.
-                </p>
-                <p style={{ fontFamily: liveFontSans }} className="text-sm text-muted-foreground">
+                </FontFamilyText>
+                <FontFamilyText fontFamily={liveFontSans} className="text-sm text-muted-foreground">
                   ABCDEFGHIJKLMNOPQRSTUVWXYZ · abcdefghijklmnopqrstuvwxyz · 0123456789
-                </p>
-                <p style={{ fontFamily: liveFontSans }} className="text-sm text-muted-foreground">
-                  !@#$%^&amp;*()_+-=[]{}|;':",&lt;&gt;?/ · AEIOU Ñ ü (Latin Extended)
-                </p>
+                </FontFamilyText>
+                <FontFamilyText fontFamily={liveFontSans} className="text-sm text-muted-foreground">
+                  !@#$%^&amp;*()_+-=[]{}|;':,&lt;&gt;?/ · AEIOU Ñ ü (Latin Extended)
+                </FontFamilyText>
               </div>
               <div className="space-y-1 text-xs text-muted-foreground">
                 <button onClick={() => copy("--font-sans")} className="flex items-center gap-1 hover:text-primary font-mono">
@@ -569,9 +563,9 @@ function TypographyTab() {
           {weights.map((w) => (
             <Card key={w.weight}>
               <CardContent className="p-4 text-center">
-                <p style={{ fontFamily: liveFontSans, fontWeight: w.weight }} className="text-2xl mb-2">
+                <FontFamilyText fontFamily={liveFontSans} fontWeight={w.weight} className="text-2xl mb-2">
                   Aa
-                </p>
+                </FontFamilyText>
                 <p className="text-xs font-medium">{w.label}</p>
                 <p className="text-[10px] text-muted-foreground font-mono">{w.weight}</p>
                 <button
@@ -608,9 +602,9 @@ function TypographyTab() {
                     <Badge variant="outline" className="text-[10px] font-mono">{row.tag}</Badge>
                   </td>
                   <td className="px-4 py-3">
-                    <span style={{ fontSize: row.size.split(" / ")[0], fontFamily: liveFontSans }} className={row.twClass}>
+                    <FontFamilyText fontFamily={liveFontSans} className={row.twClass}>
                       {tenantName}
-                    </span>
+                    </FontFamilyText>
                   </td>
                   <td className="px-4 py-3 text-xs text-muted-foreground font-mono">{row.size}</td>
                   <td className="px-4 py-3 text-xs text-muted-foreground">{row.weight}</td>
@@ -666,12 +660,12 @@ function ShapeTab() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
           {radiusTokens.map((r) => (
             <div key={r.name} className="flex flex-col items-center gap-3">
-              <div
+              <RadiusBox
+                value={r.cssVar === "—" ? "9999px" : `var(${r.cssVar === "--radius" ? "--radius" : r.cssVar === "--radius-xl" ? "--radius-xl" : r.cssVar})`}
                 className="h-20 w-20 bg-muted border-2 border-primary flex items-center justify-center"
-                style={{ borderRadius: r.cssVar === "—" ? "9999px" : `var(${r.cssVar === "--radius" ? "--radius" : r.cssVar === "--radius-xl" ? "--radius-xl" : r.cssVar})` }}
               >
                 <span className="text-xs font-medium text-primary">{r.px}</span>
-              </div>
+              </RadiusBox>
               <div className="text-center space-y-0.5">
                 <p className="text-xs font-medium">{r.name}</p>
                 {r.cssVar !== "—" && (
@@ -743,12 +737,12 @@ function ShadowsTab() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {shadowTokens.map((s) => (
           <div key={s.name} className="flex flex-col gap-3">
-            <div
+            <ShadowBox
+              cssVar={s.cssVar}
               className="h-24 rounded-[10px] bg-card flex items-center justify-center"
-              style={{ boxShadow: `var(${s.cssVar})` }}
             >
               <p className="text-xs font-medium text-muted-foreground">{s.name}</p>
-            </div>
+            </ShadowBox>
             <div className="space-y-1">
               <p className="text-xs font-medium">{s.name}</p>
               <button onClick={() => copy(s.cssVar)} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary">
@@ -943,6 +937,318 @@ function UtilitiesTab() {
 }
 
 // ─────────────────────────────────────────────
+// SPACING TAB
+// ─────────────────────────────────────────────
+const SPACING_SCALE = [
+  { step: "px",  px: "1px",  cssVar: "--space-px",  tw: "p-px / m-px"  },
+  { step: "1",   px: "4px",  cssVar: "--space-1",   tw: "p-1 / m-1"    },
+  { step: "2",   px: "8px",  cssVar: "--space-2",   tw: "p-2 / m-2"    },
+  { step: "3",   px: "12px", cssVar: "--space-3",   tw: "p-3 / m-3"    },
+  { step: "4",   px: "16px", cssVar: "--space-4",   tw: "p-4 / m-4"    },
+  { step: "5",   px: "20px", cssVar: "--space-5",   tw: "p-5 / m-5"    },
+  { step: "6",   px: "24px", cssVar: "--space-6",   tw: "p-6 / m-6"    },
+  { step: "8",   px: "32px", cssVar: "--space-8",   tw: "p-8 / m-8"    },
+  { step: "10",  px: "40px", cssVar: "--space-10",  tw: "p-10 / m-10"  },
+  { step: "12",  px: "48px", cssVar: "--space-12",  tw: "p-12 / m-12"  },
+  { step: "16",  px: "64px", cssVar: "--space-16",  tw: "p-16 / m-16"  },
+  { step: "20",  px: "80px", cssVar: "--space-20",  tw: "p-20 / m-20"  },
+  { step: "24",  px: "96px", cssVar: "--space-24",  tw: "p-24 / m-24"  },
+];
+
+const SPACING_USAGE = [
+  { range: "1–2  (4–8px)",   use: "Gaps internos: icon + label, badge padding, radio gap" },
+  { range: "3–4  (12–16px)", use: "Padding de componentes: Input, Button, Card header" },
+  { range: "5–6  (20–24px)", use: "Separación entre elementos de un formulario o lista" },
+  { range: "8–10 (32–40px)", use: "Separación entre secciones de una página" },
+  { range: "12+  (48px+)",   use: "Márgenes de página, padding de layouts (SidebarInset)" },
+];
+
+function SpacingTab() {
+  const { copy } = useCopy();
+  return (
+    <div className="space-y-8">
+      <SectionHeader
+        title="Spacing Scale"
+        description="Escala de 4px. Todos los valores de padding, margin, gap y size deben ser múltiplos de 4px. Los tokens CSS están disponibles vía var(--space-N) y como utilidades Tailwind estándar."
+      />
+
+      {/* Visual scale */}
+      <div className="space-y-1">
+        {SPACING_SCALE.map((s) => {
+          const pxVal = parseInt(s.px) || 1;
+          const barW = Math.min(Math.round((pxVal / 96) * 100), 100);
+          return (
+            <div key={s.step} className="flex items-center gap-4 py-1.5 border-b border-border last:border-0">
+              <span className="w-8 text-xs font-mono text-muted-foreground shrink-0 text-right">{s.step}</span>
+              <div className="flex-1 flex items-center gap-3">
+                <div className="h-5 bg-primary rounded-sm shrink-0" style={{ width: `${Math.max(barW, 1)}%` }} />
+              </div>
+              <span className="w-12 text-xs font-mono text-foreground shrink-0 text-right">{s.px}</span>
+              <button onClick={() => copy(s.cssVar)} className="w-28 text-left flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-primary shrink-0">
+                <Copy className="h-3 w-3 shrink-0" />{s.cssVar}
+              </button>
+              <span className="w-24 text-xs font-mono text-muted-foreground shrink-0 hidden md:block">{s.tw}</span>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Usage guide */}
+      <div>
+        <p className="text-sm font-medium mb-3">Guía de uso</p>
+        <div className="rounded-xl border border-border overflow-hidden">
+          {SPACING_USAGE.map((u, i) => (
+            <div key={i} className="flex items-start gap-4 px-4 py-3 border-b border-border last:border-0 odd:bg-muted/30">
+              <code className="text-xs font-mono text-primary shrink-0 pt-0.5">{u.range}</code>
+              <span className="text-sm text-muted-foreground">{u.use}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Base grid note */}
+      <div className="p-4 rounded-xl bg-info/8 border border-info/20 text-sm text-info-on-subtle">
+        <strong>Base grid: 4px.</strong> Cualquier valor fuera de la escala (ej. 5px, 7px, 11px) es una desviación.
+        Usa siempre múltiplos de 4. Excepción permitida: <code className="font-mono">1px</code> para bordes y divisores.
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────
+// MOTION TAB
+// ─────────────────────────────────────────────
+const DURATION_TOKENS = [
+  { name: "instant", cssVar: "--duration-instant", value: "50ms",  use: "Tooltips aparecer, checkmarks" },
+  { name: "fast",    cssVar: "--duration-fast",    value: "100ms", use: "Hover states, focus rings, badges" },
+  { name: "base",    cssVar: "--duration-base",    value: "200ms", use: "Modales, drawers, dropdowns — uso general" },
+  { name: "slow",    cssVar: "--duration-slow",    value: "300ms", use: "Page transitions, sidebars, expansiones" },
+  { name: "slower",  cssVar: "--duration-slower",  value: "500ms", use: "Onboarding, animaciones de entrada de página" },
+  { name: "lazy",    cssVar: "--duration-lazy",    value: "700ms", use: "Loaders, spinners, ilustraciones" },
+];
+
+const EASING_TOKENS = [
+  { name: "default", cssVar: "--ease-default", value: "cubic-bezier(0.4, 0, 0.2, 1)",    use: "Transiciones generales (hover, focus, color)" },
+  { name: "in",      cssVar: "--ease-in",      value: "cubic-bezier(0.4, 0, 1, 1)",      use: "Elementos que salen de la pantalla (exit)" },
+  { name: "out",     cssVar: "--ease-out",      value: "cubic-bezier(0, 0, 0.2, 1)",     use: "Elementos que entran a la pantalla (enter)" },
+  { name: "spring",  cssVar: "--ease-spring",   value: "cubic-bezier(0.34, 1.56, 0.64, 1)", use: "Interacciones lúdicas, notificaciones, FAB" },
+  { name: "linear",  cssVar: "--ease-linear",   value: "linear",                         use: "Progress bars, loaders, spinners" },
+];
+
+function MotionTab() {
+  const { copy } = useCopy();
+  const [activeEase, setActiveEase] = useState<string | null>(null);
+
+  return (
+    <div className="space-y-8">
+      <SectionHeader
+        title="Motion System"
+        description="Tokens de duración y easing. Usar siempre estos valores — nunca hardcodear ms o cubic-bezier. Todos los componentes respetan prefers-reduced-motion automáticamente vía Tailwind."
+      />
+
+      {/* Duration */}
+      <div>
+        <p className="text-sm font-medium mb-4">Duration Scale</p>
+        <div className="space-y-2">
+          {DURATION_TOKENS.map((d) => (
+            <div key={d.name} className="flex items-center gap-4 p-3 rounded-lg border border-border hover:bg-muted/40 transition-colors">
+              <div className="w-20 shrink-0">
+                <Badge variant="neutral-soft" className="font-mono text-xs">{d.value}</Badge>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-sm font-medium">{d.name}</span>
+                  <button onClick={() => copy(d.cssVar)} className="flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-primary">
+                    <Copy className="h-3 w-3" />{d.cssVar}
+                  </button>
+                </div>
+                <p className="text-xs text-muted-foreground truncate">{d.use}</p>
+              </div>
+              {/* Animated demo bar */}
+              <div className="w-24 h-1.5 bg-muted rounded-full overflow-hidden shrink-0">
+                <div
+                  className="h-full bg-primary rounded-full"
+                  style={{
+                    animation: `slideRight ${d.value} var(--ease-default) infinite alternate`,
+                  }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Easing */}
+      <div>
+        <p className="text-sm font-medium mb-4">Easing Curves</p>
+        <div className="grid gap-3 md:grid-cols-2">
+          {EASING_TOKENS.map((e) => (
+            <div
+              key={e.name}
+              className="p-4 rounded-lg border border-border cursor-pointer hover:border-primary/50 hover:bg-muted/30 transition-colors"
+              onClick={() => setActiveEase(activeEase === e.name ? null : e.name)}
+            >
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <span className="text-sm font-medium">{e.name}</span>
+                <button onClick={(ev) => { ev.stopPropagation(); copy(e.cssVar); }} className="flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-primary">
+                  <Copy className="h-3 w-3" />{e.cssVar}
+                </button>
+              </div>
+              <p className="text-xs text-muted-foreground mb-3">{e.use}</p>
+              <div className="relative h-8 bg-muted rounded overflow-hidden">
+                <div
+                  className="absolute top-1 bottom-1 left-1 w-6 bg-primary rounded-sm"
+                  style={{
+                    animation: activeEase === e.name
+                      ? `slideAcross 1s ${e.value} infinite alternate`
+                      : undefined,
+                    transform: activeEase === e.name ? undefined : "translateX(0)",
+                  }}
+                />
+              </div>
+              {activeEase === e.name && (
+                <code className="text-2xs font-mono text-muted-foreground mt-2 block">{e.value}</code>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Reduced motion */}
+      <div className="p-4 rounded-xl bg-warning/8 border border-warning/20 text-sm text-warning-on-subtle space-y-1">
+        <p className="font-medium">prefers-reduced-motion</p>
+        <p>Tailwind aplica <code className="font-mono text-xs">motion-reduce:transition-none</code> automáticamente cuando el usuario activa "Reducir movimiento" en el SO. No necesitas implementarlo manualmente si usas clases Tailwind estándar.</p>
+      </div>
+
+      <style>{`
+        @keyframes slideRight {
+          from { transform: translateX(0%); }
+          to   { transform: translateX(calc(100% - 4px)); width: 100%; }
+        }
+        @keyframes slideAcross {
+          from { transform: translateX(0); }
+          to   { transform: translateX(calc(100% + 24px)); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────
+// BREAKPOINTS TAB
+// ─────────────────────────────────────────────
+const BREAKPOINTS = [
+  { name: "xs",  min: "0px",    max: "639px",   desc: "Mobile portrait — diseño base, columna única",       twPrefix: "(none)" },
+  { name: "sm",  min: "640px",  max: "767px",   desc: "Mobile landscape / tablet pequeño — 2 columnas",    twPrefix: "sm:" },
+  { name: "md",  min: "768px",  max: "1023px",  desc: "Tablet — sidebar colapsable, grids de 2–3 col",     twPrefix: "md:" },
+  { name: "lg",  min: "1024px", max: "1279px",  desc: "Desktop estándar — sidebar expandido, 3–4 columnas",twPrefix: "lg:" },
+  { name: "xl",  min: "1280px", max: "1535px",  desc: "Desktop amplio — layouts de 4–5 columnas",          twPrefix: "xl:" },
+  { name: "2xl", min: "1536px", max: "∞",       desc: "Pantallas grandes — max-w-7xl centrado",            twPrefix: "2xl:" },
+];
+
+const GRID_PATTERNS = [
+  { label: "Dashboard KPIs",   pattern: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4",    desc: "4 stat cards en desktop, apilados en mobile" },
+  { label: "Feature cards",    pattern: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",    desc: "3 columnas en desktop, 2 en tablet, 1 en mobile" },
+  { label: "Form + sidebar",   pattern: "grid-cols-1 lg:grid-cols-[280px_1fr]",         desc: "Sidebar fijo + contenido fluido" },
+  { label: "Data table",       pattern: "w-full overflow-x-auto",                       desc: "Scroll horizontal en mobile, tabla completa en desktop" },
+  { label: "Factoring ops",    pattern: "grid-cols-1 md:grid-cols-[1fr_320px]",         desc: "Lista principal + panel de detalle" },
+];
+
+function BreakpointsTab() {
+  const { copy } = useCopy();
+  return (
+    <div className="space-y-8">
+      <SectionHeader
+        title="Breakpoints & Grid"
+        description="Sistema de breakpoints heredado de Tailwind CSS v4. Mobile-first: define el estilo base para mobile y sobreescribe hacia arriba con prefijos sm:/md:/lg:/xl:."
+      />
+
+      {/* Breakpoints table */}
+      <div className="rounded-xl border border-border overflow-hidden">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-muted border-b border-border">
+              {["Breakpoint", "Min width", "Max width", "Prefijo TW", "Uso típico"].map(h => (
+                <th key={h} className="px-4 py-2.5 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {BREAKPOINTS.map((bp, i) => (
+              <tr key={bp.name} className={`border-b border-border last:border-0 ${i % 2 === 0 ? "bg-background" : "bg-muted/20"}`}>
+                <td className="px-4 py-3 font-mono font-semibold text-primary">{bp.name}</td>
+                <td className="px-4 py-3 font-mono text-xs text-foreground">{bp.min}</td>
+                <td className="px-4 py-3 font-mono text-xs text-muted-foreground">{bp.max}</td>
+                <td className="px-4 py-3">
+                  <button onClick={() => copy(bp.twPrefix)} className="font-mono text-xs bg-muted px-2 py-0.5 rounded hover:bg-primary/10 hover:text-primary transition-colors">
+                    {bp.twPrefix}
+                  </button>
+                </td>
+                <td className="px-4 py-3 text-xs text-muted-foreground">{bp.desc}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Visual ruler */}
+      <div>
+        <p className="text-sm font-medium mb-3">Visualización de rangos</p>
+        <div className="relative h-10 rounded-lg overflow-hidden border border-border bg-muted flex">
+          {[
+            { label: "xs", w: "10%",  bg: "bg-primary/20"   },
+            { label: "sm", w: "10%",  bg: "bg-primary/30"   },
+            { label: "md", w: "15%",  bg: "bg-primary/45"   },
+            { label: "lg", w: "20%",  bg: "bg-primary/60"   },
+            { label: "xl", w: "20%",  bg: "bg-primary/75"   },
+            { label: "2xl",w: "25%",  bg: "bg-primary/90"   },
+          ].map(s => (
+            <div key={s.label} className={`${s.w} ${s.bg} flex items-center justify-center border-r border-border/40 last:border-0`}>
+              <span className="text-xs font-mono text-foreground">{s.label}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-muted-foreground mt-2 text-center">Proporciones aproximadas — no a escala real</p>
+      </div>
+
+      {/* Grid patterns */}
+      <div>
+        <p className="text-sm font-medium mb-3">Patrones de grid responsivo — copiar y usar</p>
+        <div className="space-y-2">
+          {GRID_PATTERNS.map((p) => (
+            <div key={p.label} className="flex items-start gap-3 p-3 rounded-lg border border-border hover:bg-muted/30 transition-colors">
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium mb-0.5">{p.label}</p>
+                <p className="text-xs text-muted-foreground">{p.desc}</p>
+              </div>
+              <button
+                onClick={() => copy(p.pattern)}
+                className="flex items-center gap-1.5 shrink-0 font-mono text-xs bg-muted px-2.5 py-1.5 rounded-md hover:bg-primary/10 hover:text-primary transition-colors"
+              >
+                <Copy className="h-3 w-3" />
+                <span className="hidden sm:inline">{p.pattern}</span>
+                <span className="sm:hidden">copy</span>
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Container widths */}
+      <div className="p-4 rounded-xl bg-muted border border-border space-y-2">
+        <p className="text-sm font-medium">Anchos de contenedor recomendados</p>
+        <div className="space-y-1 text-xs font-mono text-muted-foreground">
+          <p><span className="text-primary">max-w-3xl</span>  → 768px — texto largo, formularios de 1 columna</p>
+          <p><span className="text-primary">max-w-5xl</span>  → 1024px — contenido con sidebar lateral</p>
+          <p><span className="text-primary">max-w-7xl</span>  → 1280px — dashboards y vistas de datos</p>
+          <p><span className="text-primary">w-full</span>     → tablas, layouts full-bleed dentro de SidebarInset</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────
 // MAIN PAGE
 // ─────────────────────────────────────────────
 export function DesignTokensPage() {
@@ -964,7 +1270,7 @@ export function DesignTokensPage() {
         <div className="flex items-center gap-3 flex-wrap">
           <h1 className="text-4xl text-foreground">Design Tokens</h1>
           <Badge variant="outline" className="text-xs">v2.0.0</Badge>
-          <Badge className="text-xs bg-primary text-primary-foreground">{totalTokens}+ tokens</Badge>
+          <Badge variant="default">{totalTokens}+ tokens</Badge>
         </div>
         <p className="text-muted-foreground max-w-2xl">
           Single source of truth for all CSS custom properties. Token values come from{" "}
@@ -972,11 +1278,11 @@ export function DesignTokensPage() {
         </p>
         <div className="flex gap-4 text-xs text-muted-foreground flex-wrap">
           <span>
-            <span className="inline-block h-2.5 w-2.5 rounded-full mr-1 align-middle" style={{ backgroundColor: "#374151" }} />
+            <span className="inline-block h-2.5 w-2.5 rounded-full mr-1 align-middle bg-primary" />
             <strong className="text-foreground">Primary:</strong> #374151
           </span>
           <span>
-            <span className="inline-block h-2.5 w-2.5 rounded-full mr-1 align-middle" style={{ backgroundColor: "#796eff" }} />
+            <span className="inline-block h-2.5 w-2.5 rounded-full mr-1 align-middle bg-secondary" />
             <strong className="text-foreground">Secondary:</strong> #796eff
           </span>
           <span>
@@ -1002,16 +1308,22 @@ export function DesignTokensPage() {
         <TabsList className="flex flex-wrap h-auto gap-1 p-1">
           <TabsTrigger value="colors">Colors</TabsTrigger>
           <TabsTrigger value="typography">Typography</TabsTrigger>
+          <TabsTrigger value="spacing">Spacing</TabsTrigger>
           <TabsTrigger value="shape">Shape</TabsTrigger>
           <TabsTrigger value="shadows">Shadows</TabsTrigger>
+          <TabsTrigger value="motion">Motion</TabsTrigger>
+          <TabsTrigger value="breakpoints">Breakpoints</TabsTrigger>
           <TabsTrigger value="animations">Animations</TabsTrigger>
           <TabsTrigger value="utilities">Utilities</TabsTrigger>
         </TabsList>
 
         <TabsContent value="colors"><ColorsTab /></TabsContent>
         <TabsContent value="typography"><TypographyTab /></TabsContent>
+        <TabsContent value="spacing"><SpacingTab /></TabsContent>
         <TabsContent value="shape"><ShapeTab /></TabsContent>
         <TabsContent value="shadows"><ShadowsTab /></TabsContent>
+        <TabsContent value="motion"><MotionTab /></TabsContent>
+        <TabsContent value="breakpoints"><BreakpointsTab /></TabsContent>
         <TabsContent value="animations"><AnimationsTab /></TabsContent>
         <TabsContent value="utilities"><UtilitiesTab /></TabsContent>
       </Tabs>

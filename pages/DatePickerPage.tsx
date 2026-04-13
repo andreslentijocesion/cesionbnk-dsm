@@ -1,4 +1,3 @@
-import React from "react";
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { Button } from "../components/ui/button";
 import { Calendar } from "../components/ui/calendar";

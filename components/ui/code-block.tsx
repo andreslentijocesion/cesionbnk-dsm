@@ -10,11 +10,10 @@ interface CodeBlockProps {
   showLineNumbers?: boolean;
 }
 
-export function CodeBlock({ 
-  code, 
-  language = "tsx", 
+export function CodeBlock({
+  code,
   filename,
-  showLineNumbers = true 
+  showLineNumbers = true
 }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
   const safeCode = code ?? "";

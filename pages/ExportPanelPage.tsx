@@ -20,14 +20,14 @@ export function ExportPanelPage() {
   return (
     <ComponentShowcase
       title="Export Panel"
-      description="Diálogo de exportación de datos con selección de formato (Excel, CSV, PDF) y columnas. Se activa con un botón trigger o de forma controlada desde el padre."
+      description="Diálogo de exportación de datos con selección de formato (CSV, PDF) y columnas. Se activa con un botón trigger o de forma controlada desde el padre."
       category="Patterns"
       atomicLevel="Molecule"
       preview={
         <ExportPanel
           title="Exportar cartera de factoring"
           columns={portfolioColumns}
-          formats={["xlsx", "csv", "pdf"]}
+          formats={["csv", "pdf"]}
           onExport={(fmt, cols) =>
             toast.success(`Exportando ${cols.length} columnas en formato ${fmt.toUpperCase()}`)
           }
@@ -46,7 +46,7 @@ const columns = [
 <ExportPanel
   title="Exportar cartera"
   columns={columns}
-  formats={["xlsx", "csv", "pdf"]}
+  formats={["csv", "pdf"]}
   onExport={(format, selectedCols) => {
     console.log("Exportar:", format, selectedCols)
   }}
@@ -54,7 +54,7 @@ const columns = [
       props={[
         { name: "title",        type: "string",          description: "Título del diálogo.", required: false },
         { name: "columns",      type: "ExportColumn[]",  description: "Columnas seleccionables. defaultSelected controla el estado inicial.", required: false },
-        { name: "formats",      type: "ExportFormat[]",  description: "Formatos disponibles. Default: ['xlsx', 'csv', 'pdf'].", required: false },
+        { name: "formats",      type: "ExportFormat[]",  description: "Formatos disponibles. Default: ['csv', 'pdf'].", required: false },
         { name: "onExport",     type: "(format, columns) => void", description: "Callback con formato elegido y columnas seleccionadas." },
         { name: "triggerLabel", type: "string",          description: "Texto del botón trigger. Default: 'Exportar'.", required: false },
         { name: "showTrigger",  type: "boolean",         description: "Muestra el botón trigger. Default: true.", required: false },
@@ -63,19 +63,19 @@ const columns = [
       ]}
       examples={[
         {
-          title: "Solo Excel y CSV (sin columnas)",
+          title: "Solo CSV (sin columnas)",
           description: "Versión simplificada solo con selección de formato.",
           preview: (
             <ExportPanel
               title="Exportar cedentes"
-              formats={["xlsx", "csv"]}
+              formats={["csv"]}
               triggerLabel="Descargar lista"
               onExport={(fmt) => toast.success(`Descargando en ${fmt.toUpperCase()}`)}
             />
           ),
           code: `<ExportPanel
   title="Exportar cedentes"
-  formats={["xlsx", "csv"]}
+  formats={["csv"]}
   triggerLabel="Descargar lista"
   onExport={(fmt) => download(fmt)}
 />`,

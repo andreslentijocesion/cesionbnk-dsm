@@ -2,7 +2,6 @@ import { useState } from "react";
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { MaskedInput } from "../components/ui/masked-input";
 import { Label } from "../components/ui/label";
-import { Badge } from "../components/ui/badge";
 
 function MaskedInputDemo() {
   const [rut, setRut] = useState("123456789");

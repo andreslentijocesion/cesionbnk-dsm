@@ -3,7 +3,6 @@ import { MasterDataGrid } from "../advanced/master-data-grid";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Progress } from "../ui/progress";
-import { Avatar } from "../ui/avatar";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from "../ui/table";
@@ -14,7 +13,7 @@ import {
 import { Sparkline } from "../advanced/sparkline";
 import {
   MoreHorizontal, TrendingUp, TrendingDown, ArrowUpDown,
-  ArrowUp, ArrowDown, Users, Building2, CheckCircle2, AlertTriangle,
+  ArrowUp, ArrowDown, Building2, CheckCircle2, AlertTriangle,
 } from "lucide-react";
 import { cn } from "../ui/utils";
 
@@ -103,11 +102,11 @@ const mockCedents: CedentRecord[] = [
 
 const statusCfg: Record<CedentStatus, {
   label: string;
-  variant: "success-soft-outline" | "warning-soft-outline" | "destructive-soft-outline";
+  variant: "outline";
 }> = {
-  activo:       { label: "Activo",       variant: "success-soft-outline" },
-  "en-revision":{ label: "En revisión",  variant: "warning-soft-outline" },
-  suspendido:   { label: "Suspendido",   variant: "destructive-soft-outline" },
+  activo:       { label: "Activo",       variant: "outline" },
+  "en-revision":{ label: "En revisión",  variant: "outline" },
+  suspendido:   { label: "Suspendido",   variant: "outline" },
 };
 
 type SortKey = "nombre" | "valorPortafolio" | "tasaCobro" | "creditoUsado" | "tendencia";
@@ -118,7 +117,7 @@ function LetterAvatar({ name }: { name: string }) {
   const initials = name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
   return (
     <div className="h-8 w-8 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0">
-      <span className="text-[11px] font-bold text-primary">{initials}</span>
+      <span className="text-2xs font-bold text-primary">{initials}</span>
     </div>
   );
 }
@@ -128,7 +127,7 @@ function LetterAvatar({ name }: { name: string }) {
 function CreditBar({ used, limit, pct }: { used: number; limit: number; pct: number }) {
   return (
     <div className="min-w-[100px] space-y-1">
-      <div className="flex justify-between text-[10px]">
+      <div className="flex justify-between text-xs">
         <span className="text-muted-foreground">{COP(used * limit / 100).replace("COP ", "$")}</span>
         <span className={cn("font-semibold tabular-nums", pct >= 80 ? "text-warning" : "text-foreground")}>{pct}%</span>
       </div>
@@ -247,20 +246,27 @@ export function FactoringCedentList() {
             </TableRow>
           </TableHeader>
           <TableBody>
+            {rows.length === 0 && (
+              <TableRow>
+                <TableCell colSpan={8} className="py-12 text-center text-sm text-muted-foreground">
+                  No se encontraron cedentes con los filtros aplicados.
+                </TableCell>
+              </TableRow>
+            )}
             {rows.map((c) => (
               <TableRow key={c.id} className="hover:bg-muted/30 transition-colors">
                 <TableCell>
                   <div className="flex items-center gap-2.5">
                     <LetterAvatar name={c.nombre} />
                     <div className="min-w-0">
-                      <p className="text-xs font-medium text-foreground truncate leading-tight">{c.nombre}</p>
-                      <p className="text-[10px] text-muted-foreground font-mono">{c.nit}</p>
+                      <p className="text-sm font-medium text-foreground truncate leading-tight">{c.nombre}</p>
+                      <p className="text-xs text-muted-foreground font-mono">{c.nit}</p>
                     </div>
                   </div>
                 </TableCell>
                 <TableCell>
                   <p className="text-xs text-foreground">{c.sector}</p>
-                  <p className="text-[10px] text-muted-foreground">{c.ciudad}</p>
+                  <p className="text-xs text-muted-foreground">{c.ciudad}</p>
                 </TableCell>
                 <TableCell className="text-right">
                   <div className="text-xs font-mono font-semibold tabular-nums">
@@ -279,7 +285,7 @@ export function FactoringCedentList() {
                     {c.tasaCobro.toFixed(1)}%
                   </span>
                   {c.facturasVencidas > 0 && (
-                    <p className="text-[10px] text-destructive">{c.facturasVencidas} vencida{c.facturasVencidas > 1 ? "s" : ""}</p>
+                    <p className="text-xs text-destructive">{c.facturasVencidas} vencida{c.facturasVencidas > 1 ? "s" : ""}</p>
                   )}
                 </TableCell>
                 <TableCell>
@@ -292,7 +298,7 @@ export function FactoringCedentList() {
                 <TableCell>
                   <div className="flex items-center gap-1.5">
                     <span className="text-sm font-bold text-foreground">{c.operacionesActivas}</span>
-                    <span className="text-[10px] text-muted-foreground">/ {c.operacionesTotales} total</span>
+                    <span className="text-xs text-muted-foreground">/ {c.operacionesTotales} total</span>
                   </div>
                 </TableCell>
                 <TableCell>

@@ -1,6 +1,5 @@
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { Card } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
 import { Separator } from "../components/ui/separator";
 import { Logo } from "../components/Logo";
 import { useState } from "react";

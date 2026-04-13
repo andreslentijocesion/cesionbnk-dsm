@@ -2,9 +2,10 @@
   "$schema": "https://json.schemastore.org/style-dictionary.json",
   "$metadata": {
     "name": "CESIONBNK Design Tokens",
-    "version": "7.0.0",
+    "version": "7.0.1",
     "description": "Single source of truth for CESIONBNK brand tokens. Used by: Figma Variables, CSS custom properties, Tailwind config.",
-    "updatedAt": "2026-03-06"
+    "updatedAt": "2026-03-16",
+    "changelog": "v7.0.1: Standardized foreground colors to professional gray (#3f3f46) instead of harsh black (#222222)"
   },
 
   "color": {
@@ -110,6 +111,25 @@
         "$type": "color",
         "$description": "Text/icon color on warning-subtle backgrounds."
       },
+      "caution": {
+        "$value": { "light": "#f97316", "dark": "#f97316" },
+        "$type": "color",
+        "$description": "Orange — riesgo alto, between warning and destructive."
+      },
+      "caution-foreground": {
+        "$value": { "light": "#ffffff", "dark": "#1c1917" },
+        "$type": "color"
+      },
+      "caution-subtle": {
+        "$value": { "light": "#fff7ed", "dark": "#431407" },
+        "$type": "color",
+        "$description": "Soft caution background."
+      },
+      "caution-on-subtle": {
+        "$value": { "light": "#c2410c", "dark": "#fb923c" },
+        "$type": "color",
+        "$description": "Text/icon color on caution-subtle backgrounds."
+      },
       "info-on-subtle": {
         "$value": { "light": "#1d4ed8", "dark": "#93c5fd" },
         "$type": "color",
@@ -141,24 +161,27 @@
         "$type": "color"
       },
       "foreground": {
-        "$value": { "light": "#222222", "dark": "#fafafa" },
-        "$type": "color"
+        "$value": { "light": "#3f3f46", "dark": "#fafafa" },
+        "$type": "color",
+        "$description": "Primary foreground text color. Professional gray in light mode for enhanced readability."
       },
       "card": {
         "$value": { "light": "#ffffff", "dark": "#09090b" },
         "$type": "color"
       },
       "card-fg": {
-        "$value": { "light": "#222222", "dark": "#fafafa" },
-        "$type": "color"
+        "$value": { "light": "#3f3f46", "dark": "#fafafa" },
+        "$type": "color",
+        "$description": "Text color on card surfaces. Matches professional gray standard."
       },
       "popover": {
         "$value": { "light": "#ffffff", "dark": "#18181b" },
         "$type": "color"
       },
       "popover-fg": {
-        "$value": { "light": "#222222", "dark": "#fafafa" },
-        "$type": "color"
+        "$value": { "light": "#3f3f46", "dark": "#fafafa" },
+        "$type": "color",
+        "$description": "Text color on popover surfaces. Matches professional gray standard."
       },
       "muted": {
         "$value": { "light": "#f4f4f5", "dark": "#27272a" },
@@ -211,6 +234,7 @@
       "mono": { "$value": "'JetBrains Mono', 'Fira Code', monospace",   "$type": "fontFamily" }
     },
     "fontSize": {
+      "2xs":  { "$value": 10, "$type": "dimension", "$description": "Tight UI contexts: avatars, inline badges, nav counters" },
       "xs":   { "$value": 12, "$type": "dimension" },
       "sm":   { "$value": 14, "$type": "dimension" },
       "base": { "$value": 16, "$type": "dimension" },

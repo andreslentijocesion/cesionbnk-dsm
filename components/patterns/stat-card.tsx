@@ -5,7 +5,6 @@
  */
 import { type LucideIcon, TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
-import { Badge } from "../ui/badge";
 import { cn } from "../../lib/utils";
 
 export interface StatCardProps {
@@ -26,9 +25,9 @@ export interface StatCardProps {
 const variantStyles: Record<NonNullable<StatCardProps["variant"]>, string> = {
   default:     "bg-muted text-muted-foreground",
   primary:     "bg-primary/10 text-primary",
-  success:     "bg-emerald-50 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400",
-  warning:     "bg-amber-50 text-amber-600 dark:bg-amber-950 dark:text-amber-400",
-  destructive: "bg-destructive/10 text-destructive",
+  success:     "bg-success-subtle text-success-on-subtle",
+  warning:     "bg-warning-subtle text-warning-on-subtle",
+  destructive: "bg-destructive-subtle text-destructive-on-subtle",
 };
 
 export function StatCard({
@@ -43,8 +42,8 @@ export function StatCard({
 }: StatCardProps) {
   const TrendIcon = trend === "up" ? TrendingUp : trend === "down" ? TrendingDown : Minus;
   const trendColor =
-    trend === "up" ? "text-emerald-600 dark:text-emerald-400" :
-    trend === "down" ? "text-destructive" :
+    trend === "up" ? "text-success-on-subtle" :
+    trend === "down" ? "text-destructive-on-subtle" :
     "text-muted-foreground";
 
   return (

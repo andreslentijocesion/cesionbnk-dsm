@@ -43,6 +43,19 @@ export default defineConfig({
         'zod',
         '@hookform/resolvers',
         'framer-motion',
+        // Charts & data
+        'recharts',
+        /^recharts\/.*/,
+        // Tables
+        '@tanstack/react-table',
+        /^@tanstack\/.*/,
+        // Layout
+        'react-resizable-panels',
+        // Carousel
+        'embla-carousel-react',
+        /^embla-carousel.*/,
+        // Misc
+        'prop-types',
       ],
     },
     copyPublicDir: false,

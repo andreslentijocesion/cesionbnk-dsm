@@ -18,6 +18,7 @@ export type SectionId =
   | "data-display"
   | "feedback"
   | "layout"
+  | "factoring"
   | "patterns"
   | "advanced";
 
@@ -33,6 +34,7 @@ export const SECTIONS: readonly SectionMeta[] = [
   { id: "data-display", label: "Data Display" },
   { id: "feedback",     label: "Feedback"     },
   { id: "layout",       label: "Layout"       },
+  { id: "factoring",    label: "Factoring"    },
   { id: "patterns",     label: "Patterns"     },
   { id: "advanced",     label: "Advanced"     },
 ] as const;
@@ -99,60 +101,62 @@ const ITEMS_SPEC = [
   ["dialog",               "Dialog",              "feedback"],
   ["toast",                "Toast (Sonner)",       "feedback"],
   ["tooltip",              "Tooltip",             "feedback"],
+  ["popover",              "Popover",             "feedback"],
   ["progress",             "Progress",            "feedback"],
   ["progress-with-range",  "Progress with Range", "feedback"],
   ["skeleton",             "Skeleton",            "feedback"],
-  ["sheet",                "Sheet",               "feedback"],
-  ["drawer",               "Drawer",              "feedback"],
-  ["popover",              "Popover",             "feedback"],
   ["empty-state",          "Empty State",         "feedback"],
   ["error-boundary",       "Error Boundary",      "feedback"],
-  ["bottom-sheet",         "Bottom Sheet",        "feedback"],
   ["loading-states",       "Loading States",      "feedback"],
 
   // ── Layout ──
-  ["accordion",         "Accordion",   "layout"],
-  ["collapsible",       "Collapsible", "layout"],
-  ["carousel",          "Carousel",    "layout"],
-  ["scroll-area",       "Scroll Area", "layout"],
-  ["sidebar-showcase",  "Sidebar",     "layout"],
-  ["app-layout",        "App Layout",  "layout"],
+  ["accordion",         "Accordion",    "layout"],
+  ["app-layout",        "App Layout",   "layout"],
+  ["bottom-sheet",      "Bottom Sheet", "layout"],
+  ["carousel",          "Carousel",     "layout"],
+  ["collapsible",       "Collapsible",  "layout"],
+  ["drawer",            "Drawer",       "layout"],
+  ["scroll-area",       "Scroll Area",  "layout"],
+  ["sheet",             "Sheet",        "layout"],
+  ["sidebar-showcase",  "Sidebar",      "layout"],
+
+  // ── Factoring ──
+  ["factoring-dashboard",            "Dashboard",                 "factoring"],
+  ["factoring-portfolio",            "Portfolio",                 "factoring"],
+  ["factoring-new-operation",        "Nueva Operación",           "factoring"],
+  ["factoring-approval-queue",       "Cola de Aprobación",        "factoring"],
+  ["factoring-cedent-list",          "Gestión de Cedentes",       "factoring"],
+  ["factoring-cedent-profile",       "Perfil de Cedente",         "factoring"],
+  ["factoring-debtor-list",          "Gestión de Deudores",       "factoring"],
+  ["factoring-maturity-alerts",      "Alertas de Vencimiento",    "factoring"],
+  ["factoring-portfolio-report",     "Reporte de Cartera",        "factoring"],
+  ["factoring-calculator",           "Calculadora",               "factoring"],
+  ["factoring-sector-concentration", "Concentración Sectorial",   "factoring"],
+  ["factoring-status-card",          "Status Cards",              "factoring"],
 
   // ── Patterns ──
-  ["data-table-advanced",            "Data Table Advanced",       "patterns"],
-  ["factoring-dashboard",            "Factoring Dashboard",       "patterns"],
-  ["factoring-portfolio",            "Factoring Portfolio",       "patterns"],
-  ["factoring-new-operation",        "Nueva Operación",           "patterns"],
-  ["factoring-approval-queue",       "Cola de Aprobación",        "patterns"],
-  ["factoring-cedent-list",          "Gestión de Cedentes",       "patterns"],
-  ["factoring-cedent-profile",       "Perfil de Cedente",         "patterns"],
-  ["factoring-debtor-list",          "Gestión de Deudores",       "patterns"],
-  ["factoring-maturity-alerts",      "Alertas de Vencimiento",    "patterns"],
-  ["factoring-portfolio-report",     "Reporte de Cartera",        "patterns"],
-  ["factoring-calculator",           "Calculadora",               "patterns"],
-  ["factoring-sector-concentration", "Concentración Sectorial",   "patterns"],
-  ["factoring-status-card",          "Status Cards",              "patterns"],
-  ["advanced-filter",                "Advanced Filter Panel",     "patterns"],
-  ["editable-table",                 "Editable Table",            "patterns"],
-  ["multi-step-wizard",              "Multi-Step Wizard",         "patterns"],
-  ["multi-step-form",                "Multi-Step Form",           "patterns"],
-  ["notification-center",            "Notification Center",       "patterns"],
-  ["timeline",                       "Timeline",                  "patterns"],
-  ["file-viewer",                    "File Viewer",               "patterns"],
-  ["stat-card",                      "Stat Card",                 "patterns"],
-  ["aging-report",                   "Aging Report",              "patterns"],
-  ["audit-log",                      "Audit Log",                 "patterns"],
-  ["credit-score-card",              "Credit Score Card",         "patterns"],
-  ["approval-flow",                  "Approval Flow",             "patterns"],
-  ["export-panel",                   "Export Panel",              "patterns"],
-  ["onboarding",                     "Onboarding",                "patterns"],
-  ["bulk-action-toolbar",            "Bulk Action Toolbar",       "patterns"],
-  ["comment-thread",                 "Comment Thread",            "patterns"],
-  ["document-checklist",             "Document Checklist",        "patterns"],
-  ["detail-card",                    "Detail Card",               "patterns"],
+  ["advanced-filter",                "Advanced Filter Panel",      "patterns"],
+  ["aging-report",                   "Aging Report",               "patterns"],
+  ["approval-flow",                  "Approval Flow",              "patterns"],
+  ["audit-log",                      "Audit Log",                  "patterns"],
+  ["bulk-action-toolbar",            "Bulk Action Toolbar",        "patterns"],
+  ["comment-thread",                 "Comment Thread",             "patterns"],
+  ["credit-score-card",              "Credit Score Card",          "patterns"],
+  ["data-table-advanced",            "Data Table Advanced",        "patterns"],
+  ["detail-card",                    "Detail Card",                "patterns"],
+  ["document-checklist",             "Document Checklist",         "patterns"],
+  ["editable-table",                 "Editable Table",             "patterns"],
+  ["export-panel",                   "Export Panel",               "patterns"],
+  ["file-viewer",                    "File Viewer",                "patterns"],
+  ["multi-step-form",                "Multi-Step Form",            "patterns"],
+  ["multi-step-wizard",              "Multi-Step Wizard",          "patterns"],
+  ["notification-center",            "Notification Center",        "patterns"],
+  ["onboarding",                     "Onboarding",                 "patterns"],
   ["operation-status-pipeline",      "Operation Status Pipeline",  "patterns"],
   ["risk-indicator",                 "Risk Indicator",             "patterns"],
   ["signature-panel",                "Signature Panel",            "patterns"],
+  ["stat-card",                      "Stat Card",                  "patterns"],
+  ["timeline",                       "Timeline",                   "patterns"],
 
   // ── Advanced ──
   ["charts",            "Charts",            "advanced"],
@@ -174,6 +178,7 @@ export type SpecialPageId =
   | "dsm-dashboard"
   | "brand-layout"
   | "design-tokens"
+  | "component-guidelines"
   | "help-system-demo"
   | "animations"
   | "icon-gallery"
@@ -212,8 +217,9 @@ export const SPECIAL_LABELS: Record<SpecialPageId, string> = {
   "help-system-demo": "Help System",
   animations:         "Animations",
   "icon-gallery":     "Icon Gallery",
-  "dsm-visual-audit": "DSM Visual Audit",
-  changelog:          "Changelog",
+  "dsm-visual-audit":       "DSM Visual Audit",
+  "component-guidelines":   "Component Guidelines",
+  changelog:                "Changelog",
 };
 
 /** Combined label map for all pages */

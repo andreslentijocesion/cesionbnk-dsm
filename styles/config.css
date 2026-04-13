@@ -46,6 +46,10 @@
   --color-warning-foreground:          var(--warning-foreground);
   --color-warning-subtle:              var(--warning-subtle);
   --color-warning-on-subtle:           var(--warning-on-subtle);
+  --color-caution:                     var(--caution);
+  --color-caution-foreground:          var(--caution-foreground);
+  --color-caution-subtle:              var(--caution-subtle);
+  --color-caution-on-subtle:           var(--caution-on-subtle);
   --color-info:                        var(--info);
   --color-info-foreground:             var(--info-foreground);
   --color-info-subtle:                 var(--info-subtle);
@@ -98,9 +102,44 @@
   /* -- Font -- */
   --font-sans:  var(--font-sans);
 
+  /* -- Custom font sizes -- */
+  --text-2xs: 0.625rem; /* 10px — tight UI: avatars, badges, nav counters */
+  --text-2xs--line-height: 1rem;
+
   /* -- Animations (standard -- shadcn/ui accordion) -- */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up:   accordion-up 0.2s ease-out;
+
+  /* -- Duration tokens -- */
+  --duration-instant:  50ms;
+  --duration-fast:    100ms;
+  --duration-base:    200ms;
+  --duration-slow:    300ms;
+  --duration-slower:  500ms;
+  --duration-lazy:    700ms;
+
+  /* -- Easing tokens -- */
+  --ease-default:     cubic-bezier(0.4, 0, 0.2, 1); /* ease-in-out — general transitions */
+  --ease-in:          cubic-bezier(0.4, 0, 1, 1);   /* elements leaving the screen */
+  --ease-out:         cubic-bezier(0, 0, 0.2, 1);   /* elements entering the screen */
+  --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1); /* overshoot — playful interactions */
+  --ease-linear:      linear;
+
+  /* -- Spacing scale (4px base grid) -- */
+  --space-px:  1px;
+  --space-0:   0px;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
 }
 
 /* ============================================================
@@ -166,6 +205,16 @@
 
     h4 {
       @apply text-base font-medium;
+      line-height: 1.5;
+    }
+
+    h5 {
+      @apply text-sm font-semibold;
+      line-height: 1.5;
+    }
+
+    h6 {
+      @apply text-xs font-semibold;
       line-height: 1.5;
     }
 

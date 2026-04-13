@@ -1,7 +1,7 @@
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { Onboarding } from "../components/patterns/onboarding";
 import { toast } from "sonner";
-import { FileText, Calculator } from "lucide-react";
+import { Calculator } from "lucide-react";
 
 export function OnboardingPage() {
   return (

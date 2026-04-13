@@ -84,10 +84,10 @@ const iconMap = {
 };
 
 const colorMap = {
-  success: "text-green-500",
-  error: "text-red-500",
-  warning: "text-yellow-500",
-  info: "text-blue-500",
+  success: "text-success",
+  error: "text-destructive",
+  warning: "text-warning",
+  info: "text-info",
 };
 
 export function NotificationCenter() {
@@ -129,7 +129,7 @@ export function NotificationCenter() {
             <div className="flex items-start justify-between gap-2">
               <p className="font-medium text-sm">{notification.title}</p>
               {!notification.read && (
-                <Badge variant="default" className="h-2 w-2 p-0 rounded-full" />
+                <Badge variant="outline" className="h-2 w-2 p-0 rounded-full" />
               )}
             </div>
             <p className="text-sm text-muted-foreground">
@@ -202,14 +202,14 @@ export function NotificationCenter() {
           <TabsList className="w-full grid grid-cols-3 max-w-lg rounded-none border-b">
             <TabsTrigger value="all" className="rounded-none">
               All
-              <Badge variant="secondary" className="ml-2 h-5 px-1.5 text-xs">
+              <Badge variant="outline" className="ml-2 h-5 px-1.5 text-xs">
                 {notificationList.length}
               </Badge>
             </TabsTrigger>
             <TabsTrigger value="unread" className="rounded-none">
               Unread
               {unreadCount > 0 && (
-                <Badge variant="default" className="ml-2 h-5 px-1.5 text-xs">
+                <Badge variant="outline" className="ml-2 h-5 px-1.5 text-xs">
                   {unreadCount}
                 </Badge>
               )}

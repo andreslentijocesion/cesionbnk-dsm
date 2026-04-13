@@ -114,7 +114,7 @@ const columns: ColumnDef<Invoice>[] = [
         currency: "CLP",
       }).format(amount);
 
-      return <div className="text-right font-medium">{formatted}</div>;
+      return <div className="text-right font-medium font-mono tabular-nums">{formatted}</div>;
     },
   },
   {
@@ -137,7 +137,7 @@ const columns: ColumnDef<Invoice>[] = [
               }
             />
           </div>
-          <span className={`text-xs font-medium ${colorClass}`}>{score}</span>
+          <span className={`text-xs font-medium font-mono tabular-nums ${colorClass}`}>{score}</span>
         </div>
       );
     },

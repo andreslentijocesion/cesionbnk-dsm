@@ -6,8 +6,8 @@ import { Separator } from "../ui/separator";
 import { Progress } from "../ui/progress";
 import { SafeChartContainer } from "../ui/safe-chart-container";
 import {
-  AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell,
-  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend,
+  AreaChart, Area, PieChart, Pie, Cell,
+  XAxis, YAxis, CartesianGrid, Tooltip,
 } from "recharts";
 import {
   TrendingUp, TrendingDown, DollarSign, Clock, AlertTriangle,
@@ -229,7 +229,7 @@ export function FactoringDashboard() {
           <CardHeader className="pb-2 px-4 pt-4">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="text-sm font-semibold">Evolución del portafolio</CardTitle>
+                <CardTitle>Evolución del portafolio</CardTitle>
                 <CardDescription className="text-xs">Desembolsado vs cobrado (COP millones)</CardDescription>
               </div>
               <Badge variant="secondary-soft-outline" className="text-xs">Últimos 7 meses</Badge>
@@ -262,7 +262,7 @@ export function FactoringDashboard() {
         {/* Pie Chart — Por estado */}
         <Card className="border shadow-sm">
           <CardHeader className="pb-2 px-4 pt-4">
-            <CardTitle className="text-sm font-semibold">Operaciones por estado</CardTitle>
+            <CardTitle>Operaciones por estado</CardTitle>
             <CardDescription className="text-xs">{totalOperaciones} operaciones totales</CardDescription>
           </CardHeader>
           <CardContent className="px-4 pb-3">
@@ -307,7 +307,7 @@ export function FactoringDashboard() {
         {/* Aging Analysis */}
         <Card className="border shadow-sm">
           <CardHeader className="pb-2 px-4 pt-4">
-            <CardTitle className="text-sm font-semibold">Análisis de vencimiento</CardTitle>
+            <CardTitle>Análisis de vencimiento</CardTitle>
             <CardDescription className="text-xs">Distribución por días de vencimiento</CardDescription>
           </CardHeader>
           <CardContent className="px-4 pb-4 space-y-3">
@@ -325,7 +325,7 @@ export function FactoringDashboard() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Progress value={pct} className="h-1.5 flex-1 bg-muted" indicatorClassName={row.color} />
-                    <span className="text-[10px] text-muted-foreground w-7 text-right tabular-nums">{pct}%</span>
+                    <span className="text-xs text-muted-foreground w-7 text-right tabular-nums">{pct}%</span>
                   </div>
                 </div>
               );
@@ -338,7 +338,7 @@ export function FactoringDashboard() {
           <CardHeader className="pb-2 px-4 pt-4">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="text-sm font-semibold">Top cedentes</CardTitle>
+                <CardTitle>Top cedentes</CardTitle>
                 <CardDescription className="text-xs">Por valor de portafolio</CardDescription>
               </div>
               <Button variant="ghost" size="sm" className="h-7 text-xs text-muted-foreground px-2">
@@ -354,15 +354,15 @@ export function FactoringDashboard() {
                     <Users className="h-3.5 w-3.5 text-muted-foreground" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-xs font-medium text-foreground truncate leading-tight">{c.nombre}</p>
-                    <p className="text-[10px] text-muted-foreground">{c.operaciones} ops · {COP(c.valor, true)}</p>
+                    <p className="text-sm font-medium text-foreground truncate leading-tight">{c.nombre}</p>
+                    <p className="text-xs text-muted-foreground">{c.operaciones} ops · {COP(c.valor, true)}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-1.5 flex-shrink-0">
                   {c.tendencia > 0
                     ? <TrendingUp className="h-3 w-3 text-success" />
                     : <TrendingDown className="h-3 w-3 text-destructive" />}
-                  <span className={cn("text-[11px] font-semibold tabular-nums", c.tendencia > 0 ? "text-success" : "text-destructive")}>
+                  <span className={cn("text-xs font-semibold tabular-nums", c.tendencia > 0 ? "text-success" : "text-destructive")}>
                     {c.tendencia > 0 ? "+" : ""}{c.tendencia}%
                   </span>
                 </div>
@@ -374,7 +374,7 @@ export function FactoringDashboard() {
         {/* Actividad reciente */}
         <Card className="border shadow-sm">
           <CardHeader className="pb-2 px-4 pt-4">
-            <CardTitle className="text-sm font-semibold">Actividad reciente</CardTitle>
+            <CardTitle>Actividad reciente</CardTitle>
             <CardDescription className="text-xs">Últimos movimientos del portafolio</CardDescription>
           </CardHeader>
           <CardContent className="px-4 pb-4">
@@ -389,8 +389,8 @@ export function FactoringDashboard() {
                     <div className="min-w-0 flex-1">
                       <p className="text-xs text-foreground leading-snug">{a.desc}</p>
                       <div className="flex items-center justify-between mt-0.5">
-                        <span className="text-[10px] text-muted-foreground">{a.tiempo}</span>
-                        <span className="text-[10px] font-mono text-muted-foreground tabular-nums">{COP(a.monto, true)}</span>
+                        <span className="text-xs text-muted-foreground">{a.tiempo}</span>
+                        <span className="text-xs font-mono text-muted-foreground tabular-nums">{COP(a.monto, true)}</span>
                       </div>
                     </div>
                   </div>
@@ -410,7 +410,7 @@ export function FactoringDashboard() {
         <CardHeader className="pb-2 px-4 pt-4">
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle className="text-sm font-semibold">Concentración por deudor</CardTitle>
+              <CardTitle>Concentración por deudor</CardTitle>
               <CardDescription className="text-xs">Exposición crediticia por pagador — top 5</CardDescription>
             </div>
           </div>
@@ -423,8 +423,8 @@ export function FactoringDashboard() {
               return (
                 <div key={d.nombre} className="flex items-center gap-4">
                   <div className="w-40 flex-shrink-0">
-                    <p className="text-xs font-medium text-foreground truncate">{d.nombre}</p>
-                    <p className="text-[10px] text-muted-foreground">{d.sector}</p>
+                    <p className="text-sm font-medium text-foreground truncate">{d.nombre}</p>
+                    <p className="text-xs text-muted-foreground">{d.sector}</p>
                   </div>
                   <Progress value={pct} className="flex-1 h-2 bg-muted" indicatorClassName="bg-primary" />
                   <span className="text-xs tabular-nums text-muted-foreground w-16 text-right">{COP(d.valor, true)}</span>

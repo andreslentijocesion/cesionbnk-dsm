@@ -280,11 +280,11 @@ export function TabsDemo() {
               <TabsList>
                 <TabsTrigger value="all" className="gap-2">
                   All
-                  <Badge variant="secondary" className="ml-1">24</Badge>
+                  <Badge variant="neutral" className="ml-1">24</Badge>
                 </TabsTrigger>
                 <TabsTrigger value="active" className="gap-2">
                   Active
-                  <Badge className="ml-1">12</Badge>
+                  <Badge variant="neutral" className="ml-1">12</Badge>
                 </TabsTrigger>
                 <TabsTrigger value="completed" className="gap-2">
                   Completed
@@ -312,11 +312,11 @@ export function TabsDemo() {
   <TabsList>
     <TabsTrigger value="all">
       All
-      <Badge variant="secondary" className="ml-1">24</Badge>
+      <Badge variant="neutral" className="ml-1">24</Badge>
     </TabsTrigger>
     <TabsTrigger value="active">
       Active
-      <Badge className="ml-1">12</Badge>
+      <Badge variant="neutral" className="ml-1">12</Badge>
     </TabsTrigger>
   </TabsList>
   <TabsContent value="all">Content</TabsContent>

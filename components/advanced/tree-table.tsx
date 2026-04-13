@@ -4,7 +4,7 @@
  * @layer advanced
  * Renamed from tree-table-v2.tsx — R4 compliance (no version suffixes)
  */
-import React, { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
@@ -53,17 +53,17 @@ interface PayerGroup {
   totalAmount: number; totalDisbursement: number; groupId: string;
 }
 
-const operationStatusConfig: Record<Operation["status"], { label: string; variant: "warning-soft-outline" | "success-soft-outline" | "info-soft-outline" | "destructive-soft-outline"; order: number }> = {
-  pending:    { label: "Pending",    variant: "warning-soft-outline",     order: 1 },
-  approved:   { label: "Approved",   variant: "success-soft-outline",     order: 2 },
-  disbursed:  { label: "Disbursed",  variant: "info-soft-outline",        order: 3 },
-  canceled:   { label: "Canceled",   variant: "destructive-soft-outline", order: 4 },
+const operationStatusConfig: Record<Operation["status"], { label: string; variant: "outline"; order: number }> = {
+  pending:    { label: "Pending",    variant: "outline", order: 1 },
+  approved:   { label: "Approved",   variant: "outline", order: 2 },
+  disbursed:  { label: "Disbursed",  variant: "outline", order: 3 },
+  canceled:   { label: "Canceled",   variant: "outline", order: 4 },
 };
 
-const invoiceStatusConfig: Record<InvoiceDetail["status"], { label: string; variant: "success-soft-outline" | "warning-soft-outline" | "info-soft-outline" }> = {
-  current: { label: "Current", variant: "success-soft-outline" },
-  overdue: { label: "Overdue", variant: "warning-soft-outline" },
-  paid:    { label: "Paid",    variant: "info-soft-outline" },
+const invoiceStatusConfig: Record<InvoiceDetail["status"], { label: string; variant: "outline" }> = {
+  current: { label: "Current", variant: "outline" },
+  overdue: { label: "Overdue", variant: "outline" },
+  paid:    { label: "Paid",    variant: "outline" },
 };
 
 const STATUS_OPTIONS = [
@@ -352,7 +352,7 @@ export function TreeTable({
                 </TableHead>
                 <TableHead className="w-[100px]">
                   <button className="flex items-end gap-1 hover:text-foreground transition-colors" onClick={() => handleSort("date")}>
-                    <span className="flex flex-col leading-tight text-left"><span className="text-[10px] text-muted-foreground font-normal">Date</span><span>Operation</span></span>
+                    <span className="flex flex-col leading-tight text-left"><span className="text-2xs text-muted-foreground font-normal">Date</span><span>Operation</span></span>
                     {renderSortIcon("date")}
                   </button>
                 </TableHead>
@@ -363,13 +363,13 @@ export function TreeTable({
                 <TableHead className="w-[80px] text-center">Invoices</TableHead>
                 <TableHead className="w-[120px]">
                   <button className="flex items-end gap-1 hover:text-foreground transition-colors" onClick={() => handleSort("invoiceAmount")}>
-                    <span className="flex flex-col leading-tight text-left"><span className="text-[10px] text-muted-foreground font-normal">Value</span><span>Invoices</span></span>
+                    <span className="flex flex-col leading-tight text-left"><span className="text-2xs text-muted-foreground font-normal">Value</span><span>Invoices</span></span>
                     {renderSortIcon("invoiceAmount")}
                   </button>
                 </TableHead>
                 <TableHead className="w-[120px]">
                   <button className="flex items-end gap-1 hover:text-foreground transition-colors" onClick={() => handleSort("disbursementAmount")}>
-                    <span className="flex flex-col leading-tight text-left"><span className="text-[10px] text-muted-foreground font-normal">Value</span><span>Disbursement</span></span>
+                    <span className="flex flex-col leading-tight text-left"><span className="text-2xs text-muted-foreground font-normal">Value</span><span>Disbursement</span></span>
                     {renderSortIcon("disbursementAmount")}
                   </button>
                 </TableHead>
@@ -398,7 +398,7 @@ export function TreeTable({
                           </Button>
                         </div>
                       </TableCell>
-                      <TableCell><span className="text-sm text-muted-foreground">{op.id}</span></TableCell>
+                      <TableCell><span className="text-sm text-muted-foreground font-mono tabular-nums">{op.id}</span></TableCell>
                       <TableCell className="text-muted-foreground">{op.operationDate}</TableCell>
                       <TableCell>
                         <div className="flex flex-col">
@@ -415,7 +415,7 @@ export function TreeTable({
                         ) : (
                           <Tooltip>
                             <TooltipTrigger asChild>
-                              <span className="inline-flex"><Badge variant="info-soft-outline" className="cursor-default">{payers.length} payers</Badge></span>
+                              <span className="inline-flex"><Badge variant="outline" className="cursor-default">{payers.length} payers</Badge></span>
                             </TooltipTrigger>
                             <TooltipContent side="bottom" className="max-w-[280px]">
                               <ul className="space-y-1">{payers.map((p) => <li key={p.taxId} className="text-xs">{p.name} — {p.taxId}</li>)}</ul>
@@ -423,10 +423,10 @@ export function TreeTable({
                           </Tooltip>
                         )}
                       </TableCell>
-                      <TableCell className="text-center"><Badge variant="info-soft-outline">{op.invoices.length}</Badge></TableCell>
-                      <TableCell className="font-medium">{formatCurrency(op.invoiceAmount)}</TableCell>
-                      <TableCell className="font-medium">{formatCurrency(op.disbursementAmount)}</TableCell>
-                      <TableCell className="text-center"><Badge variant={statusCfg.variant} className="text-[11px] px-2 py-0.5">{statusCfg.label}</Badge></TableCell>
+                      <TableCell className="text-center"><Badge variant="outline" className="text-xs">{op.invoices.length}</Badge></TableCell>
+                      <TableCell className="font-medium font-mono tabular-nums">{formatCurrency(op.invoiceAmount)}</TableCell>
+                      <TableCell className="font-medium font-mono tabular-nums">{formatCurrency(op.disbursementAmount)}</TableCell>
+                      <TableCell className="text-center"><Badge variant="outline" className="text-xs">{statusCfg.label}</Badge></TableCell>
                       <TableCell>
                         <div className="flex items-center justify-center gap-1">
                           <Tooltip><TooltipTrigger asChild><Button variant="ghost" size="sm" className="h-7 w-7 p-0" onClick={() => onViewOperation?.(op)}><Eye className="h-4 w-4" /><span className="sr-only">View</span></Button></TooltipTrigger><TooltipContent>View operation</TooltipContent></Tooltip>
@@ -461,9 +461,9 @@ export function TreeTable({
                             </div>
                           </TableCell>
                           <TableCell /><TableCell /><TableCell />
-                          <TableCell className="text-center"><Badge variant="info-soft-outline" className="text-[10px] px-1.5 py-0">{group.invoices.length}</Badge></TableCell>
-                          <TableCell className="text-sm">{formatCurrency(group.totalAmount)}</TableCell>
-                          <TableCell className="text-sm">{formatCurrency(group.totalDisbursement)}</TableCell>
+                      <TableCell className="text-center"><Badge variant="outline" className="text-xs">{op.invoices.length}</Badge></TableCell>
+                          <TableCell className="text-sm font-mono tabular-nums">{formatCurrency(group.totalAmount)}</TableCell>
+                          <TableCell className="text-sm font-mono tabular-nums">{formatCurrency(group.totalDisbursement)}</TableCell>
                           <TableCell /><TableCell />
                         </TableRow>,
 
@@ -478,12 +478,12 @@ export function TreeTable({
                                   <Checkbox checked={isInvoiceSelected} onCheckedChange={() => toggleInvoiceSelection(invoice, op)} aria-label={`Select ${invoice.number}`} />
                                 </div>
                               </TableCell>
-                              <TableCell><span className="text-sm text-muted-foreground">{invoice.number}</span></TableCell>
+                              <TableCell><span className="text-sm text-muted-foreground font-mono tabular-nums">{invoice.number}</span></TableCell>
                               <TableCell className="text-muted-foreground text-sm">{invoice.dueDate}</TableCell>
                               <TableCell /><TableCell /><TableCell />
-                              <TableCell className="text-sm">{formatCurrency(invoice.amount)}</TableCell>
-                              <TableCell className="text-sm">{formatCurrency(invoice.disbursementAmount)}</TableCell>
-                              <TableCell className="text-center"><Badge variant={invoiceCfg.variant} className="text-[11px] px-2 py-0.5">{invoiceCfg.label}</Badge></TableCell>
+                              <TableCell className="text-sm font-mono tabular-nums">{formatCurrency(invoice.amount)}</TableCell>
+                              <TableCell className="text-sm font-mono tabular-nums">{formatCurrency(invoice.disbursementAmount)}</TableCell>
+                              <TableCell className="text-center"><Badge variant="outline" className="text-xs">{invoiceCfg.label}</Badge></TableCell>
                               <TableCell />
                             </TableRow>
                           );

@@ -8,7 +8,7 @@
  * Designed for financial invoice workflows.
  * Self-contained with mock data.
  */
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
@@ -249,7 +249,7 @@ export function EditableTable() {
                       className={cn(
                         "transition-colors",
                         isSelected && "bg-accent",
-                        isEditing && "bg-amber-50 dark:bg-amber-950"
+                        isEditing && "bg-warning-subtle"
                       )}
                     >
                       {/* Checkbox */}
@@ -262,7 +262,7 @@ export function EditableTable() {
                       </TableCell>
 
                       {/* Number */}
-                      <TableCell className="text-xs tabular-nums">
+                      <TableCell className="text-xs font-mono tabular-nums">
                         {isEditing ? (
                           <Input
                             value={editDraft.number ?? ""}
@@ -289,7 +289,7 @@ export function EditableTable() {
                       </TableCell>
 
                       {/* Amount */}
-                      <TableCell className="text-xs text-right tabular-nums">
+                      <TableCell className="text-xs text-right font-mono tabular-nums">
                         {isEditing ? (
                           <Input
                             type="number"
@@ -313,7 +313,7 @@ export function EditableTable() {
                             className="h-7 text-xs text-right w-20"
                           />
                         ) : (
-                          `${row.rate.toFixed(1)}%`
+                          <span className="font-mono tabular-nums">{row.rate.toFixed(1)}%</span>
                         )}
                       </TableCell>
 
@@ -373,10 +373,10 @@ export function EditableTable() {
                       <TableCell className="text-center">
                         {isEditing ? (
                           <div className="flex items-center justify-center gap-1">
-                            <Button variant="ghost" size="icon" className="h-7 w-7 text-primary hover:text-primary" onClick={commitEdit}>
+                            <Button variant="ghost" size="icon" className="h-7 w-7 text-primary hover:text-primary" aria-label="Confirmar edición" onClick={commitEdit}>
                               <Check className="h-3.5 w-3.5" />
                             </Button>
-                            <Button variant="ghost" size="icon" className="h-7 w-7 text-muted-foreground" onClick={cancelEdit}>
+                            <Button variant="ghost" size="icon" className="h-7 w-7 text-muted-foreground" aria-label="Cancelar edición" onClick={cancelEdit}>
                               <X className="h-3.5 w-3.5" />
                             </Button>
                           </div>
@@ -385,6 +385,7 @@ export function EditableTable() {
                             variant="ghost"
                             size="icon"
                             className="h-7 w-7 opacity-0 group-hover:opacity-100 hover:opacity-100 text-muted-foreground hover:text-foreground"
+                            aria-label="Editar fila"
                             onClick={() => startEdit(row)}
                           >
                             <Pencil className="h-3.5 w-3.5" />
@@ -409,6 +410,7 @@ export function EditableTable() {
               variant="outline"
               size="icon"
               className="h-8 w-8"
+              aria-label="Página anterior"
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={safePage === 1}
             >
@@ -418,6 +420,7 @@ export function EditableTable() {
               variant="outline"
               size="icon"
               className="h-8 w-8"
+              aria-label="Página siguiente"
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={safePage === totalPages}
             >

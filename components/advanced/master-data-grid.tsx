@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import React from "react";
+import { Card, CardContent, CardHeader } from "../ui/card";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import {
   Search, Filter, Download, SlidersHorizontal, Calendar,
-  RefreshCw, XCircle, ChevronLeft, ChevronRight,
-  ArrowUpDown, ArrowUp, ArrowDown, Eye, EyeOff, FileText,
+  RefreshCw, XCircle, ChevronLeft, ChevronRight, ArrowUp, ArrowDown, Eye, EyeOff, FileText,
 } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
@@ -52,9 +51,8 @@ export interface MasterDataGridProps {
 }
 
 export function MasterDataGrid({
-  title, description, children,
+  children,
   searchQuery, onSearchChange, searchPlaceholder = "Search...",
-  onNewAction, newActionLabel = "New", newActionIcon, headerActions,
   filterOptions = [], onFilterChange, onResetFilters,
   sortColumn, sortDirection, onSortChange,
   columns, onColumnVisibilityChange,
@@ -64,7 +62,7 @@ export function MasterDataGrid({
   onConsultReports, toolbarActions,
   currentPage = 1, totalPages = 1, onPageChange,
   totalItems = 0, itemsPerPage = 10,
-  startIndex = 0, endIndex = 0,
+  startIndex = 0,
   pageSizeOptions, onPageSizeChange,
 }: MasterDataGridProps) {
   return (

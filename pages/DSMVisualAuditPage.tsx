@@ -1,7 +1,6 @@
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
 import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
@@ -10,13 +9,13 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs"
 import { Checkbox } from "../components/ui/checkbox";
 import { Switch } from "../components/ui/switch";
 import { Progress } from "../components/ui/progress";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
-import { Label } from "../components/ui/label";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip";
+import { RadiusBox } from "../components/ui/dynamic-previews";
 import {
   AlertCircle, CheckCircle, Info, AlertTriangle,
-  User, Settings, Bell, CreditCard,
-  ChevronRight, ArrowRight
+  User, Settings, Bell,
+  ChevronRight
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────────
@@ -46,9 +45,9 @@ function AuditRow({
   note?: string;
 }) {
   const statusConfig = {
-    ok:      { dot: "bg-success",  text: "text-success",  label: "DSM OK"   },
-    fixed:   { dot: "bg-info",     text: "text-info",     label: "Corregido" },
-    pending: { dot: "bg-warning",  text: "text-warning",  label: "Pendiente" },
+    ok:      { dot: "bg-success",  badgeVariant: "success-soft-outline"  as const, label: "DSM OK"   },
+    fixed:   { dot: "bg-info",     badgeVariant: "info-soft-outline"     as const, label: "Corregido" },
+    pending: { dot: "bg-warning",  badgeVariant: "warning-soft-outline"  as const, label: "Pendiente" },
   }[status];
 
   return (
@@ -57,14 +56,10 @@ function AuditRow({
         {/* Label + status badge */}
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-foreground">{label}</span>
-          <span className={`inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 border ${
-            status === "ok"      ? "border-success/30 bg-success/8 text-success" :
-            status === "fixed"   ? "border-info/30 bg-info/8 text-info" :
-                                   "border-warning/30 bg-warning/8 text-warning"
-          }`}>
+          <Badge variant={statusConfig.badgeVariant}>
             <span className={`size-1.5 rounded-full ${statusConfig.dot}`} />
-            <span className="text-xs">{statusConfig.label}</span>
-          </span>
+            {statusConfig.label}
+          </Badge>
         </div>
         {/* Token annotation */}
         <code className="inline-block rounded-md bg-muted px-2 py-1 text-xs text-muted-foreground font-mono w-fit">
@@ -100,12 +95,13 @@ function AuditCard({ title, children }: { title: string; children: React.ReactNo
 
 function SummaryBanner() {
   const items = [
-    { label: "OK (sin cambios)",    count: 12, color: "text-success",  bg: "bg-success/8  border-success/20"  },
-    { label: "Corregidos (v0.5.4)", count: 4,  color: "text-info",    bg: "bg-info/8     border-info/20"      },
-    { label: "Pendientes",          count: 2,  color: "text-warning",  bg: "bg-warning/8  border-warning/20"   },
+    { label: "OK (sin cambios)",        count: 12, color: "text-success",  bg: "bg-success/8  border-success/20"  },
+    { label: "Corregidos (v0.4.0)",     count: 11, color: "text-info",    bg: "bg-info/8     border-info/20"      },
+    { label: "Pendientes",              count: 2,  color: "text-warning",  bg: "bg-warning/8  border-warning/20"   },
+    { label: "WCAG AA — Lighthouse",    count: 100, color: "text-success", bg: "bg-success/8  border-success/20"  },
   ];
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
       {items.map((item) => (
         <div key={item.label} className={`rounded-xl border px-6 py-4 flex items-center gap-4 ${item.bg}`}>
           <span className={`text-4xl font-bold ${item.color}`}>{item.count}</span>
@@ -145,9 +141,9 @@ function TokenReference() {
         <div className="divide-y divide-border">
           {tokens.map((t) => (
             <div key={t.name} className="px-6 py-3 flex items-center gap-4">
-              <div
+              <RadiusBox
+                value={t.value === "9999px" ? "9999px" : t.value}
                 className="shrink-0 size-10 bg-muted border border-border"
-                style={{ borderRadius: t.value === "9999px" ? "9999px" : t.value }}
               />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">
@@ -195,8 +191,9 @@ export function DSMVisualAuditPage() {
         {/* Header */}
         <div>
           <div className="flex items-center gap-3 mb-3">
-            <Badge variant="info-soft">v0.5.4</Badge>
+            <Badge variant="info-soft">v0.4.0</Badge>
             <Badge variant="neutral-soft">DSM Audit</Badge>
+            <Badge variant="success-soft-outline">WCAG AA 100%</Badge>
           </div>
           <h1 className="text-foreground mb-2">DSM Visual Audit</h1>
           <p className="text-muted-foreground max-w-2xl">
@@ -368,6 +365,17 @@ export function DSMVisualAuditPage() {
               <Badge variant="warning-soft">Pendiente</Badge>
               <Badge variant="destructive-soft">Error</Badge>
               <Badge variant="neutral-soft">Borrador</Badge>
+            </AuditRow>
+            <AuditRow
+              label="primary-soft — urgencia próxima"
+              token="bg-primary/10 text-primary · NUEVO en v0.4.0"
+              status="fixed"
+              note="Agregado para representar la urgencia 'próximo' en alertas de vencimiento de factoring (dentro de 15–30 días). Evita usar colores semánticos de error/warning para plazos no críticos."
+            >
+              <Badge variant="primary-soft">Próximo</Badge>
+              <Badge variant="warning-soft">Esta semana</Badge>
+              <Badge variant="destructive-soft-outline">Crítico</Badge>
+              <Badge variant="destructive-soft">Vencido</Badge>
             </AuditRow>
           </AuditCard>
 
@@ -574,6 +582,100 @@ export function DSMVisualAuditPage() {
               </Tooltip>
             </AuditRow>
           </AuditCard>
+        </section>
+
+        {/* ── ACCESSIBILITY ────────────────────────────────────── */}
+        <section>
+          <SectionHeader
+            title="WCAG 2.1 AA — Lighthouse 100/100"
+            description="Correcciones aplicadas en v0.4.0 para alcanzar 100% de score de accesibilidad."
+          />
+          <AuditCard title="Contraste de color (WCAG 1.4.3)">
+            <AuditRow
+              label="text-destructive-on-subtle para tendencia negativa"
+              token="text-destructive-on-subtle (ratio ≥ 4.5:1) · CORREGIDO de text-destructive (3.76:1)"
+              status="fixed"
+              note="StatCard trend='down' y la variante destructive usaban text-destructive (#ef4444) sobre blanco = 3.76:1, por debajo del mínimo AA de 4.5:1."
+            >
+              <span className="text-destructive-on-subtle text-sm font-medium">↓ -3.2%</span>
+            </AuditRow>
+            <AuditRow
+              label="Props table headers — sin opacidad"
+              token="text-muted-foreground (ratio ≥ 4.5:1) · CORREGIDO de text-muted-foreground/50 (2.28:1)"
+              status="fixed"
+              note="ComponentShowcase: los headers PROP / TYPE / DEFAULT / DESCRIPTION usaban /50 de opacidad = 2.28:1. Eliminada la opacidad."
+            >
+              <span className="text-xs uppercase tracking-widest text-muted-foreground">PROP</span>
+            </AuditRow>
+            <AuditRow
+              label="Code tags en props table — bg-muted text-foreground"
+              token="bg-muted text-foreground · CORREGIDO de bg-secondary (#796eff) text-secondary-foreground (3.82:1)"
+              status="fixed"
+              note="bg-secondary + text-secondary-foreground daba ratio 3.82:1. Cambiado a bg-muted + text-foreground que garantiza ≥ 7:1."
+            >
+              <code className="text-xs bg-muted border border-border px-1.5 py-0.5 rounded text-foreground">propName</code>
+            </AuditRow>
+          </AuditCard>
+          <div className="mt-6">
+            <AuditCard title="Estructura semántica (WCAG 1.3.1)">
+              <AuditRow
+                label="CardTitle → h3 (era h4)"
+                token="CardTitle renderiza como <h3> · CORREGIDO (h4 saltaba el orden de encabezados)"
+                status="fixed"
+                note="axe-core reportaba 'heading-order' porque h4 aparecía sin h2/h3 previo en varias páginas. Cambiado a h3 globalmente en card.tsx."
+              >
+                <span />
+              </AuditRow>
+              <AuditRow
+                label="Stats como <p> no como encabezados"
+                token="<p className='text-sm font-medium'> · CORREGIDO de <CardTitle> para métricas"
+                status="fixed"
+                note="Los labels de métricas (Total Components, DSM Migration…) estaban como h3. Métricas no son encabezados — cambiados a <p>."
+              >
+                <span />
+              </AuditRow>
+              <AuditRow
+                label="aria-label en barras de Progress"
+                token="aria-label='Nombre del indicador' agregado a 5 barras de Progress"
+                status="fixed"
+                note="Progress sin aria-label no describe su propósito a lectores de pantalla. Agregado en HomePage y DSMDashboardPage."
+              >
+                <Progress value={100} className="h-2 w-32" aria-label="Ejemplo" />
+              </AuditRow>
+            </AuditCard>
+          </div>
+        </section>
+
+        {/* ── NUEVAS FEATURES v0.4.0 ───────────────────────────── */}
+        <section>
+          <SectionHeader
+            title="Nuevas Features — v0.4.0"
+            description="Incorporaciones del DSM basadas en mejores prácticas de mercado."
+          />
+          <div className="rounded-xl border border-success/30 bg-success/5 overflow-hidden">
+            <div className="px-6 py-4 border-b border-success/20">
+              <h3 className="text-success">Print / PDF Styles — @media print</h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                <code className="bg-muted px-1 rounded text-xs">styles/print.css</code> — reglas globales para impresión y exportación PDF.
+              </p>
+            </div>
+            <div className="divide-y divide-success/10 text-sm">
+              {[
+                { item: "Ocultar sidebar, header, toolbars y elementos interactivos automáticamente", status: "Automático — selectores CSS" },
+                { item: "Clases helper: .no-print, .print-only, .print-break-before, .print-break-after, .print-break-inside-avoid", status: "6 utility classes" },
+                { item: "Tablas: thead repetido en cada página, celdas con bordes visibles, ceros en filas pares", status: "CSS table rules" },
+                { item: "Preservación de color en badges de estado (success/destructive/warning/info) con print-color-adjust", status: "Ink-efficient" },
+                { item: "Variante landscape con .print-landscape para tablas anchas (Portfolio Report)", status: "@page rule" },
+                { item: "Clases semánticas para factoring: .factoring-portfolio-section, .approval-step, .risk-score-bar", status: "Contextual" },
+                { item: "Documentado en Usage Guidelines página 9 con tabla de decisión y ejemplos por reporte", status: "Documentado" },
+              ].map(({ item, status }) => (
+                <div key={item} className="px-6 py-3 flex items-start justify-between gap-4">
+                  <p className="text-foreground">{item}</p>
+                  <Badge variant="success-soft" className="shrink-0">{status}</Badge>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* ── PENDING ──────────────────────────────────────────── */}

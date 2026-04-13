@@ -15,27 +15,19 @@ import {
 } from "../components/ui/table";
 import { Button } from "../components/ui/button";
 import {
-  Layers,
   ArrowRight,
-  Search,
   Filter,
-  SlidersHorizontal,
-  Download,
-  RefreshCw,
   ChevronRight,
   Edit,
   TreePine,
   ListFilter,
-  ScrollText,
   Zap,
   Infinity,
   LayoutGrid,
   TableProperties,
   Eye,
-  CheckSquare,
   FileText,
   Info,
-  ExternalLink,
 } from "lucide-react";
 import { Alert, AlertDescription } from "../components/ui/alert";
 import { ComponentShowcase } from "../components/ui/component-showcase";
@@ -98,7 +90,7 @@ const tableVariations: TableVariation[] = [
     <TableRow>
       <TableCell>INV-001</TableCell>
       <TableCell>$2,500,000</TableCell>
-      <TableCell><Badge>Aprobada</Badge></TableCell>
+      <TableCell><Badge variant="success-soft-outline">Aprobada</Badge></TableCell>
     </TableRow>
   </TableBody>
 </Table>`,
@@ -456,12 +448,12 @@ function VariationCard({ variation, onNavigate }: { variation: TableVariation; o
               <div className="flex items-center gap-2 mt-1">
                 <LayerBadge layer={variation.layer} />
                 {variation.usesMasterDataGrid === true && (
-                  <Badge variant="outline" className="text-[10px] px-1.5 py-0 bg-green-50 text-green-700 border-green-300 dark:bg-green-900 dark:text-green-300 dark:border-green-600">
+                  <Badge variant="success-soft-outline">
                     usa MasterDataGrid
                   </Badge>
                 )}
                 {variation.usesMasterDataGrid === false && (
-                  <Badge variant="outline" className="text-[10px] px-1.5 py-0 bg-orange-50 text-orange-700 border-orange-300 dark:bg-orange-900 dark:text-orange-300 dark:border-orange-600">
+                  <Badge variant="warning-soft-outline">
                     custom pattern
                   </Badge>
                 )}
@@ -500,7 +492,7 @@ function VariationCard({ variation, onNavigate }: { variation: TableVariation; o
           <p className="text-xs font-medium text-foreground/80 mb-1.5">Features:</p>
           <div className="flex flex-wrap gap-1">
             {variation.features.slice(0, 5).map((feat, i) => (
-              <Badge key={i} variant="secondary" className="text-[10px] px-1.5 py-0 font-normal">
+              <Badge key={i} variant="neutral-soft-outline">
                 {feat}
               </Badge>
             ))}
@@ -710,34 +702,34 @@ function TableCatalogContent() {
                 <div className="text-muted-foreground">{"// Dependency tree"}</div>
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <Badge variant="outline" className="text-[10px] bg-slate-100 dark:bg-slate-800">ui</Badge>
+                    <Badge variant="neutral-soft-outline">ui</Badge>
                     <span className="font-semibold">Table</span>
                     <span className="text-muted-foreground text-xs">← base primitive</span>
                   </div>
                   <div className="ml-4 border-l-2 border-muted-foreground/20 pl-4 space-y-1">
                     <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="text-[10px] bg-blue-100 dark:bg-blue-900">advanced</Badge>
+                      <Badge variant="info-soft-outline">advanced</Badge>
                       <span className="font-semibold">MasterDataGrid</span>
                       <span className="text-muted-foreground text-xs">← master container (receives Table as children)</span>
                     </div>
                     <div className="ml-4 border-l-2 border-muted-foreground/20 pl-4 space-y-1">
                       <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="text-[10px] bg-blue-100 dark:bg-blue-900">advanced</Badge>
+                        <Badge variant="info-soft-outline">advanced</Badge>
                         <span>DataTable</span>
                         <span className="text-muted-foreground text-xs">+ TanStack React Table</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="text-[10px] bg-blue-100 dark:bg-blue-900">advanced</Badge>
+                        <Badge variant="info-soft-outline">advanced</Badge>
                         <span>TreeTable V2</span>
                         <span className="text-muted-foreground text-xs">+ hierarchical expand/collapse</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="text-[10px] bg-purple-100 dark:bg-purple-900">patterns</Badge>
+                        <Badge variant="purple-soft-outline">patterns</Badge>
                         <span>DataTableAdvanced</span>
                         <span className="text-muted-foreground text-xs">+ row actions</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="text-[10px] bg-purple-100 dark:bg-purple-900">patterns</Badge>
+                        <Badge variant="purple-soft-outline">patterns</Badge>
                         <span>EditableTable</span>
                         <span className="text-muted-foreground text-xs">+ inline editing</span>
                       </div>
@@ -746,12 +738,12 @@ function TableCatalogContent() {
                   <div className="mt-3 pt-3 border-t border-dashed border-muted-foreground/20 space-y-1">
                     <div className="text-muted-foreground text-xs mb-1">{"// Complementary components (composables)"}</div>
                     <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="text-[10px] bg-blue-100 dark:bg-blue-900">advanced</Badge>
+                      <Badge variant="info-soft-outline">advanced</Badge>
                       <span>VirtualizedList</span>
                       <span className="text-muted-foreground text-xs">← standalone, virtualized render</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="text-[10px] bg-blue-100 dark:bg-blue-900">advanced</Badge>
+                      <Badge variant="info-soft-outline">advanced</Badge>
                       <span>InfiniteScroll</span>
                       <span className="text-muted-foreground text-xs">← wrapper, composes with any table</span>
                     </div>
@@ -779,7 +771,7 @@ function TableCatalogContent() {
                     <TableRow key={i}>
                       <TableCell className="font-medium text-sm">{row.from}</TableCell>
                       <TableCell>
-                        <Badge variant="secondary" className="text-[10px]">{row.relation}</Badge>
+                        <Badge variant="neutral-soft-outline">{row.relation}</Badge>
                       </TableCell>
                       <TableCell className="font-medium text-sm">{row.to}</TableCell>
                       <TableCell className="text-sm text-muted-foreground">{row.desc}</TableCell>

@@ -1,7 +1,6 @@
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
 import { Label } from "../components/ui/label";
-import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Separator } from "../components/ui/separator";
 import { Check, CreditCard, Building2, Wallet } from "lucide-react";

@@ -17,7 +17,7 @@ const sparklineData2 = Array.from({ length: 30 }, (_, i) => ({
   value: Math.floor(Math.random() * 30) + 40 - (i * 0.5)
 }));
 
-const sparklineData3 = Array.from({ length: 30 }, (_, i) => ({
+const sparklineData3 = Array.from({ length: 30 }, () => ({
   value: Math.floor(Math.random() * 20) + 60
 }));
 
@@ -95,7 +95,7 @@ function DataVisualizationDemo() {
       <div className="space-y-4">
         <div className="flex items-center gap-3">
           <h1 className="font-bold">Advanced Data Visualization</h1>
-          <Badge className="bg-blue-500 hover:bg-blue-600 text-white">
+          <Badge variant="info">
             MEDIUM PRIORITY
           </Badge>
         </div>
@@ -112,7 +112,7 @@ function DataVisualizationDemo() {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h2 className="font-bold">Sparklines</h2>
-            <Badge variant="secondary">Micro Charts</Badge>
+            <Badge variant="neutral-soft-outline">Micro Charts</Badge>
           </div>
           <p className="text-muted-foreground">
             Mini trend charts perfect for dashboards and KPI cards.
@@ -127,7 +127,7 @@ function DataVisualizationDemo() {
             value="$124,589"
             change={12.5}
             changeLabel="vs last month"
-            color="#22c55e"
+            color="var(--success)"
           />
           <Sparkline
             data={sparklineData2}
@@ -135,7 +135,7 @@ function DataVisualizationDemo() {
             value="8,234"
             change={-5.2}
             changeLabel="vs last week"
-            color="#ef4444"
+            color="var(--destructive)"
           />
           <Sparkline
             data={sparklineData3}
@@ -143,7 +143,7 @@ function DataVisualizationDemo() {
             value="3.24%"
             change={0}
             changeLabel="no change"
-            color="#3b82f6"
+            color="var(--info)"
           />
         </div>
 
@@ -177,7 +177,7 @@ function DataVisualizationDemo() {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h2 className="font-bold">Gauge Charts</h2>
-            <Badge variant="secondary">Progress Meters</Badge>
+            <Badge variant="neutral-soft-outline">Progress Meters</Badge>
           </div>
           <p className="text-muted-foreground">
             Speedometer-style meters to visualize progress, KPIs, and scores.
@@ -197,14 +197,14 @@ function DataVisualizationDemo() {
             title="Project Completion"
             description="Q1 2025 Goals"
             label="Progress"
-            color="#f59e0b"
+            color="var(--warning)"
           />
           <GaugeChart
             value={92}
             title="System Health"
             description="All services operational"
             label="Uptime %"
-            color="#22c55e"
+            color="var(--success)"
           />
         </div>
 
@@ -228,7 +228,7 @@ function DataVisualizationDemo() {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h2 className="font-bold">Heatmaps</h2>
-            <Badge variant="secondary">Matrix Visualization</Badge>
+            <Badge variant="neutral-soft-outline">Matrix Visualization</Badge>
           </div>
           <p className="text-muted-foreground">
             Heat maps for visualizing patterns in matrix data.
@@ -267,7 +267,7 @@ function DataVisualizationDemo() {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h2 className="font-bold">Treemap Charts</h2>
-            <Badge variant="secondary">Hierarchical Data</Badge>
+            <Badge variant="neutral-soft-outline">Hierarchical Data</Badge>
           </div>
           <p className="text-muted-foreground">
             Hierarchical visualization using proportional rectangles.
@@ -303,7 +303,7 @@ function DataVisualizationDemo() {
         <div>
           <div className="flex items-center gap-3 mb-2">
             <h2 className="font-bold">Funnel Charts</h2>
-            <Badge variant="secondary">Conversion Tracking</Badge>
+            <Badge variant="neutral-soft-outline">Conversion Tracking</Badge>
           </div>
           <p className="text-muted-foreground">
             Conversion funnels to visualize processes and drop-offs.

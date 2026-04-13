@@ -54,9 +54,9 @@ function BulkDemo() {
                 </td>
                 <td className="px-3 py-2 font-mono text-xs text-muted-foreground">{r.id}</td>
                 <td className="px-3 py-2 font-medium">{r.cedente}</td>
-                <td className="px-3 py-2">{r.monto}</td>
+                <td className="px-3 py-2 font-mono tabular-nums">{r.monto}</td>
                 <td className="px-3 py-2">
-                  <Badge variant="secondary" className="text-xs">{r.estado}</Badge>
+                  <Badge variant="outline" className="text-xs">{r.estado}</Badge>
                 </td>
               </tr>
             ))}

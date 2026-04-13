@@ -117,7 +117,7 @@ export function NavigationBar({ onLogout, variant = "full" }: NavigationBarProps
                 </div>
                 <div className="flex flex-col items-start text-right">
                   <span className="text-white text-xs font-medium tracking-wide">soporte.{tenantSlug}</span>
-                  <span className="text-primary text-[10px] font-bold tracking-wider uppercase">{tenantName}</span>
+                  <span className="text-primary text-2xs font-bold tracking-wider uppercase">{tenantName}</span>
                 </div>
                 <ChevronDown className="w-3 h-3 text-white/50" />
               </button>

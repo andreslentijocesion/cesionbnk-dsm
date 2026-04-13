@@ -275,7 +275,7 @@ export function HelpCenter({ variant = "header" }: HelpCenterProps) {
                           {guide.title}
                         </h4>
                         {guide.badge && (
-                          <Badge variant="secondary" className="text-xs">
+                          <Badge variant="neutral-soft-outline">
                             {guide.badge}
                           </Badge>
                         )}

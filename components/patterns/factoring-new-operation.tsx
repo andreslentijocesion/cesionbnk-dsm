@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useId } from "react";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
@@ -71,7 +71,7 @@ function StepIndicator({ current }: { current: number }) {
                 {done ? <CheckCircle2 className="h-4 w-4" /> : <Icon className="h-3.5 w-3.5" />}
               </div>
               <span className={cn(
-                "text-[10px] font-medium text-center leading-tight max-w-[64px] hidden sm:block",
+                "text-2xs font-medium text-center leading-tight max-w-[64px] hidden sm:block",
                 active ? "text-primary" : done ? "text-foreground" : "text-muted-foreground"
               )}>
                 {step.label}
@@ -92,15 +92,19 @@ function StepIndicator({ current }: { current: number }) {
 
 // ─── Field ─────────────────────────────────────────────────────────────────────
 
-function Field({ label, required, error, hint, children }: {
-  label: string; required?: boolean; error?: string; hint?: string; children: React.ReactNode;
+function Field({ label, required, error, hint, children, id: idProp }: {
+  label: string; required?: boolean; error?: string; hint?: string; children: React.ReactNode; id?: string;
 }) {
+  const generatedId = useId();
+  const fieldId = idProp ?? generatedId;
   return (
     <div className="space-y-1.5">
-      <Label className="text-sm font-medium">
+      <Label htmlFor={fieldId} className="text-sm font-medium">
         {label}{required && <span className="text-destructive ml-0.5">*</span>}
       </Label>
-      {children}
+      {React.isValidElement(children)
+        ? React.cloneElement(children as React.ReactElement<{ id?: string }>, { id: fieldId })
+        : children}
       {hint && !error && <p className="text-xs text-muted-foreground flex items-center gap-1"><Info className="h-3 w-3" />{hint}</p>}
       {error && <p className="text-xs text-destructive flex items-center gap-1"><AlertCircle className="h-3 w-3" />{error}</p>}
     </div>
@@ -357,7 +361,7 @@ export function FactoringNewOperation() {
           </div>
           <div className="space-y-1">
             <h3 className="text-lg font-semibold">Operación radicada</h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-base text-muted-foreground">
               Tu solicitud fue enviada al comité de crédito.<br />
               Folio asignado: <strong className="font-mono text-foreground">FCT-2025-009</strong>
             </p>

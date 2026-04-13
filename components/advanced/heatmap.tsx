@@ -118,7 +118,7 @@ export function Heatmap({
               <CardTitle>{title}</CardTitle>
               {description && <CardDescription>{description}</CardDescription>}
             </div>
-            <Badge variant="secondary">{data.length} data points</Badge>
+            <Badge variant="outline" className="text-xs">{data.length} data points</Badge>
           </div>
         </CardHeader>
         <CardContent>{content}</CardContent>

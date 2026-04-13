@@ -3,7 +3,6 @@ import {
   StatCard,
   StatsGrid,
   SearchBar,
-  FilterBar,
   FilterChip,
   ApprovalTimelineItem,
   ActionButton,

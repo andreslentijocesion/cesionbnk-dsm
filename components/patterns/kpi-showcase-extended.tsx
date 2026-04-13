@@ -11,7 +11,7 @@ import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
 import {
   DollarSign, FileText, Users, TrendingUp,
-  AlertCircle, CheckCircle, Clock, BarChart2,
+  AlertCircle, BarChart2,
 } from "lucide-react";
 
 const statCards = [

@@ -85,7 +85,7 @@ function LoopCarouselDemo() {
 }
 
 function ApiControlledDemo() {
-  const [api, setApi] = useState<CarouselApi>();
+  const [_api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
   const handleSetApi = (newApi: CarouselApi) => {
@@ -227,7 +227,7 @@ export function CarouselDemo() {
           title: "API-Controlled",
           description: "Access the Embla API to track the current slide or trigger navigation programmatically.",
           preview: <ApiControlledDemo />,
-          code: `const [api, setApi] = useState<CarouselApi>();
+          code: `const [_api, setApi] = useState<CarouselApi>();
 const [current, setCurrent] = useState(0);
 
 useEffect(() => {

@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import reactPlugin from 'eslint-plugin-react';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 export default tseslint.config(
   // ── Ignore list ────────────────────────────────────────────────────
@@ -23,11 +24,13 @@ export default tseslint.config(
 
   // ── Base rules (all files) ─────────────────────────────────────────
   {
-    plugins: { react: reactPlugin },
+    plugins: { react: reactPlugin, 'unused-imports': unusedImports },
     settings: { react: { version: 'detect' } },
     rules: {
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
     },
   },
 

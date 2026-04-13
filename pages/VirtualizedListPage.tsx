@@ -33,7 +33,7 @@ export function VirtualizedListPage() {
           height={300}
           itemHeight={50}
           items={items}
-          renderItem={(item, index, style) => (
+          renderItem={(item, _index, style) => (
             <div style={style} className="flex items-center px-4 border-b hover:bg-muted">
               Row {item.label}
             </div>

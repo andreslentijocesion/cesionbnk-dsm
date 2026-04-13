@@ -40,7 +40,7 @@ const levelConfig: Record<RiskLevel, {
 }> = {
   bajo:    { label: "Riesgo bajo",    color: "text-success",     bg: "bg-success/10",     gauge: "stroke-success",     arc: 85 },
   medio:   { label: "Riesgo medio",   color: "text-warning",     bg: "bg-warning/10",     gauge: "stroke-warning",     arc: 60 },
-  alto:    { label: "Riesgo alto",    color: "text-orange-500",  bg: "bg-orange-50",      gauge: "stroke-orange-500",  arc: 35 },
+  alto:    { label: "Riesgo alto",    color: "text-caution",     bg: "bg-caution-subtle",  gauge: "stroke-caution",     arc: 35 },
   crítico: { label: "Riesgo crítico", color: "text-destructive", bg: "bg-destructive/10", gauge: "stroke-destructive", arc: 15 },
 };
 
@@ -88,7 +88,7 @@ function GaugeArc({ score, level }: { score: number; level: RiskLevel }) {
         <span className={cn("text-3xl font-bold tabular-nums leading-none", cfg.color)}>
           {score}
         </span>
-        <span className="text-[10px] text-muted-foreground mt-0.5">/ 1000</span>
+        <span className="text-2xs text-muted-foreground mt-0.5">/ 1000</span>
       </div>
     </div>
   );
@@ -145,8 +145,8 @@ export function RiskIndicator({
           <div className="flex items-center gap-1.5">
             {trend && <TrendIcon trend={trend} />}
             <Badge
-              variant={level === "bajo" ? "default" : level === "crítico" ? "destructive" : "outline"}
-              className={cn("text-xs", level === "medio" && "border-warning text-warning", level === "alto" && "border-orange-500 text-orange-500")}
+              variant="outline"
+              className={cn("text-xs", level === "bajo" && "border-success text-success-on-subtle", level === "medio" && "border-warning text-warning", level === "alto" && "border-caution text-caution-on-subtle", level === "crítico" && "border-destructive text-destructive")}
             >
               {cfg.label}
             </Badge>
@@ -159,7 +159,7 @@ export function RiskIndicator({
         </div>
 
         {updatedAt && (
-          <p className="text-center text-[10px] text-muted-foreground mt-1">Actualizado: {updatedAt}</p>
+          <p className="text-center text-xs text-muted-foreground mt-1">Actualizado: {updatedAt}</p>
         )}
       </div>
 

@@ -35,7 +35,7 @@ export function MultiColumnForm() {
             <CardTitle>Multi-Column Form</CardTitle>
             <CardDescription>Responsive layout that adapts to screen size</CardDescription>
           </div>
-          <Badge variant="secondary">Responsive</Badge>
+          <Badge variant="outline" className="text-xs">Responsive</Badge>
         </div>
       </CardHeader>
       <CardContent>

@@ -81,12 +81,12 @@ export function StatsDashboard() {
                   <div className="flex items-center gap-1">
                     <TrendIcon
                       className={`h-3 w-3 ${
-                        isPositive ? "text-green-500" : "text-red-500"
+                        isPositive ? "text-success-on-subtle" : "text-destructive-on-subtle"
                       }`}
                     />
                     <span
                       className={`text-xs font-medium ${
-                        isPositive ? "text-green-500" : "text-red-500"
+                        isPositive ? "text-success-on-subtle" : "text-destructive-on-subtle"
                       }`}
                     >
                       {stat.change}

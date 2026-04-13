@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { Progress } from "./progress";
 import { ArrowRight } from "lucide-react";
 import { cn } from "./utils";

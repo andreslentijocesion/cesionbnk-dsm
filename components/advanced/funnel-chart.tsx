@@ -115,7 +115,7 @@ export function FunnelChart({
               <CardTitle>{title}</CardTitle>
               {description && <CardDescription>{description}</CardDescription>}
             </div>
-            <Badge variant="secondary">{data.length} stages</Badge>
+            <Badge variant="outline" className="text-xs">{data.length} stages</Badge>
           </div>
         </CardHeader>
         <CardContent>{content}</CardContent>

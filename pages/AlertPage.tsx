@@ -1,6 +1,5 @@
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
-import { Separator } from "../components/ui/separator";
 import { Button } from "../components/ui/button";
 import {
   AlertCircle, CheckCircle, Info, AlertTriangle,

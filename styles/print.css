@@ -1,0 +1,394 @@
+/**
+ * CESIONBNK Design System — Print / PDF Styles
+ *
+ * Applied via @media print to produce clean, ink-efficient output
+ * for portfolio reports, factoring operations, and financial documents.
+ *
+ * Conventions:
+ *   - Use .print-only to show elements exclusively in print
+ *   - Use .no-print to hide elements from print output
+ *   - Use .print-break-before / .print-break-after for explicit page breaks
+ *   - Tables: .print-table forces clean borders and no zebra stripe background
+ *
+ * @version 1.0.0
+ */
+
+/* ============================================================
+   Utility classes (available in both screen and print)
+   ============================================================ */
+
+/* Elements visible only when printing */
+.print-only {
+  display: none !important;
+}
+
+/* Elements hidden when printing */
+.no-print {
+  /* shown on screen — hidden rule applied in @media print below */
+}
+
+/* Page break helpers */
+.print-break-before { break-before: page; }
+.print-break-after  { break-after:  page; }
+.print-break-inside-avoid { break-inside: avoid; }
+
+/* ============================================================
+   @media print — Core rules
+   ============================================================ */
+@media print {
+
+  /* ── Reset & base ──────────────────────────────────────────── */
+
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html,
+  body {
+    width:  100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* ── Typography ────────────────────────────────────────────── */
+
+  h1 { font-size: 20pt; page-break-after: avoid; }
+  h2 { font-size: 16pt; page-break-after: avoid; }
+  h3 { font-size: 13pt; page-break-after: avoid; }
+  h4, h5, h6 { font-size: 11pt; page-break-after: avoid; }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Prevent links from printing their href inline */
+  a,
+  a:visited {
+    text-decoration: underline;
+    color: #000000 !important;
+  }
+
+  /* Suppress external link href annotations */
+  a[href^="http"]::after,
+  a[href^="https"]::after {
+    content: "" !important;
+  }
+
+  /* ── Layout — hide chrome, show content ────────────────────── */
+
+  /* Sidebar / navigation */
+  [data-sidebar],
+  [data-sidebar-nav],
+  aside,
+  nav,
+  .sidebar,
+  .sidebar-nav,
+  [class*="sidebar"] {
+    display: none !important;
+  }
+
+  /* Top header / app bar */
+  header,
+  [data-header],
+  .app-header,
+  [class*="topbar"] {
+    display: none !important;
+  }
+
+  /* Action bars, toolbars, FABs */
+  [data-toolbar],
+  [role="toolbar"],
+  .bulk-action-toolbar,
+  .fab,
+  [class*="toolbar"] {
+    display: none !important;
+  }
+
+  /* Interactive feedback elements */
+  [role="dialog"],
+  [role="alertdialog"],
+  [role="tooltip"],
+  [data-radix-popper-content-wrapper],
+  [data-sonner-toaster] {
+    display: none !important;
+  }
+
+  /* Pagination — no pagination in print, show all rows */
+  [aria-label*="pagination"],
+  [class*="pagination"] {
+    display: none !important;
+  }
+
+  /* Search bars, filter panels */
+  [class*="filter"],
+  [class*="search-bar"],
+  [placeholder*="Buscar"],
+  [placeholder*="Search"] {
+    display: none !important;
+  }
+
+  /* Skeleton loaders */
+  [class*="skeleton"] {
+    display: none !important;
+  }
+
+  /* ── Main content area — full width ────────────────────────── */
+
+  main,
+  [role="main"],
+  .main-content,
+  [class*="main-content"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* ── Tables ────────────────────────────────────────────────── */
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 9pt;
+    page-break-inside: auto;
+  }
+
+  thead {
+    display: table-header-group; /* repeat header on every page */
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after:  auto;
+  }
+
+  th,
+  td {
+    padding: 4pt 8pt !important;
+    border: 0.5pt solid #cccccc !important;
+    background: transparent !important;
+    color: #000000 !important;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background: #f3f4f6 !important;
+    font-weight: 600;
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #374151 !important;
+  }
+
+  /* Zebra stripes — lighter version for print */
+  tbody tr:nth-child(even) td {
+    background: #fafafa !important;
+  }
+
+  /* Numeric columns right-aligned */
+  [data-type="currency"] td,
+  [data-type="number"] td,
+  td[class*="currency"],
+  td[class*="amount"],
+  td[class*="number"] {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Cards ─────────────────────────────────────────────────── */
+
+  [class*="card"],
+  .card {
+    break-inside: avoid;
+    border: 0.5pt solid #e5e7eb !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+
+  /* ── Badges & status indicators ────────────────────────────── */
+
+  [class*="badge"],
+  .badge {
+    border: 0.5pt solid currentColor !important;
+    background: transparent !important;
+    color: #000000 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Status badge color preservation */
+  .badge-success,
+  [class*="badge-success"]  { color: #166534 !important; border-color: #166534 !important; }
+  .badge-destructive,
+  [class*="badge-destructive"] { color: #991b1b !important; border-color: #991b1b !important; }
+  .badge-warning,
+  [class*="badge-warning"]  { color: #92400e !important; border-color: #92400e !important; }
+  .badge-caution,
+  [class*="badge-caution"]  { color: #9a3412 !important; border-color: #9a3412 !important; }
+  .badge-info,
+  [class*="badge-info"]     { color: #1e40af !important; border-color: #1e40af !important; }
+
+  /* ── Stat / KPI cards ──────────────────────────────────────── */
+
+  [class*="stat-card"],
+  [class*="kpi-card"] {
+    break-inside: avoid;
+    border: 0.5pt solid #d1d5db !important;
+    background: #ffffff !important;
+  }
+
+  /* ── Charts ────────────────────────────────────────────────── */
+
+  /* Preserve chart colors via print-color-adjust */
+  [class*="recharts"],
+  svg[class*="chart"] {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* ── Factoring-specific print rules ────────────────────────── */
+
+  /* Operation detail — keep header + first section together */
+  .factoring-operation-header {
+    break-after: avoid;
+  }
+
+  /* Portfolio report: each issuer block on its own page */
+  .factoring-portfolio-section {
+    break-before: page;
+  }
+
+  /* Approval flow: never split an approval step */
+  .approval-step {
+    break-inside: avoid;
+  }
+
+  /* Risk indicator — print in greyscale-friendly way */
+  .risk-score-bar {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* ── Print-only elements ───────────────────────────────────── */
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Print-only inline elements */
+  .print-only-inline {
+    display: inline !important;
+  }
+
+  /* Print-only flex containers */
+  .print-only-flex {
+    display: flex !important;
+  }
+
+  /* ── Hide interactive / decorative elements ────────────────── */
+
+  .no-print,
+  [class*="no-print"],
+  button:not([class*="print"]),
+  [role="button"]:not([class*="print"]),
+  [class*="dropdown"],
+  [class*="popover"],
+  [class*="tooltip"],
+  [class*="command"],
+  [class*="sheet"],
+  [class*="drawer"],
+  [class*="dialog"],
+  [class*="toast"],
+  [class*="scroll-area"] > [class*="scrollbar"] {
+    display: none !important;
+  }
+
+  /* ── Page layout ───────────────────────────────────────────── */
+
+  @page {
+    size: A4 portrait;
+    margin: 15mm 12mm 20mm 15mm;
+  }
+
+  /* Landscape for wide tables (add .print-landscape to the page wrapper) */
+  @page .print-landscape {
+    size: A4 landscape;
+    margin: 12mm 15mm;
+  }
+
+  /* ── Print header/footer (print-only elements) ─────────────── */
+
+  .print-page-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8pt;
+    margin-bottom: 12pt;
+    border-bottom: 1pt solid #000000;
+    font-size: 8pt;
+    color: #374151;
+  }
+
+  .print-page-footer {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8pt;
+    margin-top: 12pt;
+    border-top: 0.5pt solid #9ca3af;
+    font-size: 7pt;
+    color: #6b7280;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  /* ── Miscellaneous overrides ───────────────────────────────── */
+
+  /* Remove rounded corners — printers don't support them well at small sizes */
+  [class*="rounded"] {
+    border-radius: 0 !important;
+  }
+
+  /* Remove gradients */
+  [class*="gradient"],
+  [style*="gradient"] {
+    background: transparent !important;
+  }
+
+  /* Collapse scroll areas to full height */
+  [class*="scroll-area"] {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Progress bars — preserve color */
+  [role="progressbar"] {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    border: 0.5pt solid #d1d5db !important;
+  }
+}

@@ -210,7 +210,7 @@ function IconGalleryContent() {
 <Button variant="outline" size="icon"><Settings className="h-4 w-4" /></Button>
 
 // In Badges
-<Badge><CheckCircle className="h-3 w-3 mr-1" /> Approved</Badge>
+<Badge variant="success-soft-outline"><CheckCircle className="h-3 w-3 mr-1" /> Approved</Badge>
 
 // In Input (with absolute positioning)
 <div className="relative">
@@ -335,7 +335,7 @@ export function IconGalleryPage() {
 
 // In DSM components
 <Button><Plus className="h-4 w-4 mr-2" /> Add</Button>
-<Badge><CheckCircle className="h-3 w-3 mr-1" /> Done</Badge>
+<Badge variant="success-soft-outline"><CheckCircle className="h-3 w-3 mr-1" /> Done</Badge>
 
 // Full catalog: https://lucide.dev/icons/`}
       props={[

@@ -2,7 +2,6 @@
  * AppLayoutPage — Showcase for ClientLayout & AdminLayout
  * Demonstrates both layout shells: ClientLayout (customer-facing) and AdminLayout without sidebar (admin).
  */
-import { useState } from "react";
 import { ComponentShowcase } from "../components/ui/component-showcase";
 import {
   ClientLayout,

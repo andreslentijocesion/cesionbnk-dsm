@@ -16,6 +16,7 @@ const meta: Meta<typeof Badge> = {
         'destructive-soft-outline', 'success-soft-outline', 'warning-soft-outline', 'info-soft-outline',
         'neutral-soft', 'neutral-soft-outline',
         'secondary-soft', 'secondary-soft-outline',
+        'primary-soft',
         'purple-soft-outline',
       ],
     },
@@ -64,6 +65,19 @@ export const SoftOutline: Story = {
       <Badge variant="info-soft-outline">Desembolsado</Badge>
       <Badge variant="neutral-soft-outline">Borrador</Badge>
       <Badge variant="secondary-soft-outline">Negociado</Badge>
+    </div>
+  ),
+};
+
+export const UrgencyLevels: Story = {
+  name: 'Urgency — Alertas de vencimiento',
+  render: () => (
+    <div className="flex flex-wrap gap-2">
+      <Badge variant="destructive-soft">Vencido</Badge>
+      <Badge variant="destructive-soft-outline">Crítico (hoy)</Badge>
+      <Badge variant="warning-soft">Esta semana</Badge>
+      <Badge variant="primary-soft">Próximo</Badge>
+      <Badge variant="neutral-soft">Sin alerta</Badge>
     </div>
   ),
 };

@@ -99,7 +99,7 @@ function AppContent() {
             logo={
               <div className="flex items-center gap-4 pl-10 md:pl-0">
                 <div className="hidden md:block">
-                  <h1 className="font-semibold text-foreground">
+                  <h1 className="font-bold text-foreground">
                     CESIONBNK Design System
                   </h1>
                   <p className="text-xs text-muted-foreground">
@@ -117,7 +117,7 @@ function AppContent() {
                       {PAGE_LABELS[activePage] ?? activePage}
                     </span>
                     <span className="text-muted-foreground">·</span>
-                    <code className="font-mono text-[11px] text-primary bg-muted px-1 py-0.5 rounded">
+                    <code className="font-mono text-xs text-primary bg-muted px-1 py-0.5 rounded">
                       {activePage}
                     </code>
                   </div>

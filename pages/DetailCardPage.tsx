@@ -18,7 +18,7 @@ function DetailCardDemo() {
         }
         fields={[
           { label: "Folio",         value: "FCT-2025-0842",                  copyable: true },
-          { label: "Estado",        value: <Badge variant="secondary">Desembolsado</Badge> },
+          { label: "Estado",        value: <Badge variant="info-soft-outline">Desembolsado</Badge> },
           { label: "Fecha emisión", value: "12/03/2025" },
           { label: "Cedente",       value: "Construcciones Andina S.A.",     span: 2 },
           { label: "RUT cedente",   value: "76.123.456-7",                   copyable: true },
@@ -64,7 +64,7 @@ export function DetailCardPage() {
   columns={3}
   fields={[
     { label: "Folio",   value: "FCT-2025-0842", copyable: true },
-    { label: "Estado",  value: <Badge>Desembolsado</Badge> },
+    { label: "Estado",  value: <Badge variant="info-soft-outline">Desembolsado</Badge> },
     { label: "Cedente", value: "Construcciones Andina S.A.", span: 2 },
     { label: "Monto",   value: "$185.000.000" },
     { label: "Plazo",   value: "60 días" },
@@ -91,7 +91,7 @@ export function DetailCardPage() {
                   { label: "Monto",    value: "$185M" },
                   { label: "Plazo",    value: "60 días" },
                   { label: "Cedente",  value: "Construcciones Andina", span: 2 },
-                  { label: "Estado",   value: <Badge variant="secondary">Desembolsado</Badge> },
+                  { label: "Estado",   value: <Badge variant="info-soft-outline">Desembolsado</Badge> },
                 ]}
               />
             </div>

@@ -31,7 +31,7 @@ const statusConfig: Record<TimelineStatus, { icon: LucideIcon; dotClass: string;
   current:   { icon: Clock,        dotClass: "bg-secondary border-secondary", iconClass: "text-secondary-foreground" },
   pending:   { icon: Circle,       dotClass: "bg-muted border-border",        iconClass: "text-muted-foreground" },
   error:     { icon: XCircle,      dotClass: "bg-destructive border-destructive", iconClass: "text-destructive-foreground" },
-  warning:   { icon: AlertCircle,  dotClass: "bg-amber-500 border-amber-500", iconClass: "text-white" },
+  warning:   { icon: AlertCircle,  dotClass: "bg-warning border-warning", iconClass: "text-warning-foreground" },
 };
 
 export function Timeline({ items, className }: TimelineProps) {

@@ -5,7 +5,7 @@
  * @layer atoms
  */
 import * as React from "react";
-import { ChevronLeft, ChevronRight, CalendarDays } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./button";
 import { cn } from "./utils";
 
@@ -124,8 +124,6 @@ export function DateNavigator({
     setInternal(range);
     onChange?.(range);
   };
-
-  const isNavigable = current.preset !== "custom" && current.preset !== "today" || current.preset === "today";
 
   return (
     <div className={cn("flex items-center gap-1 flex-wrap", className)}>

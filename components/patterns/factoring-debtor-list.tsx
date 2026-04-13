@@ -1,4 +1,4 @@
-/* eslint-disable */
+ 
 /* eslint-disable */
 import { useState, useMemo } from "react";
 import { MasterDataGrid } from "../advanced/master-data-grid";
@@ -16,8 +16,7 @@ import { cn } from "../ui/utils";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const COP = (v: number) =>
-  new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 }).format(v);
+
 
 type RiskRating = "AAA" | "AA" | "A" | "BBB" | "BB" | "B";
 type DebtorStatus = "activo" | "observacion" | "restringido";
@@ -120,10 +119,10 @@ const calificacionConfig: Record<RiskRating, { color: string; bg: string }> = {
   B:   { color: "text-destructive",     bg: "bg-destructive/10" },
 };
 
-const statusCfg: Record<DebtorStatus, { label: string; variant: "success-soft-outline" | "warning-soft-outline" | "destructive-soft-outline" }> = {
-  activo:       { label: "Activo",       variant: "success-soft-outline" },
-  observacion:  { label: "Observación",  variant: "warning-soft-outline" },
-  restringido:  { label: "Restringido",  variant: "destructive-soft-outline" },
+const statusCfg: Record<DebtorStatus, { label: string; variant: "outline" }> = {
+  activo:       { label: "Activo",       variant: "outline" },
+  observacion:  { label: "Observación",  variant: "outline" },
+  restringido:  { label: "Restringido",  variant: "outline" },
 };
 
 type SortKey = "nombre" | "exposicionTotal" | "tasaPago" | "diasPromPago" | "tendencia";
@@ -249,24 +248,31 @@ export function FactoringDebtorList() {
             </TableRow>
           </TableHeader>
           <TableBody>
+            {rows.length === 0 && (
+              <TableRow>
+                <TableCell colSpan={9} className="py-12 text-center text-sm text-muted-foreground">
+                  No se encontraron deudores con los filtros aplicados.
+                </TableCell>
+              </TableRow>
+            )}
             {rows.map((d) => {
               const calCfg = calificacionConfig[d.calificacion];
               return (
                 <TableRow key={d.id} className="hover:bg-muted/30 transition-colors">
                   <TableCell>
                     <div className="flex items-center gap-2.5">
-                      <div className={cn("h-7 w-7 rounded-lg flex items-center justify-center flex-shrink-0 text-[10px] font-bold", calCfg.bg, calCfg.color)}>
+                      <div className={cn("h-7 w-7 rounded-lg flex items-center justify-center flex-shrink-0 text-2xs font-bold", calCfg.bg, calCfg.color)}>
                         {d.calificacion}
                       </div>
                       <div className="min-w-0">
-                        <p className="text-xs font-medium text-foreground truncate">{d.nombre}</p>
-                        <p className="text-[10px] text-muted-foreground font-mono">{d.nit}</p>
+                        <p className="text-sm font-medium text-foreground truncate">{d.nombre}</p>
+                        <p className="text-xs text-muted-foreground font-mono">{d.nit}</p>
                       </div>
                     </div>
                   </TableCell>
                   <TableCell>
                     <p className="text-xs">{d.sector}</p>
-                    <p className="text-[10px] text-muted-foreground">{d.ciudad}</p>
+                    <p className="text-xs text-muted-foreground">{d.ciudad}</p>
                   </TableCell>
                   <TableCell className="text-center">
                     <span className={cn("text-sm font-bold", calCfg.color)}>{d.calificacion}</span>
@@ -281,7 +287,7 @@ export function FactoringDebtorList() {
                   </TableCell>
                   <TableCell>
                     <div className="min-w-[100px] space-y-1">
-                      <div className="flex justify-between text-[10px]">
+                      <div className="flex justify-between text-xs">
                         <span className="text-muted-foreground">{d.ciudad.split(" ")[0]}</span>
                         <span className={cn("font-semibold", d.exposicionPct >= 80 ? "text-warning" : "text-foreground")}>{d.exposicionPct}%</span>
                       </div>
@@ -295,7 +301,7 @@ export function FactoringDebtorList() {
                       {d.tasaPago.toFixed(1)}%
                     </span>
                     {d.facturasVencidas > 0 && (
-                      <p className="text-[10px] text-destructive">{d.facturasVencidas} en mora</p>
+                      <p className="text-xs text-destructive">{d.facturasVencidas} en mora</p>
                     )}
                   </TableCell>
                   <TableCell>

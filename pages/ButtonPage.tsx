@@ -213,8 +213,6 @@ function SizesGrid() {
     { size: "icon",    label: "icon",    sub: "36px □" },
     { size: "icon-lg", label: "icon-lg", sub: "44px □" },
   ];
-  const allCols = [...TEXT_SIZES, ...ICON_SIZES];
-
   return (
     <Canvas>
       <table className="w-full border-collapse">

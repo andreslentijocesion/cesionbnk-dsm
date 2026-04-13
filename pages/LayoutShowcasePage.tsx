@@ -408,7 +408,7 @@ export function LayoutShowcasePage() {
     <SectionLayout title="Parameters" description="Basic config">
       <SettingsForm />
     </SectionLayout>
-    <SectionLayout title="Notifications" action={<Badge>3 active</Badge>}>
+    <SectionLayout title="Notifications" action={<Badge variant="neutral">3 active</Badge>}>
       <NotificationList />
     </SectionLayout>
     <SectionLayout title="Danger Zone">

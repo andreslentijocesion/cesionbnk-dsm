@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent } from "../ui/card";
 import { cn } from "../ui/utils";
 import { TrendingUp, CheckCircle, Clock, FileText } from "lucide-react";
