@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Play } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../ui/Button";
 import { useHelp } from "./HelpProvider";
 import type { TourStep } from "./tourSteps";
 
@@ -96,7 +96,8 @@ export function ProductTour({
         prevBtnText: "← Previous",
         doneBtnText: "Got it!",
         popoverClass: "driver-popover-custom",
-        overlayColor: "rgba(0, 0, 0, 0.75)",
+        overlayColor: "black",
+        overlayOpacity: 0.75,
         smoothScroll: true,
         animate: true,
         allowClose: true,
@@ -144,9 +145,9 @@ export function ProductTour({
       className="flex items-center gap-2"
     >
       {isLoading ? (
-        <Route className="h-4 w-4 animate-spin" />
+        <Route className="size-4 animate-spin" />
       ) : (
-        <Play className="h-4 w-4" />
+        <Play className="size-4" />
       )}
       <span>{buttonText}</span>
     </Button>

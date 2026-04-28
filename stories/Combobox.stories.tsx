@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Combobox } from '../components/advanced/combobox';
+import { Combobox } from '../components/advanced/Combobox';
 
 const meta: Meta<typeof Combobox> = {
   title: 'DSM/Advanced/Combobox',

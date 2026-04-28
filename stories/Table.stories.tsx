@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '../components/ui/table';
-import { Badge } from '../components/ui/badge';
-import { Button } from '../components/ui/button';
+import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '../components/ui/Table';
+import { Badge } from '../components/ui/Badge';
+import { Button } from '../components/ui/Button';
 import { MoreHorizontal } from 'lucide-react';
 
 const meta: Meta = { title: 'DSM/Components/Table', tags: ['autodocs'] };

@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   FactoringStatusCard,
   FactoringStatusCardShowcase,
-} from "../components/patterns/factoring-status-card";
+} from "../components/patterns/FactoringStatusCard";
 import {
   Banknote,
   RefreshCw,
@@ -83,7 +83,7 @@ export function FactoringStatusCardPage() {
       category="Business Pattern"
       atomicLevel="Organism"
       preview={<SingleCardDemo />}
-      code={`import { FactoringStatusCard } from "@/components/patterns/factoring-status-card";
+      code={`import { FactoringStatusCard } from "@/components/patterns/FactoringStatusCard";
 import { BadgeCheck } from "lucide-react";
 
 function MyStatusTabs() {
@@ -134,7 +134,7 @@ function MyStatusTabs() {
           name: "active",
           type: "boolean",
           default: "false",
-          description: "Indica si esta card está seleccionada. En estado activo: aplica el borde inferior con gradiente cromático, el color en título/badge/icono y elevación (shadow-elevation-4). En inactivo: borde gris neutro y estilos apagados.",
+          description: "Indica si esta card está seleccionada. En estado activo: aplica el borde inferior con gradiente cromático, el color en título/Badge/icono y elevación (shadow-elevation-4). En inactivo: borde gris neutro y estilos apagados.",
         },
         {
           name: "subtitle",
@@ -183,7 +183,7 @@ function MyStatusTabs() {
           title: "Showcase completo (6 estados)",
           description: "Todos los estados del ciclo de vida de una operación de factoring: Aprobado, Desembolsado, En Cobro, Cobrado, Vencido y Rechazado.",
           preview: <FactoringStatusCardShowcase />,
-          code: `import { FactoringStatusCardShowcase } from "@/components/patterns/factoring-status-card";
+          code: `import { FactoringStatusCardShowcase } from "@/components/patterns/FactoringStatusCard";
 
 // Demo interactiva con los 6 estados del ciclo de vida
 <FactoringStatusCardShowcase />`,

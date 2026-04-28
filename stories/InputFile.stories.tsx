@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputFile } from '../components/ui/input-file';
-import { Label } from '../components/ui/label';
+import { InputFile } from '../components/ui/InputFile';
+import { Label } from '../components/ui/Label';
 
 const meta: Meta = { title: 'DSM/Primitives/InputFile', tags: ['autodocs'] };
 export default meta;

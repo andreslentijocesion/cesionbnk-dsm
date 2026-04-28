@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Separator } from '../components/ui/separator';
+import { Separator } from '../components/ui/Separator';
 
 const meta: Meta = { title: 'DSM/Primitives/Separator', tags: ['autodocs'] };
 export default meta;

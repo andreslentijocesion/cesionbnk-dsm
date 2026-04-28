@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Button } from "../components/ui/button";
-import { Calendar } from "../components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/popover";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Button } from "../components/ui/Button";
+import { Calendar } from "../components/ui/Calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/Popover";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "../lib/utils";
 import { format, addDays } from "date-fns";
@@ -31,7 +31,7 @@ export function DatePickerPage() {
                 !date && "text-muted-foreground"
               )}
             >
-              <CalendarIcon className="mr-2 h-4 w-4" />
+              <CalendarIcon className="mr-2 size-4" />
               {date ? format(date, "PPP") : <span>Pick a date</span>}
             </Button>
           </PopoverTrigger>
@@ -50,13 +50,13 @@ import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import { Button } from "@/components/ui/Button"
+import { Calendar } from "@/components/ui/Calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/Popover"
 
 export function DatePickerDemo() {
   const [date, setDate] = React.useState<Date>()
@@ -71,7 +71,7 @@ export function DatePickerDemo() {
             !date && "text-muted-foreground"
           )}
         >
-          <CalendarIcon className="mr-2 h-4 w-4" />
+          <CalendarIcon className="mr-2 size-4" />
           {date ? format(date, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
@@ -116,7 +116,7 @@ export function DatePickerDemo() {
                       !range && "text-muted-foreground"
                     )}
                   >
-                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    <CalendarIcon className="mr-2 size-4" />
                     {range?.from ? (
                       range.to ? (
                         <>
@@ -149,13 +149,13 @@ import { format, addDays } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import { Button } from "@/components/ui/Button"
+import { Calendar } from "@/components/ui/Calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/Popover"
 
 export function DateRangePickerDemo() {
   const [date, setDate] = React.useState({
@@ -175,7 +175,7 @@ export function DateRangePickerDemo() {
               !date && "text-muted-foreground"
             )}
           >
-            <CalendarIcon className="mr-2 h-4 w-4" />
+            <CalendarIcon className="mr-2 size-4" />
             {date?.from ? (
               date.to ? (
                 <>

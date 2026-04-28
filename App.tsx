@@ -2,23 +2,23 @@ import { useState, useEffect } from "react";
 import { PageId } from "./components/types/PageId";
 import { PageRenderer } from "./components/PageRenderer";
 import { DSMSidebarNav } from "./components/DSMSidebarNav";
-import { Button } from "./components/ui/button";
+import { Button } from "./components/ui/Button";
 import { Logo } from "./components/Logo";
 import { Moon, Sun } from "lucide-react";
 import { ThemeProvider, useTheme } from "./components/providers/ThemeProvider";
-import { ThemeSwitcher } from "./components/ui/theme-switcher";
-import { Toaster } from "./components/ui/sonner";
+import { ThemeSwitcher } from "./components/ui/ThemeSwitcher";
+import { Toaster } from "./components/ui/Sonner";
 import { HelpProvider } from "./components/help/HelpProvider";
 import { HelpCenter } from "./components/help/HelpCenter";
 import { HelpButton } from "./components/help/HelpButton";
 import { LoadingProvider } from "./components/providers/LoadingProvider";
 import { TransitionProvider } from "./components/providers/TransitionProvider";
-import { LoadingOverlay } from "./components/ui/loading-overlay";
+import { LoadingOverlay } from "./components/ui/LoadingOverlay";
 import {
   AdminLayout,
   LayoutHeader,
   LayoutFooter,
-} from "./components/patterns/app-layout";
+} from "./components/patterns/AppLayout";
 import { ALL_PAGE_LABELS } from "./components/registry";
 import "./styles/tour.css";
 

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Card } from "../components/ui/card";
-import { Label } from "../components/ui/label";
-import { Input } from "../components/ui/input";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Card } from "../components/ui/Card";
+import { Label } from "../components/ui/Label";
+import { Input } from "../components/ui/Input";
 import { ContextualHelp } from "../components/help/ContextualHelp";
 import { ProductTour } from "../components/help/ProductTour";
 import { vinculacionTourSteps } from "../components/help/tourSteps";

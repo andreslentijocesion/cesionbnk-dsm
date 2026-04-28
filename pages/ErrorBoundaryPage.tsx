@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { ErrorBoundary } from "../components/ui/error-boundary";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ErrorBoundary } from "../components/ui/ErrorBoundary";
+import { Button } from "../components/ui/Button";
 import { AlertTriangle } from "lucide-react";
 
-const code = `import { ErrorBoundary } from "@/components/ui/error-boundary";
+const code = `import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
 
 export function ErrorBoundaryDemo() {
   return (
@@ -26,7 +26,7 @@ function ErrorBoundaryDemo() {
     return (
       <div className="flex min-h-[200px] flex-col items-center justify-center rounded-lg border border-red-200 bg-red-50 p-8 text-center dark:border-red-900 dark:bg-red-950">
         <div className="mb-4 rounded-full bg-red-100 p-3 dark:bg-red-900">
-          <AlertTriangle className="h-10 w-10 text-red-600 dark:text-red-400" />
+          <AlertTriangle className="size-10 text-destructive dark:text-red-400" />
         </div>
         <h2 className="mb-2 text-xl font-semibold text-red-900 dark:text-red-300">
           Something went wrong

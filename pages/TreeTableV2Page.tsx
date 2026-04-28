@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   TreeTable,
   type Operation,
   type BatchAction,
-} from "../components/advanced/tree-table";
+} from "../components/advanced/TreeTable";
 import { toast } from "sonner";
 
 /* ═══════════════════════════════════════════
@@ -111,7 +111,7 @@ export function TreeTableV2Page() {
           onDownloadExcel={(op) => toast.success(`Download Excel — ${op.id}`)}
         />
       }
-      code={`import { TreeTable, Operation, BatchAction } from "@/components/advanced/tree-table";
+      code={`import { TreeTable, Operation, BatchAction } from "@/components/advanced/TreeTable";
 
 const operations: Operation[] = [
   {

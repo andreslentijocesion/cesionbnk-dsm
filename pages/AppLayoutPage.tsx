@@ -2,15 +2,15 @@
  * AppLayoutPage — Showcase for ClientLayout & AdminLayout
  * Demonstrates both layout shells: ClientLayout (customer-facing) and AdminLayout without sidebar (admin).
  */
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   ClientLayout,
   AdminLayout,
   LayoutHeader,
   LayoutFooter,
-} from "../components/patterns/app-layout";
-import { Button } from "../components/ui/button";
-import { Separator } from "../components/ui/separator";
+} from "../components/patterns/AppLayout";
+import { Button } from "../components/ui/Button";
+import { Separator } from "../components/ui/Separator";
 import {
   Bell,
   Search,
@@ -46,7 +46,7 @@ function ClientLayoutDemo() {
             actions={
               <div className="flex items-center gap-2">
                 <Button variant="ghost" size="sm">
-                  <Search className="h-4 w-4" />
+                  <Search className="size-4" />
                 </Button>
                 <Button variant="default" size="sm">Sign In</Button>
               </div>
@@ -105,7 +105,7 @@ function AdminNoSidebarDemo() {
           <LayoutHeader
             logo={
               <div className="flex items-center gap-3">
-                <div className="w-7 h-7 rounded bg-primary flex items-center justify-center">
+                <div className="size-7 rounded bg-primary flex items-center justify-center">
                   <span className="text-primary-foreground text-xs">C</span>
                 </div>
                 <span className="text-foreground font-medium">CESIONBNK</span>
@@ -127,9 +127,9 @@ function AdminNoSidebarDemo() {
             actions={
               <div className="flex items-center gap-2">
                 <Button variant="ghost" size="sm">
-                  <Bell className="h-4 w-4" />
+                  <Bell className="size-4" />
                 </Button>
-                <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center text-xs text-primary">
+                <div className="size-8 rounded-full bg-muted flex items-center justify-center text-xs text-primary">
                   JD
                 </div>
               </div>
@@ -203,7 +203,7 @@ export function AppLayoutPage() {
   AdminLayout,
   LayoutHeader,
   LayoutFooter,
-} from "@/components/patterns/app-layout";
+} from "@/components/patterns/AppLayout";
 
 // ── Client Layout ──
 <ClientLayout

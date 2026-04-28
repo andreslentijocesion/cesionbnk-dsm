@@ -3,17 +3,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Check, User, Building2, CreditCard, FileCheck, AlertCircle, CheckCircle2, ChevronRight, Lock, ArrowLeft } from "lucide-react";
 import { cn } from "../lib/utils";
 import { fadeVariants, getTransition } from "../lib/animation-config";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../components/ui/select";
-import { Progress } from "../components/ui/progress";
-import { Badge } from "../components/ui/badge";
-import { Alert, AlertDescription } from "../components/ui/alert";
-import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
-import { Textarea } from "../components/ui/textarea";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/ui/Card";
+import { Button } from "../components/ui/Button";
+import { Input } from "../components/ui/Input";
+import { Label } from "../components/ui/Label";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../components/ui/Select";
+import { Progress } from "../components/ui/Progress";
+import { Badge } from "../components/ui/Badge";
+import { Alert, AlertDescription } from "../components/ui/Alert";
+import { RadioGroup, RadioGroupItem } from "../components/ui/RadioGroup";
+import { Textarea } from "../components/ui/Textarea";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 
 function MultiStepWizardVerticalDemo() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -26,10 +26,10 @@ function MultiStepWizardVerticalDemo() {
   });
 
   const wizardSteps = [
-    { id: 1, title: "Account", subtitle: "Basic information", icon: <User className="h-4 w-4" /> },
-    { id: 2, title: "Company", subtitle: "Company details", icon: <Building2 className="h-4 w-4" /> },
-    { id: 3, title: "Billing", subtitle: "Financial setup", icon: <CreditCard className="h-4 w-4" /> },
-    { id: 4, title: "Verification", subtitle: "Review and confirm", icon: <FileCheck className="h-4 w-4" /> },
+    { id: 1, title: "Account", subtitle: "Basic information", icon: <User className="size-4" /> },
+    { id: 2, title: "Company", subtitle: "Company details", icon: <Building2 className="size-4" /> },
+    { id: 3, title: "Billing", subtitle: "Financial setup", icon: <CreditCard className="size-4" /> },
+    { id: 4, title: "Verification", subtitle: "Review and confirm", icon: <FileCheck className="size-4" /> },
   ];
 
   const updateWizardData = (field: string, value: any) => { setWizardData((prev) => ({ ...prev, [field]: value })); setValidationErrors([]); };
@@ -71,9 +71,9 @@ function MultiStepWizardVerticalDemo() {
                 <div key={step.id} className="relative">
                   {!isLast && <div className={cn("absolute left-5 top-12 w-0.5 h-10 -z-10 transition-colors duration-300", isCompleted ? "bg-primary" : "bg-border")} />}
                   <button onClick={() => isAccessible && setCurrentStep(step.id)} disabled={!isAccessible} className={cn("w-full text-left p-3 rounded-lg transition-all duration-300 flex items-start gap-3 group", isActive && "bg-muted border-2 border-primary shadow-sm", !isActive && isAccessible && "hover:bg-muted border-2 border-transparent", !isAccessible && "opacity-50 cursor-not-allowed border-2 border-transparent")}>
-                    <div className={cn("flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 font-medium", isCompleted && "bg-primary text-primary-foreground shadow-md", isActive && !isCompleted && "bg-muted text-primary ring-2 ring-primary", !isActive && !isCompleted && isAccessible && "bg-muted text-muted-foreground", !isAccessible && "bg-muted text-muted-foreground")}>{isCompleted ? <Check className="h-5 w-5" /> : step.icon}</div>
+                    <div className={cn("flex-shrink-0 size-10 rounded-full flex items-center justify-center transition-all duration-300 font-medium", isCompleted && "bg-primary text-primary-foreground shadow-md", isActive && !isCompleted && "bg-muted text-primary ring-2 ring-primary", !isActive && !isCompleted && isAccessible && "bg-muted text-muted-foreground", !isAccessible && "bg-muted text-muted-foreground")}>{isCompleted ? <Check className="size-5" /> : step.icon}</div>
                     <div className="flex-1 min-w-0 pt-1">
-                      <div className="flex items-center gap-2"><p className={cn("text-sm font-medium truncate", isActive && "text-primary", !isAccessible && "text-muted-foreground")}>{step.title}</p>{isActive && <ChevronRight className="h-4 w-4 text-primary" />}{isCompleted && !isActive && <CheckCircle2 className="h-4 w-4 text-primary" />}</div>
+                      <div className="flex items-center gap-2"><p className={cn("text-sm font-medium truncate", isActive && "text-primary", !isAccessible && "text-muted-foreground")}>{step.title}</p>{isActive && <ChevronRight className="size-4 text-primary" />}{isCompleted && !isActive && <CheckCircle2 className="size-4 text-primary" />}</div>
                       <p className="text-xs text-muted-foreground mt-0.5">{step.subtitle}</p>
                     </div>
                   </button>
@@ -82,14 +82,14 @@ function MultiStepWizardVerticalDemo() {
             })}
           </CardContent>
         </Card>
-        <Card className="bg-muted border-dashed"><CardContent className="p-4"><div className="flex gap-2"><Lock className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" /><div className="space-y-1"><p className="text-xs font-medium">Secure Information</p><p className="text-xs text-muted-foreground">Data protected with encryption</p></div></div></CardContent></Card>
+        <Card className="bg-muted border-dashed"><CardContent className="p-4"><div className="flex gap-2"><Lock className="size-4 text-muted-foreground flex-shrink-0 mt-0.5" /><div className="space-y-1"><p className="text-xs font-medium">Secure Information</p><p className="text-xs text-muted-foreground">Data protected with encryption</p></div></div></CardContent></Card>
       </div>
 
       <div className="min-w-0">
         <Card>
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-primary">{wizardSteps[currentStep - 1].icon}</div>
+              <div className="size-10 rounded-full bg-muted flex items-center justify-center text-primary">{wizardSteps[currentStep - 1].icon}</div>
               <div className="flex-1"><CardTitle>{wizardSteps[currentStep - 1].title}</CardTitle><CardDescription>{wizardSteps[currentStep - 1].subtitle}</CardDescription></div>
             </div>
           </CardHeader>
@@ -98,7 +98,7 @@ function MultiStepWizardVerticalDemo() {
               <AnimatePresence mode="wait">
                 {validationErrors.length > 0 && (
                   <motion.div variants={fadeVariants} initial="initial" animate="animate" exit="exit" transition={getTransition('fast')}>
-                    <Alert variant="destructive"><AlertCircle className="h-4 w-4" /><AlertDescription><ul className="list-disc pl-4 space-y-1">{validationErrors.map((e, i) => <li key={i} className="text-sm">{e}</li>)}</ul></AlertDescription></Alert>
+                    <Alert variant="destructive"><AlertCircle className="size-4" /><AlertDescription><ul className="list-disc pl-4 space-y-1">{validationErrors.map((e, i) => <li key={i} className="text-sm">{e}</li>)}</ul></AlertDescription></Alert>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -142,9 +142,9 @@ function MultiStepWizardVerticalDemo() {
                   )}
                   {currentStep === 4 && (
                     <div className="space-y-6">
-                      <Alert className="bg-card border-primary"><CheckCircle2 className="h-4 w-4 text-primary" /><AlertDescription>Review the information before finishing</AlertDescription></Alert>
+                      <Alert className="bg-card border-primary"><CheckCircle2 className="size-4 text-primary" /><AlertDescription>Review the information before finishing</AlertDescription></Alert>
                       <div className="space-y-4">
-                        {[{icon:<User className="h-4 w-4" />,title:"Account",items:[["User",wizardData.nombreUsuario],["Email",wizardData.emailUsuario],["Role",wizardData.rolUsuario]]},{icon:<Building2 className="h-4 w-4" />,title:"Company",items:[["Company Name",wizardData.nombreEmpresa],["NIT",wizardData.nitEmpresa],["Sector",wizardData.sectorEmpresa]]},{icon:<CreditCard className="h-4 w-4" />,title:"Billing",items:[["Volume",wizardData.volumenMensual],["Term",wizardData.plazoPromedio+" days"],["Type",wizardData.serviceType]]}].map(s=>(
+                        {[{icon:<User className="size-4" />,title:"Account",items:[["User",wizardData.nombreUsuario],["Email",wizardData.emailUsuario],["Role",wizardData.rolUsuario]]},{icon:<Building2 className="size-4" />,title:"Company",items:[["Company Name",wizardData.nombreEmpresa],["NIT",wizardData.nitEmpresa],["Sector",wizardData.sectorEmpresa]]},{icon:<CreditCard className="size-4" />,title:"Billing",items:[["Volume",wizardData.volumenMensual],["Term",wizardData.plazoPromedio+" days"],["Type",wizardData.serviceType]]}].map(s=>(
                           <div key={s.title} className="rounded-lg border p-4 bg-muted">
                             <h4 className="font-medium mb-3 flex items-center gap-2"><span className="text-muted-foreground">{s.icon}</span>{s.title}</h4>
                             <div className="space-y-2 text-sm">{s.items.map(([k,v])=><div key={k} className="flex justify-between"><span className="text-muted-foreground">{k}:</span><span className="font-medium">{v || "—"}</span></div>)}</div>
@@ -157,11 +157,11 @@ function MultiStepWizardVerticalDemo() {
               </AnimatePresence>
 
               <div className="flex justify-between items-center pt-6 border-t">
-                <Button variant="outline" onClick={handlePrevious} disabled={currentStep === 1}><ArrowLeft className="h-4 w-4 mr-2" />Previous</Button>
+                <Button variant="outline" onClick={handlePrevious} disabled={currentStep === 1}><ArrowLeft className="size-4 mr-2" />Previous</Button>
                 {currentStep < wizardSteps.length ? (
-                  <Button onClick={handleNext}>Next<ChevronRight className="h-4 w-4 ml-1" /></Button>
+                  <Button onClick={handleNext}>Next<ChevronRight className="size-4 ml-1" /></Button>
                 ) : (
-                  <Button onClick={handleFinish}><Check className="h-4 w-4 mr-2" />Finish</Button>
+                  <Button onClick={handleFinish}><Check className="size-4 mr-2" />Finish</Button>
                 )}
               </div>
             </div>

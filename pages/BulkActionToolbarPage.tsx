@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { BulkActionToolbar } from "../components/patterns/bulk-action-toolbar";
-import { Checkbox } from "../components/ui/checkbox";
-import { Badge } from "../components/ui/badge";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { BulkActionToolbar } from "../components/patterns/BulkActionToolbar";
+import { Checkbox } from "../components/ui/Checkbox";
+import { Badge } from "../components/ui/Badge";
 import { toast } from "sonner";
 import { CheckCircle2, Send, Download, Trash2 } from "lucide-react";
 
@@ -93,7 +93,7 @@ export function BulkActionToolbarPage() {
       category="Patterns"
       atomicLevel="Molecule"
       preview={<BulkDemo />}
-      code={`import { BulkActionToolbar } from "@/components/patterns/bulk-action-toolbar"
+      code={`import { BulkActionToolbar } from "@/components/patterns/BulkActionToolbar"
 import { CheckCircle2, Send } from "lucide-react"
 
 <BulkActionToolbar

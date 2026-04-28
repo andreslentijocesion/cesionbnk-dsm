@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SplitButton } from '../components/ui/split-button';
+import { SplitButton } from '../components/ui/SplitButton';
 
 const meta: Meta = { title: 'DSM/Primitives/SplitButton', tags: ['autodocs'] };
 export default meta;

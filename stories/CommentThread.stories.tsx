@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { CommentThread, type Comment } from '../components/patterns/comment-thread';
+import { CommentThread, type Comment } from '../components/patterns/CommentThread';
 
 const initialComments: Comment[] = [
   { id: '1', author: 'Ana Valdés',      initials: 'AV', content: 'Cedente verificado. Score: 720.',       timestamp: 'Hace 2 días', visibility: 'internal' },

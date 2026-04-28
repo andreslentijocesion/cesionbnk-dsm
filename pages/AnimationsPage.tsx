@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Card } from "../components/ui/card";
+import { Card } from "../components/ui/Card";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Star, Check, Loader2, ArrowRight, TrendingUp, MousePointer } from "lucide-react";
 import { AnimationSystemContent } from "./AnimationSystemPage";
-import { Button } from "../components/ui/button";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 
 // Animation props constants
 const hoverScaleProps = { whileHover: { scale: 1.05 }, whileTap: { scale: 0.95 } };
@@ -25,16 +25,16 @@ function AnimationPlayground() {
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Basic Animations</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <motion.div initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
-            <Card className="p-4 text-center bg-muted"><ArrowRight className="h-5 w-5 mx-auto mb-2 rotate-180" /><p className="text-xs font-medium">Slide Left</p></Card>
+            <Card className="p-4 text-center bg-muted"><ArrowRight className="size-5 mx-auto mb-2 rotate-180" /><p className="text-xs font-medium">Slide Left</p></Card>
           </motion.div>
           <motion.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
-            <Card className="p-4 text-center bg-muted"><ArrowRight className="h-5 w-5 mx-auto mb-2" /><p className="text-xs font-medium">Slide Right</p></Card>
+            <Card className="p-4 text-center bg-muted"><ArrowRight className="size-5 mx-auto mb-2" /><p className="text-xs font-medium">Slide Right</p></Card>
           </motion.div>
           <motion.div initial={{ scale: 0.5, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.5 }}>
-            <Card className="p-6 bg-accent border-accent flex items-center justify-center"><Star className="h-8 w-8 text-chart-3" /></Card>
+            <Card className="p-6 bg-accent border-accent flex items-center justify-center"><Star className="size-8 text-chart-3" /></Card>
           </motion.div>
           <motion.div initial={{ rotate: -180, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
-            <Card className="p-6 bg-muted border-primary flex items-center justify-center"><Loader2 className="h-8 w-8 text-primary" /></Card>
+            <Card className="p-6 bg-muted border-primary flex items-center justify-center"><Loader2 className="size-8 text-primary" /></Card>
           </motion.div>
         </div>
       </div>
@@ -45,16 +45,16 @@ function AnimationPlayground() {
         <div className="flex gap-4 flex-wrap items-center">
           <motion.button className="relative p-4 rounded-lg bg-muted hover:bg-muted transition-colors" whileTap={{ scale: 0.9 }} onClick={() => setIsLiked(!isLiked)}>
             <motion.div animate={isLiked ? { scale: [1, 1.3, 1] } : { scale: 1 }} transition={{ duration: 0.3 }}>
-              <Heart className={`h-8 w-8 transition-colors ${isLiked ? "fill-red-500 text-red-500" : "text-muted-foreground"}`} />
+              <Heart className={`size-8 transition-colors ${isLiked ? "fill-red-500 text-destructive" : "text-muted-foreground"}`} />
             </motion.div>
           </motion.button>
 
           <motion.button className="flex items-center gap-3 p-4 rounded-lg bg-muted hover:bg-muted transition-colors" onClick={() => setIsChecked(!isChecked)}>
-            <div className={`w-6 h-6 rounded border-2 flex items-center justify-center transition-colors ${isChecked ? "bg-primary border-primary" : "border-muted-foreground"}`}>
+            <div className={`size-6 rounded border-2 flex items-center justify-center transition-colors ${isChecked ? "bg-primary border-primary" : "border-muted-foreground"}`}>
               <AnimatePresence mode="wait">
                 {isChecked && (
                   <motion.div key="check" initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }} exit={{ scale: 0, rotate: 180 }} transition={{ duration: 0.3 }}>
-                    <Check className="h-4 w-4 text-primary-foreground" />
+                    <Check className="size-4 text-primary-foreground" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -87,10 +87,10 @@ function AnimationPlayground() {
       <div className="space-y-3">
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Loading States</h3>
         <div className="flex gap-6 flex-wrap items-center">
-          <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }}><Loader2 className="h-8 w-8 text-primary" /></motion.div>
-          <motion.div animate={{ scale: [1, 1.2, 1], opacity: [1, 0.5, 1] }} transition={{ duration: 1.5, repeat: Infinity }} className="w-8 h-8 rounded-full bg-chart-2" />
+          <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }}><Loader2 className="size-8 text-primary" /></motion.div>
+          <motion.div animate={{ scale: [1, 1.2, 1], opacity: [1, 0.5, 1] }} transition={{ duration: 1.5, repeat: Infinity }} className="size-8 rounded-full bg-chart-2" />
           <div className="flex gap-2">
-            {[0, 1, 2].map((i) => (<motion.div key={i} animate={{ y: [0, -10, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.2 }} className="w-3 h-3 rounded-full bg-chart-3" />))}
+            {[0, 1, 2].map((i) => (<motion.div key={i} animate={{ y: [0, -10, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.2 }} className="size-3 rounded-full bg-chart-3" />))}
           </div>
           <div className="w-32 h-2 bg-muted rounded-full overflow-hidden"><motion.div className="h-full bg-primary rounded-full" animate={{ x: ["-100%", "200%"] }} transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }} /></div>
         </div>
@@ -101,7 +101,7 @@ function AnimationPlayground() {
         <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wide">Draggable</h3>
         <div className="flex gap-4 flex-wrap">
           <motion.div {...dragProps} className="p-6 rounded-lg bg-muted border-border cursor-grab active:cursor-grabbing text-center">
-            <MousePointer className="h-6 w-6 mx-auto mb-2 text-primary" /><p className="text-xs font-medium">Drag me!</p>
+            <MousePointer className="size-6 mx-auto mb-2 text-primary" /><p className="text-xs font-medium">Drag me!</p>
           </motion.div>
         </div>
       </div>
@@ -157,9 +157,9 @@ export function AnimationsPage() {
           title: "Animation System Architecture",
           description: "Full system: PageTransition, FadeInView, StaggerContainer, InlineSpinner, ButtonLoading, Skeleton variants, Loading hooks, and CSS utilities.",
           preview: <AnimationSystemContent />,
-          code: `import { PageTransition, FadeInView, StaggerContainer } from "@/components/ui/page-transition";
-import { InlineSpinner, ButtonLoading } from "@/components/ui/loading-overlay";
-import { SkeletonTable, SkeletonDashboard } from "@/components/ui/skeleton-variants";
+          code: `import { PageTransition, FadeInView, StaggerContainer } from "@/components/ui/PageTransition";
+import { InlineSpinner, ButtonLoading } from "@/components/ui/LoadingOverlay";
+import { SkeletonTable, SkeletonDashboard } from "@/components/ui/SkeletonVariants";
 import { useLoadingState, useAsyncOperation } from "@/hooks/useLoadingState";`,
         },
         {
@@ -169,7 +169,7 @@ import { useLoadingState, useAsyncOperation } from "@/hooks/useLoadingState";`,
             <div className="space-y-3">
               {[1, 2, 3].map((item) => (
                 <motion.div key={item} initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: item * 0.1 }} className="p-4 rounded-lg bg-gradient-to-r from-primary/10 to-chart-2/10 border flex items-center gap-3">
-                  <TrendingUp className="h-5 w-5 text-primary" />
+                  <TrendingUp className="size-5 text-primary" />
                   <span className="font-medium">Item {item} - Appears on scroll</span>
                 </motion.div>
               ))}

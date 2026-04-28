@@ -1,7 +1,7 @@
-import { KPIShowcase } from "../components/patterns/kpi-showcase";
-import { KPIShowcaseExtended } from "../components/patterns/kpi-showcase-extended";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { KPIShowcase } from "../components/patterns/KpiShowcase";
+import { KPIShowcaseExtended } from "../components/patterns/KpiShowcaseExtended";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 
 function KpiShowcaseDemo() {
   return (
@@ -41,8 +41,8 @@ export function KpiShowcasePage() {
       description="Complete KPI system: advanced dashboard with interactive charts, standard metrics, and KPI Cards. Includes KPIShowcase and KPIShowcaseExtended patterns with tabs to switch between views."
       category="Patterns"
       preview={<KpiShowcaseDemo />}
-      code={`import { KPIShowcase } from "@/components/patterns/kpi-showcase";
-import { KPIShowcaseExtended } from "@/components/patterns/kpi-showcase-extended";
+      code={`import { KPIShowcase } from "@/components/patterns/KpiShowcase";
+import { KPIShowcaseExtended } from "@/components/patterns/KpiShowcaseExtended";
 
 <KPIShowcase />
 <KPIShowcaseExtended />`}

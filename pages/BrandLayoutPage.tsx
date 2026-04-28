@@ -1,11 +1,11 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Card } from "../components/ui/card";
-import { Separator } from "../components/ui/separator";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Card } from "../components/ui/Card";
+import { Separator } from "../components/ui/Separator";
 import { Logo } from "../components/Logo";
 import { useState } from "react";
-import { ColorSwatch } from "../components/widgets/color-swatch";
-import { GridSystemPreview } from "../components/widgets/grid-system-preview";
-import { SpacingPreview } from "../components/widgets/spacing-preview";
+import { ColorSwatch } from "../components/widgets/ColorSwatch";
+import { GridSystemPreview } from "../components/widgets/GridSystemPreview";
+import { SpacingPreview } from "../components/widgets/SpacingPreview";
 import { copyToClipboard as copyText } from "../lib/utils";
 
 function BrandLayoutContent() {
@@ -121,9 +121,9 @@ export function BrandLayoutPage() {
       category="Design System"
       preview={<BrandLayoutContent />}
       code={`import { Logo } from "@/components/Logo";
-import { ColorSwatch } from "@/components/widgets/color-swatch";
-import { GridSystemPreview } from "@/components/widgets/grid-system-preview";
-import { SpacingPreview } from "@/components/widgets/spacing-preview";
+import { ColorSwatch } from "@/components/widgets/ColorSwatch";
+import { GridSystemPreview } from "@/components/widgets/GridSystemPreview";
+import { SpacingPreview } from "@/components/widgets/SpacingPreview";
 import { copyToClipboard as copyText } from "@/lib/utils";
 
 // Logo with variants

@@ -3,7 +3,7 @@ import {
   NavigationMenu, NavigationMenuContent, NavigationMenuItem,
   NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from '../components/ui/navigation-menu';
+} from '../components/ui/NavigationMenu';
 
 const meta: Meta = {
   title: 'DSM/Components/NavigationMenu',

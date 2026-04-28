@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { GridShowcase } from "../components/ui/grid-showcase";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Badge } from "../components/ui/badge";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { GridShowcase } from "../components/ui/GridShowcase";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "../components/ui/Card";
+import { Button } from "../components/ui/Button";
+import { Input } from "../components/ui/Input";
+import { Badge } from "../components/ui/Badge";
 import {
   TrendingUp,
   Users,
@@ -12,8 +12,8 @@ import {
   Star,
 } from "lucide-react";
 
-const code = `import { GridShowcase } from "@/components/ui/grid-showcase";
-import { Card } from "@/components/ui/card";
+const code = `import { GridShowcase } from "@/components/ui/GridShowcase";
+import { Card } from "@/components/ui/Card";
 
 // 3 columns with medium gap
 <GridShowcase columns={3} gap="md">
@@ -50,7 +50,7 @@ export function GridShowcasePage() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm">Total Revenue</CardTitle>
-                <DollarSign className="h-4 w-4 text-chart-1" />
+                <DollarSign className="size-4 text-chart-1" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-semibold">$45,231</div>
@@ -62,7 +62,7 @@ export function GridShowcasePage() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm">Active Users</CardTitle>
-                <Users className="h-4 w-4 text-chart-2" />
+                <Users className="size-4 text-chart-2" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-semibold">2,350</div>
@@ -74,7 +74,7 @@ export function GridShowcasePage() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm">Growth Rate</CardTitle>
-                <TrendingUp className="h-4 w-4 text-chart-3" />
+                <TrendingUp className="size-4 text-chart-3" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-semibold">+12.5%</div>
@@ -86,7 +86,7 @@ export function GridShowcasePage() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm">Engagement</CardTitle>
-                <Activity className="h-4 w-4 text-chart-4" />
+                <Activity className="size-4 text-chart-4" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-semibold">89.2%</div>
@@ -123,7 +123,7 @@ export function GridShowcasePage() {
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
                         <div className={`p-2 rounded-lg ${product.bg}`}>
-                          <product.icon className={`h-5 w-5 ${product.color}`} />
+                          <product.icon className={`size-5 ${product.color}`} />
                         </div>
                         <Badge variant="outline">{product.price}</Badge>
                       </div>

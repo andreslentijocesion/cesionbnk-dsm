@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { ApprovalFlow, type Approver } from "../components/patterns/approval-flow";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ApprovalFlow, type Approver } from "../components/patterns/ApprovalFlow";
 import { toast } from "sonner";
 
 const approvers: Approver[] = [
@@ -70,7 +70,7 @@ export function ApprovalFlowPage() {
           />
         </div>
       }
-      code={`import { ApprovalFlow } from "@/components/patterns/approval-flow"
+      code={`import { ApprovalFlow } from "@/components/patterns/ApprovalFlow"
 
 <ApprovalFlow
   title="Operación OP-441 · $620M"

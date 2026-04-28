@@ -2,17 +2,17 @@
  * Widgets Components - Central Exports
  */
 
-export { ColorSwatch } from "./color-swatch";
-export { StatusKPICard, type StatusKPICardProps } from "./status-kpi-card";
-export { ContactForm, type ContactFormData } from "./contact-form";
-export { GridSystemPreview } from "./grid-system-preview";
+export { ColorSwatch } from "./ColorSwatch";
+export { StatusKPICard, type StatusKPICardProps } from "./StatusKpiCard";
+export { ContactForm, type ContactFormData } from "./ContactForm";
+export { GridSystemPreview } from "./GridSystemPreview";
 // removed: invoice-table (orphan — 0 direct consumers, not used by WidgetsShowcasePage)
-export { StatCard } from "./stat-card";
-export { SearchBar } from "./search-bar";
-export { FilterChip } from "./filter-chip";
-export { ActionButton } from "./action-button";
-export { ApprovalTimelineItem } from "./approval-timeline-item";
-export { SimpleFormField } from "./simple-form-field";
-export { FilterBar } from "./filter-bar";
-export { StatsGrid } from "./stats-grid";
-export { NavigationBar } from "./navigation-bar";
+export { StatCard } from "./StatCard";
+export { SearchBar } from "./SearchBar";
+export { FilterChip } from "./FilterChip";
+export { ActionButton } from "./ActionButton";
+export { ApprovalTimelineItem } from "./ApprovalTimelineItem";
+export { SimpleFormField } from "./SimpleFormField";
+export { FilterBar } from "./FilterBar";
+export { StatsGrid } from "./StatsGrid";
+export { NavigationBar } from "./NavigationBar";

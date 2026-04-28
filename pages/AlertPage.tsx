@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Alert, AlertDescription, AlertTitle } from "../components/ui/Alert";
+import { Button } from "../components/ui/Button";
 import {
   AlertCircle, CheckCircle, Info, AlertTriangle,
   Terminal, Zap, Lock, Mail, Bell, ShieldCheck,
@@ -19,7 +19,7 @@ export function AlertPage() {
       preview={
         <div className="flex flex-col gap-4 max-w-2xl">
           <Alert>
-            <Terminal className="h-4 w-4" />
+            <Terminal className="size-4" />
             <AlertTitle>Default</AlertTitle>
             <AlertDescription>
               Neutral alert for general system information.
@@ -27,7 +27,7 @@ export function AlertPage() {
           </Alert>
 
           <Alert variant="success">
-            <CheckCircle className="h-4 w-4" />
+            <CheckCircle className="size-4" />
             <AlertTitle>Success</AlertTitle>
             <AlertDescription>
               The operation was completed successfully.
@@ -35,7 +35,7 @@ export function AlertPage() {
           </Alert>
 
           <Alert variant="destructive">
-            <AlertCircle className="h-4 w-4" />
+            <AlertCircle className="size-4" />
             <AlertTitle>Destructive</AlertTitle>
             <AlertDescription>
               An error occurred while processing the request.
@@ -43,7 +43,7 @@ export function AlertPage() {
           </Alert>
 
           <Alert variant="warning">
-            <AlertTriangle className="h-4 w-4" />
+            <AlertTriangle className="size-4" />
             <AlertTitle>Warning</AlertTitle>
             <AlertDescription>
               This action cannot be undone. Proceed with caution.
@@ -51,7 +51,7 @@ export function AlertPage() {
           </Alert>
 
           <Alert variant="info">
-            <Info className="h-4 w-4" />
+            <Info className="size-4" />
             <AlertTitle>Info</AlertTitle>
             <AlertDescription>
               New features available in your dashboard.
@@ -61,38 +61,38 @@ export function AlertPage() {
       }
 
       // Main Code
-      code={`import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+      code={`import { Alert, AlertDescription, AlertTitle } from "@/components/ui/Alert";
 import { CheckCircle, AlertCircle, AlertTriangle, Info, Terminal } from "lucide-react";
 
 export function AlertSemanticDemo() {
   return (
     <div className="grid gap-4">
       <Alert>
-        <Terminal className="h-4 w-4" />
+        <Terminal className="size-4" />
         <AlertTitle>Default</AlertTitle>
         <AlertDescription>General information.</AlertDescription>
       </Alert>
 
       <Alert variant="success">
-        <CheckCircle className="h-4 w-4" />
+        <CheckCircle className="size-4" />
         <AlertTitle>Success</AlertTitle>
         <AlertDescription>Operation completed.</AlertDescription>
       </Alert>
 
       <Alert variant="destructive">
-        <AlertCircle className="h-4 w-4" />
+        <AlertCircle className="size-4" />
         <AlertTitle>Error</AlertTitle>
         <AlertDescription>Error processing request.</AlertDescription>
       </Alert>
 
       <Alert variant="warning">
-        <AlertTriangle className="h-4 w-4" />
+        <AlertTriangle className="size-4" />
         <AlertTitle>Warning</AlertTitle>
         <AlertDescription>Proceed with caution.</AlertDescription>
       </Alert>
 
       <Alert variant="info">
-        <Info className="h-4 w-4" />
+        <Info className="size-4" />
         <AlertTitle>Info</AlertTitle>
         <AlertDescription>New features available.</AlertDescription>
       </Alert>
@@ -129,35 +129,35 @@ export function AlertSemanticDemo() {
           preview: (
             <div className="grid gap-4 max-w-2xl">
               <Alert>
-                <Terminal className="h-4 w-4" />
+                <Terminal className="size-4" />
                 <AlertTitle>Default</AlertTitle>
                 <AlertDescription>
                   This is a default informational alert.
                 </AlertDescription>
               </Alert>
               <Alert variant="success">
-                <CheckCircle className="h-4 w-4" />
+                <CheckCircle className="size-4" />
                 <AlertTitle>Success</AlertTitle>
                 <AlertDescription>
                   Your changes have been saved successfully.
                 </AlertDescription>
               </Alert>
               <Alert variant="destructive">
-                <AlertCircle className="h-4 w-4" />
+                <AlertCircle className="size-4" />
                 <AlertTitle>Destructive</AlertTitle>
                 <AlertDescription>
                   Your session has expired. Please log in again.
                 </AlertDescription>
               </Alert>
               <Alert variant="warning">
-                <AlertTriangle className="h-4 w-4" />
+                <AlertTriangle className="size-4" />
                 <AlertTitle>Warning</AlertTitle>
                 <AlertDescription>
                   This action cannot be undone. Please proceed with caution.
                 </AlertDescription>
               </Alert>
               <Alert variant="info">
-                <Info className="h-4 w-4" />
+                <Info className="size-4" />
                 <AlertTitle>Info</AlertTitle>
                 <AlertDescription>
                   New features have been added to your dashboard.
@@ -166,25 +166,25 @@ export function AlertSemanticDemo() {
             </div>
           ),
           code: `<Alert variant="success">
-  <CheckCircle className="h-4 w-4" />
+  <CheckCircle className="size-4" />
   <AlertTitle>Success</AlertTitle>
   <AlertDescription>Saved successfully.</AlertDescription>
 </Alert>
 
 <Alert variant="destructive">
-  <AlertCircle className="h-4 w-4" />
+  <AlertCircle className="size-4" />
   <AlertTitle>Error</AlertTitle>
   <AlertDescription>Session expired.</AlertDescription>
 </Alert>
 
 <Alert variant="warning">
-  <AlertTriangle className="h-4 w-4" />
+  <AlertTriangle className="size-4" />
   <AlertTitle>Warning</AlertTitle>
   <AlertDescription>Cannot be undone.</AlertDescription>
 </Alert>
 
 <Alert variant="info">
-  <Info className="h-4 w-4" />
+  <Info className="size-4" />
   <AlertTitle>Info</AlertTitle>
   <AlertDescription>New features available.</AlertDescription>
 </Alert>`,
@@ -195,7 +195,7 @@ export function AlertSemanticDemo() {
           preview: (
             <div className="grid gap-4 max-w-2xl">
               <Alert variant="success">
-                <ShieldCheck className="h-4 w-4" />
+                <ShieldCheck className="size-4" />
                 <AlertTitle>Operation Approved</AlertTitle>
                 <AlertDescription>
                   Operation OP-2024-001 for $45,200,000 was approved by the Risk Committee and is ready for assignment.
@@ -203,7 +203,7 @@ export function AlertSemanticDemo() {
               </Alert>
 
               <Alert variant="warning">
-                <FileWarning className="h-4 w-4" />
+                <FileWarning className="size-4" />
                 <AlertTitle>Pending Documents</AlertTitle>
                 <AlertDescription>
                   2 documents remain unverified in operation OP-2024-003. Assignment cannot proceed until validation is complete.
@@ -211,7 +211,7 @@ export function AlertSemanticDemo() {
               </Alert>
 
               <Alert variant="destructive">
-                <ServerCrash className="h-4 w-4" />
+                <ServerCrash className="size-4" />
                 <AlertTitle>Tax Service Connection Error</AlertTitle>
                 <AlertDescription>
                   Could not verify invoices against the Tax Service. Please retry in a few minutes.
@@ -219,7 +219,7 @@ export function AlertSemanticDemo() {
               </Alert>
 
               <Alert variant="info">
-                <Rocket className="h-4 w-4" />
+                <Rocket className="size-4" />
                 <AlertTitle>New Feature</AlertTitle>
                 <AlertDescription>
                   You can now pre-evaluate operations with the automatic scoring engine. Access it from the evaluation panel.
@@ -228,7 +228,7 @@ export function AlertSemanticDemo() {
             </div>
           ),
           code: `<Alert variant="success">
-  <ShieldCheck className="h-4 w-4" />
+  <ShieldCheck className="size-4" />
   <AlertTitle>Operation Approved</AlertTitle>
   <AlertDescription>
     OP-2024-001 approved by Risk Committee.
@@ -236,7 +236,7 @@ export function AlertSemanticDemo() {
 </Alert>
 
 <Alert variant="warning">
-  <FileWarning className="h-4 w-4" />
+  <FileWarning className="size-4" />
   <AlertTitle>Pending Documents</AlertTitle>
   <AlertDescription>
     2 documents remain unverified.
@@ -249,7 +249,7 @@ export function AlertSemanticDemo() {
           preview: (
             <div className="grid gap-4 max-w-2xl">
               <Alert variant="warning">
-                <AlertTriangle className="h-4 w-4" />
+                <AlertTriangle className="size-4" />
                 <AlertTitle>Session Expiring</AlertTitle>
                 <AlertDescription className="mt-1">
                   Your session will expire in 5 minutes. Would you like to extend it?
@@ -261,7 +261,7 @@ export function AlertSemanticDemo() {
               </Alert>
 
               <Alert variant="info">
-                <Zap className="h-4 w-4" />
+                <Zap className="size-4" />
                 <AlertTitle>Update Available</AlertTitle>
                 <AlertDescription className="mt-1">
                   A new version of the platform is available.
@@ -274,7 +274,7 @@ export function AlertSemanticDemo() {
             </div>
           ),
           code: `<Alert variant="warning">
-  <AlertTriangle className="h-4 w-4" />
+  <AlertTriangle className="size-4" />
   <AlertTitle>Session Expiring</AlertTitle>
   <AlertDescription>Your session will expire in 5 minutes.</AlertDescription>
   <div className="flex gap-2 mt-3 col-start-2">
@@ -309,25 +309,25 @@ export function AlertSemanticDemo() {
           preview: (
             <div className="grid gap-3 max-w-2xl">
               <Alert variant="success">
-                <CheckCircle className="h-4 w-4" />
+                <CheckCircle className="size-4" />
                 <AlertDescription>
                   Changes saved successfully.
                 </AlertDescription>
               </Alert>
               <Alert variant="warning">
-                <AlertTriangle className="h-4 w-4" />
+                <AlertTriangle className="size-4" />
                 <AlertDescription>
                   Scheduled maintenance at 11:00 PM.
                 </AlertDescription>
               </Alert>
               <Alert variant="destructive">
-                <Lock className="h-4 w-4" />
+                <Lock className="size-4" />
                 <AlertDescription>
                   Account locked due to suspicious activity.
                 </AlertDescription>
               </Alert>
               <Alert variant="info">
-                <Mail className="h-4 w-4" />
+                <Mail className="size-4" />
                 <AlertDescription>
                   You have 3 unread messages in your inbox.
                 </AlertDescription>
@@ -335,7 +335,7 @@ export function AlertSemanticDemo() {
             </div>
           ),
           code: `<Alert variant="success">
-  <CheckCircle className="h-4 w-4" />
+  <CheckCircle className="size-4" />
   <AlertDescription>Changes saved.</AlertDescription>
 </Alert>`,
         },
@@ -345,7 +345,7 @@ export function AlertSemanticDemo() {
           preview: (
             <div className="grid gap-4 max-w-2xl">
               <Alert variant="info" className="border-l-4 border-l-blue-500 dark:border-l-blue-400">
-                <Bell className="h-4 w-4" />
+                <Bell className="size-4" />
                 <AlertTitle>New Message</AlertTitle>
                 <AlertDescription>
                   You have 3 unread messages in your inbox.
@@ -353,7 +353,7 @@ export function AlertSemanticDemo() {
               </Alert>
 
               <Alert variant="success" className="border-l-4 border-l-green-500 dark:border-l-green-400">
-                <CheckCircle className="h-4 w-4" />
+                <CheckCircle className="size-4" />
                 <AlertTitle>Deploy Successful</AlertTitle>
                 <AlertDescription>
                   Your deployment has completed and is now in production.
@@ -361,7 +361,7 @@ export function AlertSemanticDemo() {
               </Alert>
 
               <Alert variant="warning" className="border-l-4 border-l-amber-500 dark:border-l-amber-400">
-                <AlertTriangle className="h-4 w-4" />
+                <AlertTriangle className="size-4" />
                 <AlertTitle>High Usage</AlertTitle>
                 <AlertDescription>
                   API usage is at 85% of your monthly quota.
@@ -370,7 +370,7 @@ export function AlertSemanticDemo() {
             </div>
           ),
           code: `<Alert variant="info" className="border-l-4 border-l-blue-500 dark:border-l-blue-400">
-  <Bell className="h-4 w-4" />
+  <Bell className="size-4" />
   <AlertTitle>New Message</AlertTitle>
   <AlertDescription>3 unread messages.</AlertDescription>
 </Alert>`,

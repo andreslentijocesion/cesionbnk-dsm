@@ -1,4 +1,4 @@
-import { FactoringPortfolioReport } from "../components/patterns/factoring-portfolio-report";
+import { FactoringPortfolioReport } from "../components/patterns/FactoringPortfolioReport";
 
 export function FactoringPortfolioReportPage() {
   return <FactoringPortfolioReport />;

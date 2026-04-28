@@ -1,10 +1,10 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { DateRangePicker } from "../components/ui/date-range-picker";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { DateRangePicker } from "../components/ui/DateRangePicker";
 import { useState } from "react";
 import { DateRange } from "react-day-picker";
 import { format } from "date-fns";
 
-const code = `import { DateRangePicker } from "@/components/ui/date-range-picker";
+const code = `import { DateRangePicker } from "@/components/ui/DateRangePicker";
 import { useState } from "react";
 import { DateRange } from "react-day-picker";
 

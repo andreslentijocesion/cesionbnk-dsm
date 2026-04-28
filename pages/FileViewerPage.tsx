@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { FileViewer, type FileItem } from "../components/patterns/file-viewer";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { FileViewer, type FileItem } from "../components/patterns/FileViewer";
 import { toast } from "sonner";
 
 const sampleFiles: FileItem[] = [
@@ -75,7 +75,7 @@ export function FileViewerPage() {
           />
         </div>
       }
-      code={`import { FileViewer } from "@/components/patterns/file-viewer"
+      code={`import { FileViewer } from "@/components/patterns/FileViewer"
 
 const files = [
   {

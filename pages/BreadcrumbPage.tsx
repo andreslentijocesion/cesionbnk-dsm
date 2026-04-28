@@ -1,6 +1,6 @@
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../components/ui/DropdownMenu";
 import { Home } from "lucide-react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import { 
   Breadcrumb, 
   BreadcrumbItem, 
@@ -9,7 +9,7 @@ import {
   BreadcrumbPage as BreadcrumbPageItem, 
   BreadcrumbSeparator,
   BreadcrumbEllipsis
-} from "../components/ui/breadcrumb";
+} from "../components/ui/Breadcrumb";
 
 export function BreadcrumbPage() {
   return (
@@ -45,7 +45,7 @@ export function BreadcrumbPage() {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+} from "@/components/ui/Breadcrumb"
 
 export function BreadcrumbDemo() {
   return (
@@ -184,7 +184,7 @@ export function BreadcrumbDemo() {
                 <BreadcrumbItem>
                   <DropdownMenu>
                     <DropdownMenuTrigger className="flex items-center gap-1">
-                      <BreadcrumbEllipsis className="h-4 w-4" />
+                      <BreadcrumbEllipsis className="size-4" />
                       <span className="sr-only">Toggle menu</span>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start">

@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
-import { Label } from "../components/ui/label";
-import { Button } from "../components/ui/button";
-import { Separator } from "../components/ui/separator";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { RadioGroup, RadioGroupItem } from "../components/ui/RadioGroup";
+import { Label } from "../components/ui/Label";
+import { Button } from "../components/ui/Button";
+import { Separator } from "../components/ui/Separator";
 import { Check, CreditCard, Building2, Wallet } from "lucide-react";
 
 export function RadioGroupPage() {
@@ -32,8 +32,8 @@ export function RadioGroupPage() {
       }
       
       // Main Code
-      code={`import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
+      code={`import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
 
 export function RadioGroupDemo() {
   return (
@@ -116,8 +116,8 @@ export function RadioGroupDemo() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
 
 export function BasicRadioGroup() {
   return (
@@ -172,8 +172,8 @@ export function BasicRadioGroup() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
 
 export function RadioWithDescriptions() {
   return (
@@ -223,7 +223,7 @@ export function RadioWithDescriptions() {
                   className="flex flex-col items-start gap-2 rounded-lg border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4" />
+                    <Check className="size-4" />
                     <span>Option One</span>
                   </div>
                   <p className="text-muted-foreground">
@@ -239,7 +239,7 @@ export function RadioWithDescriptions() {
                   className="flex flex-col items-start gap-2 rounded-lg border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer"
                 >
                   <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4" />
+                    <Check className="size-4" />
                     <span>Option Two</span>
                   </div>
                   <p className="text-muted-foreground">
@@ -249,8 +249,8 @@ export function RadioWithDescriptions() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
 import { Check } from "lucide-react";
 
 export function CardStyleRadio() {
@@ -263,7 +263,7 @@ export function CardStyleRadio() {
           className="flex flex-col items-start gap-2 rounded-lg border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary cursor-pointer"
         >
           <div className="flex items-center gap-2">
-            <Check className="h-4 w-4" />
+            <Check className="size-4" />
             <span>Option One</span>
           </div>
           <p className="text-sm text-muted-foreground">
@@ -279,7 +279,7 @@ export function CardStyleRadio() {
           className="flex flex-col items-start gap-2 rounded-lg border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary cursor-pointer"
         >
           <div className="flex items-center gap-2">
-            <Check className="h-4 w-4" />
+            <Check className="size-4" />
             <span>Option Two</span>
           </div>
           <p className="text-sm text-muted-foreground">
@@ -299,28 +299,28 @@ export function CardStyleRadio() {
               <div className="flex items-center space-x-3">
                 <RadioGroupItem value="card" id="card" />
                 <Label htmlFor="card" className="flex items-center gap-2 cursor-pointer">
-                  <CreditCard className="h-4 w-4" />
+                  <CreditCard className="size-4" />
                   <span>Credit Card</span>
                 </Label>
               </div>
               <div className="flex items-center space-x-3">
                 <RadioGroupItem value="bank" id="bank" />
                 <Label htmlFor="bank" className="flex items-center gap-2 cursor-pointer">
-                  <Building2 className="h-4 w-4" />
+                  <Building2 className="size-4" />
                   <span>Bank Transfer</span>
                 </Label>
               </div>
               <div className="flex items-center space-x-3">
                 <RadioGroupItem value="wallet" id="wallet" />
                 <Label htmlFor="wallet" className="flex items-center gap-2 cursor-pointer">
-                  <Wallet className="h-4 w-4" />
+                  <Wallet className="size-4" />
                   <span>Digital Wallet</span>
                 </Label>
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
 import { CreditCard, Building2, Wallet } from "lucide-react";
 
 export function PaymentMethodSelector() {
@@ -329,7 +329,7 @@ export function PaymentMethodSelector() {
       <div className="flex items-center space-x-3">
         <RadioGroupItem value="card" id="card" />
         <Label htmlFor="card" className="flex items-center gap-2 cursor-pointer">
-          <CreditCard className="h-4 w-4" />
+          <CreditCard className="size-4" />
           <span>Credit Card</span>
         </Label>
       </div>
@@ -337,7 +337,7 @@ export function PaymentMethodSelector() {
       <div className="flex items-center space-x-3">
         <RadioGroupItem value="bank" id="bank" />
         <Label htmlFor="bank" className="flex items-center gap-2 cursor-pointer">
-          <Building2 className="h-4 w-4" />
+          <Building2 className="size-4" />
           <span>Bank Transfer</span>
         </Label>
       </div>
@@ -345,7 +345,7 @@ export function PaymentMethodSelector() {
       <div className="flex items-center space-x-3">
         <RadioGroupItem value="wallet" id="wallet" />
         <Label htmlFor="wallet" className="flex items-center gap-2 cursor-pointer">
-          <Wallet className="h-4 w-4" />
+          <Wallet className="size-4" />
           <span>Digital Wallet</span>
         </Label>
       </div>
@@ -372,8 +372,8 @@ export function PaymentMethodSelector() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
 
 export function HorizontalRadioGroup() {
   return (
@@ -413,8 +413,8 @@ export function HorizontalRadioGroup() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
 
 export function DisabledRadioGroup() {
   return (
@@ -484,10 +484,10 @@ export function DisabledRadioGroup() {
               </div>
             </div>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+import { Label } from "@/components/ui/Label";
+import { Button } from "@/components/ui/Button";
+import { Separator } from "@/components/ui/Separator";
 
 export function PreferencesForm() {
   return (

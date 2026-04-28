@@ -1,12 +1,12 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Skeleton } from "../components/ui/skeleton";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Skeleton } from "../components/ui/Skeleton";
 import { 
   SkeletonTable, 
   SkeletonCardGrid, 
   SkeletonForm,
   SkeletonKpiCardGroup,
   SkeletonProfile
-} from "../components/ui/skeleton-variants";
+} from "../components/ui/SkeletonVariants";
 
 export function SkeletonPage() {
   return (
@@ -24,12 +24,12 @@ export function SkeletonPage() {
       }
       
       // Main Code
-      code={`import { Skeleton } from "@/components/ui/skeleton"
+      code={`import { Skeleton } from "@/components/ui/Skeleton"
 
 export function SkeletonDemo() {
   return (
     <div className="flex items-center space-x-4">
-      <Skeleton className="h-12 w-12 rounded-full" />
+      <Skeleton className="size-12 rounded-full" />
       <div className="space-y-2">
         <Skeleton className="h-4 w-[250px]" />
         <Skeleton className="h-4 w-[200px]" />
@@ -56,7 +56,7 @@ export function SkeletonDemo() {
             <SkeletonProfile />
           ),
           code: `<div className="flex items-center space-x-4">
-  <Skeleton className="h-12 w-12 rounded-full" />
+  <Skeleton className="size-12 rounded-full" />
   <div className="space-y-2">
     <Skeleton className="h-4 w-[250px]" />
     <Skeleton className="h-4 w-[200px]" />
@@ -116,7 +116,7 @@ export function SkeletonDemo() {
 
               <div className="space-y-2">
                 <h4 className="text-sm font-medium">Circular (Avatar)</h4>
-                <Skeleton className="h-12 w-12 rounded-full" />
+                <Skeleton className="size-12 rounded-full" />
               </div>
 
               <div className="space-y-2">
@@ -126,7 +126,7 @@ export function SkeletonDemo() {
             </div>
           ),
           code: `<Skeleton className="h-4 w-[250px]" />
-<Skeleton className="h-12 w-12 rounded-full" />
+<Skeleton className="size-12 rounded-full" />
 <Skeleton className="h-[125px] w-[250px] rounded-xl" />`
         }
       ]}

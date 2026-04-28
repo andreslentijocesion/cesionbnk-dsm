@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Textarea } from "../components/ui/textarea";
-import { Label } from "../components/ui/label";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Textarea } from "../components/ui/Textarea";
+import { Label } from "../components/ui/Label";
+import { Button } from "../components/ui/Button";
 import { useState } from "react";
 
 export function TextareaPage() {
@@ -21,7 +21,7 @@ export function TextareaPage() {
       }
       
       // Main Code
-      code={`import { Textarea } from "@/components/ui/textarea";
+      code={`import { Textarea } from "@/components/ui/Textarea";
 
 export function TextareaDemo() {
   return (
@@ -98,8 +98,8 @@ export function TextareaDemo() {
               />
             </div>
           ),
-          code: `import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+          code: `import { Textarea } from "@/components/ui/Textarea";
+import { Label } from "@/components/ui/Label";
 
 export function TextareaWithLabel() {
   return (
@@ -132,8 +132,8 @@ export function TextareaWithLabel() {
               </div>
             </div>
           ),
-          code: `import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+          code: `import { Textarea } from "@/components/ui/Textarea";
+import { Label } from "@/components/ui/Label";
 
 export function TextareaSizes() {
   return (
@@ -172,8 +172,8 @@ export function TextareaSizes() {
               </p>
             </div>
           ),
-          code: `import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+          code: `import { Textarea } from "@/components/ui/Textarea";
+import { Label } from "@/components/ui/Label";
 
 export function TextareaWithHelper() {
   return (
@@ -197,8 +197,8 @@ export function TextareaWithHelper() {
           preview: (
             <TextareaWithCounter />
           ),
-          code: `import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+          code: `import { Textarea } from "@/components/ui/Textarea";
+import { Label } from "@/components/ui/Label";
 import { useState } from "react";
 
 export function TextareaWithCounter() {
@@ -243,8 +243,8 @@ export function TextareaWithCounter() {
               </div>
             </div>
           ),
-          code: `import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+          code: `import { Textarea } from "@/components/ui/Textarea";
+import { Label } from "@/components/ui/Label";
 
 export function DisabledTextarea() {
   return (
@@ -298,9 +298,9 @@ export function DisabledTextarea() {
               </div>
             </div>
           ),
-          code: `import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
+          code: `import { Textarea } from "@/components/ui/Textarea";
+import { Label } from "@/components/ui/Label";
+import { Button } from "@/components/ui/Button";
 
 export function EmailForm() {
   return (
@@ -350,8 +350,8 @@ export function EmailForm() {
               </p>
             </div>
           ),
-          code: `import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+          code: `import { Textarea } from "@/components/ui/Textarea";
+import { Label } from "@/components/ui/Label";
 
 export function RequiredTextarea() {
   return (
@@ -389,8 +389,8 @@ export function RequiredTextarea() {
               </p>
             </div>
           ),
-          code: `import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+          code: `import { Textarea } from "@/components/ui/Textarea";
+import { Label } from "@/components/ui/Label";
 
 export function TextareaWithError() {
   return (

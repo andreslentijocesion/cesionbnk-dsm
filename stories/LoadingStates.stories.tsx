@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Spinner, CardSkeleton, TableSkeleton } from '../components/ui/loading-states';
+import { Spinner, CardSkeleton, TableSkeleton } from '../components/ui/LoadingStates';
 
 const meta: Meta = { title: 'DSM/Patterns/LoadingStates', tags: ['autodocs'] };
 export default meta;

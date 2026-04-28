@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { StatCard, StatCardGrid } from "../components/patterns/stat-card";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { StatCard, StatCardGrid } from "../components/patterns/StatCard";
 import { DollarSign, FileText, Users, TrendingUp, Clock, Percent } from "lucide-react";
 
 function StatCardDemo() {
@@ -53,7 +53,7 @@ export function StatCardPage() {
       category="Patterns"
       atomicLevel="Molecule"
       preview={<StatCardDemo />}
-      code={`import { StatCard, StatCardGrid } from "@/components/patterns/stat-card"
+      code={`import { StatCard, StatCardGrid } from "@/components/patterns/StatCard"
 import { DollarSign } from "lucide-react"
 
 <StatCardGrid columns={4}>

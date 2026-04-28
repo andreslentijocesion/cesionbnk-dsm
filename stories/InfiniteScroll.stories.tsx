@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState, useCallback } from 'react';
-import { InfiniteScroll } from '../components/advanced/infinite-scroll';
-import { Badge } from '../components/ui/badge';
+import { InfiniteScroll } from '../components/advanced/InfiniteScroll';
+import { Badge } from '../components/ui/Badge';
 
 const meta: Meta = {
   title: 'DSM/Advanced/InfiniteScroll',

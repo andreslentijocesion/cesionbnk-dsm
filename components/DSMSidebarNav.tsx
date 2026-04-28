@@ -35,7 +35,7 @@ import {
   LayoutSidebarCollapsibleGroup,
   LayoutSidebarItem,
   useAdminLayout,
-} from "./patterns/app-layout";
+} from "./patterns/AppLayout";
 import type { PageId } from "./types/PageId";
 import { NAV_ITEMS, ITEMS_BY_SECTION, SECTIONS, type SectionId } from "./registry";
 
@@ -153,7 +153,7 @@ export function DSMSidebarNav({ activePage, onPageChange }: DSMSidebarNavProps) 
       {!sidebarCollapsed && (
         <div className="px-0 pb-2">
           <div className="relative group/search">
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground/50 transition-colors group-focus-within/search:text-primary" />
+            <Search className="absolute left-2.5 top-2.5 size-4 text-muted-foreground/50 transition-colors group-focus-within/search:text-primary" />
             <input
               type="text"
               placeholder="Search components..."
@@ -166,7 +166,7 @@ export function DSMSidebarNav({ activePage, onPageChange }: DSMSidebarNavProps) 
                 onClick={() => setSearchQuery("")}
                 className="absolute right-2 top-2.5 text-sidebar-foreground/50 hover:text-sidebar-foreground p-0.5 hover:bg-sidebar-accent/50 rounded-sm transition-colors"
               >
-                <X className="h-3.5 w-3.5" />
+                <X className="size-3.5 .5" />
               </button>
             )}
           </div>
@@ -188,8 +188,8 @@ export function DSMSidebarNav({ activePage, onPageChange }: DSMSidebarNavProps) 
             ))
           ) : (
             <div className="px-4 py-8 flex flex-col items-center text-center gap-2">
-              <div className="h-10 w-10 rounded-full bg-sidebar-accent/20 flex items-center justify-center text-sidebar-foreground/30">
-                <Search className="h-5 w-5" />
+              <div className="size-10 rounded-full bg-sidebar-accent/20 flex items-center justify-center text-sidebar-foreground/30">
+                <Search className="size-5" />
               </div>
               <p className="text-sm text-sidebar-foreground/60">
                 No results for &ldquo;{searchQuery}&rdquo;

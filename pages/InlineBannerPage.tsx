@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { InlineBanner } from "../components/ui/inline-banner";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { InlineBanner } from "../components/ui/InlineBanner";
+import { Button } from "../components/ui/Button";
 
 function InlineBannerDemo() {
   const [show, setShow] = useState({ info: true, warning: true, success: true, error: true });
@@ -67,7 +67,7 @@ export function InlineBannerPage() {
       category="Feedback"
       atomicLevel="Atom"
       preview={<InlineBannerDemo />}
-      code={`import { InlineBanner } from "@/components/ui/inline-banner"
+      code={`import { InlineBanner } from "@/components/ui/InlineBanner"
 
 <InlineBanner
   variant="warning"

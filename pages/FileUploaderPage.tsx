@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { FileUploader } from "../components/advanced/file-uploader";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { FileUploader } from "../components/advanced/FileUploader";
 import { toast } from "sonner";
 
 export function FileUploaderPage() {
@@ -21,7 +21,7 @@ export function FileUploaderPage() {
           onUpload={handleUpload}
         />
       }
-      code={`import { FileUploader } from "@/components/advanced/file-uploader";
+      code={`import { FileUploader } from "@/components/advanced/FileUploader";
 
 <FileUploader
   maxFiles={5}

@@ -4,8 +4,8 @@
  * Usage guidelines — when to use which component.
  * Covers the 5 most common decision points in the CesionBNK DSM.
  */
-import { Badge } from "../components/ui/badge";
-import { Separator } from "../components/ui/separator";
+import { Badge } from "../components/ui/Badge";
+import { Separator } from "../components/ui/Separator";
 import { CheckCircle2, XCircle, AlertTriangle, Info } from "lucide-react";
 
 // ─────────────────────────────────────────────
@@ -26,7 +26,7 @@ function Do({ children }: { children: React.ReactNode }) {
   return (
     <div className="rounded-xl border border-success/30 bg-success-subtle p-4">
       <div className="flex items-center gap-2 mb-2">
-        <CheckCircle2 className="h-4 w-4 text-success-on-subtle shrink-0" />
+        <CheckCircle2 className="size-4 text-success-on-subtle shrink-0" />
         <span className="text-sm font-semibold text-success-on-subtle">Usar cuando</span>
       </div>
       <ul className="space-y-1.5 text-sm text-success-on-subtle">{children}</ul>
@@ -38,7 +38,7 @@ function Dont({ children }: { children: React.ReactNode }) {
   return (
     <div className="rounded-xl border border-destructive/30 bg-destructive-subtle p-4">
       <div className="flex items-center gap-2 mb-2">
-        <XCircle className="h-4 w-4 text-destructive-on-subtle shrink-0" />
+        <XCircle className="size-4 text-destructive-on-subtle shrink-0" />
         <span className="text-sm font-semibold text-destructive-on-subtle">No usar cuando</span>
       </div>
       <ul className="space-y-1.5 text-sm text-destructive-on-subtle">{children}</ul>
@@ -47,7 +47,7 @@ function Dont({ children }: { children: React.ReactNode }) {
 }
 
 function Li({ children }: { children: React.ReactNode }) {
-  return <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 rounded-full bg-current shrink-0" /><span>{children}</span></li>;
+  return <li className="flex items-start gap-2"><span className="mt-1.5 size-1 rounded-full bg-current shrink-0" /><span>{children}</span></li>;
 }
 
 function ComponentCard({
@@ -78,7 +78,7 @@ function ComponentCard({
       {note && (
         <div className="px-5 pb-4">
           <div className="flex items-start gap-2 rounded-lg bg-info/8 border border-info/20 px-3 py-2.5">
-            <Info className="h-3.5 w-3.5 text-info-on-subtle shrink-0 mt-0.5" />
+            <Info className="size-3.5 .5 text-info-on-subtle shrink-0 mt-0.5" />
             <p className="text-xs text-info-on-subtle">{note}</p>
           </div>
         </div>
@@ -121,7 +121,7 @@ function DecisionTable({
 function Note({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-start gap-2 rounded-xl border border-warning/30 bg-warning/8 px-4 py-3">
-      <AlertTriangle className="h-4 w-4 text-warning-on-subtle shrink-0 mt-0.5" />
+      <AlertTriangle className="size-4 text-warning-on-subtle shrink-0 mt-0.5" />
       <p className="text-sm text-warning-on-subtle">{children}</p>
     </div>
   );

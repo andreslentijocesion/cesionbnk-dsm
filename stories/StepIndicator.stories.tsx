@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StepIndicator } from '../components/advanced/step-indicator';
+import { StepIndicator } from '../components/advanced/StepIndicator';
 
 const meta: Meta<typeof StepIndicator> = {
   title: 'DSM/Advanced/StepIndicator',

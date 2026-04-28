@@ -7,23 +7,23 @@ import {
   SheetTitle,
   SheetTrigger,
   SheetDescription,
-} from "../ui/sheet";
+} from "../ui/Sheet";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "../ui/tabs";
+} from "../ui/Tabs";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../ui/accordion";
-import { Input } from "../ui/input";
-import { Card } from "../ui/card";
-import { Badge } from "../ui/badge";
-import { Separator } from "../ui/separator";
+} from "../ui/Accordion";
+import { Input } from "../ui/Input";
+import { Card } from "../ui/Card";
+import { Badge } from "../ui/Badge";
+import { Separator } from "../ui/Separator";
 
 interface HelpCenterProps {
   /**
@@ -167,12 +167,12 @@ export function HelpCenter({ variant = "header" }: HelpCenterProps) {
 
   const TriggerButton = variant === "header" ? (
     <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-      <HelpCircle className="h-4 w-4" />
+      <HelpCircle className="size-4" />
       <span>Help</span>
     </button>
   ) : (
     <button className="flex items-center gap-3 w-full px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors">
-      <HelpCircle className="h-4 w-4" />
+      <HelpCircle className="size-4" />
       <span>Help Center</span>
     </button>
   );
@@ -196,7 +196,7 @@ export function HelpCenter({ variant = "header" }: HelpCenterProps) {
         {/* Search Bar */}
         <div className="mt-6 mb-6">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
             <Input
               placeholder="Search for help..."
               value={searchQuery}
@@ -267,7 +267,7 @@ export function HelpCenter({ variant = "header" }: HelpCenterProps) {
                 >
                   <div className="flex items-start gap-3">
                     <div className="p-2 rounded-lg bg-muted">
-                      <IconComponent className="h-5 w-5 text-primary" />
+                      <IconComponent className="size-5 text-primary" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
@@ -285,7 +285,7 @@ export function HelpCenter({ variant = "header" }: HelpCenterProps) {
                       </p>
                       <div className="flex items-center gap-2 text-xs text-muted-foreground">
                         <span>{guide.duration}</span>
-                        <ExternalLink className="h-3 w-3" />
+                        <ExternalLink className="size-3" />
                       </div>
                     </div>
                   </div>
@@ -303,7 +303,7 @@ export function HelpCenter({ variant = "header" }: HelpCenterProps) {
               >
                 <div className="flex items-start gap-3">
                   <div className="relative w-20 h-14 rounded bg-muted flex items-center justify-center flex-shrink-0">
-                    <Video className="h-6 w-6 text-primary" />
+                    <Video className="size-6 text-primary" />
                     <span className="absolute bottom-1 right-1 text-xs bg-background/90 px-1 rounded text-foreground">
                       {video.duration}
                     </span>

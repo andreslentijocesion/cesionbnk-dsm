@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Timeline, type TimelineItem } from "../components/patterns/timeline";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Timeline, type TimelineItem } from "../components/patterns/Timeline";
 import { FileCheck, Send, Clock, CheckCircle2, XCircle, AlertCircle } from "lucide-react";
 
 const operationTimeline: TimelineItem[] = [
@@ -88,7 +88,7 @@ export function TimelinePage() {
           <Timeline items={operationTimeline} />
         </div>
       }
-      code={`import { Timeline } from "@/components/patterns/timeline"
+      code={`import { Timeline } from "@/components/patterns/Timeline"
 
 const items = [
   {

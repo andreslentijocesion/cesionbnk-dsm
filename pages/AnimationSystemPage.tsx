@@ -1,6 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
+import { Button } from "../components/ui/Button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
 import { 
   Box, 
   Code, 
@@ -10,8 +10,8 @@ import {
   AlertCircle
 } from "lucide-react";
 import { useState } from "react";
-import { PageTransition, FadeInView, StaggerContainer, StaggerItem } from "../components/ui/page-transition";
-import { InlineSpinner, ButtonLoading } from "../components/ui/loading-overlay";
+import { PageTransition, FadeInView, StaggerContainer, StaggerItem } from "../components/ui/PageTransition";
+import { InlineSpinner, ButtonLoading } from "../components/ui/LoadingOverlay";
 import { 
   SkeletonTable, 
   SkeletonCardGrid,
@@ -19,10 +19,10 @@ import {
   SkeletonList,
   SkeletonKpiCardGroup,
   SkeletonDashboard
-} from "../components/ui/skeleton-variants";
+} from "../components/ui/SkeletonVariants";
 import { useLoadingState, useAsyncOperation, useGlobalLoading } from "../hooks/useLoadingState";
-import { CodeBlock } from "../components/ui/code-block";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { CodeBlock } from "../components/ui/CodeBlock";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 
 /**
  * AnimationSystemContent
@@ -77,7 +77,7 @@ export function AnimationSystemContent() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Box className="h-5 w-5 text-primary" />
+              <Box className="size-5 text-primary" />
               PageTransition
             </CardTitle>
             <CardDescription>
@@ -110,7 +110,7 @@ export function AnimationSystemContent() {
 
             <CodeBlock
               language="tsx"
-              code={`import { PageTransition } from '@/components/ui/page-transition';
+              code={`import { PageTransition } from '@/components/ui/PageTransition';
 
 function MyPage() {
   return (
@@ -149,7 +149,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { FadeInView } from '@/components/ui/page-transition';
+              code={`import { FadeInView } from '@/components/ui/PageTransition';
 
 <FadeInView delay={0.2}>
   <Card>Appears when you scroll</Card>
@@ -179,7 +179,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { StaggerContainer, StaggerItem } from '@/components/ui/page-transition';
+              code={`import { StaggerContainer, StaggerItem } from '@/components/ui/PageTransition';
 
 <StaggerContainer>
   {items.map(item => (
@@ -216,7 +216,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { InlineSpinner } from '@/components/ui/loading-overlay';
+              code={`import { InlineSpinner } from '@/components/ui/LoadingOverlay';
 
 <InlineSpinner size="md" />`}
             />
@@ -238,7 +238,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { ButtonLoading } from '@/components/ui/loading-overlay';
+              code={`import { ButtonLoading } from '@/components/ui/LoadingOverlay';
 
 <Button onClick={handleSubmit} disabled={isLoading}>
   <ButtonLoading isLoading={isLoading} loadingText="Sending...">
@@ -256,7 +256,7 @@ function MyPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Code className="h-5 w-5 text-primary" />
+              <Code className="size-5 text-primary" />
               useLoadingState
             </CardTitle>
             <CardDescription>
@@ -277,7 +277,7 @@ function MyPage() {
 
             <div className="space-y-2">
               <Button onClick={handleButtonLoading} disabled={buttonLoading}>
-                {buttonLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {buttonLoading && <Loader2 className="mr-2 size-4 animate-spin" />}
                 Test Loading (1.5s minimum)
               </Button>
               <p className="text-xs text-muted-foreground">
@@ -319,14 +319,14 @@ function MyComponent() {
           <CardContent className="space-y-4">
             <div className="space-y-4">
               <Button onClick={handleAsyncOperation} disabled={asyncLoading}>
-                {asyncLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {asyncLoading && <Loader2 className="mr-2 size-4 animate-spin" />}
                 Load Data
               </Button>
 
               {data && (
                 <Card className="p-4 bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800">
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <CheckCircle className="size-4 text-success-on-subtle" />
                     <p className="text-sm font-medium">{data.message}</p>
                   </div>
                 </Card>
@@ -335,7 +335,7 @@ function MyComponent() {
               {error && (
                 <Card className="p-4 bg-destructive/10 border-destructive/20">
                   <div className="flex items-center gap-2">
-                    <AlertCircle className="h-4 w-4 text-destructive" />
+                    <AlertCircle className="size-4 text-destructive" />
                     <p className="text-sm font-medium">{error.message}</p>
                   </div>
                 </Card>
@@ -380,7 +380,7 @@ function DataFetcher() {
           </CardHeader>
           <CardContent className="space-y-4">
             <Button onClick={handleGlobalLoading} disabled={isGlobalLoading}>
-              {isGlobalLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              {isGlobalLoading && <Loader2 className="mr-2 size-4 animate-spin" />}
               Show Global Loading
             </Button>
 
@@ -457,7 +457,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { SkeletonTable } from '@/components/ui/skeleton-variants';
+              code={`import { SkeletonTable } from '@/components/ui/SkeletonVariants';
 
 <SkeletonTable rows={5} columns={4} showHeader />`}
             />
@@ -487,7 +487,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { SkeletonCard, SkeletonCardGrid } from '@/components/ui/skeleton-variants';
+              code={`import { SkeletonCard, SkeletonCardGrid } from '@/components/ui/SkeletonVariants';
 
 // Single card
 <SkeletonCard hasImage lines={3} />
@@ -521,7 +521,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { SkeletonForm } from '@/components/ui/skeleton-variants';
+              code={`import { SkeletonForm } from '@/components/ui/SkeletonVariants';
 
 <SkeletonForm fields={4} hasSubmitButton />`}
             />
@@ -551,7 +551,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { SkeletonList } from '@/components/ui/skeleton-variants';
+              code={`import { SkeletonList } from '@/components/ui/SkeletonVariants';
 
 <SkeletonList items={5} variant="detailed" />`}
             />
@@ -581,7 +581,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { SkeletonKpiCard, SkeletonKpiCardGroup } from '@/components/ui/skeleton-variants';
+              code={`import { SkeletonKpiCard, SkeletonKpiCardGroup } from '@/components/ui/SkeletonVariants';
 
 // Single KPI card
 <SkeletonKpiCard />
@@ -615,7 +615,7 @@ function MyPage() {
 
             <CodeBlock
               language="tsx"
-              code={`import { SkeletonDashboard } from '@/components/ui/skeleton-variants';
+              code={`import { SkeletonDashboard } from '@/components/ui/SkeletonVariants';
 
 <SkeletonDashboard />`}
             />
@@ -629,7 +629,7 @@ function MyPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Palette className="h-5 w-5 text-primary" />
+              <Palette className="size-5 text-primary" />
               Hover Effects
             </CardTitle>
             <CardDescription>
@@ -746,9 +746,9 @@ export function AnimationSystemPage() {
       category="Design System"
       preview={<AnimationSystemContent />}
       code={`// Components
-import { PageTransition, FadeInView, StaggerContainer, StaggerItem } from "@/components/ui/page-transition";
-import { InlineSpinner, ButtonLoading } from "@/components/ui/loading-overlay";
-import { SkeletonTable, SkeletonCard, SkeletonForm, SkeletonDashboard } from "@/components/ui/skeleton-variants";
+import { PageTransition, FadeInView, StaggerContainer, StaggerItem } from "@/components/ui/PageTransition";
+import { InlineSpinner, ButtonLoading } from "@/components/ui/LoadingOverlay";
+import { SkeletonTable, SkeletonCard, SkeletonForm, SkeletonDashboard } from "@/components/ui/SkeletonVariants";
 
 // Hooks
 import { useLoadingState, useAsyncOperation, useGlobalLoading } from "@/hooks/useLoadingState";

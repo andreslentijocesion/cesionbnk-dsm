@@ -1,6 +1,25 @@
 import '@testing-library/jest-dom';
 
-// Suppress noisy console.error from Radix UI in tests
+// Mock localStorage
+const localStorageMock = (() => {
+  let store: Record<string, string> = {};
+  return {
+    getItem: (key: string) => store[key] || null,
+    setItem: (key: string, value: string) => {
+      store[key] = value.toString();
+    },
+    removeItem: (key: string) => {
+      delete store[key];
+    },
+    clear: () => {
+      store = {};
+    },
+  };
+})();
+
+Object.defineProperty(window, 'localStorage', {
+  value: localStorageMock,
+});
 
 // Suppress noisy console.error from Radix UI in tests
 const originalError = console.error;

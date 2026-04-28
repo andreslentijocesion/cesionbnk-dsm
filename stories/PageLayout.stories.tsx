@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PageLayout, SplitLayout, StackLayout } from '../components/ui/page-layout';
+import { PageLayout, SplitLayout, StackLayout } from '../components/ui/PageLayout';
 
 const meta: Meta = {
   title: 'DSM/Components/PageLayout',

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   Carousel,
   CarouselContent,
@@ -7,9 +7,9 @@ import {
   CarouselPrevious,
   CarouselNext,
   type CarouselApi,
-} from "../components/ui/carousel";
-import { Card, CardContent } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
+} from "../components/ui/Carousel";
+import { Card, CardContent } from "../components/ui/Card";
+import { Badge } from "../components/ui/Badge";
 
 // ── Demos ──────────────────────────────────────────────────────────────────
 
@@ -140,8 +140,8 @@ export function CarouselPage() {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-} from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+} from "@/components/ui/Carousel";
+import { Card, CardContent } from "@/components/ui/Card";
 
 export function CarouselDemo() {
   return (

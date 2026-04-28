@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "../components/ui/collapsible";
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
+} from "../components/ui/Collapsible";
+import { Button } from "../components/ui/Button";
+import { Badge } from "../components/ui/Badge";
 import { ChevronsUpDown, ChevronDown, Plus, Settings, FileText } from "lucide-react";
 
 // ── Demos ──────────────────────────────────────────────────────────────────
@@ -23,8 +23,8 @@ function BasicCollapsibleDemo() {
       <div className="flex items-center justify-between px-4 py-2 rounded-md border bg-muted">
         <span className="text-sm font-medium">@cesionbnk/ui — 3 repositories</span>
         <CollapsibleTrigger asChild>
-          <Button variant="ghost" size="sm" className="p-0 h-8 w-8">
-            <ChevronsUpDown className="h-4 w-4" />
+          <Button variant="ghost" size="sm" className="p-0 size-8">
+            <ChevronsUpDown className="size-4" />
             <span className="sr-only">Toggle</span>
           </Button>
         </CollapsibleTrigger>
@@ -52,11 +52,11 @@ function SettingsPanelDemo() {
       <CollapsibleTrigger asChild>
         <button className="flex w-full items-center justify-between rounded-lg border bg-background px-4 py-3 text-sm font-medium hover:bg-muted transition-colors">
           <span className="flex items-center gap-2">
-            <Settings className="h-4 w-4 text-muted-foreground" />
+            <Settings className="size-4 text-muted-foreground" />
             Advanced Settings
           </span>
           <ChevronDown
-            className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${
+            className={`size-4 text-muted-foreground transition-transform duration-200 ${
               open ? "rotate-180" : ""
             }`}
           />
@@ -116,12 +116,12 @@ function MultiSectionDemo() {
           <CollapsibleTrigger asChild>
             <button className="flex w-full items-center justify-between rounded-md border bg-background px-4 py-2.5 text-sm font-medium hover:bg-muted transition-colors">
               <span className="flex items-center gap-2">
-                <Icon className="h-4 w-4 text-muted-foreground" />
+                <Icon className="size-4 text-muted-foreground" />
                 {label}
                 <Badge variant="neutral" className="ml-1">{count}</Badge>
               </span>
               <Plus
-                className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${
+                className={`size-4 text-muted-foreground transition-transform duration-200 ${
                   openSections[id] ? "rotate-45" : ""
                 }`}
               />
@@ -158,8 +158,8 @@ export function CollapsiblePage() {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { Button } from "@/components/ui/button";
+} from "@/components/ui/Collapsible";
+import { Button } from "@/components/ui/Button";
 import { ChevronsUpDown } from "lucide-react";
 
 export function CollapsibleDemo() {
@@ -171,7 +171,7 @@ export function CollapsibleDemo() {
         <span className="text-sm font-medium">3 repositories</span>
         <CollapsibleTrigger asChild>
           <Button variant="ghost" size="sm">
-            <ChevronsUpDown className="h-4 w-4" />
+            <ChevronsUpDown className="size-4" />
           </Button>
         </CollapsibleTrigger>
       </div>

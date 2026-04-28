@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Progress } from "../components/ui/progress";
-import { Badge } from "../components/ui/badge";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Progress } from "../components/ui/Progress";
+import { Badge } from "../components/ui/Badge";
 import { AlertTriangle, Calendar, Clock, AlertCircle } from "lucide-react";
 
 export function ProgressPage() {
@@ -53,7 +53,7 @@ export function ProgressPage() {
       }
       
       // Main Code
-      code={`import { Progress } from "@/components/ui/progress"
+      code={`import { Progress } from "@/components/ui/Progress"
 
 export function ProgressDemo() {
   return <Progress value={60} />
@@ -120,7 +120,7 @@ export function ProgressDemo() {
                   <div className="space-y-1">
                     <div className="text-sm font-medium">Q1 Project Phase</div>
                     <div className="flex items-center text-xs text-muted-foreground gap-2">
-                      <Calendar className="h-3 w-3" />
+                      <Calendar className="size-3" />
                       <span>{startDate} - {endDate}</span>
                     </div>
                   </div>
@@ -133,12 +133,12 @@ export function ProgressDemo() {
                 <div className="flex justify-between items-center">
                   <div className="space-y-1">
                     <div className="text-sm font-medium">Q4 Marketing Campaign</div>
-                    <div className="flex items-center text-xs text-orange-600 dark:text-orange-400 gap-2 font-medium">
-                      <Clock className="h-3 w-3" />
+                    <div className="flex items-center text-xs text-warning-on-subtle dark:text-orange-400 gap-2 font-medium">
+                      <Clock className="size-3" />
                       <span>Due soon ({currentWarning})</span>
                     </div>
                   </div>
-                  <span className="text-sm font-bold text-orange-600">{progressWarning}%</span>
+                  <span className="text-sm font-bold text-warning-on-subtle">{progressWarning}%</span>
                 </div>
                 <Progress value={progressWarning} className={getProgressColor(progressWarning)} />
               </div>
@@ -149,12 +149,12 @@ export function ProgressDemo() {
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-medium">Year End Closing</span>
                       <Badge variant="destructive" className="h-5 px-1.5 text-xs gap-1 font-medium">
-                        <AlertTriangle className="h-3 w-3" />
+                        <AlertTriangle className="size-3" />
                         CRITICAL
                       </Badge>
                     </div>
                     <div className="flex items-center text-xs text-destructive gap-2 font-medium">
-                      <AlertCircle className="h-3 w-3" />
+                      <AlertCircle className="size-3" />
                       <span>Deadline imminent ({currentCritical})</span>
                     </div>
                   </div>

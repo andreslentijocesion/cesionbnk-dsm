@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { ToggleButtonGroup } from '../components/ui/toggle-button-group';
+import { ToggleButtonGroup } from '../components/ui/ToggleButtonGroup';
 import { LayoutGrid, List, BarChart2 } from 'lucide-react';
 
 const meta: Meta = {

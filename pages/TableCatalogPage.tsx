@@ -1,10 +1,10 @@
 /* eslint-disable */
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-import { Separator } from "../components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { CodeBlock } from "../components/ui/code-block";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
+import { Badge } from "../components/ui/Badge";
+import { Separator } from "../components/ui/Separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
+import { CodeBlock } from "../components/ui/CodeBlock";
 import {
   Table,
   TableBody,
@@ -12,8 +12,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../components/ui/table";
-import { Button } from "../components/ui/button";
+} from "../components/ui/Table";
+import { Button } from "../components/ui/Button";
 import {
   ArrowRight,
   Filter,
@@ -29,8 +29,8 @@ import {
   FileText,
   Info,
 } from "lucide-react";
-import { Alert, AlertDescription } from "../components/ui/alert";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { Alert, AlertDescription } from "../components/ui/Alert";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 
 // ============================================================
 // TABLE CATALOG — Complete catalog of DSM table variations
@@ -77,7 +77,7 @@ const tableVariations: TableVariation[] = [
     imports: `import {
   Table, TableBody, TableCell,
   TableHead, TableHeader, TableRow,
-} from "@/components/ui/table";`,
+} from "@/components/ui/Table";`,
     usageCode: `<Table>
   <TableHeader>
     <TableRow>
@@ -271,7 +271,7 @@ import { ColumnDef } from "@tanstack/react-table";`,
     ],
     icon: FileText,
     layerColor: "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300",
-    imports: `import { DataTableAdvanced } from "@/components/patterns/data-table-advanced";`,
+    imports: `import { DataTableAdvanced } from "@/components/patterns/DataTableAdvanced";`,
     usageCode: `// Self-contained, no props required
 <DataTableAdvanced />`,
   },
@@ -299,7 +299,7 @@ import { ColumnDef } from "@tanstack/react-table";`,
     ],
     icon: Edit,
     layerColor: "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300",
-    imports: `import { EditableTable } from "@/components/patterns/editable-table";`,
+    imports: `import { EditableTable } from "@/components/patterns/EditableTable";`,
     usageCode: `// Self-contained with mock data
 <EditableTable />`,
   },
@@ -395,7 +395,7 @@ import { ColumnDef } from "@tanstack/react-table";`,
     ],
     icon: Filter,
     layerColor: "bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300",
-    imports: `import { AdvancedFilterPanel } from "@/components/patterns/advanced-filter-panel";`,
+    imports: `import { AdvancedFilterPanel } from "@/components/patterns/AdvancedFilterPanel";`,
     usageCode: `{/* Alongside your table */}
 <div className="flex gap-4">
   <AdvancedFilterPanel />
@@ -440,8 +440,8 @@ function VariationCard({ variation, onNavigate }: { variation: TableVariation; o
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-2">
           <div className="flex items-center gap-3">
-            <div className={`h-10 w-10 rounded-lg flex items-center justify-center ${variation.layerColor}`}>
-              <Icon className="h-5 w-5" />
+            <div className={`size-10 rounded-lg flex items-center justify-center ${variation.layerColor}`}>
+              <Icon className="size-5" />
             </div>
             <div>
               <CardTitle className="text-base">{variation.name}</CardTitle>
@@ -467,7 +467,7 @@ function VariationCard({ variation, onNavigate }: { variation: TableVariation; o
               className="h-8 px-2 text-muted-foreground hover:text-foreground"
               onClick={() => onNavigate(variation.pageId!)}
             >
-              <Eye className="h-3.5 w-3.5 mr-1" />
+              <Eye className="size-3.5 .5 mr-1" />
               Ver
             </Button>
           )}
@@ -481,7 +481,7 @@ function VariationCard({ variation, onNavigate }: { variation: TableVariation; o
           <ul className="space-y-1">
             {variation.bestFor.map((item, i) => (
               <li key={i} className="text-xs text-muted-foreground flex items-start gap-1.5">
-                <ChevronRight className="h-3 w-3 mt-0.5 shrink-0 text-primary" />
+                <ChevronRight className="size-3 mt-0.5 shrink-0 text-primary" />
                 {item}
               </li>
             ))}
@@ -671,7 +671,7 @@ function TableCatalogContent() {
                         {[row.search, row.filters, row.sort, row.colVis, row.pagination, row.rowSelect, row.edit, row.hierarchy, row.virtual].map((val, i) => (
                           <TableCell key={i} className="text-center">
                             {val ? (
-                              <span className="text-green-600 dark:text-green-400">&#10003;</span>
+                              <span className="text-success-on-subtle dark:text-green-400">&#10003;</span>
                             ) : (
                               <span className="text-muted-foreground/30">—</span>
                             )}
@@ -786,7 +786,7 @@ function TableCatalogContent() {
         {/* ─── TAB 4: USAGE GUIDE ─── */}
         <TabsContent value="usage" className="space-y-4">
           <Alert>
-            <Info className="h-4 w-4" />
+            <Info className="size-4" />
             <AlertDescription>
               This guide helps you choose the right table variation for your use case.
               Click on a component name to see its usage code.
@@ -844,7 +844,7 @@ function TableCatalogContent() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3 p-3 rounded-lg border bg-card hover:bg-muted transition-colors">
-                    <div className="h-7 w-7 rounded-full bg-muted text-primary flex items-center justify-center shrink-0 text-sm font-medium">
+                    <div className="size-7 rounded-full bg-muted text-primary flex items-center justify-center shrink-0 text-sm font-medium">
                       {i + 1}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -860,7 +860,7 @@ function TableCatalogContent() {
                           tableVariations.find((v) => v.name === item.answer)?.id || null
                         )}
                       >
-                        <ArrowRight className="h-3 w-3 mr-1" />
+                        <ArrowRight className="size-3 mr-1" />
                         {item.answer}
                       </Button>
                     </div>
@@ -914,19 +914,19 @@ export function TableCatalogPage() {
       category="Advanced"
       preview={<TableCatalogContent />}
       code={`// UI Layer
-import { Table } from "@/components/ui/table";
+import { Table } from "@/components/ui/Table";
 
 // Advanced Layer
-import { MasterDataGrid } from "@/components/advanced/master-data-grid";
-import { DataTable } from "@/components/advanced/data-table";
+import { MasterDataGrid } from "@/components/advanced/MasterDataGrid";
+import { DataTable } from "@/components/advanced/DataTable";
 import { TreeTableV2 } from "@/components/advanced/tree-table-v2";
-import { VirtualizedList } from "@/components/advanced/virtualized-list";
-import { InfiniteScroll } from "@/components/advanced/infinite-scroll";
+import { VirtualizedList } from "@/components/advanced/VirtualizedList";
+import { InfiniteScroll } from "@/components/advanced/InfiniteScroll";
 
 // Patterns Layer
-import { DataTableAdvanced } from "@/components/patterns/data-table-advanced";
-import { EditableTable } from "@/components/patterns/editable-table";
-import { AdvancedFilterPanel } from "@/components/patterns/advanced-filter-panel";
+import { DataTableAdvanced } from "@/components/patterns/DataTableAdvanced";
+import { EditableTable } from "@/components/patterns/EditableTable";
+import { AdvancedFilterPanel } from "@/components/patterns/AdvancedFilterPanel";
 
 // Composability: Table → MasterDataGrid → DataTable/TreeTableV2/EditableTable`}
       props={[

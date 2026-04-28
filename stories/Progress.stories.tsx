@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Progress } from '../components/ui/progress';
-import { Badge } from '../components/ui/badge';
+import { Progress } from '../components/ui/Progress';
+import { Badge } from '../components/ui/Badge';
 
 const meta: Meta<typeof Progress> = {
   title: 'DSM/Primitives/Progress',

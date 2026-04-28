@@ -1,20 +1,20 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   SidebarProvider, Sidebar, SidebarContent, SidebarHeader, SidebarFooter,
   SidebarGroup, SidebarGroupLabel, SidebarGroupContent, SidebarMenu, SidebarMenuItem,
   SidebarMenuButton, SidebarMenuSub, SidebarMenuSubItem, SidebarMenuSubButton,
   SidebarRail, SidebarInset, SidebarTrigger,
-} from "../components/ui/sidebar";
+} from "../components/ui/Sidebar";
 import {
   BookOpen, Bot, ChevronRight, ChevronsUpDown, Inbox, Calendar, Search,
   PanelLeft, GalleryVerticalEnd, AudioWaveform, Sparkles, Settings2,
   Terminal, Frame, PieChart, Map, LifeBuoy,
 } from "lucide-react";
-import { Badge } from "../components/ui/badge";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/collapsible";
-import { Separator } from "../components/ui/separator";
-import { Avatar, AvatarFallback } from "../components/ui/avatar";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "../components/ui/breadcrumb";
+import { Badge } from "../components/ui/Badge";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/Collapsible";
+import { Separator } from "../components/ui/Separator";
+import { Avatar, AvatarFallback } from "../components/ui/Avatar";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "../components/ui/Breadcrumb";
 
 function StandardSidebar() {
   return (
@@ -36,7 +36,7 @@ function StandardSidebar() {
             <SidebarGroup>
               <SidebarGroupLabel>Platform</SidebarGroupLabel>
               <SidebarMenu>
-                <Collapsible defaultOpen className="group/collapsible">
+                <Collapsible defaultOpen className="group/Collapsible">
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
                       <SidebarMenuButton tooltip="Playground"><Terminal /><span>Playground</span><ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" /></SidebarMenuButton>
@@ -67,7 +67,7 @@ function StandardSidebar() {
           <SidebarFooter>
             <SidebarMenu><SidebarMenuItem>
               <SidebarMenuButton size="lg">
-                <Avatar className="h-8 w-8 rounded-lg"><AvatarFallback className="rounded-lg">CN</AvatarFallback></Avatar>
+                <Avatar className="size-8 rounded-lg"><AvatarFallback className="rounded-lg">CN</AvatarFallback></Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight"><span className="truncate font-semibold">shadcn</span><span className="truncate text-xs">m@example.com</span></div>
                 <ChevronsUpDown className="ml-auto size-4" />
               </SidebarMenuButton>
@@ -110,7 +110,7 @@ export function SidebarShowcasePage() {
   SidebarProvider, Sidebar, SidebarContent, SidebarHeader,
   SidebarFooter, SidebarGroup, SidebarMenu, SidebarMenuItem,
   SidebarMenuButton, SidebarRail, SidebarInset, SidebarTrigger,
-} from "@/components/ui/sidebar";
+} from "@/components/ui/Sidebar";
 
 <SidebarProvider>
   <Sidebar collapsible="icon">

@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "../components/ui/drawer";
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "../components/ui/Drawer";
+import { Button } from "../components/ui/Button";
+import { Badge } from "../components/ui/Badge";
 import { Menu, User } from "lucide-react";
-import { Separator } from "../components/ui/separator";
+import { Separator } from "../components/ui/Separator";
 
 export function DrawerPage() {
   return (
@@ -18,7 +18,7 @@ export function DrawerPage() {
         <Drawer>
           <DrawerTrigger asChild>
             <Button variant="outline">
-              <Menu className="h-4 w-4 mr-2" />
+              <Menu className="size-4 mr-2" />
               Open Drawer
             </Button>
           </DrawerTrigger>
@@ -58,7 +58,7 @@ export function DrawerPage() {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/components/ui/Drawer"
 
 export function DrawerDemo() {
   return (
@@ -105,7 +105,7 @@ export function DrawerDemo() {
                 </DrawerHeader>
                 <div className="px-4 py-6">
                   <div className="flex items-center gap-4">
-                    <User className="h-10 w-10 p-2 bg-muted rounded-full" />
+                    <User className="size-10 p-2 bg-muted rounded-full" />
                     <div>
                       <p className="font-medium">John Smith</p>
                       <p className="text-sm text-muted-foreground">john@example.com</p>

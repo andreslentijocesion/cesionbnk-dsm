@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { FloatingActionButton } from "../components/ui/floating-action-button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { FloatingActionButton } from "../components/ui/FloatingActionButton";
 import { MessageSquare, Upload } from "lucide-react";
 
-const code = `import { FloatingActionButton } from "@/components/ui/floating-action-button";
+const code = `import { FloatingActionButton } from "@/components/ui/FloatingActionButton";
 
 export function FabDemo() {
   return <FloatingActionButton position="bottom-right" />;

@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { InputFile } from "../components/ui/input-file";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { InputFile } from "../components/ui/InputFile";
 import { useState } from "react";
 
-const code = `import { InputFile } from "@/components/ui/input-file";
+const code = `import { InputFile } from "@/components/ui/InputFile";
 import { useState } from "react";
 
 export function InputFileDemo() {

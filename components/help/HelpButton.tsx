@@ -1,12 +1,12 @@
 import { HelpCircle } from "lucide-react";
 import { useHelp } from "./HelpProvider";
-import { Button } from "../ui/button";
+import { Button } from "../ui/Button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../ui/tooltip";
+} from "../ui/Tooltip";
 
 /**
  * Floating help button (similar to Intercom/Zendesk)
@@ -22,10 +22,10 @@ export function HelpButton() {
           <Button
             onClick={toggleHelpCenter}
             size="lg"
-            className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all z-50"
+            className="fixed bottom-6 right-6 size-14 rounded-full shadow-lg hover:shadow-xl transition-all z-50"
             aria-label="Open help center"
           >
-            <HelpCircle className="h-6 w-6" />
+            <HelpCircle className="size-6" />
           </Button>
         </TooltipTrigger>
         <TooltipContent side="left">

@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "../components/ui/hover-card";
-import { Avatar, AvatarFallback } from "../components/ui/avatar";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../components/ui/HoverCard";
+import { Avatar, AvatarFallback } from "../components/ui/Avatar";
+import { Button } from "../components/ui/Button";
 import { CalendarDays, MapPin, Mail, ExternalLink } from "lucide-react";
-import { Separator } from "../components/ui/separator";
+import { Separator } from "../components/ui/Separator";
 
 export function HoverCardPage() {
   return (
@@ -32,7 +32,7 @@ export function HoverCardPage() {
                   Plataforma financiera de cesiones — creada y mantenida por CESIONBNK.
                 </p>
                 <div className="flex items-center pt-2">
-                  <CalendarDays className="mr-2 h-4 w-4 opacity-70" />
+                  <CalendarDays className="mr-2 size-4 opacity-70" />
                   <span className="text-xs text-muted-foreground">
                     Joined January 2025
                   </span>
@@ -48,7 +48,7 @@ export function HoverCardPage() {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/components/ui/HoverCard"
 
 export function HoverCardDemo() {
   return (
@@ -96,7 +96,7 @@ export function HoverCardDemo() {
                     Beautifully designed components built with Radix UI and Tailwind CSS.
                   </p>
                   <div className="flex items-center gap-2 pt-2">
-                    <ExternalLink className="h-4 w-4" />
+                    <ExternalLink className="size-4" />
                     <span className="text-xs text-muted-foreground">ui.shadcn.com</span>
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export function HoverCardDemo() {
               <HoverCardContent className="w-80">
                 <div className="space-y-3">
                   <div className="flex gap-3">
-                    <Avatar className="h-12 w-12">
+                    <Avatar className="size-12">
                       <AvatarFallback>JD</AvatarFallback>
                     </Avatar>
                     <div>
@@ -138,11 +138,11 @@ export function HoverCardDemo() {
                   <Separator />
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
-                      <Mail className="h-4 w-4 opacity-70" />
+                      <Mail className="size-4 opacity-70" />
                       <span className="text-muted-foreground">john@company.com</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 opacity-70" />
+                      <MapPin className="size-4 opacity-70" />
                       <span className="text-muted-foreground">San Francisco, CA</span>
                     </div>
                   </div>

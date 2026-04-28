@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DetailCard, DetailSection, type DetailField } from '../components/patterns/detail-card';
-import { Badge } from '../components/ui/badge';
+import { DetailCard, DetailSection, type DetailField } from '../components/patterns/DetailCard';
+import { Badge } from '../components/ui/Badge';
 
 // JSX values must be in render functions, not in args (not serializable)
 const operacionFields: DetailField[] = [

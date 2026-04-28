@@ -1,10 +1,10 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "../components/ui/input-otp";
+} from "../components/ui/InputOTP";
 
 export function InputOTPPage() {
   return (
@@ -33,7 +33,7 @@ export function InputOTPPage() {
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/input-otp"
+} from "@/components/ui/InputOTP"
 
 export function InputOTPDemo() {
   return (

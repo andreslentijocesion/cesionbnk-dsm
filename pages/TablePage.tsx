@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow, TableFooter } from "../components/ui/table";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow, TableFooter } from "../components/ui/Table";
+import { Badge } from "../components/ui/Badge";
+import { Button } from "../components/ui/Button";
 import { MoreHorizontal, ArrowUpDown, Download, FileText } from "lucide-react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../components/ui/DropdownMenu";
 
 export function TablePage() {
   const invoices = [
@@ -67,7 +67,7 @@ export function TablePage() {
       }
       
       // Main Code
-      code={`import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+      code={`import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/Table";
 
 export function TableDemo() {
   const invoices = [
@@ -195,9 +195,9 @@ export function TableDemo() {
                       <TableCell className="text-right">
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="h-8 w-8 p-0">
+                            <Button variant="ghost" className="size-8 p-0">
                               <span className="sr-only">Open menu</span>
-                              <MoreHorizontal className="h-4 w-4" />
+                              <MoreHorizontal className="size-4" />
                             </Button>
                           </DropdownMenuTrigger>
                           <DropdownMenuContent align="end">
@@ -232,7 +232,7 @@ export function TableDemo() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm">
-                <MoreHorizontal className="h-4 w-4" />
+                <MoreHorizontal className="size-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -414,17 +414,17 @@ export function TableDemo() {
                     <TableCell className="font-medium">Annual Report 2024</TableCell>
                     <TableCell>
                       <Badge variant="outline" className="gap-1">
-                        <FileText className="h-3 w-3" />
+                        <FileText className="size-3" />
                         PDF
                       </Badge>
                     </TableCell>
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-2">
                         <Button variant="ghost" size="sm">
-                          <Download className="h-4 w-4" />
+                          <Download className="size-4" />
                         </Button>
                         <Button variant="ghost" size="sm">
-                          <MoreHorizontal className="h-4 w-4" />
+                          <MoreHorizontal className="size-4" />
                         </Button>
                       </div>
                     </TableCell>
@@ -433,17 +433,17 @@ export function TableDemo() {
                     <TableCell className="font-medium">Q4 Financial Summary</TableCell>
                     <TableCell>
                       <Badge variant="outline" className="gap-1">
-                        <FileText className="h-3 w-3" />
+                        <FileText className="size-3" />
                         PDF
                       </Badge>
                     </TableCell>
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-2">
                         <Button variant="ghost" size="sm">
-                          <Download className="h-4 w-4" />
+                          <Download className="size-4" />
                         </Button>
                         <Button variant="ghost" size="sm">
-                          <MoreHorizontal className="h-4 w-4" />
+                          <MoreHorizontal className="size-4" />
                         </Button>
                       </div>
                     </TableCell>
@@ -459,10 +459,10 @@ export function TableDemo() {
       <TableCell className="text-right">
         <div className="flex justify-end gap-2">
           <Button variant="ghost" size="sm">
-            <Download className="h-4 w-4" />
+            <Download className="size-4" />
           </Button>
           <Button variant="ghost" size="sm">
-            <MoreHorizontal className="h-4 w-4" />
+            <MoreHorizontal className="size-4" />
           </Button>
         </div>
       </TableCell>
@@ -481,19 +481,19 @@ export function TableDemo() {
                     <TableHead>
                       <Button variant="ghost" className="h-8 px-2 lg:px-3">
                         Invoice
-                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                        <ArrowUpDown className="ml-2 size-4" />
                       </Button>
                     </TableHead>
                     <TableHead>
                       <Button variant="ghost" className="h-8 px-2 lg:px-3">
                         Status
-                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                        <ArrowUpDown className="ml-2 size-4" />
                       </Button>
                     </TableHead>
                     <TableHead className="text-right">
                       <Button variant="ghost" className="h-8 px-2 lg:px-3">
                         Amount
-                        <ArrowUpDown className="ml-2 h-4 w-4" />
+                        <ArrowUpDown className="ml-2 size-4" />
                       </Button>
                     </TableHead>
                   </TableRow>
@@ -528,13 +528,13 @@ export function TableDemo() {
       <TableHead>
         <Button variant="ghost" onClick={() => handleSort('invoice')}>
           Invoice
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown className="ml-2 size-4" />
         </Button>
       </TableHead>
       <TableHead>
         <Button variant="ghost" onClick={() => handleSort('amount')}>
           Amount
-          <ArrowUpDown className="ml-2 h-4 w-4" />
+          <ArrowUpDown className="ml-2 size-4" />
         </Button>
       </TableHead>
     </TableRow>
@@ -558,7 +558,7 @@ export function TableDemo() {
                   <TableRow>
                     <TableCell colSpan={3} className="h-24 text-center">
                       <div className="flex flex-col items-center justify-center text-muted-foreground">
-                        <FileText className="h-8 w-8 mb-2" />
+                        <FileText className="size-8 mb-2" />
                         <p>No invoices found.</p>
                         <p className="text-sm">Create your first invoice to get started.</p>
                       </div>
@@ -580,7 +580,7 @@ export function TableDemo() {
       <TableRow>
         <TableCell colSpan={2} className="h-24 text-center">
           <div className="flex flex-col items-center text-muted-foreground">
-            <FileText className="h-8 w-8 mb-2" />
+            <FileText className="size-8 mb-2" />
             <p>No data found.</p>
           </div>
         </TableCell>

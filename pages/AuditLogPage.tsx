@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { AuditLog, type AuditEntry } from "../components/patterns/audit-log";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { AuditLog, type AuditEntry } from "../components/patterns/AuditLog";
 
 const entries: AuditEntry[] = [
   { id: "1",  timestamp: "2024-03-12 08:12", user: "María González",   role: "Back Office",   action: "create",  entity: "Factura",    entityId: "F-20240312", description: "Ingresó nueva factura", source: "192.168.1.10" },
@@ -22,7 +22,7 @@ export function AuditLogPage() {
       category="Patterns"
       atomicLevel="Organism"
       preview={<AuditLog entries={entries} />}
-      code={`import { AuditLog } from "@/components/patterns/audit-log"
+      code={`import { AuditLog } from "@/components/patterns/AuditLog"
 
 const entries = [
   {

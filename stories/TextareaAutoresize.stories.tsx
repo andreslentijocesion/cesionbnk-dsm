@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextareaAutoresize } from '../components/ui/textarea-autoresize';
+import { TextareaAutoresize } from '../components/ui/TextareaAutoresize';
 
 const meta: Meta<typeof TextareaAutoresize> = {
   title: 'DSM/Components/TextareaAutoresize',

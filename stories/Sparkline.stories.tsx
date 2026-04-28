@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sparkline } from '../components/advanced/sparkline';
+import { Sparkline } from '../components/advanced/Sparkline';
 
 const meta: Meta<typeof Sparkline> = {
   title: 'DSM/Advanced/Sparkline',

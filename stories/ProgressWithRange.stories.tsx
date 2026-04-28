@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProgressWithRange } from '../components/ui/progress-with-range';
+import { ProgressWithRange } from '../components/ui/ProgressWithRange';
 
 const meta: Meta<typeof ProgressWithRange> = {
   title: 'DSM/Components/ProgressWithRange',

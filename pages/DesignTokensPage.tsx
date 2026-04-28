@@ -14,12 +14,12 @@ import { useTheme } from "../components/providers/ThemeProvider";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import { Copy, Check, Sun, Moon, Palette, Monitor } from "lucide-react";
-import { Badge } from "../components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { Separator } from "../components/ui/separator";
-import { Card, CardContent } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { CssVarBox, FontFamilyText, HexButton, RadiusBox, ShadowBox } from "../components/ui/dynamic-previews";
+import { Badge } from "../components/ui/Badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
+import { Separator } from "../components/ui/Separator";
+import { Card, CardContent } from "../components/ui/Card";
+import { Button } from "../components/ui/Button";
+import { CssVarBox, FontFamilyText, HexButton, RadiusBox, ShadowBox } from "../components/ui/DynamicPreviews";
 import { copyToClipboard } from "../lib/utils";
 
 // ─────────────────────────────────────────────
@@ -304,7 +304,7 @@ const typeScale = [
   { tag: "h4", twClass: "text-base font-medium", size: "1rem / 16px", weight: "500 Medium", lh: "1.5" },
   { tag: "p (body)", twClass: "text-sm", size: "0.875rem / 14px", weight: "400 Regular", lh: "1.5" },
   { tag: "small", twClass: "text-xs", size: "0.75rem / 12px", weight: "400 Regular", lh: "1.5" },
-  { tag: "label/button", twClass: "text-base font-medium", size: "1rem / 16px", weight: "500 Medium", lh: "1.5" },
+  { tag: "label/Button", twClass: "text-base font-medium", size: "1rem / 16px", weight: "500 Medium", lh: "1.5" },
   { tag: "input", twClass: "text-base font-normal", size: "1rem / 16px", weight: "400 Regular", lh: "1.5" },
 ];
 
@@ -319,7 +319,7 @@ function CopyButton({ text, className = "" }: { text: string; className?: string
       onClick={() => copy(text)}
       className={`inline-flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary transition-colors ${className}`}
     >
-      {copied === text ? <Check className="h-3 w-3 text-success" /> : <Copy className="h-3 w-3" />}
+      {copied === text ? <Check className="size-3 text-success" /> : <Copy className="size-3" />}
       {text}
     </button>
   );
@@ -353,7 +353,7 @@ function ColorSwatch({ token, liveValues }: { token: ColorToken; liveValues: Rec
         {/* Live computed value */}
         {liveHex && (
           <div className="flex items-center gap-1.5 mt-1">
-            <Monitor className="h-2.5 w-2.5 text-muted-foreground shrink-0" />
+            <Monitor className="size-2.5 .5 text-muted-foreground shrink-0" />
             <CopyButton text={liveHex} />
           </div>
         )}
@@ -378,15 +378,15 @@ function TenantBanner() {
 
   return (
     <div className="flex items-center gap-3 px-4 py-2.5 rounded-[10px] border border-primary bg-card">
-      <Palette className="h-4 w-4 text-primary shrink-0" />
+      <Palette className="size-4 text-primary shrink-0" />
       <div className="flex items-center gap-2 flex-wrap">
         <span
-          className="h-3.5 w-3.5 rounded-full shrink-0 border border-border bg-primary"
+          className="size-3.5 .5 rounded-full shrink-0 border border-border bg-primary"
         />
         <span className="text-sm font-medium">{info.name}</span>
         <Badge variant="outline" className="text-[10px]">{FONT_INFO.name}</Badge>
         <Badge variant="outline" className="text-[10px]">
-          {colorMode === "dark" ? <Moon className="h-2.5 w-2.5 mr-1" /> : <Sun className="h-2.5 w-2.5 mr-1" />}
+          {colorMode === "dark" ? <Moon className="size-2.5 .5 mr-1" /> : <Sun className="size-2.5 .5 mr-1" />}
           {colorMode}
         </Badge>
       </div>
@@ -439,11 +439,11 @@ function ColorsTab() {
                   onClick={() => copy(t.cssVar)}
                   className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary"
                 >
-                  <Copy className="h-3 w-3" /> {t.cssVar}
+                  <Copy className="size-3" /> {t.cssVar}
                 </button>
                 <div className="flex gap-2">
                   <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
-                    <Monitor className="h-2.5 w-2.5" />{liveBase || "—"}
+                    <Monitor className="size-2.5 .5" />{liveBase || "—"}
                   </span>
                   <span className="text-[10px] text-muted-foreground/30">·</span>
                   <span className="flex items-center gap-1 text-[10px] text-muted-foreground">
@@ -542,10 +542,10 @@ function TypographyTab() {
               </div>
               <div className="space-y-1 text-xs text-muted-foreground">
                 <button onClick={() => copy("--font-sans")} className="flex items-center gap-1 hover:text-primary font-mono">
-                  <Copy className="h-3 w-3" /> --font-sans
+                  <Copy className="size-3" /> --font-sans
                 </button>
                 <button onClick={() => copy("font-sans")} className="flex items-center gap-1 hover:text-primary font-mono">
-                  <Copy className="h-3 w-3" /> font-sans
+                  <Copy className="size-3" /> font-sans
                 </button>
                 <p className="text-[10px]">Source: {fontInfo.source}</p>
                 <Badge variant="outline" className="text-[10px]">Weights: {fontInfo.weights}</Badge>
@@ -572,7 +572,7 @@ function TypographyTab() {
                   onClick={() => copy(w.class)}
                   className="flex items-center justify-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary mx-auto mt-1"
                 >
-                  <Copy className="h-3 w-3" /> {w.class}
+                  <Copy className="size-3" /> {w.class}
                 </button>
               </CardContent>
             </Card>
@@ -614,7 +614,7 @@ function TypographyTab() {
                       onClick={() => copy(row.twClass)}
                       className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary"
                     >
-                      <Copy className="h-3 w-3" />{row.twClass}
+                      <Copy className="size-3" />{row.twClass}
                     </button>
                   </td>
                 </tr>
@@ -633,7 +633,7 @@ function TypographyTab() {
           </div>
           <div className="text-right space-y-1">
             <button onClick={() => copy("--letter-spacing-base")} className="flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-primary ml-auto">
-              <Copy className="h-3 w-3" /> --letter-spacing-base
+              <Copy className="size-3" /> --letter-spacing-base
             </button>
             <p className="text-xs font-mono text-primary">{liveLetterSpacing}</p>
           </div>
@@ -662,7 +662,7 @@ function ShapeTab() {
             <div key={r.name} className="flex flex-col items-center gap-3">
               <RadiusBox
                 value={r.cssVar === "—" ? "9999px" : `var(${r.cssVar === "--radius" ? "--radius" : r.cssVar === "--radius-xl" ? "--radius-xl" : r.cssVar})`}
-                className="h-20 w-20 bg-muted border-2 border-primary flex items-center justify-center"
+                className="size-20 bg-muted border-2 border-primary flex items-center justify-center"
               >
                 <span className="text-xs font-medium text-primary">{r.px}</span>
               </RadiusBox>
@@ -670,11 +670,11 @@ function ShapeTab() {
                 <p className="text-xs font-medium">{r.name}</p>
                 {r.cssVar !== "—" && (
                   <button onClick={() => copy(r.cssVar)} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary mx-auto">
-                    <Copy className="h-3 w-3" />{r.cssVar}
+                    <Copy className="size-3" />{r.cssVar}
                   </button>
                 )}
                 <button onClick={() => copy(r.twClass)} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary mx-auto">
-                  <Copy className="h-3 w-3" />{r.twClass}
+                  <Copy className="size-3" />{r.twClass}
                 </button>
                 <p className="text-[10px] text-muted-foreground font-mono">{r.computed}</p>
               </div>
@@ -699,7 +699,7 @@ function ShapeTab() {
                   <td className="px-4 py-2.5">
                     {r.cssVar !== "—" ? (
                       <button onClick={() => copy(r.cssVar)} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary">
-                        <Copy className="h-3 w-3" />{r.cssVar}
+                        <Copy className="size-3" />{r.cssVar}
                       </button>
                     ) : (
                       <span className="text-[10px] text-muted-foreground">—</span>
@@ -707,7 +707,7 @@ function ShapeTab() {
                   </td>
                   <td className="px-4 py-2.5">
                     <button onClick={() => copy(r.twClass)} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary">
-                      <Copy className="h-3 w-3" />{r.twClass}
+                      <Copy className="size-3" />{r.twClass}
                     </button>
                   </td>
                   <td className="px-4 py-2.5 text-[10px] font-mono text-muted-foreground">{r.computed}</td>
@@ -746,10 +746,10 @@ function ShadowsTab() {
             <div className="space-y-1">
               <p className="text-xs font-medium">{s.name}</p>
               <button onClick={() => copy(s.cssVar)} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary">
-                <Copy className="h-3 w-3" />{s.cssVar}
+                <Copy className="size-3" />{s.cssVar}
               </button>
               <button onClick={() => copy(s.twClass)} className="flex items-center gap-1 text-[10px] font-mono text-primary hover:text-primary/70">
-                <Copy className="h-3 w-3" />{s.twClass}
+                <Copy className="size-3" />{s.twClass}
               </button>
               <p className="text-[10px] text-muted-foreground">{s.usage}</p>
             </div>
@@ -773,12 +773,12 @@ function ShadowsTab() {
                 <td className="px-4 py-2.5 text-xs font-medium">{s.name}</td>
                 <td className="px-4 py-2.5">
                   <button onClick={() => copy(s.cssVar)} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary">
-                    <Copy className="h-3 w-3" />{s.cssVar}
+                    <Copy className="size-3" />{s.cssVar}
                   </button>
                 </td>
                 <td className="px-4 py-2.5">
                   <button onClick={() => copy(s.twClass)} className="flex items-center gap-1 text-[10px] font-mono text-primary hover:text-primary/70">
-                    <Copy className="h-3 w-3" />{s.twClass}
+                    <Copy className="size-3" />{s.twClass}
                   </button>
                 </td>
                 <td className="px-4 py-2.5 text-[10px] text-muted-foreground">{s.usage}</td>
@@ -838,7 +838,7 @@ function AnimationsTab() {
                   </div>
                   <p className="text-xs text-muted-foreground">{a.desc}</p>
                   <button onClick={() => copy(a.cssClass)} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary">
-                    <Copy className="h-3 w-3" />{a.cssClass}
+                    <Copy className="size-3" />{a.cssClass}
                   </button>
                 </div>
 
@@ -846,11 +846,11 @@ function AnimationsTab() {
                 <div className="flex flex-col items-center gap-2 shrink-0">
                   <div
                     key={playing === a.cssClass ? `play-${Date.now()}` : a.cssClass}
-                    className={`h-10 w-10 rounded-[10px] bg-muted border border-border flex items-center justify-center ${
+                    className={`size-10 rounded-[10px] bg-muted border border-border flex items-center justify-center ${
                       playing === a.cssClass ? a.cssClass : ""
                     }`}
                   >
-                    <div className="h-4 w-4 rounded-sm bg-primary" />
+                    <div className="size-4 rounded-sm bg-primary" />
                   </div>
                   <Button
                     variant="ghost"
@@ -896,7 +896,7 @@ function UtilitiesTab() {
                   <p className="text-sm font-medium">{u.name}</p>
                   <p className="text-xs text-muted-foreground">{u.desc}</p>
                   <button onClick={() => copy(u.cssClass)} className="flex items-center gap-1 text-[10px] font-mono text-muted-foreground hover:text-primary">
-                    <Copy className="h-3 w-3" />{u.cssClass}
+                    <Copy className="size-3" />{u.cssClass}
                   </button>
                 </div>
                 {/* Live demo */}
@@ -985,7 +985,7 @@ function SpacingTab() {
               </div>
               <span className="w-12 text-xs font-mono text-foreground shrink-0 text-right">{s.px}</span>
               <button onClick={() => copy(s.cssVar)} className="w-28 text-left flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-primary shrink-0">
-                <Copy className="h-3 w-3 shrink-0" />{s.cssVar}
+                <Copy className="size-3 shrink-0" />{s.cssVar}
               </button>
               <span className="w-24 text-xs font-mono text-muted-foreground shrink-0 hidden md:block">{s.tw}</span>
             </div>
@@ -1059,7 +1059,7 @@ function MotionTab() {
                 <div className="flex items-center gap-2 mb-0.5">
                   <span className="text-sm font-medium">{d.name}</span>
                   <button onClick={() => copy(d.cssVar)} className="flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-primary">
-                    <Copy className="h-3 w-3" />{d.cssVar}
+                    <Copy className="size-3" />{d.cssVar}
                   </button>
                 </div>
                 <p className="text-xs text-muted-foreground truncate">{d.use}</p>
@@ -1091,7 +1091,7 @@ function MotionTab() {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <span className="text-sm font-medium">{e.name}</span>
                 <button onClick={(ev) => { ev.stopPropagation(); copy(e.cssVar); }} className="flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-primary">
-                  <Copy className="h-3 w-3" />{e.cssVar}
+                  <Copy className="size-3" />{e.cssVar}
                 </button>
               </div>
               <p className="text-xs text-muted-foreground mb-3">{e.use}</p>
@@ -1225,7 +1225,7 @@ function BreakpointsTab() {
                 onClick={() => copy(p.pattern)}
                 className="flex items-center gap-1.5 shrink-0 font-mono text-xs bg-muted px-2.5 py-1.5 rounded-md hover:bg-primary/10 hover:text-primary transition-colors"
               >
-                <Copy className="h-3 w-3" />
+                <Copy className="size-3" />
                 <span className="hidden sm:inline">{p.pattern}</span>
                 <span className="sm:hidden">copy</span>
               </button>
@@ -1278,11 +1278,11 @@ export function DesignTokensPage() {
         </p>
         <div className="flex gap-4 text-xs text-muted-foreground flex-wrap">
           <span>
-            <span className="inline-block h-2.5 w-2.5 rounded-full mr-1 align-middle bg-primary" />
+            <span className="inline-block size-2.5 .5 rounded-full mr-1 align-middle bg-primary" />
             <strong className="text-foreground">Primary:</strong> #374151
           </span>
           <span>
-            <span className="inline-block h-2.5 w-2.5 rounded-full mr-1 align-middle bg-secondary" />
+            <span className="inline-block size-2.5 .5 rounded-full mr-1 align-middle bg-secondary" />
             <strong className="text-foreground">Secondary:</strong> #796eff
           </span>
           <span>
@@ -1292,7 +1292,7 @@ export function DesignTokensPage() {
             <strong className="text-foreground">Radius:</strong> var(--radius)
           </span>
           <span>
-            {colorMode === "dark" ? <Moon className="h-3 w-3 inline mr-1" /> : <Sun className="h-3 w-3 inline mr-1" />}
+            {colorMode === "dark" ? <Moon className="size-3 inline mr-1" /> : <Sun className="size-3 inline mr-1" />}
             <strong className="text-foreground">Mode:</strong> {colorMode}
           </span>
         </div>

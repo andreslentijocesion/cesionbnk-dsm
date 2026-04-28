@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { BottomSheet } from "../components/ui/bottom-sheet";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { BottomSheet } from "../components/ui/BottomSheet";
+import { Button } from "../components/ui/Button";
 import { Download, MessageSquare, Share2, Printer, Trash2 } from "lucide-react";
 
-const code = `import { BottomSheet } from "@/components/ui/bottom-sheet";
+const code = `import { BottomSheet } from "@/components/ui/BottomSheet";
 
 export function BottomSheetDemo() {
   return (
@@ -14,10 +14,10 @@ export function BottomSheetDemo() {
     >
       <div className="space-y-2">
         <Button variant="outline" className="w-full justify-start">
-          <Download className="mr-2 h-4 w-4"/> Download PDF
+          <Download className="mr-2 size-4"/> Download PDF
         </Button>
         <Button variant="outline" className="w-full justify-start">
-          <MessageSquare className="mr-2 h-4 w-4"/> Send Comment
+          <MessageSquare className="mr-2 size-4"/> Send Comment
         </Button>
       </div>
     </BottomSheet>
@@ -38,8 +38,8 @@ export function BottomSheetPage() {
             description="Select an action for the selected invoice"
           >
             <div className="space-y-2">
-              <Button variant="outline" className="w-full justify-start"><Download className="mr-2 h-4 w-4"/> Download PDF</Button>
-              <Button variant="outline" className="w-full justify-start"><MessageSquare className="mr-2 h-4 w-4"/> Send Comment</Button>
+              <Button variant="outline" className="w-full justify-start"><Download className="mr-2 size-4"/> Download PDF</Button>
+              <Button variant="outline" className="w-full justify-start"><MessageSquare className="mr-2 size-4"/> Send Comment</Button>
             </div>
           </BottomSheet>
         </div>
@@ -72,8 +72,8 @@ export function BottomSheetPage() {
                 }
               >
                 <div className="space-y-2">
-                  <Button variant="ghost" className="w-full justify-start"><Share2 className="mr-2 h-4 w-4" /> Share</Button>
-                  <Button variant="ghost" className="w-full justify-start"><Printer className="mr-2 h-4 w-4" /> Print</Button>
+                  <Button variant="ghost" className="w-full justify-start"><Share2 className="mr-2 size-4" /> Share</Button>
+                  <Button variant="ghost" className="w-full justify-start"><Printer className="mr-2 size-4" /> Print</Button>
                 </div>
               </BottomSheet>
             </div>
@@ -91,10 +91,10 @@ export function BottomSheetPage() {
 >
   <div className="space-y-2">
     <Button variant="ghost" className="w-full justify-start">
-      <Share2 className="mr-2 h-4 w-4" /> Share
+      <Share2 className="mr-2 size-4" /> Share
     </Button>
     <Button variant="ghost" className="w-full justify-start">
-      <Printer className="mr-2 h-4 w-4" /> Print
+      <Printer className="mr-2 size-4" /> Print
     </Button>
   </div>
 </BottomSheet>`,
@@ -111,7 +111,7 @@ export function BottomSheetPage() {
               >
                 <div className="space-y-3">
                   <p className="text-sm text-muted-foreground">Invoice FV-9921 and all its history will be deleted.</p>
-                  <Button variant="destructive" className="w-full"><Trash2 className="mr-2 h-4 w-4" /> Confirm Deletion</Button>
+                  <Button variant="destructive" className="w-full"><Trash2 className="mr-2 size-4" /> Confirm Deletion</Button>
                 </div>
               </BottomSheet>
             </div>
@@ -126,7 +126,7 @@ export function BottomSheetPage() {
       Invoice FV-9921 and all its history will be deleted.
     </p>
     <Button variant="destructive" className="w-full">
-      <Trash2 className="mr-2 h-4 w-4" /> Confirm Deletion
+      <Trash2 className="mr-2 size-4" /> Confirm Deletion
     </Button>
   </div>
 </BottomSheet>`,

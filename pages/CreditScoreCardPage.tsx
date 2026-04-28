@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { CreditScoreCard } from "../components/patterns/credit-score-card";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { CreditScoreCard } from "../components/patterns/CreditScoreCard";
 
 export function CreditScoreCardPage() {
   return (
@@ -45,7 +45,7 @@ export function CreditScoreCardPage() {
           />
         </div>
       }
-      code={`import { CreditScoreCard } from "@/components/patterns/credit-score-card"
+      code={`import { CreditScoreCard } from "@/components/patterns/CreditScoreCard"
 
 <CreditScoreCard
   name="Retail Express Ltda."

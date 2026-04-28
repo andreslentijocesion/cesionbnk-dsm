@@ -2,16 +2,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeVariants, getTransition } from "../lib/animation-config";
 import { cn } from "../lib/utils";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Checkbox } from "../components/ui/checkbox";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../components/ui/select";
-import { Progress } from "../components/ui/progress";
-import { Badge } from "../components/ui/badge";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../components/ui/Card";
+import { Button } from "../components/ui/Button";
+import { Input } from "../components/ui/Input";
+import { Label } from "../components/ui/Label";
+import { Checkbox } from "../components/ui/Checkbox";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "../components/ui/Select";
+import { Progress } from "../components/ui/Progress";
+import { Badge } from "../components/ui/Badge";
 import { User, Briefcase, FileText, Mail, Check, ChevronRight } from "lucide-react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 
 function MultiStepFormVerticalDemo() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -29,10 +29,10 @@ function MultiStepFormVerticalDemo() {
   const handleSubmit = () => { alert("Application submitted successfully"); };
 
   const steps = [
-    { id: 1, title: "Personal Info", icon: <User className="h-5 w-5" />, description: "Basic data" },
-    { id: 2, title: "Employment Info", icon: <Briefcase className="h-5 w-5" />, description: "Professional data" },
-    { id: 3, title: "Documents", icon: <FileText className="h-5 w-5" />, description: "File upload" },
-    { id: 4, title: "Confirmation", icon: <Mail className="h-5 w-5" />, description: "Final review" },
+    { id: 1, title: "Personal Info", icon: <User className="size-5" />, description: "Basic data" },
+    { id: 2, title: "Employment Info", icon: <Briefcase className="size-5" />, description: "Professional data" },
+    { id: 3, title: "Documents", icon: <FileText className="size-5" />, description: "File upload" },
+    { id: 4, title: "Confirmation", icon: <Mail className="size-5" />, description: "Final review" },
   ];
   const isStepCompleted = (stepId: number) => stepId < currentStep;
   const progress = (currentStep / steps.length) * 100;
@@ -60,11 +60,11 @@ function MultiStepFormVerticalDemo() {
                     <div key={step.id} className="relative">
                       {!isLast && (<div className={cn("absolute left-5 top-12 w-0.5 h-10 -z-10 transition-colors duration-300", isCompleted ? "bg-primary" : "bg-border")} />)}
                       <button onClick={() => setCurrentStep(step.id)} className={cn("w-full text-left p-3 rounded-lg transition-all duration-300 flex items-start gap-3 group", isActive && "bg-muted border-2 border-primary shadow-sm", !isActive && "hover:bg-muted border-2 border-transparent")}>
-                        <div className={cn("flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300", isCompleted && "bg-primary text-primary-foreground shadow-md", isActive && !isCompleted && "bg-muted text-primary ring-2 ring-primary", !isActive && !isCompleted && "bg-muted text-muted-foreground group-hover:bg-muted")}>{isCompleted ? <Check className="h-5 w-5" /> : step.icon}</div>
+                        <div className={cn("flex-shrink-0 size-10 rounded-full flex items-center justify-center transition-all duration-300", isCompleted && "bg-primary text-primary-foreground shadow-md", isActive && !isCompleted && "bg-muted text-primary ring-2 ring-primary", !isActive && !isCompleted && "bg-muted text-muted-foreground group-hover:bg-muted")}>{isCompleted ? <Check className="size-5" /> : step.icon}</div>
                         <div className="flex-1 min-w-0 pt-1">
                           <div className="flex items-center gap-2">
                             <p className={cn("text-sm font-medium truncate transition-colors duration-300", isActive && "text-primary", !isActive && "text-muted-foreground")}>{step.title}</p>
-                            {isActive && <ChevronRight className="h-4 w-4 text-primary flex-shrink-0" />}
+                            {isActive && <ChevronRight className="size-4 text-primary flex-shrink-0" />}
                           </div>
                           <p className="text-xs text-muted-foreground mt-0.5">{step.description}</p>
                         </div>
@@ -80,7 +80,7 @@ function MultiStepFormVerticalDemo() {
             <Card className="w-full">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">{steps[currentStep - 1].icon}</div>
+                  <div className="size-10 rounded-full bg-muted flex items-center justify-center">{steps[currentStep - 1].icon}</div>
                   <div><CardTitle>{steps[currentStep - 1].title}</CardTitle><CardDescription>{steps[currentStep - 1].description}</CardDescription></div>
                 </div>
               </CardHeader>
@@ -124,7 +124,7 @@ function MultiStepFormVerticalDemo() {
                             <div><p className="text-muted-foreground">Name</p><p className="font-medium">{formData.nombres} {formData.apellidos}</p></div>
                             <div><p className="text-muted-foreground">Email</p><p className="font-medium">{formData.email}</p></div>
                             <div className="pt-3 border-t"><p className="text-muted-foreground">Company</p><p className="font-medium">{formData.empresa} — {formData.cargo}</p></div>
-                            <div className="pt-3 border-t"><p className="text-muted-foreground">Documents</p><div className="flex gap-2 mt-1 flex-wrap">{formData.documentos.cedula && <Badge variant="outline"><Check className="h-3 w-3 mr-1" />ID Card</Badge>}{formData.documentos.certificadoLaboral && <Badge variant="outline"><Check className="h-3 w-3 mr-1" />Certificate</Badge>}{formData.documentos.extractoBancario && <Badge variant="outline"><Check className="h-3 w-3 mr-1" />Statement</Badge>}</div></div>
+                            <div className="pt-3 border-t"><p className="text-muted-foreground">Documents</p><div className="flex gap-2 mt-1 flex-wrap">{formData.documentos.cedula && <Badge variant="outline"><Check className="size-3 mr-1" />ID Card</Badge>}{formData.documentos.certificadoLaboral && <Badge variant="outline"><Check className="size-3 mr-1" />Certificate</Badge>}{formData.documentos.extractoBancario && <Badge variant="outline"><Check className="size-3 mr-1" />Statement</Badge>}</div></div>
                           </div>
                           <div className="flex items-start space-x-3 p-4 border rounded-lg bg-card border-primary">
                             <Checkbox id="terminos" checked={formData.aceptaTerminos} onCheckedChange={(checked) => updateFormData("aceptaTerminos", checked)} />
@@ -138,9 +138,9 @@ function MultiStepFormVerticalDemo() {
                 <div className="flex justify-between items-center pt-6 mt-6 border-t">
                   <Button variant="outline" onClick={handlePrevious} disabled={currentStep === 1} size="lg">Previous</Button>
                   {currentStep < steps.length ? (
-                    <Button onClick={handleNext} size="lg"><ChevronRight className="h-4 w-4 ml-1" />Next</Button>
+                    <Button onClick={handleNext} size="lg"><ChevronRight className="size-4 ml-1" />Next</Button>
                   ) : (
-                    <Button onClick={handleSubmit} disabled={!formData.aceptaTerminos} size="lg"><Check className="h-4 w-4 mr-2" />Submit Application</Button>
+                    <Button onClick={handleSubmit} disabled={!formData.aceptaTerminos} size="lg"><Check className="size-4 mr-2" />Submit Application</Button>
                   )}
                 </div>
               </CardContent>

@@ -3,7 +3,7 @@ import {
   Menubar, MenubarMenu, MenubarTrigger, MenubarContent,
   MenubarItem, MenubarSeparator, MenubarShortcut, MenubarSub,
   MenubarSubTrigger, MenubarSubContent,
-} from '../components/ui/menubar';
+} from '../components/ui/Menubar';
 
 const meta: Meta = {
   title: 'DSM/Components/Menubar',

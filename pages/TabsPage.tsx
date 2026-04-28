@@ -1,10 +1,10 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
+import { Input } from "../components/ui/Input";
+import { Label } from "../components/ui/Label";
+import { Button } from "../components/ui/Button";
+import { Badge } from "../components/ui/Badge";
 import { User, Settings, Bell, CreditCard, Shield, Activity } from "lucide-react";
 
 export function TabsPage() {
@@ -51,7 +51,7 @@ export function TabsPage() {
       }
       
       // Main Code
-      code={`import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+      code={`import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 export function TabsDemo() {
   return (
@@ -183,15 +183,15 @@ export function TabsDemo() {
             <Tabs defaultValue="profile" className="w-full max-w-lg">
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="profile" className="gap-2">
-                  <User className="h-4 w-4" />
+                  <User className="size-4" />
                   Profile
                 </TabsTrigger>
                 <TabsTrigger value="settings" className="gap-2">
-                  <Settings className="h-4 w-4" />
+                  <Settings className="size-4" />
                   Settings
                 </TabsTrigger>
                 <TabsTrigger value="notifications" className="gap-2">
-                  <Bell className="h-4 w-4" />
+                  <Bell className="size-4" />
                   Alerts
                 </TabsTrigger>
               </TabsList>
@@ -217,15 +217,15 @@ export function TabsDemo() {
 <Tabs defaultValue="profile">
   <TabsList className="grid w-full grid-cols-3">
     <TabsTrigger value="profile" className="gap-2">
-      <User className="h-4 w-4" />
+      <User className="size-4" />
       Profile
     </TabsTrigger>
     <TabsTrigger value="settings" className="gap-2">
-      <Settings className="h-4 w-4" />
+      <Settings className="size-4" />
       Settings
     </TabsTrigger>
     <TabsTrigger value="notifications" className="gap-2">
-      <Bell className="h-4 w-4" />
+      <Bell className="size-4" />
       Alerts
     </TabsTrigger>
   </TabsList>
@@ -372,7 +372,7 @@ export function TabsDemo() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <User className="h-5 w-5" />
+                      <User className="size-5" />
                       General Settings
                     </CardTitle>
                     <CardDescription>
@@ -396,7 +396,7 @@ export function TabsDemo() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Shield className="h-5 w-5" />
+                      <Shield className="size-5" />
                       Security Settings
                     </CardTitle>
                     <CardDescription>
@@ -414,7 +414,7 @@ export function TabsDemo() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <CreditCard className="h-5 w-5" />
+                      <CreditCard className="size-5" />
                       Billing Information
                     </CardTitle>
                     <CardDescription>
@@ -432,7 +432,7 @@ export function TabsDemo() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Activity className="h-5 w-5" />
+                      <Activity className="size-5" />
                       Advanced Settings
                     </CardTitle>
                     <CardDescription>

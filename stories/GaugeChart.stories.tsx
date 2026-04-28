@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { GaugeChart } from '../components/advanced/gauge-chart';
+import { GaugeChart } from '../components/advanced/GaugeChart';
 
 const meta: Meta<typeof GaugeChart> = {
   title: 'DSM/Advanced/GaugeChart',

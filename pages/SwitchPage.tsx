@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Switch } from "../components/ui/switch";
-import { Label } from "../components/ui/label";
-import { Card } from "../components/ui/card";
-import { Separator } from "../components/ui/separator";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Switch } from "../components/ui/Switch";
+import { Label } from "../components/ui/Label";
+import { Card } from "../components/ui/Card";
+import { Separator } from "../components/ui/Separator";
 import { Bell, Wifi, Bluetooth, Moon, Volume2, Lock } from "lucide-react";
 import { useState } from "react";
 
@@ -29,8 +29,8 @@ export function SwitchPage() {
       }
       
       // Main Code
-      code={`import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
+      code={`import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
 
 export function SwitchDemo() {
   return (
@@ -106,8 +106,8 @@ export function SwitchDemo() {
               <Label htmlFor="basic">Enable feature</Label>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
+          code: `import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
 
 export function BasicSwitch() {
   return (
@@ -144,9 +144,9 @@ export function BasicSwitch() {
               </div>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+          code: `import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
+import { Separator } from "@/components/ui/Separator";
 
 export function SwitchWithDescriptions() {
   return (
@@ -183,29 +183,29 @@ export function SwitchWithDescriptions() {
             <div className="space-y-4">
               <div className="flex items-center justify-between max-w-xs">
                 <div className="flex items-center gap-2">
-                  <Bell className="h-4 w-4 text-muted-foreground" />
+                  <Bell className="size-4 text-muted-foreground" />
                   <Label htmlFor="notifications">Notifications</Label>
                 </div>
                 <Switch id="notifications" defaultChecked />
               </div>
               <div className="flex items-center justify-between max-w-xs">
                 <div className="flex items-center gap-2">
-                  <Wifi className="h-4 w-4 text-muted-foreground" />
+                  <Wifi className="size-4 text-muted-foreground" />
                   <Label htmlFor="wifi">WiFi</Label>
                 </div>
                 <Switch id="wifi" defaultChecked />
               </div>
               <div className="flex items-center justify-between max-w-xs">
                 <div className="flex items-center gap-2">
-                  <Bluetooth className="h-4 w-4 text-muted-foreground" />
+                  <Bluetooth className="size-4 text-muted-foreground" />
                   <Label htmlFor="bluetooth">Bluetooth</Label>
                 </div>
                 <Switch id="bluetooth" />
               </div>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
+          code: `import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
 import { Bell, Wifi, Bluetooth } from "lucide-react";
 
 export function SwitchWithIcons() {
@@ -213,7 +213,7 @@ export function SwitchWithIcons() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Bell className="h-4 w-4 text-muted-foreground" />
+          <Bell className="size-4 text-muted-foreground" />
           <Label htmlFor="notifications">Notifications</Label>
         </div>
         <Switch id="notifications" defaultChecked />
@@ -221,7 +221,7 @@ export function SwitchWithIcons() {
       
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Wifi className="h-4 w-4 text-muted-foreground" />
+          <Wifi className="size-4 text-muted-foreground" />
           <Label htmlFor="wifi">WiFi</Label>
         </div>
         <Switch id="wifi" defaultChecked />
@@ -229,7 +229,7 @@ export function SwitchWithIcons() {
       
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Bluetooth className="h-4 w-4 text-muted-foreground" />
+          <Bluetooth className="size-4 text-muted-foreground" />
           <Label htmlFor="bluetooth">Bluetooth</Label>
         </div>
         <Switch id="bluetooth" />
@@ -247,7 +247,7 @@ export function SwitchWithIcons() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-muted rounded-lg">
-                      <Moon className="h-4 w-4 text-primary" />
+                      <Moon className="size-4 text-primary" />
                     </div>
                     <div>
                       <Label htmlFor="dark-mode" className="cursor-pointer">Dark Mode</Label>
@@ -264,7 +264,7 @@ export function SwitchWithIcons() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-muted rounded-lg">
-                      <Volume2 className="h-4 w-4 text-primary" />
+                      <Volume2 className="size-4 text-primary" />
                     </div>
                     <div>
                       <Label htmlFor="sound" className="cursor-pointer">Sound Effects</Label>
@@ -278,9 +278,9 @@ export function SwitchWithIcons() {
               </Card>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-import { Card } from "@/components/ui/card";
+          code: `import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
+import { Card } from "@/components/ui/Card";
 import { Moon, Volume2 } from "lucide-react";
 
 export function CardLayoutSwitch() {
@@ -290,7 +290,7 @@ export function CardLayoutSwitch() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-muted rounded-lg">
-              <Moon className="h-4 w-4 text-primary" />
+              <Moon className="size-4 text-primary" />
             </div>
             <div>
               <Label htmlFor="dark-mode" className="cursor-pointer">
@@ -309,7 +309,7 @@ export function CardLayoutSwitch() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-muted rounded-lg">
-              <Volume2 className="h-4 w-4 text-primary" />
+              <Volume2 className="size-4 text-primary" />
             </div>
             <div>
               <Label htmlFor="sound" className="cursor-pointer">
@@ -333,8 +333,8 @@ export function CardLayoutSwitch() {
           preview: (
             <SwitchControlledExample />
           ),
-          code: `import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
+          code: `import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
 import { useState } from "react";
 
 export function ControlledSwitch() {
@@ -375,8 +375,8 @@ export function ControlledSwitch() {
               </div>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
+          code: `import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
 
 export function DisabledSwitch() {
   return (
@@ -438,9 +438,9 @@ export function DisabledSwitch() {
               </div>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
+          code: `import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
+import { Separator } from "@/components/ui/Separator";
 
 export function SettingsPanel() {
   return (
@@ -492,8 +492,8 @@ export function SettingsPanel() {
           preview: (
             <SwitchWithConfirmation />
           ),
-          code: `import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
+          code: `import { Switch } from "@/components/ui/Switch";
+import { Label } from "@/components/ui/Label";
 import { Lock } from "lucide-react";
 import { useState } from "react";
 
@@ -516,7 +516,7 @@ export function SwitchWithConfirmation() {
   return (
     <div className="flex items-center justify-between max-w-xs">
       <div className="flex items-center gap-2">
-        <Lock className="h-4 w-4 text-muted-foreground" />
+        <Lock className="size-4 text-muted-foreground" />
         <Label htmlFor="locked">Secure Mode</Label>
       </div>
       <Switch
@@ -577,7 +577,7 @@ function SwitchWithConfirmation() {
   return (
     <div className="flex items-center justify-between max-w-xs">
       <div className="flex items-center gap-2">
-        <Lock className="h-4 w-4 text-muted-foreground" />
+        <Lock className="size-4 text-muted-foreground" />
         <Label htmlFor="locked">Secure Mode</Label>
       </div>
       <Switch

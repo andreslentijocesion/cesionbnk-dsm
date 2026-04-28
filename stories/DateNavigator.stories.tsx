@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DateNavigator } from '../components/ui/date-navigator';
+import { DateNavigator } from '../components/ui/DateNavigator';
 
 const meta: Meta<typeof DateNavigator> = {
   title: 'DSM/Components/DateNavigator',

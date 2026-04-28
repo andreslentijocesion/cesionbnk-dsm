@@ -4,7 +4,7 @@
  * @layer patterns
  */
 import { type LucideIcon, CheckCircle2, Clock, XCircle, AlertCircle, Circle } from "lucide-react";
-import { Badge } from "../ui/badge";
+import { Badge } from "../ui/Badge";
 import { cn } from "../../lib/utils";
 
 export type TimelineStatus = "completed" | "current" | "pending" | "error" | "warning";
@@ -49,11 +49,11 @@ export function Timeline({ items, className }: TimelineProps) {
             <div className="flex flex-col items-center">
               <div
                 className={cn(
-                  "flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border-2",
+                  "flex size-8 flex-shrink-0 items-center justify-center rounded-full border-2",
                   cfg.dotClass
                 )}
               >
-                <Icon className={cn("h-4 w-4", cfg.iconClass)} />
+                <Icon className={cn("size-4", cfg.iconClass)} />
               </div>
               {!isLast && (
                 <div className="mt-1 w-0.5 flex-1 bg-border min-h-[1.5rem]" />

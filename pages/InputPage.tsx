@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Input } from "../components/ui/Input";
+import { Label } from "../components/ui/Label";
 import { Mail, Search, User, CreditCard } from "lucide-react";
 
 export function InputPage() {
@@ -51,7 +51,7 @@ export function InputPage() {
         </div>
       }
       
-      code={`import { Input } from "@/components/ui/input";
+      code={`import { Input } from "@/components/ui/Input";
 
 // Size variants
 <Input size="sm" placeholder="Small" />
@@ -167,8 +167,8 @@ export function InputPage() {
               </p>
             </div>
           ),
-          code: `import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+          code: `import { Input } from "@/components/ui/Input";
+import { Label } from "@/components/ui/Label";
 
 <div className="grid gap-2 max-w-sm">
   <Label htmlFor="email">Email</Label>
@@ -195,44 +195,44 @@ import { Label } from "@/components/ui/label";
           preview: (
             <div className="grid gap-4 max-w-sm">
               <div className="relative">
-                <Mail className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+                <Mail className="absolute left-2.5 top-1/2 -translate-y-1/2 size-3.5 .5 text-muted-foreground" />
                 <Input size="sm" placeholder="Small with icon" className="pl-8" type="email" />
               </div>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <Input size="default" placeholder="Default with icon" className="pl-10" type="email" />
               </div>
               <div className="relative">
-                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
                 <Input size="lg" placeholder="Large with icon" className="pl-10" type="email" />
               </div>
               <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
                 <Input size="xl" placeholder="XL with icon" className="pl-12" type="email" />
               </div>
             </div>
           ),
           code: `// Small
 <div className="relative">
-  <Mail className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+  <Mail className="absolute left-2.5 top-1/2 -translate-y-1/2 size-3.5 .5 text-muted-foreground" />
   <Input size="sm" placeholder="Small" className="pl-8" />
 </div>
 
 // Default
 <div className="relative">
-  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
   <Input placeholder="Default" className="pl-10" />
 </div>
 
 // Large
 <div className="relative">
-  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
   <Input size="lg" placeholder="Large" className="pl-10" />
 </div>
 
 // XL
 <div className="relative">
-  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
   <Input size="xl" placeholder="XL" className="pl-12" />
 </div>`
         },
@@ -243,11 +243,11 @@ import { Label } from "@/components/ui/label";
             <div className="grid gap-4 max-w-sm">
               <div className="relative">
                 <Input placeholder="Search..." className="pr-10" />
-                <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
               </div>
               <div className="relative">
                 <Input placeholder="Username" className="pr-10" />
-                <User className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <User className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
               </div>
             </div>
           ),
@@ -255,7 +255,7 @@ import { Label } from "@/components/ui/label";
 
 <div className="relative">
   <Input placeholder="Search..." className="pr-10" />
-  <Search className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+  <Search className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
 </div>`
         },
         {
@@ -363,7 +363,7 @@ import { Label } from "@/components/ui/label";
               <div className="grid gap-2">
                 <Label htmlFor="card">Credit Card</Label>
                 <div className="relative">
-                  <CreditCard className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <CreditCard className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
                   <Input 
                     id="card" 
                     type="text" 

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { PageTransition } from "../components/ui/page-transition";
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
+import { PageTransition } from "../components/ui/PageTransition";
+import { Button } from "../components/ui/Button";
+import { Badge } from "../components/ui/Badge";
 import { useState } from "react";
 
 const meta: Meta<typeof PageTransition> = {

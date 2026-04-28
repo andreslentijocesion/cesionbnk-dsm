@@ -4,12 +4,12 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../ui/tooltip";
+} from "../ui/Tooltip";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../ui/popover";
+} from "../ui/Popover";
 
 interface ContextualHelpProps {
   /**
@@ -52,9 +52,9 @@ export function ContextualHelp({
   iconSize = "sm",
 }: ContextualHelpProps) {
   const sizeClasses = {
-    sm: "h-3.5 w-3.5",
-    md: "h-4 w-4",
-    lg: "h-5 w-5",
+    sm: "size-3.5 .5",
+    md: "size-4",
+    lg: "size-5",
   };
 
   const iconClass = `${sizeClasses[iconSize]} text-muted-foreground hover:text-foreground transition-colors cursor-help`;

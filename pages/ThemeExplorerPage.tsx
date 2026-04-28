@@ -1,10 +1,10 @@
 import { Check, Paintbrush } from "lucide-react";
 import { useTheme, DESIGN_THEMES, DesignTheme } from "../components/providers/ThemeProvider";
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
-import { Input } from "../components/ui/input";
-import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
+import { Button } from "../components/ui/Button";
+import { Badge } from "../components/ui/Badge";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
+import { Input } from "../components/ui/Input";
+import { Alert, AlertDescription, AlertTitle } from "../components/ui/Alert";
 import { cn } from "../components/ui/utils";
 
 /* ── Preview Panel ──────────────────────────────────────────────────────────── */
@@ -163,8 +163,8 @@ function ThemeSelectCard({
           </p>
         </div>
         {isActive && (
-          <div className="flex-shrink-0 h-5 w-5 rounded-full bg-primary flex items-center justify-center">
-            <Check className="h-3 w-3 text-primary-foreground" />
+          <div className="flex-shrink-0 size-5 rounded-full bg-primary flex items-center justify-center">
+            <Check className="size-3 text-primary-foreground" />
           </div>
         )}
       </div>
@@ -184,7 +184,7 @@ export function ThemeExplorerPage() {
       {/* Header */}
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-2">
-          <Paintbrush className="h-5 w-5 text-primary" />
+          <Paintbrush className="size-5 text-primary" />
           <h1 className="text-2xl font-bold text-foreground">Theme Explorer</h1>
         </div>
         <p className="text-sm text-muted-foreground">

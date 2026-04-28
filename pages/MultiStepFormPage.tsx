@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Card } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Badge } from "../components/ui/badge";
-import { Alert, AlertDescription } from "../components/ui/alert";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/table";
-import { Progress } from "../components/ui/progress";
-import { Checkbox } from "../components/ui/checkbox";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../components/ui/dialog";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Card } from "../components/ui/Card";
+import { Button } from "../components/ui/Button";
+import { Input } from "../components/ui/Input";
+import { Label } from "../components/ui/Label";
+import { Badge } from "../components/ui/Badge";
+import { Alert, AlertDescription } from "../components/ui/Alert";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/Table";
+import { Progress } from "../components/ui/Progress";
+import { Checkbox } from "../components/ui/Checkbox";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../components/ui/Dialog";
 import { Upload, FileText, Pencil, Trash2, Plus, CheckCircle2, AlertCircle, Search, Building2, FileCheck, Users, Lock, Loader2, Info, Eye, HelpCircle, Wallet, ShieldAlert } from "lucide-react";
-import { StepIndicator, Step } from "../components/advanced/step-indicator";
-import { Switch } from "../components/ui/switch";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip";
+import { StepIndicator, Step } from "../components/advanced/StepIndicator";
+import { Switch } from "../components/ui/Switch";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/Tooltip";
 
 // Types
 interface Cliente {
@@ -133,19 +133,19 @@ function MultiStepFormDemo() {
       id: "carga-documentos",
       title: "Document Upload", 
       description: "Upload all documents",
-      icon: <Upload className="h-5 w-5" />
+      icon: <Upload className="size-5" />
     },
     { 
       id: "validacion-datos",
       title: "Data Validation", 
       description: "Review and complete information",
-      icon: <FileCheck className="h-5 w-5" />
+      icon: <FileCheck className="size-5" />
     },
     { 
       id: "clientes-declaraciones",
       title: "Clients", 
       description: "Add clients and declarations",
-      icon: <Users className="h-5 w-5" />
+      icon: <Users className="size-5" />
     },
   ];
 
@@ -346,7 +346,7 @@ function MultiStepFormDemo() {
         {isProcessing && (
           <Card className="p-8 mb-8">
             <div className="flex flex-col items-center justify-center space-y-4">
-              <Loader2 className="h-12 w-12 text-primary animate-spin" />
+              <Loader2 className="size-12 text-primary animate-spin" />
               <div className="text-center">
                 <h3 className="text-lg font-semibold mb-2">Processing Documents...</h3>
                 <p className="text-sm text-muted-foreground">
@@ -458,8 +458,8 @@ function MultiStepFormDemo() {
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center">
-                  <CheckCircle2 className="w-10 h-10 text-primary" />
+                <div className="size-16 rounded-full bg-muted flex items-center justify-center">
+                  <CheckCircle2 className="size-10 text-primary" />
                 </div>
               </div>
               <DialogTitle className="text-center text-2xl">
@@ -542,7 +542,7 @@ function Paso1({
       {/* Company Information */}
       <div className="space-y-3">
         <h3 className="text-sm font-semibold flex items-center gap-2 pb-2 border-b border-border">
-          <Building2 className="h-4 w-4" />
+          <Building2 className="size-4" />
           Company Information
         </h3>
         <div className="space-y-2">
@@ -561,7 +561,7 @@ function Paso1({
       {/* Banking Information */}
       <div className="space-y-3">
         <h3 className="text-sm font-semibold flex items-center gap-2 pb-2 border-b border-border">
-          <FileCheck className="h-4 w-4" />
+          <FileCheck className="size-4" />
           Banking Information
         </h3>
         <div className="space-y-2">
@@ -574,7 +574,7 @@ function Paso1({
               onEliminar={onEliminarDocumento}
               headerContent={doc.id === "4" ? (
                 <div className="relative w-56 ml-2">
-                  <Lock className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+                  <Lock className="absolute left-2.5 top-1/2 -translate-y-1/2 size-3.5 .5 text-muted-foreground" />
                   <Input
                     type="password"
                     placeholder="PDF Password"
@@ -592,7 +592,7 @@ function Paso1({
       {/* Financial Information */}
       <div className="space-y-3">
         <h3 className="text-sm font-semibold flex items-center gap-2 pb-2 border-b border-border">
-          <FileText className="h-4 w-4" />
+          <FileText className="size-4" />
           Financial Information
         </h3>
         <div className="space-y-2">
@@ -611,7 +611,7 @@ function Paso1({
       {/* Optional Documents */}
       <div className="space-y-3">
         <h3 className="text-sm font-semibold flex items-center gap-2 pb-2 border-b border-border">
-          <FileText className="h-4 w-4" />
+          <FileText className="size-4" />
           Optional Documents
         </h3>
         <div className="space-y-2">
@@ -629,7 +629,7 @@ function Paso1({
 
       {/* Progress counter */}
       <Alert className={`${docsObligatoriosSubidos === totalDocsObligatorios ? 'bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800' : 'bg-muted border-border'}`}>
-        <CheckCircle2 className={`h-4 w-4 ${docsObligatoriosSubidos === totalDocsObligatorios ? 'text-green-600 dark:text-green-400' : 'text-muted-foreground'}`} />
+        <CheckCircle2 className={`size-4 ${docsObligatoriosSubidos === totalDocsObligatorios ? 'text-success-on-subtle dark:text-green-400' : 'text-muted-foreground'}`} />
         <AlertDescription className="text-sm">
           <strong>{docsObligatoriosSubidos} of {totalDocsObligatorios} required documents uploaded</strong>
           {docsObligatoriosSubidos === totalDocsObligatorios && (
@@ -702,7 +702,7 @@ function DocumentoUpload({
           
           {documento.uploaded && documento.archivo && (
             <div className="flex items-center gap-2 mt-2">
-              <FileText className="h-3 w-3 text-primary" />
+              <FileText className="size-3 text-primary" />
               <span className="text-xs text-muted-foreground">{documento.archivo.name}</span>
             </div>
           )}
@@ -719,7 +719,7 @@ function DocumentoUpload({
               />
               <Button size="sm" variant="outline" asChild>
                 <span className="cursor-pointer">
-                  <Upload className="h-4 w-4 mr-1" />
+                  <Upload className="size-4 mr-1" />
                   Upload
                 </span>
               </Button>
@@ -731,7 +731,7 @@ function DocumentoUpload({
                 variant="outline"
                 onClick={handleViewFile}
               >
-                <Eye className="h-4 w-4 mr-1" />
+                <Eye className="size-4 mr-1" />
                 View
               </Button>
               <Button
@@ -763,7 +763,7 @@ function Paso2({
     <div className="space-y-4">
       {/* Header */}
       <Alert className="bg-green-50 border-green-200 dark:bg-green-950 dark:border-green-800">
-        <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
+        <CheckCircle2 className="size-4 text-success-on-subtle dark:text-green-400" />
         <AlertDescription className="text-sm text-green-800 dark:text-green-200">
           <strong>Data Extracted Automatically</strong> - Verify the information. Click any field to edit it.
         </AlertDescription>
@@ -772,7 +772,7 @@ function Paso2({
       {/* Company Information */}
       <div className="space-y-3">
         <h3 className="text-sm font-semibold pb-2 border-b border-border flex items-center gap-2">
-          <Building2 className="h-4 w-4" />
+          <Building2 className="size-4" />
           Company Information
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -816,7 +816,7 @@ function Paso2({
       {/* Legal Representative */}
       <div className="space-y-3">
         <h3 className="text-sm font-semibold pb-2 border-b border-border flex items-center gap-2">
-          <Users className="h-4 w-4" />
+          <Users className="size-4" />
           Legal Representative
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -843,7 +843,7 @@ function Paso2({
       {/* Banking Details */}
       <div className="space-y-3">
         <h3 className="text-sm font-semibold pb-2 border-b border-border flex items-center gap-2">
-          <FileCheck className="h-4 w-4" />
+          <FileCheck className="size-4" />
           Banking Details
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -870,7 +870,7 @@ function Paso2({
         
         
         <h3 className="text-sm font-semibold pb-2 border-b border-border flex items-center gap-2">
-          <Info className="h-4 w-4" />
+          <Info className="size-4" />
           Contact Information
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -941,11 +941,11 @@ function DatoExtraido({
           <Button
             variant="ghost"
             size="sm"
-            className="h-5 w-5 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+            className="size-5 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
             onClick={() => setIsEditing(true)}
             title="Edit field"
           >
-            <Pencil className="h-3 w-3 text-muted-foreground hover:text-primary" />
+            <Pencil className="size-3 text-muted-foreground hover:text-primary" />
           </Button>
         )}
       </div>
@@ -965,10 +965,10 @@ function DatoExtraido({
           <Button 
             variant="ghost" 
             size="sm" 
-            className="h-9 w-9 p-0 hover:bg-green-50 hover:text-green-600"
+            className="size-9 p-0 hover:bg-green-50 hover:text-success-on-subtle"
             onClick={() => setIsEditing(false)}
           >
-            <CheckCircle2 className="h-4 w-4" />
+            <CheckCircle2 className="size-4" />
           </Button>
         </div>
       ) : (
@@ -1020,7 +1020,7 @@ function Paso3({
       {/* Search bar and add button */}
       <div className="flex gap-3 items-start relative z-10">
         <div className="flex-1 relative group">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
           <Input
             placeholder="Search by name, NIT..."
             value={searchTerm}
@@ -1068,7 +1068,7 @@ function Paso3({
                           <span>{cliente.contacto}</span>
                         </div>
                       </div>
-                      <Plus className="ml-auto h-4 w-4 opacity-50" />
+                      <Plus className="ml-auto size-4 opacity-50" />
                     </div>
                   ))}
                 </div>
@@ -1083,7 +1083,7 @@ function Paso3({
           }}
           className="bg-primary text-primary-foreground hover:bg-primary/90"
         >
-          <Plus className="h-4 w-4 mr-2" />
+          <Plus className="size-4 mr-2" />
           Add Client
         </Button>
       </div>
@@ -1116,7 +1116,7 @@ function Paso3({
                         variant="ghost"
                         onClick={() => onEditarCliente(cliente.id)}
                       >
-                        <Pencil className="h-4 w-4" />
+                        <Pencil className="size-4" />
                       </Button>
                       <Button
                         size="sm"
@@ -1128,7 +1128,7 @@ function Paso3({
                         }}
                         className="text-destructive hover:text-destructive"
                       >
-                        <Trash2 className="h-4 w-4" />
+                        <Trash2 className="size-4" />
                       </Button>
                     </div>
                   </TableCell>
@@ -1139,7 +1139,7 @@ function Paso3({
         </div>
       ) : (
         <Alert>
-          <AlertCircle className="h-4 w-4" />
+          <AlertCircle className="size-4" />
           <AlertDescription>
             No clients added yet. Click "Add Client" to get started.
           </AlertDescription>
@@ -1272,7 +1272,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold text-foreground">Compliance & Declarations</h3>
         <Badge variant="outline" className="gap-1 bg-muted">
-          <Info className="h-3 w-3" />
+          <Info className="size-3" />
           <span>Required Information</span>
         </Badge>
       </div>
@@ -1281,7 +1281,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
         {/* Financial Status */}
         <div className="space-y-4">
           <h4 className="text-sm font-medium text-primary flex items-center gap-2">
-            <Wallet className="h-4 w-4" />
+            <Wallet className="size-4" />
             Financial Status
           </h4>
           <div className="grid gap-4 md:grid-cols-2">
@@ -1317,7 +1317,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
         {/* Legal Compliance */}
         <div className="space-y-4">
           <h4 className="text-sm font-medium text-primary flex items-center gap-2">
-            <ShieldAlert className="h-4 w-4" />
+            <ShieldAlert className="size-4" />
             Legal Compliance
           </h4>
           <div className="grid gap-4 md:grid-cols-2">
@@ -1367,7 +1367,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
                   <Label htmlFor="pep" className="font-medium">PEP Status</Label>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <HelpCircle className="h-3 w-3 text-muted-foreground cursor-help" />
+                      <HelpCircle className="size-3 text-muted-foreground cursor-help" />
                     </TooltipTrigger>
                     <TooltipContent>
                       <p className="max-w-xs text-xs">Politically Exposed Persons (Decree 1674 of 2016)</p>
@@ -1416,7 +1416,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
                   <Label htmlFor="sarlaft" className="font-medium">SARLAFT / SAGRLAFT Policies</Label>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <HelpCircle className="h-3 w-3 text-muted-foreground cursor-help" />
+                      <HelpCircle className="size-3 text-muted-foreground cursor-help" />
                     </TooltipTrigger>
                     <TooltipContent>
                       <p className="max-w-xs text-xs">Anti-Money Laundering and Counter-Terrorism Financing Risk Management System</p>
@@ -1437,7 +1437,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
         {/* Authorizations */}
         <div className="space-y-4">
           <h4 className="text-sm font-medium text-primary flex items-center gap-2">
-            <FileCheck className="h-4 w-4" />
+            <FileCheck className="size-4" />
             Authorizations & Consent <span className="text-destructive">*</span>
           </h4>
           <div className="grid gap-3 rounded-lg border bg-muted p-5">
@@ -1502,7 +1502,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
                   </Label>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Info className="h-3 w-3 text-muted-foreground cursor-help" />
+                      <Info className="size-3 text-muted-foreground cursor-help" />
                     </TooltipTrigger>
                     <TooltipContent>
                       <p className="max-w-xs text-xs">Authorizes credit bureau queries and reports (e.g., Datacredito and Cifin).</p>

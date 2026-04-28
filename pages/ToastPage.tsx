@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Button } from "../components/ui/Button";
 import { toast } from "sonner";
 
 export function ToastPage() {
@@ -30,7 +30,7 @@ export function ToastPage() {
       
       // Main Code
       code={`import { toast } from "sonner"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/Button"
 
 export function ToastDemo() {
   return (

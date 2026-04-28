@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../components/ui/select";
-import { Label } from "../components/ui/label";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../components/ui/Select";
+import { Label } from "../components/ui/Label";
 import { Building2, Globe, CreditCard, MapPin } from "lucide-react";
 
 export function SelectPage() {
@@ -99,7 +99,7 @@ export function SelectPage() {
       }
       
       // Main Code
-      code={`import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+      code={`import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
 
 // Size variants
 <SelectTrigger size="sm">...</SelectTrigger>
@@ -360,19 +360,19 @@ export function SelectPage() {
                 <SelectContent>
                   <SelectItem value="office">
                     <div className="flex items-center gap-2">
-                      <Building2 className="h-4 w-4" />
+                      <Building2 className="size-4" />
                       <span>Office</span>
                     </div>
                   </SelectItem>
                   <SelectItem value="remote">
                     <div className="flex items-center gap-2">
-                      <Globe className="h-4 w-4" />
+                      <Globe className="size-4" />
                       <span>Remote</span>
                     </div>
                   </SelectItem>
                   <SelectItem value="hybrid">
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
+                      <MapPin className="size-4" />
                       <span>Hybrid</span>
                     </div>
                   </SelectItem>
@@ -389,13 +389,13 @@ export function SelectPage() {
   <SelectContent>
     <SelectItem value="office">
       <div className="flex items-center gap-2">
-        <Building2 className="h-4 w-4" />
+        <Building2 className="size-4" />
         <span>Office</span>
       </div>
     </SelectItem>
     <SelectItem value="remote">
       <div className="flex items-center gap-2">
-        <Globe className="h-4 w-4" />
+        <Globe className="size-4" />
         <span>Remote</span>
       </div>
     </SelectItem>
@@ -416,7 +416,7 @@ export function SelectPage() {
                   <SelectContent>
                     <SelectItem value="card">
                       <div className="flex items-center gap-2">
-                        <CreditCard className="h-4 w-4" />
+                        <CreditCard className="size-4" />
                         <span>Credit Card</span>
                       </div>
                     </SelectItem>

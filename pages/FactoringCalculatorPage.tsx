@@ -1,4 +1,4 @@
-import { FactoringCalculator } from "../components/patterns/factoring-calculator";
+import { FactoringCalculator } from "../components/patterns/FactoringCalculator";
 
 export function FactoringCalculatorPage() {
   return <FactoringCalculator />;

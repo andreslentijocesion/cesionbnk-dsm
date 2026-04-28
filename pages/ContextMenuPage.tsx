@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -12,7 +12,7 @@ import {
   ContextMenuSub,
   ContextMenuSubContent,
   ContextMenuSubTrigger,
-} from "../components/ui/context-menu";
+} from "../components/ui/ContextMenu";
 
 export function ContextMenuPage() {
   return (
@@ -76,7 +76,7 @@ export function ContextMenuPage() {
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuTrigger,
-} from "@/components/ui/context-menu"
+} from "@/components/ui/ContextMenu"
 
 export function ContextMenuDemo() {
   return (
@@ -119,7 +119,7 @@ export function ContextMenuDemo() {
                 <ContextMenuItem>Rename</ContextMenuItem>
                 <ContextMenuItem>Duplicate</ContextMenuItem>
                 <ContextMenuSeparator />
-                <ContextMenuItem className="text-red-600">Delete</ContextMenuItem>
+                <ContextMenuItem className="text-destructive">Delete</ContextMenuItem>
               </ContextMenuContent>
             </ContextMenu>
           ),
@@ -127,7 +127,7 @@ export function ContextMenuDemo() {
   {/* ... trigger */}
   <ContextMenuContent>
     <ContextMenuItem>Open</ContextMenuItem>
-    <ContextMenuItem className="text-red-600">Delete</ContextMenuItem>
+    <ContextMenuItem className="text-destructive">Delete</ContextMenuItem>
   </ContextMenuContent>
 </ContextMenu>`
         }

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { CurrencyInput } from '../components/ui/currency-input';
+import { CurrencyInput } from '../components/ui/CurrencyInput';
 
 const meta: Meta<typeof CurrencyInput> = {
   title: 'DSM/Primitives/CurrencyInput',

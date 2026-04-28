@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { ToggleGroup, ToggleGroupItem } from "../components/ui/toggle-group";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ToggleGroup, ToggleGroupItem } from "../components/ui/ToggleGroup";
 import { 
   Bold, 
   Italic, 
@@ -17,7 +17,7 @@ import {
   Smartphone,
   Tablet
 } from "lucide-react";
-import { Separator } from "../components/ui/separator";
+import { Separator } from "../components/ui/Separator";
 
 export function ToggleGroupPage() {
   return (
@@ -33,13 +33,13 @@ export function ToggleGroupPage() {
             <span className="text-muted-foreground">Single Selection</span>
             <ToggleGroup type="single" defaultValue="center">
               <ToggleGroupItem value="left" aria-label="Align left">
-                <AlignLeft className="h-4 w-4" />
+                <AlignLeft className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="center" aria-label="Align center">
-                <AlignCenter className="h-4 w-4" />
+                <AlignCenter className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="right" aria-label="Align right">
-                <AlignRight className="h-4 w-4" />
+                <AlignRight className="size-4" />
               </ToggleGroupItem>
             </ToggleGroup>
           </div>
@@ -48,13 +48,13 @@ export function ToggleGroupPage() {
             <span className="text-muted-foreground">Multiple Selection</span>
             <ToggleGroup type="multiple" defaultValue={["bold"]}>
               <ToggleGroupItem value="bold" aria-label="Toggle bold">
-                <Bold className="h-4 w-4" />
+                <Bold className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="italic" aria-label="Toggle italic">
-                <Italic className="h-4 w-4" />
+                <Italic className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="underline" aria-label="Toggle underline">
-                <Underline className="h-4 w-4" />
+                <Underline className="size-4" />
               </ToggleGroupItem>
             </ToggleGroup>
           </div>
@@ -62,7 +62,7 @@ export function ToggleGroupPage() {
       }
       
       // Main Code
-      code={`import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+      code={`import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { Bold, Italic, Underline } from "lucide-react";
 
 export function ToggleGroupDemo() {
@@ -71,26 +71,26 @@ export function ToggleGroupDemo() {
       {/* Single Selection */}
       <ToggleGroup type="single" defaultValue="center">
         <ToggleGroupItem value="left">
-          <AlignLeft className="h-4 w-4" />
+          <AlignLeft className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="center">
-          <AlignCenter className="h-4 w-4" />
+          <AlignCenter className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="right">
-          <AlignRight className="h-4 w-4" />
+          <AlignRight className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
       
       {/* Multiple Selection */}
       <ToggleGroup type="multiple">
         <ToggleGroupItem value="bold">
-          <Bold className="h-4 w-4" />
+          <Bold className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="italic">
-          <Italic className="h-4 w-4" />
+          <Italic className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="underline">
-          <Underline className="h-4 w-4" />
+          <Underline className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
     </div>
@@ -153,36 +153,36 @@ export function ToggleGroupDemo() {
           preview: (
             <ToggleGroup type="single" defaultValue="left">
               <ToggleGroupItem value="left" aria-label="Align left">
-                <AlignLeft className="h-4 w-4" />
+                <AlignLeft className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="center" aria-label="Align center">
-                <AlignCenter className="h-4 w-4" />
+                <AlignCenter className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="right" aria-label="Align right">
-                <AlignRight className="h-4 w-4" />
+                <AlignRight className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="justify" aria-label="Align justify">
-                <AlignJustify className="h-4 w-4" />
+                <AlignJustify className="size-4" />
               </ToggleGroupItem>
             </ToggleGroup>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { AlignLeft, AlignCenter, AlignRight, AlignJustify } from "lucide-react";
 
 export function AlignmentControls() {
   return (
     <ToggleGroup type="single" defaultValue="left">
       <ToggleGroupItem value="left" aria-label="Align left">
-        <AlignLeft className="h-4 w-4" />
+        <AlignLeft className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="center" aria-label="Align center">
-        <AlignCenter className="h-4 w-4" />
+        <AlignCenter className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="right" aria-label="Align right">
-        <AlignRight className="h-4 w-4" />
+        <AlignRight className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="justify" aria-label="Align justify">
-        <AlignJustify className="h-4 w-4" />
+        <AlignJustify className="size-4" />
       </ToggleGroupItem>
     </ToggleGroup>
   );
@@ -194,36 +194,36 @@ export function AlignmentControls() {
           preview: (
             <ToggleGroup type="multiple">
               <ToggleGroupItem value="bold" aria-label="Toggle bold">
-                <Bold className="h-4 w-4" />
+                <Bold className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="italic" aria-label="Toggle italic">
-                <Italic className="h-4 w-4" />
+                <Italic className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="underline" aria-label="Toggle underline">
-                <Underline className="h-4 w-4" />
+                <Underline className="size-4" />
               </ToggleGroupItem>
               <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
-                <Strikethrough className="h-4 w-4" />
+                <Strikethrough className="size-4" />
               </ToggleGroupItem>
             </ToggleGroup>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { Bold, Italic, Underline, Strikethrough } from "lucide-react";
 
 export function TextFormattingToolbar() {
   return (
     <ToggleGroup type="multiple">
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
-        <Bold className="h-4 w-4" />
+        <Bold className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="italic" aria-label="Toggle italic">
-        <Italic className="h-4 w-4" />
+        <Italic className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="underline" aria-label="Toggle underline">
-        <Underline className="h-4 w-4" />
+        <Underline className="size-4" />
       </ToggleGroupItem>
       <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
-        <Strikethrough className="h-4 w-4" />
+        <Strikethrough className="size-4" />
       </ToggleGroupItem>
     </ToggleGroup>
   );
@@ -236,13 +236,13 @@ export function TextFormattingToolbar() {
             <div className="flex flex-col gap-4">
               <ToggleGroup type="single" variant="outline" defaultValue="grid">
                 <ToggleGroupItem value="list" aria-label="List view">
-                  <List className="h-4 w-4" />
+                  <List className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="grid" aria-label="Grid view">
-                  <LayoutGrid className="h-4 w-4" />
+                  <LayoutGrid className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="table" aria-label="Table view">
-                  <Table className="h-4 w-4" />
+                  <Table className="size-4" />
                 </ToggleGroupItem>
               </ToggleGroup>
               
@@ -253,7 +253,7 @@ export function TextFormattingToolbar() {
               </ToggleGroup>
             </div>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { List, LayoutGrid, Table } from "lucide-react";
 
 export function OutlineVariant() {
@@ -262,13 +262,13 @@ export function OutlineVariant() {
       {/* With Icons */}
       <ToggleGroup type="single" variant="outline" defaultValue="grid">
         <ToggleGroupItem value="list">
-          <List className="h-4 w-4" />
+          <List className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="grid">
-          <LayoutGrid className="h-4 w-4" />
+          <LayoutGrid className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="table">
-          <Table className="h-4 w-4" />
+          <Table className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
       
@@ -292,7 +292,7 @@ export function OutlineVariant() {
               <ToggleGroupItem value="table">Table View</ToggleGroupItem>
             </ToggleGroup>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 
 export function TextLabels() {
   return (
@@ -310,35 +310,35 @@ export function TextLabels() {
           preview: (
             <ToggleGroup type="single" variant="outline" defaultValue="desktop">
               <ToggleGroupItem value="desktop" aria-label="Desktop view">
-                <Monitor className="mr-2 h-4 w-4" />
+                <Monitor className="mr-2 size-4" />
                 Desktop
               </ToggleGroupItem>
               <ToggleGroupItem value="tablet" aria-label="Tablet view">
-                <Tablet className="mr-2 h-4 w-4" />
+                <Tablet className="mr-2 size-4" />
                 Tablet
               </ToggleGroupItem>
               <ToggleGroupItem value="mobile" aria-label="Mobile view">
-                <Smartphone className="mr-2 h-4 w-4" />
+                <Smartphone className="mr-2 size-4" />
                 Mobile
               </ToggleGroupItem>
             </ToggleGroup>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { Monitor, Tablet, Smartphone } from "lucide-react";
 
 export function TextAndIcons() {
   return (
     <ToggleGroup type="single" variant="outline" defaultValue="desktop">
       <ToggleGroupItem value="desktop" aria-label="Desktop view">
-        <Monitor className="mr-2 h-4 w-4" />
+        <Monitor className="mr-2 size-4" />
         Desktop
       </ToggleGroupItem>
       <ToggleGroupItem value="tablet" aria-label="Tablet view">
-        <Tablet className="mr-2 h-4 w-4" />
+        <Tablet className="mr-2 size-4" />
         Tablet
       </ToggleGroupItem>
       <ToggleGroupItem value="mobile" aria-label="Mobile view">
-        <Smartphone className="mr-2 h-4 w-4" />
+        <Smartphone className="mr-2 size-4" />
         Mobile
       </ToggleGroupItem>
     </ToggleGroup>
@@ -352,42 +352,42 @@ export function TextAndIcons() {
             <div className="flex flex-col gap-4">
               <ToggleGroup type="single" size="sm" defaultValue="center">
                 <ToggleGroupItem value="left">
-                  <AlignLeft className="h-4 w-4" />
+                  <AlignLeft className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="center">
-                  <AlignCenter className="h-4 w-4" />
+                  <AlignCenter className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="right">
-                  <AlignRight className="h-4 w-4" />
+                  <AlignRight className="size-4" />
                 </ToggleGroupItem>
               </ToggleGroup>
               
               <ToggleGroup type="single" size="default" defaultValue="center">
                 <ToggleGroupItem value="left">
-                  <AlignLeft className="h-4 w-4" />
+                  <AlignLeft className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="center">
-                  <AlignCenter className="h-4 w-4" />
+                  <AlignCenter className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="right">
-                  <AlignRight className="h-4 w-4" />
+                  <AlignRight className="size-4" />
                 </ToggleGroupItem>
               </ToggleGroup>
               
               <ToggleGroup type="single" size="lg" defaultValue="center">
                 <ToggleGroupItem value="left">
-                  <AlignLeft className="h-5 w-5" />
+                  <AlignLeft className="size-5" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="center">
-                  <AlignCenter className="h-5 w-5" />
+                  <AlignCenter className="size-5" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="right">
-                  <AlignRight className="h-5 w-5" />
+                  <AlignRight className="size-5" />
                 </ToggleGroupItem>
               </ToggleGroup>
             </div>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { AlignLeft, AlignCenter, AlignRight } from "lucide-react";
 
 export function SizeVariants() {
@@ -396,39 +396,39 @@ export function SizeVariants() {
       {/* Small */}
       <ToggleGroup type="single" size="sm">
         <ToggleGroupItem value="left">
-          <AlignLeft className="h-4 w-4" />
+          <AlignLeft className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="center">
-          <AlignCenter className="h-4 w-4" />
+          <AlignCenter className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="right">
-          <AlignRight className="h-4 w-4" />
+          <AlignRight className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
       
       {/* Default */}
       <ToggleGroup type="single" size="default">
         <ToggleGroupItem value="left">
-          <AlignLeft className="h-4 w-4" />
+          <AlignLeft className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="center">
-          <AlignCenter className="h-4 w-4" />
+          <AlignCenter className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="right">
-          <AlignRight className="h-4 w-4" />
+          <AlignRight className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
       
       {/* Large */}
       <ToggleGroup type="single" size="lg">
         <ToggleGroupItem value="left">
-          <AlignLeft className="h-5 w-5" />
+          <AlignLeft className="size-5" />
         </ToggleGroupItem>
         <ToggleGroupItem value="center">
-          <AlignCenter className="h-5 w-5" />
+          <AlignCenter className="size-5" />
         </ToggleGroupItem>
         <ToggleGroupItem value="right">
-          <AlignRight className="h-5 w-5" />
+          <AlignRight className="size-5" />
         </ToggleGroupItem>
       </ToggleGroup>
     </div>
@@ -442,30 +442,30 @@ export function SizeVariants() {
             <div className="flex flex-col gap-4">
               <ToggleGroup type="single" disabled defaultValue="center">
                 <ToggleGroupItem value="left">
-                  <AlignLeft className="h-4 w-4" />
+                  <AlignLeft className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="center">
-                  <AlignCenter className="h-4 w-4" />
+                  <AlignCenter className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="right">
-                  <AlignRight className="h-4 w-4" />
+                  <AlignRight className="size-4" />
                 </ToggleGroupItem>
               </ToggleGroup>
               
               <ToggleGroup type="multiple" disabled defaultValue={["bold", "italic"]}>
                 <ToggleGroupItem value="bold">
-                  <Bold className="h-4 w-4" />
+                  <Bold className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="italic">
-                  <Italic className="h-4 w-4" />
+                  <Italic className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="underline">
-                  <Underline className="h-4 w-4" />
+                  <Underline className="size-4" />
                 </ToggleGroupItem>
               </ToggleGroup>
             </div>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
 import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight } from "lucide-react";
 
 export function DisabledState() {
@@ -474,26 +474,26 @@ export function DisabledState() {
       {/* Single disabled */}
       <ToggleGroup type="single" disabled defaultValue="center">
         <ToggleGroupItem value="left">
-          <AlignLeft className="h-4 w-4" />
+          <AlignLeft className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="center">
-          <AlignCenter className="h-4 w-4" />
+          <AlignCenter className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="right">
-          <AlignRight className="h-4 w-4" />
+          <AlignRight className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
       
       {/* Multiple disabled */}
       <ToggleGroup type="multiple" disabled defaultValue={["bold", "italic"]}>
         <ToggleGroupItem value="bold">
-          <Bold className="h-4 w-4" />
+          <Bold className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="italic">
-          <Italic className="h-4 w-4" />
+          <Italic className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="underline">
-          <Underline className="h-4 w-4" />
+          <Underline className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
     </div>
@@ -507,13 +507,13 @@ export function DisabledState() {
             <div className="flex flex-wrap gap-2">
               <ToggleGroup type="single" defaultValue="left">
                 <ToggleGroupItem value="left" aria-label="Align left">
-                  <AlignLeft className="h-4 w-4" />
+                  <AlignLeft className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="center" aria-label="Align center">
-                  <AlignCenter className="h-4 w-4" />
+                  <AlignCenter className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="right" aria-label="Align right">
-                  <AlignRight className="h-4 w-4" />
+                  <AlignRight className="size-4" />
                 </ToggleGroupItem>
               </ToggleGroup>
               
@@ -521,13 +521,13 @@ export function DisabledState() {
               
               <ToggleGroup type="multiple">
                 <ToggleGroupItem value="bold" aria-label="Toggle bold">
-                  <Bold className="h-4 w-4" />
+                  <Bold className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="italic" aria-label="Toggle italic">
-                  <Italic className="h-4 w-4" />
+                  <Italic className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="underline" aria-label="Toggle underline">
-                  <Underline className="h-4 w-4" />
+                  <Underline className="size-4" />
                 </ToggleGroupItem>
               </ToggleGroup>
               
@@ -535,16 +535,16 @@ export function DisabledState() {
               
               <ToggleGroup type="single">
                 <ToggleGroupItem value="bullet" aria-label="Bullet list">
-                  <List className="h-4 w-4" />
+                  <List className="size-4" />
                 </ToggleGroupItem>
                 <ToggleGroupItem value="numbered" aria-label="Numbered list">
-                  <ListOrdered className="h-4 w-4" />
+                  <ListOrdered className="size-4" />
                 </ToggleGroupItem>
               </ToggleGroup>
             </div>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { Separator } from "@/components/ui/separator";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+import { Separator } from "@/components/ui/Separator";
 import { 
   AlignLeft, 
   AlignCenter, 
@@ -562,13 +562,13 @@ export function TextEditorToolbar() {
       {/* Alignment */}
       <ToggleGroup type="single" defaultValue="left">
         <ToggleGroupItem value="left">
-          <AlignLeft className="h-4 w-4" />
+          <AlignLeft className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="center">
-          <AlignCenter className="h-4 w-4" />
+          <AlignCenter className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="right">
-          <AlignRight className="h-4 w-4" />
+          <AlignRight className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
       
@@ -577,13 +577,13 @@ export function TextEditorToolbar() {
       {/* Formatting */}
       <ToggleGroup type="multiple">
         <ToggleGroupItem value="bold">
-          <Bold className="h-4 w-4" />
+          <Bold className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="italic">
-          <Italic className="h-4 w-4" />
+          <Italic className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="underline">
-          <Underline className="h-4 w-4" />
+          <Underline className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
       
@@ -592,10 +592,10 @@ export function TextEditorToolbar() {
       {/* Lists */}
       <ToggleGroup type="single">
         <ToggleGroupItem value="bullet">
-          <List className="h-4 w-4" />
+          <List className="size-4" />
         </ToggleGroupItem>
         <ToggleGroupItem value="numbered">
-          <ListOrdered className="h-4 w-4" />
+          <ListOrdered className="size-4" />
         </ToggleGroupItem>
       </ToggleGroup>
     </div>

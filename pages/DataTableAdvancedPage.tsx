@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { DataTableAdvanced } from "../components/patterns/data-table-advanced";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { DataTableAdvanced } from "../components/patterns/DataTableAdvanced";
 
-const dataTableAdvancedCode = `import { DataTableAdvanced } from "@/components/patterns/data-table-advanced";
+const dataTableAdvancedCode = `import { DataTableAdvanced } from "@/components/patterns/DataTableAdvanced";
 
 export function DataTableAdvancedDemo() {
   return <DataTableAdvanced />;
@@ -27,7 +27,7 @@ export function DataTableAdvancedPage() {
               <p className="text-sm text-muted-foreground">Renders as the main content of a page with header and sidebar.</p>
             </div>
           ),
-          code: `import { DataTableAdvanced } from "@/components/patterns/data-table-advanced";
+          code: `import { DataTableAdvanced } from "@/components/patterns/DataTableAdvanced";
 
 // In your invoices module:
 <div className="space-y-4">

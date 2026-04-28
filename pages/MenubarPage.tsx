@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   Menubar,
   MenubarMenu,
@@ -15,8 +15,8 @@ import {
   MenubarSub,
   MenubarSubTrigger,
   MenubarSubContent,
-} from "../components/ui/menubar";
-import { Badge } from "../components/ui/badge";
+} from "../components/ui/Menubar";
+import { Badge } from "../components/ui/Badge";
 
 // ── Demos ──────────────────────────────────────────────────────────────────
 
@@ -208,7 +208,7 @@ export function MenubarPage() {
   Menubar, MenubarMenu, MenubarTrigger, MenubarContent,
   MenubarItem, MenubarSeparator, MenubarShortcut,
   MenubarSub, MenubarSubTrigger, MenubarSubContent,
-} from "@/components/ui/menubar";
+} from "@/components/ui/Menubar";
 
 export function MenubarDemo() {
   return (

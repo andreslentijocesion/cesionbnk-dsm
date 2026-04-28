@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   DocumentChecklist,
   type ChecklistDocument,
-} from "../components/patterns/document-checklist";
+} from "../components/patterns/DocumentChecklist";
 import { toast } from "sonner";
 
 const initialDocuments: ChecklistDocument[] = [
@@ -104,7 +104,7 @@ export function DocumentChecklistPage() {
       category="Patterns"
       atomicLevel="Organism"
       preview={<DocumentChecklistDemo />}
-      code={`import { DocumentChecklist } from "@/components/patterns/document-checklist"
+      code={`import { DocumentChecklist } from "@/components/patterns/DocumentChecklist"
 
 const documents = [
   {

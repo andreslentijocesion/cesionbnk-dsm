@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { VirtualizedList } from "../components/advanced/virtualized-list";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { VirtualizedList } from "../components/advanced/VirtualizedList";
 
-const virtualizedListCode = `import { VirtualizedList } from "@/components/advanced/virtualized-list";
+const virtualizedListCode = `import { VirtualizedList } from "@/components/advanced/VirtualizedList";
 
 export function VirtualizedListDemo() {
   const items = Array.from({ length: 1000 }, (_, i) => ({ id: i, label: \`Item \${i}\` }));

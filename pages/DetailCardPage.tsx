@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { DetailCard, DetailSection } from "../components/patterns/detail-card";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { DetailCard, DetailSection } from "../components/patterns/DetailCard";
+import { Badge } from "../components/ui/Badge";
+import { Button } from "../components/ui/Button";
 import { Pencil } from "lucide-react";
 
 function DetailCardDemo() {
@@ -57,7 +57,7 @@ export function DetailCardPage() {
       category="Patterns"
       atomicLevel="Molecule"
       preview={<DetailCardDemo />}
-      code={`import { DetailCard } from "@/components/patterns/detail-card"
+      code={`import { DetailCard } from "@/components/patterns/DetailCard"
 
 <DetailCard
   title="Datos de la Operación"
@@ -96,7 +96,7 @@ export function DetailCardPage() {
               />
             </div>
           ),
-          code: `import { DetailSection } from "@/components/patterns/detail-card"\n\n<DetailSection columns={3} fields={fields} />`,
+          code: `import { DetailSection } from "@/components/patterns/DetailCard"\n\n<DetailSection columns={3} fields={fields} />`,
         },
       ]}
     />

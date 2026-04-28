@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FactoringMaturityAlerts } from '../components/patterns/factoring-maturity-alerts';
+import { FactoringMaturityAlerts } from '../components/patterns/FactoringMaturityAlerts';
 
 const meta: Meta<typeof FactoringMaturityAlerts> = {
   title: 'DSM/Patterns/FactoringMaturityAlerts',

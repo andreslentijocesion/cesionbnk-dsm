@@ -1,8 +1,8 @@
 import React from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "../lib/utils";
-import { Button } from "../components/ui/button";
+import { Button } from "../components/ui/Button";
 import {
   Command,
   CommandEmpty,
@@ -10,12 +10,12 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "../components/ui/command";
+} from "../components/ui/Command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../components/ui/popover";
+} from "../components/ui/Popover";
 
 const frameworks = [
   { value: "next.js", label: "Next.js" },
@@ -47,7 +47,7 @@ export function ComboboxPage() {
               {value
                 ? frameworks.find((framework) => framework.value === value)?.label
                 : "Select framework..."}
-              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+              <ChevronsUpDown className="ml-2 size-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-[200px] p-0">
@@ -67,7 +67,7 @@ export function ComboboxPage() {
                     >
                       <Check
                         className={cn(
-                          "mr-2 h-4 w-4",
+                          "mr-2 size-4",
                           value === framework.value ? "opacity-100 text-foreground" : "opacity-0"
                         )}
                       />
@@ -84,7 +84,7 @@ export function ComboboxPage() {
 import { Check, ChevronsUpDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import {
   Command,
   CommandEmpty,
@@ -93,12 +93,12 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/components/ui/command";
+} from "@/components/ui/Command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@/components/ui/Popover";
 
 const frameworks = [
   { value: "next.js", label: "Next.js" },
@@ -124,7 +124,7 @@ export function ComboboxDemo() {
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
             : "Select framework..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <ChevronsUpDown className="ml-2 size-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -144,7 +144,7 @@ export function ComboboxDemo() {
                 >
                   <Check
                     className={cn(
-                      "mr-2 h-4 w-4",
+                      "mr-2 size-4",
                       value === framework.value ? "opacity-100 text-foreground" : "opacity-0"
                     )}
                   />

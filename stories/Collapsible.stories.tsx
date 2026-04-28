@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../components/ui/collapsible';
-import { Button } from '../components/ui/button';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../components/ui/Collapsible';
+import { Button } from '../components/ui/Button';
 import { ChevronDown } from 'lucide-react';
 
 const meta: Meta = {

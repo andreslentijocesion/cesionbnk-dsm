@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { RiskIndicator } from "../components/patterns/risk-indicator";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { RiskIndicator } from "../components/patterns/RiskIndicator";
 
 const goodFactors = [
   { label: "Historial de pago",   value: "Excelente",  impact: "positive" as const },
@@ -43,7 +43,7 @@ export function RiskIndicatorPage() {
           />
         </div>
       }
-      code={`import { RiskIndicator } from "@/components/patterns/risk-indicator"
+      code={`import { RiskIndicator } from "@/components/patterns/RiskIndicator"
 
 <RiskIndicator
   score={820}

@@ -3,7 +3,7 @@ import {
   ContextMenu, ContextMenuContent, ContextMenuItem,
   ContextMenuSeparator, ContextMenuShortcut, ContextMenuSub,
   ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuTrigger,
-} from '../components/ui/context-menu';
+} from '../components/ui/ContextMenu';
 
 const meta: Meta = {
   title: 'DSM/Components/ContextMenu',

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { BottomSheet } from '../components/ui/bottom-sheet';
-import { Button } from '../components/ui/button';
-import { Badge } from '../components/ui/badge';
+import { BottomSheet } from '../components/ui/BottomSheet';
+import { Button } from '../components/ui/Button';
+import { Badge } from '../components/ui/Badge';
 
 const meta: Meta = {
   title: 'DSM/Components/BottomSheet',

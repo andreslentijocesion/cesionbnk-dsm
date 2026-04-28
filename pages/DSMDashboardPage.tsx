@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-import { Separator } from "../components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/collapsible";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
+import { Badge } from "../components/ui/Badge";
+import { Separator } from "../components/ui/Separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/Collapsible";
 import { CheckCircle2, Code2, Sparkles, Layers, Palette, MousePointerClick, MessageSquare, Database, FileCode, Layout, TrendingUp, Award, BookOpen, Shield, GitBranch, Component, Box, Puzzle, Calendar, Package, Wrench, AlertTriangle, Rocket, Zap, FileText, BarChart3, ChevronDown, ChevronRight, Eye, Keyboard, Accessibility as AccessibilityIcon, Paintbrush } from "lucide-react";
 import { Logo } from "../components/Logo";
-import { Progress } from "../components/ui/progress";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { ContrastDot } from "../components/ui/dynamic-previews";
+import { Progress } from "../components/ui/Progress";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ContrastDot } from "../components/ui/DynamicPreviews";
 
 // ── Navigation helper ──
 function navigateTo(pageId: string) {
@@ -505,9 +505,9 @@ function VersionCard({ entry, defaultOpen = false }: { entry: VersionEntry; defa
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 {isOpen ? (
-                  <ChevronDown className="h-4 w-4 text-muted-foreground shrink-0" />
+                  <ChevronDown className="size-4 text-muted-foreground shrink-0" />
                 ) : (
-                  <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0" />
+                  <ChevronRight className="size-4 text-muted-foreground shrink-0" />
                 )}
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-foreground">v{entry.version}</span>
@@ -522,7 +522,7 @@ function VersionCard({ entry, defaultOpen = false }: { entry: VersionEntry; defa
                 </div>
               </div>
               <span className="text-xs text-muted-foreground flex items-center gap-1.5">
-                <Calendar className="h-3 w-3" />
+                <Calendar className="size-3" />
                 {entry.date}
               </span>
             </div>
@@ -533,7 +533,7 @@ function VersionCard({ entry, defaultOpen = false }: { entry: VersionEntry; defa
             {entry.sections.map((section, sIdx) => (
               <div key={sIdx}>
                 <div className="flex items-center gap-2 mb-2">
-                  <section.icon className={`h-4 w-4 ${section.title.includes("Breaking") ? "text-destructive" : "text-primary"}`} />
+                  <section.icon className={`size-4 ${section.title.includes("Breaking") ? "text-destructive" : "text-primary"}`} />
                   <h3 className="text-sm text-foreground">{section.title}</h3>
                 </div>
                 <ul className="space-y-1 ml-6">
@@ -571,7 +571,7 @@ function DSMDashboardContent() {
       path: "/components/patterns/",
       icon: Box,
       count: 38,
-      color: "text-blue-500",
+      color: "text-info-on-subtle",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-500/30",
       description: "ApprovalFlow, AuditLog, CreditScoreCard, DataTableAdvanced, FactoringDashboard, MultiStepWizard, StatCard, etc.",
@@ -592,10 +592,10 @@ function DSMDashboardContent() {
 
   // ── Category Breakdown (from registry.ts — source of truth) ──
   const categories = [
-    { name: "Actions",      icon: MousePointerClick, count: 5,  color: "text-blue-500",   bgColor: "bg-blue-500/10",   pageId: "button"             },
+    { name: "Actions",      icon: MousePointerClick, count: 5,  color: "text-info-on-subtle",   bgColor: "bg-blue-500/10",   pageId: "button"             },
     { name: "Forms",        icon: FileCode,          count: 23, color: "text-success",     bgColor: "bg-success/10",    pageId: "input"              },
     { name: "Navigation",   icon: Layers,            count: 8,  color: "text-purple-500",  bgColor: "bg-purple-500/10", pageId: "tabs"               },
-    { name: "Data Display", icon: Database,          count: 6,  color: "text-orange-500",  bgColor: "bg-orange-500/10", pageId: "table"              },
+    { name: "Data Display", icon: Database,          count: 6,  color: "text-warning-on-subtle",  bgColor: "bg-orange-500/10", pageId: "table"              },
     { name: "Feedback",     icon: MessageSquare,     count: 13, color: "text-pink-500",    bgColor: "bg-pink-500/10",   pageId: "alert"              },
     { name: "Layout",       icon: Layout,            count: 9,  color: "text-indigo-500",  bgColor: "bg-indigo-500/10", pageId: "accordion"          },
     { name: "Factoring",    icon: Award,             count: 12, color: "text-emerald-500", bgColor: "bg-emerald-500/10",pageId: "factoring-dashboard"},
@@ -618,7 +618,7 @@ function DSMDashboardContent() {
         </div>
         <div className="flex items-center gap-2">
           <Badge variant="default" className="gap-1.5">
-            <GitBranch className="h-3 w-3" />
+            <GitBranch className="size-3" />
             v0.4.0
           </Badge>
           <Badge variant="outline" className="gap-1.5 text-muted-foreground">
@@ -635,7 +635,7 @@ function DSMDashboardContent() {
           <CardContent className="pt-5 pb-4 px-5">
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs text-muted-foreground">Components</span>
-              <Component className="h-4 w-4 text-primary" />
+              <Component className="size-4 text-primary" />
             </div>
             <div className="text-2xl text-foreground">{totalComponents}</div>
           </CardContent>
@@ -644,7 +644,7 @@ function DSMDashboardContent() {
           <CardContent className="pt-5 pb-4 px-5">
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs text-muted-foreground">Showcase Pages</span>
-              <FileText className="h-4 w-4 text-blue-500" />
+              <FileText className="size-4 text-info-on-subtle" />
             </div>
             <div className="text-2xl text-foreground">128</div>
           </CardContent>
@@ -653,7 +653,7 @@ function DSMDashboardContent() {
           <CardContent className="pt-5 pb-4 px-5">
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs text-muted-foreground">Props Coverage</span>
-              <Code2 className="h-4 w-4 text-emerald-500" />
+              <Code2 className="size-4 text-emerald-500" />
             </div>
             <div className="text-2xl text-foreground">100%</div>
           </CardContent>
@@ -662,7 +662,7 @@ function DSMDashboardContent() {
           <CardContent className="pt-5 pb-4 px-5">
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs text-muted-foreground">WCAG 2.1 AA</span>
-              <Shield className="h-4 w-4 text-success" />
+              <Shield className="size-4 text-success" />
             </div>
             <div className="text-2xl text-foreground">100%</div>
           </CardContent>
@@ -680,7 +680,7 @@ function DSMDashboardContent() {
                 <CardContent className="pt-4 pb-3 px-4 space-y-2">
                   <div className="flex items-center gap-2.5">
                     <div className={`p-1.5 rounded-lg ${layer.bgColor}`}>
-                      <layer.icon className={`h-4 w-4 ${layer.color}`} />
+                      <layer.icon className={`size-4 ${layer.color}`} />
                     </div>
                     <div>
                       <div className="text-sm text-foreground">{layer.name}</div>
@@ -710,7 +710,7 @@ function DSMDashboardContent() {
                 <CardContent className="pt-3 pb-2.5 px-3">
                   <div className="flex items-center gap-2 mb-0.5">
                     <div className={`p-1.5 rounded-md ${cat.bgColor}`}>
-                      <cat.icon className={`h-3.5 w-3.5 ${cat.color}`} />
+                      <cat.icon className={`size-3.5 .5 ${cat.color}`} />
                     </div>
                     <span className="text-sm text-foreground group-hover:text-primary transition-colors">{cat.name}</span>
                   </div>
@@ -727,7 +727,7 @@ function DSMDashboardContent() {
         {/* Changelog */}
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <GitBranch className="h-5 w-5 text-primary" />
+            <GitBranch className="size-5 text-primary" />
             <h2 className="text-lg text-foreground">Changelog</h2>
             <Badge variant="outline" className="text-[10px] px-1.5 py-0">
               {versionHistory.length} releases
@@ -756,7 +756,7 @@ function DSMDashboardContent() {
                 <Card>
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
-                      <Layers className="h-5 w-5 text-primary" />
+                      <Layers className="size-5 text-primary" />
                       <CardTitle className="text-foreground text-sm">Component Distribution</CardTitle>
                     </div>
                   </CardHeader>
@@ -784,7 +784,7 @@ function DSMDashboardContent() {
                 <Card>
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
-                      <BarChart3 className="h-5 w-5 text-primary" />
+                      <BarChart3 className="size-5 text-primary" />
                       <CardTitle className="text-foreground text-sm">System Health</CardTitle>
                     </div>
                   </CardHeader>
@@ -815,7 +815,7 @@ function DSMDashboardContent() {
                 <CardContent className="pt-6">
                   <div className="relative border-l border-primary/20 ml-4 space-y-8 py-2">
                     <div className="relative pl-8">
-                      <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-success bg-background" />
+                      <div className="absolute -left-1.5 top-1.5 size-3 rounded-full border-2 border-success bg-background" />
                       <div className="mb-1 text-sm text-success">Completado — v0.4.0</div>
                       <h3 className="text-foreground">Storybook Stories</h3>
                       <p className="text-sm text-muted-foreground mb-2">
@@ -824,7 +824,7 @@ function DSMDashboardContent() {
                       <Badge variant="success-soft">Done</Badge>
                     </div>
                     <div className="relative pl-8">
-                      <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background" />
+                      <div className="absolute -left-1.5 top-1.5 size-3 rounded-full border-2 border-primary bg-background" />
                       <div className="mb-1 text-sm text-primary">Q2 2026</div>
                       <h3 className="text-foreground">Figma Plugin Sync</h3>
                       <p className="text-sm text-muted-foreground mb-2">
@@ -833,7 +833,7 @@ function DSMDashboardContent() {
                       <Badge variant="outline">In Progress</Badge>
                     </div>
                     <div className="relative pl-8">
-                      <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-muted-foreground bg-background" />
+                      <div className="absolute -left-1.5 top-1.5 size-3 rounded-full border-2 border-muted-foreground bg-background" />
                       <div className="mb-1 text-sm text-muted-foreground">Q3 2026</div>
                       <h3 className="text-foreground">Performance Optimization</h3>
                       <p className="text-sm text-muted-foreground mb-2">
@@ -842,7 +842,7 @@ function DSMDashboardContent() {
                       <Badge variant="neutral-soft-outline">Planned</Badge>
                     </div>
                     <div className="relative pl-8">
-                      <div className="absolute -left-1.5 top-1.5 h-3 w-3 rounded-full border-2 border-muted-foreground bg-background" />
+                      <div className="absolute -left-1.5 top-1.5 size-3 rounded-full border-2 border-muted-foreground bg-background" />
                       <div className="mb-1 text-sm text-muted-foreground">Q3 2026</div>
                       <h3 className="text-foreground">Mobile-first Patterns</h3>
                       <p className="text-sm text-muted-foreground mb-2">
@@ -860,7 +860,7 @@ function DSMDashboardContent() {
         {/* WCAG Accessibility */}
         <section>
           <div className="flex items-center gap-3 mb-4">
-            <AccessibilityIcon className="h-5 w-5 text-success" />
+            <AccessibilityIcon className="size-5 text-success" />
             <h2 className="text-lg text-foreground">WCAG 2.1 Compliance</h2>
             <Badge variant="success-soft-outline">AA</Badge>
           </div>
@@ -885,7 +885,7 @@ function DSMDashboardContent() {
               <CardContent className="pt-4 pb-3 px-4">
                 <div className="text-xs text-muted-foreground mb-1">Conformance</div>
                 <div className="flex items-center gap-1.5 mb-1.5">
-                  <CheckCircle2 className="h-5 w-5 text-success" />
+                  <CheckCircle2 className="size-5 text-success" />
                   <span className="text-lg text-foreground">WCAG 2.1</span>
                 </div>
                 <p className="text-xs text-muted-foreground">Level AA</p>
@@ -951,7 +951,7 @@ function DSMDashboardContent() {
                         {group.items.map((item) => (
                           <div key={item.id} className="flex items-center justify-between py-1.5 px-2 rounded bg-success-subtle dark:bg-success/10">
                             <div className="flex items-center gap-2">
-                              <CheckCircle2 className="h-3.5 w-3.5 text-success shrink-0" />
+                              <CheckCircle2 className="size-3.5 .5 text-success shrink-0" />
                               <span className="text-xs text-muted-foreground">{item.id}</span>
                               <span className="text-sm text-foreground">{item.name}</span>
                             </div>
@@ -992,7 +992,7 @@ function DSMDashboardContent() {
                   <Card key={feature.title}>
                     <CardHeader className="pb-2">
                       <div className="flex items-center gap-2">
-                        <feature.icon className="h-4 w-4 text-primary" />
+                        <feature.icon className="size-4 text-primary" />
                         <CardTitle className="text-sm text-foreground">{feature.title}</CardTitle>
                       </div>
                     </CardHeader>
@@ -1000,7 +1000,7 @@ function DSMDashboardContent() {
                       <div className="space-y-1.5">
                         {feature.items.map((item) => (
                           <div key={item} className="flex items-center gap-2 py-1">
-                            <CheckCircle2 className="h-3.5 w-3.5 text-success shrink-0" />
+                            <CheckCircle2 className="size-3.5 .5 text-success shrink-0" />
                             <span className="text-sm text-muted-foreground">{item}</span>
                           </div>
                         ))}
@@ -1028,9 +1028,9 @@ function DSMDashboardContent() {
                       <div key={c.name} className="flex items-center justify-between p-3 border rounded-lg">
                         <div className="flex items-center gap-3">
                           <div className="flex items-center gap-1.5">
-                            <ContrastDot className="w-5 h-5 rounded border" color={c.fg} />
+                            <ContrastDot className="size-5 rounded border" color={c.fg} />
                             <span className="text-xs text-muted-foreground">on</span>
-                            <ContrastDot className="w-5 h-5 rounded border" color={c.bg} />
+                            <ContrastDot className="size-5 rounded border" color={c.bg} />
                           </div>
                           <span className="text-sm text-foreground">{c.name}</span>
                         </div>
@@ -1053,20 +1053,20 @@ function DSMDashboardContent() {
         <CardContent className="py-4 px-5">
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3 justify-between">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="h-4 w-4 text-primary" />
+              <CheckCircle2 className="size-4 text-primary" />
               <span className="text-sm text-foreground">System ready for production</span>
             </div>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5">
-                <Palette className="h-3 w-3" />
+                <Palette className="size-3" />
                 CSS Tokens
               </span>
               <span className="flex items-center gap-1.5">
-                <Code2 className="h-3 w-3" />
+                <Code2 className="size-3" />
                 TypeScript Strict
               </span>
               <span className="flex items-center gap-1.5">
-                <Shield className="h-3 w-3" />
+                <Shield className="size-3" />
                 Dark Mode
               </span>
             </div>

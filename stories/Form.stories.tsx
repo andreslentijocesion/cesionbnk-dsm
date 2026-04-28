@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { useForm } from 'react-hook-form';
 import {
   Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage,
-} from '../components/ui/form';
-import { Input } from '../components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
-import { Textarea } from '../components/ui/textarea';
-import { Button } from '../components/ui/button';
+} from '../components/ui/Form';
+import { Input } from '../components/ui/Input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/Select';
+import { Textarea } from '../components/ui/Textarea';
+import { Button } from '../components/ui/Button';
 
 const meta: Meta = {
   title: 'DSM/Components/Form',

@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { SignaturePanel, type Signatory } from "../components/patterns/signature-panel";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { SignaturePanel, type Signatory } from "../components/patterns/SignaturePanel";
 
 const signatories: Signatory[] = [
   { id: "1", name: "Carlos Riquelme", role: "Gerente General",     email: "c.riquelme@empresa.com", status: "signed",   order: 1, signedAt: "07/03/2025 09:14" },
@@ -39,7 +39,7 @@ export function SignaturePanelPage() {
           />
         </div>
       }
-      code={`import { SignaturePanel } from "@/components/patterns/signature-panel"
+      code={`import { SignaturePanel } from "@/components/patterns/SignaturePanel"
 
 <SignaturePanel
   title="Autorización de desembolso"

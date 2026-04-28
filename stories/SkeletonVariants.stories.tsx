@@ -9,7 +9,7 @@ import {
   SkeletonKpiCard,
   SkeletonKpiCardGroup,
   SkeletonProfile,
-} from "../components/ui/skeleton-variants";
+} from "../components/ui/SkeletonVariants";
 
 const meta: Meta = {
   title: "UI/SkeletonVariants",

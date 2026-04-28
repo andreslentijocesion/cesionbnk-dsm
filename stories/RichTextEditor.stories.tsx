@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RichTextEditor } from '../components/advanced/rich-text-editor';
+import { RichTextEditor } from '../components/advanced/RichTextEditor';
 
 const meta: Meta<typeof RichTextEditor> = {
   title: 'DSM/Advanced/RichTextEditor',

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DocumentChecklist, type ChecklistDocument } from '../components/patterns/document-checklist';
+import { DocumentChecklist, type ChecklistDocument } from '../components/patterns/DocumentChecklist';
 
 const fullDocs: ChecklistDocument[] = [
   { id: '1', name: 'RUT empresa',         required: true,  status: 'approved',  fileName: 'rut.pdf',    uploadedAt: '12/02/2025' },

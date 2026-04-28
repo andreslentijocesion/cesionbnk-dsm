@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Slider } from "../components/ui/slider";
-import { Label } from "../components/ui/label";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Slider } from "../components/ui/Slider";
+import { Label } from "../components/ui/Label";
 import { Volume2, VolumeX, Sun, DollarSign, Gauge } from "lucide-react";
 import { useState } from "react";
 
@@ -21,7 +21,7 @@ export function SliderPage() {
       }
       
       // Main Code
-      code={`import { Slider } from "@/components/ui/slider";
+      code={`import { Slider } from "@/components/ui/Slider";
 
 export function SliderDemo() {
   return (
@@ -98,8 +98,8 @@ export function SliderDemo() {
               <Slider defaultValue={[33]} max={100} step={1} />
             </div>
           ),
-          code: `import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
+          code: `import { Slider } from "@/components/ui/Slider";
+import { Label } from "@/components/ui/Label";
 
 export function BasicSlider() {
   return (
@@ -116,8 +116,8 @@ export function BasicSlider() {
           preview: (
             <VolumeControlExample />
           ),
-          code: `import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
+          code: `import { Slider } from "@/components/ui/Slider";
+import { Label } from "@/components/ui/Label";
 import { Volume2, VolumeX } from "lucide-react";
 import { useState } from "react";
 
@@ -133,7 +133,7 @@ export function VolumeControl() {
         </span>
       </div>
       <div className="flex items-center gap-3">
-        <VolumeX className="h-4 w-4 text-muted-foreground" />
+        <VolumeX className="size-4 text-muted-foreground" />
         <Slider
           value={volume}
           onValueChange={setVolume}
@@ -141,7 +141,7 @@ export function VolumeControl() {
           step={1}
           className="flex-1"
         />
-        <Volume2 className="h-4 w-4 text-muted-foreground" />
+        <Volume2 className="size-4 text-muted-foreground" />
       </div>
     </div>
   );
@@ -166,8 +166,8 @@ export function VolumeControl() {
               </div>
             </div>
           ),
-          code: `import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
+          code: `import { Slider } from "@/components/ui/Slider";
+import { Label } from "@/components/ui/Label";
 
 export function DifferentSteps() {
   return (
@@ -196,8 +196,8 @@ export function DifferentSteps() {
           preview: (
             <PriceRangeExample />
           ),
-          code: `import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
+          code: `import { Slider } from "@/components/ui/Slider";
+import { Label } from "@/components/ui/Label";
 import { DollarSign } from "lucide-react";
 import { useState } from "react";
 
@@ -209,7 +209,7 @@ export function PriceRange() {
       <div className="flex items-center justify-between">
         <Label>Maximum Price</Label>
         <div className="flex items-center gap-1">
-          <DollarSign className="h-3 w-3 text-muted-foreground" />
+          <DollarSign className="size-3 text-muted-foreground" />
           <span className="text-sm font-medium">
             {price[0].toLocaleString()}
           </span>
@@ -236,8 +236,8 @@ export function PriceRange() {
           preview: (
             <BrightnessControlExample />
           ),
-          code: `import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
+          code: `import { Slider } from "@/components/ui/Slider";
+import { Label } from "@/components/ui/Label";
 import { Sun } from "lucide-react";
 import { useState } from "react";
 
@@ -248,7 +248,7 @@ export function BrightnessControl() {
     <div className="space-y-2">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Sun className="h-4 w-4 text-muted-foreground" />
+          <Sun className="size-4 text-muted-foreground" />
           <Label>Brightness</Label>
         </div>
         <span className="text-muted-foreground">
@@ -272,8 +272,8 @@ export function BrightnessControl() {
           preview: (
             <PerformanceGaugeExample />
           ),
-          code: `import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
+          code: `import { Slider } from "@/components/ui/Slider";
+import { Label } from "@/components/ui/Label";
 import { Gauge } from "lucide-react";
 import { useState } from "react";
 
@@ -281,9 +281,9 @@ export function PerformanceGauge() {
   const [performance, setPerformance] = useState([65]);
   
   const getPerformanceLevel = (value: number) => {
-    if (value < 30) return { label: "Low", color: "text-red-500" };
+    if (value < 30) return { label: "Low", color: "text-destructive" };
     if (value < 70) return { label: "Medium", color: "text-yellow-500" };
-    return { label: "High", color: "text-green-500" };
+    return { label: "High", color: "text-success-on-subtle" };
   };
   
   const level = getPerformanceLevel(performance[0]);
@@ -292,7 +292,7 @@ export function PerformanceGauge() {
     <div className="space-y-2">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Gauge className="h-4 w-4 text-muted-foreground" />
+          <Gauge className="size-4 text-muted-foreground" />
           <Label>Performance</Label>
         </div>
         <span className={\`text-sm font-medium \${level.color}\`}>
@@ -315,8 +315,8 @@ export function PerformanceGauge() {
           preview: (
             <RangeSliderExample />
           ),
-          code: `import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
+          code: `import { Slider } from "@/components/ui/Slider";
+import { Label } from "@/components/ui/Label";
 import { useState } from "react";
 
 export function RangeSlider() {
@@ -360,8 +360,8 @@ export function RangeSlider() {
               </div>
             </div>
           ),
-          code: `import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
+          code: `import { Slider } from "@/components/ui/Slider";
+import { Label } from "@/components/ui/Label";
 
 export function DisabledSlider() {
   return (
@@ -397,7 +397,7 @@ function VolumeControlExample() {
         </span>
       </div>
       <div className="flex items-center gap-3">
-        <VolumeX className="h-4 w-4 text-muted-foreground" />
+        <VolumeX className="size-4 text-muted-foreground" />
         <Slider
           value={volume}
           onValueChange={setVolume}
@@ -405,7 +405,7 @@ function VolumeControlExample() {
           step={1}
           className="flex-1"
         />
-        <Volume2 className="h-4 w-4 text-muted-foreground" />
+        <Volume2 className="size-4 text-muted-foreground" />
       </div>
     </div>
   );
@@ -419,7 +419,7 @@ function PriceRangeExample() {
       <div className="flex items-center justify-between">
         <Label>Maximum Price</Label>
         <div className="flex items-center gap-1">
-          <DollarSign className="h-3 w-3 text-muted-foreground" />
+          <DollarSign className="size-3 text-muted-foreground" />
           <span className="font-medium">
             {price[0].toLocaleString()}
           </span>
@@ -447,7 +447,7 @@ function BrightnessControlExample() {
     <div className="w-full max-w-md space-y-2">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Sun className="h-4 w-4 text-muted-foreground" />
+          <Sun className="size-4 text-muted-foreground" />
           <Label>Brightness</Label>
         </div>
         <span className="text-muted-foreground">
@@ -469,9 +469,9 @@ function PerformanceGaugeExample() {
   const [performance, setPerformance] = useState([65]);
   
   const getPerformanceLevel = (value: number) => {
-    if (value < 30) return { label: "Low", color: "text-red-500" };
+    if (value < 30) return { label: "Low", color: "text-destructive" };
     if (value < 70) return { label: "Medium", color: "text-yellow-500" };
-    return { label: "High", color: "text-green-500" };
+    return { label: "High", color: "text-success-on-subtle" };
   };
   
   const level = getPerformanceLevel(performance[0]);
@@ -480,7 +480,7 @@ function PerformanceGaugeExample() {
     <div className="w-full max-w-md space-y-2">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Gauge className="h-4 w-4 text-muted-foreground" />
+          <Gauge className="size-4 text-muted-foreground" />
           <Label>Performance</Label>
         </div>
         <span className={`font-medium ${level.color}`}>

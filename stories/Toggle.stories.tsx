@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Toggle } from '../components/ui/toggle';
-import { ToggleGroup, ToggleGroupItem } from '../components/ui/toggle-group';
+import { Toggle } from '../components/ui/Toggle';
+import { ToggleGroup, ToggleGroupItem } from '../components/ui/ToggleGroup';
 import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight, List, Grid } from 'lucide-react';
 import { useState } from 'react';
 

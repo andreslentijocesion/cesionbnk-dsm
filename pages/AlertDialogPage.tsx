@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,16 +9,16 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../components/ui/alert-dialog";
-import { Button } from "../components/ui/button";
+} from "../components/ui/AlertDialog";
+import { Button } from "../components/ui/Button";
 import { AlertTriangle, Trash2, LogOut, Info } from "lucide-react";
 
 const code = `import {
   AlertDialog, AlertDialogAction, AlertDialogCancel,
   AlertDialogContent, AlertDialogDescription, AlertDialogFooter,
   AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
+} from "@/components/ui/AlertDialog";
+import { Button } from "@/components/ui/Button";
 
 export function AlertDialogDemo() {
   return (
@@ -53,7 +53,7 @@ export function AlertDialogPage() {
         <AlertDialog>
           <AlertDialogTrigger asChild>
             <Button variant="destructive">
-              <Trash2 className="h-4 w-4 mr-2" />
+              <Trash2 className="size-4 mr-2" />
               Delete Account
             </Button>
           </AlertDialogTrigger>
@@ -94,14 +94,14 @@ export function AlertDialogPage() {
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button variant="outline">
-                  <AlertTriangle className="h-4 w-4 mr-2" />
+                  <AlertTriangle className="size-4 mr-2" />
                   View Warning
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
                   <AlertDialogTitle className="flex items-center gap-2">
-                    <AlertTriangle className="h-5 w-5 text-yellow-600" />
+                    <AlertTriangle className="size-5 text-yellow-600" />
                     Unsaved Changes
                   </AlertDialogTitle>
                   <AlertDialogDescription>
@@ -141,7 +141,7 @@ export function AlertDialogPage() {
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button variant="outline">
-                  <LogOut className="h-4 w-4 mr-2" />
+                  <LogOut className="size-4 mr-2" />
                   Log Out
                 </Button>
               </AlertDialogTrigger>
@@ -182,14 +182,14 @@ export function AlertDialogPage() {
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button variant="outline">
-                  <Info className="h-4 w-4 mr-2" />
+                  <Info className="size-4 mr-2" />
                   View Information
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
                   <AlertDialogTitle className="flex items-center gap-2">
-                    <Info className="h-5 w-5 text-blue-600" />
+                    <Info className="size-5 text-info-on-subtle" />
                     Update Available
                   </AlertDialogTitle>
                   <AlertDialogDescription>

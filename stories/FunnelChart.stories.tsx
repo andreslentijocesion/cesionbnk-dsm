@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FunnelChart } from '../components/advanced/funnel-chart';
+import { FunnelChart } from '../components/advanced/FunnelChart';
 
 const meta: Meta<typeof FunnelChart> = {
   title: 'DSM/Advanced/FunnelChart',

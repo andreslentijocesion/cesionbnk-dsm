@@ -39,8 +39,6 @@
   --success-foreground: #ffffff;
   --warning: #f59e0b;
   --warning-foreground: #ffffff;
-  --caution: #f97316;
-  --caution-foreground: #ffffff;
   --info: #3b82f6;
   --info-foreground: #ffffff;
 
@@ -48,13 +46,11 @@
   --success-subtle: #f0fdf4;
   --destructive-subtle: #fef2f2;
   --warning-subtle: #fef3c7;
-  --caution-subtle: #fff7ed;
   --info-subtle: #eff6ff;
   --secondary-subtle: #ede9fe;
   --success-on-subtle: #15803d;
   --destructive-on-subtle: #b91c1c;
   --warning-on-subtle: #b45309;
-  --caution-on-subtle: #c2410c;
   --info-on-subtle: #1d4ed8;
   --secondary-on-subtle: #7c3aed;
 
@@ -121,18 +117,18 @@
 /* ── Dark Mode ── */
 .dark {
   /* [TOKENS:DARK:START] */
-  /* Brand — Gray-400 mantiene identidad slate/zinc pero visible en dark */
-  --primary: #9ca3af;
+  /* Brand */
+  --primary: #d1d5db;
   --primary-foreground: #09090b;
   --secondary: #796eff;
-  --secondary-foreground: #ffffff;
+  --secondary-foreground: #09090b;
 
   /* Surfaces */
   --background: #09090b;
   --foreground: #fafafa;
-  --card: #18181b;
+  --card: #09090b;
   --card-foreground: #fafafa;
-  --popover: #27272a;
+  --popover: #18181b;
   --popover-foreground: #fafafa;
 
   /* Neutral */
@@ -148,31 +144,27 @@
   --success-foreground: #052e16;
   --warning: #f59e0b;
   --warning-foreground: #1c1917;
-  --caution: #f97316;
-  --caution-foreground: #1c1917;
   --info: #3b82f6;
   --info-foreground: #172554;
 
-  /* Semantic subtle — perceptibles en dark (Tailwind *-900) */
-  --success-subtle: #14532d;
-  --destructive-subtle: #7f1d1d;
-  --warning-subtle: #78350f;
-  --caution-subtle: #7c2d12;
-  --info-subtle: #1e3a8a;
-  --secondary-subtle: #3b0764;
+  /* Semantic subtle (soft backgrounds) */
+  --success-subtle: #052e16;
+  --destructive-subtle: #450a0a;
+  --warning-subtle: #451a03;
+  --info-subtle: #172554;
+  --secondary-subtle: #2e1065;
   --success-on-subtle: #4ade80;
   --destructive-on-subtle: #f87171;
   --warning-on-subtle: #fbbf24;
-  --caution-on-subtle: #fb923c;
   --info-on-subtle: #93c5fd;
   --secondary-on-subtle: #c4b5fd;
 
   /* UI */
-  --switch-background: #52525b;
-  --input-background: #27272a;
+  --switch-background: #475569;
+  --input-background: #334155;
 
-  /* Forms — border diferenciado de muted para que cards y inputs sean visibles */
-  --border: #3f3f46;
+  /* Forms */
+  --border: #27272a;
   --input: #27272a;
   --ring: #d1d5db;
 /* [TOKENS:DARK:END] */

@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   OperationStatusPipeline,
   type PipelineStage,
-} from "../components/patterns/operation-status-pipeline";
+} from "../components/patterns/OperationStatusPipeline";
 
 const activeStages: PipelineStage[] = [
   { id: "radicado",     label: "Radicado",     status: "completed", date: "01/03/2025", actor: "Ana Valdés" },
@@ -44,7 +44,7 @@ export function OperationStatusPipelinePage() {
           <OperationStatusPipeline stages={rejectedStages} orientation="horizontal" />
         </div>
       }
-      code={`import { OperationStatusPipeline } from "@/components/patterns/operation-status-pipeline"
+      code={`import { OperationStatusPipeline } from "@/components/patterns/OperationStatusPipeline"
 
 const stages = [
   { id: "radicado",     label: "Radicado",     status: "completed", date: "01/03/2025" },

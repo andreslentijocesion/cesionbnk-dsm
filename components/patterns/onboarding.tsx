@@ -7,7 +7,7 @@ import {
   FileText, Users, Building2, BarChart3, Bell, Calculator,
   Plus, ArrowRight, type LucideIcon,
 } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../ui/Button";
 import { cn } from "../../lib/utils";
 
 export type OnboardingModule =
@@ -89,9 +89,9 @@ const moduleMeta: Record<Exclude<OnboardingModule, "custom">, {
 };
 
 const sizeStyles = {
-  sm:      { wrapper: "py-8 px-4 max-w-sm",  iconWrapper: "h-12 w-12", icon: "h-6 w-6",   title: "text-base",  desc: "text-xs" },
-  default: { wrapper: "py-12 px-6 max-w-md", iconWrapper: "h-16 w-16", icon: "h-8 w-8",   title: "text-lg",    desc: "text-sm" },
-  lg:      { wrapper: "py-16 px-8 max-w-lg", iconWrapper: "h-20 w-20", icon: "h-10 w-10", title: "text-xl",    desc: "text-base" },
+  sm:      { wrapper: "py-8 px-4 max-w-sm",  iconWrapper: "size-12", icon: "size-6",   title: "text-base",  desc: "text-xs" },
+  default: { wrapper: "py-12 px-6 max-w-md", iconWrapper: "size-16", icon: "size-8",   title: "text-lg",    desc: "text-sm" },
+  lg:      { wrapper: "py-16 px-8 max-w-lg", iconWrapper: "size-20", icon: "size-10", title: "text-xl",    desc: "text-base" },
 };
 
 export function Onboarding({
@@ -131,7 +131,7 @@ export function Onboarding({
           {steps.map((step, i) => (
             <li key={i} className="flex items-start gap-2.5">
               <span className={cn(
-                "flex-shrink-0 flex items-center justify-center rounded-full text-xs font-bold h-5 w-5 mt-0.5",
+                "flex-shrink-0 flex items-center justify-center rounded-full text-xs font-bold size-5 mt-0.5",
                 resolvedBg, resolvedColor
               )}>
                 {i + 1}
@@ -153,7 +153,7 @@ export function Onboarding({
                 variant={action.variant ?? (i === 0 ? "default" : "outline")}
                 onClick={action.onClick}
               >
-                <ActionIcon className="h-4 w-4 mr-2" />
+                <ActionIcon className="size-4 mr-2" />
                 {action.label}
               </Button>
             );

@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/Avatar";
 
 export function AvatarPage() {
   return (
@@ -26,7 +26,7 @@ export function AvatarPage() {
       }
       
       // Main Code
-      code={`import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+      code={`import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar"
 
 export function AvatarDemo() {
   return (
@@ -63,23 +63,23 @@ export function AvatarDemo() {
           description: "You can control the size using Tailwind classes.",
           preview: (
             <div className="flex items-center gap-4">
-              <Avatar className="h-8 w-8">
+              <Avatar className="size-8">
                 <AvatarFallback className="text-xs">SM</AvatarFallback>
               </Avatar>
               <Avatar>
                 <AvatarFallback>MD</AvatarFallback>
               </Avatar>
-              <Avatar className="h-14 w-14">
+              <Avatar className="size-14">
                 <AvatarFallback className="text-lg">LG</AvatarFallback>
               </Avatar>
-              <Avatar className="h-20 w-20">
+              <Avatar className="size-20">
                 <AvatarFallback className="text-xl">XL</AvatarFallback>
               </Avatar>
             </div>
           ),
-          code: `<Avatar className="h-8 w-8">...</Avatar>
-<Avatar className="h-14 w-14">...</Avatar>
-<Avatar className="h-20 w-20">...</Avatar>`
+          code: `<Avatar className="size-8">...</Avatar>
+<Avatar className="size-14">...</Avatar>
+<Avatar className="size-20">...</Avatar>`
         },
         {
           title: "Avatar Group",

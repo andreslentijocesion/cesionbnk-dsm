@@ -1,7 +1,7 @@
 // CESIONBNK — Tokens CESIONBNK
-// Actualizado manualmente — 2026-04-13
-// v8.0.0: caution tokens, KPI colors, gradient, motion (duration+easing), Spacing/24, Label/2xs
-// Fuente: styles/themes/cesionbnk.css + styles/config.css
+// AUTO-GENERADO por scripts/build-tokens-plugin.cjs — NO editar manualmente
+// Fuente: tokens/cesionbnk.tokens.json v7.0.1 (2026-04-28)
+// Para actualizar: npm run build:tokens:plugin
 (async () => {
   try {
 
@@ -71,56 +71,52 @@
     v.setValueForMode(L, rgb(lv)); v.setValueForMode(D, rgb(dv)); return v;
   }
 
-  sem('Brand/Primary', '#374151', '#9ca3af');
+  sem('Brand/Primary', '#374151', '#d1d5db');
   sem('Brand/Primary Foreground', '#ffffff', '#09090b');
   sem('Brand/Secondary', '#796eff', '#796eff');
-  sem('Brand/Secondary Foreground', '#ffffff', '#ffffff');
+  sem('Brand/Secondary Foreground', '#ffffff', '#09090b');
   sem('Form/Ring', '#374151', '#d1d5db');
   sem('Surface/Background', '#ffffff', '#09090b');
   sem('Surface/Foreground', '#3f3f46', '#fafafa');
-  sem('Surface/Card', '#ffffff', '#18181b');
+  sem('Surface/Card', '#ffffff', '#09090b');
   sem('Surface/Card Foreground', '#3f3f46', '#fafafa');
-  sem('Surface/Popover', '#ffffff', '#27272a');
+  sem('Surface/Popover', '#ffffff', '#18181b');
   sem('Surface/Popover Foreground', '#3f3f46', '#fafafa');
   sem('Neutral/Muted', '#f4f4f5', '#27272a');
   sem('Neutral/Muted Foreground', '#52525b', '#a1a1aa');
   sem('Neutral/Accent', '#f4f4f5', '#27272a');
-  sem('Form/Border', '#e4e4e7', '#3f3f46');
+  sem('Form/Border', '#e4e4e7', '#27272a');
   sem('Form/Input Border', '#e4e4e7', '#27272a');
-  sem('Form/Switch Background', '#cbced4', '#52525b');
-  sem('Form/Input Background', '#ffffff', '#27272a');
+  sem('Form/Switch Background', '#cbced4', '#475569');
+  sem('Form/Input Background', '#ffffff', '#334155');
   sem('Feedback/Destructive', '#ef4444', '#ef4444');
   sem('Feedback/Destructive Foreground', '#ffffff', '#fafafa');
   sem('Feedback/Success', '#22c55e', '#22c55e');
   sem('Feedback/Success Foreground', '#ffffff', '#052e16');
   sem('Feedback/Warning', '#f59e0b', '#f59e0b');
   sem('Feedback/Warning Foreground', '#ffffff', '#1c1917');
-  sem('Feedback/Caution', '#f97316', '#f97316');
-  sem('Feedback/Caution Foreground', '#ffffff', '#1c1917');
   sem('Feedback/Info', '#3b82f6', '#3b82f6');
   sem('Feedback/Info Foreground', '#ffffff', '#172554');
-  sem('Feedback/Success Subtle', '#f0fdf4', '#14532d');
-  sem('Feedback/Destructive Subtle', '#fef2f2', '#7f1d1d');
-  sem('Feedback/Warning Subtle', '#fef3c7', '#78350f');
-  sem('Feedback/Caution Subtle', '#fff7ed', '#7c2d12');
-  sem('Feedback/Info Subtle', '#eff6ff', '#1e3a8a');
-  sem('Feedback/Secondary Subtle', '#ede9fe', '#3b0764');
+  sem('Feedback/Success Subtle', '#f0fdf4', '#052e16');
+  sem('Feedback/Destructive Subtle', '#fef2f2', '#450a0a');
+  sem('Feedback/Warning Subtle', '#fef3c7', '#451a03');
+  sem('Feedback/Info Subtle', '#eff6ff', '#172554');
+  sem('Feedback/Secondary Subtle', '#ede9fe', '#2e1065');
   sem('Feedback/Success On Subtle', '#15803d', '#4ade80');
   sem('Feedback/Destructive On Subtle', '#b91c1c', '#f87171');
   sem('Feedback/Warning On Subtle', '#b45309', '#fbbf24');
-  sem('Feedback/Caution On Subtle', '#c2410c', '#fb923c');
   sem('Feedback/Info On Subtle', '#1d4ed8', '#93c5fd');
   sem('Feedback/Secondary On Subtle', '#7c3aed', '#c4b5fd');
 
-  // Sidebar
-  sem('Sidebar/Background',         '#fafafa',  '#18181b');
-  sem('Sidebar/Foreground',         '#3f3f46',  '#fafafa');
-  sem('Sidebar/Primary',            '#3f3f46',  '#796eff');
+  // Sidebar (hardcoded)
+  sem('Sidebar/Background',         '#fafafa',  '#1e293b');
+  sem('Sidebar/Foreground',         '#222222',  '#f8fafc');
+  sem('Sidebar/Primary',            '#222222',  '#4f46e5');
   sem('Sidebar/Primary Foreground', '#fafafa',  '#ffffff');
-  sem('Sidebar/Accent',             '#f5f5f5',  '#27272a');
-  sem('Sidebar/Accent Foreground',  '#3f3f46',  '#fafafa');
-  sem('Sidebar/Border',             '#e5e5e5',  '#27272a');
-  sem('Sidebar/Ring',               '#adadad',  '#796eff');
+  sem('Sidebar/Accent',             '#f5f5f5',  '#334155');
+  sem('Sidebar/Accent Foreground',  '#222222',  '#f8fafc');
+  sem('Sidebar/Border',             '#e5e5e5',  '#334155');
+  sem('Sidebar/Ring',               '#adadad',  '#4f46e5');
 
   // Charts (hardcoded)
   sem('Chart/1', '#e76f51', '#6366f1');
@@ -128,28 +124,6 @@
   sem('Chart/3', '#264653', '#84cc16');
   sem('Chart/4', '#e9c46a', '#d946ef');
   sem('Chart/5', '#84cc16', '#f97316');
-
-  // ── 2b. KPI COLORS ───────────────────────────────────────────────────────
-  function semKpi(name, lv, dv) {
-    const v = figma.variables.createVariable(name, SC, 'COLOR');
-    v.setValueForMode(L, rgb(lv)); v.setValueForMode(D, rgb(dv)); return v;
-  }
-  semKpi('KPI/Yellow',       '#eab308', '#facc15');
-  semKpi('KPI/Yellow Dark',  '#ca8a04', '#eab308');
-  semKpi('KPI/Yellow BG',    '#fef9c3', '#422006');
-  semKpi('KPI/Orange',       '#f97316', '#fb923c');
-  semKpi('KPI/Orange Dark',  '#ea580c', '#f97316');
-  semKpi('KPI/Orange BG',    '#ffedd5', '#431407');
-  semKpi('KPI/Blue',         '#3b82f6', '#60a5fa');
-  semKpi('KPI/Blue Dark',    '#2563eb', '#3b82f6');
-  semKpi('KPI/Blue BG',      '#dbeafe', '#172554');
-  semKpi('KPI/Lime',         '#84cc16', '#a3e635');
-  semKpi('KPI/Lime Dark',    '#65a30d', '#84cc16');
-  semKpi('KPI/Lime BG',      '#f7fee7', '#1a2e05');
-
-  // ── 2c. GRADIENT ─────────────────────────────────────────────────────────
-  semKpi('Gradient/From', '#E5E7EB', '#1e2533');
-  semKpi('Gradient/To',   '#323D4E', '#0d1117');
 
   // ── 3. COMPONENT — generado desde tokens/cesionbnk.tokens.json ──────────
   const CC = figma.variables.createVariableCollection('3. Component');
@@ -188,31 +162,6 @@
   compFloat('Spacing/9',   36);
   compFloat('Spacing/14',  56);
   compFloat('Spacing/20',  80);
-  compFloat('Spacing/24',  96);
-
-  // ── Motion / Duration ──
-  const MD = figma.variables.createVariableCollection('4. Motion');
-  MD.renameMode(MD.defaultModeId, 'Value');
-  const MV = MD.defaultModeId;
-  function motionFloat(name, ms) {
-    const v = figma.variables.createVariable(name, MD, 'FLOAT');
-    v.setValueForMode(MV, ms); return v;
-  }
-  function motionStr(name, val) {
-    const v = figma.variables.createVariable(name, MD, 'STRING');
-    v.setValueForMode(MV, val); return v;
-  }
-  motionFloat('Duration/instant',  50);
-  motionFloat('Duration/fast',    100);
-  motionFloat('Duration/base',    200);
-  motionFloat('Duration/slow',    300);
-  motionFloat('Duration/slower',  500);
-  motionFloat('Duration/lazy',    700);
-  motionStr('Easing/default', 'cubic-bezier(0.4, 0, 0.2, 1)');
-  motionStr('Easing/in',      'cubic-bezier(0.4, 0, 1, 1)');
-  motionStr('Easing/out',     'cubic-bezier(0, 0, 0.2, 1)');
-  motionStr('Easing/spring',  'cubic-bezier(0.34, 1.56, 0.64, 1)');
-  motionStr('Easing/linear',  'linear');
 
   // Opacity (hardcoded)
   compFloat('Opacity/0', 0);
@@ -253,9 +202,9 @@
   const wMap = { 400:'Regular', 500:'Medium', 600:'SemiBold', 700:'Bold' };
   for (const [name, size, weight, lh] of [
     ['Display',48,700,150],['H1/Page Title',30,600,150],['H2/Section',24,600,150],
-    ['H3/Subsection',20,500,150],['H4/Card Title',16,600,150],['Body/Default',16,400,150],
-    ['Body/Small',14,400,150],['Caption',12,400,150],['Label/2xs',10,500,150],
-    ['Label',14,500,150],['Button',16,500,150],['KPI Value',36,700,125],
+    ['H3/Subsection',20,500,150],['H4/Card Title',18,500,150],['Body/Default',16,400,150],
+    ['Body/Small',14,400,150],['Caption',12,400,150],['Label',14,500,150],
+    ['Button',16,500,150],['KPI Value',36,700,125],
   ]) {
     const fn = await font('Gotham', wMap[weight]);
     const s = figma.createTextStyle();
@@ -278,12 +227,11 @@
   }
 
   figma.closePlugin(
-    '\u2705 Tokens CESIONBNK v8.0.0: ' +
+    '\u2705 Tokens CESIONBNK v7.0.1: ' +
     Object.keys(primData).length + ' primitivos \xb7 ' +
-    '55 semánticos (incl. caution + KPI + gradient) \xb7 ' +
-    '(6 radius + 12 spacing + opacity + borders + sizes) component \xb7 ' +
-    '11 motion (duration + easing) \xb7 ' +
-    '12 text styles \xb7 4 effect styles'
+    '49 semánticos \xb7 ' +
+    '(6 radius + 10 spacing + opacity + borders + sizes) component \xb7 ' +
+    '11 text styles \xb7 4 effect styles'
   );
 
   } catch (err) {

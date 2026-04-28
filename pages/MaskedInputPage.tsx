@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { MaskedInput } from "../components/ui/masked-input";
-import { Label } from "../components/ui/label";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { MaskedInput } from "../components/ui/MaskedInput";
+import { Label } from "../components/ui/Label";
 
 function MaskedInputDemo() {
   const [nit,   setNit]   = useState("9001234567"); // 900.123.456-7 — NIT válido Colombia
@@ -42,7 +42,7 @@ export function MaskedInputPage() {
       category="Forms"
       atomicLevel="Atom"
       preview={<MaskedInputDemo />}
-      code={`import { MaskedInput } from "@/components/ui/masked-input"
+      code={`import { MaskedInput } from "@/components/ui/MaskedInput"
 import { useState } from "react"
 
 export function Demo() {

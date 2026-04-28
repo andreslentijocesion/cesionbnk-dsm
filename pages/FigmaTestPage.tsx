@@ -4,10 +4,10 @@
  * Para eliminar: borrar este archivo y su ruta en el router
  */
 import { TrendingUp, Pencil, Trash2, Download } from 'lucide-react';
-import { Card, CardContent } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/table';
-import { Button } from '../components/ui/button';
+import { Card, CardContent } from '../components/ui/Card';
+import { Badge } from '../components/ui/Badge';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/Table';
+import { Button } from '../components/ui/Button';
 
 // ── Tipos ─────────────────────────────────────────────────────────────────────
 

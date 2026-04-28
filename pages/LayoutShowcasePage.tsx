@@ -1,25 +1,25 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   PageLayout,
   SplitLayout,
   StackLayout,
   SectionLayout,
-} from "../components/ui/page-layout";
-import { GridShowcase } from "../components/ui/grid-showcase";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Separator } from "../components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+} from "../components/ui/PageLayout";
+import { GridShowcase } from "../components/ui/GridShowcase";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
+import { Badge } from "../components/ui/Badge";
+import { Button } from "../components/ui/Button";
+import { Input } from "../components/ui/Input";
+import { Separator } from "../components/ui/Separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../components/ui/select";
+} from "../components/ui/Select";
 import {
   DollarSign,
   Users,
@@ -67,7 +67,7 @@ function MiniKpiCard({
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-sm">{title}</CardTitle>
-        <Icon className="h-4 w-4 text-muted-foreground" />
+        <Icon className="size-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
         <div className="text-2xl font-semibold">{value}</div>
@@ -84,7 +84,7 @@ function MiniFilterPanel() {
     <Card>
       <CardHeader>
         <CardTitle className="text-sm flex items-center gap-2">
-          <Filter className="h-4 w-4" /> Filters
+          <Filter className="size-4" /> Filters
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -170,7 +170,7 @@ function MiniSettingsForm() {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Settings className="h-5 w-5" />
+          <Settings className="size-5" />
           Operation Settings
         </CardTitle>
         <CardDescription>
@@ -213,8 +213,8 @@ const code = `import {
   SplitLayout,
   StackLayout,
   SectionLayout,
-} from "@/components/ui/page-layout";
-import { GridShowcase } from "@/components/ui/grid-showcase";
+} from "@/components/ui/PageLayout";
+import { GridShowcase } from "@/components/ui/GridShowcase";
 
 // Dashboard: constrained + KPIs + split (table + sidebar)
 <PageLayout variant="constrained">
@@ -315,7 +315,7 @@ export function LayoutShowcasePage() {
                     description="Current period summary"
                     action={
                       <Button variant="outline" size="sm" className="gap-1">
-                        <BarChart3 className="h-3.5 w-3.5" />
+                        <BarChart3 className="size-3.5 .5" />
                         Export
                       </Button>
                     }
@@ -593,7 +593,7 @@ export function LayoutShowcasePage() {
                             ].map((s) => (
                               <div key={s.step} className="flex items-center gap-3">
                                 <div
-                                  className={`h-2 w-2 rounded-full ${s.done ? "bg-primary" : "bg-muted-foreground/30"}`}
+                                  className={`size-2 rounded-full ${s.done ? "bg-primary" : "bg-muted-foreground/30"}`}
                                 />
                                 <span className={`text-sm ${s.done ? "" : "text-muted-foreground"}`}>
                                   {s.step}

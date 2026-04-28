@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   StatCard,
   StatsGrid,
@@ -9,7 +9,7 @@ import {
   SimpleFormField,
   NavigationBar,
 } from "../components/widgets";
-import { Card, CardContent } from "../components/ui/card";
+import { Card, CardContent } from "../components/ui/Card";
 import { CheckCircle, Clock, DollarSign, User, Search, Bell, Settings } from "lucide-react";
 
 export function WidgetsShowcasePage() {
@@ -134,7 +134,7 @@ import { DollarSign, User, Clock } from "lucide-react";
               <CardContent className="pt-6 space-y-6">
                 <ApprovalTimelineItem
                   icon={CheckCircle}
-                  iconColor="text-green-500"
+                  iconColor="text-success-on-subtle"
                   title="Order Delivered"
                   user="System"
                   role="Automated"
@@ -144,7 +144,7 @@ import { DollarSign, User, Clock } from "lucide-react";
                 />
                 <ApprovalTimelineItem
                   icon={Clock}
-                  iconColor="text-amber-500"
+                  iconColor="text-warning-on-subtle"
                   title="Order Processing"
                   user="Jane Doe"
                   role="Warehouse"
@@ -157,7 +157,7 @@ import { DollarSign, User, Clock } from "lucide-react";
           ),
           code: `<ApprovalTimelineItem
   icon={CheckCircle}
-  iconColor="text-green-500"
+  iconColor="text-success-on-subtle"
   title="Order Delivered"
   user="System"
   role="Automated"

@@ -1,7 +1,7 @@
 import { LineChart, Line } from "recharts";
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent } from "../ui/Card";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
-import { SafeChartContainer } from "../ui/safe-chart-container";
+import { SafeChartContainer } from "../ui/SafeChartContainer";
 
 /**
  * 🔒 ADVANCED COMPONENT - Sparkline
@@ -41,14 +41,14 @@ export function Sparkline({
 }: SparklineProps) {
   const getTrendIcon = () => {
     if (change === undefined || change === null) return null;
-    if (change > 0) return <TrendingUp className="h-4 w-4 text-green-500" />;
-    if (change < 0) return <TrendingDown className="h-4 w-4 text-red-500" />;
-    return <Minus className="h-4 w-4 text-muted-foreground" />;
+    if (change > 0) return <TrendingUp className="size-4 text-success-on-subtle" />;
+    if (change < 0) return <TrendingDown className="size-4 text-destructive" />;
+    return <Minus className="size-4 text-muted-foreground" />;
   };
 
   const getTrendColor = () => {
     if (change === undefined || change === null) return "text-muted-foreground";
-    return change > 0 ? "text-green-500" : change < 0 ? "text-red-500" : "text-muted-foreground";
+    return change > 0 ? "text-success-on-subtle" : change < 0 ? "text-destructive" : "text-muted-foreground";
   };
 
   if (title || value !== undefined) {

@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { ExportPanel } from "../components/patterns/export-panel";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ExportPanel } from "../components/patterns/ExportPanel";
 import { toast } from "sonner";
 
 const portfolioColumns = [
@@ -33,7 +33,7 @@ export function ExportPanelPage() {
           }
         />
       }
-      code={`import { ExportPanel } from "@/components/patterns/export-panel"
+      code={`import { ExportPanel } from "@/components/patterns/ExportPanel"
 
 const columns = [
   { id: "folio",    label: "Folio",    defaultSelected: true },

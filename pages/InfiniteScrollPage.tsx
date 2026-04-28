@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { InfiniteScroll } from "../components/advanced/infinite-scroll";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { InfiniteScroll } from "../components/advanced/InfiniteScroll";
 
 const infiniteScrollCode = `import { useState } from "react";
-import { InfiniteScroll } from "@/components/advanced/infinite-scroll";
+import { InfiniteScroll } from "@/components/advanced/InfiniteScroll";
 
 export function InfiniteScrollDemo() {
   const [items, setItems] = useState(Array.from({ length: 20 }, (_, i) => i));

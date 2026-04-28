@@ -1,9 +1,9 @@
 import { ColumnDef, type Table, type Row, type Column } from "@tanstack/react-table";
 import { copyToClipboard } from "../lib/utils";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Badge } from "../components/ui/badge";
-import { Button } from "../components/ui/button";
-import { Checkbox } from "../components/ui/checkbox";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Badge } from "../components/ui/Badge";
+import { Button } from "../components/ui/Button";
+import { Checkbox } from "../components/ui/Checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,10 +11,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../components/ui/dropdown-menu";
-import { DataTable } from "../components/advanced/data-table";
+} from "../components/ui/DropdownMenu";
+import { DataTable } from "../components/advanced/DataTable";
 import { MoreHorizontal, ArrowUpDown, CheckCircle, Clock, AlertCircle, XCircle, Circle } from "lucide-react";
-import { Progress } from "../components/ui/progress";
+import { Progress } from "../components/ui/Progress";
 import { toast } from "sonner";
 
 // Sample Data Type
@@ -80,7 +80,7 @@ const columns: ColumnDef<Invoice>[] = [
 
       return (
         <Badge variant={config.variant} className="flex w-fit items-center gap-1">
-          <Icon className="h-3 w-3" />
+          <Icon className="size-3" />
           {config.label}
         </Badge>
       );
@@ -94,7 +94,7 @@ const columns: ColumnDef<Invoice>[] = [
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         Client
-        <ArrowUpDown className="ml-2 h-4 w-4" />
+        <ArrowUpDown className="ml-2 size-4" />
       </Button>
     ),
     cell: ({ row }: { row: Row<Invoice> }) => <div className="font-medium ml-4">{row.getValue("client")}</div>,
@@ -122,7 +122,7 @@ const columns: ColumnDef<Invoice>[] = [
     header: "Risk Score",
     cell: ({ row }: { row: Row<Invoice> }) => {
       const score = row.getValue("riskScore") as number;
-      const colorClass = score < 500 ? "text-red-500" : score < 700 ? "text-yellow-500" : "text-green-500";
+      const colorClass = score < 500 ? "text-destructive" : score < 700 ? "text-yellow-500" : "text-success-on-subtle";
 
       return (
         <div className="flex items-center gap-2">
@@ -150,9 +150,9 @@ const columns: ColumnDef<Invoice>[] = [
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
+            <Button variant="ghost" className="size-8 p-0">
               <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
+              <MoreHorizontal className="size-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

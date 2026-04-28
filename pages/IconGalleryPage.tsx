@@ -1,8 +1,8 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
+import { Badge } from "../components/ui/Badge";
+import { Alert, AlertDescription, AlertTitle } from "../components/ui/Alert";
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import { copyToClipboard } from "../lib/utils";
 
 // Representative sample: ~20 icons covering the most common use cases
@@ -90,7 +90,7 @@ function IconGalleryContent() {
     <div className="space-y-8">
       {/* External Library Notice */}
       <Alert>
-        <Info className="h-4 w-4" />
+        <Info className="size-4" />
         <AlertTitle>External Library</AlertTitle>
         <AlertDescription>
           Icons are provided by{" "}
@@ -146,48 +146,48 @@ function IconGalleryContent() {
             <code>{`import { Search, Home, User, Settings } from "lucide-react";
 
 // Standard sizes
-<Search className="h-4 w-4" />           // 16px — inline, buttons
-<Home className="h-5 w-5" />             // 20px — nav items
-<User className="h-6 w-6" />             // 24px — default
-<Settings className="h-8 w-8" />         // 32px — hero, empty states
+<Search className="size-4" />           // 16px — inline, buttons
+<Home className="size-5" />             // 20px — nav items
+<User className="size-6" />             // 24px — default
+<Settings className="size-8" />         // 32px — hero, empty states
 
 // Colors via Tailwind
-<Search className="h-4 w-4 text-primary" />
-<AlertCircle className="h-4 w-4 text-destructive" />
-<CheckCircle className="h-4 w-4 text-success" />
-<Info className="h-4 w-4 text-info" />
+<Search className="size-4 text-primary" />
+<AlertCircle className="size-4 text-destructive" />
+<CheckCircle className="size-4 text-success" />
+<Info className="size-4 text-info" />
 
 // Stroke width (default: 2)
-<Settings className="h-6 w-6" strokeWidth={1.5} />`}</code>
+<Settings className="size-6" strokeWidth={1.5} />`}</code>
           </pre>
           <div className="flex items-center gap-6 p-4 bg-muted rounded-lg">
             <div className="flex flex-col items-center gap-1">
-              <Search className="h-4 w-4" />
+              <Search className="size-4" />
               <span className="text-xs text-muted-foreground">16px</span>
             </div>
             <div className="flex flex-col items-center gap-1">
-              <Search className="h-5 w-5" />
+              <Search className="size-5" />
               <span className="text-xs text-muted-foreground">20px</span>
             </div>
             <div className="flex flex-col items-center gap-1">
-              <Search className="h-6 w-6" />
+              <Search className="size-6" />
               <span className="text-xs text-muted-foreground">24px</span>
             </div>
             <div className="flex flex-col items-center gap-1">
-              <Search className="h-8 w-8" />
+              <Search className="size-8" />
               <span className="text-xs text-muted-foreground">32px</span>
             </div>
             <div className="border-l pl-6 flex items-center gap-4">
               <div className="flex flex-col items-center gap-1">
-                <AlertCircle className="h-5 w-5 text-destructive" />
+                <AlertCircle className="size-5 text-destructive" />
                 <span className="text-xs text-muted-foreground">destructive</span>
               </div>
               <div className="flex flex-col items-center gap-1">
-                <CheckCircle className="h-5 w-5 text-success" />
+                <CheckCircle className="size-5 text-success" />
                 <span className="text-xs text-muted-foreground">success</span>
               </div>
               <div className="flex flex-col items-center gap-1">
-                <Info className="h-5 w-5 text-info" />
+                <Info className="size-5 text-info" />
                 <span className="text-xs text-muted-foreground">info</span>
               </div>
             </div>
@@ -206,28 +206,28 @@ function IconGalleryContent() {
         <CardContent>
           <pre className="bg-muted rounded-lg p-4 overflow-x-auto text-sm">
             <code>{`// In Buttons
-<Button><Plus className="h-4 w-4 mr-2" /> Add Item</Button>
-<Button variant="outline" size="icon"><Settings className="h-4 w-4" /></Button>
+<Button><Plus className="size-4 mr-2" /> Add Item</Button>
+<Button variant="outline" size="icon"><Settings className="size-4" /></Button>
 
 // In Badges
-<Badge variant="success-soft-outline"><CheckCircle className="h-3 w-3 mr-1" /> Approved</Badge>
+<Badge variant="success-soft-outline"><CheckCircle className="size-3 mr-1" /> Approved</Badge>
 
 // In Input (with absolute positioning)
 <div className="relative">
-  <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+  <Search className="absolute left-2.5 top-2.5 size-4 text-muted-foreground" />
   <Input className="pl-9" placeholder="Search..." />
 </div>
 
 // In Alert
 <Alert>
-  <AlertCircle className="h-4 w-4" />
+  <AlertCircle className="size-4" />
   <AlertTitle>Warning</AlertTitle>
   <AlertDescription>Something needs attention.</AlertDescription>
 </Alert>
 
 // In navigation items
 <a className="flex items-center gap-2">
-  <LayoutDashboard className="h-4 w-4" />
+  <LayoutDashboard className="size-4" />
   Dashboard
 </a>`}</code>
           </pre>
@@ -262,7 +262,7 @@ function IconGalleryContent() {
                 className="flex flex-col items-center justify-center p-3 rounded-lg border hover:bg-muted cursor-pointer transition-colors group relative"
                 onClick={() => handleCopy(icon.name)}
               >
-                <icon.Icon className="h-6 w-6 mb-2 text-foreground/80 group-hover:text-primary transition-colors" />
+                <icon.Icon className="size-6 mb-2 text-foreground/80 group-hover:text-primary transition-colors" />
                 <span className="text-xs text-muted-foreground text-center break-all">
                   {icon.name}
                 </span>
@@ -286,10 +286,10 @@ function IconGalleryContent() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <h4 className="text-sm text-success flex items-center gap-2">
-                <CheckCircle className="h-4 w-4" /> Do
+                <CheckCircle className="size-4" /> Do
               </h4>
               <ul className="text-sm text-muted-foreground space-y-1 list-disc pl-5">
-                <li>Use <code className="bg-muted px-1 rounded">h-4 w-4</code> for inline / button icons</li>
+                <li>Use <code className="bg-muted px-1 rounded">size-4</code> for inline / button icons</li>
                 <li>Use <code className="bg-muted px-1 rounded">text-muted-foreground</code> for secondary icons</li>
                 <li>Use <code className="bg-muted px-1 rounded">text-primary</code> for active / highlighted icons</li>
                 <li>Import only the icons you need (tree-shaking)</li>
@@ -298,7 +298,7 @@ function IconGalleryContent() {
             </div>
             <div className="space-y-2">
               <h4 className="text-sm text-destructive flex items-center gap-2">
-                <AlertCircle className="h-4 w-4" /> Don't
+                <AlertCircle className="size-4" /> Don't
               </h4>
               <ul className="text-sm text-muted-foreground space-y-1 list-disc pl-5">
                 <li>Don't import the entire library (<code className="bg-muted px-1 rounded">import * from "lucide-react"</code>)</li>
@@ -324,22 +324,22 @@ export function IconGalleryPage() {
       code={`import { Search, Home, User, Settings, Plus, CheckCircle } from "lucide-react";
 
 // Sizes — use Tailwind classes
-<Search className="h-4 w-4" />      // 16px (buttons, inline)
-<Home className="h-5 w-5" />        // 20px (nav items)
-<User className="h-6 w-6" />        // 24px (default)
+<Search className="size-4" />      // 16px (buttons, inline)
+<Home className="size-5" />        // 20px (nav items)
+<User className="size-6" />        // 24px (default)
 
 // Colors — use DSM token classes
-<AlertCircle className="h-4 w-4 text-destructive" />
-<CheckCircle className="h-4 w-4 text-success" />
-<Info className="h-4 w-4 text-info" />
+<AlertCircle className="size-4 text-destructive" />
+<CheckCircle className="size-4 text-success" />
+<Info className="size-4 text-info" />
 
 // In DSM components
-<Button><Plus className="h-4 w-4 mr-2" /> Add</Button>
-<Badge variant="success-soft-outline"><CheckCircle className="h-3 w-3 mr-1" /> Done</Badge>
+<Button><Plus className="size-4 mr-2" /> Add</Button>
+<Badge variant="success-soft-outline"><CheckCircle className="size-3 mr-1" /> Done</Badge>
 
 // Full catalog: https://lucide.dev/icons/`}
       props={[
-        { name: "className", type: "string", description: "Tailwind classes for size (h-4 w-4) and color (text-primary)." },
+        { name: "className", type: "string", description: "Tailwind classes for size (size-4) and color (text-primary)." },
         { name: "strokeWidth", type: "number", default: "2", description: "SVG stroke width. Use 1.5 for thinner lines." },
         { name: "size", type: "number", default: "24", description: "Width and height in pixels (prefer className for sizing)." },
         { name: "fill", type: "string", default: "none", description: "SVG fill color. Use 'currentColor' for filled icons." },

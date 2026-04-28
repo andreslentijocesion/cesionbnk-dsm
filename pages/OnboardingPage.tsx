@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Onboarding } from "../components/patterns/onboarding";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Onboarding } from "../components/patterns/Onboarding";
 import { toast } from "sonner";
 import { Calculator } from "lucide-react";
 
@@ -24,7 +24,7 @@ export function OnboardingPage() {
           ]}
         />
       }
-      code={`import { Onboarding } from "@/components/patterns/onboarding"
+      code={`import { Onboarding } from "@/components/patterns/Onboarding"
 
 <Onboarding
   module="operaciones"

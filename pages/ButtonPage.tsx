@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Button, type ButtonProps } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
-import { Separator } from "../components/ui/separator";
+import { Button, type ButtonProps } from "../components/ui/Button";
+import { Badge } from "../components/ui/Badge";
+import { Separator } from "../components/ui/Separator";
 import {
   Download, ChevronRight, Search, Settings, MoreHorizontal, Pencil,
   Check, Save, ArrowRight,

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { OperationStatusPipeline, type PipelineStage } from '../components/patterns/operation-status-pipeline';
+import { OperationStatusPipeline, type PipelineStage } from '../components/patterns/OperationStatusPipeline';
 
 const activeStages: PipelineStage[] = [
   { id: 'radicado',     label: 'Radicado',     status: 'completed', date: '01/03/2025', actor: 'Ana Valdés' },

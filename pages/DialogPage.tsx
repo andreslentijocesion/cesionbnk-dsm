@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "../components/ui/dialog";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
-import { Textarea } from "../components/ui/textarea";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "../components/ui/Dialog";
+import { Button } from "../components/ui/Button";
+import { Input } from "../components/ui/Input";
+import { Label } from "../components/ui/Label";
+import { Textarea } from "../components/ui/Textarea";
 import { AlertCircle, Trash2, Upload, UserPlus, Settings, Mail } from "lucide-react";
 
 export function DialogPage() {
@@ -82,8 +82,8 @@ export function DialogPage() {
       }
       
       // Main Code
-      code={`import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+      code={`import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
+import { Button } from "@/components/ui/Button";
 
 export function DialogDemo() {
   return (
@@ -140,7 +140,7 @@ export function DialogDemo() {
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline">
-                  <UserPlus className="mr-2 h-4 w-4" />
+                  <UserPlus className="mr-2 size-4" />
                   Create Account
                 </Button>
               </DialogTrigger>
@@ -206,7 +206,7 @@ export function DialogDemo() {
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="destructive">
-                  <Trash2 className="mr-2 h-4 w-4" />
+                  <Trash2 className="mr-2 size-4" />
                   Delete Item
                 </Button>
               </DialogTrigger>
@@ -214,7 +214,7 @@ export function DialogDemo() {
                 <DialogHeader>
                   <div className="flex items-center gap-2">
                     <div className="p-2 bg-destructive/10 rounded-full">
-                      <AlertCircle className="h-5 w-5 text-destructive" />
+                      <AlertCircle className="size-5 text-destructive" />
                     </div>
                     <DialogTitle>Delete Item</DialogTitle>
                   </div>
@@ -228,7 +228,7 @@ export function DialogDemo() {
                     <Button variant="outline">Cancel</Button>
                   </DialogClose>
                   <Button variant="destructive">
-                    <Trash2 className="mr-2 h-4 w-4" />
+                    <Trash2 className="mr-2 size-4" />
                     Delete Permanently
                   </Button>
                 </DialogFooter>
@@ -242,7 +242,7 @@ export function DialogDemo() {
   <DialogContent>
     <DialogHeader>
       <div className="flex items-center gap-2">
-        <AlertCircle className="h-5 w-5 text-destructive" />
+        <AlertCircle className="size-5 text-destructive" />
         <DialogTitle>Delete Item</DialogTitle>
       </div>
       <DialogDescription>
@@ -352,7 +352,7 @@ export function DialogDemo() {
             <Dialog>
               <DialogTrigger asChild>
                 <Button>
-                  <Upload className="mr-2 h-4 w-4" />
+                  <Upload className="mr-2 size-4" />
                   Upload Files
                 </Button>
               </DialogTrigger>
@@ -365,7 +365,7 @@ export function DialogDemo() {
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
                   <div className="border-2 border-dashed rounded-lg p-8 text-center hover:bg-muted transition-colors cursor-pointer">
-                    <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                    <Upload className="size-8 mx-auto mb-2 text-muted-foreground" />
                     <p className="text-sm text-muted-foreground">
                       Click to upload or drag and drop
                     </p>
@@ -392,7 +392,7 @@ export function DialogDemo() {
       <DialogTitle>Upload Files</DialogTitle>
     </DialogHeader>
     <div className="border-2 border-dashed rounded-lg p-8 text-center">
-      <Upload className="h-8 w-8 mx-auto mb-2" />
+      <Upload className="size-8 mx-auto mb-2" />
       <p>Click to upload or drag and drop</p>
     </div>
     <DialogFooter>
@@ -408,7 +408,7 @@ export function DialogDemo() {
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline">
-                  <Settings className="mr-2 h-4 w-4" />
+                  <Settings className="mr-2 size-4" />
                   Settings
                 </Button>
               </DialogTrigger>
@@ -438,7 +438,7 @@ export function DialogDemo() {
                     <h4 className="font-medium">Notifications</h4>
                     <div className="flex items-center justify-between">
                       <Label htmlFor="email-notif">Email Notifications</Label>
-                      <input type="checkbox" id="email-notif" className="h-4 w-4" />
+                      <input type="checkbox" id="email-notif" className="size-4" />
                     </div>
                   </div>
                 </div>
@@ -479,7 +479,7 @@ export function DialogDemo() {
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline">
-                  <Mail className="mr-2 h-4 w-4" />
+                  <Mail className="mr-2 size-4" />
                   Send Message
                 </Button>
               </DialogTrigger>

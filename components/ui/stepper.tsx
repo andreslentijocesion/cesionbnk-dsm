@@ -65,14 +65,14 @@ export function Stepper({ steps, orientation = "horizontal", activeStep, classNa
               <div className="flex flex-col items-center">
                 <div
                   className={cn(
-                    "flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold transition-colors",
+                    "flex size-8 flex-shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold transition-colors",
                     dotStyles[status]
                   )}
                 >
                   {status === "completed" ? (
-                    <Check className="h-4 w-4" />
+                    <Check className="size-4" />
                   ) : status === "error" ? (
-                    <X className="h-4 w-4" />
+                    <X className="size-4" />
                   ) : (
                     i + 1
                   )}
@@ -107,14 +107,14 @@ export function Stepper({ steps, orientation = "horizontal", activeStep, classNa
             <div className="flex flex-col items-center gap-1.5">
               <div
                 className={cn(
-                  "flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold transition-colors",
+                  "flex size-8 flex-shrink-0 items-center justify-center rounded-full border-2 text-xs font-bold transition-colors",
                   dotStyles[status]
                 )}
               >
                 {status === "completed" ? (
-                  <Check className="h-4 w-4" />
+                  <Check className="size-4" />
                 ) : status === "error" ? (
-                  <X className="h-4 w-4" />
+                  <X className="size-4" />
                 ) : (
                   i + 1
                 )}

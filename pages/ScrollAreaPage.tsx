@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { ScrollArea } from "../components/ui/scroll-area";
-import { Separator } from "../components/ui/separator";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ScrollArea } from "../components/ui/ScrollArea";
+import { Separator } from "../components/ui/Separator";
 
 export function ScrollAreaPage() {
   return (
@@ -27,8 +27,8 @@ export function ScrollAreaPage() {
       }
       
       // Main Code
-      code={`import { ScrollArea } from "@/components/ui/scroll-area"
-import { Separator } from "@/components/ui/separator"
+      code={`import { ScrollArea } from "@/components/ui/ScrollArea"
+import { Separator } from "@/components/ui/Separator"
 
 export function ScrollAreaDemo() {
   return (

@@ -1,7 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
-import { Badge } from "../components/ui/badge";
-import { Progress } from "../components/ui/progress";
-import { Separator } from "../components/ui/separator";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
+import { Badge } from "../components/ui/Badge";
+import { Progress } from "../components/ui/Progress";
+import { Separator } from "../components/ui/Separator";
 import {
   CheckCircle2,
   Package,
@@ -17,12 +17,12 @@ import {
   Activity,
 } from "lucide-react";
 import { Logo } from "../components/Logo";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 
 export function HomePageContent() {
   const stats = [
     { label: "Total Components", value: "130",  icon: Package,     color: "text-primary"  },
-    { label: "DSM Migration",     value: "100%", icon: Sparkles,    color: "text-green-500" },
+    { label: "DSM Migration",     value: "100%", icon: Sparkles,    color: "text-success-on-subtle" },
     { label: "Showcase Pages",    value: "128",  icon: CheckCircle2,color: "text-success"   },
     { label: "WCAG AA",           value: "100%", icon: Accessibility,color: "text-success"  },
   ];
@@ -92,7 +92,7 @@ export function HomePageContent() {
             <Logo size="lg" variant="light" />
             <Badge variant="default" className="text-xs px-3 py-1">v0.4.0</Badge>
             <Badge variant="success-soft" className="gap-1">
-              <Sparkles className="h-3 w-3" />
+              <Sparkles className="size-3" />
               DSM 100%
             </Badge>
           </div>
@@ -103,21 +103,21 @@ export function HomePageContent() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Badge variant="outline" className="gap-2">
-              <Activity className="h-3 w-3" />
+              <Activity className="size-3" />
               Last updated: April 2026
             </Badge>
             <Badge variant="outline" className="gap-2">
-              <Users className="h-3 w-3" />
+              <Users className="size-3" />
               Atomic Design · 3 Layers
             </Badge>
             <Badge variant="outline" className="gap-2">
-              <TrendingUp className="h-3 w-3" />
+              <TrendingUp className="size-3" />
               130 Components · 128 Pages
             </Badge>
           </div>
         </div>
-        <div className="absolute top-0 right-0 w-64 h-64 bg-muted rounded-full blur-3xl -z-0" />
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-muted rounded-full blur-3xl -z-0" />
+        <div className="absolute top-0 right-0 size-64 bg-muted rounded-full blur-3xl -z-0" />
+        <div className="absolute bottom-0 left-0 size-48 bg-muted rounded-full blur-3xl -z-0" />
       </div>
 
       {/* ── Stats ── */}
@@ -126,7 +126,7 @@ export function HomePageContent() {
           <Card key={index} className="shadow-elevation-1 hover:shadow-elevation-2 transition-shadow">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
-              <stat.icon className={`h-4 w-4 ${stat.color}`} />
+              <stat.icon className={`size-4 ${stat.color}`} />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-semibold">{stat.value}</div>
@@ -139,7 +139,7 @@ export function HomePageContent() {
       <Card className="shadow-elevation-1">
         <CardHeader>
           <div className="flex items-center gap-2">
-            <Sparkles className="h-5 w-5 text-primary" />
+            <Sparkles className="size-5 text-primary" />
             <CardTitle>Implementation Status</CardTitle>
           </div>
           <CardDescription>Current progress across all architecture layers</CardDescription>
@@ -192,7 +192,7 @@ export function HomePageContent() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <div className="p-2 rounded-lg bg-muted">
-                    <feature.icon className="h-5 w-5 text-primary" />
+                    <feature.icon className="size-5 text-primary" />
                   </div>
                   <Badge variant="neutral-soft-outline">{feature.badge}</Badge>
                 </div>
@@ -213,7 +213,7 @@ export function HomePageContent() {
         <Card className="shadow-elevation-1">
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Code2 className="h-5 w-5 text-chart-2" />
+              <Code2 className="size-5 text-chart-2" />
               <CardTitle>Tech Stack</CardTitle>
             </div>
             <CardDescription>Libraries and frameworks used</CardDescription>
@@ -233,7 +233,7 @@ export function HomePageContent() {
         <Card className="shadow-elevation-1">
           <CardHeader>
             <div className="flex items-center gap-2">
-              <Shield className="h-5 w-5 text-success" />
+              <Shield className="size-5 text-success" />
               <CardTitle>WCAG Heuristics</CardTitle>
             </div>
             <CardDescription>Accessibility standards compliance</CardDescription>
@@ -246,7 +246,7 @@ export function HomePageContent() {
               { title: "Focus Visible", desc: "Focus ring (#374151) clearly visible in light and dark mode" },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3">
-                <CheckCircle2 className="h-5 w-5 text-success mt-0.5 shrink-0" />
+                <CheckCircle2 className="size-5 text-success mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-medium">{item.title}</p>
                   <p className="text-xs text-muted-foreground">{item.desc}</p>

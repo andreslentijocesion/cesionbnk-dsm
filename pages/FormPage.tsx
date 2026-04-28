@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button } from "../components/ui/button";
+import { Button } from "../components/ui/Button";
 import {
   Form,
   FormControl,
@@ -10,19 +10,19 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../components/ui/form";
-import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
-import { Checkbox } from "../components/ui/checkbox";
+} from "../components/ui/Form";
+import { Input } from "../components/ui/Input";
+import { Textarea } from "../components/ui/Textarea";
+import { Checkbox } from "../components/ui/Checkbox";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../components/ui/select";
-import { Separator } from "../components/ui/separator";
-import { ComponentShowcase } from "../components/ui/component-showcase";
+} from "../components/ui/Select";
+import { Separator } from "../components/ui/Separator";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import { toast } from "sonner";
 
 // ── Validation schema ───────────────────────────────────────────────────────
@@ -316,9 +316,9 @@ export function FormPage() {
       code={`import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/Form"
+import { Input } from "@/components/ui/Input"
+import { Button } from "@/components/ui/Button"
 
 const schema = z.object({
   empresa: z.string().min(3),

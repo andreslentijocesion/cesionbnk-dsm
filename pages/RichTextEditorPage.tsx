@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/component-showcase";
-import { RichTextEditor } from "../components/advanced/rich-text-editor";
-import { Label } from "../components/ui/label";
-import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { RichTextEditor } from "../components/advanced/RichTextEditor";
+import { Label } from "../components/ui/Label";
+import { Button } from "../components/ui/Button";
 import { toast } from "sonner";
 
 export function RichTextEditorPage() {

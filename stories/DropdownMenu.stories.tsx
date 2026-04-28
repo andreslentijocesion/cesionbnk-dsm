@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuShortcut } from '../components/ui/dropdown-menu';
-import { Button } from '../components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuShortcut } from '../components/ui/DropdownMenu';
+import { Button } from '../components/ui/Button';
 import { MoreHorizontal, Eye, Edit, Copy, Trash2, Download, CheckCircle, XCircle } from 'lucide-react';
 
 const meta: Meta = { title: 'DSM/Components/DropdownMenu', tags: ['autodocs'] };
