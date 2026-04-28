@@ -101,7 +101,7 @@ export function AuditLog({ entries, className }: AuditLogProps) {
               placeholder="Buscar usuario, descripción..."
               className="pl-9 pr-8 h-9"
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e: any) => setSearch(e.target.value)}
             />
             {search && (
               <button

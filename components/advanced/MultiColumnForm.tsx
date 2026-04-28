@@ -56,23 +56,23 @@ export function MultiColumnForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="firstName">First Name <span className="text-destructive">*</span></Label>
-                  <Input id="firstName" value={formData.firstName || ""} onChange={(e) => updateField("firstName", e.target.value)} placeholder="John" required />
+                  <Input id="firstName" value={formData.firstName || ""} onChange={(e: any) => updateField("firstName", e.target.value)} placeholder="John" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="lastName">Last Name <span className="text-destructive">*</span></Label>
-                  <Input id="lastName" value={formData.lastName || ""} onChange={(e) => updateField("lastName", e.target.value)} placeholder="Doe" required />
+                  <Input id="lastName" value={formData.lastName || ""} onChange={(e: any) => updateField("lastName", e.target.value)} placeholder="Doe" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email <span className="text-destructive">*</span></Label>
-                  <Input id="email" type="email" value={formData.email || ""} onChange={(e) => updateField("email", e.target.value)} placeholder="john.doe@example.com" required />
+                  <Input id="email" type="email" value={formData.email || ""} onChange={(e: any) => updateField("email", e.target.value)} placeholder="john.doe@example.com" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" value={formData.phone || ""} onChange={(e) => updateField("phone", e.target.value)} placeholder="+1 (555) 000-0000" />
+                  <Input id="phone" type="tel" value={formData.phone || ""} onChange={(e: any) => updateField("phone", e.target.value)} placeholder="+1 (555) 000-0000" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="dateOfBirth">Date of Birth</Label>
-                  <Input id="dateOfBirth" type="date" value={formData.dateOfBirth || ""} onChange={(e) => updateField("dateOfBirth", e.target.value)} />
+                  <Input id="dateOfBirth" type="date" value={formData.dateOfBirth || ""} onChange={(e: any) => updateField("dateOfBirth", e.target.value)} />
                 </div>
               </div>
             </div>
@@ -82,12 +82,12 @@ export function MultiColumnForm() {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="street">Street Address</Label>
-                  <Input id="street" value={formData.street || ""} onChange={(e) => updateField("street", e.target.value)} placeholder="123 Main Street, Apt 4B" />
+                  <Input id="street" value={formData.street || ""} onChange={(e: any) => updateField("street", e.target.value)} placeholder="123 Main Street, Apt 4B" />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="city">City</Label>
-                    <Input id="city" value={formData.city || ""} onChange={(e) => updateField("city", e.target.value)} placeholder="San Francisco" />
+                    <Input id="city" value={formData.city || ""} onChange={(e: any) => updateField("city", e.target.value)} placeholder="San Francisco" />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="state">State</Label>
@@ -104,7 +104,7 @@ export function MultiColumnForm() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="zipCode">ZIP Code</Label>
-                    <Input id="zipCode" value={formData.zipCode || ""} onChange={(e) => updateField("zipCode", e.target.value)} placeholder="94102" maxLength={5} />
+                    <Input id="zipCode" value={formData.zipCode || ""} onChange={(e: any) => updateField("zipCode", e.target.value)} placeholder="94102" maxLength={5} />
                   </div>
                 </div>
                 <div className="space-y-2">
@@ -128,11 +128,11 @@ export function MultiColumnForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="companyName">Company Name</Label>
-                  <Input id="companyName" value={formData.companyName || ""} onChange={(e) => updateField("companyName", e.target.value)} placeholder="Acme Inc." />
+                  <Input id="companyName" value={formData.companyName || ""} onChange={(e: any) => updateField("companyName", e.target.value)} placeholder="Acme Inc." />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="jobTitle">Job Title</Label>
-                  <Input id="jobTitle" value={formData.jobTitle || ""} onChange={(e) => updateField("jobTitle", e.target.value)} placeholder="Software Engineer" />
+                  <Input id="jobTitle" value={formData.jobTitle || ""} onChange={(e: any) => updateField("jobTitle", e.target.value)} placeholder="Software Engineer" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="industry">Industry</Label>
@@ -168,16 +168,16 @@ export function MultiColumnForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="linkedIn">LinkedIn Profile</Label>
-                  <Input id="linkedIn" type="url" value={formData.linkedIn || ""} onChange={(e) => updateField("linkedIn", e.target.value)} placeholder="https://linkedin.com/in/johndoe" />
+                  <Input id="linkedIn" type="url" value={formData.linkedIn || ""} onChange={(e: any) => updateField("linkedIn", e.target.value)} placeholder="https://linkedin.com/in/johndoe" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="website">Personal Website</Label>
-                  <Input id="website" type="url" value={formData.website || ""} onChange={(e) => updateField("website", e.target.value)} placeholder="https://johndoe.com" />
+                  <Input id="website" type="url" value={formData.website || ""} onChange={(e: any) => updateField("website", e.target.value)} placeholder="https://johndoe.com" />
                 </div>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="notes">Additional Notes</Label>
-                <Textarea id="notes" value={formData.notes || ""} onChange={(e) => updateField("notes", e.target.value)} placeholder="Anything else you'd like to share..." rows={4} />
+                <Textarea id="notes" value={formData.notes || ""} onChange={(e: any) => updateField("notes", e.target.value)} placeholder="Anything else you'd like to share..." rows={4} />
               </div>
             </div>
             <div className="flex gap-3 pt-4">

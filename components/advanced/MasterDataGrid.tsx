@@ -76,7 +76,7 @@ export function MasterDataGrid({
                 <Input
                   placeholder={searchPlaceholder}
                   value={searchQuery}
-                  onChange={(e) => onSearchChange(e.target.value)}
+                  onChange={(e: any) => onSearchChange(e.target.value)}
                   className="pl-9 h-9 bg-card"
                 />
               </div>

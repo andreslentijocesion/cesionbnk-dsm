@@ -297,7 +297,7 @@ export function TreeTable({
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
           <div className="relative w-full sm:w-72">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
-            <Input placeholder="Search by ID, client, payer, Tax ID..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="pl-9 h-9" />
+            <Input placeholder="Search by ID, client, payer, Tax ID..." value={searchQuery} onChange={(e: any) => setSearchQuery(e.target.value)} className="pl-9 h-9" />
             {searchQuery && <button onClick={() => setSearchQuery("")} className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"><X className="size-3.5 .5" /></button>}
           </div>
           <Select value={statusFilter} onValueChange={setStatusFilter}>

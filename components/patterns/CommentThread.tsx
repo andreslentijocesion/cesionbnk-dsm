@@ -131,9 +131,9 @@ export function CommentThread({
               <Textarea
                 placeholder="Escribe un comentario..."
                 value={draft}
-                onChange={(e) => setDraft(e.target.value)}
+                onChange={(e: any) => setDraft(e.target.value)}
                 className="min-h-[72px] resize-none text-sm"
-                onKeyDown={(e) => {
+                onKeyDown={(e: any) => {
                   if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) handleSubmit();
                 }}
               />

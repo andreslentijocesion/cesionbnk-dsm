@@ -86,7 +86,7 @@ export function ConditionalForm() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="companyName">Company Name <span className="text-destructive">*</span></Label>
-                  <Input id="companyName" value={formData.companyName || ""} onChange={(e) => updateField("companyName", e.target.value)} placeholder="Acme Inc." />
+                  <Input id="companyName" value={formData.companyName || ""} onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateField("companyName", e.target.value)} placeholder="Acme Inc." />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="industry">Industry</Label>
@@ -135,7 +135,7 @@ export function ConditionalForm() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="yearsInBusiness">Years in Business</Label>
-                      <Input id="yearsInBusiness" type="number" value={formData.yearsInBusiness || ""} onChange={(e) => updateField("yearsInBusiness", e.target.value)} placeholder="10" min="0" />
+                      <Input id="yearsInBusiness" type="number" value={formData.yearsInBusiness || ""} onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateField("yearsInBusiness", e.target.value)} placeholder="10" min="0" />
                     </div>
                   </div>
                 )}
@@ -146,7 +146,7 @@ export function ConditionalForm() {
                 {hasWebsite && (
                   <div className="space-y-2 pl-6">
                     <Label htmlFor="websiteUrl">Website URL</Label>
-                    <Input id="websiteUrl" type="url" value={formData.websiteUrl || ""} onChange={(e) => updateField("websiteUrl", e.target.value)} placeholder="https://example.com" />
+                    <Input id="websiteUrl" type="url" value={formData.websiteUrl || ""} onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateField("websiteUrl", e.target.value)} placeholder="https://example.com" />
                   </div>
                 )}
                 <div className="space-y-2">
@@ -168,19 +168,19 @@ export function ConditionalForm() {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="fullName">Full Name <span className="text-destructive">*</span></Label>
-                  <Input id="fullName" value={formData.fullName || ""} onChange={(e) => updateField("fullName", e.target.value)} placeholder="John Doe" required />
+                  <Input id="fullName" value={formData.fullName || ""} onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateField("fullName", e.target.value)} placeholder="John Doe" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email <span className="text-destructive">*</span></Label>
-                  <Input id="email" type="email" value={formData.email || ""} onChange={(e) => updateField("email", e.target.value)} placeholder="john@example.com" required />
+                  <Input id="email" type="email" value={formData.email || ""} onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateField("email", e.target.value)} placeholder="john@example.com" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" value={formData.phone || ""} onChange={(e) => updateField("phone", e.target.value)} placeholder="+1 (555) 000-0000" />
+                  <Input id="phone" type="tel" value={formData.phone || ""} onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateField("phone", e.target.value)} placeholder="+1 (555) 000-0000" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message <span className="text-destructive">*</span></Label>
-                  <Textarea id="message" value={formData.message || ""} onChange={(e) => updateField("message", e.target.value)} placeholder="Tell us about your needs..." rows={4} required />
+                  <Textarea id="message" value={formData.message || ""} onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateField("message", e.target.value)} placeholder="Tell us about your needs..." rows={4} required />
                 </div>
               </div>
             )}

@@ -81,7 +81,7 @@ function FormFieldItem({ field, index, moveField, deleteField, updateField }: {
   const columnWidths = [{ value: 12, label: "Full" }, { value: 6, label: "Half" }, { value: 4, label: "1/3" }, { value: 3, label: "1/4" }];
 
   return (
-    <div ref={(node) => drag(drop(node))} className={cn("group flex items-start gap-3 p-4 border rounded-lg bg-card transition-all hover:border-primary", isDragging && "opacity-50")}>
+    <div ref={(node: any) => drag(drop(node))} className={cn("group flex items-start gap-3 p-4 border rounded-lg bg-card transition-all hover:border-primary", isDragging && "opacity-50")}>
       <GripVertical className="size-5 text-muted-foreground cursor-move mt-1" />
       <div className="flex-1 space-y-3">
         <div className="flex items-center gap-2 flex-wrap">
@@ -127,7 +127,7 @@ function FormFieldItem({ field, index, moveField, deleteField, updateField }: {
             {field.options?.map((option, optIndex) => (
               <div key={optIndex} className="flex items-center gap-2">
                 {field.type !== "select" && <input type={field.type === "checkbox" ? "checkbox" : "radio"} disabled className="size-4" name={field.id} />}
-                <Input value={option} onChange={(e) => {
+                <Input value={option} onChange={(e: any) => {
                   const newOptions = [...(field.options || [])];
                   newOptions[optIndex] = e.target.value;
                   updateField(field.id, { options: newOptions });
@@ -257,7 +257,7 @@ export function FormBuilder() {
                 <CardDescription>How your form will look with column layout</CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={(e) => e.preventDefault()}>
+                <form onSubmit={(e: any) => e.preventDefault()}>
                   <div className="grid grid-cols-12 gap-4">
                     {fields.map((field) => {
                       const colSpanClass = field.columns === 3 ? "col-span-12 md:col-span-3" : field.columns === 4 ? "col-span-12 md:col-span-4" : field.columns === 6 ? "col-span-12 md:col-span-6" : "col-span-12";

@@ -195,7 +195,7 @@ export function EditableTable() {
               placeholder="Buscar factura, pagador..."
               className="pl-9 h-9"
               value={search}
-              onChange={(e) => { setSearch(e.target.value); setCurrentPage(1); }}
+              onChange={(e: any) => { setSearch(e.target.value); setCurrentPage(1); }}
             />
           </div>
           <div className="flex items-center gap-2">
@@ -266,7 +266,7 @@ export function EditableTable() {
                         {isEditing ? (
                           <Input
                             value={editDraft.number ?? ""}
-                            onChange={(e) => setEditDraft((d) => ({ ...d, number: e.target.value }))}
+                            onChange={(e: any) => setEditDraft((d: any) => ({ ...d, number: e.target.value }))}
                             className="h-7 text-xs w-full min-w-[110px]"
                           />
                         ) : (
@@ -279,7 +279,7 @@ export function EditableTable() {
                         {isEditing ? (
                           <Input
                             value={editDraft.payor ?? ""}
-                            onChange={(e) => setEditDraft((d) => ({ ...d, payor: e.target.value }))}
+                            onChange={(e: any) => setEditDraft((d: any) => ({ ...d, payor: e.target.value }))}
                             className="h-7 text-xs w-full min-w-[140px]"
                             placeholder="Nombre pagador"
                           />
@@ -294,7 +294,7 @@ export function EditableTable() {
                           <Input
                             type="number"
                             value={editDraft.amount ?? 0}
-                            onChange={(e) => setEditDraft((d) => ({ ...d, amount: Number(e.target.value) }))}
+                            onChange={(e: any) => setEditDraft((d: any) => ({ ...d, amount: Number(e.target.value) }))}
                             className="h-7 text-xs text-right w-28"
                           />
                         ) : (
@@ -309,7 +309,7 @@ export function EditableTable() {
                             type="number"
                             step="0.1"
                             value={editDraft.rate ?? 0}
-                            onChange={(e) => setEditDraft((d) => ({ ...d, rate: Number(e.target.value) }))}
+                            onChange={(e: any) => setEditDraft((d: any) => ({ ...d, rate: Number(e.target.value) }))}
                             className="h-7 text-xs text-right w-20"
                           />
                         ) : (
@@ -323,7 +323,7 @@ export function EditableTable() {
                           <Input
                             type="date"
                             value={editDraft.dueDate ?? ""}
-                            onChange={(e) => setEditDraft((d) => ({ ...d, dueDate: e.target.value }))}
+                            onChange={(e: any) => setEditDraft((d: any) => ({ ...d, dueDate: e.target.value }))}
                             className="h-7 text-xs w-32"
                           />
                         ) : (
@@ -360,7 +360,7 @@ export function EditableTable() {
                         {isEditing ? (
                           <Input
                             value={editDraft.observations ?? ""}
-                            onChange={(e) => setEditDraft((d) => ({ ...d, observations: e.target.value }))}
+                            onChange={(e: any) => setEditDraft((d: any) => ({ ...d, observations: e.target.value }))}
                             className="h-7 text-xs w-full min-w-[140px]"
                             placeholder="Observaciones..."
                           />
