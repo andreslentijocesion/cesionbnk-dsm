@@ -27,7 +27,7 @@ export interface AgingBucket {
 
 interface AgingReportProps {
   buckets: AgingBucket[];
-  /** Unit label for amounts, e.g. "M CLP" */
+  /** Unit label for amounts, e.g. "M COP" */
   unit?: string;
   className?: string;
 }
@@ -45,7 +45,7 @@ const fmt = (n: number) =>
     ? `$${(n / 1000).toFixed(1)}B`
     : `$${n.toFixed(0)}M`;
 
-export function AgingReport({ buckets, unit = "M CLP", className }: AgingReportProps) {
+export function AgingReport({ buckets, unit = "M COP", className }: AgingReportProps) {
   const total = useMemo(() => buckets.reduce((s, b) => s + b.amount, 0), [buckets]);
   const totalCount = useMemo(() => buckets.reduce((s, b) => s + b.count, 0), [buckets]);
 
@@ -57,11 +57,16 @@ export function AgingReport({ buckets, unit = "M CLP", className }: AgingReportP
           const meta = riskMeta[b.risk];
           const pct = total > 0 ? ((b.amount / total) * 100).toFixed(1) : "0.0";
           return (
-            <Card key={b.label} className="relative overflow-hidden">
-              <div
-                className="absolute top-0 left-0 right-0 h-1"
-                style={{ backgroundColor: meta.bar }}
-              />
+            <Card
+              key={b.label}
+              className="border-t-4"
+              style={{
+                borderTopColor: "transparent",
+                backgroundImage: `linear-gradient(var(--card), var(--card)), linear-gradient(to right, ${meta.bar}, color-mix(in srgb, ${meta.bar} 15%, #000))`,
+                backgroundOrigin: "border-box",
+                backgroundClip: "padding-box, border-box",
+              }}
+            >
               <CardContent className="pt-4 pb-3 px-4">
                 <p className="text-xs text-muted-foreground mb-1">{b.label}</p>
                 <p className="text-lg font-bold text-foreground">{fmt(b.amount)}</p>

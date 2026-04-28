@@ -20,7 +20,7 @@ interface Invoice {
 const invoices: Invoice[] = Array.from({ length: 500 }, (_, i) => ({
   id: `inv-${i}`,
   folio: `F-${String(i + 1).padStart(5, '0')}`,
-  amount: `$${((i + 1) * 123456).toLocaleString('es-CL')}`,
+  amount: `$${((i + 1) * 123456).toLocaleString('es-CO')}`,
   debtor: `Deudor ${String.fromCharCode(65 + (i % 26))} S.A.`,
   status: ['Pendiente', 'Aprobada', 'Vencida', 'Cobrada'][i % 4],
 }));

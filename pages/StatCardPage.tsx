@@ -11,7 +11,7 @@ function StatCardDemo() {
         change="+8.3%"
         trend="up"
         icon={DollarSign}
-        subtitle="CLP desembolsados"
+        subtitle="COP desembolsados"
         variant="primary"
       />
       <StatCard
@@ -63,7 +63,7 @@ import { DollarSign } from "lucide-react"
     change="+8.3%"
     trend="up"
     icon={DollarSign}
-    subtitle="CLP desembolsados"
+    subtitle="COP desembolsados"
     variant="primary"
   />
 </StatCardGrid>`}

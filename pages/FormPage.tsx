@@ -30,7 +30,7 @@ import { toast } from "sonner";
 const formSchema = z.object({
   // Cedente
   empresa:   z.string().min(3,  { message: "Mínimo 3 caracteres." }),
-  rut:       z.string().regex(/^\d{1,8}-[\dkK]$/, { message: "Formato inválido. Ej: 12345678-9" }),
+  nit:       z.string().regex(/^\d{6,10}-\d$/, { message: "Formato inválido. Ej: 900123456-7" }),
   email:     z.string().email({ message: "Email inválido." }),
   telefono:  z.string().regex(/^\+?\d{8,15}$/, { message: "Teléfono inválido." }).optional().or(z.literal("")),
 
@@ -57,7 +57,7 @@ function NuevaOperacionForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      empresa: "", rut: "", email: "", telefono: "",
+      empresa: "", nit: "", email: "", telefono: "",
       tipo: undefined, monto: undefined, plazo: 60, deudor: "",
       observaciones: "", terminos: false,
     },
@@ -65,7 +65,7 @@ function NuevaOperacionForm() {
 
   function onSubmit(values: FormValues) {
     toast.success("Operación registrada", {
-      description: `${values.empresa} · $${values.monto.toLocaleString("es-CL")} · ${values.plazo} días`,
+      description: `${values.empresa} · $${values.monto.toLocaleString("es-CO")} · ${values.plazo} días`,
     });
     console.log(values);
   }
@@ -101,14 +101,14 @@ function NuevaOperacionForm() {
 
             <FormField
               control={form.control}
-              name="rut"
+              name="nit"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>RUT <span className="text-destructive">*</span></FormLabel>
+                  <FormLabel>NIT <span className="text-destructive">*</span></FormLabel>
                   <FormControl>
-                    <Input placeholder="12345678-9" {...field} />
+                    <Input placeholder="900123456-7" {...field} />
                   </FormControl>
-                  <FormDescription>Sin puntos, con guión.</FormDescription>
+                  <FormDescription>Sin puntos, con guión y dígito verificador.</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -121,7 +121,7 @@ function NuevaOperacionForm() {
                 <FormItem>
                   <FormLabel>Email de contacto <span className="text-destructive">*</span></FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="contacto@empresa.cl" {...field} />
+                    <Input type="email" placeholder="contacto@empresa.co" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -135,7 +135,7 @@ function NuevaOperacionForm() {
                 <FormItem>
                   <FormLabel>Teléfono</FormLabel>
                   <FormControl>
-                    <Input placeholder="+56912345678" {...field} />
+                    <Input placeholder="+573101234567" {...field} />
                   </FormControl>
                   <FormDescription>Opcional. Incluye código de país.</FormDescription>
                   <FormMessage />
@@ -197,7 +197,7 @@ function NuevaOperacionForm() {
               name="monto"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Monto nominal (CLP) <span className="text-destructive">*</span></FormLabel>
+                  <FormLabel>Monto nominal (COP) <span className="text-destructive">*</span></FormLabel>
                   <FormControl>
                     <Input
                       type="number"
@@ -322,7 +322,7 @@ import { Button } from "@/components/ui/button"
 
 const schema = z.object({
   empresa: z.string().min(3),
-  rut:     z.string().regex(/^\\d{1,8}-[\\dkK]$/),
+  nit:     z.string().regex(/^\\d{6,10}-\\d$/),
   email:   z.string().email(),
   tipo:    z.string(),
   monto:   z.coerce.number().min(1_000_000),

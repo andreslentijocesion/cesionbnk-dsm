@@ -99,7 +99,6 @@ import {
   FactoringMaturityAlertsPage,
   FactoringPortfolioReportPage,
   FactoringCalculatorPage,
-  FactoringSectorConcentrationPage,
   FactoringStatusCardPage,
   AdvancedFilterPanelPage,
   EditableTablePage,
@@ -138,6 +137,7 @@ import {
 } from "../pages";
 import { DSMVisualAuditPage } from "../pages/DSMVisualAuditPage";
 import { ComponentGuidelinesPage } from "../pages/ComponentGuidelinesPage";
+import { ThemeExplorerPage } from "../pages/ThemeExplorerPage";
 
 // ── Route maps ─────────────────────────────────────────────────────────────────
 
@@ -234,7 +234,6 @@ const NAV_ROUTES: Record<NavPageId, () => ReactElement> = {
   "factoring-maturity-alerts":       () => <FactoringMaturityAlertsPage />,
   "factoring-portfolio-report":      () => <FactoringPortfolioReportPage />,
   "factoring-calculator":            () => <FactoringCalculatorPage />,
-  "factoring-sector-concentration":  () => <FactoringSectorConcentrationPage />,
   "factoring-status-card":           () => <FactoringStatusCardPage />,
   "advanced-filter":                 () => <AdvancedFilterPanelPage />,
   "editable-table":                  () => <EditableTablePage />,
@@ -278,6 +277,7 @@ const SPECIAL_ROUTES: Record<SpecialPageId, () => ReactElement> = {
   "icon-gallery":     () => <IconGalleryPage />,
   "dsm-visual-audit":     () => <DSMVisualAuditPage />,
   "component-guidelines": () => <ComponentGuidelinesPage />,
+  "theme-explorer":       () => <ThemeExplorerPage />,
   changelog:              () => <DSMDashboardPage />, // legacy alias
 };
 

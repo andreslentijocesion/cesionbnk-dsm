@@ -91,8 +91,8 @@ export const FormField: Story = {
         <Input id="email" type="email" placeholder="correo@cesionbnk.com" required />
       </div>
       <div className="grid gap-1.5">
-        <Label htmlFor="rut">RUT empresa</Label>
-        <Input id="rut" placeholder="12.345.678-9" />
+        <Label htmlFor="nit">NIT empresa</Label>
+        <Input id="nit" placeholder="900.123.456-7" />
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="monto">Monto factura</Label>

@@ -21,7 +21,7 @@ const meta: Meta<typeof CreditScoreCard> = {
   decorators: [(Story) => <div className="max-w-sm"><Story /></div>],
   args: {
     name: 'Constructora Santa Fe SpA',
-    rut: '76.543.210-9',
+    nit: '900.543.210-9',
     industry: 'Construcción · Obras civiles',
     score: 780,
     limitAmount: '$150.000.000',
@@ -44,7 +44,7 @@ export const Default: Story = {};
 export const RiesgoMedio: Story = {
   args: {
     name: 'Textiles del Valle S.A.',
-    rut: '79.234.567-3',
+    nit: '830.234.567-3',
     industry: 'Manufactura textil',
     score: 540,
     limitAmount: '$80.000.000',
@@ -57,7 +57,7 @@ export const RiesgoMedio: Story = {
 export const RiesgoAlto: Story = {
   args: {
     name: 'Importadora Rápida Ltda.',
-    rut: '77.111.222-5',
+    nit: '860.111.222-5',
     industry: 'Comercio exterior',
     score: 320,
     limitAmount: '$30.000.000',
@@ -74,7 +74,7 @@ export const RiesgoAlto: Story = {
 export const RiesgoCritico: Story = {
   args: {
     name: 'Servicios Globales S.A.S.',
-    rut: '78.999.000-1',
+    nit: '900.999.000-1',
     industry: 'Servicios generales',
     score: 130,
     limitAmount: '$20.000.000',

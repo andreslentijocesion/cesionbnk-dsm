@@ -66,7 +66,6 @@
     'Factoring Debtor List':          SB_BASE + 'dsm-patterns-factoringdebtorlist--docs',
     'Factoring Maturity Alerts':      SB_BASE + 'dsm-patterns-factoringmaturityalerts--docs',
     'Factoring Portfolio Report':     SB_BASE + 'dsm-patterns-factoringportfolioreport--docs',
-    'Factoring Sector Concentration': SB_BASE + 'dsm-patterns-factoringsectorconcentration--docs',
     'Factoring Calculator':           SB_BASE + 'dsm-patterns-factoringcalculator--docs',
     'DataTableAdvanced':        SB_BASE + 'dsm-patterns-datatableadvanced--docs',
     'EmptyState':               SB_BASE + 'dsm-patterns-emptystate--docs',
@@ -5000,7 +4999,7 @@
  var fdblSep = figma.createFrame(); fdblSep.resize(760, 1); fill(fdblSep, C.border); fdblSep.layoutMode = 'HORIZONTAL'; fdblSep.primaryAxisSizingMode = 'FIXED'; fdblSep.counterAxisSizingMode = 'FIXED'; fdbl.appendChild(fdblSep); fdblSep.layoutSizingHorizontal = 'FILL';
     // Table header
  var fdblTH = row(0); fdblTH.resize(760, 36); fdblTH.layoutMode = 'HORIZONTAL'; fdblTH.layoutSizingVertical = 'FIXED'; fdblTH.counterAxisAlignItems = 'CENTER'; fill(fdblTH, C.muted);
-    var fdblCols = [['NIT / RUT',100],['Nombre Deudor',160],['Ops Activas',90],['Exposición Total',120],['Límite',100],['Rating',70],['Estado',70],['',50]];
+    var fdblCols = [['NIT',100],['Nombre Deudor',160],['Ops Activas',90],['Exposición Total',120],['Límite',100],['Rating',70],['Estado',70],['',50]];
     for (var fdblci = 0; fdblci < fdblCols.length; fdblci++) {
       var fdblHC = figma.createFrame(); fdblHC.resize(fdblCols[fdblci][1], 36); fdblHC.layoutMode = 'HORIZONTAL'; fdblHC.primaryAxisSizingMode = 'FIXED'; fdblHC.counterAxisSizingMode = 'FIXED'; fdblHC.counterAxisAlignItems = 'CENTER'; fdblHC.paddingLeft = 10; noFill(fdblHC);
       fdblHC.appendChild(tx(fdblCols[fdblci][0], 'SemiBold', 11, C.mutedFg)); fdblTH.appendChild(fdblHC);
@@ -5275,111 +5274,6 @@
     console.log('[OK] Pattern: Factoring Calculator');
   } catch (e) { console.error('[FAIL] Pattern Factoring Calculator: ' + e.message); }
 
-  // ── Pattern: Factoring Sector Concentration ──
-  try {
-    var fsec = col(0); fsec.name = 'Factoring Sector Concentration'; sbDesc(fsec);
-    fsec.resize(760, 1); fsec.primaryAxisSizingMode = 'AUTO'; fsec.counterAxisSizingMode = 'FIXED';
-    fill(fsec, C.card); stroke(fsec, C.border); fsec.cornerRadius = 12;
-    // Header
-    var fsecHdr = row(0); fsecHdr.paddingLeft = fsecHdr.paddingRight = 20; fsecHdr.paddingTop = fsecHdr.paddingBottom = 14;
- fsecHdr.resize(760, 1); fsecHdr.layoutMode = 'HORIZONTAL'; fsecHdr.counterAxisAlignItems = 'CENTER'; fill(fsecHdr, C.muted);
-    var fsecHLeft = col(2); noFill(fsecHLeft);
-    fsecHLeft.appendChild(tx('Concentración por Sector', 'Bold', 16, C.fg));
-    fsecHLeft.appendChild(tx('Análisis de concentración — Índice HHI', 'Regular', 12, C.mutedFg)); fsecHdr.appendChild(fsecHLeft);
-    var fsecHSp = figma.createFrame(); fsecHSp.resize(4,1); noFill(fsecHSp); fsecHdr.appendChild(fsecHSp); fsecHSp.layoutGrow = 1;
-    // HHI badge
-    var fsecHHI = row(6); fsecHHI.paddingLeft = fsecHHI.paddingRight = 12; fsecHHI.paddingTop = fsecHHI.paddingBottom = 6;
-    fill(fsecHHI, C.destructiveSubtle); fsecHHI.cornerRadius = 8; fsecHHI.counterAxisAlignItems = 'CENTER';
-    fsecHHI.appendChild(iconInst('alert-circle', C.destructive, 13));
-    var fsecHHICol = col(1); noFill(fsecHHICol);
-    fsecHHICol.appendChild(tx('HHI: 2,847', 'Bold', 12, C.destructive));
-    fsecHHICol.appendChild(tx('Alta concentración', 'Regular', 9, C.destructive)); fsecHHI.appendChild(fsecHHICol); fsecHdr.appendChild(fsecHHI);
-    // Toggle view
-    var fsecToggle = row(2); fsecToggle.paddingLeft = fsecToggle.paddingRight = 3; fsecToggle.paddingTop = fsecToggle.paddingBottom = 3;
-    fill(fsecToggle, C.muted); fsecToggle.cornerRadius = 8; fsecHdr.appendChild(fsecToggle);
-    var fsecToggleLabels = ['Sector', 'Cedente', 'Deudor'];
-    for (var fstgi = 0; fstgi < fsecToggleLabels.length; fstgi++) {
-      var fstgBtn = row(0); fstgBtn.paddingLeft = fstgBtn.paddingRight = 10; fstgBtn.paddingTop = fstgBtn.paddingBottom = 5;
-      if (fstgi === 0) fill(fstgBtn, C.bg); else noFill(fstgBtn); fstgBtn.cornerRadius = 6;
-      if (fstgi === 0) shadow(fstgBtn, 2, 4, 0.08);
-      fstgBtn.appendChild(tx(fsecToggleLabels[fstgi], 'Medium', 12, fstgi === 0 ? C.fg : C.mutedFg)); fsecToggle.appendChild(fstgBtn);
-    }
-    fsec.appendChild(fsecHdr);
-    fsecHdr.layoutSizingHorizontal = 'FILL';
-    // Alert banner
-    var fsecAlert = row(8); fsecAlert.paddingLeft = fsecAlert.paddingRight = 20; fsecAlert.paddingTop = fsecAlert.paddingBottom = 10;
- fsecAlert.resize(760, 1); fsecAlert.layoutMode = 'HORIZONTAL'; fsecAlert.counterAxisAlignItems = 'CENTER';
-    fill(fsecAlert, C.destructiveSubtle); stroke(fsecAlert, C.destructiveSubtle); fsecAlert.counterAxisAlignItems = 'CENTER';
-    fsecAlert.appendChild(iconInst('alert-circle', C.destructive, 16));
-    fsecAlert.appendChild(tx('Sector Gobierno supera el límite de política (35%). Acción requerida.', 'Regular', 12, C.destructive));
-    var fsecAlertSp = figma.createFrame(); fsecAlertSp.resize(4,1); noFill(fsecAlertSp); fsecAlert.appendChild(fsecAlertSp); fsecAlertSp.layoutGrow = 1;
-    var fsecAlertBtn = row(0); fsecAlertBtn.paddingLeft = fsecAlertBtn.paddingRight = 10; fsecAlertBtn.paddingTop = fsecAlertBtn.paddingBottom = 5;
-    fill(fsecAlertBtn, C.destructive); fsecAlertBtn.cornerRadius = 6; fsecAlertBtn.appendChild(tx('Revisar', 'Medium', 11, C.primaryFg)); fsecAlert.appendChild(fsecAlertBtn);
-    fsec.appendChild(fsecAlert);
-    fsecAlert.layoutSizingHorizontal = 'FILL';
- var fsecSep = figma.createFrame(); fsecSep.resize(760, 1); fill(fsecSep, C.border); fsecSep.layoutMode = 'HORIZONTAL'; fsecSep.primaryAxisSizingMode = 'FIXED'; fsecSep.counterAxisSizingMode = 'FIXED'; fsec.appendChild(fsecSep); fsecSep.layoutSizingHorizontal = 'FILL';
-    // Treemap grid (sector boxes with proportional sizes)
-    var fsecTreeBody = col(16); fsecTreeBody.paddingLeft = fsecTreeBody.paddingRight = 20; fsecTreeBody.paddingTop = fsecTreeBody.paddingBottom = 16; noFill(fsecTreeBody);
-    fsecTreeBody.appendChild(tx('Distribución de Cartera por Sector', 'SemiBold', 13, C.fg));
- var fsecTreeGrid = figma.createFrame(); fsecTreeGrid.resize(720, 180); noFill(fsecTreeGrid); fsecTreeGrid.layoutMode = 'HORIZONTAL'; fsecTreeGrid.itemSpacing = 4; fsecTreeGrid.counterAxisAlignItems = 'MIN';
-    var fsecSectors = [
-      { name: 'Gobierno', pct: 38, color: C.destructive, risk: 'crítico' },
-      { name: 'Retail', pct: 22, color: C.warning, risk: 'alto' },
-      { name: 'Industria', pct: 18, color: C.primary, risk: 'medio' },
-      { name: 'Servicios', pct: 12, color: C.secondary, risk: 'bajo' },
-      { name: 'Tecnología', pct: 6, color: C.success, risk: 'bajo' },
-      { name: 'Otros', pct: 4, color: C.mutedFg, risk: 'bajo' },
-    ];
-    for (var fsti = 0; fsti < fsecSectors.length; fsti++) {
-      var fst = fsecSectors[fsti];
-      var fstW = Math.max(Math.round(720 * fst.pct / 100) - 4, 40);
-      var fstBox = col(6); fstBox.paddingLeft = fstBox.paddingRight = 10; fstBox.paddingTop = fstBox.paddingBottom = 8;
-      fstBox.resize(fstW, 180); fstBox.layoutSizingHorizontal = 'FIXED'; fstBox.layoutSizingVertical = 'FIXED';
-      fill(fstBox, fst.color); fstBox.cornerRadius = 6; fstBox.primaryAxisAlignItems = 'MAX';
-      fstBox.appendChild(tx(fst.name, 'Bold', fst.pct >= 18 ? 13 : 10, C.primaryFg));
-      fstBox.appendChild(tx(fst.pct + '%', 'Regular', fst.pct >= 18 ? 18 : 12, C.primaryFg));
-      fsecTreeGrid.appendChild(fstBox);
-    }
-    fsecTreeBody.appendChild(fsecTreeGrid);
-    fsecTreeGrid.layoutSizingHorizontal = 'FILL';
-    fsec.appendChild(fsecTreeBody);
- var fsecSep2 = figma.createFrame(); fsecSep2.resize(760, 1); fill(fsecSep2, C.border); fsecSep2.layoutMode = 'HORIZONTAL'; fsecSep2.primaryAxisSizingMode = 'FIXED'; fsecSep2.counterAxisSizingMode = 'FIXED'; fsec.appendChild(fsecSep2); fsecSep2.layoutSizingHorizontal = 'FILL';
-    // Detail table
- var fsecTH = row(0); fsecTH.resize(760, 34); fsecTH.layoutMode = 'HORIZONTAL'; fsecTH.layoutSizingVertical = 'FIXED'; fsecTH.counterAxisAlignItems = 'CENTER'; fill(fsecTH, C.muted);
-    var fsecTHCols = [['Sector',140],['Exposición',130],['% Cartera',100],['Límite Política',120],['Utilización',130],['Riesgo',100]];
-    for (var fsthci = 0; fsthci < fsecTHCols.length; fsthci++) {
-      var fsthC = figma.createFrame(); fsthC.resize(fsecTHCols[fsthci][1], 34); fsthC.layoutMode = 'HORIZONTAL'; fsthC.counterAxisAlignItems = 'CENTER'; fsthC.paddingLeft = 10; noFill(fsthC);
-      fsthC.appendChild(tx(fsecTHCols[fsthci][0], 'SemiBold', 11, C.mutedFg)); fsecTH.appendChild(fsthC);
-    }
-    fsec.appendChild(fsecTH);
-    fsecTH.layoutSizingHorizontal = 'FILL';
-    for (var fstri = 0; fstri < fsecSectors.length; fstri++) {
- var fstRow = row(0); fstRow.resize(760, 42); fstRow.layoutMode = 'HORIZONTAL'; fstRow.layoutSizingVertical = 'FIXED'; fstRow.counterAxisAlignItems = 'CENTER';
-      fill(fstRow, fstri % 2 === 0 ? C.bg : C.bg);
-      var fstSec = fsecSectors[fstri]; var fstLim = 35; var fstUtil = Math.round(fstSec.pct / fstLim * 100);
-      var fstRWs = [140,130,100,120];
-      var fstCellVals = [fstSec.name, '$' + (fstSec.pct * 48).toLocaleString() + 'M', fstSec.pct + '%', fstLim + '%'];
-      for (var fstrci = 0; fstrci < fstCellVals.length; fstrci++) {
-        var fstCell = figma.createFrame(); fstCell.resize(fstRWs[fstrci], 42); fstCell.layoutMode = 'HORIZONTAL'; fstCell.counterAxisAlignItems = 'CENTER'; fstCell.paddingLeft = 10; noFill(fstCell);
-        fstCell.appendChild(tx(fstCellVals[fstrci], 'Regular', 12, C.fg)); fstRow.appendChild(fstCell);
-      }
-      // Progress bar cell
-      var fstProgCell = figma.createFrame(); fstProgCell.resize(130, 42); fstProgCell.layoutMode = 'VERTICAL'; fstProgCell.primaryAxisAlignItems = 'CENTER'; fstProgCell.paddingLeft = 10; fstProgCell.paddingRight = 10; fstProgCell.itemSpacing = 3; noFill(fstProgCell);
-      fstProgCell.appendChild(tx(Math.min(fstUtil, 100) + '%', 'Medium', 10, fstUtil > 100 ? C.destructive : fstUtil > 75 ? C.warning : C.success));
-      var fstTrack = figma.createFrame(); fstTrack.resize(110, 5); fill(fstTrack, C.muted); fstTrack.cornerRadius = 3; fstTrack.layoutMode = 'HORIZONTAL';
-      var fstFill = figma.createFrame(); var fstFW = Math.min(Math.round(110 * fstUtil / 100), 110);
-      fstFill.resize(fstFW, 5); fill(fstFill, fstUtil > 100 ? C.destructive : fstUtil > 75 ? C.warning : C.success); fstFill.cornerRadius = 3; fstTrack.appendChild(fstFill); fstProgCell.appendChild(fstTrack); fstRow.appendChild(fstProgCell);
-      // Risk badge
-      var fstRiskCell = figma.createFrame(); fstRiskCell.resize(100, 42); fstRiskCell.layoutMode = 'HORIZONTAL'; fstRiskCell.counterAxisAlignItems = 'CENTER'; fstRiskCell.paddingLeft = 10; noFill(fstRiskCell);
-      var fstRiskColor = fstSec.color; var fstRBadge = row(0); fstRBadge.paddingLeft = fstRBadge.paddingRight = 8; fstRBadge.paddingTop = fstRBadge.paddingBottom = 3; fstRBadge.cornerRadius = 10;
-      fill(fstRBadge, softBg(fstRiskColor)); fstRBadge.appendChild(tx(fstSec.risk, 'Medium', 10, fstRiskColor)); fstRiskCell.appendChild(fstRBadge); fstRow.appendChild(fstRiskCell);
-      fsec.appendChild(fstRow);
-      fstRow.layoutSizingHorizontal = 'FILL';
- var fstSepR = figma.createFrame(); fstSepR.resize(760, 1); fill(fstSepR, C.border); fstSepR.layoutMode = 'HORIZONTAL'; fstSepR.primaryAxisSizingMode = 'FIXED'; fstSepR.counterAxisSizingMode = 'FIXED'; fsec.appendChild(fstSepR); fstSepR.layoutSizingHorizontal = 'FILL';
-    }
-    ptRoot.appendChild(fsec);
-    console.log('[OK] Pattern: Factoring Sector Concentration');
-  } catch (e) { console.error('[FAIL] Pattern Factoring Sector Concentration: ' + e.message); }
 
   // ── Pattern: OperationStatusPipeline ────────────────────────────────────
   try {
@@ -5891,7 +5785,7 @@
  var cscHdr = row(0); cscHdr.layoutMode = 'HORIZONTAL'; cscHdr.primaryAxisAlignItems = 'SPACE_BETWEEN'; cscHdr.counterAxisAlignItems = 'MIN'; noFill(cscHdr);
     var cscNameCol = figma.createFrame(); cscNameCol.layoutMode = 'VERTICAL'; cscNameCol.itemSpacing = 2; noFill(cscNameCol);
     cscNameCol.appendChild(tx('Constructora Santa Fe SpA', 'SemiBold', 13, C.fg));
-    cscNameCol.appendChild(tx('RUT 76.543.210-9', 'Regular', 10, C.mutedFg));
+    cscNameCol.appendChild(tx('NIT 900.543.210-7', 'Regular', 10, C.mutedFg));
     cscNameCol.appendChild(tx('Construcción · Obras civiles', 'Regular', 10, C.mutedFg));
     cscHdr.appendChild(cscNameCol);
     var cscRiskPill = row(6); cscRiskPill.paddingLeft = cscRiskPill.paddingRight = 10; cscRiskPill.paddingTop = cscRiskPill.paddingBottom = 6;
@@ -5990,7 +5884,7 @@
  dcGrid.itemSpacing = 0; dcGrid.counterAxisSpacing = 12; dcGrid.layoutMode = 'HORIZONTAL'; noFill(dcGrid);
     var dcFields = [
       { label: 'Razón Social', val: 'Comercial López Ltda.' },
-      { label: 'RUT', val: '76.543.210-9' },
+      { label: 'NIT', val: '900.543.210-7' },
       { label: 'Giro', val: 'Comercio al por mayor' },
       { label: 'Región', val: 'Metropolitana' },
       { label: 'Representante Legal', val: 'Juan López Soto' },
@@ -6193,7 +6087,7 @@
  var tlSep = figma.createFrame(); tlSep.resize(380, 1); tlSep.layoutMode = 'HORIZONTAL'; tlSep.primaryAxisSizingMode = 'FIXED'; tlSep.counterAxisSizingMode = 'FIXED'; fill(tlSep, C.border); tlCard.appendChild(tlSep); tlSep.layoutSizingHorizontal = 'FILL';
 
     var tlItems = [
-      { status: 'completed', label: 'Desembolso realizado', date: '08/03/2025 · 14:32', desc: 'Transferencia a cuenta BancoEstado 00000312', color: C.success },
+      { status: 'completed', label: 'Desembolso realizado', date: '08/03/2025 · 14:32', desc: 'Transferencia a cuenta Bancolombia 1234567890', color: C.success },
       { status: 'completed', label: 'Aprobación final', date: '07/03/2025 · 10:15', desc: 'María Soto — Director Financiero', color: C.success },
       { status: 'current', label: 'Análisis de riesgo', date: '06/03/2025 · 09:40', desc: 'Score 780 · Riesgo Bajo · Ana López', color: C.primary },
       { status: 'pending', label: 'Radicación de facturas', date: '05/03/2025', desc: '12 facturas por $150.000.000', color: C.mutedFg },

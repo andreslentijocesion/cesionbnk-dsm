@@ -131,7 +131,6 @@ const ITEMS_SPEC = [
   ["factoring-maturity-alerts",      "Alertas de Vencimiento",    "factoring"],
   ["factoring-portfolio-report",     "Reporte de Cartera",        "factoring"],
   ["factoring-calculator",           "Calculadora",               "factoring"],
-  ["factoring-sector-concentration", "Concentración Sectorial",   "factoring"],
   ["factoring-status-card",          "Status Cards",              "factoring"],
 
   // ── Patterns ──
@@ -179,6 +178,7 @@ export type SpecialPageId =
   | "brand-layout"
   | "design-tokens"
   | "component-guidelines"
+  | "theme-explorer"
   | "help-system-demo"
   | "animations"
   | "icon-gallery"
@@ -214,11 +214,12 @@ export const SPECIAL_LABELS: Record<SpecialPageId, string> = {
   "dsm-dashboard":    "DSM Dashboard",
   "brand-layout":     "Brand Layout",
   "design-tokens":    "Design Tokens",
+  "component-guidelines":   "Component Guidelines",
+  "theme-explorer":         "Theme Explorer",
   "help-system-demo": "Help System",
   animations:         "Animations",
   "icon-gallery":     "Icon Gallery",
   "dsm-visual-audit":       "DSM Visual Audit",
-  "component-guidelines":   "Component Guidelines",
   changelog:                "Changelog",
 };
 

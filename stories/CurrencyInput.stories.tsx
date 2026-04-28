@@ -7,12 +7,12 @@ const meta: Meta<typeof CurrencyInput> = {
   component: CurrencyInput,
   tags: ['autodocs'],
   argTypes: {
-    mode:     { control: 'radio',   options: ['clp', 'usd', 'percent'] },
+    mode:     { control: 'radio',   options: ['cop', 'usd', 'percent'] },
     size:     { control: 'radio',   options: ['sm', 'default', 'lg', 'xl'] },
     disabled: { control: 'boolean' },
     decimals: { control: 'number'  },
   },
-  args: { value: 185000000, mode: 'clp', size: 'default', disabled: false },
+  args: { value: 185000000, mode: 'cop', size: 'default', disabled: false },
   decorators: [
     (Story, ctx) => {
       const [val, setVal] = useState(ctx.args.value ?? 0);

@@ -84,8 +84,8 @@ const ITEMS_PER_PAGE = 8;
 
 // ── Helpers ────────────────────────────────────────────────────────
 
-function formatCLP(value: number): string {
-  return new Intl.NumberFormat("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 }).format(value);
+function formatCOP(value: number): string {
+  return new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 }).format(value);
 }
 
 let nextId = 13;
@@ -298,7 +298,7 @@ export function EditableTable() {
                             className="h-7 text-xs text-right w-28"
                           />
                         ) : (
-                          <span className="font-medium">{formatCLP(row.amount)}</span>
+                          <span className="font-medium">{formatCOP(row.amount)}</span>
                         )}
                       </TableCell>
 

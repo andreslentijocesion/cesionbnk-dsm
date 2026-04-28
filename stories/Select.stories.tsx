@@ -54,14 +54,16 @@ export const WithGroups: Story = {
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Bancos nacionales</SelectLabel>
-          <SelectItem value="bci">BCI</SelectItem>
-          <SelectItem value="bde-chile">Banco de Chile</SelectItem>
-          <SelectItem value="santander">Santander</SelectItem>
+          <SelectItem value="bancolombia">Bancolombia</SelectItem>
+          <SelectItem value="davivienda">Davivienda</SelectItem>
+          <SelectItem value="bogota">Banco de Bogotá</SelectItem>
+          <SelectItem value="occidente">Banco de Occidente</SelectItem>
+          <SelectItem value="popular">Banco Popular</SelectItem>
         </SelectGroup>
         <SelectGroup>
           <SelectLabel>Bancos internacionales</SelectLabel>
-          <SelectItem value="itau">Itaú</SelectItem>
           <SelectItem value="bbva">BBVA</SelectItem>
+          <SelectItem value="itau">Itaú</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

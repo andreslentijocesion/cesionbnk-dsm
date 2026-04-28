@@ -8,12 +8,12 @@ import { toast } from "sonner";
 
 const initialDocuments: ChecklistDocument[] = [
   {
-    id: "rut",
-    name: "RUT empresa",
-    description: "Certificado de RUT actualizado (últimos 3 meses)",
+    id: "nit",
+    name: "NIT empresa",
+    description: "Certificado de NIT actualizado (últimos 3 meses)",
     required: true,
     status: "approved",
-    fileName: "rut-construcciones-andina.pdf",
+    fileName: "nit-construcciones-andina.pdf",
     uploadedAt: "12/02/2025",
   },
   {
@@ -108,11 +108,11 @@ export function DocumentChecklistPage() {
 
 const documents = [
   {
-    id: "rut",
-    name: "RUT empresa",
+    id: "nit",
+    name: "NIT empresa",
     required: true,
     status: "approved",
-    fileName: "rut-empresa.pdf",
+    fileName: "nit-empresa.pdf",
     uploadedAt: "12/02/2025",
   },
   {
@@ -145,7 +145,7 @@ const documents = [
             <div className="max-w-xl">
               <DocumentChecklist
                 documents={[
-                  { id: "1", name: "RUT empresa", required: true, status: "approved" },
+                  { id: "1", name: "NIT empresa", required: true, status: "approved" },
                   { id: "2", name: "KYC", required: true, status: "pending" },
                   { id: "3", name: "DICOM", status: "expired", expiresAt: "15/01/2025" },
                 ]}

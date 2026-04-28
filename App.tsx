@@ -6,6 +6,7 @@ import { Button } from "./components/ui/button";
 import { Logo } from "./components/Logo";
 import { Moon, Sun } from "lucide-react";
 import { ThemeProvider, useTheme } from "./components/providers/ThemeProvider";
+import { ThemeSwitcher } from "./components/ui/theme-switcher";
 import { Toaster } from "./components/ui/sonner";
 import { HelpProvider } from "./components/help/HelpProvider";
 import { HelpCenter } from "./components/help/HelpCenter";
@@ -39,7 +40,7 @@ import "./styles/tour.css";
 const PAGE_LABELS = ALL_PAGE_LABELS;
 
 function AppContent() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, designTheme } = useTheme();
   const [activePage, setActivePage] = useState<PageId>(() => {
     const saved = localStorage.getItem("dsm-active-page");
     return (saved as PageId) || "home";
@@ -58,15 +59,6 @@ function AppContent() {
     window.addEventListener("dsm-navigate", handler);
     return () => window.removeEventListener("dsm-navigate", handler);
   }, []);
-
-  // Sync dark mode class
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
 
   return (
     <div className="min-h-screen w-full">
@@ -126,6 +118,9 @@ function AppContent() {
                 {/* Help System */}
                 <HelpCenter variant="header" />
 
+                {/* Design Theme Switcher */}
+                <ThemeSwitcher />
+
                 {/* Toggle Theme */}
                 <Button
                   variant="outline"
@@ -163,8 +158,8 @@ function AppContent() {
               </div>
             }
             right={
-              <div className="flex items-center gap-2 text-xs">
-                <span>CESIONBNK Theme</span>
+              <div className="flex items-center gap-2 text-xs capitalize">
+                <span>{designTheme} Theme</span>
                 <span>·</span>
                 <span>WCAG 2.1 AA</span>
                 <span>·</span>

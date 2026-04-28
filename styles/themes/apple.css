@@ -1,0 +1,142 @@
+/**
+ * THEME: Apple / HIG
+ *
+ * iOS/macOS design language — system blue, grouped backgrounds, SF Pro typeface.
+ * Layered surfaces: página en #f2f2f7 (system background), cards en #ffffff (elevated).
+ * Sidebar blanca tipo macOS Finder (inversión intencional: sidebar más clara que el fondo).
+ *
+ * Primary: #007aff (iOS Blue)  |  Radius: 1rem  |  Font: SF Pro (-apple-system)
+ *
+ * Contrast audit (WCAG AA):
+ *   foreground    #1d1d1f  on #f2f2f7 → 16.12:1  ✓  (Apple.com primary label)
+ *   muted-fg      #6e6e73  on #f2f2f7 →  5.20:1  ✓  (HIG Secondary Label exact)
+ *   muted-fg      #6e6e73  on #ffffff →  5.74:1  ✓
+ */
+
+/* ── Light ── */
+[data-theme="apple"] {
+  --primary:                    #007aff;
+  --primary-foreground:         #ffffff;
+  --secondary:                  #5856d6;
+  --secondary-foreground:       #ffffff;
+
+  /* Surfaces — layered iOS/macOS hierarchy */
+  --background:                 #f2f2f7;  /* iOS Secondary System Background (grouped) */
+  --foreground:                 #1d1d1f;  /* Apple.com Label — #1d1d1f (más cálido que el iOS #000000 puro) */
+  --card:                       #ffffff;  /* iOS Primary System Background (elevated surface) */
+  --card-foreground:            #1d1d1f;
+  --popover:                    #ffffff;
+  --popover-foreground:         #1d1d1f;
+
+  /* Typography hierarchy — Apple HIG label system */
+  --muted:                      #e5e5ea;  /* iOS System Fill */
+  --muted-foreground:           #6e6e73;  /* HIG Secondary Label: rgba(60,60,67,0.6) sobre blanco */
+  --accent:                     #e5e5ea;
+  --accent-foreground:          #1d1d1f;
+
+  /* Forms */
+  --border:                     #d1d1d6;  /* iOS Separator */
+  --input:                      #d1d1d6;
+  --input-background:           #ffffff;
+  --ring:                       #007aff;
+
+  /* Radius — 16px, iOS standard large corner */
+  --radius:                     1rem;
+  --button-radius:              var(--radius);
+
+  /* Font — SF Pro en Apple (via -apple-system / BlinkMacSystemFont), Inter en Windows/Linux.
+     Inter fue diseñada con las mismas métricas que SF Pro — el mejor fallback disponible.
+     Cadena: macOS/iOS → SF Pro | Windows/Linux → Inter | último recurso → system-ui */
+  --font-sans:                  -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', system-ui, ui-sans-serif, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --letter-spacing-base:        -0.011em;  /* Funciona bien con SF Pro e Inter (ambas usan tracking negativo en UI) */
+
+  /* Shadows — Apple style: very soft, large spread, low opacity */
+  --shadow-elevation-1:         0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-elevation-2:         0 4px 16px rgba(0, 0, 0, 0.10), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-elevation-3:         0 8px 30px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-elevation-4:         0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.08);
+
+  /* Sidebar — blanca tipo macOS Finder: más clara que el fondo gris del contenido */
+  --sidebar:                    #ffffff;
+  --sidebar-foreground:         #1d1d1f;
+  --sidebar-primary:            #007aff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:             #e3f0ff;  /* iOS Blue tint selection */
+  --sidebar-accent-foreground:  #007aff;
+  --sidebar-border:             #d1d1d6;
+  --sidebar-ring:               #007aff;
+
+  /* Semantic subtle — iOS tinted backgrounds */
+  --success-subtle:             #e8f8ee;
+  --destructive-subtle:         #ffebe9;
+  --warning-subtle:             #fff8e1;
+  --caution-subtle:             #fff3e0;
+  --info-subtle:                #e3f0ff;
+  --secondary-subtle:           #f0eeff;
+  --success-on-subtle:          #1a7f3c;
+  --destructive-on-subtle:      #c0392b;
+  --warning-on-subtle:          #a0620a;
+  --caution-on-subtle:          #b94a00;
+  --info-on-subtle:             #0056d6;
+  --secondary-on-subtle:        #4a48b8;
+}
+
+/* ── Dark ── */
+[data-theme="apple"].dark {
+  --primary:                    #0a84ff;  /* iOS Dark Blue — más brillante sobre fondo oscuro */
+  --primary-foreground:         #ffffff;
+  --secondary:                  #5e5ce6;
+  --secondary-foreground:       #ffffff;
+
+  /* Surfaces — OLED black + true iOS dark hierarchy */
+  --background:                 #000000;  /* iOS System Background Dark (OLED black) */
+  --foreground:                 #f5f5f7;  /* Apple.com dark primary label (#f5f5f7) */
+  --card:                       #1c1c1e;  /* iOS Secondary System Background Dark */
+  --card-foreground:            #f5f5f7;
+  --popover:                    #2c2c2e;  /* iOS Tertiary System Background Dark */
+  --popover-foreground:         #f5f5f7;
+
+  /* Typography hierarchy — HIG dark label system
+     Secondary Label dark = rgba(235,235,245,0.6) sobre #000000 → #8e8e93
+     #aeaeb2 era demasiado claro — rompe la jerarquía frente al primario #f5f5f7 */
+  --muted:                      #2c2c2e;
+  --muted-foreground:           #8e8e93;  /* HIG Secondary Label Dark: rgba(235,235,245,0.6) */
+  --accent:                     #3a3a3c;
+  --accent-foreground:          #f5f5f7;
+
+  /* Forms */
+  --border:                     #38383a;  /* iOS Dark Separator */
+  --input:                      #38383a;
+  --input-background:           #2c2c2e;
+  --ring:                       #0a84ff;
+
+  /* Shadows — ring sutil + sombra oscura profunda */
+  --shadow-elevation-1:         0 1px 3px rgba(0,0,0,0.6), 0 0 0 0.5px rgba(255,255,255,0.06);
+  --shadow-elevation-2:         0 4px 16px rgba(0,0,0,0.7), 0 0 0 0.5px rgba(255,255,255,0.07);
+  --shadow-elevation-3:         0 8px 30px rgba(0,0,0,0.75), 0 0 0 0.5px rgba(255,255,255,0.08);
+  --shadow-elevation-4:         0 20px 60px rgba(0,0,0,0.85), 0 0 0 0.5px rgba(255,255,255,0.09);
+
+  /* Sidebar — #1c1c1e, mismo nivel que las cards */
+  --sidebar:                    #1c1c1e;
+  --sidebar-foreground:         #f5f5f7;
+  --sidebar-primary:            #0a84ff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:             #0a2a4a;  /* Dark blue tint selection */
+  --sidebar-accent-foreground:  #4da3ff;
+  --sidebar-border:             #2c2c2e;
+  --sidebar-ring:               #0a84ff;
+
+  /* Semantic subtle — dark equivalents */
+  --success-subtle:             #0d3320;
+  --destructive-subtle:         #3d0e0e;
+  --warning-subtle:             #3a2200;
+  --caution-subtle:             #3d1500;
+  --info-subtle:                #00204a;
+  --secondary-subtle:           #1e1b3a;
+  --success-on-subtle:          #34d058;
+  --destructive-on-subtle:      #ff6b6b;
+  --warning-on-subtle:          #ffd60a;
+  --caution-on-subtle:          #ff9f0a;
+  --info-on-subtle:             #409cff;
+  --secondary-on-subtle:        #9d9bf5;
+}

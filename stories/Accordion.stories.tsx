@@ -29,7 +29,7 @@ export const Multiple: Story = {
     <Accordion type="multiple" className="w-96">
       <AccordionItem value="cedente">
         <AccordionTrigger>Información del cedente</AccordionTrigger>
-        <AccordionContent>Datos del cedente: RUT, razón social, giro y contacto principal.</AccordionContent>
+        <AccordionContent>Datos del cedente: NIT, razón social, actividad económica y contacto principal.</AccordionContent>
       </AccordionItem>
       <AccordionItem value="deudor">
         <AccordionTrigger>Información del deudor</AccordionTrigger>

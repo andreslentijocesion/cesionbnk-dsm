@@ -91,12 +91,12 @@ function navigate(range: DateRange, direction: -1 | 1): DateRange {
 
 function formatLabel(preset: DatePreset, from: Date, to: Date): string {
   const fmtShort = (d: Date) =>
-    d.toLocaleDateString("es-CL", { day: "numeric", month: "short" });
+    d.toLocaleDateString("es-CO", { day: "numeric", month: "short" });
   const fmtMonth = (d: Date) =>
-    d.toLocaleDateString("es-CL", { month: "long", year: "numeric" });
+    d.toLocaleDateString("es-CO", { month: "long", year: "numeric" });
 
   switch (preset) {
-    case "today":   return from.toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long" });
+    case "today":   return from.toLocaleDateString("es-CO", { weekday: "long", day: "numeric", month: "long" });
     case "week":    return `${fmtShort(from)} – ${fmtShort(to)}`;
     case "month":   return fmtMonth(from);
     case "quarter": {

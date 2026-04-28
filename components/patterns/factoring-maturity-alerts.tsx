@@ -20,6 +20,9 @@ import { FactoringOperationDetail, FactoringRecord } from "./factoring-operation
 const COP = (v: number) =>
   new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 }).format(v);
 
+const COPCompact = (v: number) =>
+  new Intl.NumberFormat("es-CO", { notation: "compact", style: "currency", currency: "COP", maximumFractionDigits: 1 }).format(v);
+
 type Urgency = "vencido" | "critico" | "proximo" | "vigilar";
 
 interface Alert {
@@ -83,36 +86,33 @@ const mockAlerts: Alert[] = [
 ];
 
 const urgencyConfig: Record<Urgency, {
-  label: string; icon: React.ReactNode;
-  cardBorder: string; headerBg: string;
+  label: string;
+  icon: React.ReactNode;
+  accentClass: string;
   badgeVariant: React.ComponentProps<typeof Badge>["variant"];
 }> = {
   vencido: {
     label: "Vencido",
-    icon: <AlertTriangle className="h-4 w-4 text-destructive" />,
-    cardBorder: "border-destructive/40",
-    headerBg: "bg-destructive/5",
+    icon: <AlertTriangle className="h-3.5 w-3.5 text-destructive-on-subtle" />,
+    accentClass: "bg-destructive",
     badgeVariant: "destructive-soft",
   },
   critico: {
     label: "Crítico (≤ 7d)",
-    icon: <Clock className="h-4 w-4 text-warning" />,
-    cardBorder: "border-warning/40",
-    headerBg: "bg-warning/5",
+    icon: <Clock className="h-3.5 w-3.5 text-warning-on-subtle" />,
+    accentClass: "bg-warning",
     badgeVariant: "warning-soft",
   },
   proximo: {
     label: "Próximo (8–30d)",
-    icon: <Bell className="h-4 w-4 text-primary" />,
-    cardBorder: "border-primary/30",
-    headerBg: "bg-primary/5",
+    icon: <Bell className="h-3.5 w-3.5 text-primary" />,
+    accentClass: "bg-primary",
     badgeVariant: "primary-soft",
   },
   vigilar: {
     label: "Vigilar (31–60d)",
-    icon: <Bell className="h-4 w-4 text-muted-foreground" />,
-    cardBorder: "border-border",
-    headerBg: "bg-muted/40",
+    icon: <Bell className="h-3.5 w-3.5 text-muted-foreground" />,
+    accentClass: "bg-border",
     badgeVariant: "neutral-soft",
   },
 };
@@ -133,102 +133,157 @@ function AlertCard({ alert, selected, onToggle, onMarkCollected, onMute, onDetai
   const cfg = urgencyConfig[alert.urgency];
   const valorPendiente = alert.valorNominal * (1 - alert.cobradoPct / 100);
 
+  const start = new Date(alert.fechaInicio);
+  const end   = new Date(alert.fechaVencimiento);
+  const fmt   = (d: Date) => d.toLocaleDateString("es-CO", { day: "2-digit", month: "short" });
+
+  const progressColor =
+    alert.cobradoPct >= 80      ? "bg-success" :
+    alert.urgency === "vencido" ? "bg-destructive" :
+    alert.urgency === "critico" ? "bg-warning"     : "bg-primary";
+
   return (
     <div className={cn(
-      "rounded-lg border overflow-hidden transition-all",
-      cfg.cardBorder,
-      selected && "ring-2 ring-primary ring-offset-1",
+      "rounded-lg border bg-card flex overflow-hidden transition-all",
+      selected && "ring-2 ring-ring ring-offset-background ring-offset-1",
       alert.muted && "opacity-60"
     )}>
-      <div className={cn("px-4 py-2.5 flex items-center justify-between gap-3", cfg.headerBg)}>
-        <div className="flex items-center gap-2.5">
-          <Checkbox checked={selected} onCheckedChange={onToggle} />
-          {cfg.icon}
-          <span className="text-xs font-semibold text-foreground">{alert.operacionId}</span>
-          <Badge variant={cfg.badgeVariant} className="rounded-full text-2xs font-semibold px-1.5 py-0.5">
-            {alert.diasRestantes < 0 ? `${Math.abs(alert.diasRestantes)}d vencido` : `${alert.diasRestantes}d restantes`}
-          </Badge>
-          {alert.muted && <BellOff className="h-3 w-3 text-muted-foreground" />}
+      {/* Urgency accent strip */}
+      <div className={cn("w-1 flex-shrink-0", cfg.accentClass)} />
+
+      <div className="flex-1 min-w-0 p-4 space-y-3">
+        {/* ── Row 1: ID + badge + actions ── */}
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 flex-wrap min-w-0">
+            <Checkbox checked={selected} onCheckedChange={onToggle} />
+            {cfg.icon}
+            <span className="font-mono text-xs text-muted-foreground">{alert.operacionId}</span>
+            <Badge variant={cfg.badgeVariant} className="rounded-full text-2xs font-semibold px-1.5 py-0.5">
+              {alert.diasRestantes < 0
+                ? `${Math.abs(alert.diasRestantes)}d vencido`
+                : `${alert.diasRestantes}d restantes`}
+            </Badge>
+            {alert.muted && <BellOff className="h-3 w-3 text-muted-foreground" />}
+          </div>
+          <div className="flex items-center gap-0.5 flex-shrink-0">
+            <Button
+              variant="ghost" size="icon-sm"
+              title={alert.muted ? "Activar alertas" : "Silenciar"}
+              onClick={() => onMute(alert.id)}
+            >
+              {alert.muted ? <Bell className="h-3.5 w-3.5" /> : <BellOff className="h-3.5 w-3.5" />}
+            </Button>
+            <Button variant="ghost" size="icon-sm" onClick={() => onDetail(alert)}>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Button>
+          </div>
         </div>
-        <div className="flex items-center gap-1">
+
+        {/* ── Row 2: Cedente / Deudor + valor pendiente ── */}
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0 space-y-0.5">
+            <p className="text-sm font-semibold text-foreground truncate">{alert.cedente}</p>
+            <p className="text-xs text-muted-foreground flex items-center gap-1">
+              <ArrowRight className="h-3 w-3 flex-shrink-0" />
+              <span className="truncate">{alert.deudor}</span>
+            </p>
+            <p className="text-xs text-muted-foreground">Analista: {alert.analista}</p>
+          </div>
+          <div className="text-right flex-shrink-0">
+            <p className={cn(
+              "text-base font-bold tabular-nums leading-none",
+              alert.urgency === "vencido" ? "text-destructive-on-subtle" : "text-foreground"
+            )}>
+              {COP(valorPendiente)}
+            </p>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              de {COP(alert.valorNominal)} · {alert.cobradoPct}% cobrado
+            </p>
+          </div>
+        </div>
+
+        {/* ── Row 3: Progress ── */}
+        <ProgressWithRange
+          value={alert.cobradoPct}
+          from={fmt(start)}
+          to={fmt(end)}
+          barClassName="h-1.5 bg-muted"
+          indicatorClassName={progressColor}
+        />
+
+        {/* ── Row 4: Actions + último contacto ── */}
+        <div className="flex items-center gap-1.5 flex-wrap">
           <Button
-            variant="ghost" size="icon" className="h-6 w-6"
-            title={alert.muted ? "Activar alertas" : "Silenciar"}
-            onClick={() => onMute(alert.id)}
+            size="sm" variant="outline" className="h-7 text-xs"
+            onClick={() => onSendReminder(alert.id)}
           >
-            {alert.muted ? <Bell className="h-3.5 w-3.5" /> : <BellOff className="h-3.5 w-3.5" />}
+            <Send className="h-3 w-3" />
+            {alert.recordatoriosEnviados === 0
+              ? "1er recordatorio"
+              : `Recordatorio #${alert.recordatoriosEnviados + 1}`}
           </Button>
-          <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => onDetail(alert)}>
-            <ArrowRight className="h-3.5 w-3.5" />
+          <Button size="sm" variant="outline" className="h-7 text-xs">
+            <Phone className="h-3 w-3" /> Llamar
           </Button>
+          {alert.urgency !== "vencido" || alert.cobradoPct > 0 ? (
+            <Button
+              size="sm" variant="success-outline" className="h-7 text-xs"
+              onClick={() => onMarkCollected(alert.id)}
+            >
+              <CheckCircle2 className="h-3 w-3" /> Marcar cobrado
+            </Button>
+          ) : (
+            <Button size="sm" variant="destructive-outline" className="h-7 text-xs">
+              <AlertTriangle className="h-3 w-3" /> Iniciar cobranza
+            </Button>
+          )}
+          {alert.ultimoContacto && (
+            <span className="text-xs text-muted-foreground ml-auto hidden sm:block">
+              Último contacto: {alert.ultimoContacto}
+              {alert.recordatoriosEnviados > 0 && ` · ${alert.recordatoriosEnviados} rec.`}
+            </span>
+          )}
         </div>
       </div>
-      <div className="px-4 py-3">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {/* Info */}
-          <div className="sm:col-span-2 space-y-1">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm font-medium text-foreground">{alert.cedente}</span>
-              <span className="text-xs text-muted-foreground">→</span>
-              <span className="text-xs text-muted-foreground">{alert.deudor}</span>
-            </div>
-            <div className="flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
-              <span>Nominal: <strong className="text-foreground tabular-nums">{COP(alert.valorNominal)}</strong></span>
-              <span>Pendiente: <strong className={cn("tabular-nums", alert.urgency === "vencido" ? "text-destructive" : "text-foreground")}>{COP(valorPendiente)}</strong></span>
-              <span>Analista: {alert.analista}</span>
-            </div>
-            {/* Progress */}
-            {(() => {
-              const start = new Date(alert.fechaInicio);
-              const end   = new Date(alert.fechaVencimiento);
-              const fmt   = (d: Date) => d.toLocaleDateString("es-CO", { day: "2-digit", month: "short" });
-              const indicatorClass =
-                alert.cobradoPct >= 80   ? "bg-success" :
-                alert.urgency === "vencido" ? "bg-destructive" :
-                alert.urgency === "critico" ? "bg-warning" : "bg-primary";
-              return (
-                <ProgressWithRange
-                  value={alert.cobradoPct}
-                  from={fmt(start)}
-                  to={fmt(end)}
-                  barClassName="h-1.5 bg-muted mt-1.5"
-                  indicatorClassName={indicatorClass}
-                />
-              );
-            })()}
-          </div>
+    </div>
+  );
+}
 
-          {/* Actions */}
-          <div className="space-y-1.5">
-            <Button size="sm" variant="outline" className="w-full h-7 text-xs justify-start" onClick={() => onSendReminder(alert.id)}>
-              <Send className="h-3 w-3 mr-1.5" />
-              {alert.recordatoriosEnviados === 0 ? "Enviar 1er recordatorio" : `Recordatorio #${alert.recordatoriosEnviados + 1}`}
-            </Button>
-            <Button size="sm" variant="outline" className="w-full h-7 text-xs justify-start">
-              <Phone className="h-3 w-3 mr-1.5" /> Llamar deudor
-            </Button>
-            {alert.urgency !== "vencido" || alert.cobradoPct > 0 ? (
-              <Button
-                size="sm"
-                className="w-full h-7 text-xs bg-success/10 hover:bg-success/20 text-success border-success/20 justify-start"
-                variant="outline"
-                onClick={() => onMarkCollected(alert.id)}
-              >
-                <CheckCircle2 className="h-3 w-3 mr-1.5" /> Marcar cobrado
-              </Button>
-            ) : (
-              <Button size="sm" variant="outline" className="w-full h-7 text-xs text-destructive border-destructive/20 hover:bg-destructive/5 justify-start">
-                <AlertTriangle className="h-3 w-3 mr-1.5" /> Iniciar cobranza
-              </Button>
-            )}
-          </div>
-        </div>
+// ─── Urgency Distribution Bar ─────────────────────────────────────────────────
 
-        {alert.ultimoContacto && (
-          <p className="text-xs text-muted-foreground mt-2">
-            Último contacto: {alert.ultimoContacto} · {alert.recordatoriosEnviados} recordatorio{alert.recordatoriosEnviados !== 1 ? "s" : ""} enviado{alert.recordatoriosEnviados !== 1 ? "s" : ""}
-          </p>
-        )}
+function UrgencyBar({ alerts }: { alerts: Alert[] }) {
+  const total = alerts.length;
+  if (total === 0) return null;
+
+  const counts: Record<Urgency, number> = { vencido: 0, critico: 0, proximo: 0, vigilar: 0 };
+  alerts.forEach((a) => counts[a.urgency]++);
+
+  const segments: { urgency: Urgency; pct: number; label: string; color: string }[] = [
+    { urgency: "vencido", pct: (counts.vencido / total) * 100, label: "Vencido",    color: "bg-destructive" },
+    { urgency: "critico", pct: (counts.critico / total) * 100, label: "Crítico",    color: "bg-warning" },
+    { urgency: "proximo", pct: (counts.proximo / total) * 100, label: "Próximo",    color: "bg-primary" },
+    { urgency: "vigilar", pct: (counts.vigilar / total) * 100, label: "Vigilar",    color: "bg-border" },
+  ].filter((s) => s.pct > 0);
+
+  return (
+    <div className="space-y-1.5">
+      <div className="flex items-center gap-1 h-2 rounded-full overflow-hidden">
+        {segments.map((s) => (
+          <div
+            key={s.urgency}
+            className={cn("h-full transition-all", s.color)}
+            style={{ width: `${s.pct}%` }}
+            title={`${s.label}: ${counts[s.urgency]}`}
+          />
+        ))}
+      </div>
+      <div className="flex items-center gap-3 flex-wrap">
+        {segments.map((s) => (
+          <span key={s.urgency} className="flex items-center gap-1 text-xs text-muted-foreground">
+            <span className={cn("h-2 w-2 rounded-full inline-block", s.color)} />
+            {s.label}: {counts[s.urgency]}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -249,6 +304,8 @@ export function FactoringMaturityAlerts() {
     (showMuted || !a.muted) &&
     (filterUrgency === "all" || a.urgency === filterUrgency)
   );
+
+  const activeAlerts = alerts.filter((a) => !collected.has(a.id));
 
   const byUrgency = URGENCY_ORDER.reduce((acc, u) => {
     acc[u] = visible.filter((a) => a.urgency === u);
@@ -299,36 +356,65 @@ export function FactoringMaturityAlerts() {
     });
   };
 
-  // Summary stats
-  const vencidoCount  = mockAlerts.filter(a => a.urgency === "vencido").length;
-  const criticoCount  = mockAlerts.filter(a => a.urgency === "critico").length;
-  const totalPendiente = alerts.filter(a => !collected.has(a.id)).reduce((s, a) => s + a.valorNominal * (1 - a.cobradoPct / 100), 0);
+  const vencidoCount   = activeAlerts.filter(a => a.urgency === "vencido").length;
+  const criticoCount   = activeAlerts.filter(a => a.urgency === "critico").length;
+  const totalPendiente = activeAlerts.reduce((s, a) => s + a.valorNominal * (1 - a.cobradoPct / 100), 0);
 
   return (
     <div className="space-y-4">
-      {/* ── Summary strip ── */}
+      {/* ── KPI strip ── */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          { label: "Vencidas", value: vencidoCount, icon: <AlertTriangle className="h-4 w-4 text-destructive" />, bg: "bg-destructive/10", color: "text-destructive" },
-          { label: "Críticas (≤7d)", value: criticoCount, icon: <Clock className="h-4 w-4 text-warning" />, bg: "bg-warning/10", color: "text-warning" },
-          { label: "Alertas activas", value: visible.length, icon: <Bell className="h-4 w-4 text-primary" />, bg: "bg-primary/10", color: "text-primary" },
-          { label: "Valor en riesgo", value: new Intl.NumberFormat("es-CO", { notation: "compact", style: "currency", currency: "COP", maximumFractionDigits: 1 }).format(totalPendiente), icon: <AlertTriangle className="h-4 w-4 text-muted-foreground" />, bg: "bg-muted", color: "text-foreground" },
+          {
+            label: "Vencidas",
+            value: String(vencidoCount),
+            icon: <AlertTriangle className="h-4 w-4 text-destructive-on-subtle" />,
+            bg: "bg-destructive-subtle",
+            color: "text-destructive-on-subtle",
+          },
+          {
+            label: "Críticas (≤ 7d)",
+            value: String(criticoCount),
+            icon: <Clock className="h-4 w-4 text-warning-on-subtle" />,
+            bg: "bg-warning-subtle",
+            color: "text-warning-on-subtle",
+          },
+          {
+            label: "Alertas activas",
+            value: String(visible.length),
+            icon: <Bell className="h-4 w-4 text-primary" />,
+            bg: "bg-primary/10",
+            color: "text-foreground",
+          },
+          {
+            label: "Valor en riesgo",
+            value: COPCompact(totalPendiente),
+            icon: <AlertTriangle className="h-4 w-4 text-muted-foreground" />,
+            bg: "bg-muted",
+            color: "text-foreground",
+          },
         ].map((k) => (
-          <Card key={k.label} className="border shadow-sm">
+          <Card key={k.label}>
             <CardContent className="p-3 flex items-center gap-3">
-              <div className={cn("h-8 w-8 rounded-lg flex items-center justify-center flex-shrink-0", k.bg)}>{k.icon}</div>
+              <div className={cn("h-8 w-8 rounded-lg flex items-center justify-center flex-shrink-0", k.bg)}>
+                {k.icon}
+              </div>
               <div>
                 <p className="text-xs text-muted-foreground uppercase tracking-wide">{k.label}</p>
-                <p className={cn("text-lg font-bold tabular-nums", k.color)}>{k.value}</p>
+                <p className={cn("text-lg font-bold tabular-nums leading-none mt-0.5", k.color)}>{k.value}</p>
               </div>
             </CardContent>
           </Card>
         ))}
       </div>
 
+      {/* ── Urgency distribution bar ── */}
+      {activeAlerts.length > 0 && <UrgencyBar alerts={activeAlerts} />}
+
       {/* ── Toolbar ── */}
       <div className="flex items-center justify-between gap-3 flex-wrap">
         <div className="flex items-center gap-2">
+          {/* Segmented filter */}
           <div className="flex items-center rounded-lg border border-border bg-muted p-0.5 gap-0.5">
             {([["all", "Todas"], ...URGENCY_ORDER.map((u) => [u, urgencyConfig[u].label])] as [string, string][]).map(([key, label]) => (
               <button
@@ -336,16 +422,20 @@ export function FactoringMaturityAlerts() {
                 onClick={() => setFilterUrgency(key as Urgency | "all")}
                 className={cn(
                   "rounded-md px-2.5 py-1 text-xs font-medium transition-colors",
-                  filterUrgency === key ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+                  filterUrgency === key
+                    ? "bg-background text-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
-              >{label}</button>
+              >
+                {label}
+              </button>
             ))}
           </div>
           <Button
             variant="outline" size="sm" className="h-8 text-xs"
             onClick={() => setShowMuted(!showMuted)}
           >
-            {showMuted ? <Bell className="h-3.5 w-3.5 mr-1.5" /> : <BellOff className="h-3.5 w-3.5 mr-1.5" />}
+            {showMuted ? <Bell className="h-3.5 w-3.5" /> : <BellOff className="h-3.5 w-3.5" />}
             {showMuted ? "Ocultar silenciadas" : "Mostrar silenciadas"}
           </Button>
         </div>
@@ -353,10 +443,10 @@ export function FactoringMaturityAlerts() {
           {selected.size > 0 && (
             <>
               <Button size="sm" className="h-8 text-xs" onClick={markAllSelected}>
-                <CheckCircle2 className="h-3.5 w-3.5 mr-1.5" /> Marcar cobradas ({selected.size})
+                <CheckCircle2 className="h-3.5 w-3.5" /> Marcar cobradas ({selected.size})
               </Button>
               <Button size="sm" variant="outline" className="h-8 text-xs" onClick={handleBulkSendReminder}>
-                <Send className="h-3.5 w-3.5 mr-1.5" /> Enviar recordatorio ({selected.size})
+                <Send className="h-3.5 w-3.5" /> Enviar recordatorio ({selected.size})
               </Button>
             </>
           )}
@@ -368,9 +458,9 @@ export function FactoringMaturityAlerts() {
 
       {/* ── Alert Groups ── */}
       {visible.length === 0 ? (
-        <Card className="border">
+        <Card>
           <CardContent className="py-12 flex flex-col items-center gap-3 text-center">
-            <CheckCircle2 className="h-10 w-10 text-success" />
+            <CheckCircle2 className="h-10 w-10 text-success-on-subtle" />
             <div>
               <p className="font-semibold">Sin alertas activas</p>
               <p className="text-sm text-muted-foreground">Todas las operaciones están al día.</p>
@@ -387,7 +477,9 @@ export function FactoringMaturityAlerts() {
               <div className="flex items-center gap-2">
                 {cfg.icon}
                 <h4 className="text-sm font-semibold text-foreground">{cfg.label}</h4>
-                <Badge variant={cfg.badgeVariant} className="rounded-full text-2xs font-bold px-1.5 py-0.5">{group.length}</Badge>
+                <Badge variant={cfg.badgeVariant} className="rounded-full text-2xs font-bold px-1.5 py-0.5">
+                  {group.length}
+                </Badge>
                 <Separator className="flex-1" />
               </div>
               <div className="space-y-2">
@@ -396,7 +488,11 @@ export function FactoringMaturityAlerts() {
                     key={alert.id}
                     alert={alert}
                     selected={selected.has(alert.id)}
-                    onToggle={() => setSelected((prev) => { const next = new Set(prev); next.has(alert.id) ? next.delete(alert.id) : next.add(alert.id); return next; })}
+                    onToggle={() => setSelected((prev) => {
+                      const next = new Set(prev);
+                      next.has(alert.id) ? next.delete(alert.id) : next.add(alert.id);
+                      return next;
+                    })}
                     onMarkCollected={handleMarkCollected}
                     onMute={toggleMute}
                     onDetail={openDetail}

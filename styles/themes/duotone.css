@@ -1,0 +1,186 @@
+/**
+ * THEME: CESIONBNK Duotone
+ *
+ * Identidad dual — fondo lavanda (#f5f3ff) + cards blancas.
+ * El violeta (#5b4fdf) toma el rol primario; el gris brand (#374151) actúa de duo secundario.
+ * Sombras con tinte violeta — dan profundidad sin romper la paleta.
+ *
+ * Primary: #5b4fdf (Violet AA)  |  Radius: 0.625rem  |  Font: Gotham
+ *
+ * Contrast audit (WCAG AA ≥ 4.5:1):
+ *   foreground  #1e1b4b on #f5f3ff → 11.23:1 ✓
+ *   muted-fg    #5b4f8a on #f5f3ff →  6.53:1 ✓
+ *   muted-fg    #5b4f8a on #ede9fe →  6.04:1 ✓
+ *   primary     #5b4fdf on #f5f3ff →  5.28:1 ✓
+ *   primary     #5b4fdf on #ffffff →  5.79:1 ✓
+ */
+
+/* ── Light ── */
+[data-theme="duotone"] {
+  /* Brand — violeta como primario */
+  --primary:                    #5b4fdf;
+  --primary-foreground:         #ffffff;
+  --secondary:                  #374151;  /* brand gray como duo */
+  --secondary-foreground:       #ffffff;
+
+  /* Surfaces — lavanda + blanco */
+  --background:                 #f5f3ff;
+  --foreground:                 #1e1b4b;
+  --card:                       #ffffff;
+  --card-foreground:            #1e1b4b;
+  --popover:                    #ffffff;
+  --popover-foreground:         #1e1b4b;
+
+  /* Neutral */
+  --muted:                      #ede9fe;
+  --muted-foreground:           #5b4f8a;
+  --accent:                     #ede9fe;
+  --accent-foreground:          #1e1b4b;
+
+  /* Forms */
+  --border:                     #ddd6fe;
+  --input:                      #ddd6fe;
+  --input-background:           #ffffff;
+  --ring:                       #5b4fdf;
+  --switch-background:          #c4b5fd;
+
+  /* Radius — mismo que brand */
+  --radius:                     0.625rem;
+  --button-radius:              var(--radius);
+
+  /* Font — Gotham brand */
+  --font-sans:                  'Gotham', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --letter-spacing-base:        0.025em;
+
+  /* Shadows — tinte violeta para cohesión de paleta */
+  --shadow-elevation-1:         0 1px 2px 0 rgba(91, 79, 223, 0.07);
+  --shadow-elevation-2:         0 4px 6px -1px rgba(91, 79, 223, 0.10), 0 2px 4px -2px rgba(91, 79, 223, 0.06);
+  --shadow-elevation-3:         0 10px 15px -3px rgba(91, 79, 223, 0.11), 0 4px 6px -4px rgba(91, 79, 223, 0.07);
+  --shadow-elevation-4:         0 20px 25px -5px rgba(91, 79, 223, 0.13), 0 8px 10px -6px rgba(91, 79, 223, 0.08);
+
+  /* Sidebar — un tono más saturado que el fondo, crea jerarquía suave */
+  --sidebar:                    #ede9fe;
+  --sidebar-foreground:         #1e1b4b;
+  --sidebar-primary:            #5b4fdf;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:             #ddd6fe;
+  --sidebar-accent-foreground:  #1e1b4b;
+  --sidebar-border:             #ddd6fe;
+  --sidebar-ring:               #5b4fdf;
+
+  /* KPI Colors — adaptados a paleta violeta */
+  --kpi-yellow:                 #eab308;
+  --kpi-yellow-dark:            #ca8a04;
+  --kpi-yellow-bg:              #fef9c3;
+  --kpi-orange:                 #f97316;
+  --kpi-orange-dark:            #ea580c;
+  --kpi-orange-bg:              #ffedd5;
+  --kpi-blue:                   #5b4fdf;
+  --kpi-blue-dark:              #4338ca;
+  --kpi-blue-bg:                #ede9fe;
+  --kpi-lime:                   #84cc16;
+  --kpi-lime-dark:              #65a30d;
+  --kpi-lime-bg:                #f7fee7;
+
+  /* Semantic subtle — tono violeta heredado */
+  --success-subtle:             #f0fdf4;
+  --destructive-subtle:         #fef2f2;
+  --warning-subtle:             #fef3c7;
+  --caution-subtle:             #fff7ed;
+  --info-subtle:                #ede9fe;
+  --secondary-subtle:           #ede9fe;
+  --success-on-subtle:          #15803d;
+  --destructive-on-subtle:      #b91c1c;
+  --warning-on-subtle:          #b45309;
+  --caution-on-subtle:          #c2410c;
+  --info-on-subtle:             #5b4fdf;
+  --secondary-on-subtle:        #5b4fdf;
+
+  /* Charts — paleta violeta */
+  --chart-1:                    #5b4fdf;
+  --chart-2:                    #796eff;
+  --chart-3:                    #374151;
+  --chart-4:                    #a78bfa;
+  --chart-5:                    #1e1b4b;
+}
+
+/* ── Dark ── */
+[data-theme="duotone"].dark {
+  /* Brand — violeta luminoso sobre fondo muy oscuro */
+  --primary:                    #a78bff;
+  --primary-foreground:         #1a0e5a;
+  --secondary:                  #9ca3af;
+  --secondary-foreground:       #0f0d1c;
+
+  /* Surfaces — deep purple-black hierarchy */
+  --background:                 #0f0d1c;
+  --foreground:                 #f0eeff;
+  --card:                       #1a1630;
+  --card-foreground:            #f0eeff;
+  --popover:                    #231d3e;
+  --popover-foreground:         #f0eeff;
+
+  /* Neutral */
+  --muted:                      #1e1b35;
+  --muted-foreground:           #9e90cc;
+  --accent:                     #2d2750;
+  --accent-foreground:          #f0eeff;
+
+  /* Forms */
+  --border:                     #2d2750;
+  --input:                      #2d2750;
+  --input-background:           #1a1630;
+  --ring:                       #a78bff;
+  --switch-background:          #4c3f8a;
+
+  /* Shadows — violeta en oscuro */
+  --shadow-elevation-1:         0 0 0 1px rgba(167,139,255,0.08), 0 1px 3px rgba(0,0,0,0.7);
+  --shadow-elevation-2:         0 0 0 1px rgba(167,139,255,0.09), 0 4px 8px rgba(0,0,0,0.75);
+  --shadow-elevation-3:         0 0 0 1px rgba(167,139,255,0.10), 0 8px 16px rgba(0,0,0,0.8);
+  --shadow-elevation-4:         0 0 0 1px rgba(167,139,255,0.12), 0 16px 32px rgba(0,0,0,0.85);
+
+  /* Sidebar */
+  --sidebar:                    #14112a;
+  --sidebar-foreground:         #f0eeff;
+  --sidebar-primary:            #a78bff;
+  --sidebar-primary-foreground: #1a0e5a;
+  --sidebar-accent:             #1e1b35;
+  --sidebar-accent-foreground:  #c4b5fd;
+  --sidebar-border:             #2d2750;
+  --sidebar-ring:               #a78bff;
+
+  /* KPI Colors dark */
+  --kpi-yellow:                 #facc15;
+  --kpi-yellow-dark:            #eab308;
+  --kpi-yellow-bg:              #2d1f00;
+  --kpi-orange:                 #fb923c;
+  --kpi-orange-dark:            #f97316;
+  --kpi-orange-bg:              #2d1000;
+  --kpi-blue:                   #a78bff;
+  --kpi-blue-dark:              #796eff;
+  --kpi-blue-bg:                #1e1b35;
+  --kpi-lime:                   #a3e635;
+  --kpi-lime-dark:              #84cc16;
+  --kpi-lime-bg:                #0f1f00;
+
+  /* Semantic subtle */
+  --success-subtle:             #14532d;
+  --destructive-subtle:         #7f1d1d;
+  --warning-subtle:             #78350f;
+  --caution-subtle:             #7c2d12;
+  --info-subtle:                #1e1b35;
+  --secondary-subtle:           #1e1b35;
+  --success-on-subtle:          #4ade80;
+  --destructive-on-subtle:      #f87171;
+  --warning-on-subtle:          #fbbf24;
+  --caution-on-subtle:          #fb923c;
+  --info-on-subtle:             #c4b5fd;
+  --secondary-on-subtle:        #c4b5fd;
+
+  /* Charts dark */
+  --chart-1:                    #a78bff;
+  --chart-2:                    #796eff;
+  --chart-3:                    #9ca3af;
+  --chart-4:                    #c4b5fd;
+  --chart-5:                    #f0eeff;
+}

@@ -1,6 +1,6 @@
 /**
  * CurrencyInput — Formatted number/currency/percentage input
- * Handles CLP formatting, USD, and percentage mode.
+ * Handles COP formatting, USD, and percentage mode.
  * @layer atoms
  */
 import * as React from "react";
@@ -8,7 +8,7 @@ import { cn } from "./utils";
 import { inputVariants } from "./input";
 import type { VariantProps } from "class-variance-authority";
 
-export type CurrencyInputMode = "clp" | "usd" | "percent" | "number";
+export type CurrencyInputMode = "cop" | "usd" | "percent" | "number";
 
 export interface CurrencyInputProps
   extends Omit<React.ComponentProps<"input">, "size" | "onChange" | "value" | "type">,
@@ -29,10 +29,10 @@ export interface CurrencyInputProps
 }
 
 const MODE_DEFAULTS: Record<CurrencyInputMode, { decimals: number; prefix: string; suffix: string; locale: string }> = {
-  clp:     { decimals: 0, prefix: "$",  suffix: "",  locale: "es-CL" },
+  cop:     { decimals: 0, prefix: "$",  suffix: "",  locale: "es-CO" },
   usd:     { decimals: 2, prefix: "US$", suffix: "", locale: "en-US" },
-  percent: { decimals: 2, prefix: "",   suffix: "%", locale: "es-CL" },
-  number:  { decimals: 0, prefix: "",   suffix: "",  locale: "es-CL" },
+  percent: { decimals: 2, prefix: "",   suffix: "%", locale: "es-CO" },
+  number:  { decimals: 0, prefix: "",   suffix: "",  locale: "es-CO" },
 };
 
 function formatNumber(value: number, decimals: number, locale: string): string {
@@ -54,7 +54,7 @@ export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputPro
     {
       value,
       onChange,
-      mode = "clp",
+      mode = "cop",
       decimals,
       min,
       max,
@@ -133,7 +133,7 @@ export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputPro
           inputMode="decimal"
           disabled={disabled}
           value={displayValue}
-          placeholder={placeholder ?? (mode === "clp" ? "0" : mode === "percent" ? "0.00" : "0.00")}
+          placeholder={placeholder ?? (mode === "cop" ? "0" : mode === "percent" ? "0.00" : "0.00")}
           onFocus={handleFocus}
           onBlur={handleBlur}
           onChange={handleChange}
@@ -156,7 +156,7 @@ export const CurrencyInput = React.forwardRef<HTMLInputElement, CurrencyInputPro
           inputMode="decimal"
           disabled={disabled}
           value={displayValue}
-          placeholder={placeholder ?? (mode === "clp" ? "0" : "0.00")}
+          placeholder={placeholder ?? (mode === "cop" || mode === "number" ? "0" : "0.00")}
           onFocus={handleFocus}
           onBlur={handleBlur}
           onChange={handleChange}

@@ -41,7 +41,7 @@ export const Default: StoryObj = {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email</FormLabel>
-                <FormControl><Input type="email" placeholder="juan@empresa.cl" {...field} /></FormControl>
+                <FormControl><Input type="email" placeholder="juan@empresa.co" {...field} /></FormControl>
                 <FormDescription>Recibirá notificaciones en este correo.</FormDescription>
                 <FormMessage />
               </FormItem>
@@ -89,7 +89,7 @@ export const WithValidation: StoryObj = {
   name: 'Factoring — Formulario con validación',
   render: () => {
     const form = useForm({
-      defaultValues: { rut: '', monto: '', plazo: '', tasa: '' },
+      defaultValues: { nit: '', monto: '', plazo: '', tasa: '' },
       mode: 'onBlur',
     });
     return (
@@ -97,12 +97,12 @@ export const WithValidation: StoryObj = {
         <form className="space-y-4 max-w-md" onSubmit={form.handleSubmit(() => alert('Operación enviada'))}>
           <FormField
             control={form.control}
-            name="rut"
-            rules={{ required: 'RUT requerido', pattern: { value: /^\d{1,8}-[\dkK]$/, message: 'Formato inválido (ej: 12345678-9)' } }}
+            name="nit"
+            rules={{ required: 'NIT requerido', pattern: { value: /^\d{6,10}-\d$/, message: 'Formato inválido (ej: 900123456-7)' } }}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>RUT cedente</FormLabel>
-                <FormControl><Input placeholder="12345678-9" {...field} /></FormControl>
+                <FormLabel>NIT cedente</FormLabel>
+                <FormControl><Input placeholder="900123456-7" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -113,7 +113,7 @@ export const WithValidation: StoryObj = {
             rules={{ required: 'Monto requerido', min: { value: 1, message: 'Debe ser mayor a 0' } }}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Monto (CLP)</FormLabel>
+                <FormLabel>Monto (COP)</FormLabel>
                 <FormControl><Input type="number" placeholder="1000000" {...field} /></FormControl>
                 <FormDescription>Monto total de las facturas a ceder.</FormDescription>
                 <FormMessage />

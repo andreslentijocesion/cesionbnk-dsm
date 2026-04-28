@@ -109,9 +109,9 @@ const columns: ColumnDef<Invoice>[] = [
     header: () => <div className="text-right">Amount</div>,
     cell: ({ row }: { row: Row<Invoice> }) => {
       const amount = parseFloat(row.getValue("amount"));
-      const formatted = new Intl.NumberFormat("es-CL", {
+      const formatted = new Intl.NumberFormat("es-CO", {
         style: "currency",
-        currency: "CLP",
+        currency: "COP",
       }).format(amount);
 
       return <div className="text-right font-medium font-mono tabular-nums">{formatted}</div>;

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Timeline, type TimelineItem } from '../components/patterns/timeline';
 
 const operationHistory: TimelineItem[] = [
-  { id: '1', title: 'Desembolso realizado',   status: 'completed', timestamp: '08/03/2025 14:32', description: 'Transferencia de $148.500.000 a cuenta BancoEstado del cedente.', badge: 'Completado' },
+  { id: '1', title: 'Desembolso realizado',   status: 'completed', timestamp: '08/03/2025 14:32', description: 'Transferencia de $148.500.000 a cuenta Bancolombia del cedente.', badge: 'Completado' },
   { id: '2', title: 'Aprobación final',        status: 'completed', timestamp: '07/03/2025 10:15', description: 'María González (Dir. Financiero) aprobó la operación.' },
   { id: '3', title: 'Análisis de riesgo',      status: 'current',   timestamp: '06/03/2025 09:40', description: 'Score crediticio 780 · Riesgo Bajo. Analista: Ana Valdés.', badge: 'En curso', badgeVariant: 'secondary' },
   { id: '4', title: 'Radicación de facturas',  status: 'completed', timestamp: '05/03/2025 16:00', description: '12 facturas por $150.000.000. Deudor: Constructora Andina S.A.' },

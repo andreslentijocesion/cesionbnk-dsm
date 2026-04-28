@@ -18,7 +18,7 @@ function generateItems(page: number, size = 10) {
       id: idx,
       folio: `F-${String(idx + 1).padStart(5, '0')}`,
       debtor: `Deudor ${String.fromCharCode(65 + (idx % 26))} S.A.`,
-      amount: `$${((idx + 1) * 850000).toLocaleString('es-CL')}`,
+      amount: `$${((idx + 1) * 850000).toLocaleString('es-CO')}`,
       status: (['Pendiente', 'Aprobada', 'Cobrada', 'Vencida'] as const)[idx % 4],
     };
   });

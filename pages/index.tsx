@@ -38,7 +38,6 @@ export * from "./FactoringDebtorListPage";
 export * from "./FactoringMaturityAlertsPage";
 export * from "./FactoringPortfolioReportPage";
 export * from "./FactoringCalculatorPage";
-export * from "./FactoringSectorConcentrationPage";
 export * from "./FactoringStatusCardPage";
 export * from "./DatePickerPage";
 export * from "./DateRangePickerPage";

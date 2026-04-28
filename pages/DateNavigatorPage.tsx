@@ -14,7 +14,7 @@ function DateNavigatorDemo() {
           <CardContent className="p-4 text-sm space-y-1">
             <p className="font-medium text-foreground">Período seleccionado: <span className="text-primary">{range.label}</span></p>
             <p className="text-muted-foreground text-xs">
-              Desde {range.from.toLocaleDateString("es-CL")} hasta {range.to.toLocaleDateString("es-CL")}
+              Desde {range.from.toLocaleDateString("es-CO")} hasta {range.to.toLocaleDateString("es-CO")}
             </p>
           </CardContent>
         </Card>

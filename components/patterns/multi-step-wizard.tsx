@@ -119,12 +119,12 @@ export function MultiStepWizard() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="rut">Tax ID</Label>
-                  <Input id="rut" placeholder="12-3456789" />
+                  <Label htmlFor="nit">NIT</Label>
+                  <Input id="nit" placeholder="900123456-7" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" placeholder="+56 9 1234 5678" />
+                  <Input id="phone" placeholder="+57 310 123 4567" />
                 </div>
               </div>
               <div className="space-y-2">
@@ -132,7 +132,7 @@ export function MultiStepWizard() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="contacto@empresa.cl"
+                  placeholder="contacto@empresa.co"
                 />
               </div>
             </div>
@@ -238,7 +238,7 @@ export function MultiStepWizard() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-muted-foreground">Tax ID:</span>
-                      <span className="font-medium">12.345.678-9</span>
+                      <span className="font-medium">900.123.456-7</span>
                     </div>
                     <Separator />
                     <div className="flex justify-between">

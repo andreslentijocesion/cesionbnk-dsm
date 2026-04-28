@@ -1,0 +1,98 @@
+/**
+ * THEME: Linear
+ *
+ * Productivity-tool aesthetic — dark-first, tight radius, violet accent.
+ * Inspired by Linear's design language.
+ *
+ * Primary: Violet-600  |  Radius: 0.375rem  |  Font: Inter
+ */
+
+/* ── Light ── */
+[data-theme="linear"] {
+  --primary:                    #7c3aed;
+  --primary-foreground:         #ffffff;
+  --secondary:                  #a78bfa;
+  --secondary-foreground:       #ffffff;
+
+  --background:                 #f9f9fb;
+  --foreground:                 #18181b;
+  --card:                       #ffffff;
+  --card-foreground:            #18181b;
+  --popover:                    #ffffff;
+  --popover-foreground:         #18181b;
+
+  --muted:                      #f4f4f5;
+  --muted-foreground:           #5e5e6a;  /* darkened from #71717a — 5.8:1 on bg ✓ */
+  --accent:                     #f4f4f5;
+  --accent-foreground:          #18181b;
+
+  --border:                     #e4e4e7;
+  --input:                      #e4e4e7;
+  --input-background:           #ffffff;
+  --ring:                       #7c3aed;
+
+  --radius:                     0.375rem;
+  --button-radius:              var(--radius);
+
+  --font-sans:                  'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --letter-spacing-base:        0em;
+
+  --shadow-elevation-1:         0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-elevation-2:         0 2px 4px 0 rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-elevation-3:         0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  --shadow-elevation-4:         0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.06);
+
+  --sidebar:                    #f4f4f5;
+  --sidebar-foreground:         #18181b;
+  --sidebar-primary:            #7c3aed;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:             #ede9fe;
+  --sidebar-accent-foreground:  #7c3aed;
+  --sidebar-border:             #e4e4e7;
+  --sidebar-ring:               #7c3aed;
+
+  --secondary-subtle:           #ede9fe;
+  --secondary-on-subtle:        #7c3aed;
+}
+
+/* ── Dark ── */
+[data-theme="linear"].dark {
+  --primary:                    #8b5cf6;
+  --primary-foreground:         #ffffff;
+  --secondary:                  #a78bfa;
+  --secondary-foreground:       #ffffff;
+
+  --background:                 #09090b;
+  --foreground:                 #fafafa;
+  --card:                       #1c1c20;
+  --card-foreground:            #fafafa;
+  --popover:                    #27272a;
+  --popover-foreground:         #fafafa;
+
+  --muted:                      #18181b;
+  --muted-foreground:           #a1a1aa;
+  --accent:                     #27272a;
+  --accent-foreground:          #fafafa;
+
+  --border:                     #27272a;
+  --input:                      #27272a;
+  --input-background:           #18181b;
+  --ring:                       #8b5cf6;
+
+  --shadow-elevation-1:         0 0 0 1px rgba(255,255,255,0.04), 0 1px 3px rgba(0,0,0,0.7);
+  --shadow-elevation-2:         0 0 0 1px rgba(255,255,255,0.05), 0 4px 8px rgba(0,0,0,0.75);
+  --shadow-elevation-3:         0 0 0 1px rgba(255,255,255,0.06), 0 8px 16px rgba(0,0,0,0.8);
+  --shadow-elevation-4:         0 0 0 1px rgba(255,255,255,0.07), 0 16px 32px rgba(0,0,0,0.85);
+
+  --sidebar:                    #1c1c20;
+  --sidebar-foreground:         #fafafa;
+  --sidebar-primary:            #8b5cf6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent:             #1e1b2e;
+  --sidebar-accent-foreground:  #a78bfa;
+  --sidebar-border:             #18181b;
+  --sidebar-ring:               #8b5cf6;
+
+  --secondary-subtle:           #2e1065;
+  --secondary-on-subtle:        #c4b5fd;
+}

@@ -32,7 +32,7 @@ const sampleFiles: FileItem[] = [
   },
   {
     id: "4",
-    name: "RUT_Constructora_Andina.jpg",
+    name: "NIT_Constructora_Andina.jpg",
     type: "image",
     size: "320 KB",
     uploadedBy: "M. González",

@@ -12,7 +12,7 @@ export function CreditScoreCardPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl">
           <CreditScoreCard
             name="Retail Express Ltda."
-            rut="76.543.210-K"
+            nit="900.543.210-7"
             industry="Retail — Gran distribución"
             score={720}
             limitAmount="$850M"
@@ -28,7 +28,7 @@ export function CreditScoreCardPage() {
           />
           <CreditScoreCard
             name="Constructora Norte S.A."
-            rut="87.654.321-3"
+            nit="830.987.654-3"
             industry="Construcción"
             score={410}
             limitAmount="$500M"
@@ -49,7 +49,7 @@ export function CreditScoreCardPage() {
 
 <CreditScoreCard
   name="Retail Express Ltda."
-  rut="76.543.210-K"
+  nit="900.543.210-7"
   industry="Retail — Gran distribución"
   score={720}
   limitAmount="$850M"
@@ -66,7 +66,7 @@ export function CreditScoreCardPage() {
         { name: "limitAmount", type: "string",  description: "Cupo máximo aprobado." },
         { name: "usedAmount",  type: "string",  description: "Cupo utilizado actualmente." },
         { name: "riskLevel",   type: '"bajo" | "medio" | "alto" | "critico"', description: "Nivel de riesgo del deudor." },
-        { name: "rut",         type: "string",  description: "RUT o identificador tributario.", required: false },
+        { name: "nit",         type: "string",  description: "NIT o identificador tributario.", required: false },
         { name: "industry",    type: "string",  description: "Rubro o sector.", required: false },
         { name: "metrics",     type: "CreditMetric[]", description: "Métricas adicionales con tendencia opcional.", required: false },
         { name: "alert",       type: "string",  description: "Mensaje de alerta destacado (mora, límite agotado, etc.).", required: false },
@@ -80,7 +80,7 @@ export function CreditScoreCardPage() {
             <div className="max-w-sm">
               <CreditScoreCard
                 name="Importadora Del Sur Ltda."
-                rut="65.432.109-2"
+                nit="860.123.456-2"
                 industry="Importación"
                 score={185}
                 limitAmount="$200M"

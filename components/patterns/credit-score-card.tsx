@@ -18,8 +18,8 @@ export interface CreditMetric {
 export interface CreditScoreCardProps {
   /** Debtor name */
   name: string;
-  /** RUT / Tax ID */
-  rut?: string;
+  /** NIT / Tax ID */
+  nit?: string;
   /** Industry */
   industry?: string;
   /** Score 0–1000 */
@@ -112,22 +112,27 @@ const trendColor = (t?: "up" | "down" | "neutral") =>
   t === "down" ? "text-destructive" : "text-muted-foreground";
 
 export function CreditScoreCard({
-  name, rut, industry, score, limitAmount, usedAmount,
+  name, nit, industry, score, limitAmount, usedAmount,
   riskLevel, updatedAt, metrics = [], alert, className,
 }: CreditScoreCardProps) {
   const cfg = riskConfig[riskLevel];
   const RiskIcon = cfg.icon;
 
   return (
-    <Card className={cn("overflow-hidden", className)}>
-      {/* Top color strip */}
-      <div className="h-1 w-full" style={{ backgroundColor: cfg.bar }} />
-
+    <Card
+      className={cn("border-t-4", className)}
+      style={{
+        borderTopColor: "transparent",
+        backgroundImage: `linear-gradient(var(--card), var(--card)), linear-gradient(to right, ${cfg.bar}, color-mix(in srgb, ${cfg.bar} 15%, #000))`,
+        backgroundOrigin: "border-box",
+        backgroundClip: "padding-box, border-box",
+      }}
+    >
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-3">
           <div>
             <CardTitle className="text-base font-semibold text-foreground">{name}</CardTitle>
-            {rut && <p className="text-xs text-muted-foreground mt-0.5">RUT {rut}</p>}
+            {nit && <p className="text-xs text-muted-foreground mt-0.5">NIT {nit}</p>}
             {industry && <p className="text-xs text-muted-foreground">{industry}</p>}
           </div>
           <div className={cn("flex items-center gap-1.5 rounded-lg px-2.5 py-1.5", cfg.bg)}>

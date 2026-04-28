@@ -24,7 +24,7 @@ export function AgingReportPage() {
       description="Análisis de cartera por días de mora. Muestra distribución en 5 tramos: al día, 1–30, 31–60, 61–90 y +90 días. Incluye resumen, gráfico de barras y tabla detalle."
       category="Patterns"
       atomicLevel="Organism"
-      preview={<AgingReport buckets={buckets} unit="M CLP" />}
+      preview={<AgingReport buckets={buckets} unit="M COP" />}
       code={`import { AgingReport } from "@/components/patterns/aging-report"
 
 const buckets = [
@@ -35,17 +35,17 @@ const buckets = [
   { label: "+90 días",   amount: 88,   count: 5,  risk: "critical" },
 ]
 
-<AgingReport buckets={buckets} unit="M CLP" />`}
+<AgingReport buckets={buckets} unit="M COP" />`}
       props={[
         { name: "buckets", type: "AgingBucket[]", description: "Lista de tramos con monto, cantidad de facturas y nivel de riesgo." },
-        { name: "unit",    type: "string",         description: "Etiqueta de unidad para montos (ej. 'M CLP'). Default: 'M CLP'.", required: false },
+        { name: "unit",    type: "string",         description: "Etiqueta de unidad para montos (ej. 'M COP'). Default: 'M COP'.", required: false },
         { name: "className", type: "string",       description: "Clase CSS adicional.", required: false },
       ]}
       examples={[
         {
           title: "Cartera saludable",
           description: "Portafolio concentrado en tramos sin mora.",
-          preview: <AgingReport buckets={smallBuckets} unit="M CLP" />,
+          preview: <AgingReport buckets={smallBuckets} unit="M COP" />,
           code: `<AgingReport buckets={healthyBuckets} />`,
         },
       ]}

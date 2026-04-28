@@ -47,7 +47,7 @@ export function HelpCenter({ variant = "header" }: HelpCenterProps) {
         },
         {
           question: "What documents are required for registration?",
-          answer: "You'll need: 1) Tax Registration Certificate (RUT), 2) Certificate of Existence and Legal Representation, 3) Legal Representative's ID, 4) Bank certification letter, and 5) Financial statements (last 6 months).",
+          answer: "You'll need: 1) Registro único tributario (RUT / NIT), 2) Certificate of Existence and Legal Representation, 3) Legal Representative's ID, 4) Bank certification letter, and 5) Financial statements (last 6 months).",
         },
         {
           question: "How long does the approval process take?",

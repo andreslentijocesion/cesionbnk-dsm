@@ -36,7 +36,7 @@ export const SoloCSV: Story = {
     formats: ['csv'],
     columns: [
       { id: 'razon',   label: 'Razón Social', defaultSelected: true },
-      { id: 'rut',     label: 'RUT',          defaultSelected: true },
+      { id: 'nit',     label: 'NIT',          defaultSelected: true },
       { id: 'giro',    label: 'Giro',         defaultSelected: false },
       { id: 'monto',   label: 'Cartera',      defaultSelected: true },
     ],

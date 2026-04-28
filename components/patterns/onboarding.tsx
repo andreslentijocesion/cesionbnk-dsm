@@ -53,7 +53,7 @@ const moduleMeta: Record<Exclude<OnboardingModule, "custom">, {
   },
   cedentes: {
     title: "Sin cedentes registrados",
-    description: "Agrega los cedentes que cederán sus facturas. Necesitarás RUT, razón social y documentación KYC.",
+    description: "Agrega los cedentes que cederán sus facturas. Necesitarás NIT, razón social y documentación KYC.",
     icon: Building2,
     color: "text-secondary",
     bg: "bg-secondary/10",

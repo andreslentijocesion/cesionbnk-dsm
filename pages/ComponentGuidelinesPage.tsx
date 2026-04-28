@@ -404,7 +404,7 @@ export function ComponentGuidelinesPage() {
             [
               <Badge variant="neutral-soft" className="font-mono">TagInput</Badge>,
               "Sí (libre)", "Sí", "Ilimitado",
-              "Ingreso de valores arbitrarios: RUTs, correos, códigos. El valor no viene de una lista predefinida.",
+              "Ingreso de valores arbitrarios: NITs, correos, códigos. El valor no viene de una lista predefinida.",
             ],
           ]}
         />
@@ -725,7 +725,7 @@ export function ComponentGuidelinesPage() {
               "Añadir .print-break-inside-avoid al header de operación",
               "Sección de facturas: forzar tabla simple (sin sticky headers)",
               "Mostrar estado de aprobación como texto + ícono (no badge dinámico)",
-              "Incluir número de operación y RUT cedente en .print-page-header",
+              "Incluir número de operación y NIT cedente en .print-page-header",
             ]}
             dont={[
               "Grillas de 2 columnas sin media query — se solapan en A4",
@@ -765,7 +765,7 @@ export function ComponentGuidelinesPage() {
             [
               <Badge key="form" variant="neutral-soft" className="font-mono text-xs">Form</Badge>,
               <code key="c" className="text-xs bg-muted px-1.5 py-0.5 rounded">{"<Alert variant='destructive'>"}</code>,
-              "Error de submit que afecta el formulario completo (ej: RUT duplicado, sesión expirada)",
+              "Error de submit que afecta el formulario completo (ej: NIT duplicado, sesión expirada)",
               "Errores de campo individual — usar label del campo, no alert global",
             ],
             [

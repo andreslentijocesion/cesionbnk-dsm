@@ -12,7 +12,7 @@ export default meta;
 const invoices = Array.from({ length: 30 }, (_, i) => ({
   folio: `F-${String(i + 1).padStart(4, '0')}`,
   debtor: `Empresa ${String.fromCharCode(65 + (i % 10))} Ltda.`,
-  amount: `$${((i + 1) * 420000).toLocaleString('es-CL')}`,
+  amount: `$${((i + 1) * 420000).toLocaleString('es-CO')}`,
 }));
 
 export const Vertical: StoryObj = {

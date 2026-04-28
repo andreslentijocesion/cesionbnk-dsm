@@ -1,6 +1,6 @@
 /**
- * MaskedInput — Formatted input for RUT, phone, bank account and custom masks
- * RUT: auto-formats and validates check digit (Chilean format)
+ * MaskedInput — Formatted input for NIT, phone, bank account and custom masks
+ * NIT: auto-formats and validates check digit (Colombian DIAN format)
  * @layer atoms
  */
 import * as React from "react";
@@ -8,7 +8,7 @@ import { cn } from "./utils";
 import { inputVariants } from "./input";
 import type { VariantProps } from "class-variance-authority";
 
-export type MaskType = "rut" | "phone" | "bank-account" | "custom";
+export type MaskType = "nit" | "phone" | "bank-account" | "custom";
 
 export interface MaskedInputProps
   extends Omit<React.ComponentProps<"input">, "size" | "onChange" | "value" | "type">,
@@ -18,28 +18,32 @@ export interface MaskedInputProps
   mask?: MaskType;
   /** Custom mask pattern: use # for digit, A for letter, * for any. E.g. "##/##/####" */
   pattern?: string;
-  /** Show validation indicator for RUT */
+  /** Show validation indicator for NIT */
   showValidation?: boolean;
 }
 
-// ── RUT helpers ──────────────────────────────────────────────────────────────
+// ── NIT helpers (DIAN — Colombia) ────────────────────────────────────────────
 
-function rutCheckDigit(rut: string): string {
-  const digits = rut.replace(/\D/g, "");
+/**
+ * Colombian NIT check digit algorithm (DIAN resolution 8634/2014).
+ * Multipliers applied right-to-left: 3, 7, 13, 17, 19, 23, 29, 37, 41, 43, 47, 53, 59, 67, 71
+ */
+function nitCheckDigit(nit: string): string {
+  const digits = nit.replace(/\D/g, "");
+  const multipliers = [3, 7, 13, 17, 19, 23, 29, 37, 41, 43, 47, 53, 59, 67, 71];
   let sum = 0;
-  let mul = 2;
-  for (let i = digits.length - 1; i >= 0; i--) {
-    sum += parseInt(digits[i]) * mul;
-    mul = mul === 7 ? 2 : mul + 1;
+  const reversed = digits.split("").reverse();
+  for (let i = 0; i < reversed.length && i < multipliers.length; i++) {
+    sum += parseInt(reversed[i]) * multipliers[i];
   }
-  const r = 11 - (sum % 11);
-  if (r === 11) return "0";
-  if (r === 10) return "K";
-  return String(r);
+  const r = sum % 11;
+  if (r === 0) return "0";
+  if (r === 1) return "1";
+  return String(11 - r);
 }
 
-function formatRut(raw: string): string {
-  const clean = raw.replace(/[^0-9kK]/g, "").toUpperCase();
+function formatNit(raw: string): string {
+  const clean = raw.replace(/[^0-9]/g, "");
   if (clean.length === 0) return "";
   const body = clean.slice(0, -1);
   const dv   = clean.slice(-1);
@@ -48,28 +52,29 @@ function formatRut(raw: string): string {
   return `${formatted}-${dv}`;
 }
 
-function validateRut(raw: string): boolean {
-  const clean = raw.replace(/[^0-9kK]/g, "").toUpperCase();
+function validateNit(raw: string): boolean {
+  const clean = raw.replace(/\D/g, "");
   if (clean.length < 2) return false;
   const body = clean.slice(0, -1);
   const dv   = clean.slice(-1);
-  return rutCheckDigit(body) === dv;
+  return nitCheckDigit(body) === dv;
 }
 
-// ── Phone helpers ─────────────────────────────────────────────────────────────
+// ── Phone helpers (Colombia +57) ─────────────────────────────────────────────
 
 function formatPhone(raw: string): string {
-  const d = raw.replace(/\D/g, "").slice(0, 11);
-  if (d.startsWith("56")) {
-    // +56 9 XXXX XXXX
-    const local = d.slice(2);
-    if (local.length <= 1) return `+56 ${local}`;
-    if (local.length <= 5) return `+56 ${local[0]} ${local.slice(1)}`;
-    return `+56 ${local[0]} ${local.slice(1, 5)} ${local.slice(5)}`;
+  // Colombia: +57 3XX XXX XXXX (12 digits with country code, 10 without)
+  const d = raw.replace(/\D/g, "").slice(0, 12);
+  if (d.startsWith("57")) {
+    const local = d.slice(2); // 10-digit mobile
+    if (local.length <= 3)  return `+57 ${local}`;
+    if (local.length <= 6)  return `+57 ${local.slice(0, 3)} ${local.slice(3)}`;
+    return `+57 ${local.slice(0, 3)} ${local.slice(3, 6)} ${local.slice(6)}`;
   }
-  if (d.length <= 1) return d;
-  if (d.length <= 5) return `${d[0]} ${d.slice(1)}`;
-  return `${d[0]} ${d.slice(1, 5)} ${d.slice(5, 9)}`;
+  // Local format without country code (10 digits, starts with 3)
+  if (d.length <= 3)  return d;
+  if (d.length <= 6)  return `${d.slice(0, 3)} ${d.slice(3)}`;
+  return `${d.slice(0, 3)} ${d.slice(3, 6)} ${d.slice(6, 10)}`;
 }
 
 // ── Bank account ──────────────────────────────────────────────────────────────
@@ -101,44 +106,53 @@ export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>(
     {
       value = "",
       onChange,
-      mask = "rut",
+      mask = "nit",
       pattern,
       showValidation = true,
       size,
       className,
       disabled,
       placeholder,
+      autoComplete,
       ...props
     },
     ref
   ) => {
-    const isRutValid = mask === "rut" && value.replace(/\D/g, "").length >= 7
-      ? validateRut(value)
+    // Default autoComplete per mask — prevents browser autofill overlays
+    const defaultAutoComplete: Record<MaskType, string> = {
+      nit:            "off",
+      phone:          "off",
+      "bank-account": "off",
+      custom:         "off",
+    };
+
+    const isNitValid = mask === "nit" && value.replace(/\D/g, "").length >= 7
+      ? validateNit(value)
       : null;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const raw = e.target.value;
       let formatted = raw;
 
-      if (mask === "rut") formatted = formatRut(raw);
+      if (mask === "nit") formatted = formatNit(raw);
       else if (mask === "phone") formatted = formatPhone(raw);
       else if (mask === "bank-account") formatted = formatBankAccount(raw);
       else if (mask === "custom" && pattern) formatted = applyCustomMask(raw, pattern);
 
-      const rawDigits = formatted.replace(/[^0-9kK]/g, "");
+      const rawDigits = formatted.replace(/\D/g, "");
       onChange?.(formatted, rawDigits);
     };
 
     const defaultPlaceholder = {
-      rut: "12.345.678-9",
-      phone: "+56 9 1234 5678",
-      "bank-account": "0000 0000 0000 0000",
-      custom: pattern ?? "",
+      nit:            "900.123.456-7",
+      phone:          "+57 310 123 4567",
+      "bank-account": "0000 0000 0000",
+      custom:         pattern ?? "",
     }[mask];
 
     const validationClass =
-      mask === "rut" && showValidation && isRutValid !== null
-        ? isRutValid
+      mask === "nit" && showValidation && isNitValid !== null
+        ? isNitValid
           ? "border-success focus-visible:border-success focus-visible:ring-success/30"
           : "border-destructive focus-visible:border-destructive focus-visible:ring-destructive/30 aria-invalid:ring-0"
         : "";
@@ -148,11 +162,13 @@ export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>(
         {...props}
         ref={ref}
         type="text"
-        inputMode={mask === "rut" || mask === "bank-account" ? "numeric" : "tel"}
+        inputMode={mask === "nit" || mask === "bank-account" ? "numeric" : "tel"}
         value={value}
         disabled={disabled}
         placeholder={placeholder ?? defaultPlaceholder}
         onChange={handleChange}
+        autoComplete={autoComplete ?? defaultAutoComplete[mask]}
+        spellCheck={false}
         className={cn(inputVariants({ size, className }), validationClass)}
       />
     );

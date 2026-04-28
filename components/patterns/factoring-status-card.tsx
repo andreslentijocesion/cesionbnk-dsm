@@ -38,19 +38,26 @@ export function FactoringStatusCard({
         "relative flex flex-col gap-3 rounded-2xl bg-card px-5 py-4 text-left transition-all",
         // Border: bottom only, 4px
         "border-0 border-b-4",
-        active
-          ? "shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.10),0px_8px_10px_-6px_rgba(0,0,0,0.10)]"
-          : "shadow-sm",
+        active ? "shadow-elevation-4" : "shadow-elevation-2",
         className,
       )}
       style={{
-        borderBottomColor: active ? color : "var(--muted-foreground)",
+        borderBottomColor: active ? "transparent" : "var(--muted-foreground)",
+        ...(active && {
+          backgroundImage: `linear-gradient(var(--card), var(--card)), linear-gradient(to right, ${color}, color-mix(in srgb, ${color} 25%, #111827))`,
+          backgroundOrigin: "border-box",
+          backgroundClip: "padding-box, border-box",
+        }),
       }}
     >
       {/* Count badge — top right */}
       <span
-        className="absolute right-4 top-4 flex h-6 min-w-[1.5rem] items-center justify-center rounded-[10px] px-1.5 text-xs font-semibold text-white"
-        style={{ backgroundColor: active ? color : "var(--muted-foreground)" }}
+        className="absolute right-4 top-4 flex h-6 min-w-[1.5rem] items-center justify-center rounded-[10px] px-1.5 text-xs font-semibold border"
+        style={
+          active
+            ? { color, borderColor: color, backgroundColor: "transparent" }
+            : { color: "var(--muted-foreground)", borderColor: "var(--muted-foreground)", backgroundColor: "transparent" }
+        }
       >
         {count}
       </span>
@@ -121,7 +128,7 @@ const STATUS_CARDS = [
     amount: "$34.1M",
     count: 23,
     icon: Banknote,
-    color: "var(--primary)",
+    color: "var(--info)",
   },
   {
     id: "en-cobro",

@@ -7,12 +7,12 @@ const meta: Meta<typeof MaskedInput> = {
   component: MaskedInput,
   tags: ['autodocs'],
   argTypes: {
-    mask:           { control: 'select', options: ['rut', 'phone', 'bank-account', 'custom'] },
+    mask:           { control: 'select', options: ['nit', 'phone', 'bank-account', 'custom'] },
     showValidation: { control: 'boolean' },
     disabled:       { control: 'boolean' },
     pattern:        { control: 'text' },
   },
-  args: { mask: 'rut', value: '', showValidation: true, disabled: false },
+  args: { mask: 'nit', value: '', showValidation: true, disabled: false },
   decorators: [
     (Story, ctx) => {
       const [val, setVal] = useState(ctx.args.value ?? '');
@@ -24,16 +24,16 @@ const meta: Meta<typeof MaskedInput> = {
 export default meta;
 type Story = StoryObj<typeof MaskedInput>;
 
-export const RUT: Story = { args: { mask: 'rut', value: '123456789' } };
+export const NIT: Story = { args: { mask: 'nit', value: '9001234567' } };
 
-export const Telefono: Story = { args: { mask: 'phone', value: '56912345678' } };
+export const Telefono: Story = { args: { mask: 'phone', value: '573101234567' } };
 
-export const CuentaBancaria: Story = { args: { mask: 'bank-account', value: '1234567890123456' } };
+export const CuentaBancaria: Story = { args: { mask: 'bank-account', value: '1234567890' } };
 
 export const Personalizado: Story = {
   args: { mask: 'custom', pattern: '##/##/####', placeholder: 'DD/MM/AAAA' },
 };
 
 export const Deshabilitado: Story = {
-  args: { mask: 'rut', value: '12.345.678-9', disabled: true },
+  args: { mask: 'nit', value: '900.123.456-7', disabled: true },
 };

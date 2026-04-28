@@ -76,7 +76,7 @@ const operaciones = [
 ];
 
 const documentos = [
-  { nombre: "RUT actualizado",               tipo: "PDF", fecha: "2025-01-10", vigente: true  },
+  { nombre: "NIT actualizado",               tipo: "PDF", fecha: "2025-01-10", vigente: true  },
   { nombre: "Cámara de Comercio",            tipo: "PDF", fecha: "2025-01-10", vigente: true  },
   { nombre: "Estados financieros 2024",      tipo: "PDF", fecha: "2025-02-28", vigente: true  },
   { nombre: "Declaración de renta 2023",     tipo: "PDF", fecha: "2024-09-15", vigente: true  },
@@ -93,7 +93,7 @@ const opStatus: Record<string, { label: string; variant: "success-soft-outline" 
 };
 
 function ScoreMeter({ score }: { score: number }) {
-  const color = score >= 80 ? "text-success" : score >= 65 ? "text-warning" : "text-destructive";
+  const color = score >= 80 ? "text-success-on-subtle" : score >= 65 ? "text-warning-on-subtle" : "text-destructive-on-subtle";
   const barColor = score >= 80 ? "bg-success" : score >= 65 ? "bg-warning" : "bg-destructive";
   return (
     <div className="flex items-center gap-3">
@@ -125,8 +125,7 @@ export function FactoringCedentProfile() {
   return (
     <div className="space-y-4">
       {/* ── Profile Header ── */}
-      <Card className="border shadow-sm overflow-hidden">
-        <div className="h-2 bg-gradient-to-r from-primary via-secondary to-primary/50" />
+      <Card>
         <CardContent className="p-5">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex items-start gap-4">
@@ -164,7 +163,7 @@ export function FactoringCedentProfile() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { label: "Portafolio activo",  value: new Intl.NumberFormat("es-CO", { notation: "compact", style: "currency", currency: "COP", maximumFractionDigits: 1 }).format(cedent.valorPortafolio), sub: `${cedent.operacionesActivas} operaciones`, color: "text-primary" },
-              { label: "Tasa de cobro",      value: `${cedent.tasaCobro}%`, sub: "Histórico acumulado", color: "text-success" },
+              { label: "Tasa de cobro",      value: `${cedent.tasaCobro}%`, sub: "Histórico acumulado", color: "text-success-on-subtle" },
               { label: "Ops. totales",       value: `${cedent.operacionesTotales}`, sub: `${cedent.operacionesActivas} activas`, color: "text-foreground" },
               { label: "Tasa prom. MV",      value: `${cedent.tasaDescuentoPromedio}%`, sub: "Tasa pactada promedio", color: "text-secondary" },
             ].map((s) => (
@@ -191,7 +190,7 @@ export function FactoringCedentProfile() {
         <TabsContent value="overview" className="space-y-4 m-0">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             {/* Evolución mensual */}
-            <Card className="lg:col-span-2 border shadow-sm">
+            <Card className="lg:col-span-2">
               <CardHeader className="pb-2 px-4 pt-4">
                 <CardTitle>Volumen mensual (COP millones)</CardTitle>
                 <CardDescription className="text-xs">Desembolsado vs cobrado — últimos 7 meses</CardDescription>
@@ -212,7 +211,7 @@ export function FactoringCedentProfile() {
 
             {/* Info + Score */}
             <div className="space-y-4">
-              <Card className="border shadow-sm">
+              <Card>
                 <CardHeader className="pb-2 px-4 pt-4">
                   <CardTitle>Score crediticio</CardTitle>
                 </CardHeader>
@@ -224,14 +223,14 @@ export function FactoringCedentProfile() {
                       <Tooltip formatter={(v: number) => [v, "Score"]} contentStyle={{ background: "var(--popover)", border: "1px solid var(--border)", borderRadius: 8, fontSize: 11 }} />
                     </LineChart>
                   </SafeChartContainer>
-                  <div className="flex items-center gap-1 text-xs text-success">
+                  <div className="flex items-center gap-1 text-xs text-success-on-subtle">
                     <TrendingUp className="h-3.5 w-3.5" />
                     <span className="font-medium">+8 puntos vs hace 6 meses</span>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border shadow-sm">
+              <Card>
                 <CardHeader className="pb-1 px-4 pt-3">
                   <CardTitle>Contacto</CardTitle>
                 </CardHeader>
@@ -248,7 +247,7 @@ export function FactoringCedentProfile() {
 
         {/* ── Operations ── */}
         <TabsContent value="operations" className="m-0">
-          <Card className="border shadow-sm overflow-hidden">
+          <Card className="overflow-hidden">
             <CardHeader className="px-4 pt-4 pb-3 border-b border-border">
               <div className="flex items-center justify-between">
                 <div>
@@ -314,7 +313,7 @@ export function FactoringCedentProfile() {
 
         {/* ── Documents ── */}
         <TabsContent value="documents" className="m-0">
-          <Card className="border shadow-sm">
+          <Card>
             <CardHeader className="px-4 pt-4 pb-3 border-b border-border">
               <div className="flex items-center justify-between">
                 <div>
@@ -352,7 +351,7 @@ export function FactoringCedentProfile() {
         {/* ── Credit ── */}
         <TabsContent value="credit" className="m-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <Card className="border shadow-sm">
+            <Card>
               <CardHeader className="px-4 pt-4 pb-3">
                 <CardTitle>Límite de crédito</CardTitle>
                 <CardDescription className="text-xs">Cupo aprobado y utilización actual</CardDescription>
@@ -387,7 +386,7 @@ export function FactoringCedentProfile() {
               </CardContent>
             </Card>
 
-            <Card className="border shadow-sm">
+            <Card>
               <CardHeader className="px-4 pt-4 pb-3">
                 <CardTitle>Condiciones comerciales</CardTitle>
               </CardHeader>

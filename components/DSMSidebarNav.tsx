@@ -68,6 +68,7 @@ const DESIGN_SYSTEM_PAGES: { id: PageId; label: string; icon: LucideIcon }[] = [
   { id: "dsm-dashboard",         label: "DSM Dashboard",       icon: LayoutDashboard },
   { id: "dsm-visual-audit",      label: "Visual Audit",        icon: ScanEye },
   { id: "component-guidelines",  label: "Usage Guidelines",    icon: BookOpen },
+  { id: "theme-explorer",        label: "Theme Explorer",      icon: Paintbrush },
   { id: "changelog",             label: "Changelog",           icon: History },
   { id: "brand-layout",          label: "Brand Layout",        icon: Paintbrush },
   { id: "design-tokens",         label: "Design Tokens",       icon: Scale },

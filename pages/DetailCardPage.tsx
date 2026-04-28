@@ -21,7 +21,7 @@ function DetailCardDemo() {
           { label: "Estado",        value: <Badge variant="info-soft-outline">Desembolsado</Badge> },
           { label: "Fecha emisión", value: "12/03/2025" },
           { label: "Cedente",       value: "Construcciones Andina S.A.",     span: 2 },
-          { label: "RUT cedente",   value: "76.123.456-7",                   copyable: true },
+          { label: "NIT cedente",   value: "900.123.456-7",                  copyable: true },
           { label: "Deudor",        value: "Banco de Bogotá",                span: 2 },
           { label: "Monto factura", value: "$185.000.000",                   copyable: true, copyValue: "185000000" },
           { label: "% Anticipo",    value: "80%" },
@@ -38,11 +38,11 @@ function DetailCardDemo() {
         variant="compact"
         fields={[
           { label: "Razón social",  value: "Construcciones Andina S.A." },
-          { label: "RUT",           value: "76.123.456-7", copyable: true },
-          { label: "Representante", value: "Pablo Morales Soto" },
-          { label: "Teléfono",      value: "+56 9 8765 4321",              copyable: true },
-          { label: "Email",         value: "contacto@andina.cl",           copyable: true },
-          { label: "Banco",         value: "Banco de Chile — Cta. 12345678", span: 2 },
+          { label: "NIT",            value: "900.123.456-7", copyable: true },
+          { label: "Representante", value: "Carlos Morales Díaz" },
+          { label: "Teléfono",      value: "+57 310 876 5432",             copyable: true },
+          { label: "Email",         value: "contacto@andina.co",           copyable: true },
+          { label: "Banco",         value: "Bancolombia — Cta. 1234567890", span: 2 },
         ]}
       />
     </div>

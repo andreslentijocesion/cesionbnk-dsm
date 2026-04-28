@@ -14,6 +14,8 @@
 /* 1. Font @imports — MUST precede all other statements (CSS spec) */
 /* Gotham (CESIONBNK) */
 @import url('https://cdn.jsdelivr.net/npm/gotham-fonts@1.0.1/css/gotham.css');
+/* Inter — fallback para temas Apple, Linear, Stripe en plataformas no-Apple */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* 2. Tailwind CSS engine */
 @import "tailwindcss";
@@ -21,8 +23,15 @@
 /* 3. Shared Tailwind v4 configuration */
 @import "./config.css";
 
-/* 4. CESIONBNK tokens (single tenant) */
+/* 4. CESIONBNK tokens (default theme — :root / .dark) */
 @import "./themes/cesionbnk.css";
+
+/* 4b. Visual design themes (activated via [data-theme="..."] on <html>) */
+@import "./themes/linear.css";
+@import "./themes/stripe.css";
+@import "./themes/vercel.css";
+@import "./themes/apple.css";
+@import "./themes/duotone.css";
 
 /* 5. Custom animations & micro-interactions */
 @import "./animations.css";

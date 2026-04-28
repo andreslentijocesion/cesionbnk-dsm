@@ -583,7 +583,7 @@ export function AdminLayout({
     <AdminLayoutContext.Provider value={ctxValue}>
       <div
         data-slot="admin-layout"
-        className={cn("flex min-h-screen flex-col bg-background", className)}
+        className={cn("flex h-screen flex-col overflow-hidden bg-background", className)}
       >
         {/* Header (full width, above sidebar + body) */}
         {header && (
@@ -611,7 +611,7 @@ export function AdminLayout({
         )}
 
         {/* Body row: Sidebar + Main content */}
-        <div className={cn("flex flex-1", hasSidebar && isRight && "flex-row-reverse")}>
+        <div className={cn("flex flex-1 min-h-0 overflow-hidden", hasSidebar && isRight && "flex-row-reverse")}>
           {/* ── Desktop Sidebar ── */}
           {hasSidebar && (
             <aside
@@ -674,7 +674,7 @@ export function AdminLayout({
           )}
 
           {/* ── Main Content Area ── */}
-          <div className="flex min-w-0 flex-1 flex-col">
+          <div className="flex min-w-0 flex-1 flex-col overflow-y-auto">
             <main
               data-slot="layout-body"
               className={cn("flex-1", bodyClassName)}

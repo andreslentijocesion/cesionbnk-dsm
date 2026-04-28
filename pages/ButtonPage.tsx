@@ -179,7 +179,7 @@ function VariantMatrix() {
             const IR = r.iconRight;
             const IO = r.iconOnly;
             return (
-              <tr key={item.key} className="border-t border-border hover:bg-muted transition-colors">
+              <tr key={item.key} className="border-t border-border">
                 <RowLabel label={r.label} code={r.variant} />
                 <Cell><Button variant={r.variant}>{r.label}</Button></Cell>
                 <Cell><Button variant={r.variant}><IL />{r.label}</Button></Cell>
@@ -244,7 +244,7 @@ function SizesGrid() {
             const row = ALL_ROWS.find(r => r.variant === variant)!;
             const IO = row?.iconOnly;
             return (
-              <tr key={variant} className="border-t border-border hover:bg-muted transition-colors">
+              <tr key={variant} className="border-t border-border">
                 <RowLabel label={row.label} code={variant} />
                 {TEXT_SIZES.map(c => (
                   <Cell key={c.size}><Button variant={variant} size={c.size}>{row.label}</Button></Cell>
@@ -290,7 +290,7 @@ function PillGrid() {
             const IR = r.iconRight;
             const IO = r.iconOnly;
             return (
-              <tr key={item.key} className="border-t border-border hover:bg-muted transition-colors">
+              <tr key={item.key} className="border-t border-border">
                 <RowLabel label={r.label} code={r.variant} />
                 <Cell><Button variant={r.variant} shape="pill">{r.label}</Button></Cell>
                 <Cell><Button variant={r.variant} shape="pill"><IL />{r.label}</Button></Cell>
@@ -342,7 +342,7 @@ function IconButtonsGrid({ shape }: { shape: BtnShape }) {
             const r  = item.data;
             const IC = r.iconOnly ?? r.iconLeft;
             return (
-              <tr key={item.key} className="border-t border-border hover:bg-muted transition-colors">
+              <tr key={item.key} className="border-t border-border">
                 <RowLabel label={r.label} code={r.variant} />
                 {COLS.map(c => (
                   <Cell key={c.size}>
@@ -383,7 +383,7 @@ function PropsTable() {
         </thead>
         <tbody>
           {PROPS_DATA.map(p => (
-            <tr key={p.name} className="border-t border-border hover:bg-muted transition-colors">
+            <tr key={p.name} className="border-t border-border">
               <td className="px-4 py-3 align-top whitespace-nowrap">
                 <code className="text-xs bg-muted border border-border px-1.5 py-0.5 rounded text-foreground">
                   {p.name}

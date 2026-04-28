@@ -209,7 +209,7 @@ export function ComponentShowcase({
             </div>
 
             <TabsContent value="preview" className="m-0">
-              <div className="min-h-[200px] p-8">{preview}</div>
+              <div className="min-h-[200px] p-8 bg-background">{preview}</div>
             </TabsContent>
 
             <TabsContent value="code" className="m-0">
@@ -264,7 +264,7 @@ export function ComponentShowcase({
                 </div>
 
                 <TabsContent value="preview" className="m-0">
-                  <div className="min-h-[150px] p-6">{example.preview}</div>
+                  <div className="min-h-[150px] p-6 bg-background">{example.preview}</div>
                 </TabsContent>
 
                 <TabsContent value="code" className="m-0">
