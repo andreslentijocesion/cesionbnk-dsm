@@ -41,24 +41,7 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            // Priority 1: React Core (Must be loaded first)
-            if (id.includes('react/') || id.includes('react-dom/') || id.includes('scheduler/')) {
-              return 'vendor-react';
-            }
-            // Priority 2: Heavy Visualization
-            if (id.includes('recharts')) {
-              return 'vendor-charts';
-            }
-            // Priority 3: UI Primitives & Icons
-            if (id.includes('@radix-ui') || id.includes('lucide-react') || id.includes('class-variance-authority')) {
-              return 'vendor-ui';
-            }
-            // Priority 4: Animations
-            if (id.includes('framer-motion')) {
-              return 'vendor-motion';
-            }
-            // Everything else
-            return 'vendor-others';
+            return 'vendor';
           }
         },
       },
