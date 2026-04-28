@@ -5,12 +5,10 @@ import {
   FactoringStatusCardShowcase,
 } from "../components/patterns/factoring-status-card";
 import {
-  CheckCircle2,
   Banknote,
   RefreshCw,
   BadgeCheck,
   AlertTriangle,
-  XCircle,
 } from "lucide-react";
 
 // ─── Single-card interactive demo ─────────────────────────────────────────────

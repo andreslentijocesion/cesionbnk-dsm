@@ -258,12 +258,12 @@ function UrgencyBar({ alerts }: { alerts: Alert[] }) {
   const counts: Record<Urgency, number> = { vencido: 0, critico: 0, proximo: 0, vigilar: 0 };
   alerts.forEach((a) => counts[a.urgency]++);
 
-  const segments: { urgency: Urgency; pct: number; label: string; color: string }[] = [
+  const segments: { urgency: Urgency; pct: number; label: string; color: string }[] = ([
     { urgency: "vencido", pct: (counts.vencido / total) * 100, label: "Vencido",    color: "bg-destructive" },
     { urgency: "critico", pct: (counts.critico / total) * 100, label: "Crítico",    color: "bg-warning" },
     { urgency: "proximo", pct: (counts.proximo / total) * 100, label: "Próximo",    color: "bg-primary" },
     { urgency: "vigilar", pct: (counts.vigilar / total) * 100, label: "Vigilar",    color: "bg-border" },
-  ].filter((s) => s.pct > 0);
+  ] as const).map(s => ({ ...s, urgency: s.urgency as Urgency })).filter((s) => s.pct > 0);
 
   return (
     <div className="space-y-1.5">
