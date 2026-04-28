@@ -227,7 +227,7 @@ export function FactoringApprovalQueue() {
                   aria-label="Buscar operaciones"
                   className="pl-8 h-9 w-48 text-sm"
                   value={search}
-                  onChange={(e) => setSearch(e.target.value)}
+                  onChange={(e: any) => setSearch(e.target.value)}
                 />
               </div>
               {selected.size > 0 && (

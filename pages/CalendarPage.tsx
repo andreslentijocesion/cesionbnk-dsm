@@ -139,7 +139,7 @@ export function CalendarMultipleDemo() {
           preview: (
             <Calendar
               mode="single"
-              disabled={(date) => date < new Date()}
+              disabled={(date: any) => date < new Date()}
               className="w-fit rounded-md border shadow"
             />
           ),

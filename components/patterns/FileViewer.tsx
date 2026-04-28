@@ -71,7 +71,7 @@ export function FileViewer({ files, onDownload, onPreview, className }: FileView
           placeholder="Buscar documento..."
           className="pl-9 pr-8"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e: any) => setSearch(e.target.value)}
         />
         {search && (
           <button

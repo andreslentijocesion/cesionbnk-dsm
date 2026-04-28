@@ -47,7 +47,7 @@ function HelpSystemDemo() {
               title="About Tax ID (NIT)"
             />
           </div>
-          <Input id="tax-id" placeholder="900123456" value={taxId} onChange={(e) => setTaxId(e.target.value)} />
+          <Input id="tax-id" placeholder="900123456" value={taxId} onChange={(e: any) => setTaxId(e.target.value)} />
           <p className="text-xs text-muted-foreground mt-1">9 digits without verification digit</p>
         </div>
 
@@ -56,7 +56,7 @@ function HelpSystemDemo() {
             <Label htmlFor="company-name">Company Name</Label>
             <ContextualHelp quickHelp="Enter the legal name exactly as it appears on official documents" tooltipOnly={true} />
           </div>
-          <Input id="company-name" placeholder="Acme Corporation S.A.S." value={companyName} onChange={(e) => setCompanyName(e.target.value)} />
+          <Input id="company-name" placeholder="Acme Corporation S.A.S." value={companyName} onChange={(e: any) => setCompanyName(e.target.value)} />
         </div>
 
         <div>
@@ -68,7 +68,7 @@ function HelpSystemDemo() {
               popoverOnly={true}
             />
           </div>
-          <Input id="email" type="email" placeholder="contact@company.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <Input id="email" type="email" placeholder="contact@company.com" value={email} onChange={(e: any) => setEmail(e.target.value)} />
         </div>
       </Card>
 

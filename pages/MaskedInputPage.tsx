@@ -12,7 +12,7 @@ function MaskedInputDemo() {
     <div className="space-y-5 max-w-sm">
       <div className="space-y-1.5">
         <Label>NIT</Label>
-        <MaskedInput mask="nit" value={nit} onChange={(v) => setNit(v)} />
+        <MaskedInput mask="nit" value={nit} onChange={(v: any) => setNit(v)} />
         <p className="text-xs text-muted-foreground">
           Valor: {nit || "—"} ·{" "}
           {nit.replace(/\D/g, "").length >= 7 && (
@@ -24,11 +24,11 @@ function MaskedInputDemo() {
       </div>
       <div className="space-y-1.5">
         <Label>Teléfono (Colombia)</Label>
-        <MaskedInput mask="phone" value={phone} onChange={(v) => setPhone(v)} />
+        <MaskedInput mask="phone" value={phone} onChange={(v: any) => setPhone(v)} />
       </div>
       <div className="space-y-1.5">
         <Label>Número de cuenta bancaria</Label>
-        <MaskedInput mask="bank-account" value={bank} onChange={(v) => setBank(v)} />
+        <MaskedInput mask="bank-account" value={bank} onChange={(v: any) => setBank(v)} />
       </div>
     </div>
   );

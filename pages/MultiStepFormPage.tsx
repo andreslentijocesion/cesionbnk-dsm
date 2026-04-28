@@ -579,7 +579,7 @@ function Paso1({
                     type="password"
                     placeholder="PDF Password"
                     value={formData.passwordPDF || ""}
-                    onChange={(e) => setFormData({ ...formData, passwordPDF: e.target.value })}
+                    onChange={(e: any) => setFormData({ ...formData, passwordPDF: e.target.value })}
                     className="h-8 pl-8 text-xs"
                   />
                 </div>
@@ -882,7 +882,7 @@ function Paso2({
               type="tel"
               placeholder="+57 301 234 5678"
               value={formData.telefonoContacto || ""}
-              onChange={(e) => setFormData({ ...formData, telefonoContacto: e.target.value })}
+              onChange={(e: any) => setFormData({ ...formData, telefonoContacto: e.target.value })}
               className="mt-1"
             />
           </div>
@@ -894,7 +894,7 @@ function Paso2({
               type="email"
               placeholder="contact@company.com"
               value={formData.correoContacto || ""}
-              onChange={(e) => setFormData({ ...formData, correoContacto: e.target.value })}
+              onChange={(e: any) => setFormData({ ...formData, correoContacto: e.target.value })}
               className="mt-1"
             />
           </div>
@@ -954,11 +954,11 @@ function DatoExtraido({
         <div className="flex items-center gap-2">
           <Input
             value={value}
-            onChange={(e) => onChange(e.target.value)}
+            onChange={(e: any) => onChange(e.target.value)}
             className="h-9 border-primary focus:ring-1 focus:ring-primary bg-background"
             autoFocus
             onBlur={() => setIsEditing(false)}
-            onKeyDown={(e) => {
+            onKeyDown={(e: any) => {
               if (e.key === 'Enter') setIsEditing(false);
             }}
           />
@@ -1024,7 +1024,7 @@ function Paso3({
           <Input
             placeholder="Search by name, NIT..."
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e: any) => setSearchTerm(e.target.value)}
             className="pl-10"
           />
           {/* Autocomplete Dropdown */}
@@ -1054,7 +1054,7 @@ function Paso3({
                     <div
                       key={i}
                       className="relative flex cursor-pointer select-none items-center rounded-sm px-2 py-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
-                      onMouseDown={(e) => {
+                      onMouseDown={(e: any) => {
                         e.preventDefault(); // Prevent losing focus before click
                         onAgregarCliente(cliente);
                         setSearchTerm("");
@@ -1203,7 +1203,7 @@ function FormCliente({
           <Input
             placeholder="ABC SAS"
             value={form.nombre}
-            onChange={(e) => setForm({ ...form, nombre: e.target.value })}
+            onChange={(e: any) => setForm({ ...form, nombre: e.target.value })}
             className="mt-1"
           />
         </div>
@@ -1214,7 +1214,7 @@ function FormCliente({
           <Input
             placeholder="578531900-1"
             value={form.nit}
-            onChange={(e) => setForm({ ...form, nit: e.target.value })}
+            onChange={(e: any) => setForm({ ...form, nit: e.target.value })}
             className="mt-1"
           />
         </div>
@@ -1225,7 +1225,7 @@ function FormCliente({
           <Input
             placeholder="John Smith"
             value={form.contacto}
-            onChange={(e) => setForm({ ...form, contacto: e.target.value })}
+            onChange={(e: any) => setForm({ ...form, contacto: e.target.value })}
             className="mt-1"
           />
         </div>
@@ -1235,7 +1235,7 @@ function FormCliente({
             type="email"
             placeholder="contact@client.com"
             value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            onChange={(e: any) => setForm({ ...form, email: e.target.value })}
             className="mt-1"
           />
         </div>
@@ -1245,7 +1245,7 @@ function FormCliente({
             type="tel"
             placeholder="+57 301 234 5678"
             value={form.telefono}
-            onChange={(e) => setForm({ ...form, telefono: e.target.value })}
+            onChange={(e: any) => setForm({ ...form, telefono: e.target.value })}
             className="mt-1"
           />
         </div>
@@ -1295,7 +1295,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Switch
                 id="obligaciones"
                 checked={formData.obligacionesVencidas || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, obligacionesVencidas: checked }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, obligacionesVencidas: checked }))}
               />
             </div>
             <div className="flex flex-row items-center justify-between rounded-lg border p-4 shadow-sm bg-card hover:bg-muted transition-colors">
@@ -1308,7 +1308,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Switch
                 id="insolvencia"
                 checked={formData.insolvencia || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, insolvencia: checked }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, insolvencia: checked }))}
               />
             </div>
           </div>
@@ -1330,7 +1330,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Switch
                 id="registrada"
                 checked={formData.registradaPais || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, registradaPais: checked }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, registradaPais: checked }))}
               />
             </div>
 
@@ -1343,7 +1343,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Switch
                 id="regulaciones"
                 checked={formData.cumpleRegulaciones || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, cumpleRegulaciones: checked }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, cumpleRegulaciones: checked }))}
               />
             </div>
 
@@ -1356,7 +1356,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Switch
                 id="ilegales"
                 checked={formData.actividadesIlegales || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, actividadesIlegales: checked }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, actividadesIlegales: checked }))}
               />
             </div>
 
@@ -1379,7 +1379,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Switch
                 id="pep"
                 checked={formData.esPEP || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, esPEP: checked }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, esPEP: checked }))}
               />
             </div>
 
@@ -1392,7 +1392,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Switch
                 id="judiciales"
                 checked={formData.investigacionesJudiciales || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, investigacionesJudiciales: checked }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, investigacionesJudiciales: checked }))}
               />
             </div>
 
@@ -1405,7 +1405,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Switch
                 id="sancionada"
                 checked={formData.sancionada || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, sancionada: checked }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, sancionada: checked }))}
               />
             </div>
 
@@ -1428,7 +1428,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Switch
                 id="sarlaft"
                 checked={formData.politicasSarlaft || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, politicasSarlaft: checked }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, politicasSarlaft: checked }))}
               />
             </div>
           </div>
@@ -1445,7 +1445,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Checkbox 
                 id="infoVeraz" 
                 checked={formData.infoVeraz || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, infoVeraz: checked === true }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, infoVeraz: checked === true }))}
               />
               <div className="grid gap-1.5 leading-none">
                 <Label htmlFor="infoVeraz" className="font-medium cursor-pointer">
@@ -1461,7 +1461,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Checkbox 
                 id="actualizar" 
                 checked={formData.actualizarInfo || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, actualizarInfo: checked === true }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, actualizarInfo: checked === true }))}
               />
               <div className="grid gap-1.5 leading-none">
                 <Label htmlFor="actualizar" className="font-medium cursor-pointer">
@@ -1477,7 +1477,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Checkbox 
                 id="privacidad" 
                 checked={formData.aceptaPolitica || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, aceptaPolitica: checked === true }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, aceptaPolitica: checked === true }))}
               />
               <div className="grid gap-1.5 leading-none">
                 <Label htmlFor="privacidad" className="font-medium cursor-pointer">
@@ -1493,7 +1493,7 @@ function DeclaracionesSection({ formData, setFormData }: { formData: Partial<For
               <Checkbox 
                 id="riesgo" 
                 checked={formData.autorizaConsulta || false}
-                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, autorizaConsulta: checked === true }))}
+                onCheckedChange={(checked: any) => setFormData(prev => ({ ...prev, autorizaConsulta: checked === true }))}
               />
               <div className="grid gap-1.5 leading-none">
                 <div className="flex items-center gap-2">

@@ -44,7 +44,7 @@ const formSchema = z.object({
 
   // Configuración
   observaciones: z.string().max(500, { message: "Máximo 500 caracteres." }).optional(),
-  terminos:      z.boolean().refine((v) => v === true, {
+  terminos:      z.boolean().refine((v: any) => v === true, {
                    message: "Debes aceptar los términos para continuar.",
                  }),
 });
@@ -88,7 +88,7 @@ function NuevaOperacionForm() {
             <FormField
               control={form.control}
               name="empresa"
-              render={({ field }) => (
+              render={({ field }: any) => (
                 <FormItem className="sm:col-span-2">
                   <FormLabel>Razón social <span className="text-destructive">*</span></FormLabel>
                   <FormControl>
@@ -102,7 +102,7 @@ function NuevaOperacionForm() {
             <FormField
               control={form.control}
               name="nit"
-              render={({ field }) => (
+              render={({ field }: any) => (
                 <FormItem>
                   <FormLabel>NIT <span className="text-destructive">*</span></FormLabel>
                   <FormControl>
@@ -117,7 +117,7 @@ function NuevaOperacionForm() {
             <FormField
               control={form.control}
               name="email"
-              render={({ field }) => (
+              render={({ field }: any) => (
                 <FormItem>
                   <FormLabel>Email de contacto <span className="text-destructive">*</span></FormLabel>
                   <FormControl>
@@ -131,7 +131,7 @@ function NuevaOperacionForm() {
             <FormField
               control={form.control}
               name="telefono"
-              render={({ field }) => (
+              render={({ field }: any) => (
                 <FormItem>
                   <FormLabel>Teléfono</FormLabel>
                   <FormControl>
@@ -157,7 +157,7 @@ function NuevaOperacionForm() {
             <FormField
               control={form.control}
               name="tipo"
-              render={({ field }) => (
+              render={({ field }: any) => (
                 <FormItem>
                   <FormLabel>Tipo de operación <span className="text-destructive">*</span></FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -181,7 +181,7 @@ function NuevaOperacionForm() {
             <FormField
               control={form.control}
               name="deudor"
-              render={({ field }) => (
+              render={({ field }: any) => (
                 <FormItem>
                   <FormLabel>Deudor (pagador) <span className="text-destructive">*</span></FormLabel>
                   <FormControl>
@@ -195,7 +195,7 @@ function NuevaOperacionForm() {
             <FormField
               control={form.control}
               name="monto"
-              render={({ field }) => (
+              render={({ field }: any) => (
                 <FormItem>
                   <FormLabel>Monto nominal (COP) <span className="text-destructive">*</span></FormLabel>
                   <FormControl>
@@ -204,7 +204,7 @@ function NuevaOperacionForm() {
                       min={1000000}
                       placeholder="185000000"
                       {...field}
-                      onChange={(e) => field.onChange(e.target.valueAsNumber)}
+                      onChange={(e: any) => field.onChange(e.target.valueAsNumber)}
                     />
                   </FormControl>
                   <FormDescription>Valor bruto de las facturas cedidas.</FormDescription>
@@ -216,7 +216,7 @@ function NuevaOperacionForm() {
             <FormField
               control={form.control}
               name="plazo"
-              render={({ field }) => (
+              render={({ field }: any) => (
                 <FormItem>
                   <FormLabel>Plazo (días) <span className="text-destructive">*</span></FormLabel>
                   <FormControl>
@@ -226,7 +226,7 @@ function NuevaOperacionForm() {
                       max={365}
                       placeholder="60"
                       {...field}
-                      onChange={(e) => field.onChange(e.target.valueAsNumber)}
+                      onChange={(e: any) => field.onChange(e.target.valueAsNumber)}
                     />
                   </FormControl>
                   <FormDescription>Días desde desembolso hasta vencimiento.</FormDescription>
@@ -247,7 +247,7 @@ function NuevaOperacionForm() {
           <FormField
             control={form.control}
             name="observaciones"
-            render={({ field }) => (
+            render={({ field }: any) => (
               <FormItem>
                 <FormLabel>Observaciones</FormLabel>
                 <FormControl>
@@ -270,7 +270,7 @@ function NuevaOperacionForm() {
           <FormField
             control={form.control}
             name="terminos"
-            render={({ field }) => (
+            render={({ field }: any) => (
               <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 bg-muted/30">
                 <FormControl>
                   <Checkbox
@@ -327,7 +327,7 @@ const schema = z.object({
   tipo:    z.string(),
   monto:   z.coerce.number().min(1_000_000),
   plazo:   z.coerce.number().min(1).max(365),
-  terminos: z.boolean().refine((v) => v === true),
+  terminos: z.boolean().refine((v: any) => v === true),
 })
 
 export function NuevaOperacionForm() {
@@ -339,7 +339,7 @@ export function NuevaOperacionForm() {
         <FormField
           control={form.control}
           name="empresa"
-          render={({ field }) => (
+          render={({ field }: any) => (
             <FormItem>
               <FormLabel>Razón social</FormLabel>
               <FormControl><Input placeholder="Construcciones Andina S.A." {...field} /></FormControl>

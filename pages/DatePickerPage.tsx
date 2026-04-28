@@ -137,7 +137,7 @@ export function DatePickerDemo() {
                     mode="range"
                     defaultMonth={range?.from}
                     selected={range}
-                    onSelect={(range) => { if (range) setRange(range); }}
+                    onSelect={(range: any) => { if (range) setRange(range); }}
                     numberOfMonths={2}
                   />
                 </PopoverContent>

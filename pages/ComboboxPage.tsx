@@ -60,7 +60,7 @@ export function ComboboxPage() {
                     <CommandItem
                       key={framework.value}
                       value={framework.value}
-                      onSelect={(currentValue) => {
+                      onSelect={(currentValue: any) => {
                         setValue(currentValue === value ? "" : currentValue);
                         setOpen(false);
                       }}

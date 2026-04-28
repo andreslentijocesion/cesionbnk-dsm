@@ -118,25 +118,25 @@ function Step1({ data, set }: { data: StepState; set: (k: keyof StepState, v: st
     <div className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Razón social del cedente" required error={!data.cedente ? "Campo requerido" : undefined}>
-          <Input placeholder="Ej: Construcciones Andina S.A." value={data.cedente} onChange={(e) => set("cedente", e.target.value)} className={cn(!data.cedente && "border-destructive/50")} />
+          <Input placeholder="Ej: Construcciones Andina S.A." value={data.cedente} onChange={(e: any) => set("cedente", e.target.value)} className={cn(!data.cedente && "border-destructive/50")} />
         </Field>
         <Field label="NIT" required hint="Sin dígito de verificación" error={!data.nitCedente ? "Campo requerido" : undefined}>
-          <Input placeholder="800.234.567" value={data.nitCedente} onChange={(e) => set("nitCedente", e.target.value)} className={cn(!data.nitCedente && "border-destructive/50")} />
+          <Input placeholder="800.234.567" value={data.nitCedente} onChange={(e: any) => set("nitCedente", e.target.value)} className={cn(!data.nitCedente && "border-destructive/50")} />
         </Field>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Nombre del contacto" required>
-          <Input placeholder="Ej: Juan Pérez" value={data.contactoCedente} onChange={(e) => set("contactoCedente", e.target.value)} />
+          <Input placeholder="Ej: Juan Pérez" value={data.contactoCedente} onChange={(e: any) => set("contactoCedente", e.target.value)} />
         </Field>
         <Field label="Correo electrónico" required>
-          <Input type="email" placeholder="contacto@empresa.com" value={data.emailCedente} onChange={(e) => set("emailCedente", e.target.value)} />
+          <Input type="email" placeholder="contacto@empresa.com" value={data.emailCedente} onChange={(e: any) => set("emailCedente", e.target.value)} />
         </Field>
       </div>
       <Separator />
       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Cuenta para desembolso</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Banco" required>
-          <Select value={data.bancoCedente} onValueChange={(v) => set("bancoCedente", v)}>
+          <Select value={data.bancoCedente} onValueChange={(v: any) => set("bancoCedente", v)}>
             <SelectTrigger><SelectValue placeholder="Seleccionar banco" /></SelectTrigger>
             <SelectContent>
               {["Bancolombia", "Banco de Bogotá", "Davivienda", "BBVA", "Banco Popular", "Banco de Occidente"].map((b) => (
@@ -146,7 +146,7 @@ function Step1({ data, set }: { data: StepState; set: (k: keyof StepState, v: st
           </Select>
         </Field>
         <Field label="Número de cuenta" required>
-          <Input placeholder="0000-0000-0000" value={data.cuentaCedente} onChange={(e) => set("cuentaCedente", e.target.value)} />
+          <Input placeholder="0000-0000-0000" value={data.cuentaCedente} onChange={(e: any) => set("cuentaCedente", e.target.value)} />
         </Field>
       </div>
     </div>
@@ -158,30 +158,30 @@ function Step2({ data, set }: { data: StepState; set: (k: keyof StepState, v: st
     <div className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Número de factura" required>
-          <Input placeholder="Ej: FACT-2025-001" value={data.numeroFactura} onChange={(e) => set("numeroFactura", e.target.value)} />
+          <Input placeholder="Ej: FACT-2025-001" value={data.numeroFactura} onChange={(e: any) => set("numeroFactura", e.target.value)} />
         </Field>
         <Field label="Valor nominal (COP)" required hint="Valor total de la factura sin descuentos">
           <Input
             placeholder="0"
             value={data.valorNominal}
-            onChange={(e) => set("valorNominal", e.target.value.replace(/\D/g, ""))}
+            onChange={(e: any) => set("valorNominal", e.target.value.replace(/\D/g, ""))}
           />
         </Field>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Empresa deudora (pagador)" required>
-          <Input placeholder="Ej: Ecopetrol S.A." value={data.deudor} onChange={(e) => set("deudor", e.target.value)} />
+          <Input placeholder="Ej: Ecopetrol S.A." value={data.deudor} onChange={(e: any) => set("deudor", e.target.value)} />
         </Field>
         <Field label="NIT del deudor" required>
-          <Input placeholder="900.123.456" value={data.nitDeudor} onChange={(e) => set("nitDeudor", e.target.value)} />
+          <Input placeholder="900.123.456" value={data.nitDeudor} onChange={(e: any) => set("nitDeudor", e.target.value)} />
         </Field>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Fecha de emisión" required>
-          <Input type="date" value={data.fechaEmision} onChange={(e) => set("fechaEmision", e.target.value)} />
+          <Input type="date" value={data.fechaEmision} onChange={(e: any) => set("fechaEmision", e.target.value)} />
         </Field>
         <Field label="Fecha de vencimiento" required>
-          <Input type="date" value={data.fechaVencimiento} onChange={(e) => set("fechaVencimiento", e.target.value)} />
+          <Input type="date" value={data.fechaVencimiento} onChange={(e: any) => set("fechaVencimiento", e.target.value)} />
         </Field>
       </div>
       <Field label="Descripción del bien o servicio" hint="Breve descripción de lo facturado">
@@ -189,7 +189,7 @@ function Step2({ data, set }: { data: StepState; set: (k: keyof StepState, v: st
           placeholder="Ej: Servicios de desarrollo de software para plataforma de gestión..."
           rows={3}
           value={data.descripcion}
-          onChange={(e) => set("descripcion", e.target.value)}
+          onChange={(e: any) => set("descripcion", e.target.value)}
         />
       </Field>
       <div className="rounded-lg border border-dashed border-border bg-muted/40 p-4 flex flex-col items-center gap-2 cursor-pointer hover:bg-muted/70 transition-colors">
@@ -219,11 +219,11 @@ function Step3({ data, set }: { data: StepState; set: (k: keyof StepState, v: st
             type="number" min={0} max={10} step={0.1}
             placeholder="Ej: 1.8"
             value={data.tasa}
-            onChange={(e) => set("tasa", e.target.value)}
+            onChange={(e: any) => set("tasa", e.target.value)}
           />
         </Field>
         <Field label="Plazo (días)" required>
-          <Select value={data.plazo} onValueChange={(v) => set("plazo", v)}>
+          <Select value={data.plazo} onValueChange={(v: any) => set("plazo", v)}>
             <SelectTrigger><SelectValue placeholder="Seleccionar plazo" /></SelectTrigger>
             <SelectContent>
               {[30, 45, 60, 90, 120].map((d) => (

@@ -180,7 +180,7 @@ export function FactoringOperationDetail({ record, open, onClose }: Props) {
   );
 
   return (
-    <Sheet open={open} onOpenChange={(v) => !v && onClose()}>
+    <Sheet open={open} onOpenChange={(v: any) => !v && onClose()}>
       <SheetContent side="right" className="w-full sm:max-w-[520px] flex flex-col p-0 gap-0">
         {/* Header */}
         <SheetHeader className="px-5 pt-5 pb-4 border-b border-border space-y-3">

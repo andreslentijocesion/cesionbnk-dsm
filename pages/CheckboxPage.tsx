@@ -276,7 +276,7 @@ export function CheckboxDemo() {
                 <Checkbox 
                   id="controlled" 
                   defaultChecked
-                  onCheckedChange={(checked) => console.log('Checked:', checked)}
+                  onCheckedChange={(checked: any) => console.log('Checked:', checked)}
                 />
                 <Label htmlFor="controlled">
                   Controlled checkbox (check console)
