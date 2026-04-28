@@ -11,10 +11,10 @@ import { Skeleton } from "./ui/Skeleton";
 
 // ── Helper for named lazy imports ──────────────────────────────────────────────
 
-/** Helper to lazy load named exports from the pages barrel */
+/** Helper to lazy load named exports from specific page files for real code-splitting */
 const lazyPage = (name: string) => {
   return lazy(() => 
-    import("../pages").then(module => ({ default: (module as any)[name] }))
+    import(`../pages/${name}.tsx`).then(module => ({ default: module[name] }))
   );
 };
 
