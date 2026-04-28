@@ -120,9 +120,9 @@ export function CreditScoreCard({
 
   return (
     <Card
-      className={cn("border-t-4", className)}
+      className={cn("border-b-4", className)}
       style={{
-        borderTopColor: "transparent",
+        borderBottomColor: "transparent",
         backgroundImage: `linear-gradient(var(--card), var(--card)), linear-gradient(to right, ${cfg.bar}, color-mix(in srgb, ${cfg.bar} 15%, #000))`,
         backgroundOrigin: "border-box",
         backgroundClip: "padding-box, border-box",

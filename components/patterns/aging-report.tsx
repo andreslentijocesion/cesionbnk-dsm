@@ -59,9 +59,9 @@ export function AgingReport({ buckets, unit = "M COP", className }: AgingReportP
           return (
             <Card
               key={b.label}
-              className="border-t-4"
+              className="border-b-4"
               style={{
-                borderTopColor: "transparent",
+                borderBottomColor: "transparent",
                 backgroundImage: `linear-gradient(var(--card), var(--card)), linear-gradient(to right, ${meta.bar}, color-mix(in srgb, ${meta.bar} 15%, #000))`,
                 backgroundOrigin: "border-box",
                 backgroundClip: "padding-box, border-box",
