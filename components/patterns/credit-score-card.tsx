@@ -120,13 +120,11 @@ export function CreditScoreCard({
 
   return (
     <Card
-      className={cn("border-b-4", className)}
+      className={cn("border-b-4 border-b-transparent [background-clip:padding-box,border-box] [background-origin:border-box]", className)}
       style={{
-        borderBottomColor: "transparent",
-        backgroundImage: `linear-gradient(var(--card), var(--card)), linear-gradient(to right, ${cfg.bar}, color-mix(in srgb, ${cfg.bar} 15%, #000))`,
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-      }}
+        "--risk-color": cfg.bar,
+        backgroundImage: `linear-gradient(var(--card), var(--card)), linear-gradient(to right, var(--risk-color), color-mix(in srgb, var(--risk-color) 15%, #000))`,
+      } as React.CSSProperties}
     >
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-3">

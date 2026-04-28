@@ -56,7 +56,7 @@ export function Timeline({ items, className }: TimelineProps) {
                 <Icon className={cn("h-4 w-4", cfg.iconClass)} />
               </div>
               {!isLast && (
-                <div className="mt-1 w-0.5 flex-1 bg-border" style={{ minHeight: "1.5rem" }} />
+                <div className="mt-1 w-0.5 flex-1 bg-border min-h-[1.5rem]" />
               )}
             </div>
 

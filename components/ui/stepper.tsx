@@ -78,7 +78,7 @@ export function Stepper({ steps, orientation = "horizontal", activeStep, classNa
                   )}
                 </div>
                 {!isLast && (
-                  <div className={cn("mt-1 w-0.5 flex-1 transition-colors", lineStyles[status])} style={{ minHeight: "1.5rem" }} />
+                  <div className={cn("mt-1 w-0.5 flex-1 transition-colors min-h-[1.5rem]", lineStyles[status])} />
                 )}
               </div>
               {/* Label */}

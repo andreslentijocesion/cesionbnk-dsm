@@ -21,10 +21,6 @@ export interface ThemeConfig {
   id:          DesignTheme;
   label:       string;
   description: string;
-  primary:     string;
-  background:  string;
-  card:        string;
-  accent:      string;
 }
 
 export const DESIGN_THEMES: ThemeConfig[] = [
@@ -32,55 +28,31 @@ export const DESIGN_THEMES: ThemeConfig[] = [
     id:          "cesionbnk",
     label:       "CesionBNK",
     description: "Identidad corporativa — gris, morado, Gotham",
-    primary:     "#374151",
-    background:  "#ffffff",
-    card:        "#ffffff",
-    accent:      "#796eff",
   },
   {
     id:          "linear",
     label:       "Linear",
     description: "Productividad — violeta, compacto, Inter",
-    primary:     "#7c3aed",
-    background:  "#f9f9fb",
-    card:        "#ffffff",
-    accent:      "#a78bfa",
   },
   {
     id:          "stripe",
     label:       "Stripe",
     description: "Fintech estándar — índigo, sombras suaves",
-    primary:     "#635bff",
-    background:  "#ffffff",
-    card:        "#ffffff",
-    accent:      "#0a2540",
   },
   {
     id:          "vercel",
     label:       "Vercel",
     description: "Minimalismo absoluto — negro/blanco, sin decoración",
-    primary:     "#171717",
-    background:  "#ffffff",
-    card:        "#ffffff",
-    accent:      "#444444",
   },
   {
     id:          "apple",
     label:       "Apple",
     description: "HIG — azul sistema, radios grandes, capas superficies",
-    primary:     "#007aff",
-    background:  "#f2f2f7",
-    card:        "#ffffff",
-    accent:      "#5856d6",
   },
   {
     id:          "duotone",
     label:       "Duotone",
     description: "CESIONBNK dual — lavanda + blanco, violeta protagonista",
-    primary:     "#5b4fdf",
-    background:  "#f5f3ff",
-    card:        "#ffffff",
-    accent:      "#796eff",
   },
 ];
 

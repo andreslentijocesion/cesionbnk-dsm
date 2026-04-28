@@ -14,6 +14,7 @@ export default tseslint.config(
       'stories/**',          // stories usan style inline para demos
       'storybook-static/**', // build output de Storybook
       'scripts/**',          // Node.js scripts (CJS, no browser env)
+      'styles/**',           // CSS themes usan colores hex por definición
       '*.config.js',
       '*.config.ts',
     ],

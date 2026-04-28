@@ -59,13 +59,11 @@ export function AgingReport({ buckets, unit = "M COP", className }: AgingReportP
           return (
             <Card
               key={b.label}
-              className="border-b-4"
+              className="border-b-4 border-b-transparent [background-clip:padding-box,border-box] [background-origin:border-box]"
               style={{
-                borderBottomColor: "transparent",
-                backgroundImage: `linear-gradient(var(--card), var(--card)), linear-gradient(to right, ${meta.bar}, color-mix(in srgb, ${meta.bar} 15%, #000))`,
-                backgroundOrigin: "border-box",
-                backgroundClip: "padding-box, border-box",
-              }}
+                "--risk-color": meta.bar,
+                backgroundImage: `linear-gradient(var(--card), var(--card)), linear-gradient(to right, var(--risk-color), color-mix(in srgb, var(--risk-color) 15%, #000))`,
+              } as React.CSSProperties}
             >
               <CardContent className="pt-4 pb-3 px-4">
                 <p className="text-xs text-muted-foreground mb-1">{b.label}</p>

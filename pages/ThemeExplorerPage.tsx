@@ -139,6 +139,7 @@ function ThemeSelectCard({
   return (
     <button
       onClick={onSelect}
+      data-theme={config.id === "cesionbnk" ? undefined : config.id}
       className={cn(
         "group relative text-left rounded-xl border p-4 transition-all w-full",
         "hover:border-primary/60 hover:shadow-elevation-2",
@@ -147,20 +148,11 @@ function ThemeSelectCard({
           : "border-border bg-card hover:bg-accent/30"
       )}
     >
-      {/* Swatch strip */}
-      <div className="flex gap-1.5 mb-3">
-        <div
-          className="h-6 flex-1 rounded-md"
-          style={{ backgroundColor: config.primary }}
-        />
-        <div
-          className="h-6 flex-1 rounded-md border border-border"
-          style={{ backgroundColor: config.background }}
-        />
-        <div
-          className="h-6 flex-1 rounded-md"
-          style={{ backgroundColor: config.accent }}
-        />
+      {/* Swatch strip — uses real CSS variables from the theme itself */}
+      <div className="flex gap-1.5 mb-3 bg-background p-1 rounded-lg border border-border/40">
+        <div className="h-6 flex-1 rounded-md bg-primary" />
+        <div className="h-6 flex-1 rounded-md border border-border bg-background" />
+        <div className="h-6 flex-1 rounded-md bg-accent" />
       </div>
 
       <div className="flex items-start justify-between gap-2">
@@ -204,7 +196,7 @@ export function ThemeExplorerPage() {
         {/* Selector column */}
         <div className="flex flex-col gap-4">
           <div>
-            <h2 className="text-sm font-semibold text-foreground mb-1">Tema activo</h2>
+            <h2 className="text-sm font-semibold text-foreground mb-1">Temas disponibles</h2>
             <p className="text-xs text-muted-foreground mb-3">
               Selecciona un estilo visual. El cambio es instantáneo y persiste en localStorage.
             </p>
@@ -230,36 +222,6 @@ export function ThemeExplorerPage() {
               {colorMode === "dark" ? "Light" : "Dark"}
             </Button>
           </div>
-
-          {/* Active theme info */}
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm">Tema: {activeConfig.label}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-2">
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-muted-foreground">Primary</span>
-                <div className="flex items-center gap-1.5">
-                  <div className="h-3 w-3 rounded-full border border-border" style={{ backgroundColor: activeConfig.primary }} />
-                  <code className="font-mono text-foreground">{activeConfig.primary}</code>
-                </div>
-              </div>
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-muted-foreground">Background</span>
-                <div className="flex items-center gap-1.5">
-                  <div className="h-3 w-3 rounded-full border border-border" style={{ backgroundColor: activeConfig.background }} />
-                  <code className="font-mono text-foreground">{activeConfig.background}</code>
-                </div>
-              </div>
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-muted-foreground">Accent</span>
-                <div className="flex items-center gap-1.5">
-                  <div className="h-3 w-3 rounded-full border border-border" style={{ backgroundColor: activeConfig.accent }} />
-                  <code className="font-mono text-foreground">{activeConfig.accent}</code>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
 
           {/* How it works */}
           <div className="rounded-xl border border-border bg-muted/40 p-4">

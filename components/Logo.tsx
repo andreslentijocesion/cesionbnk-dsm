@@ -37,7 +37,7 @@ function CesionBnkLogoSVG({ variant }: { variant: "light" | "dark" }) {
       fill="none"
       viewBox="0 0 480 57"
       width="100%"
-      style={{ display: "block" }}
+      className="block"
       aria-label="CESIONBNK"
     >
       <path d="M196.285 0.187149H185.743V56.5888H196.285V0.187149Z" fill={fill} />

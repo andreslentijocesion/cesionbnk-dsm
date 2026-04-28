@@ -4,6 +4,23 @@ All notable changes to `@andreslentijocesion/cesionbnk-dsm` are documented here.
 
 ---
 
+## [0.4.1] — 2026-04-28
+
+### Added
+- `.npmrc` configuration to handle peer dependency conflicts (Radix UI / ESLint).
+- Deployment support for Vercel with automatic CI/CD from GitHub.
+- New Theme Explorer and additional visual themes (Vercel, Stripe, Linear, Apple, Duotone).
+
+### Fixed
+- **Infrastructure**: Resolved Rollup architecture mismatch error on Apple Silicon (M1/M2/M3).
+- **TypeScript**: Fixed production build by excluding `tests/` and `stories/` from the main `tsconfig.json`.
+- **Typing**: Resolved `Urgency` type mismatch in `FactoringMaturityAlerts`.
+- **Linting**: Cleaned up unused imports in `FactoringStatusCardPage` and other components.
+- **Styles**: Moved gradient accent borders from top to bottom in `AgingReport` and `CreditScoreCard` per design refinement.
+- **Tests**: Fixed export issues in `tests/utils/render.tsx` to align with `@testing-library/react` v16.
+
+---
+
 ## [0.4.0] — 2026-03-14
 
 ### Added

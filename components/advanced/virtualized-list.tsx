@@ -31,23 +31,40 @@ export function VirtualizedList<T>({
   };
 
   return (
-    <div ref={scrollRef} className={cn("overflow-y-auto relative w-full", className)} style={{ height }} onScroll={onScroll}>
-      <div style={{ height: totalHeight, position: "relative", width: "100%" }}>
+    <div
+      ref={scrollRef}
+      className={cn("overflow-y-auto relative w-full", className)}
+      style={{ height } as React.CSSProperties}
+      onScroll={onScroll}
+    >
+      <div className="relative w-full" style={{ height: totalHeight } as React.CSSProperties}>
         {visibleItems.map((item, index) => {
           const actualIndex = startIndex + index;
           const style: React.CSSProperties = {
+            height: itemHeight,
+            transform: `translateY(${offsetY + index * itemHeight}px)`,
+          };
+          
+          const element = renderItem(item, actualIndex, {
+            ...style,
             position: "absolute",
             top: 0,
             left: 0,
             right: 0,
-            height: itemHeight,
-            transform: `translateY(${offsetY + index * itemHeight}px)`,
-          };
-          const element = renderItem(item, actualIndex, style);
+          });
+
           if (React.isValidElement(element)) {
             return React.cloneElement(element as React.ReactElement, { key: actualIndex });
           }
-          return <div key={actualIndex} style={style}>{element}</div>;
+          return (
+            <div
+              key={actualIndex}
+              className="absolute top-0 left-0 right-0"
+              style={style}
+            >
+              {element}
+            </div>
+          );
         })}
       </div>
     </div>

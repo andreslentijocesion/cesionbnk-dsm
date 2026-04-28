@@ -58,13 +58,16 @@ export function Heatmap({
 
   const content = (
     <div className="overflow-x-auto">
-      <div className="inline-block">
-        <table className="border-collapse">
+      <div className="inline-block" style={{ "--cell-size": `${cellSize}px` } as React.CSSProperties}>
+        <table className="border-collapse table-fixed">
           <thead>
             <tr>
-              <th className="border border-border p-2 bg-muted"></th>
+              <th className="border border-border p-2 bg-muted w-[var(--cell-size)] h-[var(--cell-size)]"></th>
               {columns.map((col) => (
-                <th key={col} className="border border-border p-2 text-sm font-semibold bg-muted" style={{ width: `${cellSize}px`, height: `${cellSize}px` }}>
+                <th
+                  key={col}
+                  className="border border-border p-2 text-sm font-semibold bg-muted w-[var(--cell-size)] h-[var(--cell-size)]"
+                >
                   {showLabels ? col : ""}
                 </th>
               ))}
@@ -73,7 +76,7 @@ export function Heatmap({
           <tbody>
             {rows.map((row) => (
               <tr key={row}>
-                <td className="border border-border p-2 text-sm font-semibold bg-muted" style={{ width: `${cellSize}px` }}>
+                <td className="border border-border p-2 text-sm font-semibold bg-muted w-[var(--cell-size)]">
                   {showLabels ? row : ""}
                 </td>
                 {columns.map((col) => {
@@ -84,8 +87,8 @@ export function Heatmap({
                   return (
                     <td
                       key={`${row}-${col}`}
-                      className="border border-border p-2 text-center transition-opacity hover:opacity-70 cursor-pointer"
-                      style={{ backgroundColor: bgColor, color: textColor, width: `${cellSize}px`, height: `${cellSize}px` } as React.CSSProperties}
+                      className="border border-border p-2 text-center transition-opacity hover:opacity-70 cursor-pointer w-[var(--cell-size)] h-[var(--cell-size)]"
+                      style={{ backgroundColor: bgColor, color: textColor } as React.CSSProperties}
                       title={cellData?.label || `${row} - ${col}: ${value}`}
                     >
                       {showValues && <div className="text-sm font-medium">{value}</div>}
@@ -100,9 +103,9 @@ export function Heatmap({
       <div className="flex items-center justify-center gap-4 mt-4">
         <span className="text-sm text-muted-foreground">Min: {minValue}</span>
         <div className="flex gap-1">
-          <div className="w-8 h-4 rounded-sm" style={{ backgroundColor: `var(--legend-low, ${colorScale.low})` }} />
-          <div className="w-8 h-4 rounded-sm" style={{ backgroundColor: `var(--legend-medium, ${colorScale.medium})` }} />
-          <div className="w-8 h-4 rounded-sm" style={{ backgroundColor: `var(--legend-high, ${colorScale.high})` }} />
+          <div className="w-8 h-4 rounded-sm" style={{ backgroundColor: colorScale.low } as React.CSSProperties} />
+          <div className="w-8 h-4 rounded-sm" style={{ backgroundColor: colorScale.medium } as React.CSSProperties} />
+          <div className="w-8 h-4 rounded-sm" style={{ backgroundColor: colorScale.high } as React.CSSProperties} />
         </div>
         <span className="text-sm text-muted-foreground">Max: {maxValue}</span>
       </div>

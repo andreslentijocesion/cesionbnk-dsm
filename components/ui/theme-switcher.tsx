@@ -12,6 +12,7 @@ function ThemeCard({ config, isActive, onSelect }: {
   return (
     <button
       onClick={onSelect}
+      data-theme={config.id === "cesionbnk" ? undefined : config.id}
       className={cn(
         "group relative w-full text-left rounded-lg border p-3 transition-all",
         "hover:border-primary/50 hover:shadow-elevation-2",
@@ -20,32 +21,19 @@ function ThemeCard({ config, isActive, onSelect }: {
           : "border-border bg-card"
       )}
     >
-      {/* Mini preview */}
-      <div
-        className="mb-2.5 h-10 w-full rounded-md overflow-hidden flex gap-1 p-1"
-        style={{ backgroundColor: config.background }}
-      >
+      {/* Mini preview — uses CSS variables from the theme itself via data-theme attribute */}
+      <div className="mb-2.5 h-10 w-full rounded-md overflow-hidden flex gap-1 p-1 bg-background border border-border/50">
         {/* Simulated sidebar */}
-        <div
-          className="h-full w-5 rounded flex-shrink-0 opacity-80"
-          style={{ backgroundColor: config.background === "#ffffff" || config.background === "#f2f2f7" || config.background === "#f9f9fb" || config.background === "#f6f9fc" ? "#f4f4f5" : "#18181b" }}
-        />
+        <div className="h-full w-5 rounded flex-shrink-0 bg-muted/80" />
+        
         {/* Simulated content */}
         <div className="flex-1 flex flex-col gap-1 justify-center">
-          <div
-            className="h-1.5 rounded-full w-3/4"
-            style={{ backgroundColor: config.primary }}
-          />
-          <div
-            className="h-1 rounded-full w-1/2 opacity-40"
-            style={{ backgroundColor: config.primary }}
-          />
+          <div className="h-1.5 rounded-full w-3/4 bg-primary" />
+          <div className="h-1 rounded-full w-1/2 bg-primary/40" />
         </div>
+        
         {/* Accent dot */}
-        <div
-          className="h-3 w-3 rounded-full self-start mt-0.5 flex-shrink-0"
-          style={{ backgroundColor: config.accent }}
-        />
+        <div className="h-3 w-3 rounded-full self-start mt-0.5 flex-shrink-0 bg-accent" />
       </div>
 
       {/* Info */}
