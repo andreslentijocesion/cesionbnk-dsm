@@ -10,7 +10,7 @@ interface FilterChipProps {
 
 export function FilterChip({ label, value, onRemove }: FilterChipProps) {
   return (
-    <Badge variant="secondary" className="gap-2 pr-1">
+    <Badge variant="secondary-soft-outline" className="gap-2 pr-1">
       <span className="text-xs">
         {label}: {value}
       </span>

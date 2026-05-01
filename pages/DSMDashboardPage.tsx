@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
-import { Badge } from "../components/ui/Badge";
-import { Separator } from "../components/ui/Separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/Collapsible";
-import { CheckCircle2, Code2, Sparkles, Layers, Palette, MousePointerClick, MessageSquare, Database, FileCode, Layout, TrendingUp, Award, BookOpen, Shield, GitBranch, Component, Box, Puzzle, Calendar, Package, Wrench, AlertTriangle, Rocket, Zap, FileText, BarChart3, ChevronDown, ChevronRight, Eye, Keyboard, Accessibility as AccessibilityIcon, Paintbrush } from "lucide-react";
-import { Logo } from "../components/Logo";
-import { Progress } from "../components/ui/Progress";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { ContrastDot } from "../components/ui/DynamicPreviews";
+import { useState } from "react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card"
+import { Badge } from "../components/ui/Badge"
+import { Separator } from "../components/ui/Separator"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/Collapsible"
+import { CheckCircle2, Code2, Sparkles, Layers, Palette, MousePointerClick, MessageSquare, Database, FileCode, Layout, TrendingUp, Award, BookOpen, Shield, GitBranch, Component, Box, Puzzle, Calendar, Package, Wrench, AlertTriangle, Rocket, Zap, FileText, BarChart3, ChevronDown, ChevronRight, Eye, Keyboard, Accessibility as AccessibilityIcon, Paintbrush } from "lucide-react"
+import { Logo } from "../components/layout/Logo"
+import { Progress } from "../components/ui/Progress"
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ContrastDot } from "../components/ui/DynamicPreviews"
 
 // ── Navigation helper ──
 function navigateTo(pageId: string) {
@@ -19,7 +19,7 @@ function navigateTo(pageId: string) {
 interface VersionEntry {
   version: string;
   date: string;
-  type: "Major" | "Minor" | "Patch";
+  type: "Major" | "Minor" | "Patch"
   sections: {
     icon: typeof Sparkles;
     title: string;
@@ -511,11 +511,11 @@ function VersionCard({ entry, defaultOpen = false }: { entry: VersionEntry; defa
                 )}
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-foreground">v{entry.version}</span>
-                  <Badge variant={badgeVariant} className="text-[10px] px-1.5 py-0">
+                  <Badge variant={badgeVariant} size="xs">
                     {entry.type}
                   </Badge>
                   {defaultOpen && (
-                    <Badge variant="outline" className="text-[10px] px-1.5 py-0">
+                    <Badge variant="outline" size="xs">
                       Latest
                     </Badge>
                   )}
@@ -729,7 +729,7 @@ function DSMDashboardContent() {
           <div className="flex items-center gap-3 mb-4">
             <GitBranch className="size-5 text-primary" />
             <h2 className="text-lg text-foreground">Changelog</h2>
-            <Badge variant="outline" className="text-[10px] px-1.5 py-0">
+            <Badge variant="outline" size="xs">
               {versionHistory.length} releases
             </Badge>
           </div>
@@ -955,7 +955,7 @@ function DSMDashboardContent() {
                               <span className="text-xs text-muted-foreground">{item.id}</span>
                               <span className="text-sm text-foreground">{item.name}</span>
                             </div>
-                            <Badge variant="outline" className="text-[10px] px-1.5 py-0">{item.level}</Badge>
+                            <Badge variant="outline" size="xs">{item.level}</Badge>
                           </div>
                         ))}
                       </div>

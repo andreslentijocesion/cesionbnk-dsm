@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Onboarding } from "../components/patterns/Onboarding";
-import { toast } from "sonner";
-import { Calculator } from "lucide-react";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { Onboarding } from "../components/patterns/Onboarding"
+import { toast } from "sonner"
+import { Calculator } from "lucide-react"
 
 export function OnboardingPage() {
   return (

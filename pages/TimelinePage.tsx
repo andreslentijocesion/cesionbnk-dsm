@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Timeline, type TimelineItem } from "../components/patterns/Timeline";
-import { FileCheck, Send, Clock, CheckCircle2, XCircle, AlertCircle } from "lucide-react";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { Timeline, type TimelineItem } from "../components/patterns/Timeline"
+import { FileCheck, Send, Clock, CheckCircle2, XCircle, AlertCircle } from "lucide-react"
 
 const operationTimeline: TimelineItem[] = [
   {

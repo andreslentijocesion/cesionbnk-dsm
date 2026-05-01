@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { DetailCard, DetailSection } from "../components/patterns/DetailCard";
-import { Badge } from "../components/ui/Badge";
-import { Button } from "../components/ui/Button";
-import { Pencil } from "lucide-react";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { DetailCard, DetailSection } from "../components/patterns/DetailCard"
+import { Badge } from "../components/ui/Badge"
+import { Button } from "../components/ui/Button"
+import { Pencil } from "lucide-react"
 
 function DetailCardDemo() {
   return (

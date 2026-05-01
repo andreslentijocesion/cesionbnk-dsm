@@ -3,7 +3,7 @@
  *
  * BUSINESS PATTERN: Grid system visualization without inline styles
  *
- * DO NOT MODIFY without consulting: /components/widgets/WIDGETS_ARCHITECTURE.md
+ * DO NOT MODIFY without consulting../components/patterns/WIDGETS_ARCHITECTURE.md
  * Part of the modular system without inline styles
  */
 

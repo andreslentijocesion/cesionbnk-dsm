@@ -6,15 +6,30 @@
  * drastically reducing the initial bundle size (from 2.5MB+ to ~1.5MB main chunk).
  */
 import { lazy, Suspense, ReactElement } from "react";
-import type { PageId, NavPageId, SpecialPageId } from "./types/PageId";
-import { Skeleton } from "./ui/Skeleton";
+import type { PageId, NavPageId, SpecialPageId } from "../types/PageId";
+import { Skeleton } from "../ui/Skeleton";
 
 // ── Helper for named lazy imports ──────────────────────────────────────────────
 
+const PAGES = import.meta.glob("../../pages/*.tsx");
+
 /** Helper to lazy load named exports from specific page files for real code-splitting */
 const lazyPage = (name: string) => {
-  return lazy(() => 
-    import(`../pages/${name}.tsx`).then(module => ({ default: module[name] }))
+  const path = `../../pages/${name}.tsx`;
+  const loader = PAGES[path];
+
+  if (!loader) {
+    return lazy(async () => ({
+      default: () => (
+        <div className="p-8 text-destructive">
+          Error: Page component <b>{name}</b> not found at {path}
+        </div>
+      ),
+    }));
+  }
+
+  return lazy(() =>
+    loader().then((module: any) => ({ default: module[name] }))
   );
 };
 

@@ -1,13 +1,13 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Card } from "../components/ui/Card";
-import { Separator } from "../components/ui/Separator";
-import { Logo } from "../components/Logo";
-import { useState } from "react";
-import { BRAND_COLORS, SPACING_SCALE, BRAND_INFO } from "../lib/constants";
-import { ColorSwatch } from "../components/widgets/ColorSwatch";
-import { GridSystemPreview } from "../components/widgets/GridSystemPreview";
-import { SpacingPreview } from "../components/widgets/SpacingPreview";
-import { copyToClipboard as copyText } from "../lib/utils";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { Card } from "../components/ui/Card"
+import { Separator } from "../components/ui/Separator"
+import { Logo } from "../components/layout/Logo"
+import { useState } from "react"
+import { BRAND_COLORS, SPACING_SCALE, BRAND_INFO } from "../lib/constants"
+import { ColorSwatch } from "../components/patterns/ColorSwatch"
+import { GridSystemPreview } from "../components/patterns/GridSystemPreview"
+import { SpacingPreview } from "../components/patterns/SpacingPreview"
+import { copyToClipboard as copyText } from "../lib/utils"
 
 function BrandLayoutContent() {
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
@@ -105,11 +105,11 @@ export function BrandLayoutPage() {
       description={`Complete design system reference: ${BRAND_INFO.name} brand identity (Logo with light/dark variants at 4 sizes), color palette (Primary Gray ${BRAND_INFO.primaryColor} + Secondary Purple ${BRAND_INFO.secondaryColor} with WCAG AA contrast), typography (${BRAND_INFO.fontFamily} exclusive, 400-700 weights, 6 scale levels), responsive grid system (12/6/4 columns for desktop/tablet/mobile), and spacing system (${BRAND_INFO.baseSpacing}px base unit with 8 levels).`}
       category="Design System"
       preview={<BrandLayoutContent />}
-      code={`import { Logo } from "@/components/Logo";
-import { ColorSwatch } from "@/components/widgets/ColorSwatch";
-import { GridSystemPreview } from "@/components/widgets/GridSystemPreview";
-import { SpacingPreview } from "@/components/widgets/SpacingPreview";
-import { copyToClipboard as copyText } from "@/lib/utils";
+      code={`import { Logo } from "../components/layout/Logo"
+import { ColorSwatch } from "../components/patterns/ColorSwatch"
+import { GridSystemPreview } from "../components/patterns/GridSystemPreview"
+import { SpacingPreview } from "../components/patterns/SpacingPreview"
+import { copyToClipboard as copyText } from "@/lib/utils"
 
 // Logo with variants
 <Logo size="xl" variant="light" />  // xl, lg, md, sm

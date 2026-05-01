@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "../ui/DropdownMenu";
-import { Logo } from "../Logo";
+import { Logo } from "../layout/Logo";
 
 /* ── Sub-components ── */
 

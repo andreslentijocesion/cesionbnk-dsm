@@ -1,7 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
-import { Badge } from "../components/ui/Badge";
-import { Progress } from "../components/ui/Progress";
-import { Separator } from "../components/ui/Separator";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card"
+import { Badge } from "../components/ui/Badge"
+import { Progress } from "../components/ui/Progress"
+import { Separator } from "../components/ui/Separator"
 import {
   CheckCircle2,
   Package,
@@ -15,11 +15,11 @@ import {
   Users,
   TrendingUp,
   Activity,
-} from "lucide-react";
-import { Logo } from "../components/Logo";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+} from "lucide-react"
+import { Logo } from "../components/layout/Logo"
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
 
-import { BRAND_INFO } from "../lib/constants";
+import { BRAND_INFO } from "../lib/constants"
 
 export function HomePageContent() {
   const stats = [

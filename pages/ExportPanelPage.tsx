@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { ExportPanel } from "../components/patterns/ExportPanel";
-import { toast } from "sonner";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ExportPanel } from "../components/patterns/ExportPanel"
+import { toast } from "sonner"
 
 const portfolioColumns = [
   { id: "folio",        label: "Folio",         defaultSelected: true },

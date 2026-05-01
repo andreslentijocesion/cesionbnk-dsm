@@ -21,7 +21,7 @@ import { Mail, Phone, User, Building, MessageSquare, Send, CheckCircle } from "l
  * Professional contact form with validation.
  * Includes customizable fields, validation, and success/error states.
  *
- * Location: /components/widgets/contact-form.tsx
+ * Location../components/patterns/contact-form.tsx
  * Category: Business Components - High Priority
  * Usage: Landing pages, contact pages, lead generation forms
  */

@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { ApprovalFlow, type Approver } from "../components/patterns/ApprovalFlow";
-import { toast } from "sonner";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ApprovalFlow, type Approver } from "../components/patterns/ApprovalFlow"
+import { toast } from "sonner"
 
 const approvers: Approver[] = [
   {

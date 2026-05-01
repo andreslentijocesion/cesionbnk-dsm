@@ -3,7 +3,7 @@
  *
  * BUSINESS PATTERN: Componente reutilizable para mostrar muestras de color
  *
- * NO MODIFICAR sin consultar: /components/widgets/WIDGETS_ARCHITECTURE.md
+ * NO MODIFICAR sin consultar../components/patterns/WIDGETS_ARCHITECTURE.md
  * Parte del sistema modular de Brand Guidelines
  */
 

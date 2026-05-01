@@ -108,7 +108,7 @@ function figmaAssetPlugin() {
 ```
 
 **Affected files:**
-- `/components/Logo.tsx` (2 images: Eurocapital, IRIS)
+-../components/layout/Logo.tsx` (2 images: Eurocapital, IRIS)
 - `/factoring/cesionbnk/c-financia-client-flow.tsx` (1 image)
 
 ---

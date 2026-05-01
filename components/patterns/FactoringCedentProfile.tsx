@@ -339,8 +339,8 @@ export function FactoringCedentProfile() {
                     ? <Badge variant="success-soft-outline" className="text-xs">Vigente</Badge>
                     : <Badge variant="destructive-soft-outline" className="text-xs">Por renovar</Badge>}
                   <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Button variant="ghost" size="icon" className="size-7"><Download className="size-3.5 .5" /></Button>
-                    <Button variant="ghost" size="icon" className="size-7"><ExternalLink className="size-3.5 .5" /></Button>
+                    <Button variant="ghost" size="icon" className="size-7" aria-label="Descargar documento"><Download className="size-3.5 .5" /></Button>
+                    <Button variant="ghost" size="icon" className="size-7" aria-label="Ver documento"><ExternalLink className="size-3.5 .5" /></Button>
                   </div>
                 </div>
               ))}

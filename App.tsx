@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { PageId } from "./components/types/PageId";
-import { PageRenderer } from "./components/PageRenderer";
-import { DSMSidebarNav } from "./components/DSMSidebarNav";
+import { PageRenderer } from "./components/layout/PageRenderer";
+import { DSMSidebarNav } from "./components/layout/DSMSidebarNav";
 import { Button } from "./components/ui/Button";
-import { Logo } from "./components/Logo";
+import { Logo } from "./components/layout/Logo";
 import { Moon, Sun } from "lucide-react";
 import { ThemeProvider, useTheme } from "./components/providers/ThemeProvider";
 import { ThemeSwitcher } from "./components/ui/ThemeSwitcher";

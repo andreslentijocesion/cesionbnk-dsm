@@ -65,7 +65,7 @@ const MultiSelect = React.forwardRef<HTMLButtonElement, MultiSelectProps>(
                   selectedOptions.map((option) => (
                     <Badge
                       key={option.value}
-                      variant="secondary"
+                      variant="neutral-soft-outline"
                       className="gap-1 pr-1"
                     >
                       <span>{option.label}</span>

@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { FileViewer, type FileItem } from "../components/patterns/FileViewer";
-import { toast } from "sonner";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { FileViewer, type FileItem } from "../components/patterns/FileViewer"
+import { toast } from "sonner"
 
 const sampleFiles: FileItem[] = [
   {

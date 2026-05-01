@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { FactoringDebtorList } from "../components/patterns/FactoringDebtorList";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { FactoringDebtorList } from "../components/patterns/FactoringDebtorList"
 
 export function FactoringDebtorListPage() {
   return (
@@ -9,7 +9,7 @@ export function FactoringDebtorListPage() {
       category="Business Pattern"
       atomicLevel="Organism"
       preview={<FactoringDebtorList />}
-      code={`import { FactoringDebtorList } from "@/components/patterns/FactoringDebtorList";\n\nexport function MyPage() {\n  return <FactoringDebtorList />;\n}`}
+      code={`import { FactoringDebtorList } from "@/components/patterns/FactoringDebtorList"\n\nexport function MyPage() {\n  return <FactoringDebtorList />;\n}`}
       props={[{ name: "(self-contained)", type: "—", description: "Tabla de deudores con calificación AAA–B, barra de exposición por límite, sparkline de tendencia, tasa de pago coloreada, días promedio y acciones contextuales." }]}
     />
   );

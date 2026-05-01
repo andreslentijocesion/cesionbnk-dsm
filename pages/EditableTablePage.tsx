@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { EditableTable } from "../components/patterns/EditableTable";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { EditableTable } from "../components/patterns/EditableTable"
 
-const usageCode = `import { EditableTable } from "@biomahd-creator/financio-design-system/patterns";
+const usageCode = `import { EditableTable } from "@biomahd-creator/financio-design-system/patterns"
 
 // The EditableTable renders a fully interactive table with inline editing,
 // row selection, date pickers, and status badges.

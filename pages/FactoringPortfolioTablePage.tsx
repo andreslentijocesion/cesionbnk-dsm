@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { FactoringPortfolioTable } from "../components/patterns/FactoringPortfolioTable";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { FactoringPortfolioTable } from "../components/patterns/FactoringPortfolioTable"
 
-const code = `import { FactoringPortfolioTable } from "@/components/patterns/FactoringPortfolioTable";
+const code = `import { FactoringPortfolioTable } from "@/components/patterns/FactoringPortfolioTable"
 
 export function MyPage() {
   return <FactoringPortfolioTable />;

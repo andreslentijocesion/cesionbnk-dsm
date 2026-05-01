@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
 import {
   SearchBar,
   FilterChip,
@@ -6,11 +6,11 @@ import {
   ActionButton,
   SimpleFormField,
   NavigationBar,
-} from "../components/widgets";
-import { StatCard } from "../components/patterns/StatCard";
-import { StatsGrid } from "../components/patterns/StatsGrid";
-import { Card, CardContent } from "../components/ui/Card";
-import { CheckCircle, Clock, DollarSign, User, Search, Bell, Settings } from "lucide-react";
+} from "../components/patterns"
+import { StatCard } from "../components/patterns/StatCard"
+import { StatsGrid } from "../components/patterns/StatsGrid"
+import { Card, CardContent } from "../components/ui/Card"
+import { CheckCircle, Clock, DollarSign, User, Search, Bell, Settings } from "lucide-react"
 
 export function WidgetsShowcasePage() {
   return (
@@ -62,8 +62,8 @@ export function WidgetsShowcasePage() {
           </div>
         </div>
       }
-      code={`import { StatCard, SearchBar, FilterChip, NavigationBar } from "@/components/widgets";
-import { DollarSign, User, Clock } from "lucide-react";
+      code={`import { StatCard, SearchBar, FilterChip, NavigationBar } from "../components/patterns"
+import { DollarSign, User, Clock } from "lucide-react"
 
 // Stat Cards
 <StatCard title="Revenue" value="$45,231" change="+20%" trend="up" icon={DollarSign} />
@@ -169,7 +169,7 @@ import { DollarSign, User, Clock } from "lucide-react";
           title: "Stats Grid",
           description: "Pre-composed grid of multiple StatCards with sample financial KPIs.",
           preview: <StatsGrid />,
-          code: `import { StatsGrid } from "@/components/widgets";
+          code: `import { StatsGrid } from "../components/patterns"
 
 <StatsGrid />`,
         },

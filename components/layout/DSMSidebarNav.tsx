@@ -35,9 +35,9 @@ import {
   LayoutSidebarCollapsibleGroup,
   LayoutSidebarItem,
   useAdminLayout,
-} from "./patterns/AppLayout";
-import type { PageId } from "./types/PageId";
-import { NAV_ITEMS, ITEMS_BY_SECTION, SECTIONS, type SectionId } from "./registry";
+} from "../patterns/AppLayout";
+import type { PageId } from "../types/PageId";
+import { NAV_ITEMS, ITEMS_BY_SECTION, SECTIONS, type SectionId } from "../registry";
 
 interface DSMSidebarNavProps {
   activePage: PageId;

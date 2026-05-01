@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { FactoringNewOperation } from "../components/patterns/FactoringNewOperation";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { FactoringNewOperation } from "../components/patterns/FactoringNewOperation"
 
-const code = `import { FactoringNewOperation } from "@/components/patterns/FactoringNewOperation";
+const code = `import { FactoringNewOperation } from "@/components/patterns/FactoringNewOperation"
 
 export function MyPage() {
   return <FactoringNewOperation />;

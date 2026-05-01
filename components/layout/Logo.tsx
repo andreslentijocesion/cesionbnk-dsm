@@ -7,8 +7,8 @@
  * Sizing: uses width="100%" + height="auto" so it scales proportionally within the fixed-width container.
  */
 
-import { cn } from "./ui/utils";
-import { useTheme } from "./providers/ThemeProvider";
+import { cn } from "../ui/utils";
+import { useTheme } from "../providers/ThemeProvider";
 
 /* ── Props ── */
 

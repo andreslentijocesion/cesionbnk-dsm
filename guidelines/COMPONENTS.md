@@ -109,7 +109,7 @@ Soluciones completas para flujos de negocio comunes.
 | ~~`ReportsConsultation`~~ | ~~`reports-consultation.tsx`~~ | *(Eliminado — solo consumido por factoring)* |
 | `StatsDashboard` | `stats-dashboard.tsx` | Dashboard de estadísticas generales. | ❌ removed v24 |
 
-## 4. WIDGETS (`/components/widgets`)
+## 4. WIDGETS ../components/patterns`)
 Piezas de UI especializadas, a menudo compuestas de primitivos.
 
 | Componente | Archivo | Descripción | Figma Plugin |

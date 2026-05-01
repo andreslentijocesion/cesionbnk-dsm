@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { StatCard, StatCardGrid } from "../components/patterns/StatCard";
-import { DollarSign, FileText, Users, TrendingUp, Clock, Percent } from "lucide-react";
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { StatCard, StatCardGrid } from "../components/patterns/StatCard"
+import { DollarSign, FileText, Users, TrendingUp, Clock, Percent } from "lucide-react"
 
 function StatCardDemo() {
   return (

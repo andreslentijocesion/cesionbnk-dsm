@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { BulkActionToolbar } from "../components/patterns/BulkActionToolbar";
-import { Checkbox } from "../components/ui/Checkbox";
-import { Badge } from "../components/ui/Badge";
-import { toast } from "sonner";
-import { CheckCircle2, Send, Download, Trash2 } from "lucide-react";
+import { useState } from "react"
+import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { BulkActionToolbar } from "../components/patterns/BulkActionToolbar"
+import { Checkbox } from "../components/ui/Checkbox"
+import { Badge } from "../components/ui/Badge"
+import { toast } from "sonner"
+import { CheckCircle2, Send, Download, Trash2 } from "lucide-react"
 
 const rows = [
   { id: "FCT-001", cedente: "Construcciones Andina", monto: "$185M", estado: "En cobro" },

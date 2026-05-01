@@ -426,7 +426,7 @@ function LayerBadge({ layer }: { layer: string }) {
     "patterns/business": "bg-amber-100 text-amber-700 border-amber-300 dark:bg-amber-900 dark:text-amber-300 dark:border-amber-600",
   };
   return (
-    <Badge variant="outline" className={`text-[10px] px-1.5 py-0 ${colors[layer] || ""}`}>
+    <Badge variant="outline" size="xs" className={colors[layer] || ""}>
       {layer}
     </Badge>
   );
@@ -497,7 +497,7 @@ function VariationCard({ variation, onNavigate }: { variation: TableVariation; o
               </Badge>
             ))}
             {variation.features.length > 5 && (
-              <Badge variant="outline" className="text-[10px] px-1.5 py-0 font-normal">
+              <Badge variant="outline" size="xs" className="font-normal">
                 +{variation.features.length - 5} more
               </Badge>
             )}
@@ -748,7 +748,7 @@ function TableCatalogContent() {
                       <span className="text-muted-foreground text-xs">← wrapper, composes with any table</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="text-[10px] bg-purple-100 dark:bg-purple-900">patterns</Badge>
+                      <Badge variant="outline" size="xs" className="bg-purple-100 dark:bg-purple-900">patterns</Badge>
                       <span>AdvancedFilterPanel</span>
                       <span className="text-muted-foreground text-xs">← side Sheet, MasterDataGrid complement</span>
                     </div>
