@@ -39,7 +39,13 @@ function buildCSSVars(mode) {
 
   const add = (varName, tokenObj) => {
     const v = val(tokenObj, m);
-    if (v !== null) lines.push(`  --${varName}: ${v};`);
+    if (v !== null) {
+      lines.push(`  --${varName}: ${v};`);
+      // Generar variante oklch si es un color hex
+      if (v.startsWith('#')) {
+        lines.push(`  --${varName}-oklch: oklch(from ${v} l c h);`);
+      }
+    }
   };
 
   lines.push('  /* Brand */');

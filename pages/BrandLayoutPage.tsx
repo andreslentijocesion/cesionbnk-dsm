@@ -3,6 +3,7 @@ import { Card } from "../components/ui/Card";
 import { Separator } from "../components/ui/Separator";
 import { Logo } from "../components/Logo";
 import { useState } from "react";
+import { BRAND_COLORS, SPACING_SCALE, BRAND_INFO } from "../lib/constants";
 import { ColorSwatch } from "../components/widgets/ColorSwatch";
 import { GridSystemPreview } from "../components/widgets/GridSystemPreview";
 import { SpacingPreview } from "../components/widgets/SpacingPreview";
@@ -16,22 +17,6 @@ function BrandLayoutContent() {
     setCopiedColor(id);
     setTimeout(() => setCopiedColor(null), 2000);
   };
-
-  const colors = [
-    { id: "primary", name: "Primary", hex: "#374151", rgb: "rgb(55, 65, 81)", usage: "CTAs, active states, focus rings", contrast: "WCAG AA (4.6:1 over white)" },
-    { id: "secondary", name: "Secondary", hex: "#796eff", rgb: "rgb(121, 110, 255)", usage: "Accents, links, highlights", contrast: "WCAG AA (3.5:1 over white)" },
-  ];
-
-  const spacing = [
-    { name: "xs", value: "4px", multiplier: "1x" },
-    { name: "sm", value: "8px", multiplier: "2x" },
-    { name: "md", value: "12px", multiplier: "3x" },
-    { name: "base", value: "16px", multiplier: "4x" },
-    { name: "lg", value: "24px", multiplier: "6x" },
-    { name: "xl", value: "32px", multiplier: "8x" },
-    { name: "2xl", value: "48px", multiplier: "12x" },
-    { name: "3xl", value: "64px", multiplier: "16x" },
-  ];
 
   return (
     <div className="space-y-8">
@@ -67,7 +52,7 @@ function BrandLayoutContent() {
       <Card className="p-8">
         <h3 className="font-medium mb-6">Color Palette</h3>
         <div className="grid md:grid-cols-2 gap-6">
-          {colors.map((color) => (
+          {BRAND_COLORS.map((color) => (
             <ColorSwatch key={color.id} id={color.id} name={color.name} hex={color.hex} rgb={color.rgb} usage={color.usage} isPrimary={color.id === "primary"} copiedColor={copiedColor} onCopy={copyToClipboard} />
           ))}
         </div>
@@ -75,10 +60,10 @@ function BrandLayoutContent() {
 
       {/* Typography */}
       <Card className="p-8">
-        <h3 className="font-medium mb-6">Typography — Gotham</h3>
+        <h3 className="font-medium mb-6">Typography — {BRAND_INFO.fontFamily}</h3>
         <div className="space-y-6">
           <div className="p-4 bg-muted rounded-lg border-2 border-primary">
-            <p className="text-2xl font-semibold">Gotham</p>
+            <p className="text-2xl font-semibold">{BRAND_INFO.fontFamily}</p>
             <p className="text-xs text-muted-foreground mt-1">Font family — Weights: 400-700 — Only permitted font</p>
           </div>
           <div className="space-y-3">
@@ -104,9 +89,9 @@ function BrandLayoutContent() {
 
       {/* Spacing System */}
       <Card className="p-8">
-        <h3 className="font-medium mb-6">Spacing System (4px base)</h3>
+        <h3 className="font-medium mb-6">Spacing System ({BRAND_INFO.baseSpacing}px base)</h3>
         <div className="space-y-3">
-          {spacing.map((s) => (<SpacingPreview key={s.name} name={s.name} value={s.value} multiplier={s.multiplier} />))}
+          {SPACING_SCALE.map((s) => (<SpacingPreview key={s.name} name={s.name} value={s.value} multiplier={s.multiplier} />))}
         </div>
       </Card>
     </div>
@@ -117,7 +102,7 @@ export function BrandLayoutPage() {
   return (
     <ComponentShowcase
       title="Brand & Layout Guidelines"
-      description="Complete design system reference: CESIONBNK brand identity (Logo with light/dark variants at 4 sizes), color palette (Primary Gray #374151 + Secondary Purple #796eff with WCAG AA contrast), typography (Gotham exclusive, 400-700 weights, 6 scale levels), responsive grid system (12/6/4 columns for desktop/tablet/mobile), and spacing system (4px base unit with 8 levels)."
+      description={`Complete design system reference: ${BRAND_INFO.name} brand identity (Logo with light/dark variants at 4 sizes), color palette (Primary Gray ${BRAND_INFO.primaryColor} + Secondary Purple ${BRAND_INFO.secondaryColor} with WCAG AA contrast), typography (${BRAND_INFO.fontFamily} exclusive, 400-700 weights, 6 scale levels), responsive grid system (12/6/4 columns for desktop/tablet/mobile), and spacing system (${BRAND_INFO.baseSpacing}px base unit with 8 levels).`}
       category="Design System"
       preview={<BrandLayoutContent />}
       code={`import { Logo } from "@/components/Logo";
@@ -130,11 +115,11 @@ import { copyToClipboard as copyText } from "@/lib/utils";
 <Logo size="xl" variant="light" />  // xl, lg, md, sm
 <Logo size="md" variant="dark" />   // For dark backgrounds
 
-// Colors: Primary #374151 (Gray), Secondary #796eff (Purple)
-// Font: Gotham (exclusive) — font-family: 'Gotham', sans-serif
-// Border Radius: 0.625rem (10px)
+// Colors: Primary ${BRAND_INFO.primaryColor} (Gray), Secondary ${BRAND_INFO.secondaryColor} (Purple)
+// Font: ${BRAND_INFO.fontFamily} (exclusive) — font-family: '${BRAND_INFO.fontFamily}', sans-serif
+// Border Radius: ${BRAND_INFO.borderRadius} (10px)
 // Grid: 12 cols desktop, 6 tablet, 4 mobile
-// Spacing: 4px base unit (xs=4, sm=8, md=12, base=16, lg=24, xl=32, 2xl=48, 3xl=64)`}
+// Spacing: ${BRAND_INFO.baseSpacing}px base unit (xs=4, sm=8, md=12, base=16, lg=24, xl=32, 2xl=48, 3xl=64)`}
       props={[
         { name: "Logo size", type: "'xl' | 'lg' | 'md' | 'sm'", description: "Logo height: xl=48px, lg=40px, md=32px, sm=24px." },
         { name: "Logo variant", type: "'light' | 'dark'", description: "Use 'light' for light backgrounds, 'dark' for dark backgrounds." },

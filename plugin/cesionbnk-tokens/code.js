@@ -1,6 +1,6 @@
 // CESIONBNK — Tokens CESIONBNK
 // AUTO-GENERADO por scripts/build-tokens-plugin.cjs — NO editar manualmente
-// Fuente: tokens/cesionbnk.tokens.json v7.0.1 (2026-04-28)
+// Fuente: tokens/cesionbnk.tokens.json v7.0.1 (2026-05-01)
 // Para actualizar: npm run build:tokens:plugin
 (async () => {
   try {

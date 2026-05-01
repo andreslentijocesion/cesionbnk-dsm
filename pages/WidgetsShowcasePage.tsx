@@ -1,7 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
-  StatCard,
-  StatsGrid,
   SearchBar,
   FilterChip,
   ApprovalTimelineItem,
@@ -9,6 +7,8 @@ import {
   SimpleFormField,
   NavigationBar,
 } from "../components/widgets";
+import { StatCard } from "../components/patterns/StatCard";
+import { StatsGrid } from "../components/patterns/StatsGrid";
 import { Card, CardContent } from "../components/ui/Card";
 import { CheckCircle, Clock, DollarSign, User, Search, Bell, Settings } from "lucide-react";
 

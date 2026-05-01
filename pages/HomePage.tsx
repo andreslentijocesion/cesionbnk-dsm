@@ -19,6 +19,8 @@ import {
 import { Logo } from "../components/Logo";
 import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 
+import { BRAND_INFO } from "../lib/constants";
+
 export function HomePageContent() {
   const stats = [
     { label: "Total Components", value: "130",  icon: Package,     color: "text-primary"  },
@@ -31,7 +33,7 @@ export function HomePageContent() {
     {
       icon: Palette,
       title: "Design Tokens",
-      description: "W3C DTCG-compliant token system with CESIONBNK brand colors #374151 (Slate) and #52525b (Zinc). Single Source of Truth in globals.css.",
+      description: `W3C DTCG-compliant token system with ${BRAND_INFO.name} brand colors ${BRAND_INFO.primaryColor} (Slate) and ${BRAND_INFO.secondaryColor} (Zinc). Single Source of Truth in globals.css.`,
       badge: "Active",
     },
     {
@@ -49,19 +51,19 @@ export function HomePageContent() {
     {
       icon: Code2,
       title: "shadcn/ui Base",
-      description: "48 official shadcn/ui components extended with CESIONBNK-specific variants, custom props and business patterns.",
+      description: `48 official shadcn/ui components extended with ${BRAND_INFO.name}-specific variants, custom props and business patterns.`,
       badge: "Stable",
     },
     {
       icon: Zap,
       title: "Light / Dark Mode",
-      description: "Full theme support via CSS custom properties. Primary (#374151) and ring remain constant — only surfaces and neutral tones shift.",
+      description: `Full theme support via CSS custom properties. Primary (${BRAND_INFO.primaryColor}) and ring remain constant — only surfaces and neutral tones shift.`,
       badge: "Live",
     },
     {
       icon: Shield,
-      title: "Gotham Typography",
-      description: "Exclusive Gotham typeface with 0.025em global letter-spacing, 1.5 line-height default and 11 predefined type scales.",
+      title: `${BRAND_INFO.fontFamily} Typography`,
+      description: `Exclusive ${BRAND_INFO.fontFamily} typeface with 0.025em global letter-spacing, 1.5 line-height default and 11 predefined type scales.`,
       badge: "System",
     },
   ];
@@ -96,9 +98,9 @@ export function HomePageContent() {
               DSM 100%
             </Badge>
           </div>
-          <h1 className="mb-4">Design System Manager</h1>
+          <h1>Design System Manager</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mb-6 font-light">
-            Complete design system for CESIONBNK platform — built with React,
+            Complete design system for {BRAND_INFO.name} platform — built with React,
             Tailwind CSS v4 and shadcn/ui. Focused on accessibility, consistency and scalability.
           </p>
           <div className="flex flex-wrap gap-3">
@@ -243,7 +245,7 @@ export function HomePageContent() {
               { title: "Color Contrast", desc: "Ratios above 4.5:1 for normal text and 3:1 for large text" },
               { title: "Keyboard Navigation", desc: "All interactive components accessible via Tab/Enter/Escape" },
               { title: "Screen Readers", desc: "ARIA labels and semantic roles in all components" },
-              { title: "Focus Visible", desc: "Focus ring (#374151) clearly visible in light and dark mode" },
+              { title: "Focus Visible", desc: `Focus ring (${BRAND_INFO.primaryColor}) clearly visible in light and dark mode` },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3">
                 <CheckCircle2 className="size-5 text-success mt-0.5 shrink-0" />
@@ -263,7 +265,7 @@ export function HomePageContent() {
 export function HomePage() {
   return (
     <ComponentShowcase
-      title="CESIONBNK Design System"
+      title={`${BRAND_INFO.name} Design System`}
       description="130 components · 128 showcase pages · Core UI, Patterns, and Advanced layers."
       category="Home"
       preview={<HomePageContent />}

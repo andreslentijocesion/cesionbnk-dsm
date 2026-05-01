@@ -4,8 +4,8 @@
  * @layer patterns
  */
 import { useState } from "react";
-import { StatCard } from "../widgets/StatCard";
-import { StatusKPICard } from "../widgets/StatusKpiCard";
+import { StatCard } from "./StatCard";
+import { StatusKPICard } from "./StatusKpiCard";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { Separator } from "../ui/Separator";
