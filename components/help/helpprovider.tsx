@@ -38,7 +38,14 @@ export function HelpProvider({ children }: { children: ReactNode }) {
 export function useHelp() {
   const context = useContext(HelpContext);
   if (context === undefined) {
-    throw new Error("useHelp must be used within a HelpProvider");
+    return {
+      isHelpCenterOpen: false,
+      openHelpCenter: () => {},
+      closeHelpCenter: () => {},
+      toggleHelpCenter: () => {},
+      currentTourActive: false,
+      setCurrentTourActive: () => {},
+    };
   }
   return context;
 }

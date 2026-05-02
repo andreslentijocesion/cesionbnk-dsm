@@ -83,7 +83,12 @@ export function TransitionProvider({ children, defaultType = "fade" }: Transitio
 export function useTransition() {
   const context = useContext(TransitionContext);
   if (context === undefined) {
-    throw new Error("useTransition must be used within a TransitionProvider");
+    return {
+      transitionState: { isTransitioning: false, direction: "none" as TransitionDirection, type: "none" as TransitionType },
+      startTransition: () => {},
+      endTransition: () => {},
+      isTransitioning: false,
+    };
   }
   return context;
 }

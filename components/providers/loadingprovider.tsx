@@ -68,7 +68,12 @@ export function LoadingProvider({ children }: LoadingProviderProps) {
 export function useLoading() {
   const context = useContext(LoadingContext);
   if (context === undefined) {
-    throw new Error("useLoading must be used within a LoadingProvider");
+    return {
+      loadingState: { isLoading: false },
+      showLoading: () => {},
+      hideLoading: () => {},
+      isLoading: false,
+    };
   }
   return context;
 }

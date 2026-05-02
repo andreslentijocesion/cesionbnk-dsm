@@ -19,8 +19,16 @@ const AdminLayoutContext = React.createContext<AdminLayoutContextValue | undefin
 
 export function useAdminLayout() {
   const context = React.useContext(AdminLayoutContext);
-  if (!context) {
-    throw new Error("useAdminLayout must be used within an AdminLayout");
+  if (context === undefined) {
+    return {
+      isSidebarOpen: false,
+      setIsSidebarOpen: () => {},
+      isSidebarCollapsed: false,
+      setIsSidebarCollapsed: () => {},
+      toggleSidebar: () => {},
+      toggleCollapse: () => {},
+      hasSidebar: false,
+    };
   }
   return context;
 }

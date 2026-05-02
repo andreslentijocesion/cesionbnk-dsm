@@ -45,9 +45,16 @@ const SidebarContext = React.createContext<SidebarContextProps | null>(null);
 function useSidebar() {
   const context = React.useContext(SidebarContext);
   if (!context) {
-    throw new Error("useSidebar must be used within a SidebarProvider.");
+    return {
+      state: "expanded" as const,
+      open: true,
+      setOpen: () => {},
+      openMobile: false,
+      setOpenMobile: () => {},
+      isMobile: false,
+      toggleSidebar: () => {},
+    };
   }
-
   return context;
 }
 
@@ -161,7 +168,9 @@ function Sidebar({
   variant?: "sidebar" | "floating" | "inset";
   collapsible?: "offcanvas" | "icon" | "none";
 }) {
-  const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
+  const sidebar = useSidebar();
+  if (!sidebar) return <div className={cn("bg-sidebar flex h-full flex-col", className)}>{children}</div>;
+  const { isMobile, state, openMobile, setOpenMobile } = sidebar;
 
   if (collapsible === "none") {
     return (
@@ -256,7 +265,8 @@ function SidebarTrigger({
   onClick,
   ...props
 }: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar } = useSidebar();
+  const sidebar = useSidebar();
+  const toggleSidebar = sidebar?.toggleSidebar || (() => {});
 
   return (
     <Button
@@ -278,7 +288,8 @@ function SidebarTrigger({
 }
 
 function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
-  const { toggleSidebar } = useSidebar();
+  const sidebar = useSidebar();
+  const toggleSidebar = sidebar?.toggleSidebar || (() => {});
 
   return (
     <button
@@ -507,7 +518,9 @@ function SidebarMenuButton({
   tooltip?: string | React.ComponentProps<typeof TooltipContent>;
 } & VariantProps<typeof sidebarMenuButtonVariants>) {
   const Comp = asChild ? Slot : "button";
-  const { isMobile, state } = useSidebar();
+  const sidebar = useSidebar();
+  const isMobile = sidebar?.isMobile || false;
+  const state = sidebar?.state || "expanded";
 
   const button = (
     <Comp

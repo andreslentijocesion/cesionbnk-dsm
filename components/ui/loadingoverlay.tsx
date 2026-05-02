@@ -17,7 +17,8 @@ export function LoadingOverlay({
   message = "Loading...", 
   variant = "spinner" 
 }: LoadingOverlayProps) {
-  const { loadingState } = useLoading();
+  const loading = useLoading();
+  const loadingState = loading?.loadingState || { isLoading: false };
 
   return (
     <AnimatePresence>

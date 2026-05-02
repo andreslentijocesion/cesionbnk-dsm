@@ -128,6 +128,16 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
 export function useTheme() {
   const context = useContext(ThemeContext);
-  if (!context) throw new Error("useTheme must be used within ThemeProvider");
+  if (context === undefined) {
+    // Return a safe dummy context for Storybook/isolated usage
+    return {
+      colorMode: "light" as ColorMode,
+      toggleColorMode: () => {},
+      designTheme: "cesionbnk" as DesignTheme,
+      setDesignTheme: () => {},
+      theme: "light" as ColorMode,
+      toggleTheme: () => {},
+    };
+  }
   return context;
 }

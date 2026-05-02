@@ -59,7 +59,8 @@ function CesionBnkLogoSVG({ variant }: { variant: "light" | "dark" }) {
 /* ── Main Logo component ── */
 
 export function Logo({ className, size = "md", variant = "auto" }: LogoProps) {
-  const { theme } = useTheme();
+  const themeContext = useTheme();
+  const theme = themeContext?.theme || "light";
 
   const effectiveVariant: "light" | "dark" =
     variant === "auto" ? (theme === "dark" ? "dark" : "light") : variant;

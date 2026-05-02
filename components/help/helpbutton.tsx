@@ -13,7 +13,8 @@ import {
  * Positioned fixed at bottom-right corner
  */
 export function HelpButton() {
-  const { toggleHelpCenter } = useHelp();
+  const help = useHelp();
+  const toggleHelpCenter = help?.toggleHelpCenter || (() => {});
 
   return (
     <TooltipProvider>
