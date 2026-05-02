@@ -7,6 +7,7 @@ import { LoadingProvider } from '../components/providers/loadingprovider';
 import { HelpProvider } from '../components/help/helpprovider';
 import { TransitionProvider } from '../components/providers/transitionprovider';
 import { SidebarProvider } from '../components/ui/sidebar';
+import { Toaster } from '../components/ui/sonner';
 
 // ── Dark mode toolbar toggle ──────────────────────────────────────────────────
 

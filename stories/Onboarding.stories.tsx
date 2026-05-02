@@ -1,13 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Onboarding } from '../components/patterns/onboarding';
-import { withGlobalProviders } from './decorators';
 
 const meta: Meta<typeof Onboarding> = {
   title: 'DSM/Patterns/Onboarding',
   component: Onboarding,
   tags: ['autodocs'],
-  decorators: [withGlobalProviders],
-  args: {
+    args: {
     module: 'operaciones',
     actions: [
       { label: 'Nueva operación' },
