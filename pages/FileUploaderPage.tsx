@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { FileUploader } from "../components/advanced/FileUploader";
+import { FileUploader } from "../components/advanced/file-uploader";
 import { toast } from "sonner";
 
 export function FileUploaderPage() {

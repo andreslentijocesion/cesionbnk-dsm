@@ -3,7 +3,7 @@ import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   FactoringStatusCard,
   FactoringStatusCardShowcase,
-} from "../components/patterns/FactoringStatusCard";
+} from "../components/patterns/factoring-status-card";
 import {
   Banknote,
   RefreshCw,

@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { FileViewer, type FileItem } from "../components/patterns/FileViewer"
+import { FileViewer, type FileItem } from "../components/patterns/file-viewer"
 import { toast } from "sonner"
 
 const sampleFiles: FileItem[] = [

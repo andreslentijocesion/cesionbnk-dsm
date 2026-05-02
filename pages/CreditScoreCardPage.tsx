@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { CreditScoreCard } from "../components/patterns/CreditScoreCard"
+import { CreditScoreCard } from "../components/patterns/credit-score-card"
 
 export function CreditScoreCardPage() {
   return (

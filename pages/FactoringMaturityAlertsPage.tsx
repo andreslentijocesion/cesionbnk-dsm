@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { FactoringMaturityAlerts } from "../components/patterns/FactoringMaturityAlerts"
+import { FactoringMaturityAlerts } from "../components/patterns/factoring-maturity-alerts"
 
 export function FactoringMaturityAlertsPage() {
   return (

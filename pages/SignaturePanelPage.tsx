@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { SignaturePanel, type Signatory } from "../components/patterns/SignaturePanel"
+import { SignaturePanel, type Signatory } from "../components/patterns/signature-panel"
 
 const signatories: Signatory[] = [
   { id: "1", name: "Carlos Riquelme", role: "Gerente General",     email: "c.riquelme@empresa.com", status: "signed",   order: 1, signedAt: "07/03/2025 09:14" },

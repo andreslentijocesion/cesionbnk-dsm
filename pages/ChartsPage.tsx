@@ -2,11 +2,11 @@ import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
 import { SafeChartContainer } from "../components/ui/SafeChartContainer";
-import { GaugeChart } from "../components/advanced/GaugeChart";
-import { Sparkline } from "../components/advanced/Sparkline";
-import { FunnelChart } from "../components/advanced/FunnelChart";
-import { Heatmap } from "../components/advanced/Heatmap";
-import { TreemapChart } from "../components/advanced/TreemapChart";
+import { GaugeChart } from "../components/advanced/gauge-chart";
+import { Sparkline } from "../components/advanced/sparkline";
+import { FunnelChart } from "../components/advanced/funnel-chart";
+import { Heatmap } from "../components/advanced/heatmap";
+import { TreemapChart } from "../components/advanced/treemap-chart";
 import {
   LineChart,
   Line,

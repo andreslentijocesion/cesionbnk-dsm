@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { InfiniteScroll } from "../components/advanced/InfiniteScroll";
+import { InfiniteScroll } from "../components/advanced/infinite-scroll";
 
 const infiniteScrollCode = `import { useState } from "react";
 import { InfiniteScroll } from "@/components/advanced/InfiniteScroll";

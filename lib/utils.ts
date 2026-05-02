@@ -32,3 +32,11 @@ export async function copyToClipboard(text: string): Promise<void> {
     document.body.removeChild(textarea);
   }
 }
+export const formatCOP = (v: number, short = false) => {
+  if (short) {
+    if (v >= 1_000_000_000) return `$${(v / 1_000_000_000).toFixed(1)}B`;
+    if (v >= 1_000_000)     return `$${(v / 1_000_000).toFixed(0)}M`;
+    return `$${(v / 1_000).toFixed(0)}K`;
+  }
+  return new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 }).format(v);
+};

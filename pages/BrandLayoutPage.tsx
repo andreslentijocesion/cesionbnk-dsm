@@ -1,12 +1,12 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
 import { Card } from "../components/ui/Card"
 import { Separator } from "../components/ui/Separator"
-import { Logo } from "../components/layout/Logo"
+import { Logo } from "../components/layout/logo"
 import { useState } from "react"
 import { BRAND_COLORS, SPACING_SCALE, BRAND_INFO } from "../lib/constants"
-import { ColorSwatch } from "../components/patterns/ColorSwatch"
-import { GridSystemPreview } from "../components/patterns/GridSystemPreview"
-import { SpacingPreview } from "../components/patterns/SpacingPreview"
+import { ColorSwatch } from "../components/patterns/color-swatch"
+import { GridSystemPreview } from "../components/patterns/grid-system-preview"
+import { SpacingPreview } from "../components/patterns/spacing-preview"
 import { copyToClipboard as copyText } from "../lib/utils"
 
 function BrandLayoutContent() {
@@ -105,10 +105,10 @@ export function BrandLayoutPage() {
       description={`Complete design system reference: ${BRAND_INFO.name} brand identity (Logo with light/dark variants at 4 sizes), color palette (Primary Gray ${BRAND_INFO.primaryColor} + Secondary Purple ${BRAND_INFO.secondaryColor} with WCAG AA contrast), typography (${BRAND_INFO.fontFamily} exclusive, 400-700 weights, 6 scale levels), responsive grid system (12/6/4 columns for desktop/tablet/mobile), and spacing system (${BRAND_INFO.baseSpacing}px base unit with 8 levels).`}
       category="Design System"
       preview={<BrandLayoutContent />}
-      code={`import { Logo } from "../components/layout/Logo"
-import { ColorSwatch } from "../components/patterns/ColorSwatch"
-import { GridSystemPreview } from "../components/patterns/GridSystemPreview"
-import { SpacingPreview } from "../components/patterns/SpacingPreview"
+      code={`import { Logo } from "../components/layout/logo"
+import { ColorSwatch } from "../components/patterns/color-swatch"
+import { GridSystemPreview } from "../components/patterns/grid-system-preview"
+import { SpacingPreview } from "../components/patterns/spacing-preview"
 import { copyToClipboard as copyText } from "@/lib/utils"
 
 // Logo with variants

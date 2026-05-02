@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { AuditLog, type AuditEntry } from "../components/patterns/AuditLog"
+import { AuditLog, type AuditEntry } from "../components/patterns/audit-log"
 
 const entries: AuditEntry[] = [
   { id: "1",  timestamp: "2024-03-12 08:12", user: "María González",   role: "Back Office",   action: "create",  entity: "Factura",    entityId: "F-20240312", description: "Ingresó nueva factura", source: "192.168.1.10" },

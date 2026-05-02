@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { DetailCard, DetailSection } from "../components/patterns/DetailCard"
+import { DetailCard, DetailSection } from "../components/patterns/detail-card"
 import { Badge } from "../components/ui/Badge"
 import { Button } from "../components/ui/Button"
 import { Pencil } from "lucide-react"

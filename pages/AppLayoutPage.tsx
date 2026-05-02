@@ -8,7 +8,7 @@ import {
   AdminLayout,
   LayoutHeader,
   LayoutFooter,
-} from "../components/patterns/AppLayout";
+} from "../components/layout";
 import { Button } from "../components/ui/Button";
 import { Separator } from "../components/ui/Separator";
 import {
@@ -203,7 +203,7 @@ export function AppLayoutPage() {
   AdminLayout,
   LayoutHeader,
   LayoutFooter,
-} from "@/components/patterns/AppLayout";
+} from "../components/layout";
 
 // ── Client Layout ──
 <ClientLayout

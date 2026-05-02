@@ -151,26 +151,26 @@ export { LoadingOverlay, InlineSpinner } from '../components/ui/LoadingOverlay';
 export { ErrorBoundary } from '../components/ui/ErrorBoundary';
 
 // ── Advanced / Data ─────────────────────────────────────────────────────────
-export { DataTable } from '../components/advanced/DataTable';
-export { MasterDataGrid } from '../components/advanced/MasterDataGrid';
+export { DataTable } from '../components/advanced/data-table';
+export { MasterDataGrid } from '../components/advanced/master-data-grid';
 
 // ── Advanced / Factoring ─────────────────────────────────────────────────────
-export { Combobox } from '../components/advanced/Combobox';
-export { FileUploader } from '../components/advanced/FileUploader';
-export type { SparklineData } from '../components/advanced/Sparkline';
-export { Sparkline } from '../components/advanced/Sparkline';
-export { GaugeChart } from '../components/advanced/GaugeChart';
-export type { FunnelStage } from '../components/advanced/FunnelChart';
-export { FunnelChart } from '../components/advanced/FunnelChart';
-export type { Step } from '../components/advanced/StepIndicator';
-export { StepIndicator } from '../components/advanced/StepIndicator';
-export { VirtualizedList } from '../components/advanced/VirtualizedList';
-export type { TreemapData } from '../components/advanced/TreemapChart';
-export { TreemapChart } from '../components/advanced/TreemapChart';
-export type { HeatmapCell } from '../components/advanced/Heatmap';
-export { Heatmap } from '../components/advanced/Heatmap';
-export { InfiniteScroll } from '../components/advanced/InfiniteScroll';
-export { RichTextEditor } from '../components/advanced/RichTextEditor';
+export { Combobox } from '../components/advanced/combobox';
+export { FileUploader } from '../components/advanced/file-uploader';
+export type { SparklineData } from '../components/advanced/sparkline';
+export { Sparkline } from '../components/advanced/sparkline';
+export { GaugeChart } from '../components/advanced/gauge-chart';
+export type { FunnelStage } from '../components/advanced/funnel-chart';
+export { FunnelChart } from '../components/advanced/funnel-chart';
+export type { Step } from '../components/advanced/step-indicator';
+export { StepIndicator } from '../components/advanced/step-indicator';
+export { VirtualizedList } from '../components/advanced/virtualized-list';
+export type { TreemapData } from '../components/advanced/treemap-chart';
+export { TreemapChart } from '../components/advanced/treemap-chart';
+export type { HeatmapCell } from '../components/advanced/heatmap';
+export { Heatmap } from '../components/advanced/heatmap';
+export { InfiniteScroll } from '../components/advanced/infinite-scroll';
+export { RichTextEditor } from '../components/advanced/rich-text-editor';
 
 // ── Charts ──────────────────────────────────────────────────────────────────
 export type { ChartConfig } from '../components/ui/Chart';

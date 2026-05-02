@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { FactoringDebtorList } from "../components/patterns/FactoringDebtorList"
+import { FactoringDebtorList } from "../components/patterns/factoring-debtor-list"
 
 export function FactoringDebtorListPage() {
   return (

@@ -3,7 +3,7 @@
 > **Status**: Completed (v0.3.2)
 > **Created**: 2026-02-17
 > **Completed**: 2026-02-22
-> **Affects**: `components/ui/`, `components/patterns/`, `components/advanced/`, `components/widgets/`, Figma Design
+> **Affects**: `components/ui/`, `components/patterns/`, `components/advanced/`, `components/patterns/`, Figma Design
 > **Updated**: 2026-03-05 — Removed factoring references (app eliminated in v1.0.0)
 
 ---
@@ -58,7 +58,7 @@ Semantic Name:  "Approval Flow Wizard"
 | Directory | Figma Frame | Atomic Design | Content | Domain prefix |
 |---|---|---|---|---|
 | `ui/` | `UI / {Name}` | Atoms + Molecules | Generic primitives, no business logic | Never |
-| `widgets/` | `Widgets / {Name}` | Composed Molecules | Small composed pieces of UI primitives | Never |
+| `widgets/` | `Patterns / {Name}` | Composed Molecules | Small composed pieces of UI primitives | Never |
 | `advanced/` | `Advanced / {Name}` | Complex Organisms | Data-heavy, charts, editors | Never |
 | `patterns/` | `Patterns / {Name}` | Business Organisms | Reusable cross-domain flows | Never |
 

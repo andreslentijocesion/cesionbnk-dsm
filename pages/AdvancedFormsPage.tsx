@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { StepIndicator, Step } from "../components/advanced/StepIndicator";
-import { FormBuilder } from "../components/advanced/FormBuilder";
-import { ConditionalForm } from "../components/advanced/ConditionalForm";
-import { MultiColumnForm } from "../components/advanced/MultiColumnForm";
+import { StepIndicator, Step } from "../components/advanced/step-indicator";
+import { FormBuilder } from "../components/advanced/form-builder";
+import { ConditionalForm } from "../components/advanced/conditional-form";
+import { MultiColumnForm } from "../components/advanced/multi-column-form";
 import { User, Building2, CreditCard, CheckCircle } from "lucide-react";
 import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import { Badge } from "../components/ui/Badge";

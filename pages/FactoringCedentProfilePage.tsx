@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { FactoringCedentProfile } from "../components/patterns/FactoringCedentProfile"
+import { FactoringCedentProfile } from "../components/patterns/factoring-cedent-profile"
 
 export function FactoringCedentProfilePage() {
   return (

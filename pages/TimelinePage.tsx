@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { Timeline, type TimelineItem } from "../components/patterns/Timeline"
+import { Timeline, type TimelineItem } from "../components/patterns/timeline"
 import { FileCheck, Send, Clock, CheckCircle2, XCircle, AlertCircle } from "lucide-react"
 
 const operationTimeline: TimelineItem[] = [

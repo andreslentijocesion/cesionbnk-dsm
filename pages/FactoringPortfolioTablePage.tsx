@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { FactoringPortfolioTable } from "../components/patterns/FactoringPortfolioTable"
+import { FactoringPortfolioTable } from "../components/patterns/factoring-portfolio-table"
 
 const code = `import { FactoringPortfolioTable } from "@/components/patterns/FactoringPortfolioTable"
 

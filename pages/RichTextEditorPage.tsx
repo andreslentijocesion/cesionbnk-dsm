@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { RichTextEditor } from "../components/advanced/RichTextEditor";
+import { RichTextEditor } from "../components/advanced/rich-text-editor";
 import { Label } from "../components/ui/Label";
 import { Button } from "../components/ui/Button";
 import { toast } from "sonner";

@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { DataTableAdvanced } from "../components/patterns/DataTableAdvanced"
+import { DataTableAdvanced } from "../components/patterns/data-table-advanced"
 
 const dataTableAdvancedCode = `import { DataTableAdvanced } from "@/components/patterns/DataTableAdvanced"
 

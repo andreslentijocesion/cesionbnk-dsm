@@ -16,7 +16,7 @@ import {
   TrendingUp,
   Activity,
 } from "lucide-react"
-import { Logo } from "../components/layout/Logo"
+import { Logo } from "../components/layout/logo"
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
 
 import { BRAND_INFO } from "../lib/constants"

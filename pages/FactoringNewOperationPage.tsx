@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { FactoringNewOperation } from "../components/patterns/FactoringNewOperation"
+import { FactoringNewOperation } from "../components/patterns/factoring-new-operation"
 
 const code = `import { FactoringNewOperation } from "@/components/patterns/FactoringNewOperation"
 

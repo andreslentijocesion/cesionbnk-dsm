@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { FactoringCedentList } from "../components/patterns/FactoringCedentList"
+import { FactoringCedentList } from "../components/patterns/factoring-cedent-list"
 
 export function FactoringCedentListPage() {
   return (

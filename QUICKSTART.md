@@ -118,15 +118,10 @@ npm install --verbose
 ├── tsconfig.json              # TypeScript config
 ├── components/                # All UI components
 │   ├── ui/                    # Primitives (Button, Input, etc.)
-│   ├── patterns/              # Compositions (forms, tables)
-│   ├── advanced/              # Advanced widgets
-│   ├── widgets/               # Reusable widgets
+│   ├── patterns/              # Compositions (forms, tables, business patterns)
+│   ├── layout/                # Structural components (Sidebar, Logo, etc.)
+│   ├── advanced/              # High-complexity components (Charts, RichText)
 │   └── providers/             # Context providers
-├── factoring/                 # Factoring app
-│   ├── FactoringApp.tsx       # Factoring entry
-│   ├── cesionbnk/             # CESIONBNK tenant
-│   ├── dashboard-comercial/   # Dashboard views
-│   └── views/                 # App views
 ├── pages/                     # DSM showcase pages
 ├── styles/                    # CSS (Tailwind v4)
 ├── guidelines/                # Documentation

@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { RiskIndicator } from "../components/patterns/RiskIndicator"
+import { RiskIndicator } from "../components/patterns/risk-indicator"
 
 const goodFactors = [
   { label: "Historial de pago",   value: "Excelente",  impact: "positive" as const },

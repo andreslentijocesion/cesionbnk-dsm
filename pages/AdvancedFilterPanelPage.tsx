@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { AdvancedFilterPanel } from "../components/patterns/AdvancedFilterPanel"
+import { AdvancedFilterPanel } from "../components/patterns/advanced-filter-panel"
 
 const advancedFilterCode = `import { AdvancedFilterPanel } from "@/components/patterns/AdvancedFilterPanel"
 

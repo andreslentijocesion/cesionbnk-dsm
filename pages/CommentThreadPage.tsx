@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { CommentThread, type Comment } from "../components/patterns/CommentThread"
+import { CommentThread, type Comment } from "../components/patterns/comment-thread"
 import { toast } from "sonner"
 
 const initialComments: Comment[] = [

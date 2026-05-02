@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { BulkActionToolbar } from "../components/patterns/BulkActionToolbar"
+import { BulkActionToolbar } from "../components/patterns/bulk-action-toolbar"
 import { Checkbox } from "../components/ui/Checkbox"
 import { Badge } from "../components/ui/Badge"
 import { toast } from "sonner"

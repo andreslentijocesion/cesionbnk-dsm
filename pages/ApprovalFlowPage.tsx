@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { ApprovalFlow, type Approver } from "../components/patterns/ApprovalFlow"
+import { ApprovalFlow, type Approver } from "../components/patterns/approval-flow"
 import { toast } from "sonner"
 
 const approvers: Approver[] = [

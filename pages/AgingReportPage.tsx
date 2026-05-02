@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { AgingReport, type AgingBucket } from "../components/patterns/AgingReport"
+import { AgingReport, type AgingBucket } from "../components/patterns/aging-report"
 
 const buckets: AgingBucket[] = [
   { label: "Al día",     amount: 2840, count: 98,  risk: "ok" },

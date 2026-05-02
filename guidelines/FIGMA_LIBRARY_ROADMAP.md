@@ -134,9 +134,9 @@ Codigo                              ->  Figma Component Name
 ------------------------------------------------------------
 components/ui/button.tsx            ->  UI / Button
 components/ui/card.tsx              ->  UI / Card
-components/widgets/stat-card.tsx    ->  Widgets / StatCard
+components/patterns/stat-card.tsx    ->  Patterns / StatCard
 components/advanced/data-table.tsx  ->  Advanced / DataTable
-components/patterns/app-layout.tsx  ->  Patterns / AppLayout
+components/layout/app-layout/         ->  Patterns / AppLayout (Modular)
 ```
 
 ### Estructura de Pages en Figma
@@ -146,7 +146,7 @@ components/patterns/app-layout.tsx  ->  Patterns / AppLayout
 | `UI /` | `components/ui/` | 41 base |
 | `Advanced /` | `components/advanced/` | 5 active |
 | `Patterns /` | `components/patterns/` | 2 active |
-| `Widgets /` | `components/widgets/` | 4 active |
+| `Patterns /` | `components/patterns/` | 4 active |
 | `Help /` | `components/help/` | 1 active |
 | **Total active in Figma** | | **51 types + 68 icons** |
 

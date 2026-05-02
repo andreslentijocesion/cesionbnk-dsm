@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { MultiStepWizard } from "../components/patterns/MultiStepWizard"
+import { MultiStepWizard } from "../components/patterns/multi-step-wizard"
 
 export function MultiStepWizardPage() {
   return (

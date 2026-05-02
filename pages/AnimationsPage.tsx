@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Card } from "../components/ui/Card";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Star, Check, Loader2, ArrowRight, TrendingUp, MousePointer } from "lucide-react";
-import { AnimationSystemContent } from "./AnimationSystemPage";
 import { Button } from "../components/ui/Button";
 import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 
@@ -153,15 +152,6 @@ export function AnimationsPage() {
         { name: "variants", type: "Record<string, MotionStyle>", description: "Named animation states for orchestration and stagger." },
       ]}
       examples={[
-        {
-          title: "Animation System Architecture",
-          description: "Full system: PageTransition, FadeInView, StaggerContainer, InlineSpinner, ButtonLoading, Skeleton variants, Loading hooks, and CSS utilities.",
-          preview: <AnimationSystemContent />,
-          code: `import { PageTransition, FadeInView, StaggerContainer } from "@/components/ui/PageTransition";
-import { InlineSpinner, ButtonLoading } from "@/components/ui/LoadingOverlay";
-import { SkeletonTable, SkeletonDashboard } from "@/components/ui/SkeletonVariants";
-import { useLoadingState, useAsyncOperation } from "@/hooks/useLoadingState";`,
-        },
         {
           title: "Scroll-triggered Animation",
           description: "Elements animate when they enter the viewport using whileInView.",

@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { FactoringApprovalQueue } from "../components/patterns/FactoringApprovalQueue"
+import { FactoringApprovalQueue } from "../components/patterns/factoring-approval-queue"
 
 export function FactoringApprovalQueuePage() {
   return (

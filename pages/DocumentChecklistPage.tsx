@@ -3,7 +3,7 @@ import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   DocumentChecklist,
   type ChecklistDocument,
-} from "../components/patterns/DocumentChecklist";
+} from "../components/patterns/document-checklist";
 import { toast } from "sonner";
 
 const initialDocuments: ChecklistDocument[] = [

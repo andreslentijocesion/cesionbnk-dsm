@@ -2,7 +2,7 @@ import { ComponentShowcase } from "../components/ui/ComponentShowcase";
 import {
   OperationStatusPipeline,
   type PipelineStage,
-} from "../components/patterns/OperationStatusPipeline";
+} from "../components/patterns/operation-status-pipeline";
 
 const activeStages: PipelineStage[] = [
   { id: "radicado",     label: "Radicado",     status: "completed", date: "01/03/2025", actor: "Ana Valdés" },

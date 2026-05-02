@@ -1,5 +1,5 @@
 import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { ExportPanel } from "../components/patterns/ExportPanel"
+import { ExportPanel } from "../components/patterns/export-panel"
 import { toast } from "sonner"
 
 const portfolioColumns = [
