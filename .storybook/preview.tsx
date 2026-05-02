@@ -8,6 +8,7 @@ import { HelpProvider } from '../components/help/helpprovider';
 import { TransitionProvider } from '../components/providers/transitionprovider';
 import { SidebarProvider } from '../components/ui/sidebar';
 import { Toaster } from '../components/ui/sonner';
+import { TooltipProvider } from '../components/ui/tooltip';
 
 // ── Dark mode toolbar toggle ──────────────────────────────────────────────────
 
@@ -40,19 +41,20 @@ const withTheme: Decorator = (Story, context) => {
 
   return (
     <ThemeProvider>
-      <LoadingProvider>
-        <HelpProvider>
-          <TransitionProvider>
-            <SidebarProvider>
-              <div className="p-6 bg-background min-h-screen text-foreground relative">
-                <Story />
-              </div>
-              {/* Add Toaster here globally for all stories that might trigger it */}
-              <Toaster />
-            </SidebarProvider>
-          </TransitionProvider>
-        </HelpProvider>
-      </LoadingProvider>
+      <TooltipProvider>
+        <LoadingProvider>
+          <HelpProvider>
+            <TransitionProvider>
+              <SidebarProvider>
+                <div className="p-6 bg-background min-h-screen text-foreground relative">
+                  <Story />
+                </div>
+                <Toaster />
+              </SidebarProvider>
+            </TransitionProvider>
+          </HelpProvider>
+        </LoadingProvider>
+      </TooltipProvider>
     </ThemeProvider>
   );
 };
