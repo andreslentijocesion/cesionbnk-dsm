@@ -6,6 +6,7 @@ import { ThemeProvider } from '../components/providers/themeprovider';
 import { LoadingProvider } from '../components/providers/loadingprovider';
 import { HelpProvider } from '../components/help/helpprovider';
 import { TransitionProvider } from '../components/providers/transitionprovider';
+import { SidebarProvider } from '../components/ui/sidebar';
 
 // ── Dark mode toolbar toggle ──────────────────────────────────────────────────
 
@@ -41,9 +42,11 @@ const withTheme: Decorator = (Story, context) => {
       <LoadingProvider>
         <HelpProvider>
           <TransitionProvider>
-            <div className="p-6 bg-background min-h-screen text-foreground">
-              <Story />
-            </div>
+            <SidebarProvider>
+              <div className="p-6 bg-background min-h-screen text-foreground">
+                <Story />
+              </div>
+            </SidebarProvider>
           </TransitionProvider>
         </HelpProvider>
       </LoadingProvider>
