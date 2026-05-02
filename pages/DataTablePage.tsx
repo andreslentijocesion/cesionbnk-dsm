@@ -196,7 +196,7 @@ export function DataTablePage() {
           description="A list of all your invoices."
         />
       }
-      code={`import { DataTable } from "@/components/advanced/datatable";
+      code={`import { DataTable } from "@/components/advanced/data-table";
 import { ColumnDef } from "@tanstack/react-table";
 
 type Invoice = {

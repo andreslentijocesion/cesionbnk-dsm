@@ -2,7 +2,7 @@
  * FactoringPatterns.stories.tsx — Factoring Dashboard snapshot
  */
 import type { Meta, StoryObj } from '@storybook/react';
-import { FactoringDashboard } from '../components/patterns/factoringdashboard';
+import { FactoringDashboard } from '../components/patterns/factoring-dashboard';
 
 const meta: Meta<typeof FactoringDashboard> = {
   title: 'DSM/Patterns/FactoringDashboard',

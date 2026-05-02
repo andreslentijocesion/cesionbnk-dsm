@@ -57,7 +57,7 @@ export function DetailCardPage() {
       category="Patterns"
       atomicLevel="Molecule"
       preview={<DetailCardDemo />}
-      code={`import { DetailCard } from "@/components/patterns/detailcard"
+      code={`import { DetailCard } from "@/components/patterns/detail-card"
 
 <DetailCard
   title="Datos de la Operación"
@@ -96,7 +96,7 @@ export function DetailCardPage() {
               />
             </div>
           ),
-          code: `import { DetailSection } from "@/components/patterns/detailcard"\n\n<DetailSection columns={3} fields={fields} />`,
+          code: `import { DetailSection } from "@/components/patterns/detail-card"\n\n<DetailSection columns={3} fields={fields} />`,
         },
       ]}
     />

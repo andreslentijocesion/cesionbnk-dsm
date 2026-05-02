@@ -1,7 +1,7 @@
 import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { AdvancedFilterPanel } from "../components/patterns/advanced-filter-panel"
 
-const advancedFilterCode = `import { AdvancedFilterPanel } from "@/components/patterns/advancedfilterpanel"
+const advancedFilterCode = `import { AdvancedFilterPanel } from "@/components/patterns/advanced-filter-panel"
 
 export function AdvancedFilterPanelDemo() {
   return <AdvancedFilterPanel />;
@@ -27,7 +27,7 @@ export function AdvancedFilterPanelPage() {
               <p className="text-sm text-muted-foreground">The component is placed next to the data table in a sidebar or header layout.</p>
             </div>
           ),
-          code: `import { AdvancedFilterPanel } from "@/components/patterns/advancedfilterpanel"
+          code: `import { AdvancedFilterPanel } from "@/components/patterns/advanced-filter-panel"
 
 // In your listing page:
 <div className="flex gap-4">

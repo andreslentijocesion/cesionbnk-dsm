@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FactoringApprovalQueue } from '../components/patterns/factoringapprovalqueue';
+import { FactoringApprovalQueue } from '../components/patterns/factoring-approval-queue';
 
 const meta: Meta<typeof FactoringApprovalQueue> = {
   title: 'DSM/Patterns/FactoringApprovalQueue',

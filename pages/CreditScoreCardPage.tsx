@@ -45,7 +45,7 @@ export function CreditScoreCardPage() {
           />
         </div>
       }
-      code={`import { CreditScoreCard } from "@/components/patterns/creditscorecard"
+      code={`import { CreditScoreCard } from "@/components/patterns/credit-score-card"
 
 <CreditScoreCard
   name="Retail Express Ltda."

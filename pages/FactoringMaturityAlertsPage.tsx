@@ -9,7 +9,7 @@ export function FactoringMaturityAlertsPage() {
       category="Business Pattern"
       atomicLevel="Organism"
       preview={<FactoringMaturityAlerts />}
-      code={`import { FactoringMaturityAlerts } from "@/components/patterns/factoringmaturityalerts"\n\nexport function MyPage() {\n  return <FactoringMaturityAlerts />;\n}`}
+      code={`import { FactoringMaturityAlerts } from "@/components/patterns/factoring-maturity-alerts"\n\nexport function MyPage() {\n  return <FactoringMaturityAlerts />;\n}`}
       props={[{ name: "(self-contained)", type: "—", description: "Alertas agrupadas por urgencia con bulk select, envío de recordatorio, marcado de cobro, silenciado, filtro por categoría y Sheet de detalle integrado." }]}
     />
   );

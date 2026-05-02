@@ -21,7 +21,7 @@ export function FileUploaderPage() {
           onUpload={handleUpload}
         />
       }
-      code={`import { FileUploader } from "@/components/advanced/fileuploader";
+      code={`import { FileUploader } from "@/components/advanced/file-uploader";
 
 <FileUploader
   maxFiles={5}

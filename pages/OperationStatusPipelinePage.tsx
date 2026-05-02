@@ -44,7 +44,7 @@ export function OperationStatusPipelinePage() {
           <OperationStatusPipeline stages={rejectedStages} orientation="horizontal" />
         </div>
       }
-      code={`import { OperationStatusPipeline } from "@/components/patterns/operationstatuspipeline"
+      code={`import { OperationStatusPipeline } from "@/components/patterns/operation-status-pipeline"
 
 const stages = [
   { id: "radicado",     label: "Radicado",     status: "completed", date: "01/03/2025" },

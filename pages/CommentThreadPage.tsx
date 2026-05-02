@@ -75,7 +75,7 @@ export function CommentThreadPage() {
       category="Patterns"
       atomicLevel="Organism"
       preview={<CommentThreadDemo />}
-      code={`import { CommentThread } from "@/components/patterns/commentthread"
+      code={`import { CommentThread } from "@/components/patterns/comment-thread"
 import { useState } from "react"
 
 const initialComments = [

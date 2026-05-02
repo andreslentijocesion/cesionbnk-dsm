@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NotificationCenter } from '../components/patterns/notificationcenter';
+import { NotificationCenter } from '../components/patterns/notification-center';
 
 const meta: Meta<typeof NotificationCenter> = {
   title: 'DSM/Patterns/NotificationCenter',

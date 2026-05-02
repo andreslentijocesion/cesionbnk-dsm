@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ExportPanel, type ExportColumn } from '../components/patterns/exportpanel';
+import { ExportPanel, type ExportColumn } from '../components/patterns/export-panel';
 
 const portfolioColumns: ExportColumn[] = [
   { id: 'operacion',   label: 'N° Operación',  defaultSelected: true },

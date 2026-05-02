@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FactoringCalculator } from '../components/patterns/factoringcalculator';
+import { FactoringCalculator } from '../components/patterns/factoring-calculator';
 
 const meta: Meta<typeof FactoringCalculator> = {
   title: 'DSM/Patterns/FactoringCalculator',

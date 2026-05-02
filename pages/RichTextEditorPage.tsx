@@ -37,7 +37,7 @@ export function RichTextEditorPage() {
           </div>
         </div>
       }
-      code={`import { RichTextEditor } from "@/components/advanced/richtexteditor";
+      code={`import { RichTextEditor } from "@/components/advanced/rich-text-editor";
 
 const [content, setContent] = useState("<p>Hello world</p>");
 

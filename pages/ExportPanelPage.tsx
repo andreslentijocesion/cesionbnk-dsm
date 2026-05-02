@@ -33,7 +33,7 @@ export function ExportPanelPage() {
           }
         />
       }
-      code={`import { ExportPanel } from "@/components/patterns/exportpanel"
+      code={`import { ExportPanel } from "@/components/patterns/export-panel"
 
 const columns = [
   { id: "folio",    label: "Folio",    defaultSelected: true },

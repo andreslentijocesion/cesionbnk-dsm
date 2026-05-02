@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { BulkActionToolbar } from '../components/patterns/bulkactiontoolbar';
+import { BulkActionToolbar } from '../components/patterns/bulk-action-toolbar';
 import { CheckCircle2, Send, Download, Trash2 } from 'lucide-react';
 
 const actions = [

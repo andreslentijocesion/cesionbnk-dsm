@@ -75,7 +75,7 @@ export function FileViewerPage() {
           />
         </div>
       }
-      code={`import { FileViewer } from "@/components/patterns/fileviewer"
+      code={`import { FileViewer } from "@/components/patterns/file-viewer"
 
 const files = [
   {

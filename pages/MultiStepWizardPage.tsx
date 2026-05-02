@@ -12,7 +12,7 @@ export function MultiStepWizardPage() {
           <MultiStepWizard />
         </div>
       }
-      code={`import { MultiStepWizard } from "@/components/patterns/multistepwizard"
+      code={`import { MultiStepWizard } from "@/components/patterns/multi-step-wizard"
 
 export default function ApplicationPage() {
   return (

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FactoringNewOperation } from '../components/patterns/factoringnewoperation';
+import { FactoringNewOperation } from '../components/patterns/factoring-new-operation';
 
 const meta: Meta<typeof FactoringNewOperation> = {
   title: 'DSM/Patterns/FactoringNewOperation',

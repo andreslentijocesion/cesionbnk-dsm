@@ -43,7 +43,7 @@ export function RiskIndicatorPage() {
           />
         </div>
       }
-      code={`import { RiskIndicator } from "@/components/patterns/riskindicator"
+      code={`import { RiskIndicator } from "@/components/patterns/risk-indicator"
 
 <RiskIndicator
   score={820}

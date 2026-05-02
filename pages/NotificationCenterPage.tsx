@@ -1,7 +1,7 @@
 import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { NotificationCenter } from "../components/patterns/notification-center"
 
-const notificationCenterCode = `import { NotificationCenter } from "@/components/patterns/notificationcenter"
+const notificationCenterCode = `import { NotificationCenter } from "@/components/patterns/notification-center"
 
 export function NotificationCenterDemo() {
   return (

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { EditableTable } from '../components/patterns/editabletable';
+import { EditableTable } from '../components/patterns/editable-table';
 
 const meta: Meta<typeof EditableTable> = {
   title: 'DSM/Patterns/EditableTable',

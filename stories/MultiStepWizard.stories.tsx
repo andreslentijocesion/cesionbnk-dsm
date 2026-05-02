@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MultiStepWizard } from '../components/patterns/multistepwizard';
+import { MultiStepWizard } from '../components/patterns/multi-step-wizard';
 
 const meta: Meta<typeof MultiStepWizard> = {
   title: 'DSM/Patterns/MultiStepWizard',

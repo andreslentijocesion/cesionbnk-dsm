@@ -39,7 +39,7 @@ export function SignaturePanelPage() {
           />
         </div>
       }
-      code={`import { SignaturePanel } from "@/components/patterns/signaturepanel"
+      code={`import { SignaturePanel } from "@/components/patterns/signature-panel"
 
 <SignaturePanel
   title="Autorización de desembolso"

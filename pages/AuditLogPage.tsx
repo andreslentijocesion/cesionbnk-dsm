@@ -22,7 +22,7 @@ export function AuditLogPage() {
       category="Patterns"
       atomicLevel="Organism"
       preview={<AuditLog entries={entries} />}
-      code={`import { AuditLog } from "@/components/patterns/auditlog"
+      code={`import { AuditLog } from "@/components/patterns/audit-log"
 
 const entries = [
   {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ApprovalFlow, type Approver } from '../components/patterns/approvalflow';
+import { ApprovalFlow, type Approver } from '../components/patterns/approval-flow';
 
 const inReviewApprovers: Approver[] = [
   { id: '1', name: 'Ana Valdés',      role: 'Analista de Riesgo',  status: 'approved', timestamp: '07/03 10:42', comment: 'Score 780. Historial impecable. Procede.' },

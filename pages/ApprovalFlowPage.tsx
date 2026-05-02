@@ -70,7 +70,7 @@ export function ApprovalFlowPage() {
           />
         </div>
       }
-      code={`import { ApprovalFlow } from "@/components/patterns/approvalflow"
+      code={`import { ApprovalFlow } from "@/components/patterns/approval-flow"
 
 <ApprovalFlow
   title="Operación OP-441 · $620M"

@@ -93,7 +93,7 @@ export function BulkActionToolbarPage() {
       category="Patterns"
       atomicLevel="Molecule"
       preview={<BulkDemo />}
-      code={`import { BulkActionToolbar } from "@/components/patterns/bulkactiontoolbar"
+      code={`import { BulkActionToolbar } from "@/components/patterns/bulk-action-toolbar"
 import { CheckCircle2, Send } from "lucide-react"
 
 <BulkActionToolbar

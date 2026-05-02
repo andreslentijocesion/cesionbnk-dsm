@@ -25,7 +25,7 @@ export function AgingReportPage() {
       category="Patterns"
       atomicLevel="Organism"
       preview={<AgingReport buckets={buckets} unit="M COP" />}
-      code={`import { AgingReport } from "@/components/patterns/agingreport"
+      code={`import { AgingReport } from "@/components/patterns/aging-report"
 
 const buckets = [
   { label: "Al día",     amount: 2840, count: 98, risk: "ok" },

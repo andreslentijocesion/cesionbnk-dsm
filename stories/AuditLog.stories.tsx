@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AuditLog, type AuditEntry } from '../components/patterns/auditlog';
+import { AuditLog, type AuditEntry } from '../components/patterns/audit-log';
 
 const defaultEntries: AuditEntry[] = [
   { id: '1', timestamp: '07/03/2025 09:14', user: 'Ana Valdés',      role: 'Analista',  action: 'approve', entity: 'Operación', entityId: 'FCT-2025-003', description: 'Operación FCT-2025-003 aprobada por comité de crédito.', source: '192.168.1.10' },
