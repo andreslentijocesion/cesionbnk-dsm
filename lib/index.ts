@@ -151,26 +151,8 @@ export { LoadingOverlay, InlineSpinner } from '../components/ui/LoadingOverlay';
 export { ErrorBoundary } from '../components/ui/ErrorBoundary';
 
 // ── Advanced / Data ─────────────────────────────────────────────────────────
-export { DataTable } from '../components/advanced/data-table';
-export { MasterDataGrid } from '../components/advanced/master-data-grid';
+export * from '../components/advanced';
 
-// ── Advanced / Factoring ─────────────────────────────────────────────────────
-export { Combobox } from '../components/advanced/combobox';
-export { FileUploader } from '../components/advanced/file-uploader';
-export type { SparklineData } from '../components/advanced/sparkline';
-export { Sparkline } from '../components/advanced/sparkline';
-export { GaugeChart } from '../components/advanced/gauge-chart';
-export type { FunnelStage } from '../components/advanced/funnel-chart';
-export { FunnelChart } from '../components/advanced/funnel-chart';
-export type { Step } from '../components/advanced/step-indicator';
-export { StepIndicator } from '../components/advanced/step-indicator';
-export { VirtualizedList } from '../components/advanced/virtualized-list';
-export type { TreemapData } from '../components/advanced/treemap-chart';
-export { TreemapChart } from '../components/advanced/treemap-chart';
-export type { HeatmapCell } from '../components/advanced/heatmap';
-export { Heatmap } from '../components/advanced/heatmap';
-export { InfiniteScroll } from '../components/advanced/infinite-scroll';
-export { RichTextEditor } from '../components/advanced/rich-text-editor';
 
 // ── Charts ──────────────────────────────────────────────────────────────────
 export type { ChartConfig } from '../components/ui/Chart';
