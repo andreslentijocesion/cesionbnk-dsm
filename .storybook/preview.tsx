@@ -43,9 +43,11 @@ const withTheme: Decorator = (Story, context) => {
         <HelpProvider>
           <TransitionProvider>
             <SidebarProvider>
-              <div className="p-6 bg-background min-h-screen text-foreground">
+              <div className="p-6 bg-background min-h-screen text-foreground relative">
                 <Story />
               </div>
+              {/* Add Toaster here globally for all stories that might trigger it */}
+              <Toaster />
             </SidebarProvider>
           </TransitionProvider>
         </HelpProvider>
