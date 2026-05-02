@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import React from 'react';
 import '../styles/globals.css';
 import { ThemeProvider } from '../components/providers/themeprovider';
+import { LoadingProvider } from '../components/providers/loadingprovider';
+import { HelpProvider } from '../components/help/helpprovider';
+import { TransitionProvider } from '../components/providers/transitionprovider';
 
 // ── Dark mode toolbar toggle ──────────────────────────────────────────────────
 
@@ -35,9 +38,15 @@ const withTheme: Decorator = (Story, context) => {
 
   return (
     <ThemeProvider>
-      <div className="p-6 bg-background min-h-screen">
-        <Story />
-      </div>
+      <LoadingProvider>
+        <HelpProvider>
+          <TransitionProvider>
+            <div className="p-6 bg-background min-h-screen text-foreground">
+              <Story />
+            </div>
+          </TransitionProvider>
+        </HelpProvider>
+      </LoadingProvider>
     </ThemeProvider>
   );
 };
