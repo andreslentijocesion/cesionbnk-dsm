@@ -88,7 +88,7 @@ export function TimelinePage() {
           <Timeline items={operationTimeline} />
         </div>
       }
-      code={`import { Timeline } from "@/components/patterns/Timeline"
+      code={`import { Timeline } from "@/components/patterns/timeline"
 
 const items = [
   {

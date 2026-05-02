@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Onboarding } from '../components/patterns/Onboarding';
+import { Onboarding } from '../components/patterns/onboarding';
 
 const meta: Meta<typeof Onboarding> = {
   title: 'DSM/Patterns/Onboarding',

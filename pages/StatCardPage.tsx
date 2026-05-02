@@ -53,7 +53,7 @@ export function StatCardPage() {
       category="Patterns"
       atomicLevel="Molecule"
       preview={<StatCardDemo />}
-      code={`import { StatCard, StatCardGrid } from "@/components/patterns/StatCard"
+      code={`import { StatCard, StatCardGrid } from "@/components/patterns/stat-card"
 import { DollarSign } from "lucide-react"
 
 <StatCardGrid columns={4}>

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Timeline, type TimelineItem } from '../components/patterns/Timeline';
+import { Timeline, type TimelineItem } from '../components/patterns/timeline';
 
 const operationHistory: TimelineItem[] = [
   { id: '1', title: 'Desembolso realizado',   status: 'completed', timestamp: '08/03/2025 14:32', description: 'Transferencia de $148.500.000 a cuenta Bancolombia del cedente.', badge: 'Completado' },

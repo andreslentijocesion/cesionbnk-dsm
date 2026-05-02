@@ -24,7 +24,7 @@ export function OnboardingPage() {
           ]}
         />
       }
-      code={`import { Onboarding } from "@/components/patterns/Onboarding"
+      code={`import { Onboarding } from "@/components/patterns/onboarding"
 
 <Onboarding
   module="operaciones"
