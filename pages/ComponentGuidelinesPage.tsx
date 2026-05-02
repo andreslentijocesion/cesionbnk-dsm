@@ -4,8 +4,8 @@
  * Usage guidelines — when to use which component.
  * Covers the 5 most common decision points in the CesionBNK DSM.
  */
-import { Badge } from "../components/ui/Badge";
-import { Separator } from "../components/ui/Separator";
+import { Badge } from "../components/ui/badge";
+import { Separator } from "../components/ui/separator";
 import { CheckCircle2, XCircle, AlertTriangle, Info } from "lucide-react";
 
 // ─────────────────────────────────────────────

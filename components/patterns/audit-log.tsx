@@ -5,20 +5,20 @@
  */
 import { useState, useMemo } from "react";
 import { Search, X, Filter, ChevronLeft, ChevronRight } from "lucide-react";
-import { Input } from "../ui/Input";
-import { Badge } from "../ui/Badge";
-import { Button } from "../ui/Button";
-import { Card, CardContent, CardHeader } from "../ui/Card";
+import { Input } from "../ui/input";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { Card, CardContent, CardHeader } from "../ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/Select";
+} from "../ui/select";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
-} from "../ui/Table";
+} from "../ui/table";
 import { cn } from "../../lib/utils";
 
 const PAGE_SIZE = 10;

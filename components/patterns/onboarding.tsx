@@ -7,7 +7,7 @@ import {
   FileText, Users, Building2, BarChart3, Bell, Calculator,
   Plus, ArrowRight, type LucideIcon,
 } from "lucide-react";
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 import { cn } from "../../lib/utils";
 
 export type OnboardingModule =

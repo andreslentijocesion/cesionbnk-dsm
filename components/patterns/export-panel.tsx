@@ -5,15 +5,15 @@
  */
 import { useState } from "react";
 import { Download, FileText, FileDown } from "lucide-react";
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogFooter,
-} from "../ui/Dialog";
-import { Label } from "../ui/Label";
+} from "../ui/dialog";
+import { Label } from "../ui/label";
 import { cn } from "../../lib/utils";
 
 export type ExportFormat = "csv" | "pdf";

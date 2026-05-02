@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ErrorBoundary } from "../components/ui/ErrorBoundary";
-import { Button } from "../components/ui/Button";
-import { Badge } from "../components/ui/Badge";
+import { ErrorBoundary } from "../components/ui/errorboundary";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import { useState } from "react";
 
 const meta: Meta<typeof ErrorBoundary> = {

@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "../components/ui/Pagination";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "../components/ui/pagination";
 
 export function PaginationPage() {
   return (
@@ -43,7 +43,7 @@ export function PaginationPage() {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/Pagination"
+} from "@/components/ui/pagination"
 
 export function PaginationDemo() {
   return (

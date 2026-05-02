@@ -3,11 +3,11 @@
  *
  * BUSINESS PATTERN: Componente reutilizable para mostrar muestras de color
  *
- * NO MODIFICAR sin consultar../components/patterns/PATTERNS_ARCHITECTURE.md
+ * NO MODIFICAR sin consultar../components/patterns/patterns_ARCHITECTURE.md
  * Parte del sistema modular de Brand Guidelines
  */
 
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 import { Copy, Check } from "lucide-react";
 import { cn } from "../../lib/utils";
 

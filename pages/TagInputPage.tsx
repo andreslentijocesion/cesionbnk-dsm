@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { TagInput } from "../components/ui/TagInput";
-import { Label } from "../components/ui/Label";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { TagInput } from "../components/ui/taginput";
+import { Label } from "../components/ui/label";
 
 function TagInputDemo() {
   const [tags1, setTags1] = useState<string[]>(["Retail", "Santiago"]);
@@ -34,7 +34,7 @@ export function TagInputPage() {
       category="Forms"
       atomicLevel="Atom"
       preview={<TagInputDemo />}
-      code={`import { TagInput } from "@/components/ui/TagInput"
+      code={`import { TagInput } from "@/components/ui/taginput"
 import { useState } from "react"
 
 export function Demo() {

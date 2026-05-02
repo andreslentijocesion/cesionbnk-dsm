@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '../components/ui/Resizable';
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from '../components/ui/resizable';
 
 const meta: Meta = {
   title: 'DSM/Components/Resizable',

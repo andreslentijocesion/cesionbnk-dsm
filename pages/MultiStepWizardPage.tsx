@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { MultiStepWizard } from "../components/patterns/multi-step-wizard"
 
 export function MultiStepWizardPage() {
@@ -12,7 +12,7 @@ export function MultiStepWizardPage() {
           <MultiStepWizard />
         </div>
       }
-      code={`import { MultiStepWizard } from "@/components/patterns/MultiStepWizard"
+      code={`import { MultiStepWizard } from "@/components/patterns/multistepwizard"
 
 export default function ApplicationPage() {
   return (

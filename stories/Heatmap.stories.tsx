@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Heatmap } from '../components/advanced/Heatmap';
+import { Heatmap } from '../components/advanced/heatmap';
 
 const meta: Meta<typeof Heatmap> = {
   title: 'DSM/Advanced/Heatmap',

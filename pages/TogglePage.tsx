@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Toggle } from "../components/ui/Toggle";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Toggle } from "../components/ui/toggle";
 import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight, Strikethrough, Code, List, ListOrdered, Quote } from "lucide-react";
 
 export function TogglePage() {
@@ -28,7 +28,7 @@ export function TogglePage() {
       }
       
       // Main Code
-      code={`import { Toggle } from "@/components/ui/Toggle";
+      code={`import { Toggle } from "@/components/ui/toggle";
 import { Italic, Bold, Underline } from "lucide-react";
 
 export function ToggleDemo() {
@@ -120,7 +120,7 @@ export function ToggleDemo() {
               </Toggle>
             </div>
           ),
-          code: `import { Toggle } from "@/components/ui/Toggle";
+          code: `import { Toggle } from "@/components/ui/toggle";
 import { Bold, Italic, Underline, Strikethrough, Code } from "lucide-react";
 
 export function TextFormattingToolbar() {
@@ -176,7 +176,7 @@ export function TextFormattingToolbar() {
               </div>
             </div>
           ),
-          code: `import { Toggle } from "@/components/ui/Toggle";
+          code: `import { Toggle } from "@/components/ui/toggle";
 import { Italic, Bold, Underline } from "lucide-react";
 
 export function OutlineToggles() {
@@ -226,7 +226,7 @@ export function OutlineToggles() {
               </Toggle>
             </div>
           ),
-          code: `import { Toggle } from "@/components/ui/Toggle";
+          code: `import { Toggle } from "@/components/ui/toggle";
 import { Bold } from "lucide-react";
 
 export function ToggleSizes() {
@@ -264,7 +264,7 @@ export function ToggleSizes() {
               </Toggle>
             </div>
           ),
-          code: `import { Toggle } from "@/components/ui/Toggle";
+          code: `import { Toggle } from "@/components/ui/toggle";
 import { Italic, Bold, Underline } from "lucide-react";
 
 export function ToggleWithText() {
@@ -302,7 +302,7 @@ export function ToggleWithText() {
               </Toggle>
             </div>
           ),
-          code: `import { Toggle } from "@/components/ui/Toggle";
+          code: `import { Toggle } from "@/components/ui/toggle";
 import { AlignLeft, AlignCenter, AlignRight } from "lucide-react";
 
 export function AlignmentControls() {
@@ -337,7 +337,7 @@ export function AlignmentControls() {
               </Toggle>
             </div>
           ),
-          code: `import { Toggle } from "@/components/ui/Toggle";
+          code: `import { Toggle } from "@/components/ui/toggle";
 import { List, ListOrdered, Quote } from "lucide-react";
 
 export function ListControls() {
@@ -375,7 +375,7 @@ export function ListControls() {
               </Toggle>
             </div>
           ),
-          code: `import { Toggle } from "@/components/ui/Toggle";
+          code: `import { Toggle } from "@/components/ui/toggle";
 import { Bold, Italic, Underline, Strikethrough } from "lucide-react";
 
 export function DisabledToggles() {
@@ -409,7 +409,7 @@ export function DisabledToggles() {
               </p>
             </div>
           ),
-          code: `import { Toggle } from "@/components/ui/Toggle";
+          code: `import { Toggle } from "@/components/ui/toggle";
 import { Bold } from "lucide-react";
 import { useState } from "react";
 

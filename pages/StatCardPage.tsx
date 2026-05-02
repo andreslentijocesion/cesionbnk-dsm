@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { StatCard, StatCardGrid } from "../components/patterns/stat-card"
 import { DollarSign, FileText, Users, TrendingUp, Clock, Percent } from "lucide-react"
 

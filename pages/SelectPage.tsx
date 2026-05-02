@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../components/ui/Select";
-import { Label } from "../components/ui/Label";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../components/ui/select";
+import { Label } from "../components/ui/label";
 import { Building2, Globe, CreditCard, MapPin } from "lucide-react";
 
 export function SelectPage() {
@@ -99,7 +99,7 @@ export function SelectPage() {
       }
       
       // Main Code
-      code={`import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select";
+      code={`import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 // Size variants
 <SelectTrigger size="sm">...</SelectTrigger>

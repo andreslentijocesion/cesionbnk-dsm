@@ -8,27 +8,27 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "../ui/Sheet";
-import { Button } from "../ui/Button";
-import { Label } from "../ui/Label";
-import { Input } from "../ui/Input";
+} from "../ui/sheet";
+import { Button } from "../ui/button";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/Select";
-import { Checkbox } from "../ui/Checkbox";
-import { Calendar } from "../ui/Calendar";
+} from "../ui/select";
+import { Checkbox } from "../ui/checkbox";
+import { Calendar } from "../ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../ui/Popover";
-import { Badge } from "../ui/Badge";
-import { Separator } from "../ui/Separator";
-import { ScrollArea } from "../ui/ScrollArea";
+} from "../ui/popover";
+import { Badge } from "../ui/badge";
+import { Separator } from "../ui/separator";
+import { ScrollArea } from "../ui/scrollarea";
 import { Filter, Calendar as CalendarIcon, X } from "lucide-react";
 
 const statusOptions = [

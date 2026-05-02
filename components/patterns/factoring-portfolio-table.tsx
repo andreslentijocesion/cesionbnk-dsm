@@ -2,16 +2,16 @@ import { useState, useMemo } from "react";
 import { FactoringOperationDetail, FactoringRecord as DetailRecord } from "./factoring-operation-detail";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
-} from "../ui/Table";
+} from "../ui/table";
 import {
   DropdownMenu, DropdownMenuContent, DropdownMenuItem,
   DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger,
-} from "../ui/DropdownMenu";
-import { Button } from "../ui/Button";
-import { Badge } from "../ui/Badge";
-import { ProgressWithRange } from "../ui/ProgressWithRange";
+} from "../ui/dropdownmenu";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import { ProgressWithRange } from "../ui/progresswithrange";
 import { MasterDataGrid } from "../advanced/master-data-grid";
-import { Card, CardContent } from "../ui/Card";
+import { Card, CardContent } from "../ui/card";
 import {
   MoreHorizontal, ArrowUpDown, ArrowUp, ArrowDown,
   TrendingUp, DollarSign, Clock, AlertTriangle, Download,

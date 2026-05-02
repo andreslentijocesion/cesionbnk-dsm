@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '../components/ui/AlertDialog';
-import { Button } from '../components/ui/Button';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '../components/ui/alertdialog';
+import { Button } from '../components/ui/button';
 
 const meta: Meta = { title: 'DSM/Components/AlertDialog', tags: ['autodocs'] };
 export default meta;

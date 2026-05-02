@@ -2,7 +2,7 @@ import type { Preview, Decorator } from '@storybook/react-vite';
 import { useEffect } from 'react';
 import React from 'react';
 import '../styles/globals.css';
-import { ThemeProvider } from '../components/providers/ThemeProvider';
+import { ThemeProvider } from '../components/providers/themeprovider';
 
 // ── Dark mode toolbar toggle ──────────────────────────────────────────────────
 

@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { CreditScoreCard } from "../components/patterns/credit-score-card"
 
 export function CreditScoreCardPage() {
@@ -45,7 +45,7 @@ export function CreditScoreCardPage() {
           />
         </div>
       }
-      code={`import { CreditScoreCard } from "@/components/patterns/CreditScoreCard"
+      code={`import { CreditScoreCard } from "@/components/patterns/creditscorecard"
 
 <CreditScoreCard
   name="Retail Express Ltda."

@@ -5,14 +5,14 @@
  */
 import { useState, useMemo } from "react";
 import { PieChart, Pie, Cell, Tooltip as ReTooltip, ResponsiveContainer } from "recharts";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/Card";
-import { Button } from "../ui/Button";
-import { Separator } from "../ui/Separator";
-import { Slider } from "../ui/Slider";
-import { Badge } from "../ui/Badge";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
+import { Button } from "../ui/button";
+import { Separator } from "../ui/separator";
+import { Slider } from "../ui/slider";
+import { Badge } from "../ui/badge";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
-} from "../ui/Table";
+} from "../ui/table";
 import {
   Calculator, TrendingDown, DollarSign, Percent,
   RotateCcw, Save, Plus, Trash2, Info,

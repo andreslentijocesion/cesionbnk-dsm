@@ -1,8 +1,8 @@
 import React from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "../lib/utils";
-import { Button } from "../components/ui/Button";
+import { Button } from "../components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -10,12 +10,12 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "../components/ui/Command";
+} from "../components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../components/ui/Popover";
+} from "../components/ui/popover";
 
 const frameworks = [
   { value: "next.js", label: "Next.js" },
@@ -84,7 +84,7 @@ export function ComboboxPage() {
 import { Check, ChevronsUpDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
@@ -93,12 +93,12 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/components/ui/Command";
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/Popover";
+} from "@/components/ui/popover";
 
 const frameworks = [
   { value: "next.js", label: "Next.js" },

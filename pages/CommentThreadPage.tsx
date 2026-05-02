@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { CommentThread, type Comment } from "../components/patterns/comment-thread"
 import { toast } from "sonner"
 
@@ -75,7 +75,7 @@ export function CommentThreadPage() {
       category="Patterns"
       atomicLevel="Organism"
       preview={<CommentThreadDemo />}
-      code={`import { CommentThread } from "@/components/patterns/CommentThread"
+      code={`import { CommentThread } from "@/components/patterns/commentthread"
 import { useState } from "react"
 
 const initialComments = [

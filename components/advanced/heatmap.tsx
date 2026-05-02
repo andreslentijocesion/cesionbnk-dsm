@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/Card";
-import { Badge } from "../ui/Badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
 
 export interface HeatmapCell {
   row: string;

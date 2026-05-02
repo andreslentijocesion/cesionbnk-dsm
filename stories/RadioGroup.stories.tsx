@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RadioGroup, RadioGroupItem } from '../components/ui/RadioGroup';
-import { Label } from '../components/ui/Label';
+import { RadioGroup, RadioGroupItem } from '../components/ui/radiogroup';
+import { Label } from '../components/ui/label';
 
 const meta: Meta = { title: 'DSM/Primitives/RadioGroup', tags: ['autodocs'] };
 export default meta;

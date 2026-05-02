@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { AgingReport, type AgingBucket } from "../components/patterns/aging-report"
 
 const buckets: AgingBucket[] = [
@@ -25,7 +25,7 @@ export function AgingReportPage() {
       category="Patterns"
       atomicLevel="Organism"
       preview={<AgingReport buckets={buckets} unit="M COP" />}
-      code={`import { AgingReport } from "@/components/patterns/AgingReport"
+      code={`import { AgingReport } from "@/components/patterns/agingreport"
 
 const buckets = [
   { label: "Al día",     amount: 2840, count: 98, risk: "ok" },

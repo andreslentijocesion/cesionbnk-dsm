@@ -1,7 +1,7 @@
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../ui/Card";
-import { Badge } from "../ui/Badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
-import { SafeChartContainer } from "../ui/SafeChartContainer";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../ui/card";
+import { Badge } from "../ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { SafeChartContainer } from "../ui/safechartcontainer";
 import {
   LineChart,
   Line,

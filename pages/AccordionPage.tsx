@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/Accordion";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion";
 
 export function AccordionPage() {
   return (
@@ -39,7 +39,7 @@ export function AccordionPage() {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/Accordion"
+} from "@/components/ui/accordion"
 
 export function AccordionDemo() {
   return (

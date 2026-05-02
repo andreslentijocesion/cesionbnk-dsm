@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '../components/ui/HoverCard';
-import { Badge } from '../components/ui/Badge';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '../components/ui/hovercard';
+import { Badge } from '../components/ui/badge';
 
 const meta: Meta = {
   title: 'DSM/Components/HoverCard',

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CreditScoreCard, type CreditMetric } from '../components/patterns/CreditScoreCard';
+import { CreditScoreCard, type CreditMetric } from '../components/patterns/creditscorecard';
 
 const goodMetrics: CreditMetric[] = [
   { label: 'Facturas cedidas',  value: '127',    trend: 'up' },

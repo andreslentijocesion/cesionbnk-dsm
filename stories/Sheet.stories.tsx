@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '../components/ui/Sheet';
-import { Button } from '../components/ui/Button';
+import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '../components/ui/sheet';
+import { Button } from '../components/ui/button';
 
 const meta: Meta = { title: 'DSM/Components/Sheet', tags: ['autodocs'] };
 export default meta;

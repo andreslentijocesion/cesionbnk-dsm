@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Progress } from "../components/ui/Progress";
-import { Badge } from "../components/ui/Badge";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Progress } from "../components/ui/progress";
+import { Badge } from "../components/ui/badge";
 import { AlertTriangle, Calendar, Clock, AlertCircle } from "lucide-react";
 
 export function ProgressPage() {
@@ -53,7 +53,7 @@ export function ProgressPage() {
       }
       
       // Main Code
-      code={`import { Progress } from "@/components/ui/Progress"
+      code={`import { Progress } from "@/components/ui/progress"
 
 export function ProgressDemo() {
   return <Progress value={60} />

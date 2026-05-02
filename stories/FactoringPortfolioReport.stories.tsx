@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FactoringPortfolioReport } from '../components/patterns/FactoringPortfolioReport';
+import { FactoringPortfolioReport } from '../components/patterns/factoringportfolioreport';
 
 const meta: Meta<typeof FactoringPortfolioReport> = {
   title: 'DSM/Patterns/FactoringPortfolioReport',

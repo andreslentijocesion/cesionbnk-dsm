@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { EmptyState } from "../components/ui/EmptyState";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { EmptyState } from "../components/ui/emptystate";
 import { FileSearch, Inbox, Search } from "lucide-react";
 
-const code = `import { EmptyState } from "@/components/ui/EmptyState";
+const code = `import { EmptyState } from "@/components/ui/emptystate";
 import { FileSearch } from "lucide-react";
 
 export function EmptyStateDemo() {

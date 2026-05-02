@@ -1,7 +1,7 @@
 import { CheckCircle2, Clock, XCircle, AlertTriangle, Upload, Eye, FileText, RotateCcw } from "lucide-react";
-import { Badge } from "../ui/Badge";
-import { Button } from "../ui/Button";
-import { Progress } from "../ui/Progress";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { Progress } from "../ui/progress";
 import { cn } from "../../lib/utils";
 
 export type DocumentStatus =

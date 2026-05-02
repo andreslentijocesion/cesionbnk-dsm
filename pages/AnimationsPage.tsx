@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Card } from "../components/ui/Card";
+import { Card } from "../components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Star, Check, Loader2, ArrowRight, TrendingUp, MousePointer } from "lucide-react";
-import { Button } from "../components/ui/Button";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { Button } from "../components/ui/button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 
 // Animation props constants
 const hoverScaleProps = { whileHover: { scale: 1.05 }, whileTap: { scale: 0.95 } };

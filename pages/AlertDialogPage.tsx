@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,16 +9,16 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../components/ui/AlertDialog";
-import { Button } from "../components/ui/Button";
+} from "../components/ui/alertdialog";
+import { Button } from "../components/ui/button";
 import { AlertTriangle, Trash2, LogOut, Info } from "lucide-react";
 
 const code = `import {
   AlertDialog, AlertDialogAction, AlertDialogCancel,
   AlertDialogContent, AlertDialogDescription, AlertDialogFooter,
   AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,
-} from "@/components/ui/AlertDialog";
-import { Button } from "@/components/ui/Button";
+} from "@/components/ui/alertdialog";
+import { Button } from "@/components/ui/button";
 
 export function AlertDialogDemo() {
   return (

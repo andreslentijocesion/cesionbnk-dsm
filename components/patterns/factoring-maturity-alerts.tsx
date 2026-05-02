@@ -1,15 +1,15 @@
 /* eslint-disable */
 import { useState } from "react";
-import { Card } from "../ui/Card";
-import { Button } from "../ui/Button";
-import { ProgressWithRange } from "../ui/ProgressWithRange";
-import { Checkbox } from "../ui/Checkbox";
+import { Card } from "../ui/card";
+import { Button } from "../ui/button";
+import { ProgressWithRange } from "../ui/progresswithrange";
+import { Checkbox } from "../ui/checkbox";
 import {
   AlertTriangle, Clock, CheckCircle2, Send, Phone,
   Bell, BellOff, ArrowRight, RefreshCw,
 } from "lucide-react";
 import { cn } from "../../lib/utils";
-import { Badge } from "../ui/Badge";
+import { Badge } from "../ui/badge";
 import { toast } from "sonner";
 import { FactoringOperationDetail, FactoringRecord as DetailRecord } from "./factoring-operation-detail";
 import { FactoringUrgency, FactoringAlert } from "./types/factoring.types";

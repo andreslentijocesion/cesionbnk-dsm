@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { NumberInput } from '../components/ui/NumberInput';
+import { NumberInput } from '../components/ui/numberinput';
 
 const meta: Meta<typeof NumberInput> = {
   title: 'DSM/Primitives/NumberInput',

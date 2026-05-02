@@ -1,15 +1,15 @@
 import React, { useState, useId } from "react";
-import { Card, CardContent, CardHeader } from "../ui/Card";
-import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
-import { Label } from "../ui/Label";
-import { Textarea } from "../ui/Textarea";
-import { Badge } from "../ui/Badge";
-import { Separator } from "../ui/Separator";
-import { Progress } from "../ui/Progress";
+import { Card, CardContent, CardHeader } from "../ui/card";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Textarea } from "../ui/textarea";
+import { Badge } from "../ui/badge";
+import { Separator } from "../ui/separator";
+import { Progress } from "../ui/progress";
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
-} from "../ui/Select";
+} from "../ui/select";
 import {
   CheckCircle2, Building2, FileText, Calculator, ClipboardCheck,
   ChevronLeft, ChevronRight, Upload, AlertCircle, Info,

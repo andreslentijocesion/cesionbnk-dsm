@@ -6,11 +6,11 @@ import {
   getPaginationRowModel, getSortedRowModel, useReactTable,
 } from "@tanstack/react-table";
 import { ArrowDown, ArrowUp, ArrowUpDown, SlidersHorizontal, Trash2, X } from "lucide-react";
-import { Button } from "../ui/Button";
-import { Checkbox } from "../ui/Checkbox";
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from "../ui/DropdownMenu";
-import { Skeleton } from "../ui/Skeleton";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/Table";
+import { Button } from "../ui/button";
+import { Checkbox } from "../ui/checkbox";
+import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from "../ui/dropdownmenu";
+import { Skeleton } from "../ui/skeleton";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
 import { MasterDataGrid } from "./master-data-grid";
 
 // ── Selection column helper ──────────────────────────────────────────────────

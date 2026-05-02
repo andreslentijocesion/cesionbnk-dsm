@@ -1,20 +1,20 @@
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
-import { Tabs, TabsContent } from "../ui/Tabs";
-import { Button } from "../ui/Button";
-import { Progress } from "../ui/Progress";
-import { Label } from "../ui/Label";
-import { Input } from "../ui/Input";
-import { Textarea } from "../ui/Textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Tabs, TabsContent } from "../ui/tabs";
+import { Button } from "../ui/button";
+import { Progress } from "../ui/progress";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/Select";
-import { Badge } from "../ui/Badge";
-import { Separator } from "../ui/Separator";
+} from "../ui/select";
+import { Badge } from "../ui/badge";
+import { Separator } from "../ui/separator";
 import { CheckCircle, Circle } from "lucide-react";
 
 const steps = [

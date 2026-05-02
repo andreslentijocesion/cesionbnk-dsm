@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { SignaturePanel, type Signatory } from "../components/patterns/signature-panel"
 
 const signatories: Signatory[] = [
@@ -39,7 +39,7 @@ export function SignaturePanelPage() {
           />
         </div>
       }
-      code={`import { SignaturePanel } from "@/components/patterns/SignaturePanel"
+      code={`import { SignaturePanel } from "@/components/patterns/signaturepanel"
 
 <SignaturePanel
   title="Autorización de desembolso"

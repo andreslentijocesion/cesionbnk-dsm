@@ -4,7 +4,7 @@
  * @layer patterns
  */
 import { type LucideIcon, TrendingUp, TrendingDown, Minus } from "lucide-react";
-import { Card, CardContent } from "../ui/Card";
+import { Card, CardContent } from "../ui/card";
 import { cn } from "../../lib/utils";
 
 export interface StatCardProps {

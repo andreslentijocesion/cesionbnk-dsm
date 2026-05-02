@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from '../components/ui/InputOTP';
-import { Label } from '../components/ui/Label';
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from '../components/ui/inputotp';
+import { Label } from '../components/ui/label';
 
 const meta: Meta = { title: 'DSM/Primitives/InputOTP', tags: ['autodocs'] };
 export default meta;

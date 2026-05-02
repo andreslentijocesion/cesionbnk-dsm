@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { DateNavigator, type DateRange } from "../components/ui/DateNavigator";
-import { Card, CardContent } from "../components/ui/Card";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { DateNavigator, type DateRange } from "../components/ui/datenavigator";
+import { Card, CardContent } from "../components/ui/card";
 
 function DateNavigatorDemo() {
   const [range, setRange] = useState<DateRange | undefined>();
@@ -31,7 +31,7 @@ export function DateNavigatorPage() {
       category="Forms"
       atomicLevel="Molecule"
       preview={<DateNavigatorDemo />}
-      code={`import { DateNavigator, type DateRange } from "@/components/ui/DateNavigator"
+      code={`import { DateNavigator, type DateRange } from "@/components/ui/datenavigator"
 import { useState } from "react"
 
 export function Demo() {

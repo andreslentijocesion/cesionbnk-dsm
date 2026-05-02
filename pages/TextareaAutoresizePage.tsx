@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { TextareaAutoresize } from "../components/ui/TextareaAutoresize";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { TextareaAutoresize } from "../components/ui/textareaautoresize";
 import { useState } from "react";
 
-const code = `import { TextareaAutoresize } from "@/components/ui/TextareaAutoresize";
+const code = `import { TextareaAutoresize } from "@/components/ui/textareaautoresize";
 import { useState } from "react";
 
 export function TextareaAutoresizeDemo() {

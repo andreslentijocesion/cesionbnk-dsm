@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Calendar } from '../components/ui/Calendar';
+import { Calendar } from '../components/ui/calendar';
 
 const meta: Meta<typeof Calendar> = {
   title: 'DSM/Components/Calendar',

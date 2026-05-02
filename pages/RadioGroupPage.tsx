@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { RadioGroup, RadioGroupItem } from "../components/ui/RadioGroup";
-import { Label } from "../components/ui/Label";
-import { Button } from "../components/ui/Button";
-import { Separator } from "../components/ui/Separator";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { RadioGroup, RadioGroupItem } from "../components/ui/radiogroup";
+import { Label } from "../components/ui/label";
+import { Button } from "../components/ui/button";
+import { Separator } from "../components/ui/separator";
 import { Check, CreditCard, Building2, Wallet } from "lucide-react";
 
 export function RadioGroupPage() {
@@ -32,8 +32,8 @@ export function RadioGroupPage() {
       }
       
       // Main Code
-      code={`import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { Label } from "@/components/ui/Label";
+      code={`import { RadioGroup, RadioGroupItem } from "@/components/ui/radiogroup";
+import { Label } from "@/components/ui/label";
 
 export function RadioGroupDemo() {
   return (
@@ -116,8 +116,8 @@ export function RadioGroupDemo() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { Label } from "@/components/ui/Label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radiogroup";
+import { Label } from "@/components/ui/label";
 
 export function BasicRadioGroup() {
   return (
@@ -172,8 +172,8 @@ export function BasicRadioGroup() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { Label } from "@/components/ui/Label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radiogroup";
+import { Label } from "@/components/ui/label";
 
 export function RadioWithDescriptions() {
   return (
@@ -249,8 +249,8 @@ export function RadioWithDescriptions() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { Label } from "@/components/ui/Label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radiogroup";
+import { Label } from "@/components/ui/label";
 import { Check } from "lucide-react";
 
 export function CardStyleRadio() {
@@ -319,8 +319,8 @@ export function CardStyleRadio() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { Label } from "@/components/ui/Label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radiogroup";
+import { Label } from "@/components/ui/label";
 import { CreditCard, Building2, Wallet } from "lucide-react";
 
 export function PaymentMethodSelector() {
@@ -372,8 +372,8 @@ export function PaymentMethodSelector() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { Label } from "@/components/ui/Label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radiogroup";
+import { Label } from "@/components/ui/label";
 
 export function HorizontalRadioGroup() {
   return (
@@ -413,8 +413,8 @@ export function HorizontalRadioGroup() {
               </div>
             </RadioGroup>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { Label } from "@/components/ui/Label";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radiogroup";
+import { Label } from "@/components/ui/label";
 
 export function DisabledRadioGroup() {
   return (
@@ -484,10 +484,10 @@ export function DisabledRadioGroup() {
               </div>
             </div>
           ),
-          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { Label } from "@/components/ui/Label";
-import { Button } from "@/components/ui/Button";
-import { Separator } from "@/components/ui/Separator";
+          code: `import { RadioGroup, RadioGroupItem } from "@/components/ui/radiogroup";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 export function PreferencesForm() {
   return (

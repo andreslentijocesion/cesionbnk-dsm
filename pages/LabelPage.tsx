@@ -1,12 +1,12 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Label } from "../components/ui/Label";
-import { Input } from "../components/ui/Input";
-import { Checkbox } from "../components/ui/Checkbox";
-import { RadioGroup, RadioGroupItem } from "../components/ui/RadioGroup";
-import { Switch } from "../components/ui/Switch";
-import { Textarea } from "../components/ui/Textarea";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Label } from "../components/ui/label";
+import { Input } from "../components/ui/input";
+import { Checkbox } from "../components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "../components/ui/radiogroup";
+import { Switch } from "../components/ui/switch";
+import { Textarea } from "../components/ui/textarea";
 import { InfoIcon } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/Tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip";
 
 export function LabelPage() {
   return (
@@ -33,9 +33,9 @@ export function LabelPage() {
       }
       
       // Main Code
-      code={`import { Label } from "@/components/ui/Label";
-import { Input } from "@/components/ui/Input";
-import { Checkbox } from "@/components/ui/Checkbox";
+      code={`import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export function LabelDemo() {
   return (
@@ -93,8 +93,8 @@ export function LabelDemo() {
               <Input id="name" placeholder="John Doe" />
             </div>
           ),
-          code: `import { Label } from "@/components/ui/Label";
-import { Input } from "@/components/ui/Input";
+          code: `import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export function LabelWithInput() {
   return (
@@ -124,8 +124,8 @@ export function LabelWithInput() {
               </div>
             </div>
           ),
-          code: `import { Label } from "@/components/ui/Label";
-import { Input } from "@/components/ui/Input";
+          code: `import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export function RequiredFields() {
   return (
@@ -169,8 +169,8 @@ export function RequiredFields() {
               </p>
             </div>
           ),
-          code: `import { Label } from "@/components/ui/Label";
-import { Textarea } from "@/components/ui/Textarea";
+          code: `import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 export function LabelWithHelper() {
   return (
@@ -207,8 +207,8 @@ export function LabelWithHelper() {
               </div>
             </div>
           ),
-          code: `import { Label } from "@/components/ui/Label";
-import { Checkbox } from "@/components/ui/Checkbox";
+          code: `import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export function LabelWithCheckbox() {
   return (
@@ -258,8 +258,8 @@ export function LabelWithCheckbox() {
               </RadioGroup>
             </div>
           ),
-          code: `import { Label } from "@/components/ui/Label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
+          code: `import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radiogroup";
 
 export function LabelWithRadio() {
   return (
@@ -316,8 +316,8 @@ export function LabelWithRadio() {
               </div>
             </div>
           ),
-          code: `import { Label } from "@/components/ui/Label";
-import { Switch } from "@/components/ui/Switch";
+          code: `import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 export function LabelWithSwitch() {
   return (
@@ -366,9 +366,9 @@ export function LabelWithSwitch() {
               <Input id="api-key" type="password" placeholder="sk_test_..." />
             </div>
           ),
-          code: `import { Label } from "@/components/ui/Label";
-import { Input } from "@/components/ui/Input";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/Tooltip";
+          code: `import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { InfoIcon } from "lucide-react";
 
 export function LabelWithTooltip() {
@@ -411,9 +411,9 @@ export function LabelWithTooltip() {
               </div>
             </div>
           ),
-          code: `import { Label } from "@/components/ui/Label";
-import { Input } from "@/components/ui/Input";
-import { Checkbox } from "@/components/ui/Checkbox";
+          code: `import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export function DisabledLabel() {
   return (

@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { FactoringCedentList } from "../components/patterns/factoring-cedent-list"
 
 export function FactoringCedentListPage() {
@@ -9,7 +9,7 @@ export function FactoringCedentListPage() {
       category="Business Pattern"
       atomicLevel="Organism"
       preview={<FactoringCedentList />}
-      code={`import { FactoringCedentList } from "@/components/patterns/FactoringCedentList"\n\nexport function MyPage() {\n  return <FactoringCedentList />;\n}`}
+      code={`import { FactoringCedentList } from "@/components/patterns/factoringcedentlist"\n\nexport function MyPage() {\n  return <FactoringCedentList />;\n}`}
       props={[
         { name: "(self-contained)", type: "—", description: "Tabla de cedentes con avatar de iniciales, barra de crédito usado, sparkline de tendencia por cedente, score de cobro coloreado, sorting multi-columna y menú de acciones." },
       ]}

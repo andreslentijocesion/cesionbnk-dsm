@@ -1,16 +1,16 @@
 import React from "react";
-import { Card, CardContent, CardHeader } from "../ui/Card";
-import { Input } from "../ui/Input";
-import { Button } from "../ui/Button";
+import { Card, CardContent, CardHeader } from "../ui/card";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
 import {
   Search, Filter, Download, SlidersHorizontal, Calendar,
   RefreshCw, XCircle, ChevronLeft, ChevronRight, ArrowUp, ArrowDown, Eye, EyeOff, FileText,
 } from "lucide-react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/Select";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/Popover";
-import { Checkbox } from "../ui/Checkbox";
-import { Label } from "../ui/Label";
-import { Separator } from "../ui/Separator";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { Checkbox } from "../ui/checkbox";
+import { Label } from "../ui/label";
+import { Separator } from "../ui/separator";
 
 export interface MasterDataGridProps {
   title?: string;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { MaskedInput } from '../components/ui/MaskedInput';
+import { MaskedInput } from '../components/ui/maskedinput';
 
 const meta: Meta<typeof MaskedInput> = {
   title: 'DSM/Primitives/MaskedInput',

@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import { OnboardingWizard } from "../components/patterns/onboarding-wizard";
 
 export function MultiStepFormPage() {

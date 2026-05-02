@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { VirtualizedList } from '../components/advanced/VirtualizedList';
+import { VirtualizedList } from '../components/advanced/virtualizedlist';
 
 const meta: Meta = {
   title: 'DSM/Advanced/VirtualizedList',

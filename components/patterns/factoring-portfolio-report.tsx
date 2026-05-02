@@ -7,15 +7,15 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as ReTooltip,
   ResponsiveContainer, LineChart, Line, Legend,
 } from "recharts";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/Card";
-import { Button } from "../ui/Button";
-import { Badge } from "../ui/Badge";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
-} from "../ui/Table";
+} from "../ui/table";
 import {
   DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem,
-} from "../ui/DropdownMenu";
+} from "../ui/dropdownmenu";
 import {
   Download, TrendingUp,
   ChevronDown, ChevronLeft, ChevronRight, Calendar, BarChart2, Filter, Printer,

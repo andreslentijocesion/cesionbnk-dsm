@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuCheckboxItem, DropdownMenuRadioGroup, DropdownMenuRadioItem } from "../components/ui/DropdownMenu";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuCheckboxItem, DropdownMenuRadioGroup, DropdownMenuRadioItem } from "../components/ui/dropdownmenu";
+import { Button } from "../components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 export function DropdownMenuPage() {
@@ -37,7 +37,7 @@ export function DropdownMenuPage() {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/DropdownMenu"
+} from "@/components/ui/dropdownmenu"
 
 export function DropdownMenuDemo() {
   return (

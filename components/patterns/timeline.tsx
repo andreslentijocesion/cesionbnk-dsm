@@ -4,7 +4,7 @@
  * @layer patterns
  */
 import { type LucideIcon, CheckCircle2, Clock, XCircle, AlertCircle, Circle } from "lucide-react";
-import { Badge } from "../ui/Badge";
+import { Badge } from "../ui/badge";
 import { cn } from "../../lib/utils";
 
 export type TimelineStatus = "completed" | "current" | "pending" | "error" | "warning";

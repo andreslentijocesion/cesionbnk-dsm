@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "../components/ui/Drawer";
-import { Button } from "../components/ui/Button";
-import { Badge } from "../components/ui/Badge";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "../components/ui/drawer";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import { Menu, User } from "lucide-react";
-import { Separator } from "../components/ui/Separator";
+import { Separator } from "../components/ui/separator";
 
 export function DrawerPage() {
   return (
@@ -58,7 +58,7 @@ export function DrawerPage() {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/Drawer"
+} from "@/components/ui/drawer"
 
 export function DrawerDemo() {
   return (

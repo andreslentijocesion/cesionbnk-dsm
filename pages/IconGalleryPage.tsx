@@ -1,8 +1,8 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
-import { Badge } from "../components/ui/Badge";
-import { Alert, AlertDescription, AlertTitle } from "../components/ui/Alert";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import { copyToClipboard } from "../lib/utils";
 
 // Representative sample: ~20 icons covering the most common use cases

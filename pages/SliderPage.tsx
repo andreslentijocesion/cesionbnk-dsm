@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Slider } from "../components/ui/Slider";
-import { Label } from "../components/ui/Label";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Slider } from "../components/ui/slider";
+import { Label } from "../components/ui/label";
 import { Volume2, VolumeX, Sun, DollarSign, Gauge } from "lucide-react";
 import { useState } from "react";
 
@@ -21,7 +21,7 @@ export function SliderPage() {
       }
       
       // Main Code
-      code={`import { Slider } from "@/components/ui/Slider";
+      code={`import { Slider } from "@/components/ui/slider";
 
 export function SliderDemo() {
   return (
@@ -98,8 +98,8 @@ export function SliderDemo() {
               <Slider defaultValue={[33]} max={100} step={1} />
             </div>
           ),
-          code: `import { Slider } from "@/components/ui/Slider";
-import { Label } from "@/components/ui/Label";
+          code: `import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
 
 export function BasicSlider() {
   return (
@@ -116,8 +116,8 @@ export function BasicSlider() {
           preview: (
             <VolumeControlExample />
           ),
-          code: `import { Slider } from "@/components/ui/Slider";
-import { Label } from "@/components/ui/Label";
+          code: `import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
 import { Volume2, VolumeX } from "lucide-react";
 import { useState } from "react";
 
@@ -166,8 +166,8 @@ export function VolumeControl() {
               </div>
             </div>
           ),
-          code: `import { Slider } from "@/components/ui/Slider";
-import { Label } from "@/components/ui/Label";
+          code: `import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
 
 export function DifferentSteps() {
   return (
@@ -196,8 +196,8 @@ export function DifferentSteps() {
           preview: (
             <PriceRangeExample />
           ),
-          code: `import { Slider } from "@/components/ui/Slider";
-import { Label } from "@/components/ui/Label";
+          code: `import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
 import { DollarSign } from "lucide-react";
 import { useState } from "react";
 
@@ -236,8 +236,8 @@ export function PriceRange() {
           preview: (
             <BrightnessControlExample />
           ),
-          code: `import { Slider } from "@/components/ui/Slider";
-import { Label } from "@/components/ui/Label";
+          code: `import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
 import { Sun } from "lucide-react";
 import { useState } from "react";
 
@@ -272,8 +272,8 @@ export function BrightnessControl() {
           preview: (
             <PerformanceGaugeExample />
           ),
-          code: `import { Slider } from "@/components/ui/Slider";
-import { Label } from "@/components/ui/Label";
+          code: `import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
 import { Gauge } from "lucide-react";
 import { useState } from "react";
 
@@ -315,8 +315,8 @@ export function PerformanceGauge() {
           preview: (
             <RangeSliderExample />
           ),
-          code: `import { Slider } from "@/components/ui/Slider";
-import { Label } from "@/components/ui/Label";
+          code: `import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
 
 export function RangeSlider() {
@@ -360,8 +360,8 @@ export function RangeSlider() {
               </div>
             </div>
           ),
-          code: `import { Slider } from "@/components/ui/Slider";
-import { Label } from "@/components/ui/Label";
+          code: `import { Slider } from "@/components/ui/slider";
+import { Label } from "@/components/ui/label";
 
 export function DisabledSlider() {
   return (

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { ErrorBoundary } from "../components/ui/ErrorBoundary";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { ErrorBoundary } from "../components/ui/errorboundary";
+import { Button } from "../components/ui/button";
 import { AlertTriangle } from "lucide-react";
 
-const code = `import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
+const code = `import { ErrorBoundary } from "@/components/ui/errorboundary";
 
 export function ErrorBoundaryDemo() {
   return (

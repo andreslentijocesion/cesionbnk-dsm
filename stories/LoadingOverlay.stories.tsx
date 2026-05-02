@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { LoadingOverlay } from "../components/ui/LoadingOverlay";
-import { LoadingProvider } from "../components/providers/LoadingProvider";
-import { useLoading } from "../components/providers/LoadingProvider";
-import { Button } from "../components/ui/Button";
+import { LoadingOverlay } from "../components/ui/loadingoverlay";
+import { LoadingProvider } from "../components/providers/loadingprovider";
+import { useLoading } from "../components/providers/loadingprovider";
+import { Button } from "../components/ui/button";
 
 const meta: Meta<typeof LoadingOverlay> = {
   title: "UI/LoadingOverlay",

@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow, TableFooter } from "../components/ui/Table";
-import { Badge } from "../components/ui/Badge";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow, TableFooter } from "../components/ui/table";
+import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
 import { MoreHorizontal, ArrowUpDown, Download, FileText } from "lucide-react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../components/ui/DropdownMenu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../components/ui/dropdownmenu";
 
 export function TablePage() {
   const invoices = [
@@ -67,7 +67,7 @@ export function TablePage() {
       }
       
       // Main Code
-      code={`import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/Table";
+      code={`import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export function TableDemo() {
   const invoices = [

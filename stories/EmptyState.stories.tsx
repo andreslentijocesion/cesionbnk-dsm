@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { EmptyState } from '../components/ui/EmptyState';
+import { EmptyState } from '../components/ui/emptystate';
 import { FileX, Search, Inbox } from 'lucide-react';
 
 const meta: Meta = { title: 'DSM/Patterns/EmptyState', tags: ['autodocs'] };

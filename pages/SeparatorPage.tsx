@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Separator } from "../components/ui/Separator";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Separator } from "../components/ui/separator";
 
 export function SeparatorPage() {
   return (
@@ -30,7 +30,7 @@ export function SeparatorPage() {
       }
       
       // Main Code
-      code={`import { Separator } from "@/components/ui/Separator"
+      code={`import { Separator } from "@/components/ui/separator"
 
 export function SeparatorDemo() {
   return (

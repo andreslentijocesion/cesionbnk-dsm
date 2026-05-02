@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CodeBlock } from "../components/ui/CodeBlock";
+import { CodeBlock } from "../components/ui/codeblock";
 
 const meta: Meta<typeof CodeBlock> = {
   title: "UI/CodeBlock",
@@ -19,7 +19,7 @@ export default meta;
 
 type Story = StoryObj<typeof CodeBlock>;
 
-const TSX_SAMPLE = `import { Button } from "@/components/ui/Button";
+const TSX_SAMPLE = `import { Button } from "@/components/ui/button";
 
 export function Example() {
   return (

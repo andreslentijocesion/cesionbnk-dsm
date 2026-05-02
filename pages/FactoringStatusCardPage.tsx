@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import {
   FactoringStatusCard,
   FactoringStatusCardShowcase,
@@ -83,7 +83,7 @@ export function FactoringStatusCardPage() {
       category="Business Pattern"
       atomicLevel="Organism"
       preview={<SingleCardDemo />}
-      code={`import { FactoringStatusCard } from "@/components/patterns/FactoringStatusCard";
+      code={`import { FactoringStatusCard } from "@/components/patterns/factoringstatuscard";
 import { BadgeCheck } from "lucide-react";
 
 function MyStatusTabs() {
@@ -183,7 +183,7 @@ function MyStatusTabs() {
           title: "Showcase completo (6 estados)",
           description: "Todos los estados del ciclo de vida de una operación de factoring: Aprobado, Desembolsado, En Cobro, Cobrado, Vencido y Rechazado.",
           preview: <FactoringStatusCardShowcase />,
-          code: `import { FactoringStatusCardShowcase } from "@/components/patterns/FactoringStatusCard";
+          code: `import { FactoringStatusCardShowcase } from "@/components/patterns/factoringstatuscard";
 
 // Demo interactiva con los 6 estados del ciclo de vida
 <FactoringStatusCardShowcase />`,

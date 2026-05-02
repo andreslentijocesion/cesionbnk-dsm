@@ -5,13 +5,13 @@
  * Renamed from tree-table-v2.tsx — R4 compliance (no version suffixes)
  */
 import { useState, useCallback, useMemo } from "react";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/Table";
-import { Button } from "../ui/Button";
-import { Badge } from "../ui/Badge";
-import { Checkbox } from "../ui/Checkbox";
-import { Input } from "../ui/Input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/Select";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/Tooltip";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import { Checkbox } from "../ui/checkbox";
+import { Input } from "../ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import {
   ChevronRight, ChevronDown, Eye, Ban, FileSpreadsheet, X, Search,
   ArrowUpDown, ArrowUp, ArrowDown, CheckCircle2, Download, Trash2,

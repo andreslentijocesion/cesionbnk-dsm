@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { ToggleGroup, ToggleGroupItem } from "../components/ui/ToggleGroup";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { ToggleGroup, ToggleGroupItem } from "../components/ui/togglegroup";
 import { 
   Bold, 
   Italic, 
@@ -17,7 +17,7 @@ import {
   Smartphone,
   Tablet
 } from "lucide-react";
-import { Separator } from "../components/ui/Separator";
+import { Separator } from "../components/ui/separator";
 
 export function ToggleGroupPage() {
   return (
@@ -62,7 +62,7 @@ export function ToggleGroupPage() {
       }
       
       // Main Code
-      code={`import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+      code={`import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
 import { Bold, Italic, Underline } from "lucide-react";
 
 export function ToggleGroupDemo() {
@@ -166,7 +166,7 @@ export function ToggleGroupDemo() {
               </ToggleGroupItem>
             </ToggleGroup>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
 import { AlignLeft, AlignCenter, AlignRight, AlignJustify } from "lucide-react";
 
 export function AlignmentControls() {
@@ -207,7 +207,7 @@ export function AlignmentControls() {
               </ToggleGroupItem>
             </ToggleGroup>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
 import { Bold, Italic, Underline, Strikethrough } from "lucide-react";
 
 export function TextFormattingToolbar() {
@@ -253,7 +253,7 @@ export function TextFormattingToolbar() {
               </ToggleGroup>
             </div>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
 import { List, LayoutGrid, Table } from "lucide-react";
 
 export function OutlineVariant() {
@@ -292,7 +292,7 @@ export function OutlineVariant() {
               <ToggleGroupItem value="table">Table View</ToggleGroupItem>
             </ToggleGroup>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
 
 export function TextLabels() {
   return (
@@ -323,7 +323,7 @@ export function TextLabels() {
               </ToggleGroupItem>
             </ToggleGroup>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
 import { Monitor, Tablet, Smartphone } from "lucide-react";
 
 export function TextAndIcons() {
@@ -387,7 +387,7 @@ export function TextAndIcons() {
               </ToggleGroup>
             </div>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
 import { AlignLeft, AlignCenter, AlignRight } from "lucide-react";
 
 export function SizeVariants() {
@@ -465,7 +465,7 @@ export function SizeVariants() {
               </ToggleGroup>
             </div>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
 import { Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight } from "lucide-react";
 
 export function DisabledState() {
@@ -543,8 +543,8 @@ export function DisabledState() {
               </ToggleGroup>
             </div>
           ),
-          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/ToggleGroup";
-import { Separator } from "@/components/ui/Separator";
+          code: `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/togglegroup";
+import { Separator } from "@/components/ui/separator";
 import { 
   AlignLeft, 
   AlignCenter, 

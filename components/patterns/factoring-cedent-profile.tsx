@@ -1,10 +1,10 @@
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
-import { Badge } from "../ui/Badge";
-import { Button } from "../ui/Button";
-import { ProgressWithRange } from "../ui/ProgressWithRange";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/Table";
-import { SafeChartContainer } from "../ui/SafeChartContainer";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { ProgressWithRange } from "../ui/progresswithrange";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
+import { SafeChartContainer } from "../ui/safechartcontainer";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, BarChart, Bar,
 } from "recharts";
@@ -98,7 +98,7 @@ export function FactoringCedentProfile() {
               <ScoreMeter score={cedent.scoreCredito} />
               <div className="mt-6 pt-6 border-t border-dashed">
                 <p className="text-xs font-semibold text-muted-foreground mb-4 uppercase">Evolución del Score</p>
-                <SafeChartContainer className="h-[100px] w-full">
+                <SafeChartContainer height={100} className="w-full">
                   <LineChart data={scoreHistory}>
                     <Line 
                       type="monotone" 
@@ -191,7 +191,7 @@ export function FactoringCedentProfile() {
                     <p className="text-[10px] text-muted-foreground">Últimos 7 meses (Facturas)</p>
                   </CardHeader>
                   <CardContent>
-                    <SafeChartContainer className="h-[180px] w-full mt-2">
+                    <SafeChartContainer height={180} className="w-full mt-2">
                       <BarChart data={historialMensual}>
                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border)" opacity={0.5} />
                         <XAxis dataKey="mes" axisLine={false} tickLine={false} tick={{ fontSize: 10 }} />
@@ -209,7 +209,7 @@ export function FactoringCedentProfile() {
                     <p className="text-[10px] text-muted-foreground">Eficiencia de cobro vs proyecciones</p>
                   </CardHeader>
                   <CardContent>
-                    <SafeChartContainer className="h-[180px] w-full mt-2">
+                    <SafeChartContainer height={180} className="w-full mt-2">
                       <LineChart data={historialMensual}>
                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border)" opacity={0.5} />
                         <XAxis dataKey="mes" axisLine={false} tickLine={false} tick={{ fontSize: 10 }} />

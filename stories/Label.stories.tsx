@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Label } from '../components/ui/Label';
-import { Input } from '../components/ui/Input';
-import { Checkbox } from '../components/ui/Checkbox';
+import { Label } from '../components/ui/label';
+import { Input } from '../components/ui/input';
+import { Checkbox } from '../components/ui/checkbox';
 
 const meta: Meta<typeof Label> = {
   title: 'DSM/Primitives/Label',

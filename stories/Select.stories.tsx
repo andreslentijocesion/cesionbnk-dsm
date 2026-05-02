@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../components/ui/Select';
-import { Label } from '../components/ui/Label';
+import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../components/ui/select';
+import { Label } from '../components/ui/label';
 
 const meta: Meta = {
   title: 'DSM/Primitives/Select',

@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/Card";
-import { Button } from "../components/ui/Button";
-import { Badge } from "../components/ui/Badge";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 
 export function CardPage() {
   return (
@@ -26,8 +26,8 @@ export function CardPage() {
         </Card>
       }
       
-      code={`import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+      code={`import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export function CardDemo() {
   return (
@@ -72,8 +72,8 @@ export function CardDemo() {
               </CardContent>
             </Card>
           ),
-          code: `import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
+          code: `import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export function CardWithBadge() {
   return (

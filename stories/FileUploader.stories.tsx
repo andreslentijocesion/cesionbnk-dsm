@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FileUploader } from '../components/advanced/FileUploader';
+import { FileUploader } from '../components/advanced/fileuploader';
 
 const meta: Meta<typeof FileUploader> = {
   title: 'DSM/Advanced/FileUploader',

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Button } from "../components/ui/button";
 import { 
   Spinner, 
   PageLoader, 
@@ -8,9 +8,9 @@ import {
   TableSkeleton, 
   ButtonLoader, 
   DotLoader 
-} from "../components/ui/LoadingStates";
+} from "../components/ui/loadingstates";
 
-const code = `import { Spinner, ButtonLoader, DotLoader, CardSkeleton, TableSkeleton } from "@/components/ui/LoadingStates";
+const code = `import { Spinner, ButtonLoader, DotLoader, CardSkeleton, TableSkeleton } from "@/components/ui/loadingstates";
 
 export function LoadingStatesDemo() {
   return (

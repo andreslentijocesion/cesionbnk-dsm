@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Calendar } from "../components/ui/Calendar";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Calendar } from "../components/ui/calendar";
 import { useState } from "react";
 import { addDays } from "date-fns";
 import type { DateRange } from "react-day-picker";
@@ -26,7 +26,7 @@ export function CalendarPage() {
           className="w-fit rounded-md border shadow"
         />
       }
-      code={`import { Calendar } from "@/components/ui/Calendar"
+      code={`import { Calendar } from "@/components/ui/calendar"
 import { useState } from "react"
 
 export function CalendarDemo() {
@@ -85,7 +85,7 @@ export function CalendarDemo() {
               className="w-fit rounded-md border shadow"
             />
           ),
-          code: `import { Calendar } from "@/components/ui/Calendar"
+          code: `import { Calendar } from "@/components/ui/calendar"
 import { addDays } from "date-fns"
 import { useState } from "react"
 import type { DateRange } from "react-day-picker"
@@ -117,7 +117,7 @@ export function CalendarRangeDemo() {
               className="w-fit rounded-md border shadow"
             />
           ),
-          code: `import { Calendar } from "@/components/ui/Calendar"
+          code: `import { Calendar } from "@/components/ui/calendar"
 import { useState } from "react"
 
 export function CalendarMultipleDemo() {

@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Input } from "../components/ui/Input";
-import { Label } from "../components/ui/Label";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 import { Mail, Search, User, CreditCard } from "lucide-react";
 
 export function InputPage() {
@@ -51,7 +51,7 @@ export function InputPage() {
         </div>
       }
       
-      code={`import { Input } from "@/components/ui/Input";
+      code={`import { Input } from "@/components/ui/input";
 
 // Size variants
 <Input size="sm" placeholder="Small" />
@@ -167,8 +167,8 @@ export function InputPage() {
               </p>
             </div>
           ),
-          code: `import { Input } from "@/components/ui/Input";
-import { Label } from "@/components/ui/Label";
+          code: `import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 <div className="grid gap-2 max-w-sm">
   <Label htmlFor="email">Email</Label>

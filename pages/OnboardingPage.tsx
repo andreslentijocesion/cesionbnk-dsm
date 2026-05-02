@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { Onboarding } from "../components/patterns/onboarding"
 import { toast } from "sonner"
 import { Calculator } from "lucide-react"

@@ -1,14 +1,14 @@
 /* eslint-disable */
 import { useState, useMemo } from "react";
-import { Card } from "../ui/Card";
-import { Button } from "../ui/Button";
-import { Checkbox } from "../ui/Checkbox";
-import { Progress } from "../ui/Progress";
-import { Input } from "../ui/Input";
-import { Badge } from "../ui/Badge";
+import { Card } from "../ui/card";
+import { Button } from "../ui/button";
+import { Checkbox } from "../ui/checkbox";
+import { Progress } from "../ui/progress";
+import { Input } from "../ui/input";
+import { Badge } from "../ui/badge";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
-} from "../ui/Table";
+} from "../ui/table";
 import {
   CheckCircle2, XCircle, Search, Clock, Eye,
   ChevronLeft, ChevronRight, RefreshCw,

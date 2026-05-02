@@ -1,10 +1,10 @@
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../ui/Tooltip";
+} from "../ui/tooltip";
 import { LucideIcon } from "lucide-react";
 
 interface ActionButtonProps {

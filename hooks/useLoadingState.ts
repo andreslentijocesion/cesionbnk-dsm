@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import { useLoading } from "../components/providers/LoadingProvider";
+import { useLoading } from "../components/providers/loadingprovider";
 import { LOADING_DELAYS } from "../lib/animation-config";
 
 /**

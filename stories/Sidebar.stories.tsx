@@ -3,8 +3,8 @@ import {
   Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent,
   SidebarGroupLabel, SidebarHeader, SidebarInset, SidebarMenu, SidebarMenuButton,
   SidebarMenuItem, SidebarProvider, SidebarTrigger,
-} from '../components/ui/Sidebar';
-import { Separator } from '../components/ui/Separator';
+} from '../components/ui/sidebar';
+import { Separator } from '../components/ui/separator';
 import {
   LayoutDashboard, FileText, Briefcase, Users, UserCheck,
   Bell, BarChart2, Calculator, Settings, LogOut,

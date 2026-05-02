@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { FactoringCedentProfile } from "../components/patterns/factoring-cedent-profile"
 
 export function FactoringCedentProfilePage() {
@@ -9,7 +9,7 @@ export function FactoringCedentProfilePage() {
       category="Business Pattern"
       atomicLevel="Organism"
       preview={<FactoringCedentProfile />}
-      code={`import { FactoringCedentProfile } from "@/components/patterns/FactoringCedentProfile"\n\nexport function MyPage() {\n  return <FactoringCedentProfile />;\n}`}
+      code={`import { FactoringCedentProfile } from "@/components/patterns/factoringcedentprofile"\n\nexport function MyPage() {\n  return <FactoringCedentProfile />;\n}`}
       props={[{ name: "(self-contained)", type: "—", description: "Perfil completo con 4 tabs: Resumen (BarChart + Score), Operaciones (tabla con progress), Documentos, y Crédito (límite + condiciones comerciales)." }]}
     />
   );

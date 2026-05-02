@@ -1,7 +1,7 @@
  
 import React from "react";
 import { CheckCircle, Circle, Minus } from "lucide-react";
-import { Progress } from "../ui/Progress";
+import { Progress } from "../ui/progress";
 import { cn } from "../ui/utils";
 
 export interface Step {

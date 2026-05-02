@@ -1,6 +1,6 @@
-import { Badge } from "../ui/Badge";
-import { Avatar, AvatarFallback } from "../ui/Avatar";
-import { Separator } from "../ui/Separator";
+import { Badge } from "../ui/badge";
+import { Avatar, AvatarFallback } from "../ui/avatar";
+import { Separator } from "../ui/separator";
 import { LucideIcon } from "lucide-react";
 
 interface ApprovalTimelineItemProps {

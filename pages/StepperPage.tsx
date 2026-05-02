@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Stepper, type Step } from "../components/ui/Stepper";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Stepper, type Step } from "../components/ui/stepper";
+import { Button } from "../components/ui/button";
 
 const operationSteps: Step[] = [
   { id: "1", label: "Ingreso factura",   description: "Carga y datos básicos" },
@@ -39,7 +39,7 @@ export function StepperPage() {
       category="Forms"
       atomicLevel="Molecule"
       preview={<InteractiveStepper />}
-      code={`import { Stepper } from "@/components/ui/Stepper"
+      code={`import { Stepper } from "@/components/ui/stepper"
 import { useState } from "react"
 
 const steps = [

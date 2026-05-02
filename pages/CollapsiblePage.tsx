@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "../components/ui/Collapsible";
-import { Button } from "../components/ui/Button";
-import { Badge } from "../components/ui/Badge";
+} from "../components/ui/collapsible";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import { ChevronsUpDown, ChevronDown, Plus, Settings, FileText } from "lucide-react";
 
 // ── Demos ──────────────────────────────────────────────────────────────────
@@ -158,8 +158,8 @@ export function CollapsiblePage() {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/Collapsible";
-import { Button } from "@/components/ui/Button";
+} from "@/components/ui/collapsible";
+import { Button } from "@/components/ui/button";
 import { ChevronsUpDown } from "lucide-react";
 
 export function CollapsibleDemo() {

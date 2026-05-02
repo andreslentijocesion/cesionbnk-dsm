@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/Card";
-import { Badge } from "../components/ui/Badge";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/Table";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/table";
 import { BRAND_INFO, BRAND_COLORS, SPACING_SCALE } from "../lib/constants";
 
 // Primitives (KPIs)

@@ -1,6 +1,6 @@
-import { Label } from "../ui/Label";
-import { Input } from "../ui/Input";
-import { Badge } from "../ui/Badge";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { Badge } from "../ui/badge";
 
 interface SimpleFormFieldProps {
   label: string;

@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { ApprovalFlow, type Approver } from "../components/patterns/approval-flow"
 import { toast } from "sonner"
 
@@ -70,7 +70,7 @@ export function ApprovalFlowPage() {
           />
         </div>
       }
-      code={`import { ApprovalFlow } from "@/components/patterns/ApprovalFlow"
+      code={`import { ApprovalFlow } from "@/components/patterns/approvalflow"
 
 <ApprovalFlow
   title="Operación OP-441 · $620M"

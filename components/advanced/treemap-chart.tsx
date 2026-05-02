@@ -1,6 +1,6 @@
 import { Treemap, Tooltip } from "recharts";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/Card";
-import { SafeChartContainer } from "../ui/SafeChartContainer";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { SafeChartContainer } from "../ui/safechartcontainer";
 
 /**
  * 🔒 ADVANCED COMPONENT - Treemap Chart

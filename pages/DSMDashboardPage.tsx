@@ -1,14 +1,14 @@
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card"
-import { Badge } from "../components/ui/Badge"
-import { Separator } from "../components/ui/Separator"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/Collapsible"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
+import { Badge } from "../components/ui/badge"
+import { Separator } from "../components/ui/separator"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/collapsible"
 import { CheckCircle2, Code2, Sparkles, Layers, Palette, MousePointerClick, MessageSquare, Database, FileCode, Layout, TrendingUp, Award, BookOpen, Shield, GitBranch, Component, Box, Puzzle, Calendar, Package, Wrench, AlertTriangle, Rocket, Zap, FileText, BarChart3, ChevronDown, ChevronRight, Eye, Keyboard, Accessibility as AccessibilityIcon, Paintbrush } from "lucide-react"
 import { Logo } from "../components/layout/logo"
-import { Progress } from "../components/ui/Progress"
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
-import { ContrastDot } from "../components/ui/DynamicPreviews"
+import { Progress } from "../components/ui/progress"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
+import { ContrastDot } from "../components/ui/dynamicpreviews"
 
 // ── Navigation helper ──
 function navigateTo(pageId: string) {

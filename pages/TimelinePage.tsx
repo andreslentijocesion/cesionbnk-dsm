@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { Timeline, type TimelineItem } from "../components/patterns/timeline"
 import { FileCheck, Send, Clock, CheckCircle2, XCircle, AlertCircle } from "lucide-react"
 

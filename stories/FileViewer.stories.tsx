@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FileViewer, type FileItem } from '../components/patterns/FileViewer';
+import { FileViewer, type FileItem } from '../components/patterns/fileviewer';
 
 const operationFiles: FileItem[] = [
   { id: '1', name: 'Factura_0312_ComercialLopez.pdf',  type: 'pdf',         size: '245 KB', uploadedBy: 'Ana Valdés',      uploadedAt: '08/03/2025', category: 'Factura' },

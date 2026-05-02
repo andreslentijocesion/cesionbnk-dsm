@@ -8,9 +8,9 @@ import {
   FileText, FileImage, FileSpreadsheet, File, Download, Eye,
   Search, X, ExternalLink,
 } from "lucide-react";
-import { Button } from "../ui/Button";
-import { Badge } from "../ui/Badge";
-import { Input } from "../ui/Input";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import { Input } from "../ui/input";
 import { cn } from "../../lib/utils";
 
 export type FileType = "pdf" | "image" | "spreadsheet" | "other";

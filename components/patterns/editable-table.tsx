@@ -9,18 +9,18 @@
  * Self-contained with mock data.
  */
 import { useState, useMemo } from "react";
-import { Card, CardContent, CardHeader } from "../ui/Card";
-import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
-import { Checkbox } from "../ui/Checkbox";
-import { Badge } from "../ui/Badge";
+import { Card, CardContent, CardHeader } from "../ui/card";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Checkbox } from "../ui/checkbox";
+import { Badge } from "../ui/badge";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/Select";
+} from "../ui/select";
 import {
   Table,
   TableBody,
@@ -28,7 +28,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../ui/Table";
+} from "../ui/table";
 import {
   Search,
   ChevronLeft,

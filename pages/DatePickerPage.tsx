@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Button } from "../components/ui/Button";
-import { Calendar } from "../components/ui/Calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/Popover";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Button } from "../components/ui/button";
+import { Calendar } from "../components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/popover";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "../lib/utils";
 import { format, addDays } from "date-fns";
@@ -50,13 +50,13 @@ import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/Button"
-import { Calendar } from "@/components/ui/Calendar"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/Popover"
+} from "@/components/ui/popover"
 
 export function DatePickerDemo() {
   const [date, setDate] = React.useState<Date>()
@@ -149,13 +149,13 @@ import { format, addDays } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/Button"
-import { Calendar } from "@/components/ui/Calendar"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/Popover"
+} from "@/components/ui/popover"
 
 export function DateRangePickerDemo() {
   const [date, setDate] = React.useState({

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cn } from "../../../lib/utils";
 import { Menu } from "lucide-react";
-import { Button } from "../../ui/Button";
+import { Button } from "../../ui/button";
 
 // ─── Admin Layout Context ──────────────────────────────────────────────────
 

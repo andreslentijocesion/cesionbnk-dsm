@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Card } from "../components/ui/Card";
-import { Label } from "../components/ui/Label";
-import { Input } from "../components/ui/Input";
-import { ContextualHelp } from "../components/help/ContextualHelp";
-import { ProductTour } from "../components/help/ProductTour";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Card } from "../components/ui/card";
+import { Label } from "../components/ui/label";
+import { Input } from "../components/ui/input";
+import { ContextualHelp } from "../components/help/contextualhelp";
+import { ProductTour } from "../components/help/producttour";
 import { vinculacionTourSteps } from "../components/help/tourSteps";
 
 function HelpSystemDemo() {
@@ -101,8 +101,8 @@ export function HelpSystemDemoPage() {
       description="Three-layer help system: Contextual Help (inline tooltips + popovers on form fields), Product Tour (guided step-by-step walkthrough with driver.js), and Help Center (comprehensive documentation panel with FAQs, guides, and videos). Reduces support tickets, improves UX, and accelerates onboarding."
       category="Patterns"
       preview={<HelpSystemDemo />}
-      code={`import { ContextualHelp } from "@/components/help/ContextualHelp";
-import { ProductTour } from "@/components/help/ProductTour";
+      code={`import { ContextualHelp } from "@/components/help/contextualhelp";
+import { ProductTour } from "@/components/help/producttour";
 import { vinculacionTourSteps } from "@/components/help/tourSteps";
 
 // Contextual Help (tooltip + popover)

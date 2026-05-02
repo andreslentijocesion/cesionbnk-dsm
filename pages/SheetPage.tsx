@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "../components/ui/Sheet";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "../components/ui/sheet";
+import { Button } from "../components/ui/button";
 
 export function SheetPage() {
   return (
@@ -41,7 +41,7 @@ export function SheetPage() {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/Sheet"
+} from "@/components/ui/sheet"
 
 export function SheetDemo() {
   return (

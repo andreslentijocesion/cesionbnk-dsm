@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Badge } from "../components/ui/Badge";
-import { Separator } from "../components/ui/Separator";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Badge } from "../components/ui/badge";
+import { Separator } from "../components/ui/separator";
 import {
   Check, X, AlertCircle, Clock, Star, Zap,
   TrendingUp, ShoppingCart, Info, Shield,
@@ -132,7 +132,7 @@ export function BadgePage() {
       }
 
       // Main Code
-      code={`import { Badge } from "@/components/ui/Badge";
+      code={`import { Badge } from "@/components/ui/badge";
 import { Check, X, AlertCircle, Info } from "lucide-react";
 
 export function BadgeSemanticDemo() {

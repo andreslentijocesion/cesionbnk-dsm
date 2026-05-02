@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { CurrencyInput } from "../components/ui/CurrencyInput";
-import { Label } from "../components/ui/Label";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { CurrencyInput } from "../components/ui/currencyinput";
+import { Label } from "../components/ui/label";
 
 function CurrencyInputDemo() {
   const [cop, setCop] = useState<number | null>(4320000);
@@ -37,7 +37,7 @@ export function CurrencyInputPage() {
       category="Forms"
       atomicLevel="Atom"
       preview={<CurrencyInputDemo />}
-      code={`import { CurrencyInput } from "@/components/ui/CurrencyInput"
+      code={`import { CurrencyInput } from "@/components/ui/currencyinput"
 import { useState } from "react"
 
 export function Demo() {

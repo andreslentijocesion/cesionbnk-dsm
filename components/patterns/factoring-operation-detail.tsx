@@ -1,11 +1,11 @@
 import {
   Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription,
-} from "../ui/Sheet";
-import { Badge } from "../ui/Badge";
-import { Button } from "../ui/Button";
-import { Separator } from "../ui/Separator";
-import { Progress } from "../ui/Progress";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
+} from "../ui/sheet";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { Separator } from "../ui/separator";
+import { Progress } from "../ui/progress";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import {
   CheckCircle2, Clock, DollarSign, FileText, Download, ExternalLink,
   Send, XCircle, RotateCcw, Stamp,

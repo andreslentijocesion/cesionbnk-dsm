@@ -3,11 +3,11 @@
  *
  * BUSINESS PATTERN: Grid system visualization without inline styles
  *
- * DO NOT MODIFY without consulting../components/patterns/PATTERNS_ARCHITECTURE.md
+ * DO NOT MODIFY without consulting../components/patterns/patterns_ARCHITECTURE.md
  * Part of the modular system without inline styles
  */
 
-import { Badge } from "../ui/Badge";
+import { Badge } from "../ui/badge";
 import { cn } from "../../lib/utils";
 
 interface GridSystemPreviewProps {

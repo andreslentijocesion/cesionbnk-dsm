@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/Card";
-import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
-import { Textarea } from "../ui/Textarea";
-import { Label } from "../ui/Label";
-import { Badge } from "../ui/Badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
+import { Label } from "../ui/label";
+import { Badge } from "../ui/badge";
 import {
   GripVertical, Trash2, Type, Mail, Phone, Calendar, CheckSquare, List,
   FileText, Plus, Hash, Lock, Link, Upload, Sliders, Circle,

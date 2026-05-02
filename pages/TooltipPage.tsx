@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/Tooltip";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip";
+import { Button } from "../components/ui/button";
 import { Info, HelpCircle } from "lucide-react";
 
 export function TooltipPage() {
@@ -31,7 +31,7 @@ export function TooltipPage() {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/Tooltip"
+} from "@/components/ui/tooltip"
 
 export function TooltipDemo() {
   return (

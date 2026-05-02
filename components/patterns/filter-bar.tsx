@@ -1,13 +1,13 @@
 import { SearchBar } from "./search-bar";
 import { FilterChip } from "./filter-chip";
-import { Button } from "../ui/Button";
+import { Button } from "../ui/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/Select";
+} from "../ui/select";
 import { Filter, Download } from "lucide-react";
 
 export function FilterBar() {

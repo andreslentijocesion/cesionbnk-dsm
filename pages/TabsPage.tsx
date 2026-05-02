@@ -1,10 +1,10 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card";
-import { Input } from "../components/ui/Input";
-import { Label } from "../components/ui/Label";
-import { Button } from "../components/ui/Button";
-import { Badge } from "../components/ui/Badge";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import { User, Settings, Bell, CreditCard, Shield, Activity } from "lucide-react";
 
 export function TabsPage() {
@@ -51,7 +51,7 @@ export function TabsPage() {
       }
       
       // Main Code
-      code={`import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+      code={`import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function TabsDemo() {
   return (

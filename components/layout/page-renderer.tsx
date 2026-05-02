@@ -7,7 +7,7 @@
  */
 import { lazy, Suspense, ReactElement } from "react";
 import type { PageId, NavPageId, SpecialPageId } from "../types/PageId";
-import { Skeleton } from "../ui/Skeleton";
+import { Skeleton } from "../ui/skeleton";
 
 // ── Helper for named lazy imports ──────────────────────────────────────────────
 

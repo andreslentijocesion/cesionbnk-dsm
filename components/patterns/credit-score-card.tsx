@@ -4,7 +4,7 @@
  * @layer patterns
  */
 import { TrendingUp, TrendingDown, Minus, ShieldCheck, ShieldAlert, ShieldX, AlertCircle } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { cn } from "../../lib/utils";
 
 export type RiskLevel = "bajo" | "medio" | "alto" | "critico";

@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { MasterDataGrid } from "../advanced/master-data-grid";
-import { Badge } from "../ui/Badge";
-import { Button } from "../ui/Button";
-import { Progress } from "../ui/Progress";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { Progress } from "../ui/progress";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
-} from "../ui/Table";
+} from "../ui/table";
 import {
   DropdownMenu, DropdownMenuContent, DropdownMenuItem,
   DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger,
-} from "../ui/DropdownMenu";
+} from "../ui/dropdownmenu";
 import { Sparkline } from "../advanced/sparkline";
 import {
   MoreHorizontal, TrendingUp, TrendingDown, ArrowUpDown,

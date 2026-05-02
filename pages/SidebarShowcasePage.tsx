@@ -1,20 +1,20 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import {
   SidebarProvider, Sidebar, SidebarContent, SidebarHeader, SidebarFooter,
   SidebarGroup, SidebarGroupLabel, SidebarGroupContent, SidebarMenu, SidebarMenuItem,
   SidebarMenuButton, SidebarMenuSub, SidebarMenuSubItem, SidebarMenuSubButton,
   SidebarRail, SidebarInset, SidebarTrigger,
-} from "../components/ui/Sidebar";
+} from "../components/ui/sidebar";
 import {
   BookOpen, Bot, ChevronRight, ChevronsUpDown, Inbox, Calendar, Search,
   PanelLeft, GalleryVerticalEnd, AudioWaveform, Sparkles, Settings2,
   Terminal, Frame, PieChart, Map, LifeBuoy,
 } from "lucide-react";
-import { Badge } from "../components/ui/Badge";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/Collapsible";
-import { Separator } from "../components/ui/Separator";
-import { Avatar, AvatarFallback } from "../components/ui/Avatar";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "../components/ui/Breadcrumb";
+import { Badge } from "../components/ui/badge";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../components/ui/collapsible";
+import { Separator } from "../components/ui/separator";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "../components/ui/breadcrumb";
 
 function StandardSidebar() {
   return (
@@ -110,7 +110,7 @@ export function SidebarShowcasePage() {
   SidebarProvider, Sidebar, SidebarContent, SidebarHeader,
   SidebarFooter, SidebarGroup, SidebarMenu, SidebarMenuItem,
   SidebarMenuButton, SidebarRail, SidebarInset, SidebarTrigger,
-} from "@/components/ui/Sidebar";
+} from "@/components/ui/sidebar";
 
 <SidebarProvider>
   <Sidebar collapsible="icon">

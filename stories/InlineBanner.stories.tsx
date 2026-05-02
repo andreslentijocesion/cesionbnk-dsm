@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InlineBanner } from '../components/ui/InlineBanner';
+import { InlineBanner } from '../components/ui/inlinebanner';
 
 const meta: Meta<typeof InlineBanner> = {
   title: 'DSM/Primitives/InlineBanner',

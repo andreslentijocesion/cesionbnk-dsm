@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AgingReport, type AgingBucket } from '../components/patterns/AgingReport';
+import { AgingReport, type AgingBucket } from '../components/patterns/agingreport';
 
 const defaultBuckets: AgingBucket[] = [
   { label: 'Al día',     amount: 1970, count: 27, risk: 'ok'       },

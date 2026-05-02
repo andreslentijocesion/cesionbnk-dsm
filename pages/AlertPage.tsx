@@ -1,6 +1,6 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Alert, AlertDescription, AlertTitle } from "../components/ui/Alert";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
+import { Button } from "../components/ui/button";
 import {
   AlertCircle, CheckCircle, Info, AlertTriangle,
   Terminal, Zap, Lock, Mail, Bell, ShieldCheck,
@@ -61,7 +61,7 @@ export function AlertPage() {
       }
 
       // Main Code
-      code={`import { Alert, AlertDescription, AlertTitle } from "@/components/ui/Alert";
+      code={`import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { CheckCircle, AlertCircle, AlertTriangle, Info, Terminal } from "lucide-react";
 
 export function AlertSemanticDemo() {

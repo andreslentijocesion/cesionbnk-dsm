@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/Popover";
-import { Button } from "../components/ui/Button";
-import { Input } from "../components/ui/Input";
-import { Label } from "../components/ui/Label";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/popover";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
 
 export function PopoverPage() {
   return (
@@ -34,7 +34,7 @@ export function PopoverPage() {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/Popover"
+} from "@/components/ui/popover"
 
 export function PopoverDemo() {
   return (

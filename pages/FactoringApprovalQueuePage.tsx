@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { FactoringApprovalQueue } from "../components/patterns/factoring-approval-queue"
 
 export function FactoringApprovalQueuePage() {
@@ -9,7 +9,7 @@ export function FactoringApprovalQueuePage() {
       category="Business Pattern"
       atomicLevel="Organism"
       preview={<FactoringApprovalQueue />}
-      code={`import { FactoringApprovalQueue } from "@/components/patterns/FactoringApprovalQueue"\n\nexport function MyPage() {\n  return <FactoringApprovalQueue />;\n}`}
+      code={`import { FactoringApprovalQueue } from "@/components/patterns/factoringapprovalqueue"\n\nexport function MyPage() {\n  return <FactoringApprovalQueue />;\n}`}
       props={[
         { name: "(self-contained)", type: "—", description: "Incluye KPIs de cola, tabla con score crediticio, prioridad, bulk select, aprobación/rechazo por fila o por lotes, y Sheet de detalle integrado." },
       ]}

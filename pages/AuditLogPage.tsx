@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { AuditLog, type AuditEntry } from "../components/patterns/audit-log"
 
 const entries: AuditEntry[] = [
@@ -22,7 +22,7 @@ export function AuditLogPage() {
       category="Patterns"
       atomicLevel="Organism"
       preview={<AuditLog entries={entries} />}
-      code={`import { AuditLog } from "@/components/patterns/AuditLog"
+      code={`import { AuditLog } from "@/components/patterns/auditlog"
 
 const entries = [
   {

@@ -1,12 +1,12 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Skeleton } from "../components/ui/Skeleton";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Skeleton } from "../components/ui/skeleton";
 import { 
   SkeletonTable, 
   SkeletonCardGrid, 
   SkeletonForm,
   SkeletonKpiCardGroup,
   SkeletonProfile
-} from "../components/ui/SkeletonVariants";
+} from "../components/ui/skeletonvariants";
 
 export function SkeletonPage() {
   return (
@@ -24,7 +24,7 @@ export function SkeletonPage() {
       }
       
       // Main Code
-      code={`import { Skeleton } from "@/components/ui/Skeleton"
+      code={`import { Skeleton } from "@/components/ui/skeleton"
 
 export function SkeletonDemo() {
   return (

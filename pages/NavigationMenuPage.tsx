@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "../components/ui/NavigationMenu";
+} from "../components/ui/navigationmenu";
 import { cn } from "../lib/utils";
 import * as React from "react";
 
@@ -120,7 +120,7 @@ export function NavigationMenuPage() {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/NavigationMenu"
+} from "@/components/ui/navigationmenu"
 
 export function NavigationMenuDemo() {
   return (

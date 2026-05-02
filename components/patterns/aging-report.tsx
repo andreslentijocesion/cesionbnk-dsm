@@ -7,11 +7,11 @@ import { useMemo } from "react";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell,
 } from "recharts";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
-import { Badge } from "../ui/Badge";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
-} from "../ui/Table";
+} from "../ui/table";
 import { cn } from "../../lib/utils";
 
 export interface AgingBucket {

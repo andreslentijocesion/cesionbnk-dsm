@@ -8,7 +8,7 @@
  */
 
 import { cn } from "../ui/utils";
-import { useTheme } from "../providers/ThemeProvider";
+import { useTheme } from "../providers/themeprovider";
 
 /* ── Props ── */
 

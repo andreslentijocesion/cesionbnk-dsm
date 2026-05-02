@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MultiSelect } from '../components/ui/MultiSelect';
-import { Label } from '../components/ui/Label';
+import { MultiSelect } from '../components/ui/multiselect';
+import { Label } from '../components/ui/label';
 import { useState } from 'react';
 
 const meta: Meta = { title: 'DSM/Components/MultiSelect', tags: ['autodocs'] };

@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import {
   Command, CommandDialog, CommandEmpty, CommandGroup,
   CommandInput, CommandItem, CommandList, CommandSeparator,
-} from '../components/ui/Command';
+} from '../components/ui/command';
 import { useState } from 'react';
-import { Button } from '../components/ui/Button';
+import { Button } from '../components/ui/button';
 import { FileText, Users, BarChart2, Settings } from 'lucide-react';
 
 const meta: Meta = {

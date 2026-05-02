@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { NumberInput } from "../components/ui/NumberInput";
-import { Label } from "../components/ui/Label";
-import { Card, CardContent } from "../components/ui/Card";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { NumberInput } from "../components/ui/numberinput";
+import { Label } from "../components/ui/label";
+import { Card, CardContent } from "../components/ui/card";
 
 function NumberInputDemo() {
   const [dias, setDias] = useState(30);
@@ -76,7 +76,7 @@ export function NumberInputPage() {
       category="Forms"
       atomicLevel="Atom"
       preview={<NumberInputDemo />}
-      code={`import { NumberInput } from "@/components/ui/NumberInput"
+      code={`import { NumberInput } from "@/components/ui/numberinput"
 import { useState } from "react"
 
 export function Demo() {

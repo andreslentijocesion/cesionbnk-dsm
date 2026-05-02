@@ -1,10 +1,10 @@
 import { Check, Paintbrush } from "lucide-react";
-import { useTheme, DESIGN_THEMES, DesignTheme } from "../components/providers/ThemeProvider";
-import { Button } from "../components/ui/Button";
-import { Badge } from "../components/ui/Badge";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
-import { Input } from "../components/ui/Input";
-import { Alert, AlertDescription, AlertTitle } from "../components/ui/Alert";
+import { useTheme, DESIGN_THEMES, DesignTheme } from "../components/providers/themeprovider";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
 import { cn } from "../components/ui/utils";
 
 /* ── Preview Panel ──────────────────────────────────────────────────────────── */

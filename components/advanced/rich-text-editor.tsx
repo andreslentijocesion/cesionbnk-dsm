@@ -5,10 +5,10 @@ import {
   List, ListOrdered, Heading1, Heading2,
   Quote, Undo, Redo,
 } from "lucide-react";
-import { Toggle } from "../ui/Toggle";
-import { Separator } from "../ui/Separator";
+import { Toggle } from "../ui/toggle";
+import { Separator } from "../ui/separator";
 import { cn } from "../ui/utils";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/Tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 
 interface RichTextEditorProps {
   value?: string;

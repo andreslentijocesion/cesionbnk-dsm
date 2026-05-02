@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { ExportPanel } from "../components/patterns/export-panel"
 import { toast } from "sonner"
 
@@ -33,7 +33,7 @@ export function ExportPanelPage() {
           }
         />
       }
-      code={`import { ExportPanel } from "@/components/patterns/ExportPanel"
+      code={`import { ExportPanel } from "@/components/patterns/exportpanel"
 
 const columns = [
   { id: "folio",    label: "Folio",    defaultSelected: true },

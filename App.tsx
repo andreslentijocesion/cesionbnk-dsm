@@ -8,17 +8,17 @@ import {
   LayoutHeader, 
   LayoutFooter 
 } from "./components/layout";
-import { Button } from "./components/ui/Button";
+import { Button } from "./components/ui/button";
 import { Moon, Sun } from "lucide-react";
-import { ThemeProvider, useTheme } from "./components/providers/ThemeProvider";
-import { ThemeSwitcher } from "./components/ui/ThemeSwitcher";
-import { Toaster } from "./components/ui/Sonner";
-import { HelpProvider } from "./components/help/HelpProvider";
-import { HelpCenter } from "./components/help/HelpCenter";
-import { HelpButton } from "./components/help/HelpButton";
-import { LoadingProvider } from "./components/providers/LoadingProvider";
-import { TransitionProvider } from "./components/providers/TransitionProvider";
-import { LoadingOverlay } from "./components/ui/LoadingOverlay";
+import { ThemeProvider, useTheme } from "./components/providers/themeprovider";
+import { ThemeSwitcher } from "./components/ui/themeswitcher";
+import { Toaster } from "./components/ui/sonner";
+import { HelpProvider } from "./components/help/helpprovider";
+import { HelpCenter } from "./components/help/helpcenter";
+import { HelpButton } from "./components/help/helpbutton";
+import { LoadingProvider } from "./components/providers/loadingprovider";
+import { TransitionProvider } from "./components/providers/transitionprovider";
+import { LoadingOverlay } from "./components/ui/loadingoverlay";
 import { ALL_PAGE_LABELS } from "./components/registry";
 import "./styles/tour.css";
 

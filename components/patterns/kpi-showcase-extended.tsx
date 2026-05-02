@@ -6,9 +6,9 @@
 import { useState } from "react";
 import { StatCard } from "./stat-card";
 import { StatusKPICard } from "./status-kpi-card";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
-import { Badge } from "../ui/Badge";
-import { Separator } from "../ui/Separator";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
+import { Separator } from "../ui/separator";
 import {
   DollarSign, FileText, Users, TrendingUp,
   AlertCircle, BarChart2,

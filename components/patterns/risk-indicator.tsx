@@ -4,7 +4,7 @@
  * @layer patterns
  */
 import { TrendingUp, TrendingDown, Minus, AlertTriangle, CheckCircle2, Info } from "lucide-react";
-import { Badge } from "../ui/Badge";
+import { Badge } from "../ui/badge";
 import { cn } from "../../lib/utils";
 
 export type RiskLevel = "bajo" | "medio" | "alto" | "crítico";

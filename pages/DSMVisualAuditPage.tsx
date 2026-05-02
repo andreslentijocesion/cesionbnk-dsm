@@ -1,17 +1,17 @@
-import { Button } from "../components/ui/Button";
-import { Badge } from "../components/ui/Badge";
-import { Input } from "../components/ui/Input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/Select";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
-import { Alert, AlertDescription, AlertTitle } from "../components/ui/Alert";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/Accordion";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/Tabs";
-import { Checkbox } from "../components/ui/Checkbox";
-import { Switch } from "../components/ui/Switch";
-import { Progress } from "../components/ui/Progress";
-import { Avatar, AvatarFallback } from "../components/ui/Avatar";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/Tooltip";
-import { RadiusBox } from "../components/ui/DynamicPreviews";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Input } from "../components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
+import { Alert, AlertDescription, AlertTitle } from "../components/ui/alert";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs";
+import { Checkbox } from "../components/ui/checkbox";
+import { Switch } from "../components/ui/switch";
+import { Progress } from "../components/ui/progress";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip";
+import { RadiusBox } from "../components/ui/dynamicpreviews";
 import {
   AlertCircle, CheckCircle, Info, AlertTriangle,
   User, Settings, Bell,

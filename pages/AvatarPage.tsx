@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/Avatar";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 
 export function AvatarPage() {
   return (
@@ -26,7 +26,7 @@ export function AvatarPage() {
       }
       
       // Main Code
-      code={`import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar"
+      code={`import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function AvatarDemo() {
   return (

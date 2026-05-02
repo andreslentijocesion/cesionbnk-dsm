@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import { RichTextEditor } from "../components/advanced/rich-text-editor";
-import { Label } from "../components/ui/Label";
-import { Button } from "../components/ui/Button";
+import { Label } from "../components/ui/label";
+import { Button } from "../components/ui/button";
 import { toast } from "sonner";
 
 export function RichTextEditorPage() {
@@ -37,7 +37,7 @@ export function RichTextEditorPage() {
           </div>
         </div>
       }
-      code={`import { RichTextEditor } from "@/components/advanced/RichTextEditor";
+      code={`import { RichTextEditor } from "@/components/advanced/richtexteditor";
 
 const [content, setContent] = useState("<p>Hello world</p>");
 

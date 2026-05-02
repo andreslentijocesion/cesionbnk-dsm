@@ -1,9 +1,9 @@
 import { ColumnDef, type Table, type Row, type Column } from "@tanstack/react-table";
 import { copyToClipboard } from "../lib/utils";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Badge } from "../components/ui/Badge";
-import { Button } from "../components/ui/Button";
-import { Checkbox } from "../components/ui/Checkbox";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
+import { Checkbox } from "../components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,10 +11,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../components/ui/DropdownMenu";
+} from "../components/ui/dropdownmenu";
 import { DataTable } from "../components/advanced/data-table";
 import { MoreHorizontal, ArrowUpDown, CheckCircle, Clock, AlertCircle, XCircle, Circle } from "lucide-react";
-import { Progress } from "../components/ui/Progress";
+import { Progress } from "../components/ui/progress";
 import { toast } from "sonner";
 
 // Sample Data Type
@@ -196,7 +196,7 @@ export function DataTablePage() {
           description="A list of all your invoices."
         />
       }
-      code={`import { DataTable } from "@/components/advanced/DataTable";
+      code={`import { DataTable } from "@/components/advanced/datatable";
 import { ColumnDef } from "@tanstack/react-table";
 
 type Invoice = {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FloatingActionButton } from '../components/ui/FloatingActionButton';
+import { FloatingActionButton } from '../components/ui/floatingactionbutton';
 import { Plus, Upload as UploadIcon, Edit } from 'lucide-react';
 
 const meta: Meta<typeof FloatingActionButton> = {

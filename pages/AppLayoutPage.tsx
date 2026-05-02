@@ -2,15 +2,15 @@
  * AppLayoutPage — Showcase for ClientLayout & AdminLayout
  * Demonstrates both layout shells: ClientLayout (customer-facing) and AdminLayout without sidebar (admin).
  */
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import {
   ClientLayout,
   AdminLayout,
   LayoutHeader,
   LayoutFooter,
 } from "../components/layout";
-import { Button } from "../components/ui/Button";
-import { Separator } from "../components/ui/Separator";
+import { Button } from "../components/ui/button";
+import { Separator } from "../components/ui/separator";
 import {
   Bell,
   Search,

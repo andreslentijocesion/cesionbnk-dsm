@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "../components/ui/HoverCard";
-import { Avatar, AvatarFallback } from "../components/ui/Avatar";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../components/ui/hovercard";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
+import { Button } from "../components/ui/button";
 import { CalendarDays, MapPin, Mail, ExternalLink } from "lucide-react";
-import { Separator } from "../components/ui/Separator";
+import { Separator } from "../components/ui/separator";
 
 export function HoverCardPage() {
   return (
@@ -48,7 +48,7 @@ export function HoverCardPage() {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/HoverCard"
+} from "@/components/ui/hovercard"
 
 export function HoverCardDemo() {
   return (

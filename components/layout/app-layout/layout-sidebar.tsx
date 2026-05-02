@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cn } from "../../../lib/utils";
 import { ChevronDown, type LucideIcon } from "lucide-react";
-import { Badge } from "../../ui/Badge";
+import { Badge } from "../../ui/badge";
 
 
 /* ═══════════════════════════════════════════════════════════════

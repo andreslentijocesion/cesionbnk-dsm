@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FactoringCedentList } from '../components/patterns/FactoringCedentList';
+import { FactoringCedentList } from '../components/patterns/factoringcedentlist';
 
 const meta: Meta<typeof FactoringCedentList> = {
   title: 'DSM/Patterns/FactoringCedentList',

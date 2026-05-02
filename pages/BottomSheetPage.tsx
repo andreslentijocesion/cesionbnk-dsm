@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { BottomSheet } from "../components/ui/BottomSheet";
-import { Button } from "../components/ui/Button";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { BottomSheet } from "../components/ui/bottomsheet";
+import { Button } from "../components/ui/button";
 import { Download, MessageSquare, Share2, Printer, Trash2 } from "lucide-react";
 
-const code = `import { BottomSheet } from "@/components/ui/BottomSheet";
+const code = `import { BottomSheet } from "@/components/ui/bottomsheet";
 
 export function BottomSheetDemo() {
   return (

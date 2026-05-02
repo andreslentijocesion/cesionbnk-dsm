@@ -5,9 +5,9 @@
  */
 import { useState } from "react";
 import { Send, Lock, Globe, Reply, Trash2 } from "lucide-react";
-import { Button } from "../ui/Button";
-import { Badge } from "../ui/Badge";
-import { Textarea } from "../ui/Textarea";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import { Textarea } from "../ui/textarea";
 
 import { cn } from "../../lib/utils";
 

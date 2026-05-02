@@ -1,9 +1,9 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "../components/ui/Dialog";
-import { Button } from "../components/ui/Button";
-import { Input } from "../components/ui/Input";
-import { Label } from "../components/ui/Label";
-import { Textarea } from "../components/ui/Textarea";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "../components/ui/dialog";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea";
 import { AlertCircle, Trash2, Upload, UserPlus, Settings, Mail } from "lucide-react";
 
 export function DialogPage() {
@@ -82,8 +82,8 @@ export function DialogPage() {
       }
       
       // Main Code
-      code={`import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/Dialog";
-import { Button } from "@/components/ui/Button";
+      code={`import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 export function DialogDemo() {
   return (

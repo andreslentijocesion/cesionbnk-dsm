@@ -6,7 +6,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "../ui/DropdownMenu";
+} from "../ui/dropdownmenu";
 import { Logo } from "../layout/logo";
 
 /* ── Sub-components ── */

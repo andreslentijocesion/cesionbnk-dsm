@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Slider } from '../components/ui/Slider';
-import { Label } from '../components/ui/Label';
+import { Slider } from '../components/ui/slider';
+import { Label } from '../components/ui/label';
 import { useState } from 'react';
 
 const meta: Meta<typeof Slider> = {

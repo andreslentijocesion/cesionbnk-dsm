@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ScrollArea, ScrollBar } from '../components/ui/ScrollArea';
+import { ScrollArea, ScrollBar } from '../components/ui/scrollarea';
 
 const meta: Meta = {
   title: 'DSM/Components/ScrollArea',

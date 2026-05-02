@@ -1,6 +1,6 @@
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../components/ui/DropdownMenu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../components/ui/dropdownmenu";
 import { Home } from "lucide-react";
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import { 
   Breadcrumb, 
   BreadcrumbItem, 
@@ -9,7 +9,7 @@ import {
   BreadcrumbPage as BreadcrumbPageItem, 
   BreadcrumbSeparator,
   BreadcrumbEllipsis
-} from "../components/ui/Breadcrumb";
+} from "../components/ui/breadcrumb";
 
 export function BreadcrumbPage() {
   return (
@@ -45,7 +45,7 @@ export function BreadcrumbPage() {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/Breadcrumb"
+} from "@/components/ui/breadcrumb"
 
 export function BreadcrumbDemo() {
   return (

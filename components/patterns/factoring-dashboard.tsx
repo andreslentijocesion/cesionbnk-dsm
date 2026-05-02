@@ -1,8 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/Card";
-import { Badge } from "../ui/Badge";
-import { Button } from "../ui/Button";
-import { Progress } from "../ui/Progress";
-import { SafeChartContainer } from "../ui/SafeChartContainer";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { Progress } from "../ui/progress";
+import { SafeChartContainer } from "../ui/safechartcontainer";
 import {
   AreaChart, Area, PieChart, Pie, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip,

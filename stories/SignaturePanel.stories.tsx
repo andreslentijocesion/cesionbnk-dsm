@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SignaturePanel, type Signatory } from '../components/patterns/SignaturePanel';
+import { SignaturePanel, type Signatory } from '../components/patterns/signaturepanel';
 
 const mixedSignatories: Signatory[] = [
   { id: '1', name: 'Carlos Riquelme', role: 'Gerente General',    email: 'c.riquelme@empresa.com', status: 'signed',  order: 1, signedAt: '07/03/2025 09:14' },

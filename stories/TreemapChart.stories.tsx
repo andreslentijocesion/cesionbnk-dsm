@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TreemapChart } from '../components/advanced/TreemapChart';
+import { TreemapChart } from '../components/advanced/treemapchart';
 
 const meta: Meta<typeof TreemapChart> = {
   title: 'DSM/Advanced/TreemapChart',

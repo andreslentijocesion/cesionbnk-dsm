@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { DataTableAdvanced } from '../components/patterns/DataTableAdvanced';
+import { DataTableAdvanced } from '../components/patterns/datatableadvanced';
 
 const meta: Meta<typeof DataTableAdvanced> = {
   title: 'DSM/Patterns/DataTableAdvanced',

@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { SplitButton } from "../components/ui/SplitButton";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { SplitButton } from "../components/ui/splitbutton";
 
-const code = `import { SplitButton } from "@/components/ui/SplitButton";
+const code = `import { SplitButton } from "@/components/ui/splitbutton";
 
 export function SplitButtonDemo() {
   const handleSave = () => console.log("Main action: Save");

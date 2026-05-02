@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Card } from "../ui/Card";
-import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
-import { Label } from "../ui/Label";
-import { Checkbox } from "../ui/Checkbox";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../ui/Dialog";
+import { Card } from "../ui/card";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Checkbox } from "../ui/checkbox";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../ui/dialog";
 import { 
   Upload, FileText, Trash2, 
   FileCheck, Users, Lock, Loader2 

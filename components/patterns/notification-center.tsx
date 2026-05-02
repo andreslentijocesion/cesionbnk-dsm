@@ -3,12 +3,12 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../ui/Popover";
-import { Button } from "../ui/Button";
-import { Badge } from "../ui/Badge";
-import { ScrollArea } from "../ui/ScrollArea";
-import { Separator } from "../ui/Separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/Tabs";
+} from "../ui/popover";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import { ScrollArea } from "../ui/scrollarea";
+import { Separator } from "../ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import {
   Bell,
   CheckCircle,

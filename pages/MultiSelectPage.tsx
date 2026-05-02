@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { MultiSelect, MultiSelectOption } from "../components/ui/MultiSelect";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { MultiSelect, MultiSelectOption } from "../components/ui/multiselect";
 import { useState } from "react";
 
 const frameworks: MultiSelectOption[] = [
@@ -30,7 +30,7 @@ const departments: MultiSelectOption[] = [
   { label: "Human Resources", value: "hr" },
 ];
 
-const code = `import { MultiSelect, MultiSelectOption } from "@/components/ui/MultiSelect";
+const code = `import { MultiSelect, MultiSelectOption } from "@/components/ui/multiselect";
 import { useState } from "react";
 
 const options: MultiSelectOption[] = [

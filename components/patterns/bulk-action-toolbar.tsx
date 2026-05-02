@@ -5,8 +5,8 @@
  * @layer patterns
  */
 import { X, type LucideIcon } from "lucide-react";
-import { Button } from "../ui/Button";
-import { Badge } from "../ui/Badge";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
 import { cn } from "../../lib/utils";
 
 export interface BulkAction {

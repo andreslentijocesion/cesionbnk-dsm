@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from "react";
-import { useTransition } from "../components/providers/TransitionProvider";
+import { useTransition } from "../components/providers/transitionprovider";
 
 /**
  * HOOK: usePageTransition

@@ -1,7 +1,7 @@
 import { LineChart, Line } from "recharts";
-import { Card, CardContent } from "../ui/Card";
+import { Card, CardContent } from "../ui/card";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
-import { SafeChartContainer } from "../ui/SafeChartContainer";
+import { SafeChartContainer } from "../ui/safechartcontainer";
 
 /**
  * 🔒 ADVANCED COMPONENT - Sparkline

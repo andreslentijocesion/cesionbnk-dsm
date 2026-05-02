@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RiskIndicator, type RiskFactor } from '../components/patterns/RiskIndicator';
+import { RiskIndicator, type RiskFactor } from '../components/patterns/riskindicator';
 
 const goodFactors: RiskFactor[] = [
   { label: 'Historial de pago',   value: 'Excelente', impact: 'positive' },

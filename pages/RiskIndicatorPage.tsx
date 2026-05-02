@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 import { RiskIndicator } from "../components/patterns/risk-indicator"
 
 const goodFactors = [
@@ -43,7 +43,7 @@ export function RiskIndicatorPage() {
           />
         </div>
       }
-      code={`import { RiskIndicator } from "@/components/patterns/RiskIndicator"
+      code={`import { RiskIndicator } from "@/components/patterns/riskindicator"
 
 <RiskIndicator
   score={820}

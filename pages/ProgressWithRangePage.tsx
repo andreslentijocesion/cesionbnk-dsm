@@ -1,5 +1,5 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { ProgressWithRange } from "../components/ui/ProgressWithRange";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { ProgressWithRange } from "../components/ui/progresswithrange";
 
 export function ProgressWithRangePage() {
   return (
@@ -17,7 +17,7 @@ export function ProgressWithRangePage() {
       }
 
       // Main Code
-      code={`import { ProgressWithRange } from "@/components/ui/ProgressWithRange"
+      code={`import { ProgressWithRange } from "@/components/ui/progresswithrange"
 
 export function Demo() {
   return <ProgressWithRange value={65} from="27 Nov 2025" to="27 Dic 2025" />

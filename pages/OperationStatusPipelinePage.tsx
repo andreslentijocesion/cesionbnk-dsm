@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import {
   OperationStatusPipeline,
   type PipelineStage,
@@ -44,7 +44,7 @@ export function OperationStatusPipelinePage() {
           <OperationStatusPipeline stages={rejectedStages} orientation="horizontal" />
         </div>
       }
-      code={`import { OperationStatusPipeline } from "@/components/patterns/OperationStatusPipeline"
+      code={`import { OperationStatusPipeline } from "@/components/patterns/operationstatuspipeline"
 
 const stages = [
   { id: "radicado",     label: "Radicado",     status: "completed", date: "01/03/2025" },

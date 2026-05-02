@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Upload, X, File, FileText, Image as ImageIcon, Trash2, CheckCircle } from "lucide-react";
-import { Button } from "../ui/Button";
-import { Progress } from "../ui/Progress";
-import { ScrollArea } from "../ui/ScrollArea";
+import { Button } from "../ui/button";
+import { Progress } from "../ui/progress";
+import { ScrollArea } from "../ui/scrollarea";
 import { cn } from "../ui/utils";
 
 interface FileUploaderProps {

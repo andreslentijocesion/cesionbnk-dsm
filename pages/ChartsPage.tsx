@@ -1,7 +1,7 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/Tabs";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
-import { SafeChartContainer } from "../components/ui/SafeChartContainer";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
+import { SafeChartContainer } from "../components/ui/safechartcontainer";
 import { GaugeChart } from "../components/advanced/gauge-chart";
 import { Sparkline } from "../components/advanced/sparkline";
 import { FunnelChart } from "../components/advanced/funnel-chart";
@@ -102,7 +102,7 @@ const sparklineData = [
 // ── Main Code ──
 const mainCode = `import { LineChart, Line, BarChart, Bar, AreaChart, Area, PieChart, Pie, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
-import { SafeChartContainer } from "@/components/ui/SafeChartContainer";
+import { SafeChartContainer } from "@/components/ui/safechartcontainer";
 
 const data = [
   { month: "Ene", ingresos: 45000, gastos: 28000 },

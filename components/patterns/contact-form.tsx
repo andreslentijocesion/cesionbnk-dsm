@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/Card";
-import { Button } from "../ui/Button";
-import { Input } from "../ui/Input";
-import { Label } from "../ui/Label";
-import { Textarea } from "../ui/Textarea";
-import { Checkbox } from "../ui/Checkbox";
-import { Badge } from "../ui/Badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Textarea } from "../ui/textarea";
+import { Checkbox } from "../ui/checkbox";
+import { Badge } from "../ui/badge";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/Select";
+} from "../ui/select";
 import { Mail, Phone, User, Building, MessageSquare, Send, CheckCircle } from "lucide-react";
 
 /**

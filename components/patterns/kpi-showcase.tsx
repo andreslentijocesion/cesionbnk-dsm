@@ -8,8 +8,8 @@ import {
   AreaChart, Area, BarChart, Bar, XAxis, YAxis,
   CartesianGrid, Tooltip, ResponsiveContainer,
 } from "recharts";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
-import { Badge } from "../ui/Badge";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Badge } from "../ui/badge";
 import { TrendingUp, TrendingDown, DollarSign, FileText, Users, Clock } from "lucide-react";
 
 const revenueData = [

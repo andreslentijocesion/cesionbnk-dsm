@@ -1,4 +1,4 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -12,7 +12,7 @@ import {
   ContextMenuSub,
   ContextMenuSubContent,
   ContextMenuSubTrigger,
-} from "../components/ui/ContextMenu";
+} from "../components/ui/contextmenu";
 
 export function ContextMenuPage() {
   return (
@@ -76,7 +76,7 @@ export function ContextMenuPage() {
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuTrigger,
-} from "@/components/ui/ContextMenu"
+} from "@/components/ui/contextmenu"
 
 export function ContextMenuDemo() {
   return (

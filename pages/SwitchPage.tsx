@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../components/ui/ComponentShowcase";
-import { Switch } from "../components/ui/Switch";
-import { Label } from "../components/ui/Label";
-import { Card } from "../components/ui/Card";
-import { Separator } from "../components/ui/Separator";
+import { ComponentShowcase } from "../components/ui/componentshowcase";
+import { Switch } from "../components/ui/switch";
+import { Label } from "../components/ui/label";
+import { Card } from "../components/ui/card";
+import { Separator } from "../components/ui/separator";
 import { Bell, Wifi, Bluetooth, Moon, Volume2, Lock } from "lucide-react";
 import { useState } from "react";
 
@@ -29,8 +29,8 @@ export function SwitchPage() {
       }
       
       // Main Code
-      code={`import { Switch } from "@/components/ui/Switch";
-import { Label } from "@/components/ui/Label";
+      code={`import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 export function SwitchDemo() {
   return (
@@ -106,8 +106,8 @@ export function SwitchDemo() {
               <Label htmlFor="basic">Enable feature</Label>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/Switch";
-import { Label } from "@/components/ui/Label";
+          code: `import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 export function BasicSwitch() {
   return (
@@ -144,9 +144,9 @@ export function BasicSwitch() {
               </div>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/Switch";
-import { Label } from "@/components/ui/Label";
-import { Separator } from "@/components/ui/Separator";
+          code: `import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
 
 export function SwitchWithDescriptions() {
   return (
@@ -204,8 +204,8 @@ export function SwitchWithDescriptions() {
               </div>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/Switch";
-import { Label } from "@/components/ui/Label";
+          code: `import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import { Bell, Wifi, Bluetooth } from "lucide-react";
 
 export function SwitchWithIcons() {
@@ -278,9 +278,9 @@ export function SwitchWithIcons() {
               </Card>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/Switch";
-import { Label } from "@/components/ui/Label";
-import { Card } from "@/components/ui/Card";
+          code: `import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+import { Card } from "@/components/ui/card";
 import { Moon, Volume2 } from "lucide-react";
 
 export function CardLayoutSwitch() {
@@ -333,8 +333,8 @@ export function CardLayoutSwitch() {
           preview: (
             <SwitchControlledExample />
           ),
-          code: `import { Switch } from "@/components/ui/Switch";
-import { Label } from "@/components/ui/Label";
+          code: `import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
 
 export function ControlledSwitch() {
@@ -375,8 +375,8 @@ export function ControlledSwitch() {
               </div>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/Switch";
-import { Label } from "@/components/ui/Label";
+          code: `import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 
 export function DisabledSwitch() {
   return (
@@ -438,9 +438,9 @@ export function DisabledSwitch() {
               </div>
             </div>
           ),
-          code: `import { Switch } from "@/components/ui/Switch";
-import { Label } from "@/components/ui/Label";
-import { Separator } from "@/components/ui/Separator";
+          code: `import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
 
 export function SettingsPanel() {
   return (
@@ -492,8 +492,8 @@ export function SettingsPanel() {
           preview: (
             <SwitchWithConfirmation />
           ),
-          code: `import { Switch } from "@/components/ui/Switch";
-import { Label } from "@/components/ui/Label";
+          code: `import { Switch } from "@/components/ui/switch";
+import { Label } from "@/components/ui/label";
 import { Lock } from "lucide-react";
 import { useState } from "react";
 

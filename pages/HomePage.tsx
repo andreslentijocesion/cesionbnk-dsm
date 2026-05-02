@@ -1,7 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/Card"
-import { Badge } from "../components/ui/Badge"
-import { Progress } from "../components/ui/Progress"
-import { Separator } from "../components/ui/Separator"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
+import { Badge } from "../components/ui/badge"
+import { Progress } from "../components/ui/progress"
+import { Separator } from "../components/ui/separator"
 import {
   CheckCircle2,
   Package,
@@ -17,7 +17,7 @@ import {
   Activity,
 } from "lucide-react"
 import { Logo } from "../components/layout/logo"
-import { ComponentShowcase } from "../components/ui/ComponentShowcase"
+import { ComponentShowcase } from "../components/ui/componentshowcase"
 
 import { BRAND_INFO } from "../lib/constants"
 
