@@ -64,7 +64,7 @@ export function Sparkline({
               <span className="text-xs text-muted-foreground">{changeLabel}</span>
             </div>
           )}
-          <SafeChartContainer width="100%" height={height} minHeight={`${height}px`} loadingPlaceholder={null}>
+          <SafeChartContainer width="100%" height={height} minHeight={`${height}px`} loadingContent={null}>
             <LineChart data={data}>
               <Line type="monotone" dataKey="value" stroke={color} strokeWidth={2} dot={false} />
             </LineChart>
@@ -75,7 +75,7 @@ export function Sparkline({
   }
 
   return (
-    <SafeChartContainer width="100%" height={height} minHeight={`${height}px`} loadingPlaceholder={null}>
+    <SafeChartContainer width="100%" height={height} minHeight={`${height}px`} loadingContent={null}>
       <LineChart data={data}>
         <Line type="monotone" dataKey="value" stroke={color} strokeWidth={2} dot={false} />
       </LineChart>
